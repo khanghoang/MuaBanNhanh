@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		05A3E3431ACAF11200E55215 /* MBNSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */; };
 		05A3E3441ACAF11200E55215 /* MBNSideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05A3E3421ACAF11200E55215 /* MBNSideMenuViewController.xib */; };
+		05A3E3481ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E3461ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m */; };
+		05A3E3491ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05A3E3471ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.xib */; };
+		05A3E34D1ACAF9D300E55215 /* UIView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E34C1ACAF9D300E55215 /* UIView+Addition.m */; };
+		05A3E3501ACAF9E100E55215 /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E34F1ACAF9E100E55215 /* Colours.m */; };
 		05E03D9A1AC9318D004426CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E03D991AC9318D004426CE /* main.m */; };
 		05E03D9D1AC9318D004426CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E03D9C1AC9318D004426CE /* AppDelegate.m */; };
 		05E03DA31AC9318D004426CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E03DA11AC9318D004426CE /* Main.storyboard */; };
@@ -33,6 +37,13 @@
 		05A3E3401ACAF11200E55215 /* MBNSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSideMenuViewController.h; sourceTree = "<group>"; };
 		05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSideMenuViewController.m; sourceTree = "<group>"; };
 		05A3E3421ACAF11200E55215 /* MBNSideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBNSideMenuViewController.xib; sourceTree = "<group>"; };
+		05A3E3451ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSideMenuCollectionViewCell.h; sourceTree = "<group>"; };
+		05A3E3461ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSideMenuCollectionViewCell.m; sourceTree = "<group>"; };
+		05A3E3471ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBNSideMenuCollectionViewCell.xib; sourceTree = "<group>"; };
+		05A3E34B1ACAF9D300E55215 /* UIView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Addition.h"; sourceTree = "<group>"; };
+		05A3E34C1ACAF9D300E55215 /* UIView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addition.m"; sourceTree = "<group>"; };
+		05A3E34E1ACAF9E100E55215 /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
+		05A3E34F1ACAF9E100E55215 /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
 		05E03D941AC9318D004426CE /* MuaBanNhanh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuaBanNhanh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05E03D981AC9318D004426CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05E03D991AC9318D004426CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -82,8 +93,22 @@
 				05A3E3401ACAF11200E55215 /* MBNSideMenuViewController.h */,
 				05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */,
 				05A3E3421ACAF11200E55215 /* MBNSideMenuViewController.xib */,
+				05A3E3451ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.h */,
+				05A3E3461ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m */,
+				05A3E3471ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.xib */,
 			);
 			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		05A3E34A1ACAF9CC00E55215 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				05A3E34B1ACAF9D300E55215 /* UIView+Addition.h */,
+				05A3E34C1ACAF9D300E55215 /* UIView+Addition.m */,
+				05A3E34E1ACAF9E100E55215 /* Colours.h */,
+				05A3E34F1ACAF9E100E55215 /* Colours.m */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		05E03D8B1AC9318D004426CE = {
@@ -109,6 +134,7 @@
 		05E03D961AC9318D004426CE /* MuaBanNhanh */ = {
 			isa = PBXGroup;
 			children = (
+				05A3E34A1ACAF9CC00E55215 /* Categories */,
 				05A3E3391ACAF0AC00E55215 /* ViewControllers */,
 				05E03D9B1AC9318D004426CE /* AppDelegate.h */,
 				05E03D9C1AC9318D004426CE /* AppDelegate.m */,
@@ -248,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05A3E3441ACAF11200E55215 /* MBNSideMenuViewController.xib in Resources */,
+				05A3E3491ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.xib in Resources */,
 				05E03DA31AC9318D004426CE /* Main.storyboard in Resources */,
 				05E03DA81AC9318D004426CE /* LaunchScreen.xib in Resources */,
 				05E03DA51AC9318D004426CE /* Images.xcassets in Resources */,
@@ -301,6 +328,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05A3E3481ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m in Sources */,
+				05A3E3501ACAF9E100E55215 /* Colours.m in Sources */,
+				05A3E34D1ACAF9D300E55215 /* UIView+Addition.m in Sources */,
 				05E03D9D1AC9318D004426CE /* AppDelegate.m in Sources */,
 				05E03D9A1AC9318D004426CE /* main.m in Sources */,
 				05A3E3431ACAF11200E55215 /* MBNSideMenuViewController.m in Sources */,

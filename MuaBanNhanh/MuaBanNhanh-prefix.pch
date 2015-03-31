@@ -6,7 +6,14 @@
 //  Copyright (c) 2015 Khang Hoang Trieu. All rights reserved.
 //
 
+#import "UIView+Addition.h"
+#import "Colours.h"
+
 #import "MBNSideMenuViewController.h"
 
 #import <PKRevealController/PKRevealController.h>
 #import <FLEX/FLEXManager.h>
+#import <KHTableViewController/KHTableController.h>
+
+#import <KHTableViewController/KHNormalDataProvider.h>
+#import <KHTableViewController/KHCollectionController.h>
