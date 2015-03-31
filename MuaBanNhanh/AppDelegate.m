@@ -23,11 +23,12 @@
     
     UIViewController *vc = [[UIViewController alloc] init];
     vc.view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1.0];
+    UINavigationController *rootNavigationController = [[UINavigationController alloc] initWithRootViewController:vc];
     
-    UIViewController *rearVC = [[UIViewController alloc] init];
+    MBNSideMenuViewController *rearVC = [[MBNSideMenuViewController alloc] init];
     rearVC.view.backgroundColor = [UIColor greenColor];
     
-    PKRevealController *rootVC = [PKRevealController revealControllerWithFrontViewController:vc leftViewController:rearVC];
+    PKRevealController *rootVC = [PKRevealController revealControllerWithFrontViewController:rootNavigationController leftViewController:rearVC];
     window.rootViewController = rootVC;
     
     [[FLEXManager sharedManager] showExplorer];

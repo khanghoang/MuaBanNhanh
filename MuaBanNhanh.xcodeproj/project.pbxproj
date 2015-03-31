@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05A3E3431ACAF11200E55215 /* MBNSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */; };
+		05A3E3441ACAF11200E55215 /* MBNSideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05A3E3421ACAF11200E55215 /* MBNSideMenuViewController.xib */; };
 		05E03D9A1AC9318D004426CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E03D991AC9318D004426CE /* main.m */; };
 		05E03D9D1AC9318D004426CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E03D9C1AC9318D004426CE /* AppDelegate.m */; };
 		05E03DA31AC9318D004426CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E03DA11AC9318D004426CE /* Main.storyboard */; };
@@ -28,6 +30,9 @@
 
 /* Begin PBXFileReference section */
 		05A3E32F1ACAE5D700E55215 /* MuaBanNhanh-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MuaBanNhanh-prefix.pch"; sourceTree = "<group>"; };
+		05A3E3401ACAF11200E55215 /* MBNSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSideMenuViewController.h; sourceTree = "<group>"; };
+		05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSideMenuViewController.m; sourceTree = "<group>"; };
+		05A3E3421ACAF11200E55215 /* MBNSideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBNSideMenuViewController.xib; sourceTree = "<group>"; };
 		05E03D941AC9318D004426CE /* MuaBanNhanh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuaBanNhanh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05E03D981AC9318D004426CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05E03D991AC9318D004426CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -63,6 +68,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05A3E3391ACAF0AC00E55215 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				05A3E33F1ACAF11200E55215 /* SideMenu */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		05A3E33F1ACAF11200E55215 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				05A3E3401ACAF11200E55215 /* MBNSideMenuViewController.h */,
+				05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */,
+				05A3E3421ACAF11200E55215 /* MBNSideMenuViewController.xib */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
 		05E03D8B1AC9318D004426CE = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +109,7 @@
 		05E03D961AC9318D004426CE /* MuaBanNhanh */ = {
 			isa = PBXGroup;
 			children = (
+				05A3E3391ACAF0AC00E55215 /* ViewControllers */,
 				05E03D9B1AC9318D004426CE /* AppDelegate.h */,
 				05E03D9C1AC9318D004426CE /* AppDelegate.m */,
 				05E03DA11AC9318D004426CE /* Main.storyboard */,
@@ -223,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05A3E3441ACAF11200E55215 /* MBNSideMenuViewController.xib in Resources */,
 				05E03DA31AC9318D004426CE /* Main.storyboard in Resources */,
 				05E03DA81AC9318D004426CE /* LaunchScreen.xib in Resources */,
 				05E03DA51AC9318D004426CE /* Images.xcassets in Resources */,
@@ -278,6 +303,7 @@
 			files = (
 				05E03D9D1AC9318D004426CE /* AppDelegate.m in Sources */,
 				05E03D9A1AC9318D004426CE /* main.m in Sources */,
+				05A3E3431ACAF11200E55215 /* MBNSideMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

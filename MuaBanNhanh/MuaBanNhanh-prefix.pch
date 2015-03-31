@@ -6,5 +6,7 @@
 //  Copyright (c) 2015 Khang Hoang Trieu. All rights reserved.
 //
 
+#import "MBNSideMenuViewController.h"
+
 #import <PKRevealController/PKRevealController.h>
 #import <FLEX/FLEXManager.h>
