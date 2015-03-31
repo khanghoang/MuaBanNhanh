@@ -15,7 +15,7 @@ target 'MuaBanNhanh' do
   pod 'FLEX'
   pod 'Masonry', '~> 0.5'
   pod 'KHTableViewController'
-  pod 'SWRevealViewController'
+  pod 'PKRevealController'
 
 end
 

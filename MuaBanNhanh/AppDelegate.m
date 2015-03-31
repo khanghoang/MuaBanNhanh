@@ -23,7 +23,14 @@
     
     UIViewController *vc = [[UIViewController alloc] init];
     vc.view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1.0];
-    window.rootViewController = vc;
+    
+    UIViewController *rearVC = [[UIViewController alloc] init];
+    rearVC.view.backgroundColor = [UIColor greenColor];
+    
+    PKRevealController *rootVC = [PKRevealController revealControllerWithFrontViewController:vc leftViewController:rearVC];
+    window.rootViewController = rootVC;
+    
+    [[FLEXManager sharedManager] showExplorer];
     
     [window makeKeyWindow];
     
