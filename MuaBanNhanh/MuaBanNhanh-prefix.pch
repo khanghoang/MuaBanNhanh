@@ -15,6 +15,7 @@
 #import <FLEX/FLEXManager.h>
 #import <Mantle/Mantle.h>
 #import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/UIImageView+AFNetworking.h>
 #import <KHTableViewController/KHTableController.h>
 
 #import <KHTableViewController/KHNormalDataProvider.h>
