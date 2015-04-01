@@ -13,6 +13,7 @@
 		053979071ACC48F6007C4676 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053979061ACC48F6007C4676 /* MainStoryboard.storyboard */; };
 		0539790D1ACC4987007C4676 /* MBNHomeTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0539790C1ACC4987007C4676 /* MBNHomeTopViewController.m */; };
 		053979101ACC4998007C4676 /* MBNHomeBottomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0539790F1ACC4998007C4676 /* MBNHomeBottomViewController.m */; };
+		053979141ACC4B76007C4676 /* MBNHomeContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053979131ACC4B76007C4676 /* MBNHomeContainerViewController.m */; };
 		05A3E3431ACAF11200E55215 /* MBNSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */; };
 		05A3E3441ACAF11200E55215 /* MBNSideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05A3E3421ACAF11200E55215 /* MBNSideMenuViewController.xib */; };
 		05A3E3481ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E3461ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m */; };
@@ -50,6 +51,8 @@
 		0539790C1ACC4987007C4676 /* MBNHomeTopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNHomeTopViewController.m; sourceTree = "<group>"; };
 		0539790E1ACC4998007C4676 /* MBNHomeBottomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNHomeBottomViewController.h; sourceTree = "<group>"; };
 		0539790F1ACC4998007C4676 /* MBNHomeBottomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNHomeBottomViewController.m; sourceTree = "<group>"; };
+		053979121ACC4B76007C4676 /* MBNHomeContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNHomeContainerViewController.h; sourceTree = "<group>"; };
+		053979131ACC4B76007C4676 /* MBNHomeContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNHomeContainerViewController.m; sourceTree = "<group>"; };
 		05A3E32F1ACAE5D700E55215 /* MuaBanNhanh-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MuaBanNhanh-prefix.pch"; sourceTree = "<group>"; };
 		05A3E3401ACAF11200E55215 /* MBNSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSideMenuViewController.h; sourceTree = "<group>"; };
 		05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSideMenuViewController.m; sourceTree = "<group>"; };
@@ -126,6 +129,7 @@
 		053979051ACC48E3007C4676 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				053979111ACC4B68007C4676 /* Container */,
 				053979081ACC4904007C4676 /* Top */,
 				0539790A1ACC4962007C4676 /* Bottom */,
 				053979061ACC48F6007C4676 /* MainStoryboard.storyboard */,
@@ -149,6 +153,15 @@
 				0539790F1ACC4998007C4676 /* MBNHomeBottomViewController.m */,
 			);
 			path = Bottom;
+			sourceTree = "<group>";
+		};
+		053979111ACC4B68007C4676 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				053979121ACC4B76007C4676 /* MBNHomeContainerViewController.h */,
+				053979131ACC4B76007C4676 /* MBNHomeContainerViewController.m */,
+			);
+			path = Container;
 			sourceTree = "<group>";
 		};
 		05A3E3391ACAF0AC00E55215 /* ViewControllers */ = {
@@ -411,6 +424,7 @@
 				05A3E34D1ACAF9D300E55215 /* UIView+Addition.m in Sources */,
 				053978FE1ACC274E007C4676 /* MBNCategory.m in Sources */,
 				053979021ACC3B7C007C4676 /* MBNCategoryManager.m in Sources */,
+				053979141ACC4B76007C4676 /* MBNHomeContainerViewController.m in Sources */,
 				05E03D9D1AC9318D004426CE /* AppDelegate.m in Sources */,
 				05E03D9A1AC9318D004426CE /* main.m in Sources */,
 				0539790D1ACC4987007C4676 /* MBNHomeTopViewController.m in Sources */,

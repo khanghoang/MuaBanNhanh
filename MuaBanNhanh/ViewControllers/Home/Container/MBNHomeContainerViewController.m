@@ -1,20 +1,18 @@
 //
-//  MBNHomeBottomViewController.m
+//  MBNHomeContainerViewController.m
 //  MuaBanNhanh
 //
 //  Created by Khang Hoang Trieu on 4/1/15.
 //  Copyright (c) 2015 Khang Hoang Trieu. All rights reserved.
 //
 
-#import "MBNHomeBottomViewController.h"
+#import "MBNHomeContainerViewController.h"
 
-@interface MBNHomeBottomViewController ()
-
-
+@interface MBNHomeContainerViewController ()
 
 @end
 
-@implementation MBNHomeBottomViewController
+@implementation MBNHomeContainerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
