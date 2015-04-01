@@ -10,4 +10,6 @@
 
 @interface MBNSideMenuCollectionViewCell : UICollectionViewCell
 
+- (void)configWithData:(id)data;
+
 @end

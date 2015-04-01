@@ -22,4 +22,17 @@
     // Initialization code
 }
 
+- (void)configWithData:(id)data {
+    
+    if(![data isKindOfClass:[MBNCategory class]]) {
+        return;
+    }
+    
+    MBNCategory *category = data;
+    
+    self.lblCategoryName.text = category.name;
+    [self.imageViewCategory setImageWithURL:category.imageUrl];
+    
+}
+
 @end
