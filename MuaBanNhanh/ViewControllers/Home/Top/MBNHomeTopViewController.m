@@ -10,6 +10,8 @@
 
 @interface MBNHomeTopViewController ()
 
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionViewCategories;
+
 @end
 
 @implementation MBNHomeTopViewController

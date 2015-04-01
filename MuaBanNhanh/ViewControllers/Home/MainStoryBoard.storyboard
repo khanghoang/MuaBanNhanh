@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H4U-CR-gvd">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
@@ -8,7 +8,7 @@
         <!--Home Container View Controller-->
         <scene sceneID="asM-9t-uz7">
             <objects>
-                <viewController id="H4U-CR-gvd" customClass="MBNHomeContainerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MBNHomeContainerViewController" id="H4U-CR-gvd" customClass="MBNHomeContainerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pFh-Qu-8aU"/>
                         <viewControllerLayoutGuide type="bottom" id="gF5-ig-odh"/>
@@ -40,7 +40,7 @@
         <!--Home Bottom View Controller-->
         <scene sceneID="Wax-ke-t44">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="ca6-sI-dPn" customClass="MBNHomeBottomViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MBNHomeBottomViewController" automaticallyAdjustsScrollViewInsets="NO" id="ca6-sI-dPn" customClass="MBNHomeBottomViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wWH-pt-rzj"/>
                         <viewControllerLayoutGuide type="bottom" id="pwK-ue-XfX"/>
@@ -77,12 +77,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CPH-3K-V8H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="302" y="367.5"/>
+            <point key="canvasLocation" x="291" y="338.5"/>
         </scene>
         <!--Home Top View Controller-->
         <scene sceneID="P75-lm-s8F">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="tM0-ER-k7X" customClass="MBNHomeTopViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MBNHomeTopViewController" automaticallyAdjustsScrollViewInsets="NO" id="tM0-ER-k7X" customClass="MBNHomeTopViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hkc-4H-C08"/>
                         <viewControllerLayoutGuide type="bottom" id="uMT-TM-7Ne"/>
@@ -95,7 +95,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="299"/>
                                 <color key="backgroundColor" red="0.13725490196078433" green="0.50196078431372548" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RFY-M1-zoS">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="119" height="119"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -105,7 +105,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="119" height="119"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>

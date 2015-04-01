@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MBNRevealViewController.h"
+#import "MBNHomeContainerViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,9 +22,9 @@
     [UIApplication sharedApplication].delegate.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIWindow *window = [UIApplication sharedApplication].delegate.window;
     
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.view.backgroundColor = [UIColor colorWithWhite:1.0 alpha:1.0];
-    UINavigationController *rootNavigationController = [[UINavigationController alloc] initWithRootViewController:vc];
+    UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"MainStoryBoard" bundle:nil];
+    UIViewController *homeContainerVC = [mainStoryBoard instantiateInitialViewController];
+    UINavigationController *rootNavigationController = [[UINavigationController alloc] initWithRootViewController:homeContainerVC];
     
     MBNSideMenuViewController *rearVC = [[MBNSideMenuViewController alloc] init];
     rearVC.view.backgroundColor = [UIColor greenColor];
