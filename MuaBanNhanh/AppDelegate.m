@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "AppDelegate.h"
+#import "MBNRevealViewController.h"
 
 @interface AppDelegate ()
 
@@ -28,7 +28,7 @@
     MBNSideMenuViewController *rearVC = [[MBNSideMenuViewController alloc] init];
     rearVC.view.backgroundColor = [UIColor greenColor];
     
-    PKRevealController *rootVC = [PKRevealController revealControllerWithFrontViewController:rootNavigationController leftViewController:rearVC];
+    MBNRevealViewController *rootVC = [MBNRevealViewController revealControllerWithFrontViewController:rootNavigationController leftViewController:rearVC];
     window.rootViewController = rootVC;
     
     [[FLEXManager sharedManager] showExplorer];
