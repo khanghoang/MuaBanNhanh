@@ -17,6 +17,7 @@ UICollectionViewDelegateFlowLayout
 >
 
 @property (weak, nonatomic) IBOutlet UICollectionView *menuCollectionView;
+@property (strong, nonatomic) NSArray *arrayCategories;
 
 @end
 
@@ -28,6 +29,12 @@ UICollectionViewDelegateFlowLayout
     
     [self.menuCollectionView registerNib:[MBNSideMenuCollectionViewCell nib]
                 forCellWithReuseIdentifier:NSStringFromClass([MBNSideMenuCollectionViewCell class])];
+    
+    [[MBNCategoryManager sharedProvider] getCategories:^(NSArray *arrCategories) {
+        self.arrayCategories = arrCategories;
+        [self.menuCollectionView reloadData];
+    } failure:^(NSError *error) {
+    }];
 }
 
 #pragma mark - UICollectionView delegate 
@@ -37,7 +44,7 @@ UICollectionViewDelegateFlowLayout
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 5;
+    return self.arrayCategories.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {

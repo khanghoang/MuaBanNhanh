@@ -14,7 +14,15 @@
 #import <PKRevealController/PKRevealController.h>
 #import <FLEX/FLEXManager.h>
 #import <Mantle/Mantle.h>
+#import <AFNetworking/AFNetworking.h>
 #import <KHTableViewController/KHTableController.h>
 
 #import <KHTableViewController/KHNormalDataProvider.h>
 #import <KHTableViewController/KHCollectionController.h>
+
+// models
+#import "MBNCategory.h"
+
+// managers
+#import "MBNCategoryManager.h"
+

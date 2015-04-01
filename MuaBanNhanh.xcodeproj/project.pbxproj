@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		053978FA1ACC1FCD007C4676 /* MBNRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053978F91ACC1FCD007C4676 /* MBNRevealViewController.m */; };
 		053978FE1ACC274E007C4676 /* MBNCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 053978FD1ACC274E007C4676 /* MBNCategory.m */; };
+		053979021ACC3B7C007C4676 /* MBNCategoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 053979011ACC3B7C007C4676 /* MBNCategoryManager.m */; };
 		05A3E3431ACAF11200E55215 /* MBNSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */; };
 		05A3E3441ACAF11200E55215 /* MBNSideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05A3E3421ACAF11200E55215 /* MBNSideMenuViewController.xib */; };
 		05A3E3481ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E3461ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m */; };
@@ -39,6 +40,8 @@
 		053978F91ACC1FCD007C4676 /* MBNRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNRevealViewController.m; sourceTree = "<group>"; };
 		053978FC1ACC274E007C4676 /* MBNCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNCategory.h; sourceTree = "<group>"; };
 		053978FD1ACC274E007C4676 /* MBNCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNCategory.m; sourceTree = "<group>"; };
+		053979001ACC3B7C007C4676 /* MBNCategoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNCategoryManager.h; sourceTree = "<group>"; };
+		053979011ACC3B7C007C4676 /* MBNCategoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNCategoryManager.m; sourceTree = "<group>"; };
 		05A3E32F1ACAE5D700E55215 /* MuaBanNhanh-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MuaBanNhanh-prefix.pch"; sourceTree = "<group>"; };
 		05A3E3401ACAF11200E55215 /* MBNSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSideMenuViewController.h; sourceTree = "<group>"; };
 		05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSideMenuViewController.m; sourceTree = "<group>"; };
@@ -103,6 +106,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		053978FF1ACC3B60007C4676 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				053979001ACC3B7C007C4676 /* MBNCategoryManager.h */,
+				053979011ACC3B7C007C4676 /* MBNCategoryManager.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		05A3E3391ACAF0AC00E55215 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +171,7 @@
 		05E03D961AC9318D004426CE /* MuaBanNhanh */ = {
 			isa = PBXGroup;
 			children = (
+				053978FF1ACC3B60007C4676 /* Managers */,
 				053978FB1ACC26AA007C4676 /* Models */,
 				05A3E34A1ACAF9CC00E55215 /* Categories */,
 				05A3E3391ACAF0AC00E55215 /* ViewControllers */,
@@ -358,6 +371,7 @@
 				05A3E3501ACAF9E100E55215 /* Colours.m in Sources */,
 				05A3E34D1ACAF9D300E55215 /* UIView+Addition.m in Sources */,
 				053978FE1ACC274E007C4676 /* MBNCategory.m in Sources */,
+				053979021ACC3B7C007C4676 /* MBNCategoryManager.m in Sources */,
 				05E03D9D1AC9318D004426CE /* AppDelegate.m in Sources */,
 				05E03D9A1AC9318D004426CE /* main.m in Sources */,
 				05A3E3431ACAF11200E55215 /* MBNSideMenuViewController.m in Sources */,
