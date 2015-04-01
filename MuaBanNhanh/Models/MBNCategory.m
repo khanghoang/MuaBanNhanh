@@ -23,12 +23,21 @@
              @"imageHoverUrl": @"image_hover_url",
              @"ordering": @"ordering",
              @"articleCount": @"article_count",
+             @"subCategories": @"sub_categories",
              
              };
 }
 
 + (NSValueTransformer *)subCategoriesJSONTransformer {
     return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[MBNCategory class]];
+}
+
++ (NSValueTransformer *)imageUrlJSONTransformer {
+    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
+}
+
++ (NSValueTransformer *)imageHoverUrlJSONTransformer {
+    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }
 
 @end
