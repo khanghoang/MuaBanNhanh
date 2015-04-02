@@ -7,10 +7,17 @@
 //
 
 #import "MBNHomeTopViewController.h"
+#import "MBNHomeTopCollectionViewCell.h"
 
 @interface MBNHomeTopViewController ()
+<
+UICollectionViewDelegate,
+UICollectionViewDataSource,
+UICollectionViewDelegateFlowLayout
+>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionViewCategories;
+@property (strong, nonatomic) NSArray *arrayCategories;
 
 @end
 
@@ -19,21 +26,42 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.collectionViewCategories registerNib:[MBNHomeTopCollectionViewCell nib]
+                forCellWithReuseIdentifier:NSStringFromClass([MBNHomeTopCollectionViewCell class])];
+    
+    [[MBNCategoryManager sharedProvider] getCategories:^(NSArray *arrCategories) {
+        self.arrayCategories = arrCategories;
+        [self.collectionViewCategories reloadData];
+    } failure:^(NSError *error) {
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UICollectionView delegate 
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.arrayCategories.count;
 }
-*/
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    MBNHomeTopCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([MBNHomeTopCollectionViewCell class]) forIndexPath:indexPath];
+//    [cell configWithData:self.arrayCategories[indexPath.row]];
+    return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    CGFloat width = [UIScreen mainScreen].bounds.size.width / 2;
+    
+    CGSize size = CGSizeMake(width, width);
+    
+    return size;
+    
+}
 
 @end

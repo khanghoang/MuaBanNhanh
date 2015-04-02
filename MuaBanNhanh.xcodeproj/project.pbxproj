@@ -14,6 +14,7 @@
 		0539790D1ACC4987007C4676 /* MBNHomeTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0539790C1ACC4987007C4676 /* MBNHomeTopViewController.m */; };
 		053979101ACC4998007C4676 /* MBNHomeBottomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0539790F1ACC4998007C4676 /* MBNHomeBottomViewController.m */; };
 		053979141ACC4B76007C4676 /* MBNHomeContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053979131ACC4B76007C4676 /* MBNHomeContainerViewController.m */; };
+		0567F31D1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0567F31C1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m */; };
 		05A3E3431ACAF11200E55215 /* MBNSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */; };
 		05A3E3441ACAF11200E55215 /* MBNSideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05A3E3421ACAF11200E55215 /* MBNSideMenuViewController.xib */; };
 		05A3E3481ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E3461ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m */; };
@@ -53,6 +54,8 @@
 		0539790F1ACC4998007C4676 /* MBNHomeBottomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNHomeBottomViewController.m; sourceTree = "<group>"; };
 		053979121ACC4B76007C4676 /* MBNHomeContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNHomeContainerViewController.h; sourceTree = "<group>"; };
 		053979131ACC4B76007C4676 /* MBNHomeContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNHomeContainerViewController.m; sourceTree = "<group>"; };
+		0567F31B1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNHomeTopCollectionViewCell.h; sourceTree = "<group>"; };
+		0567F31C1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNHomeTopCollectionViewCell.m; sourceTree = "<group>"; };
 		05A3E32F1ACAE5D700E55215 /* MuaBanNhanh-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MuaBanNhanh-prefix.pch"; sourceTree = "<group>"; };
 		05A3E3401ACAF11200E55215 /* MBNSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSideMenuViewController.h; sourceTree = "<group>"; };
 		05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSideMenuViewController.m; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 			children = (
 				0539790B1ACC4987007C4676 /* MBNHomeTopViewController.h */,
 				0539790C1ACC4987007C4676 /* MBNHomeTopViewController.m */,
+				0567F31B1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.h */,
+				0567F31C1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m */,
 			);
 			path = Top;
 			sourceTree = "<group>";
@@ -425,6 +430,7 @@
 				053978FE1ACC274E007C4676 /* MBNCategory.m in Sources */,
 				053979021ACC3B7C007C4676 /* MBNCategoryManager.m in Sources */,
 				053979141ACC4B76007C4676 /* MBNHomeContainerViewController.m in Sources */,
+				0567F31D1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m in Sources */,
 				05E03D9D1AC9318D004426CE /* AppDelegate.m in Sources */,
 				05E03D9A1AC9318D004426CE /* main.m in Sources */,
 				0539790D1ACC4987007C4676 /* MBNHomeTopViewController.m in Sources */,
