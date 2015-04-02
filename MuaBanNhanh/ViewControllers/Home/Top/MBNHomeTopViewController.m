@@ -27,13 +27,24 @@ UICollectionViewDelegateFlowLayout
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.collectionViewCategories registerNib:[MBNHomeTopCollectionViewCell nib]
+    [self.collectionViewCategories registerClass:[MBNHomeTopCollectionViewCell class]
+     
                 forCellWithReuseIdentifier:NSStringFromClass([MBNHomeTopCollectionViewCell class])];
     
     [[MBNCategoryManager sharedProvider] getCategories:^(NSArray *arrCategories) {
         self.arrayCategories = arrCategories;
         [self.collectionViewCategories reloadData];
+        
     } failure:^(NSError *error) {
+        [self.view.superview mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(@1600);
+            make.width.equalTo(@320);
+        }];
+        [UIView animateWithDuration:2
+                         animations:^{
+                             [self.view.superview layoutIfNeeded];
+                         }];
+        
     }];
 }
 
@@ -44,7 +55,8 @@ UICollectionViewDelegateFlowLayout
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.arrayCategories.count;
+    return 10;
+//    return self.arrayCategories.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {

@@ -145,10 +145,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="299"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v0E-le-qUt">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v0E-le-qUt">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="299"/>
                                 <color key="backgroundColor" red="0.13725490196078433" green="0.50196078431372548" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RFY-M1-zoS">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="RFY-M1-zoS">
                                     <size key="itemSize" width="200" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -176,9 +176,19 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="tM0-ER-k7X" id="JMk-Dd-Znk"/>
+                                    <outlet property="delegate" destination="tM0-ER-k7X" id="Bj9-sh-SlZ"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="v0E-le-qUt" firstAttribute="top" secondItem="hkc-4H-C08" secondAttribute="bottom" id="Hqr-YI-LUE"/>
+                            <constraint firstItem="uMT-TM-7Ne" firstAttribute="top" secondItem="v0E-le-qUt" secondAttribute="bottom" id="bGG-ds-SAf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="v0E-le-qUt" secondAttribute="trailing" constant="-16" id="eXw-Bn-NdM"/>
+                            <constraint firstItem="v0E-le-qUt" firstAttribute="leading" secondItem="hAy-QA-Fbl" secondAttribute="leadingMargin" constant="-16" id="vIS-Ja-w2N"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <connections>
