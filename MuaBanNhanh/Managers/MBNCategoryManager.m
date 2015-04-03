@@ -28,7 +28,7 @@
 - (void)getCategories:(void (^) (NSArray *arrCategories))success failure:(void (^)(NSError *error))failure {
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"https://muabannhanh.com/api/category/list" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:@"https://api.muabannhanh.com/category/list" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSError *error;
         
