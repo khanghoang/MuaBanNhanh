@@ -36,6 +36,10 @@
     
     [window makeKeyWindow];
     
+    // custom navigation bar
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorFromHexString:@"#1976D2"]];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    
     // Override point for customization after application launch.
     return YES;
 }

@@ -8,6 +8,8 @@
 
 #import "MBNHomeContainerViewController.h"
 
+static const CGFloat NAVIGATION_BAR_TITLE_IMAGE_WIDTH = 140;
+
 @interface MBNHomeContainerViewController ()
 
 @end
@@ -17,21 +19,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UIImageView *titleView = [[UIImageView alloc] initWithFrame:CGRectMake(([UIScreen mainScreen].bounds.size.width - NAVIGATION_BAR_TITLE_IMAGE_WIDTH)/2, 8, NAVIGATION_BAR_TITLE_IMAGE_WIDTH, 25)];
+    [titleView setImage:[UIImage imageNamed:@"logo"]];
+    UIView *wrapperView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    [wrapperView addSubview:titleView];
+    
+    self.navigationItem.titleView = wrapperView;
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
