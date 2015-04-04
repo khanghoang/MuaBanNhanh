@@ -17,4 +17,15 @@
 
 @implementation MBNHomeTopCollectionViewCell
 
+- (void)configWithData:(id)data {
+    if(![data isKindOfClass:[MBNCategory class]]) {
+        return;
+    }
+    
+    MBNCategory *category = data;
+    
+    [self.imageViewCategory setImageWithURL:category.imageUrl];
+    self.lblCategoryName.text = category.name;
+}
+
 @end

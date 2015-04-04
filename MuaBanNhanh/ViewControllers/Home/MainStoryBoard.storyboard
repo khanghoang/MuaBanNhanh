@@ -23,7 +23,7 @@
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JW5-ia-lac" userLabel="Top view">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="299"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <color key="backgroundColor" red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="500" constant="299" id="FR9-RM-Lo5"/>
                                             <constraint firstAttribute="height" constant="299" id="naH-GO-qol"/>
@@ -152,7 +152,7 @@
                                     <size key="itemSize" width="200" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MBNHomeTopCollectionViewCell" id="i9q-Ne-cPT" customClass="MBNHomeTopCollectionViewCell">
@@ -162,11 +162,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l3I-Y4-d0P">
-                                                    <rect key="frame" x="35" y="25" width="130" height="130"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l3I-Y4-d0P">
+                                                    <rect key="frame" x="50" y="24" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="6gp-S7-ElK"/>
+                                                        <constraint firstAttribute="width" constant="100" id="xgm-uX-Tc3"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIP-ST-Jnk">
-                                                    <rect key="frame" x="35" y="158" width="130" height="34"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIP-ST-Jnk">
+                                                    <rect key="frame" x="35" y="130" width="130" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="130" id="OOK-cd-Oxb"/>
+                                                        <constraint firstAttribute="height" constant="34" id="dDT-cU-Ssx"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -174,6 +182,16 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="l3I-Y4-d0P" firstAttribute="leading" secondItem="XIP-ST-Jnk" secondAttribute="leading" constant="15" id="E8E-1V-eKl"/>
+                                            <constraint firstItem="l3I-Y4-d0P" firstAttribute="top" secondItem="i9q-Ne-cPT" secondAttribute="topMargin" constant="16" id="LZd-nQ-rkz"/>
+                                            <constraint firstAttribute="centerX" secondItem="l3I-Y4-d0P" secondAttribute="centerX" id="QPe-Jl-Mrd"/>
+                                            <constraint firstItem="XIP-ST-Jnk" firstAttribute="top" secondItem="l3I-Y4-d0P" secondAttribute="bottom" constant="6" id="TRG-mp-8ok"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageViewCategory" destination="l3I-Y4-d0P" id="20Y-N4-cnk"/>
+                                            <outlet property="lblCategoryName" destination="XIP-ST-Jnk" id="ybK-Kr-MF6"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>

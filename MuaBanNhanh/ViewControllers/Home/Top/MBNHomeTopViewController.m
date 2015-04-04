@@ -27,25 +27,28 @@ UICollectionViewDelegateFlowLayout
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self.collectionViewCategories registerClass:[MBNHomeTopCollectionViewCell class]
-     
-                forCellWithReuseIdentifier:NSStringFromClass([MBNHomeTopCollectionViewCell class])];
-    
     [[MBNCategoryManager sharedProvider] getCategories:^(NSArray *arrCategories) {
-        self.arrayCategories = arrCategories;
-        [self.collectionViewCategories reloadData];
+        
+        [self updateCollectionView:arrCategories];
         
     } failure:^(NSError *error) {
-        [self.view.superview mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.height.equalTo(@1600);
-            make.width.equalTo(@320);
-        }];
-        [UIView animateWithDuration:2
-                         animations:^{
-                             [self.view.superview layoutIfNeeded];
-                         }];
         
     }];
+}
+
+#pragma mark - Handle logic loading
+
+- (void)updateCollectionView:(NSArray *)arrayCategories {
+    self.arrayCategories = arrayCategories;
+    [self.collectionViewCategories reloadData];
+    [self.view.superview mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@(160 * (int)((self.arrayCategories.count+1)/2) + 20));
+        make.width.equalTo(@320);
+    }];
+    [UIView animateWithDuration:2
+                     animations:^{
+                         [self.view.superview layoutIfNeeded];
+                     }];
 }
 
 #pragma mark - UICollectionView delegate 
@@ -55,14 +58,13 @@ UICollectionViewDelegateFlowLayout
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
-//    return self.arrayCategories.count;
+    return self.arrayCategories.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     MBNHomeTopCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([MBNHomeTopCollectionViewCell class]) forIndexPath:indexPath];
-//    [cell configWithData:self.arrayCategories[indexPath.row]];
+    [cell configWithData:self.arrayCategories[indexPath.row]];
     return cell;
 }
 
