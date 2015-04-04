@@ -17,5 +17,10 @@ UIApplicationDelegate
 @property (strong, readonly) PKRevealController *revealController;
 @property (strong, readonly) UINavigationController *rootNavigationController;
 
+@property (strong, readonly) UIWindow *mainWindow;
+@property (strong, readonly) UIWindow *popupWindow;
+
+- (void)displayPopupWindow;
+
 @end
 

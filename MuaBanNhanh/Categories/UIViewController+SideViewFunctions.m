@@ -17,6 +17,8 @@
     
     PKRevealController *revealController = appDelegate.revealController;
     [revealController showViewController:revealController.leftViewController];
+    
+    [appDelegate displayPopupWindow];
 }
 
 @end
