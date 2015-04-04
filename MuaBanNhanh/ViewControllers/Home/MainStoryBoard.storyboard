@@ -187,7 +187,6 @@
                             <constraint firstItem="v0E-le-qUt" firstAttribute="top" secondItem="hkc-4H-C08" secondAttribute="bottom" id="Hqr-YI-LUE"/>
                             <constraint firstItem="uMT-TM-7Ne" firstAttribute="top" secondItem="v0E-le-qUt" secondAttribute="bottom" id="bGG-ds-SAf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="v0E-le-qUt" secondAttribute="trailingMargin" constant="-16" id="eXw-Bn-NdM"/>
-                            <constraint firstItem="v0E-le-qUt" firstAttribute="leading" secondItem="hAy-QA-Fbl" secondAttribute="leading" id="vIS-Ja-w2N"/>
                             <constraint firstItem="v0E-le-qUt" firstAttribute="leading" secondItem="hAy-QA-Fbl" secondAttribute="leadingMargin" constant="-16" id="vqS-td-z4e"/>
                         </constraints>
                     </view>
