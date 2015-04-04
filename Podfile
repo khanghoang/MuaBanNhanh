@@ -11,7 +11,7 @@ target 'MuaBanNhanh' do
   pod 'KVOController'
   pod 'Mantle', '~> 1.5'
   pod 'SVProgressHUD'
-  pod 'WYPopoverController', '~> 0.2.0'
+  pod 'WYPopoverController'
   pod 'FLEX'
   pod 'Masonry', '~> 0.5'
   pod 'KHTableViewController'
