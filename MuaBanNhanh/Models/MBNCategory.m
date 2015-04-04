@@ -11,6 +11,7 @@
 @implementation MBNCategory
 
 #pragma mark - Mantle 
+
 + (NSDictionary *)JSONKeyPathsByPropertyKey
 {
     return @{
