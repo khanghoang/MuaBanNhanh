@@ -12,7 +12,10 @@
 
 - (void)mbn_addHambugerButton {
     UIBarButtonItem *hamburgerButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"hamburger-icon"] style:UIBarButtonItemStylePlain target:self action:@selector(mbn_toggleSideView)];
-    hamburgerButton.tintColor = [UIColor whiteColor];
+    
+    if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
+        hamburgerButton.tintColor = [UIColor whiteColor];
+    }
     
     NSArray *arrLeftButtons = @[hamburgerButton];
     self.navigationItem.leftBarButtonItems = arrLeftButtons;

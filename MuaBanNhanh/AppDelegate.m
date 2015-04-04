@@ -37,7 +37,7 @@
     window.rootViewController = rootVC;
     self.revealController = rootVC;
     
-//    [[FLEXManager sharedManager] showExplorer];
+    [[FLEXManager sharedManager] showExplorer];
     
     [window makeKeyWindow];
     
