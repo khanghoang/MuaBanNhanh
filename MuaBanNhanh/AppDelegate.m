@@ -12,6 +12,8 @@
 
 @interface AppDelegate ()
 
+@property (strong, strong) PKRevealController *revealController;
+
 @end
 
 @implementation AppDelegate
@@ -31,6 +33,7 @@
     
     MBNRevealViewController *rootVC = [MBNRevealViewController revealControllerWithFrontViewController:rootNavigationController leftViewController:rearVC];
     window.rootViewController = rootVC;
+    self.revealController = rootVC;
     
     [[FLEXManager sharedManager] showExplorer];
     

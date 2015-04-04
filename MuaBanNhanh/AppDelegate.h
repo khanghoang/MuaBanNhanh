@@ -14,6 +14,7 @@ UIApplicationDelegate
 >
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, readonly) PKRevealController *revealController;
 
 
 @end

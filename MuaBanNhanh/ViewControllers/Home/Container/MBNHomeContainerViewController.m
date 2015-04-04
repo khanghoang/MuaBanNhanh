@@ -20,12 +20,20 @@ static const CGFloat NAVIGATION_BAR_TITLE_IMAGE_WIDTH = 140;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIImageView *titleView = [[UIImageView alloc] initWithFrame:CGRectMake(([UIScreen mainScreen].bounds.size.width - NAVIGATION_BAR_TITLE_IMAGE_WIDTH)/2, 8, NAVIGATION_BAR_TITLE_IMAGE_WIDTH, 25)];
+    CGRect frame = CGRectMake(
+                              ([UIScreen mainScreen].bounds.size.width - NAVIGATION_BAR_TITLE_IMAGE_WIDTH)/2 - 60,
+                              5,
+                              NAVIGATION_BAR_TITLE_IMAGE_WIDTH,
+                              25);
+    
+    UIImageView *titleView = [[UIImageView alloc] initWithFrame:frame];
     [titleView setImage:[UIImage imageNamed:@"logo"]];
     UIView *wrapperView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     [wrapperView addSubview:titleView];
     
     self.navigationItem.titleView = wrapperView;
+    
+    [self mbn_addHambugerButton];
 }
 
 @end
