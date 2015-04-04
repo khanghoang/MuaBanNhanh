@@ -9,6 +9,8 @@
 #import "MBNHomeTopViewController.h"
 #import "MBNHomeTopCollectionViewCell.h"
 
+static CGFloat const COLLECTION_PADDING_BOTTOM = 20;
+
 @interface MBNHomeTopViewController ()
 <
 UICollectionViewDelegate,
@@ -42,10 +44,10 @@ UICollectionViewDelegateFlowLayout
     self.arrayCategories = arrayCategories;
     [self.collectionViewCategories reloadData];
     [self.view.superview mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(@(160 * (int)((self.arrayCategories.count+1)/2) + 20));
+        make.height.equalTo(@(160 * (int)((self.arrayCategories.count+1)/2) + COLLECTION_PADDING_BOTTOM));
         make.width.equalTo(@320);
     }];
-    [UIView animateWithDuration:2
+    [UIView animateWithDuration:0
                      animations:^{
                          [self.view.superview layoutIfNeeded];
                      }];
