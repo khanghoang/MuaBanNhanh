@@ -12,7 +12,8 @@
 
 @interface AppDelegate ()
 
-@property (strong, strong) PKRevealController *revealController;
+@property (strong, nonatomic) PKRevealController *revealController;
+@property (strong, nonatomic) UINavigationController *rootNavigationController;
 
 @end
 
@@ -27,6 +28,7 @@
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"MainStoryBoard" bundle:nil];
     UIViewController *homeContainerVC = [mainStoryBoard instantiateInitialViewController];
     UINavigationController *rootNavigationController = [[UINavigationController alloc] initWithRootViewController:homeContainerVC];
+    self.rootNavigationController = rootNavigationController;
     
     MBNSideMenuViewController *rearVC = [[MBNSideMenuViewController alloc] init];
     rearVC.view.backgroundColor = [UIColor greenColor];

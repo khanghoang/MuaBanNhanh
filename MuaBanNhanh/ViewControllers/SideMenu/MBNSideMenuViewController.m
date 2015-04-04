@@ -8,6 +8,7 @@
 
 #import "MBNSideMenuViewController.h"
 #import "MBNSideMenuCollectionViewCell.h"
+#import "AppDelegate.h"
 
 @interface MBNSideMenuViewController ()
 <
@@ -60,5 +61,18 @@ UICollectionViewDelegateFlowLayout
     
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
+    PKRevealController *revealController = appDelegate.revealController;
+    [revealController showViewController:revealController.frontViewController];
+    
+    UIViewController *viewController = [[UIViewController alloc] init];
+    viewController.view.backgroundColor = [UIColor whiteColor];
+    
+    [appDelegate.rootNavigationController pushViewController:viewController animated:YES];
+    
+}
 
 @end
