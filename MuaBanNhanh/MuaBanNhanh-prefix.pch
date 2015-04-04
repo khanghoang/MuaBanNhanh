@@ -40,4 +40,5 @@
 
 // managers
 #import "MBNCategoryManager.h"
+#import "MBNProductManager.h"
 
