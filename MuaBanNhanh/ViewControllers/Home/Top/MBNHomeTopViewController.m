@@ -44,7 +44,7 @@ UICollectionViewDelegateFlowLayout
     self.arrayCategories = arrayCategories;
     [self.collectionViewCategories reloadData];
     [self.view.superview mas_updateConstraints:^(MASConstraintMaker *make) {
-        CGFloat width = [UIScreen mainScreen].bounds.size.width / 2;
+        CGFloat width = [UIScreen mainScreen].bounds.size.width / 2.0;
         make.height.equalTo(@(width * (int)((self.arrayCategories.count+1)/2) + COLLECTION_PADDING_BOTTOM));
     }];
     [UIView animateWithDuration:0
@@ -72,7 +72,7 @@ UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    CGFloat width = [UIScreen mainScreen].bounds.size.width / 2;
+    CGFloat width = [UIScreen mainScreen].bounds.size.width / 2.0;
     
     CGSize size = CGSizeMake(width, width);
     

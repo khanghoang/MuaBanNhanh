@@ -26,13 +26,7 @@
                                         <color key="backgroundColor" red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="500" constant="299" id="FR9-RM-Lo5"/>
-                                            <constraint firstAttribute="height" constant="299" id="naH-GO-qol"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="naH-GO-qol"/>
-                                            </mask>
-                                        </variation>
                                         <connections>
                                             <segue destination="tM0-ER-k7X" kind="embed" id="BfM-LC-V3n"/>
                                         </connections>
@@ -41,13 +35,7 @@
                                         <rect key="frame" x="0.0" y="299" width="600" height="301"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="500" constant="301" id="FIQ-3n-Q50"/>
-                                            <constraint firstAttribute="height" constant="301" id="nfE-tE-y5Z"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="nfE-tE-y5Z"/>
-                                            </mask>
-                                        </variation>
                                         <connections>
                                             <segue destination="ca6-sI-dPn" kind="embed" id="mnQ-2e-NoE"/>
                                         </connections>
@@ -55,30 +43,24 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="The-du-r2R" firstAttribute="top" secondItem="JW5-ia-lac" secondAttribute="bottom" id="0OT-t8-lVh"/>
-                                    <constraint firstItem="The-du-r2R" firstAttribute="top" secondItem="KVe-Bn-M0F" secondAttribute="top" constant="299" id="8OY-9U-PBf"/>
                                     <constraint firstAttribute="width" secondItem="JW5-ia-lac" secondAttribute="width" id="BDp-VB-B2a"/>
-                                    <constraint firstItem="The-du-r2R" firstAttribute="leading" secondItem="KVe-Bn-M0F" secondAttribute="leading" id="Ffs-Eu-ySU"/>
+                                    <constraint firstAttribute="trailing" secondItem="JW5-ia-lac" secondAttribute="trailingMargin" constant="8" id="Kfd-pt-mL8"/>
                                     <constraint firstAttribute="bottom" secondItem="The-du-r2R" secondAttribute="bottom" id="RfR-Sn-AsB"/>
-                                    <constraint firstAttribute="centerX" secondItem="JW5-ia-lac" secondAttribute="centerX" id="TH1-gV-aHV"/>
-                                    <constraint firstAttribute="bottom" secondItem="JW5-ia-lac" secondAttribute="bottom" constant="301" id="ZJn-NM-LIB"/>
                                     <constraint firstAttribute="width" secondItem="The-du-r2R" secondAttribute="width" id="ZlF-pw-zAN"/>
+                                    <constraint firstItem="JW5-ia-lac" firstAttribute="leading" secondItem="KVe-Bn-M0F" secondAttribute="leadingMargin" constant="-8" id="ZrQ-qz-1ev"/>
                                     <constraint firstItem="JW5-ia-lac" firstAttribute="top" secondItem="KVe-Bn-M0F" secondAttribute="top" id="dCs-Uv-O92"/>
-                                    <constraint firstAttribute="centerX" secondItem="The-du-r2R" secondAttribute="centerX" id="xcc-bA-TzS"/>
+                                    <constraint firstItem="The-du-r2R" firstAttribute="leading" secondItem="KVe-Bn-M0F" secondAttribute="leadingMargin" constant="-8" id="kN2-wj-E1l"/>
+                                    <constraint firstAttribute="trailing" secondItem="The-du-r2R" secondAttribute="trailingMargin" constant="8" id="v0W-Qc-bYT"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="ZJn-NM-LIB"/>
-                                        <exclude reference="8OY-9U-PBf"/>
-                                        <exclude reference="Ffs-Eu-ySU"/>
-                                    </mask>
-                                </variation>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="KVe-Bn-M0F" firstAttribute="leading" secondItem="Utf-5X-F6B" secondAttribute="leading" id="0h2-Da-OHg"/>
                             <constraint firstItem="KVe-Bn-M0F" firstAttribute="top" secondItem="Utf-5X-F6B" secondAttribute="top" id="1Be-wA-0kA"/>
-                            <constraint firstItem="KVe-Bn-M0F" firstAttribute="leading" secondItem="Utf-5X-F6B" secondAttribute="leadingMargin" constant="-16" id="WdR-JB-Vp8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KVe-Bn-M0F" secondAttribute="trailing" constant="-16" id="r3F-ph-sW3"/>
+                            <constraint firstAttribute="trailing" secondItem="KVe-Bn-M0F" secondAttribute="trailing" id="8iP-n6-fbK"/>
+                            <constraint firstAttribute="centerX" secondItem="KVe-Bn-M0F" secondAttribute="centerX" id="RUJ-Id-0gs"/>
+                            <constraint firstAttribute="width" secondItem="KVe-Bn-M0F" secondAttribute="width" id="pfz-Sk-jJi"/>
                             <constraint firstItem="gF5-ig-odh" firstAttribute="top" secondItem="KVe-Bn-M0F" secondAttribute="bottom" id="z1W-I8-ztH"/>
                         </constraints>
                     </view>
@@ -146,7 +128,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v0E-le-qUt">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="299"/>
+                                <rect key="frame" x="0.0" y="0.0" width="608" height="299"/>
                                 <color key="backgroundColor" red="0.13725490196078433" green="0.50196078431372548" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="RFY-M1-zoS">
                                     <size key="itemSize" width="200" height="200"/>
@@ -204,8 +186,9 @@
                         <constraints>
                             <constraint firstItem="v0E-le-qUt" firstAttribute="top" secondItem="hkc-4H-C08" secondAttribute="bottom" id="Hqr-YI-LUE"/>
                             <constraint firstItem="uMT-TM-7Ne" firstAttribute="top" secondItem="v0E-le-qUt" secondAttribute="bottom" id="bGG-ds-SAf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="v0E-le-qUt" secondAttribute="trailing" constant="-16" id="eXw-Bn-NdM"/>
-                            <constraint firstItem="v0E-le-qUt" firstAttribute="leading" secondItem="hAy-QA-Fbl" secondAttribute="leadingMargin" constant="-16" id="vIS-Ja-w2N"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="v0E-le-qUt" secondAttribute="trailingMargin" constant="-16" id="eXw-Bn-NdM"/>
+                            <constraint firstItem="v0E-le-qUt" firstAttribute="leading" secondItem="hAy-QA-Fbl" secondAttribute="leading" id="vIS-Ja-w2N"/>
+                            <constraint firstItem="v0E-le-qUt" firstAttribute="leading" secondItem="hAy-QA-Fbl" secondAttribute="leadingMargin" constant="-16" id="vqS-td-z4e"/>
                         </constraints>
                     </view>
                     <toolbarItems/>

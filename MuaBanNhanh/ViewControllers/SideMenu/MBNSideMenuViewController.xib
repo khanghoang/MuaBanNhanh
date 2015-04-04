@@ -38,7 +38,7 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="7Wd-28-kwM">
-                    <rect key="frame" x="0.0" y="128" width="318" height="472"/>
+                    <rect key="frame" x="0.0" y="129" width="318" height="471"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="yPJ-8O-DCS">
                         <size key="itemSize" width="320" height="50"/>
@@ -54,7 +54,7 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="7Wd-28-kwM" firstAttribute="top" secondItem="m2a-M2-CrX" secondAttribute="bottom" constant="-1" id="4Lo-rU-VZ6"/>
+                <constraint firstItem="7Wd-28-kwM" firstAttribute="top" secondItem="m2a-M2-CrX" secondAttribute="bottom" id="4Lo-rU-VZ6"/>
                 <constraint firstAttribute="trailing" secondItem="m2a-M2-CrX" secondAttribute="trailing" id="4Vw-N1-zue"/>
                 <constraint firstItem="7Wd-28-kwM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5CS-sc-2BY"/>
                 <constraint firstItem="m2a-M2-CrX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8Mr-BY-CLT"/>
