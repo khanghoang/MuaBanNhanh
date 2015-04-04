@@ -85,14 +85,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="301"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ddY-Pf-e0U">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="301"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ddY-Pf-e0U">
+                                <rect key="frame" x="0.0" y="0.0" width="592" height="301"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="feV-oN-zEv">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="10" id="feV-oN-zEv">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="g9g-rA-eq5">
@@ -105,11 +105,24 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="ca6-sI-dPn" id="emq-R6-HOU"/>
+                                    <outlet property="delegate" destination="ca6-sI-dPn" id="hdr-li-zPG"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pwK-ue-XfX" firstAttribute="top" secondItem="ddY-Pf-e0U" secondAttribute="bottom" id="Iob-sr-eWP"/>
+                            <constraint firstItem="ddY-Pf-e0U" firstAttribute="top" secondItem="wWH-pt-rzj" secondAttribute="bottom" id="oej-Gq-zoQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ddY-Pf-e0U" secondAttribute="trailing" constant="-8" id="rHe-Bo-Yru"/>
+                            <constraint firstItem="ddY-Pf-e0U" firstAttribute="leading" secondItem="JPw-1U-ebH" secondAttribute="leading" id="wBE-sr-aX1"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="collectionViewLatestProduct" destination="ddY-Pf-e0U" id="wKz-wb-vtW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CPH-3K-V8H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

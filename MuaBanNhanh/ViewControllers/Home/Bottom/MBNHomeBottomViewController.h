@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Khang Hoang Trieu. All rights reserved.
 //
 
+extern CGFloat const PRODUCT_COLLECTION_CELL_HEIGHT;
+
 #import <UIKit/UIKit.h>
 
 @interface MBNHomeBottomViewController : UIViewController

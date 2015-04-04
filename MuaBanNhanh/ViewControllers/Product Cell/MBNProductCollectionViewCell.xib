@@ -13,38 +13,38 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="300" height="157"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tLz-6G-jdy">
-                        <rect key="frame" x="-12" y="-17" width="324" height="183"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLz-6G-jdy">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="157"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ngày cập nhật: 22/02/2015 - 9h30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ta1-qu-Gs2">
-                                <rect key="frame" x="20" y="20" width="284" height="21"/>
+                                <rect key="frame" x="8" y="8" width="284" height="21"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="11"/>
                                 <color key="textColor" red="0.15425741792929293" green="0.15425741792929293" blue="0.15425741792929293" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="USz-aG-eUw">
-                                <rect key="frame" x="20" y="44" width="90" height="90"/>
+                                <rect key="frame" x="8" y="32" width="90" height="90"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lorem ipsum dolor sit amet, consectetur" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0K-17-4G2">
-                                <rect key="frame" x="117" y="44" width="187" height="32"/>
+                                <rect key="frame" x="105" y="32" width="187" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="14.000.000 vnd" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tia-Ct-JBX">
-                                <rect key="frame" x="117" y="76" width="187" height="32"/>
+                                <rect key="frame" x="105" y="64" width="187" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cần bán/ Dịch Vu - Mới - Hồ Chí Minh" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDk-wL-rm3" customClass="TKAlignTopLabel">
-                                <rect key="frame" x="117" y="104" width="187" height="32"/>
+                                <rect key="frame" x="105" y="92" width="187" height="32"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
                                 <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EaX-wY-h51">
-                                <rect key="frame" x="117" y="133" width="187" height="30"/>
+                                <rect key="frame" x="105" y="121" width="187" height="30"/>
                                 <state key="normal" title="Call">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -55,6 +55,12 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <constraints>
+                <constraint firstItem="tLz-6G-jdy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1aW-hB-oki"/>
+                <constraint firstItem="tLz-6G-jdy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="JCe-fJ-MFL"/>
+                <constraint firstAttribute="bottom" secondItem="tLz-6G-jdy" secondAttribute="bottom" id="WlF-bb-TZA"/>
+                <constraint firstAttribute="trailing" secondItem="tLz-6G-jdy" secondAttribute="trailing" id="dj0-1l-UIa"/>
+            </constraints>
             <size key="customSize" width="300" height="157"/>
             <point key="canvasLocation" x="680" y="404.5"/>
         </collectionViewCell>
