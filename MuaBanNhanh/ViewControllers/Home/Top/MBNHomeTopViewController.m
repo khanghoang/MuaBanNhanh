@@ -45,7 +45,6 @@ UICollectionViewDelegateFlowLayout
     [self.collectionViewCategories reloadData];
     [self.view.superview mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@(160 * (int)((self.arrayCategories.count+1)/2) + COLLECTION_PADDING_BOTTOM));
-        make.width.equalTo(@320);
     }];
     [UIView animateWithDuration:0
                      animations:^{

@@ -6,15 +6,26 @@
 //  Copyright (c) 2015 Khang Hoang Trieu. All rights reserved.
 //
 
+/*
+ *  System Versioning Preprocessor Macros
+ */
+
+#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
+
 #import "UIView+Addition.h"
 #import "UIViewController+AddHambugerButton.h"
 #import "UIViewController+SideViewFunctions.h"
 #import "Colours.h"
 
+
 #import "MBNSideMenuViewController.h"
 
 #import <PKRevealController/PKRevealController.h>
-#import <FLEX/FLEXManager.h>
+//#import <FLEX/FLEXManager.h>
 #import <Mantle/Mantle.h>
 #import <AFNetworking/AFNetworking.h>
 #import <AFNetworking/UIImageView+AFNetworking.h>

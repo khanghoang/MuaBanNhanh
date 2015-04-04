@@ -37,13 +37,19 @@
     window.rootViewController = rootVC;
     self.revealController = rootVC;
     
-    [[FLEXManager sharedManager] showExplorer];
+//    [[FLEXManager sharedManager] showExplorer];
     
     [window makeKeyWindow];
     
-    // custom navigation bar
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorFromHexString:@"#1976D2"]];
-    [[UINavigationBar appearance] setTranslucent:NO];
+    if(SYSTEM_VERSION_LESS_THAN(@"7.0")) {
+        [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+        [[UINavigationBar appearance] setBackgroundColor:[UIColor colorFromHexString:@"#1976D2"]];
+    } else {
+        // custom navigation bar
+        [[UINavigationBar appearance] setBarTintColor:[UIColor colorFromHexString:@"#1976D2"]];
+        [[UINavigationBar appearance] setTranslucent:NO];
+        
+    }
     
     // Override point for customization after application launch.
     return YES;
