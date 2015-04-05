@@ -39,6 +39,7 @@
 // models
 #import "MBNCategory.h"
 #import "MBNProduct.h"
+#import "MBNUser.h"
 
 // managers
 #import "MBNCategoryManager.h"

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MBNUser.h"
 
 @interface MBNProduct : MTLModel
 <
@@ -29,5 +30,6 @@ MTLJSONSerializing
 @property (strong, nonatomic) NSDate *createdAt;
 @property (strong, nonatomic) NSDate *updatedAt;
 @property (strong, nonatomic) NSDate *expiredAt;
+@property (strong, nonatomic) MBNUser *user;
 
 @end

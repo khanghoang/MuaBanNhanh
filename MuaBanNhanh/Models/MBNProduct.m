@@ -30,8 +30,12 @@
              @"createdAt": @"created_at",
              @"updatedAt": @"updated_at",
              @"expiredAt": @"expired_at",
-             
+             @"user": @"user"
              };
+}
+
++ (NSValueTransformer *)userJSONTransformer {
+    return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[MBNUser class]];
 }
 
 + (NSValueTransformer *)defaultImageJSONTransformer {
