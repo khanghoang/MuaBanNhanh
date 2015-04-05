@@ -71,6 +71,9 @@
     
     // name
     self.lblProductName.text = product.name;
+    
+    // call button
+    [self.btnCall setTitle:product.user.phone forState:UIControlStateNormal];
 }
 
 - (IBAction)onBtnCall:(id)sender {
