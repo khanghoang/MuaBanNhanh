@@ -62,6 +62,13 @@
                 <constraint firstAttribute="trailing" secondItem="tLz-6G-jdy" secondAttribute="trailing" id="dj0-1l-UIa"/>
             </constraints>
             <size key="customSize" width="300" height="157"/>
+            <connections>
+                <outlet property="imageViewProductImage" destination="USz-aG-eUw" id="5JK-ik-Mag"/>
+                <outlet property="lblCategories" destination="UDk-wL-rm3" id="Orn-1K-9mP"/>
+                <outlet property="lblPrice" destination="Tia-Ct-JBX" id="zCm-40-Bek"/>
+                <outlet property="lblProductName" destination="n0K-17-4G2" id="uAU-lz-iZx"/>
+                <outlet property="lblUpdateAt" destination="ta1-qu-Gs2" id="9gA-NL-vPW"/>
+            </connections>
             <point key="canvasLocation" x="680" y="404.5"/>
         </collectionViewCell>
     </objects>

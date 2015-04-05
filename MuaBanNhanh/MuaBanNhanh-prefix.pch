@@ -20,6 +20,7 @@
 #import "UIViewController+AddHambugerButton.h"
 #import "UIViewController+SideViewFunctions.h"
 #import "Colours.h"
+#import "TKAlignTopLabel.h"
 
 
 #import "MBNSideMenuViewController.h"
@@ -37,6 +38,7 @@
 
 // models
 #import "MBNCategory.h"
+#import "MBNProduct.h"
 
 // managers
 #import "MBNCategoryManager.h"

@@ -21,14 +21,14 @@
     return instance;
 }
 
-- (void)getLatestProducts:(void (^) (NSArray *arrProducts))success failure:(void (^)(NSError *error))failure {
++ (void)getLatestProducts:(void (^) (NSArray *arrProducts))success failure:(void (^)(NSError *error))failure {
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://muabannhanh.com/api/article/latest-list" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:@"http://api.muabannhanh.com/article/latest-list" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSError *error;
         
-        NSArray *arrayCategories = [MTLJSONAdapter modelsOfClass:[MBNCategory class] fromJSONArray:responseObject[@"result"] error:&error];
+        NSArray *arrayCategories = [MTLJSONAdapter modelsOfClass:[MBNProduct class] fromJSONArray:responseObject[@"result"] error:&error];
         
         success(arrayCategories);
         

@@ -24,6 +24,7 @@ MTLJSONSerializing
 @property (copy, nonatomic) NSNumber *isPremium;
 @property (copy, nonatomic) NSString *status;
 @property (copy, nonatomic) NSNumber *viewCount;
+@property (copy, nonatomic) NSNumber *isShow;
 @property (copy, nonatomic) NSString *conditions;
 @property (strong, nonatomic) NSDate *createdAt;
 @property (strong, nonatomic) NSDate *updatedAt;

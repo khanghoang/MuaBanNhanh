@@ -10,4 +10,6 @@
 
 @interface MBNProductCollectionViewCell : UICollectionViewCell
 
+- (void)configWithData:(id)data;
+
 @end

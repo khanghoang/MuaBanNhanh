@@ -10,6 +10,6 @@
 
 @interface MBNProductManager : NSObject
 
-- (void)getLatestProducts:(void (^) (NSArray *arrProducts))success failure:(void (^)(NSError *error))failure;
++ (void)getLatestProducts:(void (^) (NSArray *arrProducts))success failure:(void (^)(NSError *error))failure;
 
 @end

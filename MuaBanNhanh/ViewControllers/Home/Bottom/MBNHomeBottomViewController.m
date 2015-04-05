@@ -19,6 +19,7 @@ UICollectionViewDataSource
 >
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionViewLatestProduct;
+@property (strong, nonatomic) NSArray *arrLatestProducts;
 
 @end
 
@@ -29,18 +30,26 @@ UICollectionViewDataSource
     // Do any additional setup after loading the view.
     
     [self.collectionViewLatestProduct registerNib:[MBNProductCollectionViewCell nib] forCellWithReuseIdentifier:NSStringFromClass([MBNProductCollectionViewCell class])];
+    
+    [MBNProductManager getLatestProducts:^(NSArray *arrProducts) {
+        
+        self.arrLatestProducts = arrProducts;
+        [self updateLatestProductsCollection];
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
-- (void)viewDidLayoutSubviews {
-    
+- (void)updateLatestProductsCollection {
+    [self.collectionViewLatestProduct reloadData];
     [self.view.superview mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(@(PRODUCT_COLLECTION_CELL_HEIGHT * 10));
+        make.height.equalTo(@(PRODUCT_COLLECTION_CELL_HEIGHT * self.arrLatestProducts.count));
     }];
     
     [UIView animateWithDuration:0.45 animations:^{
         [self.view.superview layoutIfNeeded];
     }];
-    
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -48,16 +57,18 @@ UICollectionViewDataSource
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    return self.arrLatestProducts.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([MBNProductCollectionViewCell class]) forIndexPath:indexPath];
+    MBNProductCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([MBNProductCollectionViewCell class]) forIndexPath:indexPath];
+    [cell configWithData:self.arrLatestProducts[indexPath.row]];
+    
     return cell;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(collectionView.bounds.size.width, PRODUCT_COLLECTION_CELL_HEIGHT);
+    return CGSizeMake(collectionView.bounds.size.width - 20, PRODUCT_COLLECTION_CELL_HEIGHT);
 }
 
 
