@@ -65,7 +65,7 @@
     // categories
     NSString *concatCategories = @"";
     for(MBNCategory *cat in product.categories) {
-        [concatCategories stringByAppendingString:[NSString stringWithFormat:@" - %@", cat.name]];
+        concatCategories = [concatCategories stringByAppendingString:[NSString stringWithFormat:( concatCategories.length == 0 ? @"%@" : @" - %@"), cat.name]];
     }
     self.lblCategories.text = concatCategories;
     
