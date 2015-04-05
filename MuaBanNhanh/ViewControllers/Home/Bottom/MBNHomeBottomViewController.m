@@ -10,6 +10,7 @@ static CGFloat const PRODUCT_COLLECTION_CELL_HEIGHT = 157;
 
 #import "MBNHomeBottomViewController.h"
 #import "MBNProductCollectionViewCell.h"
+#import "MBNCollectionHeaderView.h"
 
 @interface MBNHomeBottomViewController ()
 <
@@ -31,6 +32,8 @@ UICollectionViewDataSource
     
     [self.collectionViewLatestProduct registerNib:[MBNProductCollectionViewCell nib] forCellWithReuseIdentifier:NSStringFromClass([MBNProductCollectionViewCell class])];
     
+    [self.collectionViewLatestProduct registerNib:[MBNCollectionHeaderView nib] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([MBNCollectionHeaderView class])];
+    
     [MBNProductManager getLatestProducts:^(NSArray *arrProducts) {
         
         self.arrLatestProducts = arrProducts;
@@ -44,7 +47,7 @@ UICollectionViewDataSource
 - (void)updateLatestProductsCollection {
     [self.collectionViewLatestProduct reloadData];
     [self.view.superview mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(@((PRODUCT_COLLECTION_CELL_HEIGHT + 10) * self.arrLatestProducts.count + 10));
+        make.height.equalTo(@((PRODUCT_COLLECTION_CELL_HEIGHT + 10) * self.arrLatestProducts.count + 10 + 40));
     }];
     
     [UIView animateWithDuration:0.45 animations:^{
@@ -71,5 +74,22 @@ UICollectionViewDataSource
     return CGSizeMake(collectionView.bounds.size.width - 20, PRODUCT_COLLECTION_CELL_HEIGHT);
 }
 
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    
+    if (![kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        return nil;
+    }
+    
+    MBNCollectionHeaderView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([MBNCollectionHeaderView class]) forIndexPath:indexPath];
+    
+    [header configWithHeaderText:@"MuaBanNhanh mới cập nhật"];
+    
+    return header;
+    
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    return CGSizeMake(collectionView.bounds.size.width, 40);
+}
 
 @end

@@ -22,6 +22,8 @@
 		0561C9C01AD06A8C00BEDA6D /* MBNProductManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0561C9BF1AD06A8C00BEDA6D /* MBNProductManager.m */; };
 		0561C9C31AD06B5F00BEDA6D /* MBNProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 0561C9C21AD06B5F00BEDA6D /* MBNProduct.m */; };
 		0567F31D1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0567F31C1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m */; };
+		0593B7E71AD12B3800A492F3 /* MBNCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0593B7E51AD12B3800A492F3 /* MBNCollectionHeaderView.m */; };
+		0593B7E81AD12B3800A492F3 /* MBNCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0593B7E61AD12B3800A492F3 /* MBNCollectionHeaderView.xib */; };
 		05A3E3431ACAF11200E55215 /* MBNSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */; };
 		05A3E3441ACAF11200E55215 /* MBNSideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05A3E3421ACAF11200E55215 /* MBNSideMenuViewController.xib */; };
 		05A3E3481ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E3461ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m */; };
@@ -76,6 +78,9 @@
 		0561C9C21AD06B5F00BEDA6D /* MBNProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNProduct.m; sourceTree = "<group>"; };
 		0567F31B1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNHomeTopCollectionViewCell.h; sourceTree = "<group>"; };
 		0567F31C1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNHomeTopCollectionViewCell.m; sourceTree = "<group>"; };
+		0593B7E41AD12B3800A492F3 /* MBNCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNCollectionHeaderView.h; sourceTree = "<group>"; };
+		0593B7E51AD12B3800A492F3 /* MBNCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNCollectionHeaderView.m; sourceTree = "<group>"; };
+		0593B7E61AD12B3800A492F3 /* MBNCollectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBNCollectionHeaderView.xib; sourceTree = "<group>"; };
 		05A3E32F1ACAE5D700E55215 /* MuaBanNhanh-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MuaBanNhanh-prefix.pch"; sourceTree = "<group>"; };
 		05A3E3401ACAF11200E55215 /* MBNSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSideMenuViewController.h; sourceTree = "<group>"; };
 		05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSideMenuViewController.m; sourceTree = "<group>"; };
@@ -212,9 +217,20 @@
 			path = "Custom Classes";
 			sourceTree = "<group>";
 		};
+		0593B7E31AD12B0300A492F3 /* Collection Header */ = {
+			isa = PBXGroup;
+			children = (
+				0593B7E41AD12B3800A492F3 /* MBNCollectionHeaderView.h */,
+				0593B7E51AD12B3800A492F3 /* MBNCollectionHeaderView.m */,
+				0593B7E61AD12B3800A492F3 /* MBNCollectionHeaderView.xib */,
+			);
+			path = "Collection Header";
+			sourceTree = "<group>";
+		};
 		05A3E3391ACAF0AC00E55215 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0593B7E31AD12B0300A492F3 /* Collection Header */,
 				0561C9B41AD05CA000BEDA6D /* Product Cell */,
 				053979051ACC48E3007C4676 /* Home */,
 				053978F71ACC1FAE007C4676 /* Subclass PKRevealMenu */,
@@ -417,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0561C9B91AD05CD700BEDA6D /* MBNProductCollectionViewCell.xib in Resources */,
+				0593B7E81AD12B3800A492F3 /* MBNCollectionHeaderView.xib in Resources */,
 				053979071ACC48F6007C4676 /* MainStoryBoard.storyboard in Resources */,
 				05A3E3441ACAF11200E55215 /* MBNSideMenuViewController.xib in Resources */,
 				05A3E3491ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.xib in Resources */,
@@ -482,6 +499,7 @@
 				053979021ACC3B7C007C4676 /* MBNCategoryManager.m in Sources */,
 				053979141ACC4B76007C4676 /* MBNHomeContainerViewController.m in Sources */,
 				0567F31D1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m in Sources */,
+				0593B7E71AD12B3800A492F3 /* MBNCollectionHeaderView.m in Sources */,
 				05E03D9D1AC9318D004426CE /* AppDelegate.m in Sources */,
 				0561C9B01ACFBD9B00BEDA6D /* UIViewController+AddHambugerButton.m in Sources */,
 				05E03D9A1AC9318D004426CE /* main.m in Sources */,
