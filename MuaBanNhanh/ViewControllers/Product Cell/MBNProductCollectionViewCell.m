@@ -73,4 +73,10 @@
     self.lblProductName.text = product.name;
 }
 
+- (IBAction)onBtnCall:(id)sender {
+    UIButton *buttonCall = (id)sender;
+    [[MBNActionsManagers sharedInstance] callNumber:buttonCall.titleLabel.text];
+}
+
+
 @end

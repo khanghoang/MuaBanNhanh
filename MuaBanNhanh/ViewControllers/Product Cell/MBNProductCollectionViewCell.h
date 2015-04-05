@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MBNProductCollectionViewCellDelegate <NSObject>
+
+
+@end
+
 @interface MBNProductCollectionViewCell : UICollectionViewCell
 
 - (void)configWithData:(id)data;
