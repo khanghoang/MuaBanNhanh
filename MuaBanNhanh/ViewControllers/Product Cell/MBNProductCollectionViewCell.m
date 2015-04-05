@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblProductName;
 @property (weak, nonatomic) IBOutlet UILabel *lblPrice;
 @property (weak, nonatomic) IBOutlet TKAlignTopLabel *lblCategories;
+@property (weak, nonatomic) IBOutlet UIView *wrapperView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewProductImage;
 
@@ -23,6 +24,15 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.wrapperView.layer.cornerRadius = 3.0;
+    [self.wrapperView.layer masksToBounds];
+    
+    self.layer.shadowRadius = 1.0;
+    self.layer.shadowOpacity = 1.0;
+    self.layer.shadowOffset = CGSizeMake(0.0, 1.0);
+    self.layer.shadowColor = [UIColor colorFromHexString:@"#aaaaaa"].CGColor;
+    self.layer.shouldRasterize = YES;
+    [self.layer setRasterizationScale:[[UIScreen mainScreen] scale]];
 }
 
 - (void)configWithData:(id)data {
@@ -50,6 +60,9 @@
         [concatCategories stringByAppendingString:[NSString stringWithFormat:@" - %@", cat.name]];
     }
     self.lblCategories.text = concatCategories;
+    
+    // name
+    self.lblProductName.text = product.name;
 }
 
 @end
