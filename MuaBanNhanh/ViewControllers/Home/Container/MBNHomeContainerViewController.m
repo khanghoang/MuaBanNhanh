@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Khang Hoang Trieu. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "MBNHomeContainerViewController.h"
 
 static const CGFloat NAVIGATION_BAR_TITLE_IMAGE_WIDTH = 140;
@@ -34,6 +35,11 @@ static const CGFloat NAVIGATION_BAR_TITLE_IMAGE_WIDTH = 140;
     self.navigationItem.titleView = wrapperView;
     
     [self mbn_addHambugerButton];
+}
+
+- (IBAction)openPopup:(id)sender {
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [appDelegate displayPopupWindow];
 }
 
 @end

@@ -62,7 +62,6 @@
 
 - (void)displayPopupWindow {
     UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    window.backgroundColor = [UIColor blueColor];
     window.windowLevel = UIWindowLevelAlert;
     self.popupWindow = window;
     window.alpha = 0;
@@ -72,7 +71,7 @@
     button.titleLabel.text = @"Kiss me";
     [button addTarget:self action:@selector(closePopupView) forControlEvents:UIControlEventTouchUpInside];
     window.rootViewController = [[UIViewController alloc] init];
-    window.rootViewController.view.backgroundColor = [UIColor whiteColor];
+    window.rootViewController.view.backgroundColor =[UIColor colorWithWhite:1.0 alpha:0.6];
     
     [window makeKeyWindow];
     

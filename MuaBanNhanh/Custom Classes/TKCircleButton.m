@@ -13,6 +13,10 @@
 - (void)drawRect:(CGRect)rect {
     self.layer.cornerRadius = self.bounds.size.width / 2;
     self.layer.masksToBounds = YES;
+    self.layer.shadowOpacity = 0.6f;
+    self.layer.shadowRadius = 3.0f;
+    self.layer.shadowColor = [UIColor colorFromHexString:@"#000000"].CGColor;
+    self.layer.shadowOffset = CGSizeMake(0, 2.0f);
     [super drawRect:rect];
 }
 
