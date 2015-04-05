@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MBNRevealViewController.h"
 #import "MBNHomeContainerViewController.h"
+#import "IndexHomePopupViewController.h"
 
 @interface AppDelegate ()
 
@@ -62,7 +63,7 @@
 
 - (void)displayPopupWindow {
     UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    window.windowLevel = UIWindowLevelAlert;
+    window.windowLevel = UIWindowLevelNormal;
     self.popupWindow = window;
     window.alpha = 0;
     window.hidden = NO;
@@ -70,7 +71,10 @@
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 40)];
     button.titleLabel.text = @"Kiss me";
     [button addTarget:self action:@selector(closePopupView) forControlEvents:UIControlEventTouchUpInside];
-    window.rootViewController = [[UIViewController alloc] init];
+    
+    UIViewController *vc = [[UIStoryboard storyboardWithName:@"PlusPopups" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([IndexHomePopupViewController class])];
+    
+    window.rootViewController = vc;
     window.rootViewController.view.backgroundColor =[UIColor colorWithWhite:1.0 alpha:0.6];
     
     [window makeKeyWindow];

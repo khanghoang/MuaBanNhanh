@@ -27,6 +27,8 @@
 		0593B7EB1AD1381800A492F3 /* TKCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0593B7EA1AD1381800A492F3 /* TKCircleButton.m */; };
 		0593B7EE1AD180F200A492F3 /* MBNActionsManagers.m in Sources */ = {isa = PBXBuildFile; fileRef = 0593B7ED1AD180F200A492F3 /* MBNActionsManagers.m */; };
 		0593B7F11AD1877900A492F3 /* MBNUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0593B7F01AD1877900A492F3 /* MBNUser.m */; };
+		0593B7F41AD18C8300A492F3 /* PlusPopups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0593B7F31AD18C8300A492F3 /* PlusPopups.storyboard */; };
+		0593B7F81AD18E6500A492F3 /* IndexHomePopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0593B7F71AD18E6500A492F3 /* IndexHomePopupViewController.m */; };
 		05A3E3431ACAF11200E55215 /* MBNSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */; };
 		05A3E3441ACAF11200E55215 /* MBNSideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05A3E3421ACAF11200E55215 /* MBNSideMenuViewController.xib */; };
 		05A3E3481ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E3461ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m */; };
@@ -90,6 +92,9 @@
 		0593B7ED1AD180F200A492F3 /* MBNActionsManagers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNActionsManagers.m; sourceTree = "<group>"; };
 		0593B7EF1AD1877900A492F3 /* MBNUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNUser.h; sourceTree = "<group>"; };
 		0593B7F01AD1877900A492F3 /* MBNUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNUser.m; sourceTree = "<group>"; };
+		0593B7F31AD18C8300A492F3 /* PlusPopups.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlusPopups.storyboard; sourceTree = "<group>"; };
+		0593B7F61AD18E6500A492F3 /* IndexHomePopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexHomePopupViewController.h; sourceTree = "<group>"; };
+		0593B7F71AD18E6500A492F3 /* IndexHomePopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexHomePopupViewController.m; sourceTree = "<group>"; };
 		05A3E32F1ACAE5D700E55215 /* MuaBanNhanh-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MuaBanNhanh-prefix.pch"; sourceTree = "<group>"; };
 		05A3E3401ACAF11200E55215 /* MBNSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSideMenuViewController.h; sourceTree = "<group>"; };
 		05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSideMenuViewController.m; sourceTree = "<group>"; };
@@ -242,9 +247,28 @@
 			path = "Collection Header";
 			sourceTree = "<group>";
 		};
+		0593B7F21AD18C6E00A492F3 /* Plus Popup */ = {
+			isa = PBXGroup;
+			children = (
+				0593B7F51AD18D5E00A492F3 /* Index Home Popup */,
+				0593B7F31AD18C8300A492F3 /* PlusPopups.storyboard */,
+			);
+			path = "Plus Popup";
+			sourceTree = "<group>";
+		};
+		0593B7F51AD18D5E00A492F3 /* Index Home Popup */ = {
+			isa = PBXGroup;
+			children = (
+				0593B7F61AD18E6500A492F3 /* IndexHomePopupViewController.h */,
+				0593B7F71AD18E6500A492F3 /* IndexHomePopupViewController.m */,
+			);
+			path = "Index Home Popup";
+			sourceTree = "<group>";
+		};
 		05A3E3391ACAF0AC00E55215 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0593B7F21AD18C6E00A492F3 /* Plus Popup */,
 				0593B7E31AD12B0300A492F3 /* Collection Header */,
 				0561C9B41AD05CA000BEDA6D /* Product Cell */,
 				053979051ACC48E3007C4676 /* Home */,
@@ -450,6 +474,7 @@
 				0561C9B91AD05CD700BEDA6D /* MBNProductCollectionViewCell.xib in Resources */,
 				0593B7E81AD12B3800A492F3 /* MBNCollectionHeaderView.xib in Resources */,
 				053979071ACC48F6007C4676 /* MainStoryBoard.storyboard in Resources */,
+				0593B7F41AD18C8300A492F3 /* PlusPopups.storyboard in Resources */,
 				05A3E3441ACAF11200E55215 /* MBNSideMenuViewController.xib in Resources */,
 				05A3E3491ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.xib in Resources */,
 				05E03DA31AC9318D004426CE /* Main.storyboard in Resources */,
@@ -526,6 +551,7 @@
 				0561C9C31AD06B5F00BEDA6D /* MBNProduct.m in Sources */,
 				05A3E3431ACAF11200E55215 /* MBNSideMenuViewController.m in Sources */,
 				0561C9BD1AD05F6800BEDA6D /* TKAlignTopLabel.m in Sources */,
+				0593B7F81AD18E6500A492F3 /* IndexHomePopupViewController.m in Sources */,
 				0561C9B81AD05CD700BEDA6D /* MBNProductCollectionViewCell.m in Sources */,
 				053978FA1ACC1FCD007C4676 /* MBNRevealViewController.m in Sources */,
 			);
