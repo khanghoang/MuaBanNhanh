@@ -34,4 +34,60 @@
              };
 }
 
++ (NSValueTransformer *)defaultImageJSONTransformer {
+    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
+}
+
++ (NSValueTransformer *)defaultThumbnailImageJSONTransformer {
+    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
+}
+
++ (NSValueTransformer *)categoriesJSONTransformer {
+    return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[MBNCategory class]];
+}
+
++ (NSValueTransformer *)createdAtJSONTransformer
+{
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *dateString) {
+        NSDateFormatter *formatter = [self sharedDateFormatter];
+        return [formatter dateFromString:dateString];
+    } reverseBlock:^(NSDate *date) {
+        return [date description];
+    }];
+}
+
++ (NSValueTransformer *)updatedAtJSONTransformer
+{
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *dateString) {
+        NSDateFormatter *formatter = [self sharedDateFormatter];
+        return [formatter dateFromString:dateString];
+    } reverseBlock:^(NSDate *date) {
+        return [date description];
+    }];
+}
+
++ (NSValueTransformer *)expiredAtJSONTransformer
+{
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *dateString) {
+        NSDateFormatter *formatter = [self sharedDateFormatter];
+        return [formatter dateFromString:dateString];
+    } reverseBlock:^(NSDate *date) {
+        return [date description];
+    }];
+}
+
+#pragma marks - Helper methods 
+
++ (NSDateFormatter *)sharedDateFormatter
+{
+    static NSDateFormatter *instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[NSDateFormatter alloc] init];
+        instance.dateFormat = @"YYYY-dd-MM hh-mm-ss";
+    });
+
+    return instance;
+}
+
 @end
