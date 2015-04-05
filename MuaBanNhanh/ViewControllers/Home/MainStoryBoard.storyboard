@@ -53,14 +53,30 @@
                                     <constraint firstAttribute="trailing" secondItem="The-du-r2R" secondAttribute="trailingMargin" constant="8" id="v0W-Qc-bYT"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtH-Gg-Xhj" customClass="TKCircleButton">
+                                <rect key="frame" x="544" y="544" width="46" height="46"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="GLM-Gz-Yi3"/>
+                                    <constraint firstAttribute="width" constant="46" id="Gan-19-Zy3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="7"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="KVe-Bn-M0F" firstAttribute="leading" secondItem="Utf-5X-F6B" secondAttribute="leading" id="0h2-Da-OHg"/>
                             <constraint firstItem="KVe-Bn-M0F" firstAttribute="top" secondItem="Utf-5X-F6B" secondAttribute="top" id="1Be-wA-0kA"/>
+                            <constraint firstItem="gF5-ig-odh" firstAttribute="top" secondItem="wtH-Gg-Xhj" secondAttribute="bottom" constant="10" id="89E-CS-IeN"/>
                             <constraint firstAttribute="trailing" secondItem="KVe-Bn-M0F" secondAttribute="trailing" id="8iP-n6-fbK"/>
                             <constraint firstAttribute="centerX" secondItem="KVe-Bn-M0F" secondAttribute="centerX" id="RUJ-Id-0gs"/>
                             <constraint firstAttribute="width" secondItem="KVe-Bn-M0F" secondAttribute="width" id="pfz-Sk-jJi"/>
+                            <constraint firstAttribute="trailing" secondItem="wtH-Gg-Xhj" secondAttribute="trailing" constant="10" id="s9u-iT-J3O"/>
                             <constraint firstItem="gF5-ig-odh" firstAttribute="top" secondItem="KVe-Bn-M0F" secondAttribute="bottom" id="z1W-I8-ztH"/>
                         </constraints>
                     </view>
