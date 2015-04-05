@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIView *wrapperView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewProductImage;
+@property (weak, nonatomic) IBOutlet UIButton *btnCall;
 
 @end
 
@@ -33,6 +34,9 @@
     self.layer.shadowColor = [UIColor colorFromHexString:@"#aaaaaa"].CGColor;
     self.layer.shouldRasterize = YES;
     [self.layer setRasterizationScale:[[UIScreen mainScreen] scale]];
+    
+    self.btnCall.layer.borderWidth = 1;
+    self.btnCall.layer.borderColor = [UIColor colorFromHexString:@"#cccccc"].CGColor;
 }
 
 - (void)configWithData:(id)data {
@@ -44,7 +48,11 @@
     MBNProduct *product = data;
     
     // price
-    self.lblPrice.text = product.price.stringValue;
+    NSNumberFormatter *formatter = [NSNumberFormatter new];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle]; // this line is important!
+    
+    NSString *priceString = [formatter stringFromNumber:product.price];
+    self.lblPrice.text = [NSString stringWithFormat:@"%@ %@", priceString, @"vnđ"];
     
     // update at
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
