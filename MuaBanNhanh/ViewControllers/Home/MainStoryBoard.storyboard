@@ -105,7 +105,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ddY-Pf-e0U">
-                                <rect key="frame" x="0.0" y="0.0" width="592" height="301"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="301"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="feV-oN-zEv">
                                     <size key="itemSize" width="50" height="50"/>
@@ -132,10 +132,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="ddY-Pf-e0U" secondAttribute="centerX" id="2wC-qe-wW5"/>
                             <constraint firstItem="pwK-ue-XfX" firstAttribute="top" secondItem="ddY-Pf-e0U" secondAttribute="bottom" id="Iob-sr-eWP"/>
+                            <constraint firstItem="ddY-Pf-e0U" firstAttribute="width" secondItem="JPw-1U-ebH" secondAttribute="width" id="jyd-k1-Akm"/>
                             <constraint firstItem="ddY-Pf-e0U" firstAttribute="top" secondItem="wWH-pt-rzj" secondAttribute="bottom" id="oej-Gq-zoQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ddY-Pf-e0U" secondAttribute="trailing" constant="-8" id="rHe-Bo-Yru"/>
-                            <constraint firstItem="ddY-Pf-e0U" firstAttribute="leading" secondItem="JPw-1U-ebH" secondAttribute="leading" id="wBE-sr-aX1"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -160,7 +160,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v0E-le-qUt">
-                                <rect key="frame" x="0.0" y="0.0" width="608" height="299"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="299"/>
                                 <color key="backgroundColor" red="0.13725490196078433" green="0.50196078431372548" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="RFY-M1-zoS">
                                     <size key="itemSize" width="200" height="200"/>
@@ -216,10 +216,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="v0E-le-qUt" firstAttribute="width" secondItem="hAy-QA-Fbl" secondAttribute="width" id="9OL-hl-B5e"/>
                             <constraint firstItem="v0E-le-qUt" firstAttribute="top" secondItem="hkc-4H-C08" secondAttribute="bottom" id="Hqr-YI-LUE"/>
                             <constraint firstItem="uMT-TM-7Ne" firstAttribute="top" secondItem="v0E-le-qUt" secondAttribute="bottom" id="bGG-ds-SAf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="v0E-le-qUt" secondAttribute="trailingMargin" constant="-16" id="eXw-Bn-NdM"/>
-                            <constraint firstItem="v0E-le-qUt" firstAttribute="leading" secondItem="hAy-QA-Fbl" secondAttribute="leadingMargin" constant="-16" id="vqS-td-z4e"/>
+                            <constraint firstAttribute="centerX" secondItem="v0E-le-qUt" secondAttribute="centerX" id="pFw-On-X4H"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
