@@ -8,6 +8,7 @@
 
 #import "MBNSideMenuViewController.h"
 #import "MBNSideMenuCollectionViewCell.h"
+#import "MBNSubcategoryViewController.h"
 #import "AppDelegate.h"
 
 @interface MBNSideMenuViewController ()
@@ -68,8 +69,9 @@ UICollectionViewDelegateFlowLayout
     PKRevealController *revealController = appDelegate.revealController;
     [revealController showViewController:revealController.frontViewController];
     
-    UIViewController *viewController = [[UIViewController alloc] init];
+    MBNSubcategoryViewController *viewController = [[UIStoryboard storyboardWithName:@"SubCategoryStoreyboard" bundle:nil] instantiateInitialViewController];
     viewController.view.backgroundColor = [UIColor whiteColor];
+    viewController.arrSubcategories = [self.arrayCategories[indexPath.row] subCategories];
     
     [appDelegate.rootNavigationController pushViewController:viewController animated:YES];
 }

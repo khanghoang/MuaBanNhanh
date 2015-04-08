@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tej-df-DNK">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Subcategory View Controller-->
         <scene sceneID="p43-7y-9jV">
             <objects>
-                <viewController id="tej-df-DNK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MBNSubcategoryViewController" id="tej-df-DNK" customClass="MBNSubcategoryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hmT-Pi-pzw"/>
                         <viewControllerLayoutGuide type="bottom" id="1mQ-TX-KaN"/>
@@ -22,24 +22,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MBNSubcategoryTableViewCell" rowHeight="50" id="KlH-9F-mrq" customClass="MBNSubcategoryTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MBNSubcategoryTableViewCell" id="KlH-9F-mrq" customClass="MBNSubcategoryTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KlH-9F-mrq" id="tNa-CB-fqJ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Danh Muc" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqy-2p-uYH">
-                                                    <rect key="frame" x="54" y="13" width="509" height="25"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Danh Muc" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqy-2p-uYH">
+                                                    <rect key="frame" x="24" y="16" width="540" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Sqy-2p-uYH" secondAttribute="trailing" constant="29" id="37c-tl-q8R"/>
-                                                <constraint firstItem="Sqy-2p-uYH" firstAttribute="leading" secondItem="tNa-CB-fqJ" secondAttribute="leadingMargin" constant="46" id="5SO-ua-zfY"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Sqy-2p-uYH" secondAttribute="bottom" constant="3" id="sJO-Qz-sdH"/>
-                                                <constraint firstItem="Sqy-2p-uYH" firstAttribute="top" secondItem="tNa-CB-fqJ" secondAttribute="topMargin" constant="5" id="yXl-22-WFN"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Sqy-2p-uYH" secondAttribute="trailing" constant="28" id="37c-tl-q8R"/>
+                                                <constraint firstItem="Sqy-2p-uYH" firstAttribute="leading" secondItem="tNa-CB-fqJ" secondAttribute="leadingMargin" constant="16" id="5SO-ua-zfY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Sqy-2p-uYH" secondAttribute="bottom" constant="8" id="sJO-Qz-sdH"/>
+                                                <constraint firstItem="Sqy-2p-uYH" firstAttribute="top" secondItem="tNa-CB-fqJ" secondAttribute="topMargin" constant="8" id="yXl-22-WFN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -47,6 +47,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="tej-df-DNK" id="bkz-3P-hdw"/>
+                                    <outlet property="delegate" destination="tej-df-DNK" id="y3a-WP-WRJ"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,10 +61,13 @@
                             <constraint firstAttribute="centerY" secondItem="HpK-G7-hdx" secondAttribute="centerY" id="nDI-Ay-yxy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableViewSubcategories" destination="HpK-G7-hdx" id="Fao-n6-XKy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BBY-d7-9Ar" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="802" y="78"/>
+            <point key="canvasLocation" x="802" y="77"/>
         </scene>
     </scenes>
 </document>

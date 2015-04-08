@@ -16,10 +16,24 @@
 
 @implementation MBNSubcategoryTableViewCell
 
+- (void)setBounds:(CGRect)bounds
+{
+    [super setBounds:bounds];
+    self.contentView.frame = self.bounds;
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    self.lblCategoryName.preferredMaxLayoutWidth = CGRectGetWidth(self.lblCategoryName.frame);
+    
+    [self.contentView updateConstraintsIfNeeded];
+    [self.contentView layoutIfNeeded];
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (void)configWithData:(id)data {
@@ -32,6 +46,7 @@
     
     NSMutableAttributedString *displayString = [[NSMutableAttributedString alloc] initWithString:unformattedString];
     [displayString addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(cat.name.length, unformattedString.length - unformattedString.length)];
+    self.lblCategoryName.attributedText = displayString;
 }
 
 @end

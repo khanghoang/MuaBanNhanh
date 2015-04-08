@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0516AF151AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0516AF141AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard */; };
 		0516AF181AD5222000DACF05 /* MBNSubcategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0516AF171AD5222000DACF05 /* MBNSubcategoryTableViewCell.m */; };
+		0516AF1B1AD5246500DACF05 /* MBNSubcategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0516AF1A1AD5246500DACF05 /* MBNSubcategoryViewController.m */; };
 		053978FA1ACC1FCD007C4676 /* MBNRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053978F91ACC1FCD007C4676 /* MBNRevealViewController.m */; };
 		053978FE1ACC274E007C4676 /* MBNCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 053978FD1ACC274E007C4676 /* MBNCategory.m */; };
 		053979021ACC3B7C007C4676 /* MBNCategoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 053979011ACC3B7C007C4676 /* MBNCategoryManager.m */; };
@@ -61,6 +62,8 @@
 		0516AF141AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SubCategoryStoreyboard.storyboard; sourceTree = "<group>"; };
 		0516AF161AD5222000DACF05 /* MBNSubcategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSubcategoryTableViewCell.h; sourceTree = "<group>"; };
 		0516AF171AD5222000DACF05 /* MBNSubcategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSubcategoryTableViewCell.m; sourceTree = "<group>"; };
+		0516AF191AD5246500DACF05 /* MBNSubcategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSubcategoryViewController.h; sourceTree = "<group>"; };
+		0516AF1A1AD5246500DACF05 /* MBNSubcategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSubcategoryViewController.m; sourceTree = "<group>"; };
 		053978F81ACC1FCD007C4676 /* MBNRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNRevealViewController.h; sourceTree = "<group>"; };
 		053978F91ACC1FCD007C4676 /* MBNRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNRevealViewController.m; sourceTree = "<group>"; };
 		053978FC1ACC274E007C4676 /* MBNCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNCategory.h; sourceTree = "<group>"; };
@@ -155,6 +158,8 @@
 				0516AF141AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard */,
 				0516AF161AD5222000DACF05 /* MBNSubcategoryTableViewCell.h */,
 				0516AF171AD5222000DACF05 /* MBNSubcategoryTableViewCell.m */,
+				0516AF191AD5246500DACF05 /* MBNSubcategoryViewController.h */,
+				0516AF1A1AD5246500DACF05 /* MBNSubcategoryViewController.m */,
 			);
 			path = "Sub Category";
 			sourceTree = "<group>";
@@ -559,6 +564,7 @@
 				05A3E34D1ACAF9D300E55215 /* UIView+Addition.m in Sources */,
 				0593B7F11AD1877900A492F3 /* MBNUser.m in Sources */,
 				053978FE1ACC274E007C4676 /* MBNCategory.m in Sources */,
+				0516AF1B1AD5246500DACF05 /* MBNSubcategoryViewController.m in Sources */,
 				053979021ACC3B7C007C4676 /* MBNCategoryManager.m in Sources */,
 				053979141ACC4B76007C4676 /* MBNHomeContainerViewController.m in Sources */,
 				0567F31D1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m in Sources */,
