@@ -72,7 +72,6 @@ UICollectionViewDelegateFlowLayout
     viewController.view.backgroundColor = [UIColor whiteColor];
     
     [appDelegate.rootNavigationController pushViewController:viewController animated:YES];
-    
 }
 
 @end

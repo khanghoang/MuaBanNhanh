@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0516AF151AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0516AF141AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard */; };
+		0516AF181AD5222000DACF05 /* MBNSubcategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0516AF171AD5222000DACF05 /* MBNSubcategoryTableViewCell.m */; };
 		053978FA1ACC1FCD007C4676 /* MBNRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053978F91ACC1FCD007C4676 /* MBNRevealViewController.m */; };
 		053978FE1ACC274E007C4676 /* MBNCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 053978FD1ACC274E007C4676 /* MBNCategory.m */; };
 		053979021ACC3B7C007C4676 /* MBNCategoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 053979011ACC3B7C007C4676 /* MBNCategoryManager.m */; };
@@ -56,6 +58,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0516AF141AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SubCategoryStoreyboard.storyboard; sourceTree = "<group>"; };
+		0516AF161AD5222000DACF05 /* MBNSubcategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSubcategoryTableViewCell.h; sourceTree = "<group>"; };
+		0516AF171AD5222000DACF05 /* MBNSubcategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSubcategoryTableViewCell.m; sourceTree = "<group>"; };
 		053978F81ACC1FCD007C4676 /* MBNRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNRevealViewController.h; sourceTree = "<group>"; };
 		053978F91ACC1FCD007C4676 /* MBNRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNRevealViewController.m; sourceTree = "<group>"; };
 		053978FC1ACC274E007C4676 /* MBNCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNCategory.h; sourceTree = "<group>"; };
@@ -144,6 +149,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0516AF131AD5207200DACF05 /* Sub Category */ = {
+			isa = PBXGroup;
+			children = (
+				0516AF141AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard */,
+				0516AF161AD5222000DACF05 /* MBNSubcategoryTableViewCell.h */,
+				0516AF171AD5222000DACF05 /* MBNSubcategoryTableViewCell.m */,
+			);
+			path = "Sub Category";
+			sourceTree = "<group>";
+		};
 		053978F71ACC1FAE007C4676 /* Subclass PKRevealMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +286,7 @@
 		05A3E3391ACAF0AC00E55215 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0516AF131AD5207200DACF05 /* Sub Category */,
 				0593B7F21AD18C6E00A492F3 /* Plus Popup */,
 				0593B7E31AD12B0300A492F3 /* Collection Header */,
 				0561C9B41AD05CA000BEDA6D /* Product Cell */,
@@ -482,6 +498,7 @@
 				0593B7F41AD18C8300A492F3 /* PlusPopups.storyboard in Resources */,
 				05A3E3441ACAF11200E55215 /* MBNSideMenuViewController.xib in Resources */,
 				05A3E3491ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.xib in Resources */,
+				0516AF151AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard in Resources */,
 				05E03DA31AC9318D004426CE /* Main.storyboard in Resources */,
 				05E03DA81AC9318D004426CE /* LaunchScreen.xib in Resources */,
 				05E03DA51AC9318D004426CE /* Images.xcassets in Resources */,
@@ -547,6 +564,7 @@
 				0567F31D1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m in Sources */,
 				0593B7E71AD12B3800A492F3 /* MBNCollectionHeaderView.m in Sources */,
 				05E03D9D1AC9318D004426CE /* AppDelegate.m in Sources */,
+				0516AF181AD5222000DACF05 /* MBNSubcategoryTableViewCell.m in Sources */,
 				0561C9B01ACFBD9B00BEDA6D /* UIViewController+AddHambugerButton.m in Sources */,
 				0571AF9C1AD2AAB300943F85 /* MBNPopupCustomButton.m in Sources */,
 				05E03D9A1AC9318D004426CE /* main.m in Sources */,
