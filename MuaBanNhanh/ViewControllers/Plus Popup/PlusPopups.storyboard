@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqr-RM-W1Y">
-                                <rect key="frame" x="330" y="309" width="270" height="217"/>
+                                <rect key="frame" x="330" y="318" width="270" height="217"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wlc-cx-NrG">
                                         <rect key="frame" x="0.0" y="0.0" width="270" height="217"/>
@@ -38,11 +38,27 @@
                                     <constraint firstItem="wlc-cx-NrG" firstAttribute="height" secondItem="cqr-RM-W1Y" secondAttribute="height" id="wmD-xF-Ldd"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5GC-6f-Uiu" customClass="TKCircleButton">
+                                <rect key="frame" x="546" y="544" width="46" height="46"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="rJ6-be-qdi"/>
+                                    <constraint firstAttribute="height" constant="46" id="zwE-FA-4Hk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="7"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KsA-Qf-egh" firstAttribute="top" secondItem="cqr-RM-W1Y" secondAttribute="bottom" constant="74" id="6zG-kF-Qbl"/>
+                            <constraint firstItem="KsA-Qf-egh" firstAttribute="top" secondItem="cqr-RM-W1Y" secondAttribute="bottom" constant="65" id="6zG-kF-Qbl"/>
+                            <constraint firstItem="5GC-6f-Uiu" firstAttribute="right" secondItem="dwH-nd-At6" secondAttribute="rightMargin" constant="8" id="I2m-Nd-cca"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cqr-RM-W1Y" secondAttribute="trailing" constant="-16" id="ddn-mu-eZe"/>
+                            <constraint firstItem="KsA-Qf-egh" firstAttribute="top" secondItem="5GC-6f-Uiu" secondAttribute="bottom" constant="10" id="myT-Kx-2J8"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -69,11 +85,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HE4-gC-zSu" customClass="MBNPopupCustomButton">
-                                                    <rect key="frame" x="65" y="14" width="155" height="25"/>
+                                                    <rect key="frame" x="56" y="14" width="155" height="25"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="1"/>
                                                     <state key="normal" title="Hướng dẫn mua hàng" backgroundImage="popup-label-background">
                                                         <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRv-7V-uFB">
+                                                    <rect key="frame" x="215" y="5" width="43" height="43"/>
+                                                    <state key="normal" backgroundImage="background-popup-button">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
@@ -88,11 +110,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpI-fe-WqO" customClass="MBNPopupCustomButton">
-                                                    <rect key="frame" x="98" y="15" width="122" height="25"/>
+                                                    <rect key="frame" x="89" y="15" width="122" height="25"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="1"/>
                                                     <state key="normal" title="Mua bán an toàn" backgroundImage="popup-label-background">
                                                         <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tS1-Cj-r8d">
+                                                    <rect key="frame" x="214" y="5" width="43" height="43"/>
+                                                    <state key="normal" backgroundImage="background-popup-button">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
@@ -107,11 +135,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bke-MU-7V7" customClass="MBNPopupCustomButton">
-                                                    <rect key="frame" x="148" y="15" width="72" height="25"/>
+                                                    <rect key="frame" x="138" y="15" width="72" height="25"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="1"/>
                                                     <state key="normal" title="Đăng ký" backgroundImage="popup-label-background">
                                                         <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiL-Di-vz1">
+                                                    <rect key="frame" x="214" y="5" width="43" height="43"/>
+                                                    <state key="normal" backgroundImage="background-popup-button">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
@@ -126,11 +160,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gr7-XZ-YVa" customClass="MBNPopupCustomButton">
-                                                    <rect key="frame" x="129" y="15" width="91" height="25"/>
+                                                    <rect key="frame" x="119" y="15" width="91" height="25"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="1"/>
                                                     <state key="normal" title="Đăng nhập" backgroundImage="popup-label-background">
                                                         <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGd-tK-G5g">
+                                                    <rect key="frame" x="214" y="5" width="43" height="43"/>
+                                                    <state key="normal" backgroundImage="background-popup-button">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
@@ -154,6 +194,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background-popup-button" width="45" height="45"/>
         <image name="popup-label-background" width="87" height="27"/>
     </resources>
 </document>
