@@ -45,7 +45,8 @@
     NSString *unformattedString = [NSString stringWithFormat:@"%@ (%@)", cat.name, cat.articleCount];
     
     NSMutableAttributedString *displayString = [[NSMutableAttributedString alloc] initWithString:unformattedString];
-    [displayString addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(cat.name.length, unformattedString.length - unformattedString.length)];
+    [displayString addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(cat.name.length, unformattedString.length - cat.name.length)];
+    [displayString addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(cat.name.length, unformattedString.length - cat.name.length)];
     self.lblCategoryName.attributedText = displayString;
 }
 
