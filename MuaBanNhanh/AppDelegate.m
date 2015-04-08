@@ -25,6 +25,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    // popup window
+    UIWindow *popupWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    popupWindow.windowLevel = UIWindowLevelNormal;
+    self.popupWindow = popupWindow;
+    
     [UIApplication sharedApplication].delegate.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     UIWindow *window = [UIApplication sharedApplication].delegate.window;
     self.mainWindow = window;
@@ -62,11 +67,8 @@
 }
 
 - (void)displayPopupWindow {
-    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    window.windowLevel = UIWindowLevelNormal;
-    self.popupWindow = window;
-    window.alpha = 0;
-    window.hidden = NO;
+    self.popupWindow.alpha = 0;
+    self.popupWindow.hidden = NO;
     
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 40)];
     button.titleLabel.text = @"Kiss me";
@@ -74,22 +76,28 @@
     
     UIViewController *vc = [[UIStoryboard storyboardWithName:@"PlusPopups" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([IndexHomePopupViewController class])];
     
-    window.rootViewController = vc;
-    window.rootViewController.view.backgroundColor =[UIColor colorWithWhite:1.0 alpha:0.6];
+    self.popupWindow.rootViewController = vc;
+    self.popupWindow.rootViewController.view.backgroundColor =[UIColor colorWithWhite:1.0 alpha:0.6];
     
-    [window makeKeyWindow];
+    [self.popupWindow makeKeyWindow];
     
     [UIView animateWithDuration:0.45 animations:^{
-        window.alpha = 1;
+        self.popupWindow.alpha = 1;
     }];
     
     UITapGestureRecognizer *tapToClose = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closePopupView)];
-    [window.rootViewController.view addGestureRecognizer:tapToClose];
+    [self.popupWindow.rootViewController.view addGestureRecognizer:tapToClose];
 }
 
 - (void)closePopupView {
     [self.mainWindow makeKeyWindow];
-    self.popupWindow.hidden = YES;
+    [UIView animateWithDuration:0.45
+                     animations:^{
+                         self.popupWindow.alpha = 0;
+                         
+                     } completion:^(BOOL finished) {
+                         self.popupWindow.hidden = YES;
+                     }];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
