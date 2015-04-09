@@ -235,6 +235,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Đăng nhập" id="qXC-Zv-R54">
                         <barButtonItem key="backBarButtonItem" title="Trở về" id="hnb-3f-DrO"/>
+                        <barButtonItem key="rightBarButtonItem" title="Xong" style="done" id="zLp-PN-7JW"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yP-TG-mmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
