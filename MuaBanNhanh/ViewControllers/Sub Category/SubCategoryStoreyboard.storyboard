@@ -44,7 +44,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lblCategoryName" destination="Sqy-2p-uYH" id="X3b-eE-li2"/>
-                                            <segue destination="5pH-RS-zyn" kind="custom" customClass="MBNSegueShowProductFromCategory" id="hTf-hL-bYr"/>
+                                            <segue destination="5pH-RS-zyn" kind="custom" identifier="MBNSegueShowProductFromCategory" customClass="MBNSegueShowProductFromCategory" id="hTf-hL-bYr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

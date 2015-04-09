@@ -12,16 +12,18 @@
 
 @property (nonatomic, readonly) NSIndexSet *indexes;
 @property (nonatomic, readonly) NSArray *dataPage;
+@property (nonatomic, strong) NSNumber *categoryID;
 
 @end
 
 @implementation MBNLoadProductForCategoryOperation
 
-- (instancetype)initWithIndexes:(NSIndexSet *)indexes {
+- (instancetype)initWithIndexes:(NSIndexSet *)indexes andCategoryID:(NSNumber *)categoryID {
     self = [super init];
     
     if (self) {
         _indexes = indexes;
+        _categoryID = categoryID;
     }
     
     return self;
@@ -31,8 +33,10 @@
     typeof(self) weakSelf = self;
     NSMutableArray *dataPage = [NSMutableArray arrayWithCapacity:10];
     
+    NSString *stringRequest = [NSString stringWithFormat:@"http://api.muabannhanh.com/article/list?category_id=%@&page=%lu&limit=10",self.categoryID, self.indexes.lastIndex/10];
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://api.muabannhanh.com/article/list?category_id=0&page=1&limit=10" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:stringRequest parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSError *error;
         

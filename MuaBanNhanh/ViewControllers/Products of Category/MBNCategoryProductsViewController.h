@@ -11,4 +11,6 @@
 
 @interface MBNCategoryProductsViewController : KHBasicFluentCollectionViewController
 
+@property (strong, nonatomic) MBNCategory *category;
+
 @end

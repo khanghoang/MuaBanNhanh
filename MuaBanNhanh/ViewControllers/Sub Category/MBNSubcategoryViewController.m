@@ -8,6 +8,7 @@
 
 #import "MBNSubcategoryViewController.h"
 #import "MBNSubcategoryTableViewCell.h"
+#import "MBNCategoryProductsViewController.h"
 
 @interface MBNSubcategoryViewController ()
 <
@@ -72,6 +73,18 @@ UITableViewDataSource
     [cell updateConstraintsIfNeeded];
     [cell layoutIfNeeded];
     return [self.prototypeCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize].height;
+}
+
+#pragma marks - delegate
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"MBNSegueShowProductFromCategory"]) {
+        NSIndexPath *indexPath = [self.tableViewSubcategories indexPathForSelectedRow];
+        MBNCategory *cat = self.arrSubcategories[indexPath.row];
+        MBNCategoryProductsViewController *vc = segue.destinationViewController;
+        vc.category = cat;
+        vc.title = cat.name;
+    }
 }
 
 @end

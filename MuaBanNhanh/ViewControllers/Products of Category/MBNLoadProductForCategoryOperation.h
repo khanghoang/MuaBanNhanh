@@ -13,4 +13,6 @@
 KHLoadingOperationProtocol
 >
 
+- (instancetype)initWithIndexes:(NSIndexSet *)indexes andCategoryID:(NSNumber *)categoryID;
+
 @end

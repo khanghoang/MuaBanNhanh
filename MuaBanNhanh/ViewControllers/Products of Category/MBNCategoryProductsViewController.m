@@ -37,7 +37,7 @@
 }
 
 - (id<KHLoadingOperationProtocol>)loadingOperationForSectionViewModel:(id<KHTableViewSectionModel>)viewModel indexes:(NSIndexSet *)indexes {
-    MBNLoadProductForCategoryOperation *operation = [[MBNLoadProductForCategoryOperation alloc] initWithIndexes:indexes];
+    MBNLoadProductForCategoryOperation *operation = [[MBNLoadProductForCategoryOperation alloc] initWithIndexes:indexes andCategoryID:@(0)];
     return operation;
 }
 
