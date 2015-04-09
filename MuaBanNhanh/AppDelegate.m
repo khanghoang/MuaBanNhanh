@@ -64,6 +64,9 @@
     
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
+    // white status bar
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     // Override point for customization after application launch.
     return YES;
 }
