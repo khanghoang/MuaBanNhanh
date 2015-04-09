@@ -62,6 +62,8 @@
         [[UINavigationBar appearance] setTranslucent:NO];
     }
     
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
     // Override point for customization after application launch.
     return YES;
 }
