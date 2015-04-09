@@ -39,6 +39,7 @@
 		05A3E3491ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05A3E3471ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.xib */; };
 		05A3E34D1ACAF9D300E55215 /* UIView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E34C1ACAF9D300E55215 /* UIView+Addition.m */; };
 		05A3E3501ACAF9E100E55215 /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E34F1ACAF9E100E55215 /* Colours.m */; };
+		05D84BFD1AD632A000497FA0 /* MBNSegueShowProductFromCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D84BFC1AD632A000497FA0 /* MBNSegueShowProductFromCategory.m */; };
 		05E03D9A1AC9318D004426CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E03D991AC9318D004426CE /* main.m */; };
 		05E03D9D1AC9318D004426CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E03D9C1AC9318D004426CE /* AppDelegate.m */; };
 		05E03DA31AC9318D004426CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E03DA11AC9318D004426CE /* Main.storyboard */; };
@@ -117,6 +118,8 @@
 		05A3E34C1ACAF9D300E55215 /* UIView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addition.m"; sourceTree = "<group>"; };
 		05A3E34E1ACAF9E100E55215 /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
 		05A3E34F1ACAF9E100E55215 /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
+		05D84BFB1AD632A000497FA0 /* MBNSegueShowProductFromCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSegueShowProductFromCategory.h; sourceTree = "<group>"; };
+		05D84BFC1AD632A000497FA0 /* MBNSegueShowProductFromCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSegueShowProductFromCategory.m; sourceTree = "<group>"; };
 		05E03D941AC9318D004426CE /* MuaBanNhanh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuaBanNhanh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05E03D981AC9318D004426CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05E03D991AC9318D004426CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -256,6 +259,8 @@
 				0561C9BC1AD05F6800BEDA6D /* TKAlignTopLabel.m */,
 				0593B7E91AD1381800A492F3 /* TKCircleButton.h */,
 				0593B7EA1AD1381800A492F3 /* TKCircleButton.m */,
+				05D84BFB1AD632A000497FA0 /* MBNSegueShowProductFromCategory.h */,
+				05D84BFC1AD632A000497FA0 /* MBNSegueShowProductFromCategory.m */,
 			);
 			path = "Custom Classes";
 			sourceTree = "<group>";
@@ -291,6 +296,7 @@
 		05A3E3391ACAF0AC00E55215 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				05D84BFA1AD62F8200497FA0 /* Products of Category */,
 				0516AF131AD5207200DACF05 /* Sub Category */,
 				0593B7F21AD18C6E00A492F3 /* Plus Popup */,
 				0593B7E31AD12B0300A492F3 /* Collection Header */,
@@ -330,6 +336,13 @@
 				0571AF9B1AD2AAB300943F85 /* MBNPopupCustomButton.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		05D84BFA1AD62F8200497FA0 /* Products of Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Products of Category";
 			sourceTree = "<group>";
 		};
 		05E03D8B1AC9318D004426CE = {
@@ -575,6 +588,7 @@
 				0571AF9C1AD2AAB300943F85 /* MBNPopupCustomButton.m in Sources */,
 				05E03D9A1AC9318D004426CE /* main.m in Sources */,
 				0593B7EE1AD180F200A492F3 /* MBNActionsManagers.m in Sources */,
+				05D84BFD1AD632A000497FA0 /* MBNSegueShowProductFromCategory.m in Sources */,
 				0539790D1ACC4987007C4676 /* MBNHomeTopViewController.m in Sources */,
 				0593B7EB1AD1381800A492F3 /* TKCircleButton.m in Sources */,
 				0561C9C01AD06A8C00BEDA6D /* MBNProductManager.m in Sources */,

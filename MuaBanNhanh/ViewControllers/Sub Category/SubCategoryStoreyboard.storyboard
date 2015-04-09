@@ -44,6 +44,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lblCategoryName" destination="Sqy-2p-uYH" id="X3b-eE-li2"/>
+                                            <segue destination="5pH-RS-zyn" kind="custom" customClass="MBNSegueShowProductFromCategory" id="hTf-hL-bYr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -74,6 +75,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BBY-d7-9Ar" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="802" y="77"/>
+        </scene>
+        <!--Home Bottom View Controller-->
+        <scene sceneID="sbG-Ff-zTC">
+            <objects>
+                <viewController storyboardIdentifier="MBNHomeBottomViewController" automaticallyAdjustsScrollViewInsets="NO" id="5pH-RS-zyn" customClass="MBNHomeBottomViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zED-9Y-QKw"/>
+                        <viewControllerLayoutGuide type="bottom" id="FsE-dg-WMx"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="q80-az-FO9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2sB-vF-F7v">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="s8H-Xz-Ija">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Myv-4j-uL3">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="5pH-RS-zyn" id="w7b-SK-kVu"/>
+                                    <outlet property="delegate" destination="5pH-RS-zyn" id="w9i-78-n3K"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FsE-dg-WMx" firstAttribute="top" secondItem="2sB-vF-F7v" secondAttribute="bottom" id="7QD-H5-8KF"/>
+                            <constraint firstItem="2sB-vF-F7v" firstAttribute="top" secondItem="zED-9Y-QKw" secondAttribute="bottom" id="HjR-8G-CEM"/>
+                            <constraint firstItem="2sB-vF-F7v" firstAttribute="width" secondItem="q80-az-FO9" secondAttribute="width" id="JlE-Qe-Gns"/>
+                            <constraint firstAttribute="centerX" secondItem="2sB-vF-F7v" secondAttribute="centerX" id="xdI-PB-E6E"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="collectionViewLatestProduct" destination="2sB-vF-F7v" id="VEE-pb-e7J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1tC-sm-6g9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1476" y="77"/>
         </scene>
     </scenes>
 </document>
