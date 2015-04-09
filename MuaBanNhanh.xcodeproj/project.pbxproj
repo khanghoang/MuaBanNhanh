@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		050867191AD6D29200038F87 /* UserLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 050867181AD6D29200038F87 /* UserLogin.storyboard */; };
 		0508671C1AD6DF7700038F87 /* TKDesignableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0508671B1AD6DF7700038F87 /* TKDesignableView.m */; };
+		0508671F1AD6EE7000038F87 /* MBNShowLoginSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0508671E1AD6EE7000038F87 /* MBNShowLoginSegue.m */; };
+		0508672D1AD6F08F00038F87 /* UIUnregisterHomePopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 0508672C1AD6F08F00038F87 /* UIUnregisterHomePopup.m */; };
 		0516AF151AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0516AF141AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard */; };
 		0516AF181AD5222000DACF05 /* MBNSubcategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0516AF171AD5222000DACF05 /* MBNSubcategoryTableViewCell.m */; };
 		0516AF1B1AD5246500DACF05 /* MBNSubcategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0516AF1A1AD5246500DACF05 /* MBNSubcategoryViewController.m */; };
@@ -69,6 +71,10 @@
 		050867181AD6D29200038F87 /* UserLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserLogin.storyboard; sourceTree = "<group>"; };
 		0508671A1AD6DF7700038F87 /* TKDesignableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDesignableView.h; sourceTree = "<group>"; };
 		0508671B1AD6DF7700038F87 /* TKDesignableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDesignableView.m; sourceTree = "<group>"; };
+		0508671D1AD6EE7000038F87 /* MBNShowLoginSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNShowLoginSegue.h; sourceTree = "<group>"; };
+		0508671E1AD6EE7000038F87 /* MBNShowLoginSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNShowLoginSegue.m; sourceTree = "<group>"; };
+		0508672B1AD6F08F00038F87 /* UIUnregisterHomePopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIUnregisterHomePopup.h; path = "MuaBanNhanh/ViewControllers/Plus Popup/UIUnregisterHomePopup.h"; sourceTree = SOURCE_ROOT; };
+		0508672C1AD6F08F00038F87 /* UIUnregisterHomePopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIUnregisterHomePopup.m; path = "MuaBanNhanh/ViewControllers/Plus Popup/UIUnregisterHomePopup.m"; sourceTree = SOURCE_ROOT; };
 		0516AF141AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SubCategoryStoreyboard.storyboard; sourceTree = "<group>"; };
 		0516AF161AD5222000DACF05 /* MBNSubcategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSubcategoryTableViewCell.h; sourceTree = "<group>"; };
 		0516AF171AD5222000DACF05 /* MBNSubcategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSubcategoryTableViewCell.m; sourceTree = "<group>"; };
@@ -180,6 +186,15 @@
 			path = "Register : Login : Forgot password";
 			sourceTree = "<group>";
 		};
+		050867271AD6F00A00038F87 /* Unregister Home Popup */ = {
+			isa = PBXGroup;
+			children = (
+				0508672B1AD6F08F00038F87 /* UIUnregisterHomePopup.h */,
+				0508672C1AD6F08F00038F87 /* UIUnregisterHomePopup.m */,
+			);
+			path = "Unregister Home Popup";
+			sourceTree = "<group>";
+		};
 		0516AF131AD5207200DACF05 /* Sub Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +303,8 @@
 				05D84BFC1AD632A000497FA0 /* MBNSegueShowProductFromCategory.m */,
 				0508671A1AD6DF7700038F87 /* TKDesignableView.h */,
 				0508671B1AD6DF7700038F87 /* TKDesignableView.m */,
+				0508671D1AD6EE7000038F87 /* MBNShowLoginSegue.h */,
+				0508671E1AD6EE7000038F87 /* MBNShowLoginSegue.m */,
 			);
 			path = "Custom Classes";
 			sourceTree = "<group>";
@@ -305,6 +322,7 @@
 		0593B7F21AD18C6E00A492F3 /* Plus Popup */ = {
 			isa = PBXGroup;
 			children = (
+				050867271AD6F00A00038F87 /* Unregister Home Popup */,
 				0593B7F51AD18D5E00A492F3 /* Index Home Popup */,
 				0593B7F31AD18C8300A492F3 /* PlusPopups.storyboard */,
 			);
@@ -611,6 +629,7 @@
 				053979101ACC4998007C4676 /* MBNHomeBottomViewController.m in Sources */,
 				0561C9B31ACFC31100BEDA6D /* UIViewController+SideViewFunctions.m in Sources */,
 				05D84C001AD63C1000497FA0 /* MBNCategoryProductsViewController.m in Sources */,
+				0508672D1AD6F08F00038F87 /* UIUnregisterHomePopup.m in Sources */,
 				05A3E3501ACAF9E100E55215 /* Colours.m in Sources */,
 				05A3E34D1ACAF9D300E55215 /* UIView+Addition.m in Sources */,
 				0593B7F11AD1877900A492F3 /* MBNUser.m in Sources */,
@@ -625,6 +644,7 @@
 				0516AF181AD5222000DACF05 /* MBNSubcategoryTableViewCell.m in Sources */,
 				0561C9B01ACFBD9B00BEDA6D /* UIViewController+AddHambugerButton.m in Sources */,
 				05D84C031AD63D8F00497FA0 /* MBNProductCellFactory.m in Sources */,
+				0508671F1AD6EE7000038F87 /* MBNShowLoginSegue.m in Sources */,
 				0571AF9C1AD2AAB300943F85 /* MBNPopupCustomButton.m in Sources */,
 				05E03D9A1AC9318D004426CE /* main.m in Sources */,
 				0593B7EE1AD180F200A492F3 /* MBNActionsManagers.m in Sources */,
