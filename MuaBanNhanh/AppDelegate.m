@@ -38,6 +38,7 @@
     UIViewController *homeContainerVC = [mainStoryBoard instantiateInitialViewController];
     UINavigationController *rootNavigationController = [[UINavigationController alloc] initWithRootViewController:homeContainerVC];
     [rootNavigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    rootNavigationController.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Trở về" style:UIBarButtonItemStylePlain target:nil action:nil];
     self.rootNavigationController = rootNavigationController;
     
     MBNSideMenuViewController *rearVC = [[MBNSideMenuViewController alloc] init];
