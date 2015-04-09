@@ -10,4 +10,8 @@
 
 @implementation MBNSegueShowProductFromCategory
 
+- (void)perform {
+    [[[self sourceViewController] navigationController] pushViewController:[self destinationViewController] animated:YES];
+}
+
 @end
