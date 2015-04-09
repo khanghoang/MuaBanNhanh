@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Subcategory View Controller-->
+        <!--Danh mục-->
         <scene sceneID="p43-7y-9jV">
             <objects>
                 <viewController storyboardIdentifier="MBNSubcategoryViewController" id="tej-df-DNK" customClass="MBNSubcategoryViewController" sceneMemberID="viewController">
@@ -61,6 +61,12 @@
                             <constraint firstAttribute="centerY" secondItem="HpK-G7-hdx" secondAttribute="centerY" id="nDI-Ay-yxy"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Danh mục" id="fAs-5d-FIX">
+                        <barButtonItem key="backBarButtonItem" title="Trở về" style="plain" id="Aj9-A1-hdX">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="tableViewSubcategories" destination="HpK-G7-hdx" id="Fao-n6-XKy"/>
                     </connections>

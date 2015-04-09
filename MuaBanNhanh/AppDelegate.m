@@ -37,6 +37,7 @@
     UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"MainStoryBoard" bundle:nil];
     UIViewController *homeContainerVC = [mainStoryBoard instantiateInitialViewController];
     UINavigationController *rootNavigationController = [[UINavigationController alloc] initWithRootViewController:homeContainerVC];
+    [rootNavigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
     self.rootNavigationController = rootNavigationController;
     
     MBNSideMenuViewController *rearVC = [[MBNSideMenuViewController alloc] init];
