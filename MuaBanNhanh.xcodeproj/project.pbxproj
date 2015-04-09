@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050867191AD6D29200038F87 /* UserLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 050867181AD6D29200038F87 /* UserLogin.storyboard */; };
+		0508671C1AD6DF7700038F87 /* TKDesignableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0508671B1AD6DF7700038F87 /* TKDesignableView.m */; };
 		0516AF151AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0516AF141AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard */; };
 		0516AF181AD5222000DACF05 /* MBNSubcategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0516AF171AD5222000DACF05 /* MBNSubcategoryTableViewCell.m */; };
 		0516AF1B1AD5246500DACF05 /* MBNSubcategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0516AF1A1AD5246500DACF05 /* MBNSubcategoryViewController.m */; };
@@ -64,6 +66,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		050867181AD6D29200038F87 /* UserLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserLogin.storyboard; sourceTree = "<group>"; };
+		0508671A1AD6DF7700038F87 /* TKDesignableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDesignableView.h; sourceTree = "<group>"; };
+		0508671B1AD6DF7700038F87 /* TKDesignableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDesignableView.m; sourceTree = "<group>"; };
 		0516AF141AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SubCategoryStoreyboard.storyboard; sourceTree = "<group>"; };
 		0516AF161AD5222000DACF05 /* MBNSubcategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSubcategoryTableViewCell.h; sourceTree = "<group>"; };
 		0516AF171AD5222000DACF05 /* MBNSubcategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSubcategoryTableViewCell.m; sourceTree = "<group>"; };
@@ -167,6 +172,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		050867171AD6D27700038F87 /* Register : Login : Forgot password */ = {
+			isa = PBXGroup;
+			children = (
+				050867181AD6D29200038F87 /* UserLogin.storyboard */,
+			);
+			path = "Register : Login : Forgot password";
+			sourceTree = "<group>";
+		};
 		0516AF131AD5207200DACF05 /* Sub Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +286,8 @@
 				0593B7EA1AD1381800A492F3 /* TKCircleButton.m */,
 				05D84BFB1AD632A000497FA0 /* MBNSegueShowProductFromCategory.h */,
 				05D84BFC1AD632A000497FA0 /* MBNSegueShowProductFromCategory.m */,
+				0508671A1AD6DF7700038F87 /* TKDesignableView.h */,
+				0508671B1AD6DF7700038F87 /* TKDesignableView.m */,
 			);
 			path = "Custom Classes";
 			sourceTree = "<group>";
@@ -308,6 +323,7 @@
 		05A3E3391ACAF0AC00E55215 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				050867171AD6D27700038F87 /* Register : Login : Forgot password */,
 				05D84BFA1AD62F8200497FA0 /* Products of Category */,
 				0516AF131AD5207200DACF05 /* Sub Category */,
 				0593B7F21AD18C6E00A492F3 /* Plus Popup */,
@@ -535,6 +551,7 @@
 				053979071ACC48F6007C4676 /* MainStoryBoard.storyboard in Resources */,
 				0593B7F41AD18C8300A492F3 /* PlusPopups.storyboard in Resources */,
 				05A3E3441ACAF11200E55215 /* MBNSideMenuViewController.xib in Resources */,
+				050867191AD6D29200038F87 /* UserLogin.storyboard in Resources */,
 				05A3E3491ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.xib in Resources */,
 				0516AF151AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard in Resources */,
 				05E03DA31AC9318D004426CE /* Main.storyboard in Resources */,
@@ -603,6 +620,7 @@
 				053979141ACC4B76007C4676 /* MBNHomeContainerViewController.m in Sources */,
 				0567F31D1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m in Sources */,
 				0593B7E71AD12B3800A492F3 /* MBNCollectionHeaderView.m in Sources */,
+				0508671C1AD6DF7700038F87 /* TKDesignableView.m in Sources */,
 				05E03D9D1AC9318D004426CE /* AppDelegate.m in Sources */,
 				0516AF181AD5222000DACF05 /* MBNSubcategoryTableViewCell.m in Sources */,
 				0561C9B01ACFBD9B00BEDA6D /* UIViewController+AddHambugerButton.m in Sources */,
