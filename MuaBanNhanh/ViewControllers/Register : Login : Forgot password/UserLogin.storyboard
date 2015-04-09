@@ -21,23 +21,23 @@
             </objects>
             <point key="canvasLocation" x="716" y="114"/>
         </scene>
-        <!--View Controller-->
+        <!--Đăng nhập-->
         <scene sceneID="vaY-Ou-ZVB">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="jcr-EW-ndJ" sceneMemberID="viewController">
+                <viewController id="jcr-EW-ndJ" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2ba-rO-o3H"/>
                         <viewControllerLayoutGuide type="bottom" id="Z9B-em-ZoP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="g7M-GL-XBn">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5G3-Lm-eAc">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQF-4p-CkV">
-                                        <rect key="frame" x="150" y="89" width="300" height="310"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQF-4p-CkV" customClass="TKDesignableView">
+                                        <rect key="frame" x="150" y="40" width="300" height="310"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pAi-Pd-hyW">
                                                 <rect key="frame" x="19" y="18" width="263" height="79"/>
@@ -210,15 +210,16 @@
                                             <constraint firstAttribute="width" constant="300" id="mhN-DF-5ds"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="8"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
+                                                <integer key="value" value="4"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="nQF-4p-CkV" firstAttribute="top" secondItem="5G3-Lm-eAc" secondAttribute="top" constant="89" id="6lW-th-X6Z"/>
+                                    <constraint firstAttribute="bottom" secondItem="nQF-4p-CkV" secondAttribute="bottom" id="13V-cF-OFg"/>
+                                    <constraint firstItem="nQF-4p-CkV" firstAttribute="top" secondItem="5G3-Lm-eAc" secondAttribute="top" constant="40" id="6lW-th-X6Z"/>
                                     <constraint firstAttribute="centerX" secondItem="nQF-4p-CkV" secondAttribute="centerX" id="bku-ec-c4S"/>
                                 </constraints>
                             </scrollView>
@@ -231,13 +232,16 @@
                             <constraint firstAttribute="centerY" secondItem="5G3-Lm-eAc" secondAttribute="centerY" id="sey-Y9-szO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="qXC-Zv-R54"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Đăng nhập" id="qXC-Zv-R54">
+                        <barButtonItem key="backBarButtonItem" title="Trở về" id="hnb-3f-DrO"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yP-TG-mmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1411" y="114"/>
         </scene>
-        <!--View Controller-->
+        <!--Quên mật khẩu-->
         <scene sceneID="uU2-hK-Skc">
             <objects>
                 <viewController id="KwQ-QX-gl0" sceneMemberID="viewController">
@@ -531,12 +535,13 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Quên mật khẩu" id="bdD-DE-0RJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wek-Ma-XGR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2132" y="-143"/>
         </scene>
-        <!--View Controller-->
+        <!--Đăng ký-->
         <scene sceneID="tNK-PM-CdG">
             <objects>
                 <viewController id="7RO-Lh-BnQ" sceneMemberID="viewController">
@@ -549,6 +554,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Đăng ký" id="vyV-Ek-Wds"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y7d-jI-fWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
