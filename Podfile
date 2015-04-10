@@ -10,6 +10,7 @@ target 'MuaBanNhanh' do
   pod 'AFNetworking', '~> 2.0'
   pod 'FLEX'
   pod 'KVOController'
+  pod 'M13Checkbox'
   pod 'Mantle', '~> 1.5'
   pod 'SVProgressHUD'
   pod 'WYPopoverController'
