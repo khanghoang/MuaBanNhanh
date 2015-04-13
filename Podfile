@@ -4,7 +4,6 @@ source "https://github.com/CocoaPods/Specs.git"
 
 platform :ios, '7.0'
 
-
 target 'MuaBanNhanh' do
 
   pod 'AFNetworking', '~> 2.0'

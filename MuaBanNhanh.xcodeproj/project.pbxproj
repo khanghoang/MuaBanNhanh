@@ -58,7 +58,7 @@
 		05E03DA81AC9318D004426CE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E03DA61AC9318D004426CE /* LaunchScreen.xib */; };
 		05E03DB41AC9318D004426CE /* MuaBanNhanhTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E03DB31AC9318D004426CE /* MuaBanNhanhTests.m */; };
 		05F3E54D1ADB77BA00D432AF /* MBNRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F3E54C1ADB77BA00D432AF /* MBNRegisterViewController.m */; };
-		B5EA3D46CA74801322C2CD91 /* libPods-MuaBanNhanh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAE98C86AEFA896954CEDE5 /* libPods-MuaBanNhanh.a */; };
+		B076070D830B90B0F15EA0C5 /* libPods-MuaBanNhanh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1230A8FEBED2E38FDAC4FBE1 /* libPods-MuaBanNhanh.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,8 +166,8 @@
 		05E03DB31AC9318D004426CE /* MuaBanNhanhTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MuaBanNhanhTests.m; sourceTree = "<group>"; };
 		05F3E54B1ADB77BA00D432AF /* MBNRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNRegisterViewController.h; sourceTree = "<group>"; };
 		05F3E54C1ADB77BA00D432AF /* MBNRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNRegisterViewController.m; sourceTree = "<group>"; };
+		1230A8FEBED2E38FDAC4FBE1 /* libPods-MuaBanNhanh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MuaBanNhanh.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5634B996ABA6F7CE44922C55 /* Pods-MuaBanNhanh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuaBanNhanh.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuaBanNhanh/Pods-MuaBanNhanh.release.xcconfig"; sourceTree = "<group>"; };
-		8EAE98C86AEFA896954CEDE5 /* libPods-MuaBanNhanh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MuaBanNhanh.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDC741CC4D6A1E04FD9BA6B5 /* Pods-MuaBanNhanh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuaBanNhanh.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MuaBanNhanh/Pods-MuaBanNhanh.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,7 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5EA3D46CA74801322C2CD91 /* libPods-MuaBanNhanh.a in Frameworks */,
+				B076070D830B90B0F15EA0C5 /* libPods-MuaBanNhanh.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,7 +504,7 @@
 		F213740222A193D95DE0D184 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8EAE98C86AEFA896954CEDE5 /* libPods-MuaBanNhanh.a */,
+				1230A8FEBED2E38FDAC4FBE1 /* libPods-MuaBanNhanh.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
