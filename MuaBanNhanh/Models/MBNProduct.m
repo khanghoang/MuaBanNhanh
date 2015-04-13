@@ -88,7 +88,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [[NSDateFormatter alloc] init];
-        instance.dateFormat = @"yyyy-dd-MM HH:mm:ss";
+        instance.dateFormat = @"yyyy-MM-dd HH:mm:ss";
         [instance setTimeZone:[[NSTimeZone alloc] initWithName:@"UTC"]];
     });
 
