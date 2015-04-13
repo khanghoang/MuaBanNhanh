@@ -37,6 +37,9 @@
 		0593B7F11AD1877900A492F3 /* MBNUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0593B7F01AD1877900A492F3 /* MBNUser.m */; };
 		0593B7F41AD18C8300A492F3 /* PlusPopups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0593B7F31AD18C8300A492F3 /* PlusPopups.storyboard */; };
 		0593B7F81AD18E6500A492F3 /* IndexHomePopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0593B7F71AD18E6500A492F3 /* IndexHomePopupViewController.m */; };
+		05958D9F1AD9052700F7A708 /* MBNNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05958D9E1AD9052700F7A708 /* MBNNavigationViewController.m */; };
+		05958DA51AD9076000F7A708 /* MBNLoginNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05958DA41AD9076000F7A708 /* MBNLoginNavigationViewController.m */; };
+		05958DA81AD907C300F7A708 /* MBNLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05958DA71AD907C300F7A708 /* MBNLoginViewController.m */; };
 		05A3E3431ACAF11200E55215 /* MBNSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */; };
 		05A3E3441ACAF11200E55215 /* MBNSideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05A3E3421ACAF11200E55215 /* MBNSideMenuViewController.xib */; };
 		05A3E3481ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E3461ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m */; };
@@ -122,6 +125,12 @@
 		0593B7F31AD18C8300A492F3 /* PlusPopups.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlusPopups.storyboard; sourceTree = "<group>"; };
 		0593B7F61AD18E6500A492F3 /* IndexHomePopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexHomePopupViewController.h; sourceTree = "<group>"; };
 		0593B7F71AD18E6500A492F3 /* IndexHomePopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexHomePopupViewController.m; sourceTree = "<group>"; };
+		05958D9D1AD9052700F7A708 /* MBNNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNNavigationViewController.h; sourceTree = "<group>"; };
+		05958D9E1AD9052700F7A708 /* MBNNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNNavigationViewController.m; sourceTree = "<group>"; };
+		05958DA31AD9076000F7A708 /* MBNLoginNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNLoginNavigationViewController.h; sourceTree = "<group>"; };
+		05958DA41AD9076000F7A708 /* MBNLoginNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNLoginNavigationViewController.m; sourceTree = "<group>"; };
+		05958DA61AD907C300F7A708 /* MBNLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNLoginViewController.h; sourceTree = "<group>"; };
+		05958DA71AD907C300F7A708 /* MBNLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNLoginViewController.m; sourceTree = "<group>"; };
 		05A3E32F1ACAE5D700E55215 /* MuaBanNhanh-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MuaBanNhanh-prefix.pch"; sourceTree = "<group>"; };
 		05A3E3401ACAF11200E55215 /* MBNSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSideMenuViewController.h; sourceTree = "<group>"; };
 		05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSideMenuViewController.m; sourceTree = "<group>"; };
@@ -182,6 +191,10 @@
 			isa = PBXGroup;
 			children = (
 				050867181AD6D29200038F87 /* UserLogin.storyboard */,
+				05958DA31AD9076000F7A708 /* MBNLoginNavigationViewController.h */,
+				05958DA41AD9076000F7A708 /* MBNLoginNavigationViewController.m */,
+				05958DA61AD907C300F7A708 /* MBNLoginViewController.h */,
+				05958DA71AD907C300F7A708 /* MBNLoginViewController.m */,
 			);
 			path = "Register : Login : Forgot password";
 			sourceTree = "<group>";
@@ -338,6 +351,15 @@
 			path = "Index Home Popup";
 			sourceTree = "<group>";
 		};
+		05958D9C1AD9048B00F7A708 /* Super classes */ = {
+			isa = PBXGroup;
+			children = (
+				05958D9D1AD9052700F7A708 /* MBNNavigationViewController.h */,
+				05958D9E1AD9052700F7A708 /* MBNNavigationViewController.m */,
+			);
+			path = "Super classes";
+			sourceTree = "<group>";
+		};
 		05A3E3391ACAF0AC00E55215 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -422,6 +444,7 @@
 		05E03D961AC9318D004426CE /* MuaBanNhanh */ = {
 			isa = PBXGroup;
 			children = (
+				05958D9C1AD9048B00F7A708 /* Super classes */,
 				0561C9BA1AD05F4C00BEDA6D /* Custom Classes */,
 				053978FF1ACC3B60007C4676 /* Managers */,
 				053978FB1ACC26AA007C4676 /* Models */,
@@ -637,6 +660,7 @@
 				0516AF1B1AD5246500DACF05 /* MBNSubcategoryViewController.m in Sources */,
 				053979021ACC3B7C007C4676 /* MBNCategoryManager.m in Sources */,
 				053979141ACC4B76007C4676 /* MBNHomeContainerViewController.m in Sources */,
+				05958D9F1AD9052700F7A708 /* MBNNavigationViewController.m in Sources */,
 				0567F31D1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m in Sources */,
 				0593B7E71AD12B3800A492F3 /* MBNCollectionHeaderView.m in Sources */,
 				0508671C1AD6DF7700038F87 /* TKDesignableView.m in Sources */,
@@ -654,7 +678,9 @@
 				0593B7EB1AD1381800A492F3 /* TKCircleButton.m in Sources */,
 				0561C9C01AD06A8C00BEDA6D /* MBNProductManager.m in Sources */,
 				05D84C091AD6443100497FA0 /* MBNContentLoadingViewModel.m in Sources */,
+				05958DA81AD907C300F7A708 /* MBNLoginViewController.m in Sources */,
 				0561C9C31AD06B5F00BEDA6D /* MBNProduct.m in Sources */,
+				05958DA51AD9076000F7A708 /* MBNLoginNavigationViewController.m in Sources */,
 				05A3E3431ACAF11200E55215 /* MBNSideMenuViewController.m in Sources */,
 				0561C9BD1AD05F6800BEDA6D /* TKAlignTopLabel.m in Sources */,
 				0593B7F81AD18E6500A492F3 /* IndexHomePopupViewController.m in Sources */,

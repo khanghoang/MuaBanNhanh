@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DNh-A6-txL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DNh-A6-txL">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Login Navigation View Controller-->
         <scene sceneID="Bk1-Ld-PQ5">
             <objects>
-                <navigationController id="DNh-A6-txL" sceneMemberID="viewController">
+                <navigationController id="DNh-A6-txL" customClass="MBNLoginNavigationViewController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oU1-5T-BNs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -24,7 +24,7 @@
         <!--Đăng nhập-->
         <scene sceneID="vaY-Ou-ZVB">
             <objects>
-                <viewController id="jcr-EW-ndJ" sceneMemberID="viewController">
+                <viewController id="jcr-EW-ndJ" customClass="MBNLoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2ba-rO-o3H"/>
                         <viewControllerLayoutGuide type="bottom" id="Z9B-em-ZoP"/>
@@ -236,7 +236,11 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Đăng nhập" id="qXC-Zv-R54">
                         <barButtonItem key="backBarButtonItem" title="Trở về" id="hnb-3f-DrO"/>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="stop" id="zLp-PN-7JW"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="stop" id="zLp-PN-7JW">
+                            <connections>
+                                <action selector="onBtnClose:" destination="jcr-EW-ndJ" id="FFZ-MI-QqB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yP-TG-mmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
