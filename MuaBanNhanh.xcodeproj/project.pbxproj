@@ -57,6 +57,7 @@
 		05E03DA51AC9318D004426CE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05E03DA41AC9318D004426CE /* Images.xcassets */; };
 		05E03DA81AC9318D004426CE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E03DA61AC9318D004426CE /* LaunchScreen.xib */; };
 		05E03DB41AC9318D004426CE /* MuaBanNhanhTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E03DB31AC9318D004426CE /* MuaBanNhanhTests.m */; };
+		05F3E54D1ADB77BA00D432AF /* MBNRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F3E54C1ADB77BA00D432AF /* MBNRegisterViewController.m */; };
 		B5EA3D46CA74801322C2CD91 /* libPods-MuaBanNhanh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EAE98C86AEFA896954CEDE5 /* libPods-MuaBanNhanh.a */; };
 /* End PBXBuildFile section */
 
@@ -163,6 +164,8 @@
 		05E03DAD1AC9318D004426CE /* MuaBanNhanhTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuaBanNhanhTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05E03DB21AC9318D004426CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05E03DB31AC9318D004426CE /* MuaBanNhanhTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MuaBanNhanhTests.m; sourceTree = "<group>"; };
+		05F3E54B1ADB77BA00D432AF /* MBNRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNRegisterViewController.h; sourceTree = "<group>"; };
+		05F3E54C1ADB77BA00D432AF /* MBNRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNRegisterViewController.m; sourceTree = "<group>"; };
 		5634B996ABA6F7CE44922C55 /* Pods-MuaBanNhanh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuaBanNhanh.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuaBanNhanh/Pods-MuaBanNhanh.release.xcconfig"; sourceTree = "<group>"; };
 		8EAE98C86AEFA896954CEDE5 /* libPods-MuaBanNhanh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MuaBanNhanh.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDC741CC4D6A1E04FD9BA6B5 /* Pods-MuaBanNhanh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuaBanNhanh.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MuaBanNhanh/Pods-MuaBanNhanh.debug.xcconfig"; sourceTree = "<group>"; };
@@ -195,6 +198,8 @@
 				05958DA41AD9076000F7A708 /* MBNLoginNavigationViewController.m */,
 				05958DA61AD907C300F7A708 /* MBNLoginViewController.h */,
 				05958DA71AD907C300F7A708 /* MBNLoginViewController.m */,
+				05F3E54B1ADB77BA00D432AF /* MBNRegisterViewController.h */,
+				05F3E54C1ADB77BA00D432AF /* MBNRegisterViewController.m */,
 			);
 			path = "Register : Login : Forgot password";
 			sourceTree = "<group>";
@@ -684,6 +689,7 @@
 				05A3E3431ACAF11200E55215 /* MBNSideMenuViewController.m in Sources */,
 				0561C9BD1AD05F6800BEDA6D /* TKAlignTopLabel.m in Sources */,
 				0593B7F81AD18E6500A492F3 /* IndexHomePopupViewController.m in Sources */,
+				05F3E54D1ADB77BA00D432AF /* MBNRegisterViewController.m in Sources */,
 				0561C9B81AD05CD700BEDA6D /* MBNProductCollectionViewCell.m in Sources */,
 				053978FA1ACC1FCD007C4676 /* MBNRevealViewController.m in Sources */,
 			);

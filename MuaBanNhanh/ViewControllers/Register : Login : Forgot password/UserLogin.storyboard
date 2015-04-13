@@ -551,20 +551,20 @@
         <!--Đăng ký-->
         <scene sceneID="tNK-PM-CdG">
             <objects>
-                <viewController id="7RO-Lh-BnQ" sceneMemberID="viewController">
+                <viewController id="7RO-Lh-BnQ" customClass="MBNRegisterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="im1-UJ-49I"/>
                         <viewControllerLayoutGuide type="bottom" id="3gi-Bz-WaL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nc1-La-ydr">
-                        <rect key="frame" x="0.0" y="64" width="600" height="736"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="656"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E5Y-bc-04I">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="656"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGx-9s-tZ4" customClass="TKDesignableView">
-                                        <rect key="frame" x="150" y="13" width="300" height="536"/>
+                                        <rect key="frame" x="150" y="13" width="300" height="620"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qyH-w4-18K" customClass="TKDesignableView">
                                                 <rect key="frame" x="10" y="10" width="280" height="34"/>
@@ -722,11 +722,112 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpo-qU-0VK">
+                                                <rect key="frame" x="47" y="441" width="238" height="35"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Tôi đã đọc kỹ và đồng ý với ">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="điều khoản sử dụng">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.21568627450980393" green="0.47058823529411764" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content=" vủa MuaBanNhanh ">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fF0-1H-RuG" customClass="M13Checkbox">
+                                                <rect key="frame" x="18" y="446" width="15" height="15"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSh-K2-g0Q">
+                                                <rect key="frame" x="18" y="484" width="267" height="63"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Khi nhấp chuột vào Đăng ký, bạn đồng ý với Các ">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="điều khoản">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.20784313725490197" green="0.46274509803921571" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content=" của chúng tôi và bạn đã đọc ">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="Chính sách sử dụng dữ liệu ">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.25098039215686274" green="0.49803921568627452" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="của chúng tôi, bao gồm ">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                    <fragment content="Sử dụng cookie">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.20784313725490197" green="0.46274509803921571" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IdR-z9-OFP" customClass="TKDesignableView">
+                                                <rect key="frame" x="10" y="555" width="280" height="45"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pc5-Su-gkz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="45"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <state key="normal" title="Đồng ý và tiếp tục">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.30196078431372547" green="0.67843137254901964" blue="0.29019607843137257" alpha="1" colorSpace="calibratedRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.26666666666666666" green="0.63529411764705879" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="300" id="fk8-Aj-4hP"/>
-                                            <constraint firstAttribute="height" constant="536" id="mG8-zm-jlb"/>
+                                            <constraint firstAttribute="height" constant="620" id="mG8-zm-jlb"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -739,28 +840,42 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="bGx-9s-tZ4" secondAttribute="centerX" id="RXO-AE-wbX"/>
-                                    <constraint firstAttribute="bottom" secondItem="bGx-9s-tZ4" secondAttribute="bottom" constant="20" id="WQr-8O-XnY"/>
+                                    <constraint firstAttribute="bottom" secondItem="bGx-9s-tZ4" secondAttribute="bottom" constant="23" id="WQr-8O-XnY"/>
                                     <constraint firstAttribute="trailing" secondItem="bGx-9s-tZ4" secondAttribute="trailing" constant="150" placeholder="YES" id="fHG-Kg-Igk"/>
                                     <constraint firstItem="bGx-9s-tZ4" firstAttribute="top" secondItem="E5Y-bc-04I" secondAttribute="top" constant="13" id="z9E-E7-eFo"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.12549019610000001" green="0.41568627450000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="E5Y-bc-04I" secondAttribute="centerX" id="QNk-bZ-eZI"/>
                             <constraint firstAttribute="width" secondItem="E5Y-bc-04I" secondAttribute="width" id="fiH-x0-LAZ"/>
                             <constraint firstAttribute="height" secondItem="E5Y-bc-04I" secondAttribute="height" id="hQS-8X-Oqy"/>
                             <constraint firstAttribute="centerY" secondItem="E5Y-bc-04I" secondAttribute="centerY" id="nQK-sm-FUO"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="7GK-mm-Dld" appends="YES" id="46T-TX-PPI"/>
+                        </connections>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Đăng ký" id="vyV-Ek-Wds"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="800"/>
+                    <size key="freeformSize" width="600" height="720"/>
+                    <connections>
+                        <outlet property="scrollView" destination="E5Y-bc-04I" id="ZY2-fx-sRb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y7d-jI-fWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="7GK-mm-Dld">
+                    <connections>
+                        <action selector="onTapOutside:" destination="7RO-Lh-BnQ" id="e2i-oy-vmA"/>
+                        <outlet property="delegate" destination="7RO-Lh-BnQ" id="MPQ-P8-STO"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2132" y="650"/>
         </scene>
