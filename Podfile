@@ -11,6 +11,7 @@ target 'MuaBanNhanh' do
   pod 'FLEX'
   pod 'KVOController'
   pod 'M13Checkbox'
+  pod 'TTTAttributedLabel'
   pod 'Mantle', '~> 1.5'
   pod 'SVProgressHUD'
   pod 'WYPopoverController'
