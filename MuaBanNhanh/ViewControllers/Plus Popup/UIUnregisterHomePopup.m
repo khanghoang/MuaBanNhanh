@@ -8,6 +8,7 @@
 
 #import "UIUnregisterHomePopup.h"
 #import "MBNShowLoginSegue.h"
+#import "MBNNavigationViewController.h"
 
 @interface UIUnregisterHomePopup ()
 
@@ -35,5 +36,13 @@
     MBNShowLoginSegue *segue = [[MBNShowLoginSegue alloc] initWithIdentifier:@"MBNLoginSegue" source:self destination:loginViewController];
     [segue perform];
 }
+
+- (IBAction)onBtnRegister:(id)sender {
+    UIViewController *loginViewController = [[UIStoryboard storyboardWithName:@"UserLogin" bundle:nil] instantiateViewControllerWithIdentifier:@"MBNRegisterViewController"];
+    MBNNavigationViewController *navController = [[MBNNavigationViewController alloc] initWithRootViewController:loginViewController];
+    MBNShowLoginSegue *segue = [[MBNShowLoginSegue alloc] initWithIdentifier:@"MBNLoginSegue" source:self destination:navController];
+    [segue perform];
+}
+
 
 @end

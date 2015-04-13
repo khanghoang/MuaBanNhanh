@@ -81,4 +81,8 @@ UIGestureRecognizerDelegate
     [self.view endEditing:YES];
 }
 
+- (IBAction)onCloseButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
