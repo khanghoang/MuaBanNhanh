@@ -566,10 +566,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGx-9s-tZ4" customClass="TKDesignableView">
                                         <rect key="frame" x="150" y="13" width="300" height="620"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qyH-w4-18K" customClass="TKDesignableView">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyH-w4-18K" customClass="TKDesignableView">
                                                 <rect key="frame" x="10" y="10" width="280" height="34"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Họ và tên đệm" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mgW-h1-zna">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Họ và tên đệm" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mgW-h1-zna">
                                                         <rect key="frame" x="8" y="2" width="264" height="30"/>
                                                         <color key="textColor" red="0.1542574179" green="0.1542574179" blue="0.1542574179" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -586,10 +586,10 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EbM-sO-JLg" customClass="TKDesignableView">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EbM-sO-JLg" customClass="TKDesignableView">
                                                 <rect key="frame" x="10" y="59" width="280" height="34"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Họ và tên đệm" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EAv-Ze-utl">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tên" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EAv-Ze-utl">
                                                         <rect key="frame" x="8" y="2" width="264" height="30"/>
                                                         <color key="textColor" red="0.1542574179" green="0.1542574179" blue="0.1542574179" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -606,10 +606,10 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FEr-47-Bvh" customClass="TKDesignableView">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FEr-47-Bvh" customClass="TKDesignableView">
                                                 <rect key="frame" x="10" y="108" width="280" height="34"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Họ và tên đệm" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AS9-Du-FRw">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Số điện thoại" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AS9-Du-FRw">
                                                         <rect key="frame" x="8" y="2" width="264" height="30"/>
                                                         <color key="textColor" red="0.1542574179" green="0.1542574179" blue="0.1542574179" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -626,10 +626,10 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wJg-3e-NWh" customClass="TKDesignableView">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJg-3e-NWh" customClass="TKDesignableView">
                                                 <rect key="frame" x="10" y="156" width="280" height="34"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Họ và tên đệm" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HUv-7w-c5s">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HUv-7w-c5s">
                                                         <rect key="frame" x="8" y="2" width="264" height="30"/>
                                                         <color key="textColor" red="0.1542574179" green="0.1542574179" blue="0.1542574179" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -646,14 +646,14 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hJ-u9-MHU" customClass="TKDesignableView">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hJ-u9-MHU" customClass="TKDesignableView">
                                                 <rect key="frame" x="10" y="204" width="280" height="34"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Họ và tên đệm" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qki-dS-MAP">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mật khẩu" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qki-dS-MAP">
                                                         <rect key="frame" x="8" y="2" width="264" height="30"/>
                                                         <color key="textColor" red="0.1542574179" green="0.1542574179" blue="0.1542574179" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -666,14 +666,14 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lSz-al-Ztq" customClass="TKDesignableView">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSz-al-Ztq" customClass="TKDesignableView">
                                                 <rect key="frame" x="10" y="251" width="280" height="34"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Họ và tên đệm" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5lq-BP-b0f">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nhập lại mật khẩu" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5lq-BP-b0f">
                                                         <rect key="frame" x="8" y="2" width="264" height="30"/>
                                                         <color key="textColor" red="0.1542574179" green="0.1542574179" blue="0.1542574179" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -686,11 +686,11 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QYs-IA-Ixq" customClass="TKDesignableView">
-                                                <rect key="frame" x="10" y="298" width="275" height="135"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QYs-IA-Ixq" customClass="TKDesignableView">
+                                                <rect key="frame" x="10" y="298" width="280" height="135"/>
                                                 <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u29-xO-dhR">
-                                                        <rect key="frame" x="4" y="1" width="267" height="128"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u29-xO-dhR">
+                                                        <rect key="frame" x="4" y="1" width="276" height="128"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <attributedString key="attributedText">
                                                             <fragment>
@@ -722,8 +722,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpo-qU-0VK">
-                                                <rect key="frame" x="47" y="441" width="238" height="35"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpo-qU-0VK">
+                                                <rect key="frame" x="39" y="439" width="246" height="35"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Tôi đã đọc kỹ và đồng ý với ">
                                                         <attributes>
@@ -749,12 +749,8 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fF0-1H-RuG" customClass="M13Checkbox">
-                                                <rect key="frame" x="18" y="446" width="15" height="15"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSh-K2-g0Q">
-                                                <rect key="frame" x="18" y="484" width="267" height="63"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSh-K2-g0Q">
+                                                <rect key="frame" x="12" y="482" width="278" height="63"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Khi nhấp chuột vào Đăng ký, bạn đồng ý với Các ">
                                                         <attributes>
@@ -801,10 +797,10 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IdR-z9-OFP" customClass="TKDesignableView">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IdR-z9-OFP" customClass="TKDesignableView">
                                                 <rect key="frame" x="10" y="555" width="280" height="45"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pc5-Su-gkz">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pc5-Su-gkz">
                                                         <rect key="frame" x="0.0" y="0.0" width="280" height="45"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <state key="normal" title="Đồng ý và tiếp tục">
@@ -823,6 +819,13 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BT3-SQ-qZ4">
+                                                <rect key="frame" x="8" y="439" width="30" height="30"/>
+                                                <state key="normal" title="N">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected" title="S"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -870,10 +873,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y7d-jI-fWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="7GK-mm-Dld">
+                <tapGestureRecognizer delaysTouchesEnded="NO" id="7GK-mm-Dld">
                     <connections>
                         <action selector="onTapOutside:" destination="7RO-Lh-BnQ" id="e2i-oy-vmA"/>
-                        <outlet property="delegate" destination="7RO-Lh-BnQ" id="MPQ-P8-STO"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
