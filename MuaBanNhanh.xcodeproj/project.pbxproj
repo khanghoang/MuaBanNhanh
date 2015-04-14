@@ -46,6 +46,7 @@
 		05A3E3491ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05A3E3471ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.xib */; };
 		05A3E34D1ACAF9D300E55215 /* UIView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E34C1ACAF9D300E55215 /* UIView+Addition.m */; };
 		05A3E3501ACAF9E100E55215 /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E34F1ACAF9E100E55215 /* Colours.m */; };
+		05D1A2711ADD4BB6004F9C9F /* MBNUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D1A2701ADD4BB6004F9C9F /* MBNUserManager.m */; };
 		05D84BFD1AD632A000497FA0 /* MBNSegueShowProductFromCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D84BFC1AD632A000497FA0 /* MBNSegueShowProductFromCategory.m */; };
 		05D84C001AD63C1000497FA0 /* MBNCategoryProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D84BFF1AD63C1000497FA0 /* MBNCategoryProductsViewController.m */; };
 		05D84C031AD63D8F00497FA0 /* MBNProductCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D84C021AD63D8F00497FA0 /* MBNProductCellFactory.m */; };
@@ -143,6 +144,8 @@
 		05A3E34C1ACAF9D300E55215 /* UIView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addition.m"; sourceTree = "<group>"; };
 		05A3E34E1ACAF9E100E55215 /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
 		05A3E34F1ACAF9E100E55215 /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
+		05D1A26F1ADD4BB6004F9C9F /* MBNUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNUserManager.h; sourceTree = "<group>"; };
+		05D1A2701ADD4BB6004F9C9F /* MBNUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNUserManager.m; sourceTree = "<group>"; };
 		05D84BFB1AD632A000497FA0 /* MBNSegueShowProductFromCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSegueShowProductFromCategory.h; sourceTree = "<group>"; };
 		05D84BFC1AD632A000497FA0 /* MBNSegueShowProductFromCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSegueShowProductFromCategory.m; sourceTree = "<group>"; };
 		05D84BFE1AD63C1000497FA0 /* MBNCategoryProductsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNCategoryProductsViewController.h; sourceTree = "<group>"; };
@@ -256,6 +259,8 @@
 				0561C9BF1AD06A8C00BEDA6D /* MBNProductManager.m */,
 				0593B7EC1AD180F200A492F3 /* MBNActionsManagers.h */,
 				0593B7ED1AD180F200A492F3 /* MBNActionsManagers.m */,
+				05D1A26F1ADD4BB6004F9C9F /* MBNUserManager.h */,
+				05D1A2701ADD4BB6004F9C9F /* MBNUserManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -655,6 +660,7 @@
 			files = (
 				05A3E3481ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m in Sources */,
 				053979101ACC4998007C4676 /* MBNHomeBottomViewController.m in Sources */,
+				05D1A2711ADD4BB6004F9C9F /* MBNUserManager.m in Sources */,
 				0561C9B31ACFC31100BEDA6D /* UIViewController+SideViewFunctions.m in Sources */,
 				05D84C001AD63C1000497FA0 /* MBNCategoryProductsViewController.m in Sources */,
 				0508672D1AD6F08F00038F87 /* UIUnregisterHomePopup.m in Sources */,

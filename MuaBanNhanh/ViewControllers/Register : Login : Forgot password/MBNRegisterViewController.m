@@ -7,6 +7,7 @@
 //
 
 #import "MBNRegisterViewController.h"
+#import "MBNUserManager.h"
 
 @interface MBNRegisterViewController ()
 <
@@ -49,6 +50,10 @@ UIGestureRecognizerDelegate
         return @"Bạn chưa điền số điện thoai";
     }
     
+    if([self.txtEmail.text isEqualToString:@""]) {
+        return @"Bạn chưa điền email";
+    }
+    
     if([self.txtPassword.text isEqualToString:@""]) {
         return @"Bạn chưa nhập mật khẩu";
     }
@@ -81,6 +86,25 @@ UIGestureRecognizerDelegate
 
 - (IBAction)onBtnRegister:(id)sender {
     [self isTheFormValidated];
+    
+    [SVProgressHUD showWithStatus:@"Đang tiến hành đăng ký, vui lòng chờ!" maskType:SVProgressHUDMaskTypeGradient];
+    
+    [[MBNUserManager sharedProvider] registerWithUsername:[self.txtFirstName.text stringByAppendingString:self.txtName.text] password:self.txtPassword.text phone:self.txtPhone.text email:self.txtEmail.text success:^(NSDictionary *result) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Đăng ký thành công"
+                                                            message:@"Bạn đã đăng ký thàng công, vui lòng trở về trang đăng nhập và thực hiện đăng nhập"
+                                                           delegate:nil cancelButtonTitle:@"Đồng ý"
+                                                  otherButtonTitles:nil];
+        [SVProgressHUD dismiss];
+        [alertView show];
+    } andFailure:^(NSString *stringError) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Lỗi"
+                                                            message:stringError
+                                                           delegate:nil cancelButtonTitle:@"Đồng ý"
+                                                  otherButtonTitles:nil];
+
+        [SVProgressHUD dismiss];
+        [alertView show];
+    }];
 }
 
 #pragma marks - Keyboard

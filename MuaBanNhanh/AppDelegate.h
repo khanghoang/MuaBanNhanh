@@ -21,6 +21,7 @@ UIApplicationDelegate
 @property (strong, readonly) UIWindow *popupWindow;
 
 - (void)displayPopupWindow;
+- (void)closePopupViewCompletion:(void (^)())completion;
 
 @end
 

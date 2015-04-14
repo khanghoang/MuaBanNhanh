@@ -32,6 +32,7 @@
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import <Masonry/Masonry.h>
 #import <KHTableViewController/KHTableController.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 
 #import <KHTableViewController/KHNormalDataProvider.h>
 #import <KHTableViewController/KHCollectionController.h>
@@ -45,4 +46,5 @@
 #import "MBNCategoryManager.h"
 #import "MBNProductManager.h"
 #import "MBNActionsManagers.h"
+#import "MBNUserManager.h"
 
