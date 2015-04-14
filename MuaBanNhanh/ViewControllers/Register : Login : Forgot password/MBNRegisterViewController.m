@@ -16,6 +16,14 @@ UIGestureRecognizerDelegate
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) UITextField *activeField;
 
+@property (weak, nonatomic) IBOutlet UITextField *txtFirstName;
+@property (weak, nonatomic) IBOutlet UITextField *txtName;
+@property (weak, nonatomic) IBOutlet UITextField *txtPhone;
+@property (weak, nonatomic) IBOutlet UITextField *txtEmail;
+@property (weak, nonatomic) IBOutlet UITextField *txtPassword;
+@property (weak, nonatomic) IBOutlet UITextField *txtRePassword;
+@property (weak, nonatomic) IBOutlet UIButton *btnAgree;
+
 @end
 
 @implementation MBNRegisterViewController
@@ -25,6 +33,54 @@ UIGestureRecognizerDelegate
     // Do any additional setup after loading the view.
     
     [self registerForKeyboardNotifications];
+}
+
+- (NSString *)getTheFormStatus {
+    
+    if([self.txtFirstName.text isEqualToString:@""]) {
+        return @"Bạn chưa điền họ và tên đệm";
+    }
+    
+    if([self.txtName.text isEqualToString:@""]) {
+        return @"Bạn chưa điền tên";
+    }
+    
+    if([self.txtPhone.text isEqualToString:@""]) {
+        return @"Bạn chưa điền số điện thoai";
+    }
+    
+    if([self.txtPassword.text isEqualToString:@""]) {
+        return @"Bạn chưa nhập mật khẩu";
+    }
+    
+    if(![self.txtPassword.text isEqualToString:self.txtRePassword.text]) {
+        return @"Mật khẩu nhập lại không khớp";
+    }
+    
+    if (!self.btnAgree.isSelected) {
+        return @"Bạn chưa đồng ý với điều khoản sử dụng";
+    }
+    
+    return @"";
+}
+
+- (BOOL)isTheFormValidated {
+    NSString *errorString = [self getTheFormStatus];
+    if(![errorString isEqualToString:@""]) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Lỗi"
+                                                            message:errorString
+                                                           delegate:nil cancelButtonTitle:@"Đồng ý"
+                                                  otherButtonTitles:nil];
+        
+        [alertView show];
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (IBAction)onBtnRegister:(id)sender {
+    [self isTheFormValidated];
 }
 
 #pragma marks - Keyboard
