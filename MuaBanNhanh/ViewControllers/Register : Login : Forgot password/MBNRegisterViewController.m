@@ -27,6 +27,8 @@ UIGestureRecognizerDelegate
     [self registerForKeyboardNotifications];
 }
 
+#pragma marks - Keyboard
+
 - (void)registerForKeyboardNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -76,6 +78,8 @@ UIGestureRecognizerDelegate
     self.activeField = nil;
 }
 
+#pragma marks - Outlets button actions
+
 - (IBAction)onTapOutside:(id)sender {
     self.activeField = nil;
     [self.view endEditing:YES];
@@ -83,6 +87,11 @@ UIGestureRecognizerDelegate
 
 - (IBAction)onCloseButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)onTapCheckbox:(id)sender {
+    UIButton *btnCheckbox = (UIButton *)sender;
+    btnCheckbox.selected = !btnCheckbox.selected;
 }
 
 @end
