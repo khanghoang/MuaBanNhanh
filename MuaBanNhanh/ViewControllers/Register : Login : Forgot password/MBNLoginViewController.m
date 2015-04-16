@@ -61,11 +61,17 @@
     
     [SVProgressHUD showWithStatus:@"Đang đăng nhập..."];
     
-    [[MBNUserManager sharedProvider] loginWithPhone:self.txtPhone.text andPassword:self.txtPassword.text successBlock:^(NSDictionary *result) {
+    [[MBNUserManager sharedProvider] loginWithPhone:self.txtPhone.text andPassword:self.txtPassword.text successBlock:^(MBNUser *user) {
         
-    } andFailure:^(NSError *error) {
+        [SVProgressHUD showSuccessWithStatus:@"Đăng nhập thành công"];
+        
+    } andFailure:^(NSString *errorString) {
+        
+        [SVProgressHUD showErrorWithStatus:errorString
+                                  maskType:SVProgressHUDMaskTypeGradient];
         
     }];
+    
 }
 
 #pragma marks - Keyboard

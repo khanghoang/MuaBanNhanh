@@ -8,6 +8,16 @@
 
 #import "MTLModel.h"
 
+typedef enum : NSUInteger {
+    MBNUserTypeBasic,
+    MBNUserTypePremium,
+} MBNUserType;
+
+typedef enum : NSUInteger {
+    MBNUserValidatePhoneNumberNo,
+    MBNUserValidatePhoneNumberYes,
+} MBNUserValidatePhoneNumber;
+
 @interface MBNUser : MTLModel
 <
 MTLJSONSerializing
@@ -16,7 +26,12 @@ MTLJSONSerializing
 @property (copy, nonatomic) NSNumber *ID;
 @property (copy, nonatomic) NSString *name;
 @property (copy, nonatomic) NSString *phone;
+@property (copy, nonatomic) NSString *email;
+@property (copy, nonatomic) NSString *gender;
 @property (copy, nonatomic) NSURL *avatarImageUrl;
 @property (copy, nonatomic) NSURL *coverImageUrl;
+@property (assign, nonatomic) MBNUserValidatePhoneNumber isValidatePhoneNumber;
+@property (copy, nonatomic) NSString *accountType;
+@property (copy, nonatomic) NSString *token;
 
 @end

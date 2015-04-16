@@ -23,7 +23,7 @@
     return instance;
 }
 
-- (void)loginWithPhone:(NSString *)phone andPassword:(NSString *)password successBlock:(void (^) (NSDictionary *result))successBlock andFailure:(void (^) (NSError *error))failureBlock {
+- (void)loginWithPhone:(NSString *)phone andPassword:(NSString *)password successBlock:(void (^) (MBNUser *user))successBlock andFailure:(void (^) (NSString *errorString))failureBlock {
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -41,23 +41,37 @@
           success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
               
               if ([responseObject[@"status"] integerValue] == 400) {
-                  [SVProgressHUD showErrorWithStatus:responseObject[@"message"]
-                                            maskType:SVProgressHUDMaskTypeGradient];
+                  if (failureBlock) {
+                      failureBlock(responseObject[@"message"]);
+                  }
+                  
                   return;
               }
               
               if ([responseObject[@"status"] integerValue] == 200) {
-                  [SVProgressHUD showSuccessWithStatus:@"Đăng nhập thành công"];
-                  
-                  // close the login popup
                   
                   // write login user data into NSUserDefault
+                  MBNUser *user = [MTLJSONAdapter modelOfClass:[MBNUser class] fromJSONDictionary:responseObject[@"result"] error:nil];
+                  
+                  [[NSUserDefaults standardUserDefaults] setObject:user forKey:NS_USER_DEFAULT_LOGIN_USER];
+                  [[NSUserDefaults standardUserDefaults] synchronize];
+                  
+                  // broadcast the login user
+                  [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_LOGIN object:user];
+                  
+                  // close the login popup
+                  if (successBlock) {
+                      successBlock(user);
+                  }
                   
                   return;
               }
               
           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               [SVProgressHUD showErrorWithStatus:@"Có lỗi phát sinh, vui lòng thử lại."];
+              if (failureBlock) {
+                  failureBlock(@"Vui lòng kiểm tra kết nối mạng và thử lại");
+              }
           }];
 }
 

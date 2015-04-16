@@ -9,6 +9,9 @@
 /*
  *  System Versioning Preprocessor Macros
  */
+#define NS_USER_DEFAULT_LOGIN_USER @"loginUser"
+#define NOTIFICATION_USER_LOGIN @"notification_user_login"
+#define NOTIFICATION_USER_LOGOUT @"notification_user_logout"
 
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
 #define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)

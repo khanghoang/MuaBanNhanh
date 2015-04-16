@@ -17,6 +17,11 @@
              @"ID": @"id",
              @"name": @"name",
              @"phone": @"phone",
+             @"email": @"email",
+             @"gender": @"gender",
+             @"isValidatePhoneNumber": @"phone_number_certified",
+             @"accountType": @"type",
+             @"token": @"token",
              @"avatarImageUrl": @"avatar_image_url",
              @"coverImageUrl": @"cover_image_url",
              };
@@ -28,6 +33,13 @@
 
 + (NSValueTransformer *)coverImageUrlJSONTransformer {
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
+}
+
++ (NSValueTransformer *)isValidatePhoneNumberJSONTransformer {
+    return [NSValueTransformer mtl_valueMappingTransformerWithDictionary:@{
+                                                                           @"0": @(MBNUserValidatePhoneNumberNo),
+                                                                           @"1": @(MBNUserValidatePhoneNumberYes)
+                                                                           }];
 }
 
 @end

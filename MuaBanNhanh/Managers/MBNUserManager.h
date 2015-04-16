@@ -14,7 +14,7 @@
 
 - (void)registerWithUsername:(NSString *)username password:(NSString *)password phone:(NSString *)phone email:(NSString *)email success:(void (^) (NSDictionary *result))successBlock andFailure:(void (^) (NSString *stringError))failureBlock;
 
-- (void)loginWithPhone:(NSString *)phone andPassword:(NSString *)password successBlock:(void (^) (NSDictionary *result))successBlock andFailure:(void (^) (NSError *error))failureBlock;
+- (void)loginWithPhone:(NSString *)phone andPassword:(NSString *)password successBlock:(void (^) (MBNUser *user))successBlock andFailure:(void (^) (NSString *errorString))failureBlock;
 
 - (void)saveLoginUser:(NSDictionary *)userData;
 - (NSDictionary *)getLoginUser;
