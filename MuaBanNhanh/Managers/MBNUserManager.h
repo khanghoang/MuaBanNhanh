@@ -16,7 +16,7 @@
 
 - (void)loginWithPhone:(NSString *)phone andPassword:(NSString *)password successBlock:(void (^) (MBNUser *user))successBlock andFailure:(void (^) (NSString *errorString))failureBlock;
 
-- (void)saveLoginUser:(NSDictionary *)userData;
-- (NSDictionary *)getLoginUser;
+- (void)saveLoginUser:(MBNUser *)user;
+- (MBNUser *)getLoginUser;
 
 @end

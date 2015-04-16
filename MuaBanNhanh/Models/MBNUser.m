@@ -36,10 +36,37 @@
 }
 
 + (NSValueTransformer *)isValidatePhoneNumberJSONTransformer {
-    return [NSValueTransformer mtl_valueMappingTransformerWithDictionary:@{
-                                                                           @"0": @(MBNUserValidatePhoneNumberNo),
-                                                                           @"1": @(MBNUserValidatePhoneNumberYes)
-                                                                           }];
+    return [NSValueTransformer valueTransformerForName:MTLBooleanValueTransformerName];
+}
+
+- (void)encodeWithCoder:(NSCoder *)coder {
+    [coder encodeObject:self.ID forKey:@"id"];
+    [coder encodeObject:self.name forKey:@"name"];
+    [coder encodeObject:self.phone forKey:@"phone"];
+    [coder encodeObject:self.email forKey:@"email"];
+    [coder encodeObject:@(self.isValidatePhoneNumber) forKey:@"isValidatePhoneNumber"];
+    [coder encodeObject:self.accountType forKey:@"accountType"];
+    [coder encodeObject:self.token forKey:@"token"];
+    [coder encodeObject:self.avatarImageUrl forKey:@"avatarImageUrl"];
+    [coder encodeObject:self.coverImageUrl forKey:@"coverImageUrl"];
+}
+
+- (id)initWithCoder:(NSCoder *)coder {
+    
+    if (self = [super init]) {
+        self.ID = [coder decodeObjectForKey:@"ID"];
+        self.name = [coder decodeObjectForKey:@"name"];
+        self.phone = [coder decodeObjectForKey:@"phone"];
+        self.email = [coder decodeObjectForKey:@"email"];
+        self.isValidatePhoneNumber = [[coder decodeObjectForKey:@"isValidatePhoneNumber"] boolValue];
+        self.accountType = [coder decodeObjectForKey:@"accountType"];
+        self.token = [coder decodeObjectForKey:@"token"];
+        self.avatarImageUrl = [coder decodeObjectForKey:@"avatarImageUrl"];
+        self.coverImageUrl = [coder decodeObjectForKey:@"coverImageUrl"];
+    }
+    
+    return self;
+    
 }
 
 @end

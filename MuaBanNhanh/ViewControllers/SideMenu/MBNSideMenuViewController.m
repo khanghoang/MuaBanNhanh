@@ -29,6 +29,11 @@ UICollectionViewDelegateFlowLayout
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(userLogin:)
+                                                 name:NOTIFICATION_USER_LOGIN
+                                               object:nil];
+    
     [self.menuCollectionView registerNib:[MBNSideMenuCollectionViewCell nib]
                 forCellWithReuseIdentifier:NSStringFromClass([MBNSideMenuCollectionViewCell class])];
     
@@ -37,6 +42,16 @@ UICollectionViewDelegateFlowLayout
         [self.menuCollectionView reloadData];
     } failure:^(NSError *error) {
     }];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)userLogin:(NSNotification *)notification {
+    // get nofitcation
+    MBNUser *loginUser = notification.object;
 }
 
 #pragma mark - UICollectionView delegate 

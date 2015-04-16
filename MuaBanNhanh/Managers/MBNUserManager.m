@@ -23,6 +23,18 @@
     return instance;
 }
 
+- (void)saveLoginUser:(MBNUser *)user {
+    NSData *encodedUser = [NSKeyedArchiver archivedDataWithRootObject:user];
+    [[NSUserDefaults standardUserDefaults] setObject:encodedUser forKey:NS_USER_DEFAULT_LOGIN_USER];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (MBNUser *)getLoginUser {
+    NSData *encodedUser = [[NSUserDefaults standardUserDefaults] objectForKey:NS_USER_DEFAULT_LOGIN_USER];
+    MBNUser *user = [NSKeyedUnarchiver unarchiveObjectWithData:encodedUser];
+    return user;
+}
+
 - (void)loginWithPhone:(NSString *)phone andPassword:(NSString *)password successBlock:(void (^) (MBNUser *user))successBlock andFailure:(void (^) (NSString *errorString))failureBlock {
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -53,8 +65,7 @@
                   // write login user data into NSUserDefault
                   MBNUser *user = [MTLJSONAdapter modelOfClass:[MBNUser class] fromJSONDictionary:responseObject[@"result"] error:nil];
                   
-                  [[NSUserDefaults standardUserDefaults] setObject:user forKey:NS_USER_DEFAULT_LOGIN_USER];
-                  [[NSUserDefaults standardUserDefaults] synchronize];
+                  [self saveLoginUser:user];
                   
                   // broadcast the login user
                   [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_LOGIN object:user];

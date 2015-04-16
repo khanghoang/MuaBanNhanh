@@ -30,7 +30,7 @@ MTLJSONSerializing
 @property (copy, nonatomic) NSString *gender;
 @property (copy, nonatomic) NSURL *avatarImageUrl;
 @property (copy, nonatomic) NSURL *coverImageUrl;
-@property (assign, nonatomic) MBNUserValidatePhoneNumber isValidatePhoneNumber;
+@property (assign, nonatomic) BOOL isValidatePhoneNumber;
 @property (copy, nonatomic) NSString *accountType;
 @property (copy, nonatomic) NSString *token;
 
