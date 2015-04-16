@@ -12,6 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) UITextField *activeField;
+@property (weak, nonatomic) IBOutlet UITextField *txtPhone;
+@property (weak, nonatomic) IBOutlet UITextField *txtPassword;
 
 @end
 
@@ -22,6 +24,48 @@
     // Do any additional setup after loading the view.
     
     [self registerForKeyboardNotifications];
+}
+
+- (NSString *)getErrorStringFromLoginForm {
+    if([self.txtPhone.text isEqualToString:@""]) {
+        return @"Bạn chưa điền số điện thoại";
+    }
+    
+    if([self.txtPassword.text isEqualToString:@""]) {
+        return @"Bạn chưa điền mật khẩu";
+    }
+    
+    return @"";
+}
+
+- (BOOL)validateLoginForm {
+    NSString *errorString = [self getErrorStringFromLoginForm];
+    if([errorString isEqualToString:@""]) {
+        return YES;
+    }
+    
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Lỗi"
+                                                        message:errorString
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Đồng ý"
+                                              otherButtonTitles:nil];
+    [alertView show];
+    return NO;
+}
+
+- (IBAction)onBtnLogin:(id)sender {
+    BOOL valid = [self validateLoginForm];
+    if (!valid) {
+        return;
+    }
+    
+    [SVProgressHUD showWithStatus:@"Đang đăng nhập..."];
+    
+    [[MBNUserManager sharedProvider] loginWithPhone:self.txtPhone.text andPassword:self.txtPassword.text successBlock:^(NSDictionary *result) {
+        
+    } andFailure:^(NSError *error) {
+        
+    }];
 }
 
 #pragma marks - Keyboard

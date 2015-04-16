@@ -38,12 +38,26 @@
     
     [manager POST:@"https://api.muabannhanh.com/user/login"
        parameters:params
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+          success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
               
+              if ([responseObject[@"status"] integerValue] == 400) {
+                  [SVProgressHUD showErrorWithStatus:responseObject[@"message"]
+                                            maskType:SVProgressHUDMaskTypeGradient];
+                  return;
+              }
               
+              if ([responseObject[@"status"] integerValue] == 200) {
+                  [SVProgressHUD showSuccessWithStatus:@"Đăng nhập thành công"];
+                  
+                  // close the login popup
+                  
+                  // write login user data into NSUserDefault
+                  
+                  return;
+              }
               
           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              
+              [SVProgressHUD showErrorWithStatus:@"Có lỗi phát sinh, vui lòng thử lại."];
           }];
 }
 
