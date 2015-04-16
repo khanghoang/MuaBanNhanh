@@ -92,7 +92,7 @@
         self.popupWindow.alpha = 1;
     }];
     
-    UITapGestureRecognizer *tapToClose = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closePopupView)];
+    UITapGestureRecognizer *tapToClose = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closePopupViewCompletion:)];
     [self.popupWindow.rootViewController.view addGestureRecognizer:tapToClose];
 }
 

@@ -21,6 +21,12 @@ UICollectionViewDelegateFlowLayout
 @property (weak, nonatomic) IBOutlet UICollectionView *menuCollectionView;
 @property (strong, nonatomic) NSArray *arrayCategories;
 
+@property (weak, nonatomic) IBOutlet UICollectionView *viewUserInfoWraper;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintHeightUserInfo;
+@property (weak, nonatomic) IBOutlet UIImageView *imageUserAvatar;
+@property (weak, nonatomic) IBOutlet UILabel *lblUsername;
+@property (weak, nonatomic) IBOutlet UIImageView *imageUserCover;
+
 @end
 
 @implementation MBNSideMenuViewController
@@ -42,6 +48,11 @@ UICollectionViewDelegateFlowLayout
         [self.menuCollectionView reloadData];
     } failure:^(NSError *error) {
     }];
+    
+    MBNUser *user = [[MBNUserManager sharedProvider] getLoginUser];
+    [self setUserInformationWithUser:user];
+    [self.viewUserInfoWraper updateConstraintsIfNeeded];
+    [self.viewUserInfoWraper layoutIfNeeded];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -52,6 +63,18 @@ UICollectionViewDelegateFlowLayout
 - (void)userLogin:(NSNotification *)notification {
     // get nofitcation
     MBNUser *loginUser = notification.object;
+    
+    [self setUserInformationWithUser:loginUser];
+}
+
+- (void)setUserInformationWithUser:(MBNUser *)loginUser {
+    [self.imageUserCover setImageWithURL:loginUser.coverImageUrl];
+    [self.imageUserAvatar setImageWithURL:loginUser.avatarImageUrl];
+    self.lblUsername.text = loginUser.name;
+    
+    self.constraintHeightUserInfo.constant = loginUser ? 130 : 0;
+    [self.viewUserInfoWraper updateConstraintsIfNeeded];
+    [self.viewUserInfoWraper layoutIfNeeded];
 }
 
 #pragma mark - UICollectionView delegate 
