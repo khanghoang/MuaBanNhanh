@@ -22,6 +22,7 @@ UIApplicationDelegate
 
 - (void)displayPopupWindow;
 - (void)closePopupViewCompletion:(void (^)())completion;
+- (void)closePopupView;
 
 @end
 

@@ -96,6 +96,10 @@
     [self.popupWindow.rootViewController.view addGestureRecognizer:tapToClose];
 }
 
+- (void)closePopupView {
+    [self closePopupViewCompletion:nil];
+}
+
 - (void)closePopupViewCompletion:(void (^)())completion {
     [self.mainWindow makeKeyWindow];
     [UIView animateWithDuration:0.45
