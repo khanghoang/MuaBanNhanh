@@ -65,6 +65,8 @@
         
         [SVProgressHUD showSuccessWithStatus:@"Đăng nhập thành công"];
         
+        [self dismissViewControllerAnimated:YES completion:nil];
+        
     } andFailure:^(NSString *errorString) {
         
         [SVProgressHUD showErrorWithStatus:errorString
