@@ -55,8 +55,7 @@ UICollectionViewDelegateFlowLayout
     [self.viewUserInfoWraper layoutIfNeeded];
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
