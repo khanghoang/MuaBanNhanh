@@ -28,10 +28,10 @@
                             <rect key="frame" x="0.0" y="0.0" width="318" height="129"/>
                         </imageView>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sj5-g4-2bL">
-                            <rect key="frame" x="19" y="16" width="60" height="60"/>
+                            <rect key="frame" x="8" y="69" width="60" height="60"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghe-A6-i5P">
-                            <rect key="frame" x="19" y="84" width="281" height="21"/>
+                            <rect key="frame" x="76" y="82" width="227" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -41,6 +41,9 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="129" id="tiF-XY-EvY"/>
                     </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="Sqa-pq-SUd" appends="YES" id="4eO-dG-oI0"/>
+                    </connections>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="7Wd-28-kwM">
                     <rect key="frame" x="0.0" y="129" width="318" height="471"/>
@@ -58,6 +61,7 @@
                 </collectionView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="7Wd-28-kwM" firstAttribute="top" secondItem="m2a-M2-CrX" secondAttribute="bottom" id="4Lo-rU-VZ6"/>
                 <constraint firstAttribute="trailing" secondItem="m2a-M2-CrX" secondAttribute="trailing" id="4Vw-N1-zue"/>
@@ -70,5 +74,10 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="51" y="398"/>
         </view>
+        <tapGestureRecognizer id="Sqa-pq-SUd">
+            <connections>
+                <action selector="onUserInformation:" destination="-1" id="TMA-ct-i5X"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

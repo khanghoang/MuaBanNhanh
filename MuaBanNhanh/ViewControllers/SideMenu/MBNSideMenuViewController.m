@@ -114,4 +114,10 @@ UICollectionViewDelegateFlowLayout
     [appDelegate.rootNavigationController pushViewController:viewController animated:YES];
 }
 
+#pragma marks - Actions
+
+- (IBAction)onUserInformation:(id)sender {
+}
+
+
 @end
