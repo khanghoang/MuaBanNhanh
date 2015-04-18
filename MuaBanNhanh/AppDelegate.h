@@ -24,5 +24,7 @@ UIApplicationDelegate
 - (void)closePopupViewCompletion:(void (^)())completion;
 - (void)closePopupView;
 
+- (void)pushViewControllerToFrontViewController:(UIViewController *)viewController;
+
 @end
 

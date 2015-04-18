@@ -19,16 +19,19 @@
 #define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 #define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 
+#import <PKRevealController/PKRevealController.h>
 #import "UIView+Addition.h"
 #import "UIViewController+AddHambugerButton.h"
 #import "UIViewController+SideViewFunctions.h"
 #import "Colours.h"
 #import "TKAlignTopLabel.h"
+#import "AppDelegate.h"
+
+#define APP_DELEGATE (AppDelegate *)[UIApplication sharedApplication].delegate
 
 
 #import "MBNSideMenuViewController.h"
 
-#import <PKRevealController/PKRevealController.h>
 #import <FLEX/FLEXManager.h>
 #import <Mantle/Mantle.h>
 #import <AFNetworking/AFNetworking.h>
