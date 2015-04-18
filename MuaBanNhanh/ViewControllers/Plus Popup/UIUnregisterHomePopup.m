@@ -49,5 +49,10 @@
     [segue perform];
 }
 
+- (IBAction)onBtnSafeBuy:(id)sender {
+    UIViewController *safeBuyViewController = [[UIStoryboard storyboardWithName:@"SafeBuyStoryboard" bundle:nil] instantiateInitialViewController];
+    AppDelegate *appDelegate = APP_DELEGATE;
+    [appDelegate.rootNavigationController presentViewController:safeBuyViewController animated:YES completion:nil];
+}
 
 @end

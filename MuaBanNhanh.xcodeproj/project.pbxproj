@@ -31,6 +31,8 @@
 		0561C9C31AD06B5F00BEDA6D /* MBNProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 0561C9C21AD06B5F00BEDA6D /* MBNProduct.m */; };
 		0567F31D1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0567F31C1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m */; };
 		0569A4481AE25FBE00EFBEF0 /* MBNEditUserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0569A4471AE25FBE00EFBEF0 /* MBNEditUserInformationViewController.m */; };
+		0569A44D1AE265C600EFBEF0 /* SafeBuyStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0569A44C1AE265C600EFBEF0 /* SafeBuyStoryboard.storyboard */; };
+		0569A4501AE27CE300EFBEF0 /* MBNSafeBuyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0569A44F1AE27CE300EFBEF0 /* MBNSafeBuyViewController.m */; };
 		0571AF9C1AD2AAB300943F85 /* MBNPopupCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0571AF9B1AD2AAB300943F85 /* MBNPopupCustomButton.m */; };
 		0593B7E71AD12B3800A492F3 /* MBNCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0593B7E51AD12B3800A492F3 /* MBNCollectionHeaderView.m */; };
 		0593B7E81AD12B3800A492F3 /* MBNCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0593B7E61AD12B3800A492F3 /* MBNCollectionHeaderView.xib */; };
@@ -118,6 +120,9 @@
 		0567F31C1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNHomeTopCollectionViewCell.m; sourceTree = "<group>"; };
 		0569A4461AE25FBE00EFBEF0 /* MBNEditUserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNEditUserInformationViewController.h; sourceTree = "<group>"; };
 		0569A4471AE25FBE00EFBEF0 /* MBNEditUserInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNEditUserInformationViewController.m; sourceTree = "<group>"; };
+		0569A44C1AE265C600EFBEF0 /* SafeBuyStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SafeBuyStoryboard.storyboard; sourceTree = "<group>"; };
+		0569A44E1AE27CE300EFBEF0 /* MBNSafeBuyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSafeBuyViewController.h; sourceTree = "<group>"; };
+		0569A44F1AE27CE300EFBEF0 /* MBNSafeBuyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSafeBuyViewController.m; sourceTree = "<group>"; };
 		0571AF9A1AD2AAB300943F85 /* MBNPopupCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNPopupCustomButton.h; sourceTree = "<group>"; };
 		0571AF9B1AD2AAB300943F85 /* MBNPopupCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNPopupCustomButton.m; sourceTree = "<group>"; };
 		0593B7E41AD12B3800A492F3 /* MBNCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNCollectionHeaderView.h; sourceTree = "<group>"; };
@@ -347,6 +352,16 @@
 			path = "Custom Classes";
 			sourceTree = "<group>";
 		};
+		0569A4491AE2657700EFBEF0 /* Safely buy */ = {
+			isa = PBXGroup;
+			children = (
+				0569A44C1AE265C600EFBEF0 /* SafeBuyStoryboard.storyboard */,
+				0569A44E1AE27CE300EFBEF0 /* MBNSafeBuyViewController.h */,
+				0569A44F1AE27CE300EFBEF0 /* MBNSafeBuyViewController.m */,
+			);
+			path = "Safely buy";
+			sourceTree = "<group>";
+		};
 		0593B7E31AD12B0300A492F3 /* Collection Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +403,7 @@
 		05A3E3391ACAF0AC00E55215 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0569A4491AE2657700EFBEF0 /* Safely buy */,
 				054AA6941AE21D2600C8CBCA /* User Information */,
 				050867171AD6D27700038F87 /* Register : Login : Forgot password */,
 				05D84BFA1AD62F8200497FA0 /* Products of Category */,
@@ -624,6 +640,7 @@
 				05E03DA31AC9318D004426CE /* Main.storyboard in Resources */,
 				05E03DA81AC9318D004426CE /* LaunchScreen.xib in Resources */,
 				05E03DA51AC9318D004426CE /* Images.xcassets in Resources */,
+				0569A44D1AE265C600EFBEF0 /* SafeBuyStoryboard.storyboard in Resources */,
 				054AA6961AE21D4F00C8CBCA /* EditUserInformationStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -677,6 +694,7 @@
 			files = (
 				0569A4481AE25FBE00EFBEF0 /* MBNEditUserInformationViewController.m in Sources */,
 				05A3E3481ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m in Sources */,
+				0569A4501AE27CE300EFBEF0 /* MBNSafeBuyViewController.m in Sources */,
 				053979101ACC4998007C4676 /* MBNHomeBottomViewController.m in Sources */,
 				05D1A2711ADD4BB6004F9C9F /* MBNUserManager.m in Sources */,
 				0561C9B31ACFC31100BEDA6D /* UIViewController+SideViewFunctions.m in Sources */,
