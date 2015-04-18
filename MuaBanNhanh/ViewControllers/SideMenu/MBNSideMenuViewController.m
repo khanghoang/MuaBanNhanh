@@ -117,6 +117,13 @@ UICollectionViewDelegateFlowLayout
 #pragma marks - Actions
 
 - (IBAction)onUserInformation:(id)sender {
+    AppDelegate *appDelegate = APP_DELEGATE;
+    
+    UIStoryboard *editUserStoryboard = [UIStoryboard storyboardWithName:@"EditUserInformationStoryboard" bundle:nil];
+    UIViewController *editUserViewController = [editUserStoryboard instantiateInitialViewController];
+    [appDelegate pushViewControllerToFrontViewController:editUserViewController];
+    
+    [appDelegate.revealController showViewController:appDelegate.rootNavigationController];
 }
 
 
