@@ -8,6 +8,8 @@
 
 #import "MBNHomeTopViewController.h"
 #import "MBNHomeTopCollectionViewCell.h"
+#import "AppDelegate.h"
+#import "MBNSubcategoryViewController.h"
 
 static CGFloat const COLLECTION_PADDING_BOTTOM = 20;
 
@@ -78,6 +80,20 @@ UICollectionViewDelegateFlowLayout
     
     return size;
     
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
+    PKRevealController *revealController = appDelegate.revealController;
+    [revealController showViewController:revealController.frontViewController];
+    
+    MBNSubcategoryViewController *viewController = [[UIStoryboard storyboardWithName:@"SubCategoryStoreyboard" bundle:nil] instantiateInitialViewController];
+    viewController.view.backgroundColor = [UIColor whiteColor];
+    viewController.arrSubcategories = [self.arrayCategories[indexPath.row] subCategories];
+    
+    [appDelegate.rootNavigationController pushViewController:viewController animated:YES];
 }
 
 @end
