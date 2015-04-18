@@ -5,16 +5,16 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Thông tin người dùng-->
         <scene sceneID="sIB-1h-AXQ">
             <objects>
-                <viewController id="Qzh-B2-xJI" sceneMemberID="viewController">
+                <viewController title="Thông tin người dùng" id="Qzh-B2-xJI" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bMf-di-w7B"/>
                         <viewControllerLayoutGuide type="bottom" id="DtJ-QQ-Yke"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QQW-aV-AMg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1236"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J3K-Lm-nGM">
@@ -450,13 +450,39 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5wh-dz-TTI" customClass="TKDesignableView">
+                                                <rect key="frame" x="10" y="1205" width="300" height="38"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ls1-eY-0S5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="38"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <state key="normal" title="Đăng xuất">
+                                                            <color key="titleColor" red="0.24200094084044332" green="0.26517124368686873" blue="0.26517124368686873" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.77272727269999997" green="0.77272727269999997" blue="0.77272727269999997" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.90588235294117647" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1300" id="Ben-CJ-3LM"/>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="F3z-dS-EUX" firstAttribute="top" secondItem="J3K-Lm-nGM" secondAttribute="top" id="3io-Yr-C8M"/>
                                     <constraint firstItem="F3z-dS-EUX" firstAttribute="width" secondItem="J3K-Lm-nGM" secondAttribute="width" id="6ra-2E-e3k"/>
@@ -466,7 +492,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="J3K-Lm-nGM" secondAttribute="centerX" id="1U8-kW-RZu"/>
                             <constraint firstAttribute="centerY" secondItem="J3K-Lm-nGM" secondAttribute="centerY" id="a9l-Pp-sGs"/>
@@ -474,6 +500,8 @@
                             <constraint firstItem="J3K-Lm-nGM" firstAttribute="width" secondItem="QQW-aV-AMg" secondAttribute="width" id="vKH-dL-2mw"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1300"/>
                 </viewController>
