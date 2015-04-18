@@ -36,8 +36,12 @@ UICollectionViewDelegateFlowLayout
     // Do any additional setup after loading the view from its nib.
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(userLogin:)
+                                             selector:@selector(userChangeState:)
                                                  name:NOTIFICATION_USER_LOGIN
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(userChangeState:)
+                                                 name:NOTIFICATION_USER_LOGOUT
                                                object:nil];
     
     [self.menuCollectionView registerNib:[MBNSideMenuCollectionViewCell nib]
@@ -51,15 +55,13 @@ UICollectionViewDelegateFlowLayout
     
     MBNUser *user = [[MBNUserManager sharedProvider] getLoginUser];
     [self setUserInformationWithUser:user];
-    [self.viewUserInfoWraper updateConstraintsIfNeeded];
-    [self.viewUserInfoWraper layoutIfNeeded];
 }
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)userLogin:(NSNotification *)notification {
+- (void)userChangeState:(NSNotification *)notification {
     // get nofitcation
     MBNUser *loginUser = notification.object;
     

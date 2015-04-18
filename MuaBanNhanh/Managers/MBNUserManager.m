@@ -23,6 +23,12 @@
     return instance;
 }
 
+- (void)logout {
+    [self saveLoginUser:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_LOGOUT
+                                                        object:nil];
+}
+
 - (void)saveLoginUser:(MBNUser *)user {
     NSData *encodedUser = [NSKeyedArchiver archivedDataWithRootObject:user];
     [[NSUserDefaults standardUserDefaults] setObject:encodedUser forKey:NS_USER_DEFAULT_LOGIN_USER];

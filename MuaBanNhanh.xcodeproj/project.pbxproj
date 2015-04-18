@@ -30,6 +30,7 @@
 		0561C9C01AD06A8C00BEDA6D /* MBNProductManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0561C9BF1AD06A8C00BEDA6D /* MBNProductManager.m */; };
 		0561C9C31AD06B5F00BEDA6D /* MBNProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 0561C9C21AD06B5F00BEDA6D /* MBNProduct.m */; };
 		0567F31D1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0567F31C1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m */; };
+		0569A4481AE25FBE00EFBEF0 /* MBNEditUserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0569A4471AE25FBE00EFBEF0 /* MBNEditUserInformationViewController.m */; };
 		0571AF9C1AD2AAB300943F85 /* MBNPopupCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0571AF9B1AD2AAB300943F85 /* MBNPopupCustomButton.m */; };
 		0593B7E71AD12B3800A492F3 /* MBNCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0593B7E51AD12B3800A492F3 /* MBNCollectionHeaderView.m */; };
 		0593B7E81AD12B3800A492F3 /* MBNCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0593B7E61AD12B3800A492F3 /* MBNCollectionHeaderView.xib */; };
@@ -115,6 +116,8 @@
 		0561C9C21AD06B5F00BEDA6D /* MBNProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNProduct.m; sourceTree = "<group>"; };
 		0567F31B1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNHomeTopCollectionViewCell.h; sourceTree = "<group>"; };
 		0567F31C1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNHomeTopCollectionViewCell.m; sourceTree = "<group>"; };
+		0569A4461AE25FBE00EFBEF0 /* MBNEditUserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNEditUserInformationViewController.h; sourceTree = "<group>"; };
+		0569A4471AE25FBE00EFBEF0 /* MBNEditUserInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNEditUserInformationViewController.m; sourceTree = "<group>"; };
 		0571AF9A1AD2AAB300943F85 /* MBNPopupCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNPopupCustomButton.h; sourceTree = "<group>"; };
 		0571AF9B1AD2AAB300943F85 /* MBNPopupCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNPopupCustomButton.m; sourceTree = "<group>"; };
 		0593B7E41AD12B3800A492F3 /* MBNCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNCollectionHeaderView.h; sourceTree = "<group>"; };
@@ -311,6 +314,8 @@
 			isa = PBXGroup;
 			children = (
 				054AA6951AE21D4F00C8CBCA /* EditUserInformationStoryboard.storyboard */,
+				0569A4461AE25FBE00EFBEF0 /* MBNEditUserInformationViewController.h */,
+				0569A4471AE25FBE00EFBEF0 /* MBNEditUserInformationViewController.m */,
 			);
 			path = "User Information";
 			sourceTree = "<group>";
@@ -670,6 +675,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0569A4481AE25FBE00EFBEF0 /* MBNEditUserInformationViewController.m in Sources */,
 				05A3E3481ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m in Sources */,
 				053979101ACC4998007C4676 /* MBNHomeBottomViewController.m in Sources */,
 				05D1A2711ADD4BB6004F9C9F /* MBNUserManager.m in Sources */,
