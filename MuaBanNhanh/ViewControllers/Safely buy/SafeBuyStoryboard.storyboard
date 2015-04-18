@@ -64,16 +64,26 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="KcU-aZ-ijN" secondAttribute="trailing" id="35M-tC-5l5"/>
+                                    <constraint firstAttribute="trailing" secondItem="KcU-aZ-ijN" secondAttribute="trailing" id="7DF-Qz-OsM"/>
                                     <constraint firstItem="KcU-aZ-ijN" firstAttribute="leading" secondItem="W46-Bs-9eS" secondAttribute="leading" id="NEL-2B-BIh"/>
                                     <constraint firstItem="KcU-aZ-ijN" firstAttribute="top" secondItem="W46-Bs-9eS" secondAttribute="top" id="Qd3-r6-ySG"/>
                                     <constraint firstItem="KcU-aZ-ijN" firstAttribute="height" secondItem="W46-Bs-9eS" secondAttribute="height" id="W00-Td-ain"/>
                                     <constraint firstAttribute="bottom" secondItem="KcU-aZ-ijN" secondAttribute="bottom" id="fcU-hD-Qxr"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhm-In-Oda">
+                                <rect key="frame" x="260" y="30" width="46" height="30"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBtnClose:" destination="XWa-gD-GZx" eventType="touchUpInside" id="QYT-pE-AvW"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="W46-Bs-9eS" secondAttribute="centerX" id="5ne-zS-3D4"/>
@@ -89,6 +99,9 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1670" height="568"/>
                     <connections>
+                        <outlet property="constraintPaddingLeft" destination="n1h-pq-diJ" id="tAM-lx-5Y7"/>
+                        <outlet property="constraintPaddingRight" destination="5Qc-yP-GVC" id="ezg-L9-mtb"/>
+                        <outlet property="contentWrapper" destination="KcU-aZ-ijN" id="HnR-Bv-0DZ"/>
                         <outlet property="scrollView" destination="W46-Bs-9eS" id="0iB-e0-eAV"/>
                     </connections>
                 </viewController>

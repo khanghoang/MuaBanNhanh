@@ -12,6 +12,9 @@
 <
 UIGestureRecognizerDelegate
 >
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintPaddingLeft;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintPaddingRight;
+@property (weak, nonatomic) IBOutlet UIView *contentWrapper;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (assign, nonatomic) CGPoint currentOffset;
@@ -25,6 +28,14 @@ UIGestureRecognizerDelegate
     // Do any additional setup after loading the view.
     
     self.currentOffset = self.scrollView.contentOffset;
+    
+    CGFloat padding = ([UIScreen mainScreen].bounds.size.width - 240) / 2;
+    
+    self.constraintPaddingLeft.constant = padding;
+    self.constraintPaddingRight.constant = padding;
+    
+    [self.contentWrapper updateConstraintsIfNeeded];
+    [self.contentWrapper layoutIfNeeded];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,25 +43,8 @@ UIGestureRecognizerDelegate
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (IBAction)onPanGesture:(UIPanGestureRecognizer *)panGesture {
     
-//    if (panGesture.state == UIGestureRecognizerStateBegan) {
-//        self.currentOffset = self.scrollView.contentOffset;
-//    }
-//    
-//    if (panGesture.state == UIGestureRecognizerStateEnded) {
-//        
-//    }
     CGPoint touchLocation = [panGesture translationInView:self.scrollView];
     NSLog(@"touch = %@, current = %@", NSStringFromCGPoint(touchLocation), NSStringFromCGPoint(self.currentOffset));
     NSLog(@"velocity = %@", NSStringFromCGPoint([panGesture velocityInView:self.view]));
@@ -58,22 +52,18 @@ UIGestureRecognizerDelegate
     
     if (panGesture.state == UIGestureRecognizerStateEnded)
     {
-//        CGPoint velocity = [panGesture velocityInView:self.view];
-//        CGFloat magnitude = sqrt((velocity.x * velocity.x));
-//        CGFloat slideMultiplier = magnitude / 2000;
-//        
-//        CGFloat normalX = self.currentOffset.x - touchLocation.x;
-//        CGFloat finalX = MAX(0, MIN(normalX - (velocity.x * slideMultiplier), self.scrollView.contentSize.width));
-//        CGPoint finalPoint = CGPointMake(finalX, 0);
-        
         CGPoint velocity = [panGesture translationInView:self.view];
         CGFloat finalX = velocity.x > 0 ? self.currentOffset.x - 270 : self.currentOffset.x + 270;
-        finalX = MAX(0, MIN(finalX, self.scrollView.contentSize.width - 320));
+        finalX = MAX(0, MIN(finalX, self.scrollView.contentSize.width - [UIScreen mainScreen].bounds.size.width));
         CGPoint finalPoint = CGPointMake(finalX, 0);
         
         self.currentOffset = finalPoint;
         [self.scrollView setContentOffset:finalPoint animated:YES];
     }
+}
+
+- (IBAction)onBtnClose:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
