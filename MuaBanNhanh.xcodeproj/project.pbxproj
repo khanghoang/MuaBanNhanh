@@ -58,12 +58,11 @@
 		05D84C091AD6443100497FA0 /* MBNContentLoadingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D84C081AD6443100497FA0 /* MBNContentLoadingViewModel.m */; };
 		05E03D9A1AC9318D004426CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E03D991AC9318D004426CE /* main.m */; };
 		05E03D9D1AC9318D004426CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E03D9C1AC9318D004426CE /* AppDelegate.m */; };
-		05E03DA31AC9318D004426CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E03DA11AC9318D004426CE /* Main.storyboard */; };
 		05E03DA51AC9318D004426CE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05E03DA41AC9318D004426CE /* Images.xcassets */; };
 		05E03DA81AC9318D004426CE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E03DA61AC9318D004426CE /* LaunchScreen.xib */; };
 		05E03DB41AC9318D004426CE /* MuaBanNhanhTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E03DB31AC9318D004426CE /* MuaBanNhanhTests.m */; };
 		05F3E54D1ADB77BA00D432AF /* MBNRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F3E54C1ADB77BA00D432AF /* MBNRegisterViewController.m */; };
-		B076070D830B90B0F15EA0C5 /* libPods-MuaBanNhanh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1230A8FEBED2E38FDAC4FBE1 /* libPods-MuaBanNhanh.a */; };
+		17F3BD0EBFE9F4D12E97B4E8 /* libPods-MuaBanNhanh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBCB27FBABB6CE2E084E756 /* libPods-MuaBanNhanh.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,7 +170,6 @@
 		05E03D991AC9318D004426CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		05E03D9B1AC9318D004426CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		05E03D9C1AC9318D004426CE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		05E03DA21AC9318D004426CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		05E03DA41AC9318D004426CE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		05E03DA71AC9318D004426CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		05E03DAD1AC9318D004426CE /* MuaBanNhanhTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuaBanNhanhTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,8 +177,8 @@
 		05E03DB31AC9318D004426CE /* MuaBanNhanhTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MuaBanNhanhTests.m; sourceTree = "<group>"; };
 		05F3E54B1ADB77BA00D432AF /* MBNRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNRegisterViewController.h; sourceTree = "<group>"; };
 		05F3E54C1ADB77BA00D432AF /* MBNRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNRegisterViewController.m; sourceTree = "<group>"; };
-		1230A8FEBED2E38FDAC4FBE1 /* libPods-MuaBanNhanh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MuaBanNhanh.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5634B996ABA6F7CE44922C55 /* Pods-MuaBanNhanh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuaBanNhanh.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuaBanNhanh/Pods-MuaBanNhanh.release.xcconfig"; sourceTree = "<group>"; };
+		8DBCB27FBABB6CE2E084E756 /* libPods-MuaBanNhanh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MuaBanNhanh.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDC741CC4D6A1E04FD9BA6B5 /* Pods-MuaBanNhanh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuaBanNhanh.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MuaBanNhanh/Pods-MuaBanNhanh.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,7 +187,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B076070D830B90B0F15EA0C5 /* libPods-MuaBanNhanh.a in Frameworks */,
+				17F3BD0EBFE9F4D12E97B4E8 /* libPods-MuaBanNhanh.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,7 +492,6 @@
 				05A3E3391ACAF0AC00E55215 /* ViewControllers */,
 				05E03D9B1AC9318D004426CE /* AppDelegate.h */,
 				05E03D9C1AC9318D004426CE /* AppDelegate.m */,
-				05E03DA11AC9318D004426CE /* Main.storyboard */,
 				05E03DA41AC9318D004426CE /* Images.xcassets */,
 				05E03DA61AC9318D004426CE /* LaunchScreen.xib */,
 				05E03D971AC9318D004426CE /* Supporting Files */,
@@ -541,7 +538,7 @@
 		F213740222A193D95DE0D184 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1230A8FEBED2E38FDAC4FBE1 /* libPods-MuaBanNhanh.a */,
+				8DBCB27FBABB6CE2E084E756 /* libPods-MuaBanNhanh.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -637,7 +634,6 @@
 				050867191AD6D29200038F87 /* UserLogin.storyboard in Resources */,
 				05A3E3491ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.xib in Resources */,
 				0516AF151AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard in Resources */,
-				05E03DA31AC9318D004426CE /* Main.storyboard in Resources */,
 				05E03DA81AC9318D004426CE /* LaunchScreen.xib in Resources */,
 				05E03DA51AC9318D004426CE /* Images.xcassets in Resources */,
 				0569A44D1AE265C600EFBEF0 /* SafeBuyStoryboard.storyboard in Resources */,
@@ -756,14 +752,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		05E03DA11AC9318D004426CE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				05E03DA21AC9318D004426CE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		05E03DA61AC9318D004426CE /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -862,6 +850,7 @@
 				INFOPLIST_FILE = MuaBanNhanh/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "fed70aad-74b3-4a0e-ae8a-74439a2f6d62";
 			};
@@ -878,6 +867,7 @@
 				INFOPLIST_FILE = MuaBanNhanh/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "fed70aad-74b3-4a0e-ae8a-74439a2f6d62";
 			};
