@@ -21,4 +21,6 @@
 - (void)saveLoginUser:(MBNUser *)user;
 - (MBNUser *)getLoginUser;
 
+- (NSString *)token;
+
 @end

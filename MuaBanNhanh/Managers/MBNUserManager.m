@@ -41,6 +41,11 @@
     return user;
 }
 
+- (NSString *)token {
+    MBNUser *currentUser = [self getLoginUser];
+    return currentUser.token;
+}
+
 - (void)loginWithPhone:(NSString *)phone andPassword:(NSString *)password successBlock:(void (^) (MBNUser *user))successBlock andFailure:(void (^) (NSString *errorString))failureBlock {
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
