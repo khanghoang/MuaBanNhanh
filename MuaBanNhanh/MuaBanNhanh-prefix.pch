@@ -33,6 +33,7 @@
 #import "MBNSideMenuViewController.h"
 
 #import <FLEX/FLEXManager.h>
+#import <KVOController/FBKVOController.h>
 #import <Mantle/Mantle.h>
 #import <AFNetworking/AFNetworking.h>
 #import <AFNetworking/UIImageView+AFNetworking.h>
