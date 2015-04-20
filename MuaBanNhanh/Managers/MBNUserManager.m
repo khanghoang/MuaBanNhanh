@@ -164,4 +164,45 @@
     return address;
 }
 
+- (void)getOwnInformation:(void (^) (MBNUser* user))successBlock failure:(void (^) (NSString *errorString))failureBlock {
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    MBNUser *currentUser = [self getLoginUser];
+    NSString *requestUrl = [NSString stringWithFormat:@"http://api.muabannhanh.com/user/profile?id=%@&token=%@", currentUser.ID, currentUser.token];
+    
+    [manager GET:requestUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        if ([responseObject[@"status"] integerValue] == 400) {
+            if (failureBlock) {
+                failureBlock(responseObject[@"message"]);
+            }
+            
+            return;
+        }
+        
+        if ([responseObject[@"status"] integerValue] == 200) {
+            
+            // write login user data into NSUserDefault
+            MBNUser *user = [MTLJSONAdapter modelOfClass:[MBNUser class] fromJSONDictionary:responseObject[@"result"] error:nil];
+            
+            // close the login popup
+            if (successBlock) {
+                successBlock(user);
+            }
+            
+            return;
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [SVProgressHUD showErrorWithStatus:@"Có lỗi phát sinh, vui lòng thử lại."];
+        if (failureBlock) {
+            failureBlock(@"Vui lòng kiểm tra kết nối mạng và thử lại");
+        }
+        
+        
+        
+    }];
+    
+}
+
 @end

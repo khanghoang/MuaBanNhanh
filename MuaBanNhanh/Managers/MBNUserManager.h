@@ -18,6 +18,8 @@
 
 - (void)logout;
 
+- (void)getOwnInformation:(void (^) (MBNUser* user))successBlock failure:(void (^) (NSString *errorString))failureBlock;
+
 - (void)saveLoginUser:(MBNUser *)user;
 - (MBNUser *)getLoginUser;
 

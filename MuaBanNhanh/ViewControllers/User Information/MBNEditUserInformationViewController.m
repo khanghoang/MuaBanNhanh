@@ -21,6 +21,12 @@ UITextViewDelegate
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [[MBNUserManager sharedProvider] getOwnInformation:^(MBNUser *user) {
+        
+    } failure:^(NSString *errorString) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

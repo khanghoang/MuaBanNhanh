@@ -26,7 +26,7 @@
              @"coverImageUrl": @"cover_image_url",
              
              @"identity": @"identity_number",
-             @"createAt": @"creat_at",
+             @"createAt": @"created_at",
              @"about": @"about"
              
              };
@@ -45,7 +45,7 @@
 }
 
 - (void)encodeWithCoder:(NSCoder *)coder {
-    [coder encodeObject:self.ID forKey:@"id"];
+    [coder encodeObject:self.ID forKey:@"ID"];
     [coder encodeObject:self.name forKey:@"name"];
     [coder encodeObject:self.phone forKey:@"phone"];
     [coder encodeObject:self.email forKey:@"email"];
