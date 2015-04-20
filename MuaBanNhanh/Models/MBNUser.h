@@ -38,4 +38,8 @@ MTLJSONSerializing
 @property (copy, nonatomic) NSDate *createAt;
 @property (copy, nonatomic) NSString *about;
 
+@property (copy, nonatomic) NSString *address;
+
++ (NSDateFormatter *)sharedDateFormatter;
+
 @end

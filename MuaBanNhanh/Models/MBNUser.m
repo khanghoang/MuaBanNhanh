@@ -27,7 +27,8 @@
              
              @"identity": @"identity_number",
              @"createAt": @"created_at",
-             @"about": @"about"
+             @"about": @"about",
+             @"address": @"address.address"
              
              };
 }
@@ -58,6 +59,7 @@
     [coder encodeObject:self.identity forKey:@"identity"];
     [coder encodeObject:self.createAt forKey:@"createAt"];
     [coder encodeObject:self.about forKey:@"about"];
+    [coder encodeObject:self.address forKey:@"address"];
 }
 
 + (NSValueTransformer *)createAtJSONTransformer
@@ -86,6 +88,7 @@
         self.identity = [coder decodeObjectForKey:@"identity"];
         self.createAt = [coder decodeObjectForKey:@"createAt"];
         self.about = [coder decodeObjectForKey:@"about"];
+        self.address = [coder decodeObjectForKey:@"adress"];
     }
     
     return self;
