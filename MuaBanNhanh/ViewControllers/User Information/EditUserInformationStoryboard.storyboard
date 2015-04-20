@@ -120,8 +120,12 @@
                                                             <color key="titleColor" red="0.27058823529411763" green="0.63921568627450975" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <state key="selected" title="Xong"/>
+                                                        <connections>
+                                                            <action selector="onBtnEditSection1:" destination="Qzh-B2-xJI" eventType="touchUpInside" id="FcM-0d-S7h"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXF-TS-5gY">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXF-TS-5gY">
                                                         <rect key="frame" x="201" y="5" width="46" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <state key="normal" title="Huỷ">
@@ -188,6 +192,7 @@
                                                             <color key="titleColor" red="0.27058823529999998" green="0.63921568630000003" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <state key="selected" title="Xong"/>
                                                     </button>
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AdL-lN-meO">
                                                         <rect key="frame" x="8" y="57" width="284" height="52"/>
@@ -228,6 +233,15 @@
                                                                 <rect key="frame" x="0.0" y="51" width="280" height="1"/>
                                                                 <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                                             </view>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yvk-HO-XI3">
+                                                                <rect key="frame" x="2" y="20" width="274" height="30"/>
+                                                                <state key="normal">
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="onBtnBirthday:" destination="Qzh-B2-xJI" eventType="touchUpInside" id="vCP-lf-B5l"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
@@ -252,7 +266,7 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8r-Ew-IB1">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8r-Ew-IB1">
                                                         <rect key="frame" x="198" y="7" width="46" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <state key="normal" title="Huỷ">
@@ -294,6 +308,7 @@
                                                             <color key="titleColor" red="0.27058823529999998" green="0.63921568630000003" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <state key="selected" title="Xong"/>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zuz-qa-KgS">
                                                         <rect key="frame" x="9" y="34" width="280" height="1"/>
@@ -525,7 +540,7 @@
                                                             <constraint firstAttribute="width" constant="284" id="JY1-oF-Z8k"/>
                                                         </constraints>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fF-F3-T2g">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fF-F3-T2g">
                                                         <rect key="frame" x="198" y="6" width="46" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <state key="normal" title="Huỷ">
@@ -601,6 +616,70 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xDd-We-fkC" customClass="TKDesignableView">
+                                                <rect key="frame" x="10" y="1251" width="300" height="38"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLa-ev-iJe">
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="38"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <state key="normal" title="Đăng xuất">
+                                                            <color key="titleColor" red="0.24200094080000001" green="0.2651712437" blue="0.2651712437" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onBtnLogout:" destination="Qzh-B2-xJI" eventType="touchUpInside" id="Nr9-Yo-IM1"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="15Z-ug-jB8"/>
+                                                    <constraint firstAttribute="width" constant="300" id="DD7-gq-5Vs"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.77272727269999997" green="0.77272727269999997" blue="0.77272727269999997" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ltI-lF-DXm" customClass="TKDesignableView">
+                                                <rect key="frame" x="10" y="1297" width="300" height="38"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvq-BO-hKA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="38"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <state key="normal" title="Đăng xuất">
+                                                            <color key="titleColor" red="0.24200094080000001" green="0.2651712437" blue="0.2651712437" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onBtnLogout:" destination="Qzh-B2-xJI" eventType="touchUpInside" id="yDX-wu-xJ2"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="3h6-27-iUj"/>
+                                                    <constraint firstAttribute="height" constant="38" id="6dT-gT-xF1"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.77272727269999997" green="0.77272727269999997" blue="0.77272727269999997" alpha="0.69999999999999996" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -642,6 +721,12 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1320"/>
                     <connections>
+                        <outlet property="btnCancelSection1" destination="DXF-TS-5gY" id="EdA-Fo-TGM"/>
+                        <outlet property="btnCancelSection2" destination="D8r-Ew-IB1" id="6iM-xO-Kwk"/>
+                        <outlet property="btnCancelSection3" destination="0fF-F3-T2g" id="Xhh-W2-18h"/>
+                        <outlet property="btnEditSection1" destination="8bd-cN-zbA" id="b5P-Xp-BFR"/>
+                        <outlet property="btnEditSection2" destination="Eii-cF-zqm" id="qWX-Zc-JVu"/>
+                        <outlet property="btnEditSection3" destination="58g-hN-VTA" id="Dm5-jm-X5f"/>
                         <outlet property="constraintAddressHeight" destination="k3X-oy-qUy" id="lGC-6z-A4g"/>
                         <outlet property="lblBirthday" destination="GxU-CE-9U5" id="3ov-hA-3kX"/>
                         <outlet property="lblBusinessEmail" destination="zLw-f8-b7b" id="uAa-jc-bri"/>
