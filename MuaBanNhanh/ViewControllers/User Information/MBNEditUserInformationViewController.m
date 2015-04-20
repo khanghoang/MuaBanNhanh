@@ -16,21 +16,17 @@ UITextViewDelegate
 @property (strong, nonatomic) MBNUser *user;
 @property (strong, nonatomic) MBNUser *editingUser;
 
+@property (assign, nonatomic) BOOL isEditing;
+
 // 1st section
 @property (weak, nonatomic) IBOutlet UITextField *lblPhoneNumber;
 @property (weak, nonatomic) IBOutlet UITextField *lblName;
 @property (weak, nonatomic) IBOutlet UITextField *lblPassword;
-@property (weak, nonatomic) IBOutlet UIButton *btnEditSection1;
-@property (weak, nonatomic) IBOutlet UIButton *btnCancelSection1;
-@property (assign, nonatomic) BOOL isEditingSection1;
 
 // 2nd section
 @property (weak, nonatomic) IBOutlet UITextField *lblIdentity;
 @property (weak, nonatomic) IBOutlet UITextField *lblBirthday;
 @property (weak, nonatomic) IBOutlet UITextField *lblPersonalEmail;
-@property (weak, nonatomic) IBOutlet UIButton *btnEditSection2;
-@property (weak, nonatomic) IBOutlet UIButton *btnCancelSection2;
-@property (assign, nonatomic) BOOL isEditingSection2;
 
 // 3rd section
 @property (weak, nonatomic) IBOutlet UITextField *lblTradeName;
@@ -41,9 +37,6 @@ UITextViewDelegate
 @property (weak, nonatomic) IBOutlet UITextField *lblLicense;
 @property (weak, nonatomic) IBOutlet UITextField *lblBusinessEmail;
 @property (weak, nonatomic) IBOutlet UITextField *lblCreateAt;
-@property (weak, nonatomic) IBOutlet UIButton *btnEditSection3;
-@property (weak, nonatomic) IBOutlet UIButton *btnCancelSection3;
-@property (assign, nonatomic) BOOL isEditingSection3;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintAddressHeight;
 
@@ -62,6 +55,8 @@ UITextViewDelegate
     } failure:^(NSString *errorString) {
         
     }];
+    
+    
 }
 
 - (void)updateContentWithUser:(MBNUser *)user {
@@ -97,12 +92,6 @@ UITextViewDelegate
 }
 
 #pragma marks - Section 1
-
-- (IBAction)onBtnEditSection1:(id)sender {
-    self.isEditingSection1 = !self.isEditingSection1;
-    self.btnCancelSection1.hidden = !self.isEditingSection1;
-    self.btnEditSection1.selected = !self.btnEditSection1.selected;
-}
 
 - (IBAction)onBtnBirthday:(id)sender {
     RMDateSelectionViewController *dateSelectionVC = [RMDateSelectionViewController dateSelectionController];
