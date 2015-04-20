@@ -7,6 +7,7 @@
 //
 
 #import "MBNEditUserInformationViewController.h"
+#import "TKDesignableView.h"
 
 @interface MBNEditUserInformationViewController ()
 <
@@ -38,6 +39,9 @@ UITextViewDelegate
 @property (weak, nonatomic) IBOutlet UITextField *lblBusinessEmail;
 @property (weak, nonatomic) IBOutlet UITextField *lblCreateAt;
 
+@property (weak, nonatomic) IBOutlet TKDesignableView *wrapperCancelButton;
+@property (strong, nonatomic) FBKVOController *kvoController;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintAddressHeight;
 
 @end
@@ -57,6 +61,43 @@ UITextViewDelegate
     }];
     
     
+    self.kvoController = [FBKVOController controllerWithObserver:self];
+    
+    @weakify(self);
+    
+    [self.kvoController observe:self keyPath:@"isEditing" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
+        
+        @strongify(self);
+        
+        [@[self.lblPhoneNumber,
+          self.lblName,
+          self.lblPassword,
+          self.lblIdentity,
+          self.lblBirthday,
+          self.lblPersonalEmail,
+          self.lblTradeName,
+          self.lblCity,
+          self.lblProvinde,
+          self.lblBusinessEmail,
+          self.lblBusinessModel,
+          self.lblLicense] enumerateObjectsUsingBlock:^(UITextField *text, NSUInteger idx, BOOL *stop) {
+              text.enabled = self.editing;
+          }];
+        
+        self.txtAddress.editable = self.editing;
+        self.wrapperCancelButton.hidden = !self.isEditing;
+    }];
+    
+}
+
+- (IBAction)onBtnEditInfor:(id)sender {
+    if(!self.editing) {
+        self.isEditing = !self.isEditing;
+    }
+}
+
+- (IBAction)onBtnCancel:(id)sender {
+    self.editing = NO;
 }
 
 - (void)updateContentWithUser:(MBNUser *)user {

@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="1464"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F3z-dS-EUX">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1340"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1415"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Epx-HK-wLC">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
@@ -572,6 +572,9 @@
                                                             <color key="titleColor" red="0.24200094080000001" green="0.2651712437" blue="0.2651712437" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onBtnEditInfor:" destination="Qzh-B2-xJI" eventType="touchUpInside" id="fE5-Ct-bcC"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -591,7 +594,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltI-lF-DXm" customClass="TKDesignableView">
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltI-lF-DXm" customClass="TKDesignableView">
                                                 <rect key="frame" x="10" y="1297" width="300" height="38"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvq-BO-hKA">
@@ -601,6 +604,9 @@
                                                             <color key="titleColor" red="0.24200094080000001" green="0.2651712437" blue="0.2651712437" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="onBtnCancel:" destination="Qzh-B2-xJI" eventType="touchUpInside" id="ZS7-Me-fjd"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -639,7 +645,7 @@
                                             <constraint firstItem="xDd-We-fkC" firstAttribute="leading" secondItem="F3z-dS-EUX" secondAttribute="leading" constant="10" id="l7Y-IM-oyu"/>
                                             <constraint firstItem="xDd-We-fkC" firstAttribute="top" secondItem="5wh-dz-TTI" secondAttribute="bottom" constant="8" id="lnQ-7M-1fF"/>
                                             <constraint firstItem="Epx-HK-wLC" firstAttribute="leading" secondItem="F3z-dS-EUX" secondAttribute="leading" id="oWa-rN-07r"/>
-                                            <constraint firstAttribute="bottom" secondItem="ltI-lF-DXm" secondAttribute="bottom" constant="5" id="sEV-F9-0bV"/>
+                                            <constraint firstAttribute="bottom" secondItem="ltI-lF-DXm" secondAttribute="bottom" constant="80" id="sEV-F9-0bV"/>
                                             <constraint firstItem="DZN-Ep-Cvn" firstAttribute="leading" secondItem="F3z-dS-EUX" secondAttribute="leading" constant="10" id="tYi-I2-TuS"/>
                                         </constraints>
                                     </view>
@@ -680,6 +686,7 @@
                         <outlet property="lblProvinde" destination="NSq-gq-igY" id="MUD-pm-tK6"/>
                         <outlet property="lblTradeName" destination="C58-zE-J7D" id="xPg-ew-zXf"/>
                         <outlet property="txtAddress" destination="nRz-X9-qdw" id="Sl0-Dl-fLH"/>
+                        <outlet property="wrapperCancelButton" destination="ltI-lF-DXm" id="iJQ-K2-Hhj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UjR-6c-oik" userLabel="First Responder" sceneMemberID="firstResponder"/>
