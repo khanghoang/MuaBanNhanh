@@ -19,6 +19,7 @@ target 'MuaBanNhanh' do
   pod 'PKRevealController'
   pod 'RMDateSelectionViewController'
   pod 'RMPickerViewController'
+  pod 'KVOController'
 
 end
 
