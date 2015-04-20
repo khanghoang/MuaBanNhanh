@@ -20,6 +20,7 @@ target 'MuaBanNhanh' do
   pod 'RMDateSelectionViewController'
   pod 'RMPickerViewController'
   pod 'KVOController'
+  pod 'libextobjc'
 
 end
 

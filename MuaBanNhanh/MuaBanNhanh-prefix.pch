@@ -35,6 +35,7 @@
 #import <FLEX/FLEXManager.h>
 #import <KVOController/FBKVOController.h>
 #import <Mantle/Mantle.h>
+#import <libextobjc/extobjc.h>
 #import <AFNetworking/AFNetworking.h>
 #import <AFNetworking/UIImageView+AFNetworking.h>
 #import <Masonry/Masonry.h>
