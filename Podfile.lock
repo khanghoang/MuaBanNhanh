@@ -34,6 +34,8 @@ PODS:
   - Mantle/extobjc (1.5.4)
   - Masonry (0.6.1)
   - PKRevealController (2.0.6)
+  - RMDateSelectionViewController (1.5.1)
+  - RMPickerViewController (1.4.1)
   - SVProgressHUD (1.1.3)
   - TTTAttributedLabel (1.13.3)
   - WYPopoverController (0.3.7)
@@ -47,6 +49,8 @@ DEPENDENCIES:
   - Mantle (~> 1.5)
   - Masonry (~> 0.5)
   - PKRevealController
+  - RMDateSelectionViewController
+  - RMPickerViewController
   - SVProgressHUD
   - TTTAttributedLabel
   - WYPopoverController
@@ -62,6 +66,8 @@ SPEC CHECKSUMS:
   Mantle: 60acd0cd363e27d945bda0a6b8e90577112d28f3
   Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
   PKRevealController: ffb45a16f5a5032ad90a3d16e5cbb0d8e035bd58
+  RMDateSelectionViewController: 5d4233ad5dca8baa375de41d20af1df86ed0465b
+  RMPickerViewController: 8ca1a21c2c5b30b328030d411fe93b6532b0a9b0
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
   TTTAttributedLabel: 6f3174aef8e738f44dff97c2eb7d8184f6ab6277
   WYPopoverController: ebefa50c477bdbbd9dc992dfdffafa168c4484eb
