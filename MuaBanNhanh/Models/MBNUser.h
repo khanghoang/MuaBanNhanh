@@ -34,4 +34,8 @@ MTLJSONSerializing
 @property (copy, nonatomic) NSString *accountType;
 @property (copy, nonatomic) NSString *token;
 
+@property (copy, nonatomic) NSString *identity;
+@property (copy, nonatomic) NSDate *createAt;
+@property (copy, nonatomic) NSString *about;
+
 @end

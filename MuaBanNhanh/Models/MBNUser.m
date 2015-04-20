@@ -24,6 +24,11 @@
              @"token": @"token",
              @"avatarImageUrl": @"avatar_image_url",
              @"coverImageUrl": @"cover_image_url",
+             
+             @"identity": @"identity_number",
+             @"createAt": @"creat_at",
+             @"about": @"about"
+             
              };
 }
 
@@ -49,6 +54,20 @@
     [coder encodeObject:self.token forKey:@"token"];
     [coder encodeObject:self.avatarImageUrl forKey:@"avatarImageUrl"];
     [coder encodeObject:self.coverImageUrl forKey:@"coverImageUrl"];
+    
+    [coder encodeObject:self.identity forKey:@"identity"];
+    [coder encodeObject:self.createAt forKey:@"createAt"];
+    [coder encodeObject:self.about forKey:@"about"];
+}
+
++ (NSValueTransformer *)createAtJSONTransformer
+{
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *dateString) {
+        NSDateFormatter *formatter = [self sharedDateFormatter];
+        return [formatter dateFromString:dateString];
+    } reverseBlock:^(NSDate *date) {
+        return [date description];
+    }];
 }
 
 - (id)initWithCoder:(NSCoder *)coder {
@@ -63,10 +82,30 @@
         self.token = [coder decodeObjectForKey:@"token"];
         self.avatarImageUrl = [coder decodeObjectForKey:@"avatarImageUrl"];
         self.coverImageUrl = [coder decodeObjectForKey:@"coverImageUrl"];
+        
+        self.identity = [coder decodeObjectForKey:@"identity"];
+        self.createAt = [coder decodeObjectForKey:@"createAt"];
+        self.about = [coder decodeObjectForKey:@"about"];
     }
     
     return self;
     
 }
+
+#pragma marks - Helper methods 
+
++ (NSDateFormatter *)sharedDateFormatter
+{
+    static NSDateFormatter *instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[NSDateFormatter alloc] init];
+        instance.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+        [instance setTimeZone:[[NSTimeZone alloc] initWithName:@"UTC"]];
+    });
+
+    return instance;
+}
+
 
 @end
