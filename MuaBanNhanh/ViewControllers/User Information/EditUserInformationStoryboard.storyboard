@@ -643,6 +643,20 @@
                     <size key="freeformSize" width="320" height="1320"/>
                     <connections>
                         <outlet property="constraintAddressHeight" destination="k3X-oy-qUy" id="lGC-6z-A4g"/>
+                        <outlet property="lblBirthday" destination="GxU-CE-9U5" id="3ov-hA-3kX"/>
+                        <outlet property="lblBusinessEmail" destination="zLw-f8-b7b" id="uAa-jc-bri"/>
+                        <outlet property="lblBusinessModel" destination="i3T-wa-NPd" id="VXR-HH-M1c"/>
+                        <outlet property="lblCity" destination="Joa-a6-9dA" id="PrC-12-K5Y"/>
+                        <outlet property="lblCreateAt" destination="DLf-ll-bYU" id="kDr-VZ-G2U"/>
+                        <outlet property="lblIdentity" destination="6YZ-h6-CLc" id="XWJ-ql-IAp"/>
+                        <outlet property="lblLicense" destination="Jp4-bC-j8h" id="YjH-mQ-WK7"/>
+                        <outlet property="lblName" destination="wtZ-rl-LTw" id="Dz3-sd-y4G"/>
+                        <outlet property="lblPassword" destination="5e0-UE-Q1S" id="JzS-Cs-1AE"/>
+                        <outlet property="lblPersonalEmail" destination="QpV-30-55z" id="duP-ax-jgN"/>
+                        <outlet property="lblPhoneNumber" destination="VkK-UN-Iy7" id="Tal-2y-yW0"/>
+                        <outlet property="lblProvinde" destination="NSq-gq-igY" id="MUD-pm-tK6"/>
+                        <outlet property="lblTradeName" destination="C58-zE-J7D" id="xPg-ew-zXf"/>
+                        <outlet property="txtAddress" destination="nRz-X9-qdw" id="Sl0-Dl-fLH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UjR-6c-oik" userLabel="First Responder" sceneMemberID="firstResponder"/>

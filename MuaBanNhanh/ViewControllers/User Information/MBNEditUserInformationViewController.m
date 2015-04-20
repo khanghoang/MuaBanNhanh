@@ -12,6 +12,29 @@
 <
 UITextViewDelegate
 >
+
+@property (strong, nonatomic) MBNUser *user;
+
+// 1st section
+@property (weak, nonatomic) IBOutlet UITextField *lblPhoneNumber;
+@property (weak, nonatomic) IBOutlet UITextField *lblName;
+@property (weak, nonatomic) IBOutlet UITextField *lblPassword;
+
+// 2nd section
+@property (weak, nonatomic) IBOutlet UITextField *lblIdentity;
+@property (weak, nonatomic) IBOutlet UITextField *lblBirthday;
+@property (weak, nonatomic) IBOutlet UITextField *lblPersonalEmail;
+
+// 3rd section
+@property (weak, nonatomic) IBOutlet UITextField *lblTradeName;
+@property (weak, nonatomic) IBOutlet UITextView *txtAddress;
+@property (weak, nonatomic) IBOutlet UITextField *lblCity;
+@property (weak, nonatomic) IBOutlet UITextField *lblProvinde;
+@property (weak, nonatomic) IBOutlet UITextField *lblBusinessModel;
+@property (weak, nonatomic) IBOutlet UITextField *lblLicense;
+@property (weak, nonatomic) IBOutlet UITextField *lblBusinessEmail;
+@property (weak, nonatomic) IBOutlet UITextField *lblCreateAt;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintAddressHeight;
 
 @end
@@ -24,14 +47,32 @@ UITextViewDelegate
     
     [[MBNUserManager sharedProvider] getOwnInformation:^(MBNUser *user) {
         
+        [self updateContentWithUser:user];
+        
     } failure:^(NSString *errorString) {
         
     }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)updateContentWithUser:(MBNUser *)user {
+    
+    // 1st section
+    self.lblPhoneNumber.text = user.phone;
+    self.lblName.text = user.name;
+    
+    // 2nd section
+    self.lblIdentity.text = user.identity;
+//    self.lblBirthday.text = user.bir
+    self.lblPersonalEmail.text = user.email;
+    
+    
+    // 3rd section
+    self.lblTradeName.text = user.name;
+    self.txtAddress.text = user.address;
+    self.lblBusinessEmail.text = user.email;
+    
+    NSDateFormatter *dateFormatter = [MBNUser sharedDateFormatter];
+    self.lblCreateAt.text = [dateFormatter stringFromDate:user.createAt];
 }
 
 - (IBAction)onBtnLogout:(id)sender {
