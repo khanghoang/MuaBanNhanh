@@ -97,6 +97,13 @@ UITextViewDelegate
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if(SYSTEM_VERSION_GREATER_THAN(@"8.0")) {
+        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationPortrait] forKey:@"orientation"];
+    }
+}
+
 - (IBAction)onBtnEditInfor:(id)sender {
     if(!self.editing) {
         self.isEditing = !self.isEditing;
@@ -105,6 +112,11 @@ UITextViewDelegate
 
 - (IBAction)onBtnCancel:(id)sender {
     self.editing = NO;
+}
+
+- (BOOL)shouldAutorotate
+{
+    return NO;
 }
 
 - (void)updateContentWithUser:(MBNUser *)user {

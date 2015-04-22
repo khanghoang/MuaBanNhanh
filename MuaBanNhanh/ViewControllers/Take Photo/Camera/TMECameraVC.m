@@ -12,6 +12,9 @@
 #import "IMGLYDefines.h"
 #import "IMGLYShutterView.h"
 
+#import "MBNCustomImagePickerViewController.h"
+#import "UIImage+fixOrientation.h"
+
 #import "UIImage+IMGLYKitAdditions.h"
 
 #import "UIBarButtonItem+Custom.h"
@@ -254,10 +257,37 @@ TMECameraFilterSelectorVCDelegate>
 
 #pragma mark - image picker handling
 - (void)openImageFromCameraAndProcessIt {
-    UIImagePickerController *pickerLibrary = [[UIImagePickerController alloc] init];
+    if (SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(@"8.0"))
+    {
+        if([[UIDevice currentDevice]orientation] == UIDeviceOrientationFaceUp)
+        {
+            if([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationLandscapeLeft)
+            {
+                [[UIDevice currentDevice]setValue:[NSNumber numberWithInteger:UIDeviceOrientationLandscapeRight] forKey:@"orientation"];
+            }
+            else
+            {
+                [[UIDevice currentDevice]setValue:[NSNumber numberWithInteger:UIDeviceOrientationLandscapeLeft] forKey:@"orientation"];
+            }
+        }
+    }
+    
+    MBNCustomImagePickerViewController *pickerLibrary = [[MBNCustomImagePickerViewController alloc] init];
+    
     pickerLibrary.delegate = self;
     [self.cameraController stopCameraCapture];
     [self presentViewController:pickerLibrary animated:YES completion:NULL];
+}
+
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
+
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -265,12 +295,11 @@ TMECameraFilterSelectorVCDelegate>
     [self.cameraController startCameraCapture];
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker
-        didFinishPickingImage:(UIImage *)image
-                  editingInfo:(NSDictionary *)editingInfo {
-
-    [self dismissViewControllerAnimated:NO completion:NULL];
-    [self finishPhotoTakingWithImage:image];
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *pickedImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage *fixedOriginal = [pickedImage imgly_rotateImageToMatchOrientation];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [self finishPhotoTakingWithImage:fixedOriginal];
 }
 
 #pragma mark - layout

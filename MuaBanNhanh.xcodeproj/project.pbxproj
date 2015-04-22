@@ -153,6 +153,8 @@
 		05D84C031AD63D8F00497FA0 /* MBNProductCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D84C021AD63D8F00497FA0 /* MBNProductCellFactory.m */; };
 		05D84C061AD6412F00497FA0 /* MBNLoadProductForCategoryOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D84C051AD6412F00497FA0 /* MBNLoadProductForCategoryOperation.m */; };
 		05D84C091AD6443100497FA0 /* MBNContentLoadingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D84C081AD6443100497FA0 /* MBNContentLoadingViewModel.m */; };
+		05DC9E7D1AE822B400272C10 /* MBNCustomImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DC9E7C1AE822B400272C10 /* MBNCustomImagePickerViewController.m */; };
+		05DC9E801AE825A200272C10 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DC9E7F1AE825A200272C10 /* UIImage+fixOrientation.m */; };
 		05E03D9A1AC9318D004426CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E03D991AC9318D004426CE /* main.m */; };
 		05E03D9D1AC9318D004426CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E03D9C1AC9318D004426CE /* AppDelegate.m */; };
 		05E03DA51AC9318D004426CE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05E03DA41AC9318D004426CE /* Images.xcassets */; };
@@ -464,6 +466,10 @@
 		05D84C051AD6412F00497FA0 /* MBNLoadProductForCategoryOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNLoadProductForCategoryOperation.m; sourceTree = "<group>"; };
 		05D84C071AD6443100497FA0 /* MBNContentLoadingViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNContentLoadingViewModel.h; sourceTree = "<group>"; };
 		05D84C081AD6443100497FA0 /* MBNContentLoadingViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNContentLoadingViewModel.m; sourceTree = "<group>"; };
+		05DC9E7B1AE822B400272C10 /* MBNCustomImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNCustomImagePickerViewController.h; sourceTree = "<group>"; };
+		05DC9E7C1AE822B400272C10 /* MBNCustomImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNCustomImagePickerViewController.m; sourceTree = "<group>"; };
+		05DC9E7E1AE825A200272C10 /* UIImage+fixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+fixOrientation.h"; sourceTree = "<group>"; };
+		05DC9E7F1AE825A200272C10 /* UIImage+fixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+fixOrientation.m"; sourceTree = "<group>"; };
 		05E03D941AC9318D004426CE /* MuaBanNhanh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuaBanNhanh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05E03D981AC9318D004426CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05E03D991AC9318D004426CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -758,6 +764,8 @@
 				0561C9B21ACFC31100BEDA6D /* UIViewController+SideViewFunctions.m */,
 				0571AF9A1AD2AAB300943F85 /* MBNPopupCustomButton.h */,
 				0571AF9B1AD2AAB300943F85 /* MBNPopupCustomButton.m */,
+				05DC9E7E1AE825A200272C10 /* UIImage+fixOrientation.h */,
+				05DC9E7F1AE825A200272C10 /* UIImage+fixOrientation.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -789,6 +797,8 @@
 				05B905E61AE8033900B85BEC /* Camera.storyboard */,
 				05B905E71AE8033900B85BEC /* TMECameraVC.h */,
 				05B905E81AE8033900B85BEC /* TMECameraVC.m */,
+				05DC9E7B1AE822B400272C10 /* MBNCustomImagePickerViewController.h */,
+				05DC9E7C1AE822B400272C10 /* MBNCustomImagePickerViewController.m */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -1262,6 +1272,7 @@
 				05B906B81AE805AE00B85BEC /* IMGLYChestNutFilter.m in Sources */,
 				05B906CE1AE805AE00B85BEC /* IMGLYEditorTextMenu.m in Sources */,
 				05B907031AE8073A00B85BEC /* UIImage+Additions.m in Sources */,
+				05DC9E7D1AE822B400272C10 /* MBNCustomImagePickerViewController.m in Sources */,
 				05B906BA1AE805AE00B85BEC /* IMGLYContrastOperation.m in Sources */,
 				053979101ACC4998007C4676 /* MBNHomeBottomViewController.m in Sources */,
 				05D1A2711ADD4BB6004F9C9F /* MBNUserManager.m in Sources */,
@@ -1325,6 +1336,7 @@
 				05B906B51AE805AE00B85BEC /* IMGLYCameraController.m in Sources */,
 				05B906C11AE805AE00B85BEC /* IMGLYEditorCircleGradientView.m in Sources */,
 				05B906CD1AE805AE00B85BEC /* IMGLYEditorTextInputView.m in Sources */,
+				05DC9E801AE825A200272C10 /* UIImage+fixOrientation.m in Sources */,
 				05B906D81AE805AE00B85BEC /* IMGLYFridgeFilter.m in Sources */,
 				05D84C031AD63D8F00497FA0 /* MBNProductCellFactory.m in Sources */,
 				05B906BE1AE805AE00B85BEC /* IMGLYDeviceDetector.m in Sources */,

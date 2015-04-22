@@ -739,8 +739,11 @@ static const CGFloat kBackgroundGrayValue =  34.0 / 255.0;
         [job addOperation:(IMGLYOperation *)operation];
         [[IMGLYPhotoProcessor sharedPhotoProcessor] setInputImage:self.inputImage];
         [[IMGLYPhotoProcessor sharedPhotoProcessor] performProcessingJob:job];
+        
+        UIImage *outputImage = [[[IMGLYPhotoProcessor sharedPhotoProcessor] outputImage] imgly_rotateImageToMatchOrientation];
+        
         self.completionHandler(IMGLYEditorViewControllerResultDone,
-                               [[IMGLYPhotoProcessor sharedPhotoProcessor] outputImage],
+                               outputImage,
                                job);
     }
 }
