@@ -22,6 +22,8 @@ PODS:
     - AFNetworking/NSURLSession
   - AWPagedArray (0.3.0)
   - FLEX (2.0.2)
+  - GPUImage (0.1.2)
+  - HPGrowingTextView (1.1)
   - KHTableViewController (0.1.8):
     - AFNetworking
     - AWPagedArray
@@ -69,6 +71,7 @@ PODS:
   - Mantle/extobjc (1.5.4)
   - Masonry (0.6.1)
   - PKRevealController (2.0.6)
+  - PSTAlertController (1.1.0)
   - RMDateSelectionViewController (1.5.1)
   - RMPickerViewController (1.4.1)
   - SVProgressHUD (1.1.3)
@@ -78,6 +81,8 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - FLEX
+  - GPUImage (= 0.1.2)
+  - HPGrowingTextView
   - KHTableViewController
   - KVOController
   - libextobjc
@@ -85,16 +90,28 @@ DEPENDENCIES:
   - Mantle (~> 1.5)
   - Masonry (~> 0.5)
   - PKRevealController
+  - PSTAlertController (from `https://github.com/steipete/PSTAlertController.git`)
   - RMDateSelectionViewController
   - RMPickerViewController
   - SVProgressHUD
   - TTTAttributedLabel
   - WYPopoverController
 
+EXTERNAL SOURCES:
+  PSTAlertController:
+    :git: https://github.com/steipete/PSTAlertController.git
+
+CHECKOUT OPTIONS:
+  PSTAlertController:
+    :commit: 68a1327dbf71a6d1b97a121352bc774f469abd14
+    :git: https://github.com/steipete/PSTAlertController.git
+
 SPEC CHECKSUMS:
   AFNetworking: fefbce9660acb17f48ae0011292d4da0f457bf36
   AWPagedArray: 66db32d015a01d921133a4eb50da1d830271c39a
   FLEX: 321e6150cbababb76aaadde355dfce2ee1cac2d8
+  GPUImage: efa9a693c26bf1bcd7eb38eb3129ba6a5771cecd
+  HPGrowingTextView: 88a716d97fb853bcb08a4a08e4727da17efc9b19
   KHTableViewController: c07c33e169dc04ab81a76a77764c179a3e8b690e
   KVOController: 9fd8f0343670994e4b6f9f0b31f5a45663f3e1cf
   LBDelegateMatrioska: 4af6c7c5ba142d2f24d741e360558d8a0202cfc4
@@ -103,6 +120,7 @@ SPEC CHECKSUMS:
   Mantle: 60acd0cd363e27d945bda0a6b8e90577112d28f3
   Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
   PKRevealController: ffb45a16f5a5032ad90a3d16e5cbb0d8e035bd58
+  PSTAlertController: cb21afcfa76c3229feec7db044afd4f60dab5892
   RMDateSelectionViewController: 5d4233ad5dca8baa375de41d20af1df86ed0465b
   RMPickerViewController: 8ca1a21c2c5b30b328030d411fe93b6532b0a9b0
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1

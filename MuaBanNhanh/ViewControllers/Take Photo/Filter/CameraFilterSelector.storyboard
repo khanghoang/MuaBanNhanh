@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Camera Filter SelectorVC-->
+        <scene sceneID="Yzi-t9-Lfu">
+            <objects>
+                <collectionViewController storyboardIdentifier="TMECameraFilterSelectorVC" id="x7G-zB-BLr" customClass="TMECameraFilterSelectorVC" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="uJi-oE-zPs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="2" id="XfC-1r-Ac8">
+                            <size key="itemSize" width="65" height="90"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TMECameraFilterCell" id="9qw-KO-zyJ" customClass="TMECameraFilterCell">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="65" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQm-il-g9y">
+                                            <rect key="frame" x="17" y="72" width="31" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S0K-Kd-aWc">
+                                            <rect key="frame" x="0.0" y="4" width="65" height="65"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="S0K-Kd-aWc" secondAttribute="height" multiplier="1:1" id="wow-bl-DF3"/>
+                                            </constraints>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_filter_active" translatesAutoresizingMaskIntoConstraints="NO" id="tHr-Rg-mHs">
+                                            <rect key="frame" x="0.0" y="4" width="65" height="65"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="S0K-Kd-aWc" firstAttribute="bottom" secondItem="tHr-Rg-mHs" secondAttribute="bottom" id="5py-u2-6gj"/>
+                                    <constraint firstItem="iQm-il-g9y" firstAttribute="top" secondItem="S0K-Kd-aWc" secondAttribute="bottom" constant="3" id="BWD-Ii-YCo"/>
+                                    <constraint firstItem="S0K-Kd-aWc" firstAttribute="top" secondItem="9qw-KO-zyJ" secondAttribute="top" constant="4" id="M9v-TZ-Qqc"/>
+                                    <constraint firstAttribute="centerX" secondItem="iQm-il-g9y" secondAttribute="centerX" id="U3u-MQ-DOr"/>
+                                    <constraint firstItem="S0K-Kd-aWc" firstAttribute="top" secondItem="tHr-Rg-mHs" secondAttribute="top" id="fUX-Xv-QTC"/>
+                                    <constraint firstAttribute="trailing" secondItem="S0K-Kd-aWc" secondAttribute="trailing" id="i52-xI-woB"/>
+                                    <constraint firstItem="S0K-Kd-aWc" firstAttribute="leading" secondItem="tHr-Rg-mHs" secondAttribute="leading" id="lGz-bV-5Hy"/>
+                                    <constraint firstItem="S0K-Kd-aWc" firstAttribute="trailing" secondItem="tHr-Rg-mHs" secondAttribute="trailing" id="lXH-6v-lRy"/>
+                                    <constraint firstItem="S0K-Kd-aWc" firstAttribute="leading" secondItem="9qw-KO-zyJ" secondAttribute="leading" id="zgu-sR-fD0"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="activeOverlayImageView" destination="tHr-Rg-mHs" id="OeH-Bf-L99"/>
+                                    <outlet property="filterImageButton" destination="S0K-Kd-aWc" id="FJv-LH-W5Y"/>
+                                    <outlet property="filterLabel" destination="iQm-il-g9y" id="29r-4C-wlM"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="x7G-zB-BLr" id="rQn-dP-526"/>
+                            <outlet property="delegate" destination="x7G-zB-BLr" id="As7-1K-fuu"/>
+                        </connections>
+                    </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TBi-r1-ACi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="288.5333333333333" y="280.21333333333331"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_filter_active" width="21" height="16"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

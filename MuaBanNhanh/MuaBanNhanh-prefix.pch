@@ -19,6 +19,26 @@
 #define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 #define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 
+#define IS_IOS7_OR_ABOVE                            (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0"))
+#define IS_IOS8_OR_ABOVE                            (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0"))
+
+#define DEVICE_NAME                                 ([[UIDevice currentDevice] name])
+
+#define IS_LANDSCAPE                                (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation))
+#define IS_PORTRAIT                                 (UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation))
+#define IS_SIMULATOR                                ([[[UIDevice currentDevice] model] hasSuffix:@"Simulator"])
+#define IS_IPAD                                     ([UIDevice currentDevice].userInterfaceIdiom==UIUserInterfaceIdiomPad)
+#define IS_NOT_IPAD                                 ([UIDevice currentDevice].userInterfaceIdiom!=UIUserInterfaceIdiomPad)
+#define IS_RETINA                                   ([UIScreen mainScreen].scale > 1)
+#define DEVICE_SCALE                                ([UIScreen mainScreen].scale)
+
+#ifdef DEBUG
+#   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#   define DLog(...)
+#endif
+
+
 #import <PKRevealController/PKRevealController.h>
 #import "UIView+Addition.h"
 #import "UIViewController+AddHambugerButton.h"
@@ -42,9 +62,17 @@
 #import <KHTableViewController/KHTableController.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <RMDateSelectionViewController/RMDateSelectionViewController.h>
+#import <GPUImage/GPUImage.h>
+#import "IMGLYKit.h"
 
 #import <KHTableViewController/KHNormalDataProvider.h>
 #import <KHTableViewController/KHCollectionController.h>
+
+#import "UIColor+Additions.h"
+#import "UIImage+TMEAdditions.h"
+#import "UIImage+ImageEffects.h"
+#import "UIViewController+Additions.h"
+#import "UIView+Additions.h"
 
 // models
 #import "MBNCategory.h"

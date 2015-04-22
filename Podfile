@@ -4,6 +4,9 @@ source "https://github.com/CocoaPods/Specs.git"
 
 platform :ios, '7.0'
 
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
 target 'MuaBanNhanh' do
 
   pod 'AFNetworking', '~> 2.0'
@@ -21,6 +24,9 @@ target 'MuaBanNhanh' do
   pod 'RMPickerViewController'
   pod 'KVOController'
   pod 'libextobjc'
+  pod 'HPGrowingTextView'
+  pod 'GPUImage', '0.1.2'
+  pod 'PSTAlertController', :git => 'https://github.com/steipete/PSTAlertController.git'
 
 end
 
