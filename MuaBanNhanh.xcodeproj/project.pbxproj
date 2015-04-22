@@ -155,6 +155,7 @@
 		05D84C091AD6443100497FA0 /* MBNContentLoadingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D84C081AD6443100497FA0 /* MBNContentLoadingViewModel.m */; };
 		05DC9E7D1AE822B400272C10 /* MBNCustomImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DC9E7C1AE822B400272C10 /* MBNCustomImagePickerViewController.m */; };
 		05DC9E801AE825A200272C10 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DC9E7F1AE825A200272C10 /* UIImage+fixOrientation.m */; };
+		05DC9E831AE82F6500272C10 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DC9E821AE82F6500272C10 /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		05E03D9A1AC9318D004426CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E03D991AC9318D004426CE /* main.m */; };
 		05E03D9D1AC9318D004426CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E03D9C1AC9318D004426CE /* AppDelegate.m */; };
 		05E03DA51AC9318D004426CE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05E03DA41AC9318D004426CE /* Images.xcassets */; };
@@ -470,6 +471,8 @@
 		05DC9E7C1AE822B400272C10 /* MBNCustomImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNCustomImagePickerViewController.m; sourceTree = "<group>"; };
 		05DC9E7E1AE825A200272C10 /* UIImage+fixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+fixOrientation.h"; sourceTree = "<group>"; };
 		05DC9E7F1AE825A200272C10 /* UIImage+fixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+fixOrientation.m"; sourceTree = "<group>"; };
+		05DC9E811AE82F6500272C10 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		05DC9E821AE82F6500272C10 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		05E03D941AC9318D004426CE /* MuaBanNhanh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuaBanNhanh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05E03D981AC9318D004426CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05E03D991AC9318D004426CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -740,6 +743,8 @@
 		05A3E34A1ACAF9CC00E55215 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				05DC9E811AE82F6500272C10 /* NSData+Base64.h */,
+				05DC9E821AE82F6500272C10 /* NSData+Base64.m */,
 				05B9070D1AE807E200B85BEC /* UIView+Additions.h */,
 				05B9070E1AE807E200B85BEC /* UIView+Additions.m */,
 				05B9070A1AE8079D00B85BEC /* UIViewController+Additions.h */,
@@ -1282,6 +1287,7 @@
 				05D84C001AD63C1000497FA0 /* MBNCategoryProductsViewController.m in Sources */,
 				05B906B71AE805AE00B85BEC /* IMGLYCameraViewController.m in Sources */,
 				0508672D1AD6F08F00038F87 /* UIUnregisterHomePopup.m in Sources */,
+				05DC9E831AE82F6500272C10 /* NSData+Base64.m in Sources */,
 				05A3E3501ACAF9E100E55215 /* Colours.m in Sources */,
 				05A3E34D1ACAF9D300E55215 /* UIView+Addition.m in Sources */,
 				0593B7F11AD1877900A492F3 /* MBNUser.m in Sources */,
