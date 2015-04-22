@@ -71,8 +71,12 @@
 #import "UIColor+Additions.h"
 #import "UIImage+TMEAdditions.h"
 #import "UIImage+ImageEffects.h"
+#import "UIImage+IMGLYKitAdditions.h"
 #import "UIViewController+Additions.h"
 #import "UIView+Additions.h"
+#import "TMECameraVC.h"
+#import "TMECropImageVC.h"
+#import "TMECameraFilter.h"
 
 // models
 #import "MBNCategory.h"

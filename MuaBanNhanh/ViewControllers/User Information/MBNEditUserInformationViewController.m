@@ -42,6 +42,11 @@ UITextViewDelegate
 @property (weak, nonatomic) IBOutlet UITextField *lblBusinessEmail;
 @property (weak, nonatomic) IBOutlet UITextField *lblCreateAt;
 
+@property (nonatomic, strong) TMECameraVC *cameraVC;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *buttons;
+
+@property (nonatomic, strong) NSMutableArray *images;
+
 @property (weak, nonatomic) IBOutlet TKDesignableView *wrapperCancelButton;
 @property (strong, nonatomic) FBKVOController *kvoController;
 
@@ -168,6 +173,57 @@ UITextViewDelegate
     self.constraintAddressHeight.constant = textView.contentSize.height;
     [textView updateConstraintsIfNeeded];
     [textView layoutIfNeeded];
+}
+
+#pragma mark - Action
+- (IBAction)photoButtonTouched:(UIButton *)button
+{
+    self.cameraVC = [TMECameraVC tme_instantiateFromStoryboardNamed:@"Camera"];
+    
+    __weak typeof (self) weakSelf = self;
+    self.cameraVC.completionHandler = ^(TMECameraVCResult result, UIImage *image, IMGLYFilterType filterType) {
+        [weakSelf showEditorVCWithImage:image button:button];
+    };
+    
+    [self.navigationController pushViewController:self.cameraVC animated:YES];
+}
+
+- (void)showEditorVCWithImage:(UIImage *)image button:(UIButton *)button
+{
+    TMECropImageVC *cropVC = [[TMECropImageVC alloc] init];
+    cropVC.inputImage = image;
+    
+    __weak typeof(self) weakSelf = self;
+    cropVC.completionHandler = ^(IMGLYEditorViewControllerResult result, UIImage *outputImage, IMGLYProcessingJob *job) {
+        if (result == IMGLYEditorViewControllerResultCancelled) {
+            [weakSelf.cameraVC restartCamera];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        } else {
+            [weakSelf handleTakenImage:outputImage button:button];
+            weakSelf.cameraVC = nil;
+            [weakSelf.navigationController popToViewController:weakSelf animated:YES];
+        }
+    };
+    
+    [self.navigationController pushViewController:cropVC animated:YES];
+}
+
+#pragma mark - Helpers
+- (void)handleTakenImage:(UIImage *)image button:(UIButton *)button
+{
+    UIImageWriteToSavedPhotosAlbum(image, nil, nil, NULL);
+    
+    NSInteger index = [self.buttons indexOfObject:button];
+    self.images[index] = image;
+    [button setImage:[image imgly_rotateImageToMatchOrientation] forState:UIControlStateNormal];
+    
+}
+
+- (NSArray *)imagesToUpload
+{
+    return [self.images filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+        return [evaluatedObject isKindOfClass:[UIImage class]];
+    }]];
 }
 
 @end
