@@ -672,6 +672,8 @@
                     <size key="freeformSize" width="320" height="1400"/>
                     <connections>
                         <outlet property="constraintAddressHeight" destination="k3X-oy-qUy" id="lGC-6z-A4g"/>
+                        <outlet property="imgViewAvatar" destination="dRf-QI-57Z" id="vuk-KZ-UbI"/>
+                        <outlet property="imgViewCover" destination="Epx-HK-wLC" id="Y3S-nz-aod"/>
                         <outlet property="lblBirthday" destination="GxU-CE-9U5" id="3ov-hA-3kX"/>
                         <outlet property="lblBusinessEmail" destination="zLw-f8-b7b" id="uAa-jc-bri"/>
                         <outlet property="lblBusinessModel" destination="i3T-wa-NPd" id="VXR-HH-M1c"/>

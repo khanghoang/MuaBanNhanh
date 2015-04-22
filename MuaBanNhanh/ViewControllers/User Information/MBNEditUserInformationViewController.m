@@ -19,6 +19,9 @@ UITextViewDelegate
 
 @property (assign, nonatomic) BOOL isEditing;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imgViewCover;
+@property (weak, nonatomic) IBOutlet UIImageView *imgViewAvatar;
+
 // 1st section
 @property (weak, nonatomic) IBOutlet UITextField *lblPhoneNumber;
 @property (weak, nonatomic) IBOutlet UITextField *lblName;
@@ -60,7 +63,6 @@ UITextViewDelegate
         
     }];
     
-    
     self.kvoController = [FBKVOController controllerWithObserver:self];
     
     @weakify(self);
@@ -101,6 +103,9 @@ UITextViewDelegate
 }
 
 - (void)updateContentWithUser:(MBNUser *)user {
+    
+    [self.imgViewCover setImageWithURL:self.user.coverImageUrl];
+    [self.imgViewAvatar setImageWithURL:self.user.avatarImageUrl];
     
     // 1st section
     self.lblPhoneNumber.text = user.phone;
