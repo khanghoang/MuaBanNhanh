@@ -250,11 +250,4 @@ UITextViewDelegate
 
 }
 
-- (NSArray *)imagesToUpload
-{
-    return [self.images filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
-        return [evaluatedObject isKindOfClass:[UIImage class]];
-    }]];
-}
-
 @end
