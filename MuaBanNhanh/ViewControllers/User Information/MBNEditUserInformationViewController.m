@@ -234,7 +234,11 @@ UITextViewDelegate
         @"extension": @"jpeg"
     };
     
-    [[AFHTTPRequestOperationManager manager] POST:@"https://api.muabannhanh.com/user/upload-cover?id=152&token=cfc0d8176510fe0c8b0229069faaf222" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    [manager POST:@"https://api.muabannhanh.com/user/upload-cover?id=152&token=cfc0d8176510fe0c8b0229069faaf222" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
