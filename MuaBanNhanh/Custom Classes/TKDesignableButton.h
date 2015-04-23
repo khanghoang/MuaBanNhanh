@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+IB_DESIGNABLE
+
 @interface TKDesignableButton : UIButton
+
+@property (nonatomic) IBInspectable NSInteger borderRadius;
+@property (nonatomic) IBInspectable NSInteger borderWidth;
+@property (nonatomic) IBInspectable UIColor *borderColor;
 
 @end

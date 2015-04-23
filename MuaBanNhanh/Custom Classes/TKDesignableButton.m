@@ -10,4 +10,14 @@
 
 @implementation TKDesignableButton
 
+- (void)drawRect:(CGRect)rect {
+    // Drawing code
+    [super drawRect:rect];
+    self.layer.cornerRadius = _borderRadius;
+    self.layer.masksToBounds = YES;
+    
+    self.layer.borderColor = _borderColor.CGColor;
+    self.layer.borderWidth = _borderWidth;
+}
+
 @end
