@@ -25,6 +25,7 @@ target 'MuaBanNhanh' do
   pod 'KVOController'
   pod 'libextobjc'
   pod 'HPGrowingTextView'
+  pod 'ReactiveCocoa'
   pod 'GPUImage', '0.1.2'
   pod 'PSTAlertController', :git => 'https://github.com/steipete/PSTAlertController.git'
 
