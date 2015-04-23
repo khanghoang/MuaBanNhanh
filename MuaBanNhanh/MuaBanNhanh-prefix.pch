@@ -92,4 +92,5 @@
 #import "MBNProductManager.h"
 #import "MBNActionsManagers.h"
 #import "MBNUserManager.h"
+#import "MBNUploadImageManager.h"
 

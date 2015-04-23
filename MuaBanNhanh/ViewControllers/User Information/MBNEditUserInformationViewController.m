@@ -22,6 +22,9 @@ UITextViewDelegate
 @property (weak, nonatomic) IBOutlet TKDesignableButton *btnAvatar;
 @property (weak, nonatomic) IBOutlet TKDesignableButton *btnCover;
 
+@property (strong, nonatomic) UIImage *avatarImage;
+@property (strong, nonatomic) UIImage *coverImage;
+
 // 1st section
 @property (weak, nonatomic) IBOutlet UITextField *lblPhoneNumber;
 @property (weak, nonatomic) IBOutlet UITextField *lblName;
@@ -61,11 +64,23 @@ UITextViewDelegate
     // Do any additional setup after loading the view.
     
     [[MBNUserManager sharedProvider] getOwnInformation:^(MBNUser *user) {
-        
         [self updateContentWithUser:user];
-        
+        self.user = user;
     } failure:^(NSString *errorString) {
         
+    }];
+    
+    // button avatar
+    self.btnAvatar.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    [[RACObserve(self, user.avatarImageUrl) ignore:nil] subscribeNext:^(NSURL *url) {
+        [self.btnAvatar setImageForState:UIControlStateNormal
+                                 withURL:url];
+    }];
+    
+    self.btnCover.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    [[RACObserve(self, user.coverImageUrl) ignore:nil] subscribeNext:^(NSURL *url) {
+        [self.btnCover setImageForState:UIControlStateNormal
+                                 withURL:url];
     }];
     
     self.kvoController = [FBKVOController controllerWithObserver:self];
@@ -95,6 +110,46 @@ UITextViewDelegate
         self.wrapperCancelButton.hidden = !self.isEditing;
     }];
     
+    [self observerTheImages];
+    
+}
+
+- (void)observerTheImages {
+    [[RACObserve(self, coverImage) ignore:nil] subscribeNext:^(UIImage *coverImage) {
+        
+        [SVProgressHUD showErrorWithStatus:@"Đang upload hình..." maskType:SVProgressHUDMaskTypeGradient];
+        [[MBNUploadImageManager sharedProvider] uploadImage:coverImage
+                                                       type:MBN_UPLOAD_USER_COVER
+                                            withFinishBlock:^(NSDictionary *responseObject, NSError *error) {
+                                                
+                                                [SVProgressHUD dismiss];
+                                                
+                                                if ([responseObject[@"status"] integerValue] == 200) {
+                                                    [SVProgressHUD showSuccessWithStatus:@"Upload thành công"];
+                                                    return;
+                                                }
+                                                
+                                                [SVProgressHUD showErrorWithStatus:@"Có lỗi trong lúc upload hình, vui lòng thử lại" maskType:SVProgressHUDMaskTypeGradient];
+                                            }];
+    }];
+    
+    [[RACObserve(self, avatarImage) ignore:nil] subscribeNext:^(UIImage *avatarImage) {
+        [SVProgressHUD showErrorWithStatus:@"Đang upload hình..." maskType:SVProgressHUDMaskTypeGradient];
+        [[MBNUploadImageManager sharedProvider] uploadImage:avatarImage
+                                                       type:MBN_UPLOAD_USER_AVATAR
+                                            withFinishBlock:^(NSDictionary *responseObject, NSError *error) {
+                                                
+                                                [SVProgressHUD dismiss];
+                                                
+                                                if ([responseObject[@"status"] integerValue] == 200) {
+                                                    [SVProgressHUD showSuccessWithStatus:@"Upload thành công"];
+                                                    return;
+                                                }
+                                                
+                                                [SVProgressHUD showErrorWithStatus:@"Có lỗi trong lúc upload hình, vui lòng thử lại" maskType:SVProgressHUDMaskTypeGradient];
+                                            }];
+        
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -120,14 +175,6 @@ UITextViewDelegate
 }
 
 - (void)updateContentWithUser:(MBNUser *)user {
-    
-    [self.btnAvatar setImageForState:UIControlStateNormal
-                            withURL:user.avatarImageUrl];
-    self.btnAvatar.imageView.contentMode = UIViewContentModeScaleAspectFill;
-    
-    [self.btnCover setImageForState:UIControlStateNormal
-                            withURL:user.coverImageUrl];
-    self.btnCover.imageView.contentMode = UIViewContentModeScaleAspectFill;
     
     // 1st section
     self.lblPhoneNumber.text = user.phone;
@@ -233,21 +280,14 @@ UITextViewDelegate
     self.images[index] = image;
     [button setImage:[image imgly_rotateImageToMatchOrientation] forState:UIControlStateNormal];
     
-    NSDictionary *params = @{
-        @"content": [UIImageJPEGRepresentation(image, 0.8) base64EncodedString],
-        @"extension": @"jpeg"
-    };
+    if ([button isEqual:self.btnCover]) {
+        self.coverImage = image;
+    }
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    if ([button isEqual:self.btnAvatar]) {
+        self.avatarImage = image;
+    }
     
-    [manager POST:@"https://api.muabannhanh.com/user/upload-cover?id=152&token=cfc0d8176510fe0c8b0229069faaf222" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-    }];
-
 }
 
 @end
