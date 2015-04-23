@@ -14,6 +14,7 @@
 		0516AF151AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0516AF141AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard */; };
 		0516AF181AD5222000DACF05 /* MBNSubcategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0516AF171AD5222000DACF05 /* MBNSubcategoryTableViewCell.m */; };
 		0516AF1B1AD5246500DACF05 /* MBNSubcategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0516AF1A1AD5246500DACF05 /* MBNSubcategoryViewController.m */; };
+		052E84BA1AE94C9300418014 /* TKDesignableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 052E84B91AE94C9300418014 /* TKDesignableButton.m */; };
 		053978FA1ACC1FCD007C4676 /* MBNRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053978F91ACC1FCD007C4676 /* MBNRevealViewController.m */; };
 		053978FE1ACC274E007C4676 /* MBNCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 053978FD1ACC274E007C4676 /* MBNCategory.m */; };
 		053979021ACC3B7C007C4676 /* MBNCategoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 053979011ACC3B7C007C4676 /* MBNCategoryManager.m */; };
@@ -188,6 +189,8 @@
 		0516AF171AD5222000DACF05 /* MBNSubcategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSubcategoryTableViewCell.m; sourceTree = "<group>"; };
 		0516AF191AD5246500DACF05 /* MBNSubcategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSubcategoryViewController.h; sourceTree = "<group>"; };
 		0516AF1A1AD5246500DACF05 /* MBNSubcategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSubcategoryViewController.m; sourceTree = "<group>"; };
+		052E84B81AE94C9300418014 /* TKDesignableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDesignableButton.h; sourceTree = "<group>"; };
+		052E84B91AE94C9300418014 /* TKDesignableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDesignableButton.m; sourceTree = "<group>"; };
 		053978F81ACC1FCD007C4676 /* MBNRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNRevealViewController.h; sourceTree = "<group>"; };
 		053978F91ACC1FCD007C4676 /* MBNRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNRevealViewController.m; sourceTree = "<group>"; };
 		053978FC1ACC274E007C4676 /* MBNCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNCategory.h; sourceTree = "<group>"; };
@@ -656,6 +659,8 @@
 				0508671B1AD6DF7700038F87 /* TKDesignableView.m */,
 				0508671D1AD6EE7000038F87 /* MBNShowLoginSegue.h */,
 				0508671E1AD6EE7000038F87 /* MBNShowLoginSegue.m */,
+				052E84B81AE94C9300418014 /* TKDesignableButton.h */,
+				052E84B91AE94C9300418014 /* TKDesignableButton.m */,
 			);
 			path = "Custom Classes";
 			sourceTree = "<group>";
@@ -1373,6 +1378,7 @@
 				05B906ED1AE805AE00B85BEC /* IMGLYSaturationFilter.m in Sources */,
 				05D84C061AD6412F00497FA0 /* MBNLoadProductForCategoryOperation.m in Sources */,
 				05B906F61AE805AE00B85BEC /* UINavigationController+IMGLYAdditions.m in Sources */,
+				052E84BA1AE94C9300418014 /* TKDesignableButton.m in Sources */,
 				0539790D1ACC4987007C4676 /* MBNHomeTopViewController.m in Sources */,
 				05B906D21AE805AE00B85BEC /* IMGLYFilter.m in Sources */,
 				05B906D71AE805AE00B85BEC /* IMGLYFoodFilter.m in Sources */,

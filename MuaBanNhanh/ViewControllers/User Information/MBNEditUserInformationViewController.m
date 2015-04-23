@@ -19,8 +19,8 @@ UITextViewDelegate
 
 @property (assign, nonatomic) BOOL isEditing;
 
-@property (weak, nonatomic) IBOutlet UIImageView *imgViewCover;
-@property (weak, nonatomic) IBOutlet UIImageView *imgViewAvatar;
+@property (weak, nonatomic) IBOutlet TKDesignableButton *btnAvatar;
+@property (weak, nonatomic) IBOutlet TKDesignableButton *btnCover;
 
 // 1st section
 @property (weak, nonatomic) IBOutlet UITextField *lblPhoneNumber;
@@ -121,8 +121,13 @@ UITextViewDelegate
 
 - (void)updateContentWithUser:(MBNUser *)user {
     
-    [self.imgViewCover setImageWithURL:self.user.coverImageUrl];
-    [self.imgViewAvatar setImageWithURL:self.user.avatarImageUrl];
+    [self.btnAvatar setImageForState:UIControlStateNormal
+                            withURL:user.avatarImageUrl];
+    self.btnAvatar.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    
+    [self.btnCover setImageForState:UIControlStateNormal
+                            withURL:user.coverImageUrl];
+    self.btnCover.imageView.contentMode = UIViewContentModeScaleAspectFill;
     
     // 1st section
     self.lblPhoneNumber.text = user.phone;
@@ -130,7 +135,6 @@ UITextViewDelegate
     
     // 2nd section
     self.lblIdentity.text = user.identity;
-//    self.lblBirthday.text = user.bir
     self.lblPersonalEmail.text = user.email;
     
     
