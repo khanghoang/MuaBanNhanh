@@ -71,21 +71,22 @@ UITextViewDelegate
     }];
     
     // button avatar
+    @weakify(self);
     self.btnAvatar.imageView.contentMode = UIViewContentModeScaleAspectFill;
     [[RACObserve(self, user.avatarImageUrl) ignore:nil] subscribeNext:^(NSURL *url) {
+        @strongify(self);
         [self.btnAvatar setImageForState:UIControlStateNormal
                                  withURL:url];
     }];
     
     self.btnCover.imageView.contentMode = UIViewContentModeScaleAspectFill;
     [[RACObserve(self, user.coverImageUrl) ignore:nil] subscribeNext:^(NSURL *url) {
+        @strongify(self);
         [self.btnCover setImageForState:UIControlStateNormal
                                  withURL:url];
     }];
     
     self.kvoController = [FBKVOController controllerWithObserver:self];
-    
-    @weakify(self);
     
     [self.kvoController observe:self keyPath:@"isEditing" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
         
