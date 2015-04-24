@@ -8,7 +8,7 @@
         <!--Thông tin người dùng-->
         <scene sceneID="sIB-1h-AXQ">
             <objects>
-                <viewController title="Thông tin người dùng" id="Qzh-B2-xJI" customClass="MBNEditUserInformationViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MBNEditUserInformationViewController" title="Thông tin người dùng" id="Qzh-B2-xJI" customClass="MBNEditUserInformationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bMf-di-w7B"/>
                         <viewControllerLayoutGuide type="bottom" id="DtJ-QQ-Yke"/>

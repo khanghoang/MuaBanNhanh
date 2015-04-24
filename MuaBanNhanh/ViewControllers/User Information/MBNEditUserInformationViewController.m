@@ -88,8 +88,7 @@ UITextViewDelegate
     
     self.kvoController = [FBKVOController controllerWithObserver:self];
     
-    [self.kvoController observe:self keyPath:@"isEditing" options:NSKeyValueObservingOptionInitial|NSKeyValueObservingOptionNew block:^(id observer, id object, NSDictionary *change) {
-        
+    [RACObserve(self, isEditing) subscribeNext:^(id x) {
         @strongify(self);
         
         [@[self.lblPhoneNumber,
@@ -109,6 +108,7 @@ UITextViewDelegate
         
         self.txtAddress.editable = self.editing;
         self.wrapperCancelButton.hidden = !self.isEditing;
+        
     }];
     
     [self observerTheImages];
