@@ -9,6 +9,7 @@
 #import "MBNSideMenuViewController.h"
 #import "MBNSideMenuCollectionViewCell.h"
 #import "MBNSubcategoryViewController.h"
+#import "MBNEditUserInformationViewController.h"
 #import "AppDelegate.h"
 
 @interface MBNSideMenuViewController ()
@@ -39,6 +40,7 @@ UICollectionViewDelegateFlowLayout
                                              selector:@selector(userChangeState:)
                                                  name:NOTIFICATION_USER_LOGIN
                                                object:nil];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(userChangeState:)
                                                  name:NOTIFICATION_USER_LOGOUT
@@ -107,7 +109,6 @@ UICollectionViewDelegateFlowLayout
     
     PKRevealController *revealController = appDelegate.revealController;
     [revealController showViewController:revealController.frontViewController];
-    
     MBNSubcategoryViewController *viewController = [[UIStoryboard storyboardWithName:@"SubCategoryStoreyboard" bundle:nil] instantiateInitialViewController];
     viewController.view.backgroundColor = [UIColor whiteColor];
     viewController.arrSubcategories = [self.arrayCategories[indexPath.row] subCategories];
@@ -120,9 +121,8 @@ UICollectionViewDelegateFlowLayout
 - (IBAction)onUserInformation:(id)sender {
     AppDelegate *appDelegate = APP_DELEGATE;
     
-    UIStoryboard *editUserStoryboard = [UIStoryboard storyboardWithName:@"EditUserInformationStoryboard" bundle:nil];
-    UIViewController *editUserViewController = [editUserStoryboard instantiateInitialViewController];
-    [appDelegate pushViewControllerToFrontViewController:editUserViewController];
+    MBNEditUserInformationViewController *editUserViewController = [MBNEditUserInformationViewController tme_instantiateFromStoryboardNamed:@"EditUserInformationStoryboard"];
+    [appDelegate.rootNavigationController pushViewController:editUserViewController animated:YES];
     
     [appDelegate.revealController showViewController:appDelegate.rootNavigationController];
 }
