@@ -7,11 +7,8 @@
 //
 
 #import "MBNProductImagesViewController.h"
-#import "MBNProductDetailsViewModel.h"
 
 @interface MBNProductImagesViewController ()
-
-@property (strong, nonatomic) MBNProductDetailsViewModel *viewModel;
 
 @end
 
@@ -20,8 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.viewModel = [[MBNProductDetailsViewModel alloc] init];
 }
 
 @end

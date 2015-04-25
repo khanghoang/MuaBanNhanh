@@ -12,4 +12,6 @@
 
 + (void)getLatestProducts:(void (^) (NSArray *arrProducts))success failure:(void (^)(NSError *error))failure;
 
++ (void)getProductDetailsWithID:(NSNumber *)productID withCompletion:(void (^) (MBNProduct *product, NSError *error))completeBlock;
+
 @end

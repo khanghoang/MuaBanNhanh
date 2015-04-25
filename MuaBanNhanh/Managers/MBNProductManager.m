@@ -40,4 +40,27 @@
     }];
 }
 
++ (void)getProductDetailsWithID:(NSNumber *)productID withCompletion:(void (^) (MBNProduct *product, NSError *error))completeBlock {
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *requestString = [NSString stringWithFormat:@"http://api.muabannhanh.com/article/detail?id=%ld", (long)[productID integerValue]];
+    [manager GET:requestString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSError *error;
+        
+        MBNProduct *product = [MTLJSONAdapter modelOfClass:[MBNProduct class] fromJSONDictionary:responseObject[@"result"] error:&error];
+        
+        if (completeBlock) {
+            completeBlock(product, nil);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        if (completeBlock) {
+            completeBlock(nil, error);
+        }
+        
+    }];
+}
+
 @end
