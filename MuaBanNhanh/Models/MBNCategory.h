@@ -19,6 +19,7 @@ MTLJSONSerializing
 @property (copy, nonatomic) NSString *slug;
 @property (copy, nonatomic) NSURL *imageUrl;
 @property (copy, nonatomic) NSURL *imageHoverUrl;
+@property (copy, nonatomic) NSURL *iconUrl;
 @property (copy, nonatomic) NSNumber *ordering;
 @property (copy, nonatomic) NSNumber *articleCount;
 @property (strong, nonatomic) NSArray *subCategories;

@@ -31,7 +31,7 @@
     MBNCategory *category = data;
     
     self.lblCategoryName.text = category.name;
-    [self.imageViewCategory setImageWithURL:category.imageUrl];
+    [self.imageViewCategory setImageWithURL:category.iconUrl];
     
 }
 
