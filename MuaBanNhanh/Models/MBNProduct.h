@@ -31,5 +31,6 @@ MTLJSONSerializing
 @property (strong, nonatomic) NSDate *updatedAt;
 @property (strong, nonatomic) NSDate *expiredAt;
 @property (strong, nonatomic) MBNUser *user;
+@property (strong, nonatomic) NSArray *gallery;
 
 @end
