@@ -67,8 +67,8 @@
         return product.province.name;
     }];
     
-    [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
-        return [product.price stringValue];
+    RAC(self.lblPrice, text) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
+        return [product getPriceDisplayString];
     }];
     
     @weakify(self);

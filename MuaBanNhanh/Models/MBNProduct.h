@@ -37,5 +37,6 @@ MTLJSONSerializing
 @property (strong, nonatomic) MBNProvince *province;
 
 - (NSString *)getDisplayAddressString;
+- (NSString *)getPriceDisplayString;
 
 @end

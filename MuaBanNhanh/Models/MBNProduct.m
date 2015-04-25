@@ -99,6 +99,16 @@
     return [self.user.address isEqualToString:@""] ? self.user.address : @"Địa chỉ chưa cập nhật";
 }
 
+- (NSString *)getPriceDisplayString {
+    // price
+    NSNumberFormatter *formatter = [NSNumberFormatter new];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle]; // this line is important!
+    
+    NSString *priceString = [formatter stringFromNumber:self.price];
+    priceString = !priceString ? @"Giá liên hệ" : [NSString stringWithFormat:@"%@ %@", priceString, @"vnđ"];
+    return priceString;
+}
+
 #pragma marks - Helper methods 
 
 + (NSDateFormatter *)sharedDateFormatter
