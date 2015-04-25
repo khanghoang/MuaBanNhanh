@@ -50,6 +50,7 @@
 		05958DA51AD9076000F7A708 /* MBNLoginNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05958DA41AD9076000F7A708 /* MBNLoginNavigationViewController.m */; };
 		05958DA81AD907C300F7A708 /* MBNLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05958DA71AD907C300F7A708 /* MBNLoginViewController.m */; };
 		059AAAF01AEBE2DB00095D83 /* MBNProductDetailsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 059AAAEF1AEBE2DB00095D83 /* MBNProductDetailsViewModel.m */; };
+		059AAAF31AEBE45700095D83 /* MBNImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 059AAAF21AEBE45700095D83 /* MBNImage.m */; };
 		05A3E3431ACAF11200E55215 /* MBNSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */; };
 		05A3E3441ACAF11200E55215 /* MBNSideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05A3E3421ACAF11200E55215 /* MBNSideMenuViewController.xib */; };
 		05A3E3481ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E3461ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m */; };
@@ -259,6 +260,8 @@
 		05958DA71AD907C300F7A708 /* MBNLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNLoginViewController.m; sourceTree = "<group>"; };
 		059AAAEE1AEBE2DB00095D83 /* MBNProductDetailsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNProductDetailsViewModel.h; sourceTree = "<group>"; };
 		059AAAEF1AEBE2DB00095D83 /* MBNProductDetailsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNProductDetailsViewModel.m; sourceTree = "<group>"; };
+		059AAAF11AEBE45700095D83 /* MBNImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNImage.h; sourceTree = "<group>"; };
+		059AAAF21AEBE45700095D83 /* MBNImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNImage.m; sourceTree = "<group>"; };
 		05A3E32F1ACAE5D700E55215 /* MuaBanNhanh-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MuaBanNhanh-prefix.pch"; sourceTree = "<group>"; };
 		05A3E3401ACAF11200E55215 /* MBNSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSideMenuViewController.h; sourceTree = "<group>"; };
 		05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSideMenuViewController.m; sourceTree = "<group>"; };
@@ -579,6 +582,8 @@
 				0561C9C21AD06B5F00BEDA6D /* MBNProduct.m */,
 				0593B7EF1AD1877900A492F3 /* MBNUser.h */,
 				0593B7F01AD1877900A492F3 /* MBNUser.m */,
+				059AAAF11AEBE45700095D83 /* MBNImage.h */,
+				059AAAF21AEBE45700095D83 /* MBNImage.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1344,6 +1349,7 @@
 				05B905F81AE8033900B85BEC /* TMECameraFilter.m in Sources */,
 				0516AF1B1AD5246500DACF05 /* MBNSubcategoryViewController.m in Sources */,
 				05B906D01AE805AE00B85BEC /* IMGLYEditorViewController.m in Sources */,
+				059AAAF31AEBE45700095D83 /* MBNImage.m in Sources */,
 				053979021ACC3B7C007C4676 /* MBNCategoryManager.m in Sources */,
 				05B906AD1AE805AE00B85BEC /* IMGLYAbstractEditorBaseViewController.m in Sources */,
 				05B906D91AE805AE00B85BEC /* IMGLYFrontFilter.m in Sources */,

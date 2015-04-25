@@ -86,6 +86,7 @@
 #import "MBNCategory.h"
 #import "MBNProduct.h"
 #import "MBNUser.h"
+#import "MBNImage.h"
 
 // managers
 #import "MBNCategoryManager.h"
