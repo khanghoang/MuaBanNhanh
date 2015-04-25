@@ -48,7 +48,7 @@
         
         NSError *error;
         
-        MBNProduct *product = [MTLJSONAdapter modelOfClass:[MBNProduct class] fromJSONDictionary:responseObject[@"result"] error:&error];
+        MBNProduct *product = [MTLJSONAdapter modelOfClass:[MBNProduct class] fromJSONDictionary:[responseObject[@"result"] firstObject] error:&error];
         
         if (completeBlock) {
             completeBlock(product, nil);

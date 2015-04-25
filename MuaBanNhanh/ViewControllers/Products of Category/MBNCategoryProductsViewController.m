@@ -57,7 +57,7 @@ UICollectionViewDelegate
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    MBNProduct *product = [self.collectionViewModel.sectionModel objectAtIndex:indexPath.row];
+    MBNProduct *product = [self.collectionController.model itemAtIndexpath:indexPath];
     
     MBNProductDetailsViewController *productVC = [MBNProductDetailsViewController tme_instantiateFromStoryboardNamed:@"ProductDetails"];
     

@@ -26,10 +26,15 @@
     self.viewModel = [[MBNProductDetailsViewModel alloc] init];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self loadProductDetailsAndObserver];
+}
+
 - (void)loadProductDetailsAndObserver {
     [self.viewModel loadProductDetailsWithID:self.productID];
     
-    RAC(self.lblProductName, text) = [RACObserve(self.viewModel, product) map:^id(MBNProduct *product) {
+    RAC(self.lblProductName, text) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
         return product.name;
     }];
 }
