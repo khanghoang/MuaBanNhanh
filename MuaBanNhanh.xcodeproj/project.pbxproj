@@ -31,6 +31,8 @@
 		0561C9C01AD06A8C00BEDA6D /* MBNProductManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0561C9BF1AD06A8C00BEDA6D /* MBNProductManager.m */; };
 		0561C9C31AD06B5F00BEDA6D /* MBNProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 0561C9C21AD06B5F00BEDA6D /* MBNProduct.m */; };
 		0562C83A1AEBC1440029EA9E /* ProductDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0562C8391AEBC1440029EA9E /* ProductDetails.storyboard */; };
+		0562C83D1AEBCF9E0029EA9E /* MBNProductDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0562C83C1AEBCF9E0029EA9E /* MBNProductDetailsViewController.m */; };
+		0562C8401AEBCFB70029EA9E /* MBNProductImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0562C83F1AEBCFB70029EA9E /* MBNProductImagesViewController.m */; };
 		0567F31D1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0567F31C1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m */; };
 		0569A4481AE25FBE00EFBEF0 /* MBNEditUserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0569A4471AE25FBE00EFBEF0 /* MBNEditUserInformationViewController.m */; };
 		0569A44D1AE265C600EFBEF0 /* SafeBuyStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0569A44C1AE265C600EFBEF0 /* SafeBuyStoryboard.storyboard */; };
@@ -221,6 +223,10 @@
 		0561C9C11AD06B5F00BEDA6D /* MBNProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNProduct.h; sourceTree = "<group>"; };
 		0561C9C21AD06B5F00BEDA6D /* MBNProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNProduct.m; sourceTree = "<group>"; };
 		0562C8391AEBC1440029EA9E /* ProductDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProductDetails.storyboard; sourceTree = "<group>"; };
+		0562C83B1AEBCF9E0029EA9E /* MBNProductDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNProductDetailsViewController.h; sourceTree = "<group>"; };
+		0562C83C1AEBCF9E0029EA9E /* MBNProductDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNProductDetailsViewController.m; sourceTree = "<group>"; };
+		0562C83E1AEBCFB70029EA9E /* MBNProductImagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNProductImagesViewController.h; sourceTree = "<group>"; };
+		0562C83F1AEBCFB70029EA9E /* MBNProductImagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNProductImagesViewController.m; sourceTree = "<group>"; };
 		0567F31B1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNHomeTopCollectionViewCell.h; sourceTree = "<group>"; };
 		0567F31C1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNHomeTopCollectionViewCell.m; sourceTree = "<group>"; };
 		0569A4461AE25FBE00EFBEF0 /* MBNEditUserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNEditUserInformationViewController.h; sourceTree = "<group>"; };
@@ -676,6 +682,10 @@
 			isa = PBXGroup;
 			children = (
 				0562C8391AEBC1440029EA9E /* ProductDetails.storyboard */,
+				0562C83B1AEBCF9E0029EA9E /* MBNProductDetailsViewController.h */,
+				0562C83C1AEBCF9E0029EA9E /* MBNProductDetailsViewController.m */,
+				0562C83E1AEBCFB70029EA9E /* MBNProductImagesViewController.h */,
+				0562C83F1AEBCFB70029EA9E /* MBNProductImagesViewController.m */,
 			);
 			path = "Product Details";
 			sourceTree = "<group>";
@@ -1336,6 +1346,7 @@
 				05958D9F1AD9052700F7A708 /* MBNNavigationViewController.m in Sources */,
 				0567F31D1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m in Sources */,
 				05B906E61AE805AE00B85BEC /* IMGLYNoneFilter.m in Sources */,
+				0562C8401AEBCFB70029EA9E /* MBNProductImagesViewController.m in Sources */,
 				05B906D31AE805AE00B85BEC /* IMGLYFilterOperation.m in Sources */,
 				05B906E81AE805AE00B85BEC /* IMGLYPaleFilter.m in Sources */,
 				0593B7E71AD12B3800A492F3 /* MBNCollectionHeaderView.m in Sources */,
@@ -1393,6 +1404,7 @@
 				05B906A71AE805AE00B85BEC /* IMGLY669Filter.m in Sources */,
 				05B906A91AE805AE00B85BEC /* IMGLY9EK1Filter.m in Sources */,
 				05B906E31AE805AE00B85BEC /* IMGLYMainMenuEntryMetaData.m in Sources */,
+				0562C83D1AEBCF9E0029EA9E /* MBNProductDetailsViewController.m in Sources */,
 				05B906ED1AE805AE00B85BEC /* IMGLYSaturationFilter.m in Sources */,
 				05D84C061AD6412F00497FA0 /* MBNLoadProductForCategoryOperation.m in Sources */,
 				05B906F61AE805AE00B85BEC /* UINavigationController+IMGLYAdditions.m in Sources */,
