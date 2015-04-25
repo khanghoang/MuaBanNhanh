@@ -76,6 +76,7 @@
 #import "UIImage+ImageEffects.h"
 #import "UIImage+IMGLYKitAdditions.h"
 #import "UIViewController+Additions.h"
+#import "UITextView+MeasureContent.h"
 #import "NSData+Base64.h"
 #import "UIView+Additions.h"
 #import "TMECameraVC.h"
@@ -87,6 +88,7 @@
 #import "MBNProduct.h"
 #import "MBNUser.h"
 #import "MBNImage.h"
+#import "MBNProvince.h"
 
 // managers
 #import "MBNCategoryManager.h"

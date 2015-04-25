@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MBNUser.h"
+#import "MBNProvince.h"
 
 @interface MBNProduct : MTLModel
 <
@@ -27,10 +28,14 @@ MTLJSONSerializing
 @property (copy, nonatomic) NSNumber *viewCount;
 @property (copy, nonatomic) NSNumber *isShow;
 @property (copy, nonatomic) NSString *conditions;
+@property (copy, nonatomic) NSString *des;
 @property (strong, nonatomic) NSDate *createdAt;
 @property (strong, nonatomic) NSDate *updatedAt;
 @property (strong, nonatomic) NSDate *expiredAt;
 @property (strong, nonatomic) MBNUser *user;
 @property (strong, nonatomic) NSArray *gallery;
+@property (strong, nonatomic) MBNProvince *province;
+
+- (NSString *)getDisplayAddressString;
 
 @end

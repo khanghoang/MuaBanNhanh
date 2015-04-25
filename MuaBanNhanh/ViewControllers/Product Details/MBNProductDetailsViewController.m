@@ -14,6 +14,17 @@
 @property (strong, nonatomic) MBNProductDetailsViewModel *viewModel;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblProductName;
+@property (weak, nonatomic) IBOutlet UILabel *lblViewCount;
+@property (weak, nonatomic) IBOutlet UILabel *lblCategories;
+@property (weak, nonatomic) IBOutlet UILabel *lblCondition;
+@property (weak, nonatomic) IBOutlet UILabel *lblCity;
+@property (weak, nonatomic) IBOutlet UILabel *lblPrice;
+@property (weak, nonatomic) IBOutlet UIButton *btnCall;
+@property (weak, nonatomic) IBOutlet UITextView *txtViewDescription;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintDescriptionHeight;
+@property (weak, nonatomic) IBOutlet UIImageView *imgViewAvatar;
+@property (weak, nonatomic) IBOutlet UILabel *lblAddress;
+@property (weak, nonatomic) IBOutlet UILabel *lblUsername;
 
 @end
 
@@ -36,6 +47,57 @@
     
     RAC(self.lblProductName, text) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
         return product.name;
+    }];
+    
+    RAC(self.lblViewCount, text) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
+        return [NSString stringWithFormat:@"Lượt xem (%@)", [product.viewCount stringValue]];
+    }];
+    
+    RAC(self.lblCategories, text) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
+        return [[product.categories rac_sequence] foldLeftWithStart:@"" reduce:^id(NSString *accumulator, MBNCategory *cat) {
+            return [NSString stringWithFormat:@"%@ %@", accumulator, cat.name];
+        }];
+    }];
+    
+    RAC(self.lblCondition, text) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
+        return product.conditions;
+    }];
+    
+    RAC(self.lblCity, text) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
+        return product.province.name;
+    }];
+    
+    [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
+        return [product.price stringValue];
+    }];
+    
+    @weakify(self);
+    [[RACObserve(self.viewModel, product) ignore:nil] subscribeNext:^(MBNProduct *product) {
+        @strongify(self);
+        [self.btnCall setTitle:product.user.phone forState:UIControlStateNormal];
+    }];
+    
+    [[RACObserve(self.viewModel, product) ignore:nil] subscribeNext:^(MBNProduct *product) {
+        @strongify(self);
+        self.txtViewDescription.text = product.des;
+        self.constraintDescriptionHeight.constant = [self.txtViewDescription measureHeightOfUITextView];
+        [self.view layoutIfNeeded];
+        [self.view updateConstraintsIfNeeded];
+    }];
+    
+    [[RACObserve(self.viewModel, product) ignore:nil] subscribeNext:^(MBNProduct *product) {
+        @strongify(self);
+        if( product.user.avatarImageUrl ) {
+            [self.imgViewAvatar setImageWithURL:product.user.avatarImageUrl placeholderImage:[UIImage imageNamed:@"avatar-d"]];
+        }
+    }];
+    
+    RAC(self.lblUsername, text) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
+        return product.user.name;
+    }];
+    
+    RAC(self.lblAddress, text) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
+        return [product getDisplayAddressString];
     }];
 }
 

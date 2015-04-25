@@ -57,6 +57,8 @@
 		05A3E3491ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05A3E3471ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.xib */; };
 		05A3E34D1ACAF9D300E55215 /* UIView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E34C1ACAF9D300E55215 /* UIView+Addition.m */; };
 		05A3E3501ACAF9E100E55215 /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E34F1ACAF9E100E55215 /* Colours.m */; };
+		05AD0A4E1AEBFF280007FAED /* MBNProvince.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AD0A4D1AEBFF280007FAED /* MBNProvince.m */; };
+		05AD0A511AEC0F560007FAED /* UITextView+MeasureContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AD0A501AEC0F560007FAED /* UITextView+MeasureContent.m */; };
 		05B905E21AE802CD00B85BEC /* PBImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B905DF1AE802CD00B85BEC /* PBImageHelper.m */; };
 		05B905E31AE802CD00B85BEC /* TMEPhotoButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B905E11AE802CD00B85BEC /* TMEPhotoButton.m */; };
 		05B905F41AE8033900B85BEC /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B905E61AE8033900B85BEC /* Camera.storyboard */; };
@@ -273,6 +275,10 @@
 		05A3E34C1ACAF9D300E55215 /* UIView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addition.m"; sourceTree = "<group>"; };
 		05A3E34E1ACAF9E100E55215 /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
 		05A3E34F1ACAF9E100E55215 /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
+		05AD0A4C1AEBFF280007FAED /* MBNProvince.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNProvince.h; sourceTree = "<group>"; };
+		05AD0A4D1AEBFF280007FAED /* MBNProvince.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNProvince.m; sourceTree = "<group>"; };
+		05AD0A4F1AEC0F560007FAED /* UITextView+MeasureContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+MeasureContent.h"; sourceTree = "<group>"; };
+		05AD0A501AEC0F560007FAED /* UITextView+MeasureContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+MeasureContent.m"; sourceTree = "<group>"; };
 		05B905DE1AE802CD00B85BEC /* PBImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBImageHelper.h; sourceTree = "<group>"; };
 		05B905DF1AE802CD00B85BEC /* PBImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBImageHelper.m; sourceTree = "<group>"; };
 		05B905E01AE802CD00B85BEC /* TMEPhotoButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMEPhotoButton.h; sourceTree = "<group>"; };
@@ -584,6 +590,8 @@
 				0593B7F01AD1877900A492F3 /* MBNUser.m */,
 				059AAAF11AEBE45700095D83 /* MBNImage.h */,
 				059AAAF21AEBE45700095D83 /* MBNImage.m */,
+				05AD0A4C1AEBFF280007FAED /* MBNProvince.h */,
+				05AD0A4D1AEBFF280007FAED /* MBNProvince.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -812,6 +820,8 @@
 				0571AF9B1AD2AAB300943F85 /* MBNPopupCustomButton.m */,
 				05DC9E7E1AE825A200272C10 /* UIImage+fixOrientation.h */,
 				05DC9E7F1AE825A200272C10 /* UIImage+fixOrientation.m */,
+				05AD0A4F1AEC0F560007FAED /* UITextView+MeasureContent.h */,
+				05AD0A501AEC0F560007FAED /* UITextView+MeasureContent.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1312,6 +1322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05AD0A511AEC0F560007FAED /* UITextView+MeasureContent.m in Sources */,
 				0569A4481AE25FBE00EFBEF0 /* MBNEditUserInformationViewController.m in Sources */,
 				05A3E3481ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m in Sources */,
 				0569A4501AE27CE300EFBEF0 /* MBNSafeBuyViewController.m in Sources */,
@@ -1382,6 +1393,7 @@
 				05B906F31AE805AE00B85BEC /* IMGLYTextOperation.m in Sources */,
 				05B905F61AE8033900B85BEC /* TMECropImageVC.m in Sources */,
 				05B906C71AE805AE00B85BEC /* IMGLYEditorFilterViewController.m in Sources */,
+				05AD0A4E1AEBFF280007FAED /* MBNProvince.m in Sources */,
 				0561C9B01ACFBD9B00BEDA6D /* UIViewController+AddHambugerButton.m in Sources */,
 				05B906B51AE805AE00B85BEC /* IMGLYCameraController.m in Sources */,
 				05B906C11AE805AE00B85BEC /* IMGLYEditorCircleGradientView.m in Sources */,

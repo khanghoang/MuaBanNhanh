@@ -79,6 +79,7 @@
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstItem="Otn-FJ-PRg" firstAttribute="top" secondItem="jPj-Lz-dbL" secondAttribute="top" id="530-i1-LEx"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Otn-FJ-PRg" secondAttribute="trailing" id="RRF-FD-jjy"/>
                                                             <constraint firstAttribute="bottom" secondItem="Otn-FJ-PRg" secondAttribute="bottom" id="Vtc-zI-yo4"/>
                                                             <constraint firstItem="Otn-FJ-PRg" firstAttribute="leading" secondItem="jPj-Lz-dbL" secondAttribute="leading" constant="24" id="o5r-YT-QPE"/>
                                                         </constraints>
@@ -95,6 +96,10 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
+                                                            <constraint firstItem="MTc-tq-0nN" firstAttribute="top" secondItem="s2t-NC-1gb" secondAttribute="top" id="BtL-6l-LlG"/>
+                                                            <constraint firstAttribute="trailing" secondItem="MTc-tq-0nN" secondAttribute="trailing" id="FdU-dx-vBL"/>
+                                                            <constraint firstAttribute="bottom" secondItem="MTc-tq-0nN" secondAttribute="bottom" id="GM0-PZ-QEa"/>
+                                                            <constraint firstItem="MTc-tq-0nN" firstAttribute="leading" secondItem="s2t-NC-1gb" secondAttribute="leading" constant="24" id="gqW-YB-oLY"/>
                                                             <constraint firstAttribute="height" constant="18" id="mUt-sr-QBx"/>
                                                         </constraints>
                                                     </view>
@@ -110,6 +115,10 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
+                                                            <constraint firstItem="C5c-Cn-cgp" firstAttribute="leading" secondItem="8Yn-YL-f9a" secondAttribute="leading" constant="24" id="HUm-pT-P5H"/>
+                                                            <constraint firstAttribute="bottom" secondItem="C5c-Cn-cgp" secondAttribute="bottom" id="eHT-x3-SWk"/>
+                                                            <constraint firstItem="C5c-Cn-cgp" firstAttribute="top" secondItem="8Yn-YL-f9a" secondAttribute="top" id="pK9-UE-nKf"/>
+                                                            <constraint firstAttribute="trailing" secondItem="C5c-Cn-cgp" secondAttribute="trailing" id="qFf-WZ-jVL"/>
                                                             <constraint firstAttribute="height" constant="18" id="zkf-xl-FYl"/>
                                                         </constraints>
                                                     </view>
@@ -137,6 +146,10 @@
                                                         <color key="backgroundColor" red="0.74509803921568629" green="0.29803921568627451" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="179" id="8Qw-c8-xjs"/>
+                                                            <constraint firstItem="LaP-T2-wqk" firstAttribute="top" secondItem="w4g-9D-QUM" secondAttribute="top" id="9MP-t6-JCI"/>
+                                                            <constraint firstAttribute="trailing" secondItem="LaP-T2-wqk" secondAttribute="trailing" id="Nhf-0T-dei"/>
+                                                            <constraint firstItem="LaP-T2-wqk" firstAttribute="leading" secondItem="w4g-9D-QUM" secondAttribute="leading" id="Xs8-Sg-xY8"/>
+                                                            <constraint firstAttribute="bottom" secondItem="LaP-T2-wqk" secondAttribute="bottom" id="htE-rX-KH9"/>
                                                             <constraint firstAttribute="height" constant="36" id="osE-hA-usX"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
@@ -246,7 +259,11 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="fgO-EH-07D" secondAttribute="trailing" id="2WY-7d-LMR"/>
+                                                            <constraint firstAttribute="bottom" secondItem="fgO-EH-07D" secondAttribute="bottom" id="6J7-Cu-Voy"/>
                                                             <constraint firstAttribute="width" constant="120" id="NV6-NN-jMg"/>
+                                                            <constraint firstItem="fgO-EH-07D" firstAttribute="top" secondItem="RKA-Qc-wog" secondAttribute="top" id="gpF-Ok-nPk"/>
+                                                            <constraint firstItem="fgO-EH-07D" firstAttribute="leading" secondItem="RKA-Qc-wog" secondAttribute="leading" id="lft-wx-vR1"/>
                                                             <constraint firstAttribute="height" constant="120" id="x0m-PI-oOx"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
@@ -337,7 +354,18 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="880"/>
                     <connections>
+                        <outlet property="btnCall" destination="LaP-T2-wqk" id="t70-Gy-sgQ"/>
+                        <outlet property="constraintDescriptionHeight" destination="c4p-od-k1B" id="JBv-Em-AKm"/>
+                        <outlet property="imgViewAvatar" destination="fgO-EH-07D" id="7FL-9y-3Gc"/>
+                        <outlet property="lblAddress" destination="Nj9-lR-6xd" id="Wh0-C7-xCV"/>
+                        <outlet property="lblCategories" destination="Otn-FJ-PRg" id="2dF-aS-wFe"/>
+                        <outlet property="lblCity" destination="C5c-Cn-cgp" id="FaZ-fg-2bl"/>
+                        <outlet property="lblCondition" destination="MTc-tq-0nN" id="jmn-Yb-6y2"/>
+                        <outlet property="lblPrice" destination="N1C-VJ-XGx" id="UZ1-Hk-mGB"/>
                         <outlet property="lblProductName" destination="gjg-Mr-9cP" id="sps-Gc-w7I"/>
+                        <outlet property="lblUsername" destination="qzX-42-rVj" id="4ge-P5-XjS"/>
+                        <outlet property="lblViewCount" destination="QF6-c8-uup" id="mui-ZO-Pa0"/>
+                        <outlet property="txtViewDescription" destination="X5v-cJ-AGH" id="Tee-9r-dYu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDh-qp-zAk" userLabel="First Responder" sceneMemberID="firstResponder"/>

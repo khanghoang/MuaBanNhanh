@@ -234,7 +234,7 @@ UITextViewDelegate
 #pragma marks - Section 3
 
 - (void)textViewDidChange:(UITextView *)textView {
-    self.constraintAddressHeight.constant = textView.contentSize.height;
+    self.constraintAddressHeight.constant = [textView measureHeightOfUITextView];
     [textView updateConstraintsIfNeeded];
     [textView layoutIfNeeded];
 }

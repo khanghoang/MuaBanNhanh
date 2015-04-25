@@ -31,12 +31,20 @@
              @"updatedAt": @"updated_at",
              @"expiredAt": @"expired_at",
              @"user": @"user",
-             @"gallery": @"gallery"
+             @"gallery": @"gallery",
+             @"viewCount": @"view_count",
+             @"conditions": @"conditions",
+             @"province": @"province",
+             @"des": @"description.user"
              };
 }
 
 + (NSValueTransformer *)userJSONTransformer {
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[MBNUser class]];
+}
+
++ (NSValueTransformer *)provinceJSONTransformer {
+    return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[MBNProvince class]];
 }
 
 + (NSValueTransformer *)galleryJSONTransformer {
@@ -83,6 +91,12 @@
     } reverseBlock:^(NSDate *date) {
         return [date description];
     }];
+}
+
+#pragma marks - Helpers
+
+- (NSString *)getDisplayAddressString {
+    return [self.user.address isEqualToString:@""] ? self.user.address : @"Địa chỉ chưa cập nhật";
 }
 
 #pragma marks - Helper methods 
