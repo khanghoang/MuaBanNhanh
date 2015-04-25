@@ -49,6 +49,7 @@
 		05958D9F1AD9052700F7A708 /* MBNNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05958D9E1AD9052700F7A708 /* MBNNavigationViewController.m */; };
 		05958DA51AD9076000F7A708 /* MBNLoginNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05958DA41AD9076000F7A708 /* MBNLoginNavigationViewController.m */; };
 		05958DA81AD907C300F7A708 /* MBNLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05958DA71AD907C300F7A708 /* MBNLoginViewController.m */; };
+		059AAAF01AEBE2DB00095D83 /* MBNProductDetailsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 059AAAEF1AEBE2DB00095D83 /* MBNProductDetailsViewModel.m */; };
 		05A3E3431ACAF11200E55215 /* MBNSideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */; };
 		05A3E3441ACAF11200E55215 /* MBNSideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05A3E3421ACAF11200E55215 /* MBNSideMenuViewController.xib */; };
 		05A3E3481ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E3461ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m */; };
@@ -256,6 +257,8 @@
 		05958DA41AD9076000F7A708 /* MBNLoginNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNLoginNavigationViewController.m; sourceTree = "<group>"; };
 		05958DA61AD907C300F7A708 /* MBNLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNLoginViewController.h; sourceTree = "<group>"; };
 		05958DA71AD907C300F7A708 /* MBNLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNLoginViewController.m; sourceTree = "<group>"; };
+		059AAAEE1AEBE2DB00095D83 /* MBNProductDetailsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNProductDetailsViewModel.h; sourceTree = "<group>"; };
+		059AAAEF1AEBE2DB00095D83 /* MBNProductDetailsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNProductDetailsViewModel.m; sourceTree = "<group>"; };
 		05A3E32F1ACAE5D700E55215 /* MuaBanNhanh-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MuaBanNhanh-prefix.pch"; sourceTree = "<group>"; };
 		05A3E3401ACAF11200E55215 /* MBNSideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSideMenuViewController.h; sourceTree = "<group>"; };
 		05A3E3411ACAF11200E55215 /* MBNSideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSideMenuViewController.m; sourceTree = "<group>"; };
@@ -686,6 +689,8 @@
 				0562C83C1AEBCF9E0029EA9E /* MBNProductDetailsViewController.m */,
 				0562C83E1AEBCFB70029EA9E /* MBNProductImagesViewController.h */,
 				0562C83F1AEBCFB70029EA9E /* MBNProductImagesViewController.m */,
+				059AAAEE1AEBE2DB00095D83 /* MBNProductDetailsViewModel.h */,
+				059AAAEF1AEBE2DB00095D83 /* MBNProductDetailsViewModel.m */,
 			);
 			path = "Product Details";
 			sourceTree = "<group>";
@@ -1419,6 +1424,7 @@
 				05B906B91AE805AE00B85BEC /* IMGLYContrastFilter.m in Sources */,
 				05B906D61AE805AE00B85BEC /* IMGLYFixieFilter.m in Sources */,
 				05B906BC1AE805AE00B85BEC /* IMGLYDefaultCameraImageProvider.m in Sources */,
+				059AAAF01AEBE2DB00095D83 /* MBNProductDetailsViewModel.m in Sources */,
 				0561C9C01AD06A8C00BEDA6D /* MBNProductManager.m in Sources */,
 				05B905E21AE802CD00B85BEC /* PBImageHelper.m in Sources */,
 				05B906E91AE805AE00B85BEC /* IMGLYPhotoProcessor.m in Sources */,
