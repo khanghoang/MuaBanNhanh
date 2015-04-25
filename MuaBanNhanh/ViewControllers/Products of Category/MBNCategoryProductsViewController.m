@@ -10,10 +10,13 @@
 #import "MBNProductCellFactory.h"
 #import "MBNLoadProductForCategoryOperation.h"
 #import "MBNContentLoadingViewModel.h"
+#import "MBNProductDetailsViewController.h"
 
 @interface MBNCategoryProductsViewController ()
+<
+UICollectionViewDelegate
+>
 
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) KHCollectionController *collectionController;
 @property (strong, nonatomic) KHBasicTableViewModel *collectionViewModel;
 
@@ -34,6 +37,10 @@
     // table is just the dump name, it should be collection view
     self.cellFactory = [[MBNProductCellFactory alloc] init];
     [self setEnableRefreshControl:YES];
+    
+    id oldDelegate = self.collectionView.delegate;
+    self.chainDelegate = [[LBDelegateMatrioska alloc] initWithDelegates:@[self, oldDelegate]];
+    self.collectionView.delegate = (id) self.chainDelegate;
 }
 
 - (id<KHLoadingOperationProtocol>)loadingOperationForSectionViewModel:(id<KHTableViewSectionModel>)viewModel indexes:(NSIndexSet *)indexes {
@@ -46,6 +53,17 @@
     loadingTotalItems.delegate = (id)self;
     [loadingTotalItems loadContent];
     return loadingTotalItems;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    MBNProduct *product = [self.collectionViewModel.sectionModel objectAtIndex:indexPath.row];
+    
+    MBNProductDetailsViewController *productVC = [MBNProductDetailsViewController tme_instantiateFromStoryboardNamed:@"ProductDetails"];
+    
+    productVC.productID = product.ID;
+    
+    [self.navigationController pushViewController:productVC animated:YES];
 }
 
 @end

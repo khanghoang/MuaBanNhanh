@@ -17,7 +17,9 @@
 @implementation MBNProductDetailsViewModel
 
 - (void)loadProductDetailsWithID:(NSNumber *)productID {
-    
+    [MBNProductManager getProductDetailsWithID:productID withCompletion:^(MBNProduct *product, NSError *error) {
+        self.product = product;
+    }];
 }
 
 @end

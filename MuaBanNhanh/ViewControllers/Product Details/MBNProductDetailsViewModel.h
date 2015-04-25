@@ -12,4 +12,6 @@
 
 @property (strong, readonly) MBNProduct *product;
 
+- (void)loadProductDetailsWithID:(NSNumber *)productID;
+
 @end

@@ -13,6 +13,8 @@
 
 @property (strong, nonatomic) MBNProductDetailsViewModel *viewModel;
 
+@property (weak, nonatomic) IBOutlet UILabel *lblProductName;
+
 @end
 
 @implementation MBNProductDetailsViewController
@@ -20,6 +22,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.viewModel = [[MBNProductDetailsViewModel alloc] init];
+}
+
+- (void)loadProductDetailsAndObserver {
+    [self.viewModel loadProductDetailsWithID:self.productID];
+    
+    RAC(self.lblProductName, text) = [RACObserve(self.viewModel, product) map:^id(MBNProduct *product) {
+        return product.name;
+    }];
 }
 
 @end

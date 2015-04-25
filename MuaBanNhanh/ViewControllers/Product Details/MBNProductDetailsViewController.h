@@ -10,4 +10,6 @@
 
 @interface MBNProductDetailsViewController : UIViewController
 
+@property (strong, nonatomic) NSNumber *productID;
+
 @end
