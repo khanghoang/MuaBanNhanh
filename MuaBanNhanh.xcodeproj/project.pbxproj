@@ -30,6 +30,7 @@
 		0561C9BD1AD05F6800BEDA6D /* TKAlignTopLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0561C9BC1AD05F6800BEDA6D /* TKAlignTopLabel.m */; };
 		0561C9C01AD06A8C00BEDA6D /* MBNProductManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0561C9BF1AD06A8C00BEDA6D /* MBNProductManager.m */; };
 		0561C9C31AD06B5F00BEDA6D /* MBNProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 0561C9C21AD06B5F00BEDA6D /* MBNProduct.m */; };
+		0562C83A1AEBC1440029EA9E /* ProductDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0562C8391AEBC1440029EA9E /* ProductDetails.storyboard */; };
 		0567F31D1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0567F31C1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m */; };
 		0569A4481AE25FBE00EFBEF0 /* MBNEditUserInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0569A4471AE25FBE00EFBEF0 /* MBNEditUserInformationViewController.m */; };
 		0569A44D1AE265C600EFBEF0 /* SafeBuyStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0569A44C1AE265C600EFBEF0 /* SafeBuyStoryboard.storyboard */; };
@@ -219,6 +220,7 @@
 		0561C9BF1AD06A8C00BEDA6D /* MBNProductManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNProductManager.m; sourceTree = "<group>"; };
 		0561C9C11AD06B5F00BEDA6D /* MBNProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNProduct.h; sourceTree = "<group>"; };
 		0561C9C21AD06B5F00BEDA6D /* MBNProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNProduct.m; sourceTree = "<group>"; };
+		0562C8391AEBC1440029EA9E /* ProductDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ProductDetails.storyboard; sourceTree = "<group>"; };
 		0567F31B1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNHomeTopCollectionViewCell.h; sourceTree = "<group>"; };
 		0567F31C1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNHomeTopCollectionViewCell.m; sourceTree = "<group>"; };
 		0569A4461AE25FBE00EFBEF0 /* MBNEditUserInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNEditUserInformationViewController.h; sourceTree = "<group>"; };
@@ -670,6 +672,14 @@
 			path = "Custom Classes";
 			sourceTree = "<group>";
 		};
+		0562C8381AEBC1330029EA9E /* Product Details */ = {
+			isa = PBXGroup;
+			children = (
+				0562C8391AEBC1440029EA9E /* ProductDetails.storyboard */,
+			);
+			path = "Product Details";
+			sourceTree = "<group>";
+		};
 		0569A4491AE2657700EFBEF0 /* Safely buy */ = {
 			isa = PBXGroup;
 			children = (
@@ -721,6 +731,7 @@
 		05A3E3391ACAF0AC00E55215 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0562C8381AEBC1330029EA9E /* Product Details */,
 				05B905E41AE8033900B85BEC /* Take Photo */,
 				0569A4491AE2657700EFBEF0 /* Safely buy */,
 				054AA6941AE21D2600C8CBCA /* User Information */,
@@ -1221,6 +1232,7 @@
 				05B905F71AE8033900B85BEC /* CameraFilterSelector.storyboard in Resources */,
 				05B905F41AE8033900B85BEC /* Camera.storyboard in Resources */,
 				053979071ACC48F6007C4676 /* MainStoryBoard.storyboard in Resources */,
+				0562C83A1AEBC1440029EA9E /* ProductDetails.storyboard in Resources */,
 				0593B7F41AD18C8300A492F3 /* PlusPopups.storyboard in Resources */,
 				05A3E3441ACAF11200E55215 /* MBNSideMenuViewController.xib in Resources */,
 				050867191AD6D29200038F87 /* UserLogin.storyboard in Resources */,
