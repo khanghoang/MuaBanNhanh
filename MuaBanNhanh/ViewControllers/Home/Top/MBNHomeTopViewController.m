@@ -11,6 +11,8 @@
 #import "AppDelegate.h"
 #import "MBNSubcategoryViewController.h"
 
+#define PRODUCT_COLLECTION_CELL_HEIGHT [UIScreen mainScreen].bounds.size.width / 2.0 / (140.0f / 210.f)
+
 static CGFloat const COLLECTION_PADDING_BOTTOM = 20;
 
 @interface MBNHomeTopViewController ()
@@ -46,8 +48,8 @@ UICollectionViewDelegateFlowLayout
     self.arrayCategories = arrayCategories;
     [self.collectionViewCategories reloadData];
     [self.view.superview mas_updateConstraints:^(MASConstraintMaker *make) {
-        CGFloat width = [UIScreen mainScreen].bounds.size.width / 2.0;
-        make.height.equalTo(@(width * (int)((self.arrayCategories.count+1)/2) + COLLECTION_PADDING_BOTTOM));
+        CGFloat height = (int) (PRODUCT_COLLECTION_CELL_HEIGHT + 10) * (int)((self.arrayCategories.count+1)/2) + (COLLECTION_PADDING_BOTTOM * 2) + 1;
+        make.height.equalTo(@(height));
     }];
     [UIView animateWithDuration:0
                      animations:^{
@@ -75,8 +77,9 @@ UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     CGFloat width = [UIScreen mainScreen].bounds.size.width / 2.0;
+    CGFloat height = PRODUCT_COLLECTION_CELL_HEIGHT;
     
-    CGSize size = CGSizeMake(width, width);
+    CGSize size = CGSizeMake(width, height);
     
     return size;
     
