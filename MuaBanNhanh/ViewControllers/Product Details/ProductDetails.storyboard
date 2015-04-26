@@ -135,10 +135,10 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w4g-9D-QUM" customClass="TKDesignableView">
                                                         <rect key="frame" x="8" y="158" width="179" height="36"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LaP-T2-wqk">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LaP-T2-wqk">
                                                                 <rect key="frame" x="0.0" y="0.0" width="179" height="36"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                                                <state key="normal" title="0122 234 4328">
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                                <state key="normal" title="0122 234 4328" image="ic_fab_call">
                                                                     <color key="titleColor" red="0.99607843137254903" green="0.98431372549019602" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
@@ -148,7 +148,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="179" id="8Qw-c8-xjs"/>
                                                             <constraint firstItem="LaP-T2-wqk" firstAttribute="top" secondItem="w4g-9D-QUM" secondAttribute="top" id="9MP-t6-JCI"/>
-                                                            <constraint firstAttribute="trailing" secondItem="LaP-T2-wqk" secondAttribute="trailing" id="Nhf-0T-dei"/>
+                                                            <constraint firstAttribute="trailing" secondItem="LaP-T2-wqk" secondAttribute="trailing" constant="8" id="Nhf-0T-dei"/>
                                                             <constraint firstItem="LaP-T2-wqk" firstAttribute="leading" secondItem="w4g-9D-QUM" secondAttribute="leading" id="Xs8-Sg-xY8"/>
                                                             <constraint firstAttribute="bottom" secondItem="LaP-T2-wqk" secondAttribute="bottom" id="htE-rX-KH9"/>
                                                             <constraint firstAttribute="height" constant="36" id="osE-hA-usX"/>
@@ -432,6 +432,9 @@
             <point key="canvasLocation" x="697" y="-112"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_fab_call" width="36" height="36"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
