@@ -48,4 +48,22 @@ UICollectionViewDataSource
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSArray *gallery = self.viewModel.product.gallery;
+    
+    // Create an array to store IDMPhoto objects
+    NSMutableArray *photos = [NSMutableArray new];
+    
+    for (MBNImage *image in gallery) {
+        IDMPhoto *photo = [IDMPhoto photoWithURL:image.imageURL];
+        photo.caption = image.caption;
+        [photos addObject:photo];
+    }
+    
+    IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos];
+    [browser setInitialPageIndex:indexPath.row];
+    [self presentViewController:browser animated:YES completion:nil];
+}
+
 @end

@@ -21,9 +21,14 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - AWPagedArray (0.3.0)
+  - DACircularProgress (2.3.1)
   - FLEX (2.0.2)
   - GPUImage (0.1.2)
   - HPGrowingTextView (1.1)
+  - IDMPhotoBrowser (1.6.2):
+    - AFNetworking
+    - DACircularProgress
+    - pop
   - KHTableViewController (0.1.8):
     - AFNetworking
     - AWPagedArray
@@ -71,6 +76,7 @@ PODS:
   - Mantle/extobjc (1.5.4)
   - Masonry (0.6.1)
   - PKRevealController (2.0.6)
+  - pop (1.0.7)
   - PSTAlertController (1.1.0)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
@@ -90,6 +96,7 @@ DEPENDENCIES:
   - FLEX
   - GPUImage (= 0.1.2)
   - HPGrowingTextView
+  - IDMPhotoBrowser
   - KHTableViewController
   - KVOController
   - libextobjc
@@ -117,9 +124,11 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: fefbce9660acb17f48ae0011292d4da0f457bf36
   AWPagedArray: 66db32d015a01d921133a4eb50da1d830271c39a
+  DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   FLEX: 321e6150cbababb76aaadde355dfce2ee1cac2d8
   GPUImage: efa9a693c26bf1bcd7eb38eb3129ba6a5771cecd
   HPGrowingTextView: 88a716d97fb853bcb08a4a08e4727da17efc9b19
+  IDMPhotoBrowser: ebbfa6690456b72dd92d93b7bc11d71519f4d06d
   KHTableViewController: c07c33e169dc04ab81a76a77764c179a3e8b690e
   KVOController: 9fd8f0343670994e4b6f9f0b31f5a45663f3e1cf
   LBDelegateMatrioska: 4af6c7c5ba142d2f24d741e360558d8a0202cfc4
@@ -128,6 +137,7 @@ SPEC CHECKSUMS:
   Mantle: 60acd0cd363e27d945bda0a6b8e90577112d28f3
   Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
   PKRevealController: ffb45a16f5a5032ad90a3d16e5cbb0d8e035bd58
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
   PSTAlertController: cb21afcfa76c3229feec7db044afd4f60dab5892
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   RMDateSelectionViewController: 5d4233ad5dca8baa375de41d20af1df86ed0465b

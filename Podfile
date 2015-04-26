@@ -28,6 +28,7 @@ target 'MuaBanNhanh' do
   pod 'ReactiveCocoa'
   pod 'GPUImage', '0.1.2'
   pod 'PSTAlertController', :git => 'https://github.com/steipete/PSTAlertController.git'
+  pod 'IDMPhotoBrowser'
 
 end
 
