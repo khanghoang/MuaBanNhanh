@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblAddress;
 @property (weak, nonatomic) IBOutlet UILabel *lblUsername;
 @property (weak, nonatomic) MBNProductImagesViewController *productImagesVC;
+@property (weak, nonatomic) IBOutlet UIImageView *imgViewCover;
 
 @end
 
@@ -94,6 +95,13 @@
         }
     }];
     
+    [[RACObserve(self.viewModel, product) ignore:nil] subscribeNext:^(MBNProduct *product) {
+        @strongify(self);
+        if( product.user.coverImageUrl ) {
+            [self.imgViewCover setImageWithURL:product.user.coverImageUrl placeholderImage:[UIImage imageNamed:@"avatar-d"]];
+        }
+    }];
+    
     RAC(self.lblUsername, text) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
         return product.user.name;
     }];
@@ -112,6 +120,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     MBNProductImagesViewController *imagesVC = segue.destinationViewController;
     self.productImagesVC = imagesVC;
+}
+
+- (IBAction)onBtnCall:(UIButton *)button {
+    [[MBNActionsManagers sharedInstance] callNumber:button.titleLabel.text];
 }
 
 @end
