@@ -14,6 +14,7 @@
 		0516AF151AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0516AF141AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard */; };
 		0516AF181AD5222000DACF05 /* MBNSubcategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0516AF171AD5222000DACF05 /* MBNSubcategoryTableViewCell.m */; };
 		0516AF1B1AD5246500DACF05 /* MBNSubcategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0516AF1A1AD5246500DACF05 /* MBNSubcategoryViewController.m */; };
+		051C83271AECFA99008657AB /* MBNProductImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 051C83261AECFA99008657AB /* MBNProductImageCell.m */; };
 		052E84BA1AE94C9300418014 /* TKDesignableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 052E84B91AE94C9300418014 /* TKDesignableButton.m */; };
 		053978FA1ACC1FCD007C4676 /* MBNRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053978F91ACC1FCD007C4676 /* MBNRevealViewController.m */; };
 		053978FE1ACC274E007C4676 /* MBNCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 053978FD1ACC274E007C4676 /* MBNCategory.m */; };
@@ -197,6 +198,8 @@
 		0516AF171AD5222000DACF05 /* MBNSubcategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSubcategoryTableViewCell.m; sourceTree = "<group>"; };
 		0516AF191AD5246500DACF05 /* MBNSubcategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSubcategoryViewController.h; sourceTree = "<group>"; };
 		0516AF1A1AD5246500DACF05 /* MBNSubcategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSubcategoryViewController.m; sourceTree = "<group>"; };
+		051C83251AECFA99008657AB /* MBNProductImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNProductImageCell.h; sourceTree = "<group>"; };
+		051C83261AECFA99008657AB /* MBNProductImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNProductImageCell.m; sourceTree = "<group>"; };
 		052E84B81AE94C9300418014 /* TKDesignableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDesignableButton.h; sourceTree = "<group>"; };
 		052E84B91AE94C9300418014 /* TKDesignableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDesignableButton.m; sourceTree = "<group>"; };
 		053978F81ACC1FCD007C4676 /* MBNRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNRevealViewController.h; sourceTree = "<group>"; };
@@ -704,6 +707,8 @@
 				0562C83F1AEBCFB70029EA9E /* MBNProductImagesViewController.m */,
 				059AAAEE1AEBE2DB00095D83 /* MBNProductDetailsViewModel.h */,
 				059AAAEF1AEBE2DB00095D83 /* MBNProductDetailsViewModel.m */,
+				051C83251AECFA99008657AB /* MBNProductImageCell.h */,
+				051C83261AECFA99008657AB /* MBNProductImageCell.m */,
 			);
 			path = "Product Details";
 			sourceTree = "<group>";
@@ -1444,6 +1449,7 @@
 				05B906BC1AE805AE00B85BEC /* IMGLYDefaultCameraImageProvider.m in Sources */,
 				059AAAF01AEBE2DB00095D83 /* MBNProductDetailsViewModel.m in Sources */,
 				0561C9C01AD06A8C00BEDA6D /* MBNProductManager.m in Sources */,
+				051C83271AECFA99008657AB /* MBNProductImageCell.m in Sources */,
 				05B905E21AE802CD00B85BEC /* PBImageHelper.m in Sources */,
 				05B906E91AE805AE00B85BEC /* IMGLYPhotoProcessor.m in Sources */,
 				05D84C091AD6443100497FA0 /* MBNContentLoadingViewModel.m in Sources */,

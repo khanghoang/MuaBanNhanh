@@ -8,6 +8,7 @@
 
 #import "MBNProductDetailsViewController.h"
 #import "MBNProductDetailsViewModel.h"
+#import "MBNProductImagesViewController.h"
 
 @interface MBNProductDetailsViewController ()
 
@@ -25,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgViewAvatar;
 @property (weak, nonatomic) IBOutlet UILabel *lblAddress;
 @property (weak, nonatomic) IBOutlet UILabel *lblUsername;
+@property (weak, nonatomic) MBNProductImagesViewController *productImagesVC;
 
 @end
 
@@ -99,6 +101,17 @@
     RAC(self.lblAddress, text) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
         return [product getDisplayAddressString];
     }];
+    
+    [[RACObserve(self.viewModel, product) ignore:nil] subscribeNext:^(id x) {
+        @strongify(self);
+        self.productImagesVC.viewModel = self.viewModel;
+    }];
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    MBNProductImagesViewController *imagesVC = segue.destinationViewController;
+    self.productImagesVC = imagesVC;
 }
 
 @end

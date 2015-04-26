@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBNProductDetailsViewModel.h"
 
 @interface MBNProductImagesViewController : UIViewController
+
+@property (weak, nonatomic) MBNProductDetailsViewModel *viewModel;
 
 @end
