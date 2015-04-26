@@ -375,6 +375,7 @@
                         <outlet property="lblCategories" destination="Otn-FJ-PRg" id="2dF-aS-wFe"/>
                         <outlet property="lblCity" destination="C5c-Cn-cgp" id="FaZ-fg-2bl"/>
                         <outlet property="lblCondition" destination="MTc-tq-0nN" id="jmn-Yb-6y2"/>
+                        <outlet property="lblCreateAt" destination="AXd-7J-VdT" id="usz-aA-Ebn"/>
                         <outlet property="lblPrice" destination="N1C-VJ-XGx" id="UZ1-Hk-mGB"/>
                         <outlet property="lblProductName" destination="gjg-Mr-9cP" id="sps-Gc-w7I"/>
                         <outlet property="lblUsername" destination="qzX-42-rVj" id="4ge-P5-XjS"/>

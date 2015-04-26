@@ -36,6 +36,8 @@ MTLJSONSerializing
 @property (strong, nonatomic) NSArray *gallery;
 @property (strong, nonatomic) MBNProvince *province;
 
++ (NSDateFormatter *)sharedDateFormatter;
+
 - (NSString *)getDisplayAddressString;
 - (NSString *)getPriceDisplayString;
 

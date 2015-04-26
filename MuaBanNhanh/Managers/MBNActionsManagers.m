@@ -24,7 +24,7 @@
 - (void)callNumber:(NSString *)numberString {
     UIDevice *device = [UIDevice currentDevice];
     if ([[device model] isEqualToString:@"iPhone"] ) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", numberString]]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", [numberString stringByReplacingOccurrencesOfString:@" " withString:@""]]]];
     } else {
         UIAlertView *notPermitted=[[UIAlertView alloc] initWithTitle:@"Thông báo" message:@"Thiết bị của bạn không có chức năng gọi điện" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [notPermitted show];

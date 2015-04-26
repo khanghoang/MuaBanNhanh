@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblUsername;
 @property (weak, nonatomic) MBNProductImagesViewController *productImagesVC;
 @property (weak, nonatomic) IBOutlet UIImageView *imgViewCover;
+@property (weak, nonatomic) IBOutlet UILabel *lblCreateAt;
 
 @end
 
@@ -50,6 +51,11 @@
     
     RAC(self.lblProductName, text) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
         return product.name;
+    }];
+    
+    RAC(self.lblCreateAt, text) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
+        NSDateFormatter *formatter = [MBNProduct sharedDateFormatter];
+        return [NSString stringWithFormat:@"Ngày đăng %@", [formatter stringFromDate:product.createdAt]];
     }];
     
     RAC(self.lblViewCount, text) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
