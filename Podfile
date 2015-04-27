@@ -20,7 +20,7 @@ target 'MuaBanNhanh' do
   pod 'Masonry', '~> 0.5'
   pod 'KHTableViewController'
   pod 'PKRevealController'
-  pod 'RMDateSelectionViewController', "~> 1.4.3"
+  pod 'RMDateSelectionViewController'
   pod 'RMPickerViewController'
   pod 'KVOController'
   pod 'libextobjc'
