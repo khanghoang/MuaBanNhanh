@@ -39,6 +39,7 @@
     // Do any additional setup after loading the view.
     
     self.viewModel = [[MBNProductDetailsViewModel alloc] init];
+    self.navigationController.navigationItem.backBarButtonItem.title = @"Trở về";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -48,6 +49,10 @@
 
 - (void)loadProductDetailsAndObserver {
     [self.viewModel loadProductDetailsWithID:self.productID];
+    
+    RAC(self, title) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
+        return product.name;
+    }];
     
     RAC(self.lblProductName, text) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
         return product.name;
