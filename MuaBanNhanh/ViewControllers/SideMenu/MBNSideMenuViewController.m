@@ -27,6 +27,7 @@ UICollectionViewDelegateFlowLayout
 @property (weak, nonatomic) IBOutlet UIImageView *imageUserAvatar;
 @property (weak, nonatomic) IBOutlet UILabel *lblUsername;
 @property (weak, nonatomic) IBOutlet UIImageView *imageUserCover;
+@property (weak, nonatomic) IBOutlet UILabel *lblUserPhoneNumber;
 
 @end
 
@@ -74,6 +75,7 @@ UICollectionViewDelegateFlowLayout
     [self.imageUserCover setImageWithURL:loginUser.coverImageUrl];
     [self.imageUserAvatar setImageWithURL:loginUser.avatarImageUrl];
     self.lblUsername.text = loginUser.name;
+    self.lblUserPhoneNumber.text = loginUser.phone;
     
     self.constraintHeightUserInfo.constant = loginUser ? 130 : 0;
     [self.viewUserInfoWraper updateConstraintsIfNeeded];
