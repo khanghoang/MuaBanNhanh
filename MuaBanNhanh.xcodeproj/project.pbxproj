@@ -172,7 +172,9 @@
 		05E03DA81AC9318D004426CE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E03DA61AC9318D004426CE /* LaunchScreen.xib */; };
 		05E03DB41AC9318D004426CE /* MuaBanNhanhTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E03DB31AC9318D004426CE /* MuaBanNhanhTests.m */; };
 		05F3E54D1ADB77BA00D432AF /* MBNRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F3E54C1ADB77BA00D432AF /* MBNRegisterViewController.m */; };
-		17F3BD0EBFE9F4D12E97B4E8 /* libPods-MuaBanNhanh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DBCB27FBABB6CE2E084E756 /* libPods-MuaBanNhanh.a */; };
+		B6C482711AEF9DA800DF70A0 /* MBNCreateProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C482701AEF9DA800DF70A0 /* MBNCreateProductViewController.m */; };
+		B6C482731AEF9E9600DF70A0 /* CreateProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6C482721AEF9E9600DF70A0 /* CreateProduct.storyboard */; };
+		F4B9FD7A22E4A71CCA128809 /* libPods-MuaBanNhanh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B186F2BE6B95FD0EE703B6 /* libPods-MuaBanNhanh.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -515,7 +517,10 @@
 		05F3E54B1ADB77BA00D432AF /* MBNRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNRegisterViewController.h; sourceTree = "<group>"; };
 		05F3E54C1ADB77BA00D432AF /* MBNRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNRegisterViewController.m; sourceTree = "<group>"; };
 		5634B996ABA6F7CE44922C55 /* Pods-MuaBanNhanh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuaBanNhanh.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuaBanNhanh/Pods-MuaBanNhanh.release.xcconfig"; sourceTree = "<group>"; };
-		8DBCB27FBABB6CE2E084E756 /* libPods-MuaBanNhanh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MuaBanNhanh.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92B186F2BE6B95FD0EE703B6 /* libPods-MuaBanNhanh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MuaBanNhanh.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6C4826F1AEF9DA800DF70A0 /* MBNCreateProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNCreateProductViewController.h; sourceTree = "<group>"; };
+		B6C482701AEF9DA800DF70A0 /* MBNCreateProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNCreateProductViewController.m; sourceTree = "<group>"; };
+		B6C482721AEF9E9600DF70A0 /* CreateProduct.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateProduct.storyboard; sourceTree = "<group>"; };
 		BDC741CC4D6A1E04FD9BA6B5 /* Pods-MuaBanNhanh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuaBanNhanh.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MuaBanNhanh/Pods-MuaBanNhanh.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -524,7 +529,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17F3BD0EBFE9F4D12E97B4E8 /* libPods-MuaBanNhanh.a in Frameworks */,
+				F4B9FD7A22E4A71CCA128809 /* libPods-MuaBanNhanh.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,6 +769,7 @@
 		05A3E3391ACAF0AC00E55215 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B6C4826C1AEF9CE600DF70A0 /* Create Product */,
 				0562C8381AEBC1330029EA9E /* Product Details */,
 				05B905E41AE8033900B85BEC /* Take Photo */,
 				0569A4491AE2657700EFBEF0 /* Safely buy */,
@@ -1162,6 +1168,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B6C4826C1AEF9CE600DF70A0 /* Create Product */ = {
+			isa = PBXGroup;
+			children = (
+				B6C4826D1AEF9CE600DF70A0 /* Custom Cells */,
+				B6C4826E1AEF9CE600DF70A0 /* View model */,
+				B6C4826F1AEF9DA800DF70A0 /* MBNCreateProductViewController.h */,
+				B6C482701AEF9DA800DF70A0 /* MBNCreateProductViewController.m */,
+				B6C482721AEF9E9600DF70A0 /* CreateProduct.storyboard */,
+			);
+			path = "Create Product";
+			sourceTree = "<group>";
+		};
+		B6C4826D1AEF9CE600DF70A0 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		B6C4826E1AEF9CE600DF70A0 /* View model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View model";
+			sourceTree = "<group>";
+		};
 		D73F5D6CA72936D572591F24 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1174,7 +1206,7 @@
 		F213740222A193D95DE0D184 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8DBCB27FBABB6CE2E084E756 /* libPods-MuaBanNhanh.a */,
+				92B186F2BE6B95FD0EE703B6 /* libPods-MuaBanNhanh.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1266,6 +1298,7 @@
 				0593B7E81AD12B3800A492F3 /* MBNCollectionHeaderView.xib in Resources */,
 				05B905F71AE8033900B85BEC /* CameraFilterSelector.storyboard in Resources */,
 				05B905F41AE8033900B85BEC /* Camera.storyboard in Resources */,
+				B6C482731AEF9E9600DF70A0 /* CreateProduct.storyboard in Resources */,
 				053979071ACC48F6007C4676 /* MainStoryBoard.storyboard in Resources */,
 				0562C83A1AEBC1440029EA9E /* ProductDetails.storyboard in Resources */,
 				0593B7F41AD18C8300A492F3 /* PlusPopups.storyboard in Resources */,
@@ -1389,6 +1422,7 @@
 				0508671C1AD6DF7700038F87 /* TKDesignableView.m in Sources */,
 				05B907091AE8075200B85BEC /* UIImage+TMEAdditions.m in Sources */,
 				05B906C81AE805AE00B85BEC /* IMGLYEditorFontSelector.m in Sources */,
+				B6C482711AEF9DA800DF70A0 /* MBNCreateProductViewController.m in Sources */,
 				05E03D9D1AC9318D004426CE /* AppDelegate.m in Sources */,
 				05B906AB1AE805AE00B85BEC /* IMGLY9EKDynamicFilter.m in Sources */,
 				05B906A81AE805AE00B85BEC /* IMGLY8BitFIlter.m in Sources */,
