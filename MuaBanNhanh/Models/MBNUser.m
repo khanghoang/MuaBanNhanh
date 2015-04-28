@@ -10,6 +10,11 @@
 
 @implementation MBNUser
 
+- (id)copyWithZone:(NSZone *)zone {
+    MBNUser *user = [super copyWithZone:zone];
+    return user;
+}
+
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     

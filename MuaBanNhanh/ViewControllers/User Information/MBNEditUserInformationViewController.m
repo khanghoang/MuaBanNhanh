@@ -133,6 +133,9 @@ UITextViewDelegate
                                                 
                                                 if ([responseObject[@"status"] integerValue] == 200) {
                                                     [SVProgressHUD showSuccessWithStatus:@"Upload thành công"];
+                                                    MBNUser *user = [[[MBNUserManager sharedProvider] loggedUser] copy];
+                                                    user.coverImageUrl = [NSURL URLWithString:responseObject[@"result"][@"cover_image_url"]];
+                                                    [[MBNUserManager sharedProvider] setLoggedUser:user];
                                                     return;
                                                 }
                                                 
@@ -150,6 +153,9 @@ UITextViewDelegate
                                                 
                                                 if ([responseObject[@"status"] integerValue] == 200) {
                                                     [SVProgressHUD showSuccessWithStatus:@"Upload thành công"];
+                                                    MBNUser *user = [[[MBNUserManager sharedProvider] loggedUser] copy];
+                                                    user.avatarImageUrl = [NSURL URLWithString:responseObject[@"result"][@"avatar_image_url"]];
+                                                    [[MBNUserManager sharedProvider] setLoggedUser:user];
                                                     return;
                                                 }
                                                 

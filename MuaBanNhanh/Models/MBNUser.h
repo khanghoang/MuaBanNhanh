@@ -20,7 +20,8 @@ typedef enum : NSUInteger {
 
 @interface MBNUser : MTLModel
 <
-MTLJSONSerializing
+MTLJSONSerializing,
+NSCopying
 >
 
 @property (copy, nonatomic) NSNumber *ID;
