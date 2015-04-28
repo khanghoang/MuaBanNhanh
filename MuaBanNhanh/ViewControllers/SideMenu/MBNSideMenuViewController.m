@@ -39,13 +39,12 @@ UICollectionViewDelegateFlowLayout
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(userChangeState:)
-                                                 name:NOTIFICATION_USER_LOGIN
-                                               object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(userChangeState:)
                                                  name:NOTIFICATION_USER_LOGOUT
                                                object:nil];
+    
+    [[RACObserve([MBNUserManager sharedProvider], loggedUser) ignore:nil] subscribeNext:^(MBNUser *user) {
+        [self setUserInformationWithUser:user];
+    }];
     
     [self.menuCollectionView registerNib:[MBNSideMenuCollectionViewCell nib]
                 forCellWithReuseIdentifier:NSStringFromClass([MBNSideMenuCollectionViewCell class])];
@@ -62,13 +61,6 @@ UICollectionViewDelegateFlowLayout
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-- (void)userChangeState:(NSNotification *)notification {
-    // get nofitcation
-    MBNUser *loginUser = notification.object;
-    
-    [self setUserInformationWithUser:loginUser];
 }
 
 - (void)setUserInformationWithUser:(MBNUser *)loginUser {

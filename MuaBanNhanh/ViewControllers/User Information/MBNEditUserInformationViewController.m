@@ -298,7 +298,9 @@ UITextViewDelegate
     
     [[MBNUserManager sharedProvider] updateOwnInformationiWithDictionary:infor completeBlock:^(MBNUser *user, NSError *error) {
         [SVProgressHUD dismiss];
-        [self updateContentWithUser:user];
+        MBNUser *oldUser = [[MBNUserManager sharedProvider] loggedUser];
+        user.token = oldUser.token;
+        [[MBNUserManager sharedProvider] setLoggedUser:user];
     }];
 }
 

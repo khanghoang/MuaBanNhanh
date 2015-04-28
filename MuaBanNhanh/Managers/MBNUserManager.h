@@ -27,4 +27,6 @@
 
 - (NSString *)token;
 
+@property (strong, nonatomic) MBNUser *loggedUser;
+
 @end

@@ -11,6 +11,10 @@
 #include <ifaddrs.h>
 #include <arpa/inet.h>
 
+@interface MBNUserManager()
+
+@end
+
 @implementation MBNUserManager
 
 + (instancetype)sharedProvider
@@ -22,6 +26,11 @@
     });
 
     return instance;
+}
+
+- (void)setLoggedUser:(MBNUser *)loggedUser {
+    _loggedUser = loggedUser;
+    [self saveLoginUser:loggedUser];
 }
 
 - (void)logout {
@@ -81,6 +90,8 @@
                   
                   // broadcast the login user
                   [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_LOGIN object:user];
+                  
+                  [[MBNUserManager sharedProvider] setLoggedUser:user];
                   
                   // close the login popup
                   if (successBlock) {
