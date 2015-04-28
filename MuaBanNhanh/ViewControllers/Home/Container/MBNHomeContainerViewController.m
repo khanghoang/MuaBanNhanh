@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MBNHomeContainerViewController.h"
+#import "MBNCreateProductViewController.h"
 
 static const CGFloat NAVIGATION_BAR_TITLE_IMAGE_WIDTH = 140;
 
@@ -38,8 +39,11 @@ static const CGFloat NAVIGATION_BAR_TITLE_IMAGE_WIDTH = 140;
 }
 
 - (IBAction)openPopup:(id)sender {
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [appDelegate displayPopupWindow];
+    //TODO: Testing create product VC
+//    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+//    [appDelegate displayPopupWindow];
+    UIViewController *vc = [[UIStoryboard storyboardWithName:@"CreateProduct" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([MBNCreateProductViewController class])];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
