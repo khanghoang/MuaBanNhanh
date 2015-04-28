@@ -51,9 +51,10 @@ UITextViewDelegate
 @property (nonatomic, strong) NSMutableArray *images;
 
 @property (weak, nonatomic) IBOutlet TKDesignableView *wrapperCancelButton;
-@property (strong, nonatomic) FBKVOController *kvoController;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintAddressHeight;
+@property (weak, nonatomic) IBOutlet UIButton *btnEdit;
+@property (weak, nonatomic) IBOutlet UIButton *btnSave;
 
 @end
 
@@ -86,9 +87,7 @@ UITextViewDelegate
                                  withURL:url];
     }];
     
-    self.kvoController = [FBKVOController controllerWithObserver:self];
-    
-    [RACObserve(self, isEditing) subscribeNext:^(id x) {
+    [RACObserve(self, isEditing) subscribeNext:^(NSNumber *isEditing) {
         @strongify(self);
         
         [@[self.lblPhoneNumber,
@@ -109,6 +108,8 @@ UITextViewDelegate
         self.txtAddress.editable = self.isEditing;
         self.wrapperCancelButton.hidden = !self.isEditing;
         
+        self.btnEdit.hidden = [isEditing boolValue];
+        self.btnSave.hidden = ![isEditing boolValue];
     }];
     
     [self observerTheImages];
@@ -161,13 +162,14 @@ UITextViewDelegate
 }
 
 - (IBAction)onBtnEditInfor:(id)sender {
-    if(!self.editing) {
+    if(!self.isEditing) {
         self.isEditing = !self.isEditing;
     }
 }
 
 - (IBAction)onBtnCancel:(id)sender {
-    self.editing = NO;
+    self.isEditing = NO;
+    [self updateContentWithUser:self.user];
 }
 
 - (BOOL)shouldAutoRotate
@@ -219,14 +221,12 @@ UITextViewDelegate
     
     //Set select and (optional) cancel blocks
     [dateSelectionVC setSelectButtonAction:^(RMDateSelectionViewController *controller, NSDate *date) {
-        NSLog(@"Successfully selected date: %@", date);
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         dateFormatter.dateFormat = @"dd/MM/yyyy";
         self.lblBirthday.text = [dateFormatter stringFromDate:date];
     }];
     
     [dateSelectionVC setCancelButtonAction:^(RMDateSelectionViewController *controller) {
-        NSLog(@"Date selection was canceled");
     }];
     
     //Now just present the date selection controller using the standard iOS presentation method
@@ -274,6 +274,32 @@ UITextViewDelegate
     };
     
     [self.navigationController pushViewController:cropVC animated:YES];
+}
+
+- (IBAction)onBtnSave:(id)sender {
+    NSDictionary *infor = @{
+        @"name": @"Khang Hoang",
+        @"phone": self.lblPhoneNumber.text,
+        @"birthday": self.lblBirthday.text,
+        @"identity_number": self.lblIdentity.text,
+        @"license": self.lblLicense.text,
+        @"address": @{
+                @"address": self.txtAddress.text,
+                @"longitude": @"",
+                @"latide": @""
+        },
+        @"email": self.lblPersonalEmail.text,
+        @"gender": @"nam",
+        @"about": @"",
+        @"password": @""
+    };
+    
+    [SVProgressHUD showWithStatus:@"Đang cập nhật" maskType:SVProgressHUDMaskTypeGradient];
+    
+    [[MBNUserManager sharedProvider] updateOwnInformationiWithDictionary:infor completeBlock:^(MBNUser *user, NSError *error) {
+        [SVProgressHUD dismiss];
+        [self updateContentWithUser:user];
+    }];
 }
 
 #pragma mark - Helpers

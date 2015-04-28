@@ -7,6 +7,7 @@
 //
 
 #import "MBNUserManager.h"
+#import "NSData+Base64.h"
 #include <ifaddrs.h>
 #include <arpa/inet.h>
 
@@ -203,6 +204,74 @@
         
     }];
     
+}
+
+- (void)updateOwnInformationiWithDictionary:(NSDictionary *)userinfor completeBlock:(void (^) (MBNUser *user, NSError *error))completeBlock {
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager mbn_manager];
+    MBNUser *currentUser = [self getLoginUser];
+    NSString *requestUrl = [NSString stringWithFormat:@"http://api.muabannhanh.com/user/profile?id=%@&token=%@", currentUser.ID, currentUser.token];
+    
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:userinfor];
+    NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"POST"
+                                                                      URLString:requestUrl
+                                                                     parameters:nil
+                                                                          error:nil];
+    
+    NSData *JSONData = [NSJSONSerialization dataWithJSONObject:userinfor options:NSJSONWritingPrettyPrinted error:nil];
+    NSString *contentJSONString = [[NSString alloc] initWithData:JSONData encoding:NSUTF8StringEncoding];
+    [request setHTTPBody:[contentJSONString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+//    [request setHTTPBody:data];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+//    unsigned long long postLength = data.length;
+//    NSString *contentLength = [NSString stringWithFormat:@"%llu", postLength];
+//    [request addValue:contentLength forHTTPHeaderField:@"Content-Length"];
+//    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if ([responseObject[@"status"] integerValue] == 400) {
+            if (completeBlock) {
+                NSError *error = [[NSError alloc] initWithDomain:@"Error"
+                                                            code:400
+                                                        userInfo:@{
+                                                                   @"message": responseObject[@"message"]
+                                                                   }];
+                completeBlock(nil,error);
+            }
+            
+            return;
+        }
+        
+        if ([responseObject[@"status"] integerValue] == 200) {
+            
+            // write login user data into NSUserDefault
+            MBNUser *user = [MTLJSONAdapter modelOfClass:[MBNUser class] fromJSONDictionary:responseObject[@"result"] error:nil];
+            
+            // close the login popup
+            if (completeBlock) {
+                completeBlock(user, nil);
+            }
+            
+            return;
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completeBlock) {
+            NSError *error = [[NSError alloc] initWithDomain:@"Error"
+                                                        code:400
+                                                    userInfo:@{
+                                                               @"message": @"Vui lòng kiểm tra kết nối mạng và thử lại"
+                                                               }];
+            completeBlock(nil,error);
+        }
+        
+        return;
+        
+    }];
+    
+    [operation start];
 }
 
 @end

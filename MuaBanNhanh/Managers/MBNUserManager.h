@@ -20,6 +20,8 @@
 
 - (void)getOwnInformation:(void (^) (MBNUser* user))successBlock failure:(void (^) (NSString *errorString))failureBlock;
 
+- (void)updateOwnInformationiWithDictionary:(NSDictionary *)userinfor completeBlock:(void (^) (MBNUser *user, NSError *error))completeBlock;
+
 - (void)saveLoginUser:(MBNUser *)user;
 - (MBNUser *)getLoginUser;
 

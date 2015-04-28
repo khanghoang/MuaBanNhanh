@@ -38,7 +38,7 @@
     }
     
     MBNUser *currentLoginUser = [[MBNUserManager sharedProvider] getLoginUser];
-    NSString *finalString = [NSString stringWithFormat:@"https://api.muabannhanh.com/user/%@?id=%d&token=%@", stringType, [currentLoginUser.ID integerValue], currentLoginUser.token];
+    NSString *finalString = [NSString stringWithFormat:@"https://api.muabannhanh.com/user/%@?id=%ld&token=%@", stringType, (long)[currentLoginUser.ID integerValue], currentLoginUser.token];
     
     return finalString;
     

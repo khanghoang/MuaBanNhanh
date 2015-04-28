@@ -75,6 +75,7 @@
 #import "UIColor+Additions.h"
 #import "UIImage+TMEAdditions.h"
 #import "UIImage+ImageEffects.h"
+#import "AFHTTPRequestOperationManager+Helper.h"
 #import "UIImage+IMGLYKitAdditions.h"
 #import "UIViewController+Additions.h"
 #import "UITextView+MeasureContent.h"

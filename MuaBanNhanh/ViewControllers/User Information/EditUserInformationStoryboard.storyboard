@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Qzh-B2-xJI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Qzh-B2-xJI">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--Thông tin người dùng-->
@@ -879,11 +879,27 @@
                                                             <action selector="onBtnEditInfor:" destination="Qzh-B2-xJI" eventType="touchUpInside" id="fE5-Ct-bcC"/>
                                                         </connections>
                                                     </button>
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YpN-JK-Qeu">
+                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="38"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <state key="normal" title="Lưu thay đổi">
+                                                            <color key="titleColor" red="0.24200094080000001" green="0.2651712437" blue="0.2651712437" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onBtnEditInfor:" destination="Qzh-B2-xJI" eventType="touchUpInside" id="ooe-uU-jyK"/>
+                                                            <action selector="onBtnSave:" destination="Qzh-B2-xJI" eventType="touchUpInside" id="CTk-Fq-hmp"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="15Z-ug-jB8"/>
+                                                    <constraint firstAttribute="trailing" secondItem="YpN-JK-Qeu" secondAttribute="trailing" id="2Bj-cc-bB6"/>
+                                                    <constraint firstItem="YpN-JK-Qeu" firstAttribute="leading" secondItem="xDd-We-fkC" secondAttribute="leading" id="E4h-We-YoQ"/>
                                                     <constraint firstItem="eLa-ev-iJe" firstAttribute="leading" secondItem="xDd-We-fkC" secondAttribute="leading" id="JJh-Op-Drd"/>
+                                                    <constraint firstItem="YpN-JK-Qeu" firstAttribute="top" secondItem="xDd-We-fkC" secondAttribute="top" id="JLX-y5-q0X"/>
+                                                    <constraint firstAttribute="bottom" secondItem="YpN-JK-Qeu" secondAttribute="bottom" id="Qrg-BC-jRB"/>
                                                     <constraint firstItem="eLa-ev-iJe" firstAttribute="top" secondItem="xDd-We-fkC" secondAttribute="top" id="SCf-KQ-yb0"/>
                                                     <constraint firstAttribute="bottom" secondItem="eLa-ev-iJe" secondAttribute="bottom" id="jJy-ly-dVB"/>
                                                     <constraint firstAttribute="trailing" secondItem="eLa-ev-iJe" secondAttribute="trailing" id="xVq-rW-g2J"/>
@@ -1013,6 +1029,8 @@
                     <connections>
                         <outlet property="btnAvatar" destination="zpP-wE-bW7" id="Vko-74-naj"/>
                         <outlet property="btnCover" destination="jtV-Bg-7ID" id="ygj-eg-n64"/>
+                        <outlet property="btnEdit" destination="eLa-ev-iJe" id="JQa-v4-Wnv"/>
+                        <outlet property="btnSave" destination="YpN-JK-Qeu" id="80k-KE-rm4"/>
                         <outlet property="constraintAddressHeight" destination="mQD-rx-Fyo" id="o8l-1s-vpK"/>
                         <outlet property="lblBirthday" destination="GxU-CE-9U5" id="3ov-hA-3kX"/>
                         <outlet property="lblBusinessEmail" destination="zLw-f8-b7b" id="uAa-jc-bri"/>

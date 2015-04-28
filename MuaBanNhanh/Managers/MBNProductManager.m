@@ -42,7 +42,7 @@
 
 + (void)getProductDetailsWithID:(NSNumber *)productID withCompletion:(void (^) (MBNProduct *product, NSError *error))completeBlock {
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager mbn_manager];
     NSString *requestString = [NSString stringWithFormat:@"http://api.muabannhanh.com/article/detail?id=%ld", (long)[productID integerValue]];
     [manager GET:requestString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
