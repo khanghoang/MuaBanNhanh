@@ -39,11 +39,9 @@ static const CGFloat NAVIGATION_BAR_TITLE_IMAGE_WIDTH = 140;
 }
 
 - (IBAction)openPopup:(id)sender {
-    //TODO: Testing create product VC
-//    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-//    [appDelegate displayPopupWindow];
-    UIViewController *vc = [[UIStoryboard storyboardWithName:@"CreateProduct" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([MBNCreateProductViewController class])];
-    [self.navigationController pushViewController:vc animated:YES];
+//    TODO: Testing create product VC
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [appDelegate displayPopupWindow];
 }
 
 @end

@@ -10,6 +10,7 @@
 #import "MBNShowLoginSegue.h"
 #import "MBNNavigationViewController.h"
 #import "AppDelegate.h"
+#import "MBNCreateProductViewController.h"
 
 @interface UIUnregisterHomePopup ()
 
@@ -30,6 +31,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)onBtnHowTo:(id)sender {
+    UIViewController *vc = [[UIStoryboard storyboardWithName:@"CreateProduct" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([MBNCreateProductViewController class])];
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    [appDelegate closePopupViewCompletion:^{
+        MBNShowLoginSegue *segue = [[MBNShowLoginSegue alloc] initWithIdentifier:@"MBNLoginSegue" source:appDelegate.rootNavigationController destination:vc];
+        [segue perform];
+    }];
 }
 
 - (IBAction)onBtnLogin:(id)sender {
