@@ -1018,12 +1018,16 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="J3K-Lm-nGM" secondAttribute="centerX" id="1U8-kW-RZu"/>
                             <constraint firstAttribute="centerY" secondItem="J3K-Lm-nGM" secondAttribute="centerY" constant="-32" id="a9l-Pp-sGs"/>
                             <constraint firstItem="J3K-Lm-nGM" firstAttribute="height" secondItem="QQW-aV-AMg" secondAttribute="height" constant="64" id="v8T-y6-FIx"/>
                             <constraint firstItem="J3K-Lm-nGM" firstAttribute="width" secondItem="QQW-aV-AMg" secondAttribute="width" id="vKH-dL-2mw"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="uEl-bb-gbW" appends="YES" id="EXl-I1-JPC"/>
+                        </connections>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1400"/>
@@ -1046,6 +1050,7 @@
                         <outlet property="lblPhoneNumber" destination="VkK-UN-Iy7" id="Tal-2y-yW0"/>
                         <outlet property="lblProvinde" destination="NSq-gq-igY" id="MUD-pm-tK6"/>
                         <outlet property="lblTradeName" destination="C58-zE-J7D" id="xPg-ew-zXf"/>
+                        <outlet property="scrollView" destination="J3K-Lm-nGM" id="MaD-b0-9iB"/>
                         <outlet property="txtAddress" destination="nRz-X9-qdw" id="Sl0-Dl-fLH"/>
                         <outlet property="wrapperCancelButton" destination="ltI-lF-DXm" id="iJQ-K2-Hhj"/>
                         <outletCollection property="buttons" destination="jtV-Bg-7ID" id="tCO-q6-BfN"/>
@@ -1053,6 +1058,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UjR-6c-oik" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="uEl-bb-gbW">
+                    <connections>
+                        <action selector="tapOutsideToDismissKeyboard:" destination="Qzh-B2-xJI" id="Ati-s1-a3a"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="451" y="352"/>
         </scene>
