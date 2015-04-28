@@ -103,10 +103,10 @@ UITextViewDelegate
           self.lblBusinessEmail,
           self.lblBusinessModel,
           self.lblLicense] enumerateObjectsUsingBlock:^(UITextField *text, NSUInteger idx, BOOL *stop) {
-              text.enabled = self.editing;
+              text.enabled = self.isEditing;
           }];
         
-        self.txtAddress.editable = self.editing;
+        self.txtAddress.editable = self.isEditing;
         self.wrapperCancelButton.hidden = !self.isEditing;
         
     }];
@@ -170,7 +170,7 @@ UITextViewDelegate
     self.editing = NO;
 }
 
-- (BOOL)shouldAutorotate
+- (BOOL)shouldAutoRotate
 {
     return NO;
 }
@@ -209,6 +209,10 @@ UITextViewDelegate
 #pragma marks - Section 1
 
 - (IBAction)onBtnBirthday:(id)sender {
+    if (!self.isEditing) {
+        return;
+    }
+    
     RMDateSelectionViewController *dateSelectionVC = [RMDateSelectionViewController dateSelectionController];
     
     dateSelectionVC.datePicker.datePickerMode = UIDatePickerModeDate;
