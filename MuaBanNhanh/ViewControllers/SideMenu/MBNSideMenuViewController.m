@@ -63,6 +63,10 @@ UICollectionViewDelegateFlowLayout
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+- (void)userChangeState:(NSNotification *)aNotification {
+    [self updateUserActivityState:nil];
+}
+
 - (void)setUserInformationWithUser:(MBNUser *)loginUser {
     [self.imageUserCover setImageWithURL:loginUser.coverImageUrl];
     [self.imageUserAvatar setImageWithURL:loginUser.avatarImageUrl];

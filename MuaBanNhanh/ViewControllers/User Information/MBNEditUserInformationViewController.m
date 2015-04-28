@@ -185,6 +185,7 @@ UITextViewDelegate
     
     // 2nd section
     self.lblIdentity.text = user.identity;
+    self.lblBirthday.text = user.birthday;
     self.lblPersonalEmail.text = user.email;
     
     
@@ -222,7 +223,7 @@ UITextViewDelegate
     //Set select and (optional) cancel blocks
     [dateSelectionVC setSelectButtonAction:^(RMDateSelectionViewController *controller, NSDate *date) {
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        dateFormatter.dateFormat = @"dd/MM/yyyy";
+        dateFormatter.dateFormat = @"yyyy-MM-dd";
         self.lblBirthday.text = [dateFormatter stringFromDate:date];
     }];
     

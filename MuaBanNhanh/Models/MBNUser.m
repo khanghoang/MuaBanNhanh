@@ -21,10 +21,10 @@
              @"gender": @"gender",
              @"isValidatePhoneNumber": @"phone_number_certified",
              @"accountType": @"type",
+             @"birthday": @"birthday",
              @"token": @"token",
              @"avatarImageUrl": @"avatar_image_url",
              @"coverImageUrl": @"cover_image_url",
-             
              @"identity": @"identity_number",
              @"createAt": @"created_at",
              @"about": @"about",
@@ -60,6 +60,7 @@
     [coder encodeObject:self.createAt forKey:@"createAt"];
     [coder encodeObject:self.about forKey:@"about"];
     [coder encodeObject:self.address forKey:@"address"];
+    [coder encodeObject:self.address forKey:@"birthday"];
 }
 
 + (NSValueTransformer *)createAtJSONTransformer
@@ -89,6 +90,7 @@
         self.createAt = [coder decodeObjectForKey:@"createAt"];
         self.about = [coder decodeObjectForKey:@"about"];
         self.address = [coder decodeObjectForKey:@"adress"];
+        self.birthday = [coder decodeObjectForKey:@"birthday"];
     }
     
     return self;
