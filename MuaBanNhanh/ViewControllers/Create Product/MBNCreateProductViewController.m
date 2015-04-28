@@ -7,6 +7,7 @@
 //
 
 #import "MBNCreateProductViewController.h"
+#import "MBNCreateProductViewModel.h"
 
 @interface MBNCreateProductViewController ()
 
@@ -24,13 +25,40 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *productImagePickButtons;
 @property (strong, nonatomic) IBOutletCollection(UITextView) NSArray *productImageDescriptionTextViews;
 
+@property (strong, nonatomic) MBNCreateProductViewModel *viewModel;
+
 @end
 
 @implementation MBNCreateProductViewController
 
+- (MBNCreateProductViewModel *)viewModel
+{
+    if (!_viewModel) {
+        _viewModel = [MBNCreateProductViewModel new];
+    }
+    return _viewModel;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupViewModel];
+    [self setupCommandForButtons];
     [self setupTextFieldBorderLine];
+}
+
+- (void)getProvinces {
+    [self.viewModel getProvinces];
+}
+
+- (void)setupViewModel {
+    [[RACObserve(self, viewModel.getProvincesErrorMessage) ignore:nil] subscribeNext:^(NSString *errorMessage) {
+        [[[UIAlertView alloc] initWithTitle:@"Error" message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }];
+    [self getProvinces];
+    RAC(self, viewModel.productTransactionType) = RACObserve(self, buyingTypeButton.selected);
+    RAC(self, viewModel.productTitle) = self.productTitleTextField.rac_textSignal;
+    RAC(self, viewModel.productDescription) = self.productDescriptionTextView.rac_textSignal;
+    RAC(self, viewModel.productPrice) = self.productPriceTextField.rac_textSignal;
 }
 
 - (void)addBorderLineToView:(UIView *)view
@@ -40,6 +68,7 @@
 }
 
 - (void)setupCommandForButtons {
+    @weakify(self);
     self.repickCategoryButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
         //Will push VC here
         return [RACSignal empty];
@@ -53,14 +82,21 @@
         return [RACSignal empty];
     }];
     
-    self.sellingTypeButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+    self.sellingTypeButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *sender) {
+        @strongify(self);
+        sender.selected = !sender.isSelected;
+        self.buyingTypeButton.selected = NO;
         return [RACSignal empty];
     }];
-    self.buyingTypeButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+    self.buyingTypeButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *sender) {
+        @strongify(self);
+        sender.selected = !sender.isSelected;
+        self.sellingTypeButton.selected = NO;
         return [RACSignal empty];
     }];
     
     [self.productImagePickButtons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop) {
+        //Will reuse some commands here
         button.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
             return [RACSignal empty];
         }];
