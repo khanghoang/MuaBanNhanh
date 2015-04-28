@@ -8,22 +8,23 @@
 
 #import "MBNCreateProductViewController.h"
 #import "MBNCreateProductViewModel.h"
+#import "MBNPaddingTextField.h"
+#import "MBNTextView.h"
 
 @interface MBNCreateProductViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *productTitleTextField;
+@property (weak, nonatomic) IBOutlet MBNPaddingTextField *productTitleTextField;
 @property (weak, nonatomic) IBOutlet UILabel *productTitleValidationLabel;
 @property (weak, nonatomic) IBOutlet TKDesignableButton *repickCategoryButton;
-@property (weak, nonatomic) IBOutlet UIButton *sellingTypeButton;
-@property (weak, nonatomic) IBOutlet UIButton *buyingTypeButton;
+@property (weak, nonatomic) IBOutlet TKDesignableButton *productTransactionTypePickButton;
 @property (weak, nonatomic) IBOutlet TKDesignableButton *productQualityButton;
 @property (weak, nonatomic) IBOutlet TKDesignableButton *cityPickButton;
-@property (weak, nonatomic) IBOutlet UITextField *productPriceTextField;
-@property (weak, nonatomic) IBOutlet UITextView *productDescriptionTextView;
+@property (weak, nonatomic) IBOutlet MBNPaddingTextField *productPriceTextField;
+@property (weak, nonatomic) IBOutlet MBNTextView *productDescriptionTextView;
 @property (weak, nonatomic) IBOutlet UIButton *continueButton;
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *productImagePickButtons;
-@property (strong, nonatomic) IBOutletCollection(UITextView) NSArray *productImageDescriptionTextViews;
+@property (strong, nonatomic) IBOutletCollection(MBNTextView) NSArray *productImageDescriptionTextViews;
 
 @property (strong, nonatomic) MBNCreateProductViewModel *viewModel;
 
@@ -55,10 +56,12 @@
         [[[UIAlertView alloc] initWithTitle:@"Error" message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }];
     [self getProvinces];
-    RAC(self, viewModel.productTransactionType) = RACObserve(self, buyingTypeButton.selected);
     RAC(self, viewModel.productTitle) = self.productTitleTextField.rac_textSignal;
     RAC(self, viewModel.productDescription) = self.productDescriptionTextView.rac_textSignal;
     RAC(self, viewModel.productPrice) = self.productPriceTextField.rac_textSignal;
+    RAC(self, productTitleValidationLabel.hidden) = [self.productTitleTextField.rac_textSignal map:^id(NSString *text) {
+        return @(text.length);
+    }];
 }
 
 - (void)addBorderLineToView:(UIView *)view
@@ -81,19 +84,10 @@
         //Will open picker VC
         return [RACSignal empty];
     }];
+    self.productTransactionTypePickButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        return [RACSignal empty];
+    }];
     
-    self.sellingTypeButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *sender) {
-        @strongify(self);
-        sender.selected = !sender.isSelected;
-        self.buyingTypeButton.selected = NO;
-        return [RACSignal empty];
-    }];
-    self.buyingTypeButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *sender) {
-        @strongify(self);
-        sender.selected = !sender.isSelected;
-        self.sellingTypeButton.selected = NO;
-        return [RACSignal empty];
-    }];
     
     [self.productImagePickButtons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop) {
         //Will reuse some commands here

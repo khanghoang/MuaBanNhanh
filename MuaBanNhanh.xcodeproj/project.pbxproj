@@ -193,6 +193,8 @@
 		05F3E54D1ADB77BA00D432AF /* MBNRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F3E54C1ADB77BA00D432AF /* MBNRegisterViewController.m */; };
 		B62419D71AEFC3690040DD89 /* MBNCreateProductViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B62419D61AEFC3690040DD89 /* MBNCreateProductViewModel.m */; };
 		B62419DA1AEFC51F0040DD89 /* MBNProvinceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B62419D91AEFC51F0040DD89 /* MBNProvinceManager.m */; };
+		B692CF181AEFF69700F331CC /* MBNPaddingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B692CF171AEFF69700F331CC /* MBNPaddingTextField.m */; };
+		B692CF1B1AEFFC2400F331CC /* MBNTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B692CF1A1AEFFC2400F331CC /* MBNTextView.m */; };
 		B6C482711AEF9DA800DF70A0 /* MBNCreateProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C482701AEF9DA800DF70A0 /* MBNCreateProductViewController.m */; };
 		B6C482731AEF9E9600DF70A0 /* CreateProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6C482721AEF9E9600DF70A0 /* CreateProduct.storyboard */; };
 		F4B9FD7A22E4A71CCA128809 /* libPods-MuaBanNhanh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B186F2BE6B95FD0EE703B6 /* libPods-MuaBanNhanh.a */; };
@@ -579,6 +581,10 @@
 		B62419D61AEFC3690040DD89 /* MBNCreateProductViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNCreateProductViewModel.m; sourceTree = "<group>"; };
 		B62419D81AEFC51F0040DD89 /* MBNProvinceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNProvinceManager.h; sourceTree = "<group>"; };
 		B62419D91AEFC51F0040DD89 /* MBNProvinceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNProvinceManager.m; sourceTree = "<group>"; };
+		B692CF161AEFF69700F331CC /* MBNPaddingTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNPaddingTextField.h; sourceTree = "<group>"; };
+		B692CF171AEFF69700F331CC /* MBNPaddingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNPaddingTextField.m; sourceTree = "<group>"; };
+		B692CF191AEFFC2400F331CC /* MBNTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNTextView.h; sourceTree = "<group>"; };
+		B692CF1A1AEFFC2400F331CC /* MBNTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNTextView.m; sourceTree = "<group>"; };
 		B6C4826F1AEF9DA800DF70A0 /* MBNCreateProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNCreateProductViewController.h; sourceTree = "<group>"; };
 		B6C482701AEF9DA800DF70A0 /* MBNCreateProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNCreateProductViewController.m; sourceTree = "<group>"; };
 		B6C482721AEF9E9600DF70A0 /* CreateProduct.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateProduct.storyboard; sourceTree = "<group>"; };
@@ -763,6 +769,10 @@
 				052E84B91AE94C9300418014 /* TKDesignableButton.m */,
 				0592B62D1AF0FC2400FACDF5 /* TKDesignableLabel.h */,
 				0592B62E1AF0FC2400FACDF5 /* TKDesignableLabel.m */,
+				B692CF161AEFF69700F331CC /* MBNPaddingTextField.h */,
+				B692CF171AEFF69700F331CC /* MBNPaddingTextField.m */,
+				B692CF191AEFFC2400F331CC /* MBNTextView.h */,
+				B692CF1A1AEFFC2400F331CC /* MBNTextView.m */,
 			);
 			path = "Custom Classes";
 			sourceTree = "<group>";
@@ -1491,6 +1501,7 @@
 				05DC9E7D1AE822B400272C10 /* MBNCustomImagePickerViewController.m in Sources */,
 				0592B62F1AF0FC2400FACDF5 /* TKDesignableLabel.m in Sources */,
 				0592B6321AF0FD0800FACDF5 /* MBNManageProductViewController.m in Sources */,
+				B692CF1B1AEFFC2400F331CC /* MBNTextView.m in Sources */,
 				05B906BA1AE805AE00B85BEC /* IMGLYContrastOperation.m in Sources */,
 				053979101ACC4998007C4676 /* MBNHomeBottomViewController.m in Sources */,
 				05D1A2711ADD4BB6004F9C9F /* MBNUserManager.m in Sources */,
@@ -1611,6 +1622,7 @@
 				0539790D1ACC4987007C4676 /* MBNHomeTopViewController.m in Sources */,
 				05B906D21AE805AE00B85BEC /* IMGLYFilter.m in Sources */,
 				05B906D71AE805AE00B85BEC /* IMGLYFoodFilter.m in Sources */,
+				B692CF181AEFF69700F331CC /* MBNPaddingTextField.m in Sources */,
 				05B906AA1AE805AE00B85BEC /* IMGLY9EK6Filter.m in Sources */,
 				0593B7EB1AD1381800A492F3 /* TKCircleButton.m in Sources */,
 				05B907081AE8075200B85BEC /* UIImage+ImageEffects.m in Sources */,
