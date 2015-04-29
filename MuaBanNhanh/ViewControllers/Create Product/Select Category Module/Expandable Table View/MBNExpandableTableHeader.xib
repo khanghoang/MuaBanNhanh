@@ -18,23 +18,37 @@
                     </state>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Laptop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNJ-4w-Rxc">
-                    <rect key="frame" x="30" y="11" width="250" height="21"/>
+                    <rect key="frame" x="20" y="12" width="280" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQc-bl-zsS">
+                    <rect key="frame" x="20" y="43" width="300" height="1"/>
+                    <color key="backgroundColor" red="0.8901960784313725" green="0.8901960784313725" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Q1e-ZT-Bnc"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="iNJ-4w-Rxc" secondAttribute="trailing" constant="40" id="0b3-f4-Ohk"/>
+                <constraint firstAttribute="trailing" secondItem="iNJ-4w-Rxc" secondAttribute="trailing" constant="20" id="0b3-f4-Ohk"/>
                 <constraint firstAttribute="trailing" secondItem="HzF-Ri-BTO" secondAttribute="trailing" id="3eq-Ko-9hr"/>
                 <constraint firstItem="HzF-Ri-BTO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6Ee-nI-PLI"/>
                 <constraint firstAttribute="bottom" secondItem="HzF-Ri-BTO" secondAttribute="bottom" id="Dun-SK-S3V"/>
+                <constraint firstAttribute="bottom" secondItem="AQc-bl-zsS" secondAttribute="bottom" id="aY3-74-G5L"/>
+                <constraint firstItem="AQc-bl-zsS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="d3a-Vh-Pht"/>
                 <constraint firstItem="HzF-Ri-BTO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gWP-lC-ZHu"/>
                 <constraint firstAttribute="centerY" secondItem="iNJ-4w-Rxc" secondAttribute="centerY" id="hpm-Ej-eN3"/>
-                <constraint firstItem="iNJ-4w-Rxc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="p7U-lN-dSF"/>
+                <constraint firstItem="iNJ-4w-Rxc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="p7U-lN-dSF"/>
+                <constraint firstAttribute="trailing" secondItem="AQc-bl-zsS" secondAttribute="trailing" id="zcD-k3-k4I"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="headerNameLabel" destination="iNJ-4w-Rxc" id="zOk-67-RbL"/>
+                <outlet property="headerSelectedButton" destination="HzF-Ri-BTO" id="AMd-S4-uAA"/>
+                <outlet property="headerSeparatorView" destination="AQc-bl-zsS" id="1uO-gz-qSm"/>
+            </connections>
             <point key="canvasLocation" x="336" y="405"/>
         </view>
     </objects>

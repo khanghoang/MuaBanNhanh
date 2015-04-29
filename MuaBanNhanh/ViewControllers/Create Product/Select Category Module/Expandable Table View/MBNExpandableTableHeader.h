@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface MBNExpandableTableHeader : UITableViewHeaderFooterView
-
-
+@property (weak, nonatomic) IBOutlet UIButton *headerSelectedButton;
+@property (weak, nonatomic) IBOutlet UILabel *headerNameLabel;
+@property (weak, nonatomic) IBOutlet UIView *headerSeparatorView;
 
 @end
