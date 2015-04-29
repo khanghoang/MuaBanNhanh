@@ -196,6 +196,7 @@
 		B62FDE571AF0C0410099CB06 /* MBNSelectCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B62FDE561AF0C0410099CB06 /* MBNSelectCategoryViewController.m */; };
 		B62FDE591AF0C0C90099CB06 /* SelectCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62FDE581AF0C0C90099CB06 /* SelectCategory.storyboard */; };
 		B62FDE5E1AF0C25A0099CB06 /* MBNDashedBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B62FDE5D1AF0C25A0099CB06 /* MBNDashedBorderView.m */; };
+		B66C5B821AF12F6F003FB281 /* MBNSelectCategoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B66C5B811AF12F6F003FB281 /* MBNSelectCategoryViewModel.m */; };
 		B692CF181AEFF69700F331CC /* MBNPaddingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B692CF171AEFF69700F331CC /* MBNPaddingTextField.m */; };
 		B692CF1B1AEFFC2400F331CC /* MBNTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B692CF1A1AEFFC2400F331CC /* MBNTextView.m */; };
 		B6C482711AEF9DA800DF70A0 /* MBNCreateProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C482701AEF9DA800DF70A0 /* MBNCreateProductViewController.m */; };
@@ -594,6 +595,8 @@
 		B62FDE581AF0C0C90099CB06 /* SelectCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SelectCategory.storyboard; sourceTree = "<group>"; };
 		B62FDE5C1AF0C25A0099CB06 /* MBNDashedBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNDashedBorderView.h; sourceTree = "<group>"; };
 		B62FDE5D1AF0C25A0099CB06 /* MBNDashedBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNDashedBorderView.m; sourceTree = "<group>"; };
+		B66C5B801AF12F6F003FB281 /* MBNSelectCategoryViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSelectCategoryViewModel.h; sourceTree = "<group>"; };
+		B66C5B811AF12F6F003FB281 /* MBNSelectCategoryViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSelectCategoryViewModel.m; sourceTree = "<group>"; };
 		B692CF161AEFF69700F331CC /* MBNPaddingTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNPaddingTextField.h; sourceTree = "<group>"; };
 		B692CF171AEFF69700F331CC /* MBNPaddingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNPaddingTextField.m; sourceTree = "<group>"; };
 		B692CF191AEFFC2400F331CC /* MBNTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNTextView.h; sourceTree = "<group>"; };
@@ -1355,6 +1358,8 @@
 		B66C5B7F1AF12E82003FB281 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				B66C5B801AF12F6F003FB281 /* MBNSelectCategoryViewModel.h */,
+				B66C5B811AF12F6F003FB281 /* MBNSelectCategoryViewModel.m */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -1698,6 +1703,7 @@
 				0562C83D1AEBCF9E0029EA9E /* MBNProductDetailsViewController.m in Sources */,
 				05B906ED1AE805AE00B85BEC /* IMGLYSaturationFilter.m in Sources */,
 				05D84C061AD6412F00497FA0 /* MBNLoadProductForCategoryOperation.m in Sources */,
+				B66C5B821AF12F6F003FB281 /* MBNSelectCategoryViewModel.m in Sources */,
 				05B906F61AE805AE00B85BEC /* UINavigationController+IMGLYAdditions.m in Sources */,
 				052E84BA1AE94C9300418014 /* TKDesignableButton.m in Sources */,
 				0539790D1ACC4987007C4676 /* MBNHomeTopViewController.m in Sources */,
