@@ -35,8 +35,48 @@
                                                     <action selector="photoButtonTouched:" destination="Qzh-B2-xJI" eventType="touchUpInside" id="GvA-Ro-bfG"/>
                                                 </connections>
                                             </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tde-0X-3gc">
+                                                <rect key="frame" x="10" y="166" width="300" height="38"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="aVC-uo-kIS"/>
+                                                    <constraint firstAttribute="width" constant="300" id="hID-IP-wx4"/>
+                                                </constraints>
+                                                <state key="normal" title="Quản lý sản phẩm">
+                                                    <color key="titleColor" red="0.24200094080000001" green="0.2651712437" blue="0.2651712437" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onBtnEditInfor:" destination="Qzh-B2-xJI" eventType="touchUpInside" id="pqz-Jg-g1T"/>
+                                                    <action selector="onBtnSave:" destination="Qzh-B2-xJI" eventType="touchUpInside" id="Jof-i7-JCq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpP-wE-bW7" customClass="TKDesignableButton">
+                                                <rect key="frame" x="100" y="20" width="120" height="120"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="23I-th-OZy"/>
+                                                    <constraint firstAttribute="height" constant="120" id="VBR-nc-u8w"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="yeu-cau-bien-nhan">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
+                                                        <integer key="value" value="60"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="photoButtonTouched:" destination="Qzh-B2-xJI" eventType="touchUpInside" id="bjy-O2-k9H"/>
+                                                </connections>
+                                            </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vm8-3A-rPn" customClass="TKDesignableView">
-                                                <rect key="frame" x="10" y="173" width="300" height="229"/>
+                                                <rect key="frame" x="10" y="212" width="300" height="229"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THÔNG TIN TÀI KHOẢN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzJ-r1-Fr2">
                                                         <rect key="frame" x="9" y="12" width="207" height="21"/>
@@ -213,7 +253,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZN-Ep-Cvn" customClass="TKDesignableView">
-                                                <rect key="frame" x="10" y="413" width="300" height="310"/>
+                                                <rect key="frame" x="10" y="452" width="300" height="310"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jao-me-QZC">
                                                         <rect key="frame" x="9" y="7" width="207" height="39"/>
@@ -484,7 +524,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOu-7U-jUh" customClass="TKDesignableView">
-                                                <rect key="frame" x="10" y="736" width="300" height="466"/>
+                                                <rect key="frame" x="10" y="775" width="300" height="466"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Na7-Lt-YmP">
                                                         <rect key="frame" x="8" y="36" width="284" height="57"/>
@@ -846,7 +886,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5wh-dz-TTI" customClass="TKDesignableView">
-                                                <rect key="frame" x="10" y="1210" width="300" height="38"/>
+                                                <rect key="frame" x="10" y="1249" width="300" height="38"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ls1-eY-0S5">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="38"/>
@@ -881,7 +921,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDd-We-fkC" customClass="TKDesignableView">
-                                                <rect key="frame" x="10" y="1256" width="300" height="38"/>
+                                                <rect key="frame" x="10" y="1295" width="300" height="38"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLa-ev-iJe">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="38"/>
@@ -932,7 +972,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltI-lF-DXm" customClass="TKDesignableView">
-                                                <rect key="frame" x="10" y="1302" width="300" height="38"/>
+                                                <rect key="frame" x="10" y="1341" width="300" height="38"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvq-BO-hKA">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="38"/>
@@ -966,30 +1006,6 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpP-wE-bW7" customClass="TKDesignableButton">
-                                                <rect key="frame" x="100" y="20" width="120" height="120"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="120" id="23I-th-OZy"/>
-                                                    <constraint firstAttribute="height" constant="120" id="VBR-nc-u8w"/>
-                                                </constraints>
-                                                <state key="normal" title="Button" image="yeu-cau-bien-nhan">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
-                                                        <integer key="value" value="60"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <integer key="value" value="4"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="photoButtonTouched:" destination="Qzh-B2-xJI" eventType="touchUpInside" id="bjy-O2-k9H"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -1002,12 +1018,13 @@
                                             <constraint firstItem="aOu-7U-jUh" firstAttribute="leading" secondItem="F3z-dS-EUX" secondAttribute="leading" constant="10" id="9tm-qz-Ndf"/>
                                             <constraint firstAttribute="trailing" secondItem="aOu-7U-jUh" secondAttribute="trailing" constant="10" id="C3M-j5-veA"/>
                                             <constraint firstItem="jtV-Bg-7ID" firstAttribute="leading" secondItem="F3z-dS-EUX" secondAttribute="leading" id="DgX-ix-IQc"/>
+                                            <constraint firstItem="Vm8-3A-rPn" firstAttribute="top" secondItem="Tde-0X-3gc" secondAttribute="bottom" constant="8" id="Dx4-qV-g3e"/>
                                             <constraint firstItem="Vm8-3A-rPn" firstAttribute="leading" secondItem="F3z-dS-EUX" secondAttribute="leading" constant="10" id="HXU-ja-uFR"/>
                                             <constraint firstItem="5wh-dz-TTI" firstAttribute="top" secondItem="aOu-7U-jUh" secondAttribute="bottom" constant="8" id="JEY-a1-tY6"/>
-                                            <constraint firstItem="Vm8-3A-rPn" firstAttribute="top" secondItem="jtV-Bg-7ID" secondAttribute="bottom" constant="13" id="LSI-fk-dVG"/>
                                             <constraint firstAttribute="trailing" secondItem="ltI-lF-DXm" secondAttribute="trailing" constant="10" id="RG4-Ar-Sp8"/>
                                             <constraint firstItem="aOu-7U-jUh" firstAttribute="top" secondItem="DZN-Ep-Cvn" secondAttribute="bottom" constant="13" id="Sit-2X-RfH"/>
                                             <constraint firstItem="ltI-lF-DXm" firstAttribute="top" secondItem="xDd-We-fkC" secondAttribute="bottom" constant="8" id="TQL-Bt-3Je"/>
+                                            <constraint firstItem="Tde-0X-3gc" firstAttribute="top" secondItem="jtV-Bg-7ID" secondAttribute="bottom" constant="6" id="aXN-lE-sf4"/>
                                             <constraint firstItem="5wh-dz-TTI" firstAttribute="leading" secondItem="F3z-dS-EUX" secondAttribute="leading" constant="10" id="afW-O3-VwA"/>
                                             <constraint firstItem="zpP-wE-bW7" firstAttribute="top" secondItem="F3z-dS-EUX" secondAttribute="top" constant="20" id="ahQ-17-cme"/>
                                             <constraint firstItem="DZN-Ep-Cvn" firstAttribute="top" secondItem="Vm8-3A-rPn" secondAttribute="bottom" constant="11" id="e1m-mi-dfE"/>
