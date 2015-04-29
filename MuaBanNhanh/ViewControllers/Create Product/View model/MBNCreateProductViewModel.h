@@ -20,9 +20,14 @@ typedef NS_ENUM(NSInteger, MBNProductTransactionType) {
 @property (copy, nonatomic) NSString *productQuality;
 @property (copy, nonatomic) NSString *productPrice;
 @property (copy, nonatomic) NSArray *provinces;
+@property (copy, nonatomic) NSArray *productQualityTitles;
+@property (copy, nonatomic) NSArray *productTransactionTypeTitles;
 @property (copy, nonatomic) NSArray *pickedCategories;
 
 @property (copy, nonatomic) NSString *getProvincesErrorMessage;
+@property (assign, nonatomic) NSInteger provinceSelectedIndex;
+@property (assign, nonatomic) NSInteger productQualitySelectedIndex;
+@property (assign, nonatomic) NSInteger productTransactionTypeSelectedIndex;
 @property (assign, nonatomic) MBNProductTransactionType productTransactionType;
 
 - (void)getProvinces;
