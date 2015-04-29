@@ -30,13 +30,13 @@
 - (void)loadContent:(void (^)(NSInteger totalItems, NSError *error, AFHTTPRequestOperation *operation))completeBlock {
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSString *requestURL = [NSString stringWithFormat:@"http://api.muabannhanh.com/article/list?category_id=%@&page=1&limit=10", self.categoryID];
+    NSString *requestURL = [NSString stringWithFormat:@"https://api.muabannhanh.com/article/list?category_id=%@&page=1&limit=10", self.categoryID];
     [manager GET:requestURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
-        NSNumber *totalPages = @((int)responseObject[@"total_pages"]);
+        NSInteger totalPages = [responseObject[@"total_pages"] integerValue];
         
         if (completeBlock) {
-            completeBlock([totalPages integerValue], nil, nil);
+            completeBlock(totalPages, nil, nil);
         }
         
         [self.delegate didLoadWithResultWithTotalPage:-1 error:nil operation:nil];

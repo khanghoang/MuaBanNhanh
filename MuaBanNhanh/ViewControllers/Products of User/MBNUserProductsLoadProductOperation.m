@@ -33,7 +33,7 @@
     typeof(self) weakSelf = self;
     NSMutableArray *dataPage = [NSMutableArray arrayWithCapacity:10];
     
-    NSString *stringRequest = [NSString stringWithFormat:@"http://api.muabannhanh.com/article/list?user_id=%@&page=%lu&limit=10",self.userID, self.indexes.lastIndex/10];
+    NSString *stringRequest = [NSString stringWithFormat:@"https://api.muabannhanh.com/article/list?user_id=%@&page=%lu&limit=10",self.userID, self.indexes.lastIndex/10];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:stringRequest parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
