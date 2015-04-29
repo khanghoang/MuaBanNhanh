@@ -39,13 +39,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.viewModel = [[MBNProductDetailsViewModel alloc] init];
     self.navigationController.navigationItem.backBarButtonItem.title = @"Trở về";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    self.viewModel = [[MBNProductDetailsViewModel alloc] init];
     [self loadProductDetailsAndObserver];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
 }
 
 - (void)loadProductDetailsAndObserver {

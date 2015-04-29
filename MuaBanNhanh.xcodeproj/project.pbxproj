@@ -41,6 +41,7 @@
 		0569A4501AE27CE300EFBEF0 /* MBNSafeBuyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0569A44F1AE27CE300EFBEF0 /* MBNSafeBuyViewController.m */; };
 		0571AF9C1AD2AAB300943F85 /* MBNPopupCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0571AF9B1AD2AAB300943F85 /* MBNPopupCustomButton.m */; };
 		0575ED3B1AE9560900F9E7FB /* MBNUploadImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0575ED3A1AE9560900F9E7FB /* MBNUploadImageManager.m */; };
+		0592B6291AF0EDC600FACDF5 /* MBNUserProductHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0592B6281AF0EDC600FACDF5 /* MBNUserProductHeaderCollectionReusableView.m */; };
 		0593B7E71AD12B3800A492F3 /* MBNCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0593B7E51AD12B3800A492F3 /* MBNCollectionHeaderView.m */; };
 		0593B7E81AD12B3800A492F3 /* MBNCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0593B7E61AD12B3800A492F3 /* MBNCollectionHeaderView.xib */; };
 		0593B7EB1AD1381800A492F3 /* TKCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0593B7EA1AD1381800A492F3 /* TKCircleButton.m */; };
@@ -259,6 +260,8 @@
 		0571AF9B1AD2AAB300943F85 /* MBNPopupCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNPopupCustomButton.m; sourceTree = "<group>"; };
 		0575ED391AE9560900F9E7FB /* MBNUploadImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNUploadImageManager.h; sourceTree = "<group>"; };
 		0575ED3A1AE9560900F9E7FB /* MBNUploadImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNUploadImageManager.m; sourceTree = "<group>"; };
+		0592B6271AF0EDC600FACDF5 /* MBNUserProductHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNUserProductHeaderCollectionReusableView.h; sourceTree = "<group>"; };
+		0592B6281AF0EDC600FACDF5 /* MBNUserProductHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNUserProductHeaderCollectionReusableView.m; sourceTree = "<group>"; };
 		0593B7E41AD12B3800A492F3 /* MBNCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNCollectionHeaderView.h; sourceTree = "<group>"; };
 		0593B7E51AD12B3800A492F3 /* MBNCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNCollectionHeaderView.m; sourceTree = "<group>"; };
 		0593B7E61AD12B3800A492F3 /* MBNCollectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBNCollectionHeaderView.xib; sourceTree = "<group>"; };
@@ -887,6 +890,8 @@
 				05B29B771AF0B3210019FB8F /* MBNUserProductViewController.m */,
 				05B29B791AF0B5E20019FB8F /* MBNUserProductsContentLoadingViewModel.h */,
 				05B29B7A1AF0B5E20019FB8F /* MBNUserProductsContentLoadingViewModel.m */,
+				0592B6271AF0EDC600FACDF5 /* MBNUserProductHeaderCollectionReusableView.h */,
+				0592B6281AF0EDC600FACDF5 /* MBNUserProductHeaderCollectionReusableView.m */,
 			);
 			path = "Products of User";
 			sourceTree = "<group>";
@@ -1458,6 +1463,7 @@
 				05B905F81AE8033900B85BEC /* TMECameraFilter.m in Sources */,
 				0516AF1B1AD5246500DACF05 /* MBNSubcategoryViewController.m in Sources */,
 				05B906D01AE805AE00B85BEC /* IMGLYEditorViewController.m in Sources */,
+				0592B6291AF0EDC600FACDF5 /* MBNUserProductHeaderCollectionReusableView.m in Sources */,
 				059AAAF31AEBE45700095D83 /* MBNImage.m in Sources */,
 				053979021ACC3B7C007C4676 /* MBNCategoryManager.m in Sources */,
 				05B906AD1AE805AE00B85BEC /* IMGLYAbstractEditorBaseViewController.m in Sources */,

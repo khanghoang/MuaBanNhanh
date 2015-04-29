@@ -23,7 +23,7 @@
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="-6" maxY="0.0"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="kBD-yj-OJa">
                                     <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="220"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
@@ -38,6 +38,101 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MBNUserProductHeaderCollectionReusableView" id="aar-zA-5Qe" customClass="MBNUserProductHeaderCollectionReusableView">
+                                    <rect key="frame" x="0.0" y="0.0" width="310" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4v-YG-6Nh" customClass="TKDesignableView">
+                                            <rect key="frame" x="0.0" y="8" width="310" height="203"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1it-8r-ir9">
+                                                    <rect key="frame" x="0.0" y="0.0" width="310" height="136"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="136" id="XMB-8h-Qll"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NhA-8L-a6a" customClass="TKDesignableView">
+                                                    <rect key="frame" x="115" y="30" width="80" height="80"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gkg-UY-BbL">
+                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="gkg-UY-BbL" firstAttribute="top" secondItem="NhA-8L-a6a" secondAttribute="top" id="0iO-Le-OoW"/>
+                                                        <constraint firstAttribute="width" constant="80" id="L2D-Z6-ht0"/>
+                                                        <constraint firstAttribute="trailing" secondItem="gkg-UY-BbL" secondAttribute="trailing" id="XQV-xV-RN7"/>
+                                                        <constraint firstAttribute="bottom" secondItem="gkg-UY-BbL" secondAttribute="bottom" id="f62-KT-m2Q"/>
+                                                        <constraint firstItem="gkg-UY-BbL" firstAttribute="leading" secondItem="NhA-8L-a6a" secondAttribute="leading" id="m9z-dr-WW4"/>
+                                                        <constraint firstAttribute="height" constant="80" id="yqn-VX-ui2"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
+                                                            <integer key="value" value="40"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Công ty In kĩ thuật số" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAe-jH-9p6">
+                                                    <rect key="frame" x="8" y="142" width="294" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19" id="UnG-av-oDH"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                    <color key="textColor" red="0.24313725489999999" green="0.47450980390000003" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="365 Lê Quang Định, phường 5, Quận BìnhThạnh, Tp. Hồ Chí Minh" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIa-Mh-GnO" customClass="TKAlignTopLabel">
+                                                    <rect key="frame" x="8" y="163" width="294" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="MPl-65-5vO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="kAe-jH-9p6" firstAttribute="leading" secondItem="F4v-YG-6Nh" secondAttribute="leading" constant="8" id="2PT-TB-BGz"/>
+                                                <constraint firstItem="DIa-Mh-GnO" firstAttribute="top" secondItem="kAe-jH-9p6" secondAttribute="bottom" constant="2" id="6Sy-hb-NI8"/>
+                                                <constraint firstItem="kAe-jH-9p6" firstAttribute="top" secondItem="NhA-8L-a6a" secondAttribute="bottom" constant="32" id="7Lk-ZH-ww0"/>
+                                                <constraint firstItem="NhA-8L-a6a" firstAttribute="top" secondItem="F4v-YG-6Nh" secondAttribute="top" constant="30" id="9Jj-T5-Az9"/>
+                                                <constraint firstItem="DIa-Mh-GnO" firstAttribute="leading" secondItem="F4v-YG-6Nh" secondAttribute="leading" constant="8" id="CEg-EQ-5TO"/>
+                                                <constraint firstAttribute="trailing" secondItem="1it-8r-ir9" secondAttribute="trailing" id="EAj-sx-hhL"/>
+                                                <constraint firstItem="1it-8r-ir9" firstAttribute="top" secondItem="F4v-YG-6Nh" secondAttribute="top" id="GDH-HB-d45"/>
+                                                <constraint firstAttribute="bottom" secondItem="DIa-Mh-GnO" secondAttribute="bottom" constant="5" id="Vtz-xE-Fwy"/>
+                                                <constraint firstAttribute="centerX" secondItem="NhA-8L-a6a" secondAttribute="centerX" id="WdT-Je-bsy"/>
+                                                <constraint firstItem="1it-8r-ir9" firstAttribute="leading" secondItem="F4v-YG-6Nh" secondAttribute="leading" id="tIo-Ay-YDG"/>
+                                                <constraint firstAttribute="trailing" secondItem="DIa-Mh-GnO" secondAttribute="trailing" constant="8" id="ttA-2K-Zp4"/>
+                                                <constraint firstAttribute="trailing" secondItem="kAe-jH-9p6" secondAttribute="trailing" constant="8" id="vLh-oW-fJz"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
+                                                    <integer key="value" value="3"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" red="0.77272727269999997" green="0.77272727269999997" blue="0.77272727269999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <integer key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="F4v-YG-6Nh" secondAttribute="bottom" constant="9" id="4ZP-WJ-EP7"/>
+                                        <constraint firstItem="F4v-YG-6Nh" firstAttribute="leading" secondItem="aar-zA-5Qe" secondAttribute="leading" id="DHp-cS-aae"/>
+                                        <constraint firstAttribute="trailing" secondItem="F4v-YG-6Nh" secondAttribute="trailing" id="Ia0-P9-9Qy"/>
+                                        <constraint firstItem="F4v-YG-6Nh" firstAttribute="top" secondItem="aar-zA-5Qe" secondAttribute="top" constant="8" id="foT-y5-Yqg"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="imgViewAvatar" destination="gkg-UY-BbL" id="SrW-BL-qEf"/>
+                                        <outlet property="imgViewCover" destination="1it-8r-ir9" id="yME-Vu-6ad"/>
+                                        <outlet property="lblAddress" destination="DIa-Mh-GnO" id="IyG-mi-wyN"/>
+                                        <outlet property="lblUsername" destination="kAe-jH-9p6" id="MBh-qa-Fbx"/>
+                                    </connections>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="A6j-PA-OuY" id="SpV-db-b5d"/>
                                     <outlet property="delegate" destination="A6j-PA-OuY" id="htu-lF-mdy"/>

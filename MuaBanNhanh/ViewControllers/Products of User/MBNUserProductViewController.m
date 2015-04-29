@@ -11,16 +11,19 @@
 #import "MBNUserProductsLoadProductOperation.h"
 #import "MBNUserProductsContentLoadingViewModel.h"
 #import "MBNProductDetailsViewController.h"
+#import "MBNUserProductHeaderCollectionReusableView.h"
 
 @interface MBNUserProductViewController ()
 <
-UICollectionViewDelegate
+UICollectionViewDelegate,
+UICollectionViewDataSource
 >
 
 @property (strong, nonatomic) KHCollectionController *collectionController;
 @property (strong, nonatomic) KHBasicTableViewModel *collectionViewModel;
 
 @property (strong, nonatomic) LBDelegateMatrioska *chainDelegate;
+@property (strong, nonatomic) LBDelegateMatrioska *chainDatasource;
 
 @end
 
@@ -30,9 +33,15 @@ UICollectionViewDelegate
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.title = self.user.name;
+    
     // table is just the dump name, it should be collection view
     self.cellFactory = [[MBNProductCellFactory alloc] init];
     [self setEnableRefreshControl:YES];
+    
+    id oldDatasource = self.collectionView.dataSource;
+    self.chainDatasource = [[LBDelegateMatrioska alloc] initWithDelegates:@[self, oldDatasource]];
+    self.collectionView.dataSource = (id) self.chainDatasource;
     
     id oldDelegate = self.collectionView.delegate;
     self.chainDelegate = [[LBDelegateMatrioska alloc] initWithDelegates:@[self, oldDelegate]];
@@ -60,6 +69,12 @@ UICollectionViewDelegate
     productVC.productID = product.ID;
     
     [self.navigationController pushViewController:productVC animated:YES];
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    MBNUserProductHeaderCollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"MBNUserProductHeaderCollectionReusableView" forIndexPath:indexPath];
+    [header configWithUser:self.user];
+    return header;
 }
 
 @end

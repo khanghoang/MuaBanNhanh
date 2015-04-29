@@ -43,5 +43,6 @@ NSCopying
 @property (copy, nonatomic) NSString *address;
 
 + (NSDateFormatter *)sharedDateFormatter;
+- (NSString *)getDisplayAddressString;
 
 @end

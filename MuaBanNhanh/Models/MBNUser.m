@@ -112,6 +112,10 @@
 
 #pragma marks - Helper methods 
 
+- (NSString *)getDisplayAddressString {
+    return [self.address isEqualToString:@""] ? self.address : @"Địa chỉ chưa cập nhật";
+}
+
 + (NSDateFormatter *)sharedDateFormatter
 {
     static NSDateFormatter *instance = nil;
