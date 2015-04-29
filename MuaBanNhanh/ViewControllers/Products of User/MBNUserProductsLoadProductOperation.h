@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MBNUserProductsLoadProductOperation : NSObject
+@interface MBNUserProductsLoadProductOperation : NSBlockOperation
+<
+KHLoadingOperationProtocol
+>
+
+- (instancetype)initWithIndexes:(NSIndexSet *)indexes andUserId:(NSNumber *)userID;
 
 @end

@@ -65,7 +65,6 @@
 		05B29B6C1AF0AE2F0019FB8F /* NSDictionary+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29B6B1AF0AE2F0019FB8F /* NSDictionary+Additions.m */; };
 		05B29B6F1AF0AF360019FB8F /* NSObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29B6E1AF0AF360019FB8F /* NSObject+Additions.m */; };
 		05B29B721AF0B2CA0019FB8F /* UserProducts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B29B711AF0B2CA0019FB8F /* UserProducts.storyboard */; };
-		05B29B751AF0B3090019FB8F /* MBNUserProductsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29B741AF0B3090019FB8F /* MBNUserProductsViewModel.m */; };
 		05B29B781AF0B3210019FB8F /* MBNUserProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29B771AF0B3210019FB8F /* MBNUserProductViewController.m */; };
 		05B29B7B1AF0B5E20019FB8F /* MBNUserProductsContentLoadingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29B7A1AF0B5E20019FB8F /* MBNUserProductsContentLoadingViewModel.m */; };
 		05B29B7E1AF0B6030019FB8F /* MBNUserProductsLoadProductOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29B7D1AF0B6030019FB8F /* MBNUserProductsLoadProductOperation.m */; };
@@ -304,8 +303,6 @@
 		05B29B6D1AF0AF360019FB8F /* NSObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Additions.h"; sourceTree = "<group>"; };
 		05B29B6E1AF0AF360019FB8F /* NSObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Additions.m"; sourceTree = "<group>"; };
 		05B29B711AF0B2CA0019FB8F /* UserProducts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProducts.storyboard; sourceTree = "<group>"; };
-		05B29B731AF0B3090019FB8F /* MBNUserProductsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNUserProductsViewModel.h; sourceTree = "<group>"; };
-		05B29B741AF0B3090019FB8F /* MBNUserProductsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNUserProductsViewModel.m; sourceTree = "<group>"; };
 		05B29B761AF0B3210019FB8F /* MBNUserProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNUserProductViewController.h; sourceTree = "<group>"; };
 		05B29B771AF0B3210019FB8F /* MBNUserProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNUserProductViewController.m; sourceTree = "<group>"; };
 		05B29B791AF0B5E20019FB8F /* MBNUserProductsContentLoadingViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNUserProductsContentLoadingViewModel.h; sourceTree = "<group>"; };
@@ -886,8 +883,6 @@
 				05B29B711AF0B2CA0019FB8F /* UserProducts.storyboard */,
 				05B29B7C1AF0B6030019FB8F /* MBNUserProductsLoadProductOperation.h */,
 				05B29B7D1AF0B6030019FB8F /* MBNUserProductsLoadProductOperation.m */,
-				05B29B731AF0B3090019FB8F /* MBNUserProductsViewModel.h */,
-				05B29B741AF0B3090019FB8F /* MBNUserProductsViewModel.m */,
 				05B29B761AF0B3210019FB8F /* MBNUserProductViewController.h */,
 				05B29B771AF0B3210019FB8F /* MBNUserProductViewController.m */,
 				05B29B791AF0B5E20019FB8F /* MBNUserProductsContentLoadingViewModel.h */,
@@ -1553,7 +1548,6 @@
 				05B906BC1AE805AE00B85BEC /* IMGLYDefaultCameraImageProvider.m in Sources */,
 				059AAAF01AEBE2DB00095D83 /* MBNProductDetailsViewModel.m in Sources */,
 				0561C9C01AD06A8C00BEDA6D /* MBNProductManager.m in Sources */,
-				05B29B751AF0B3090019FB8F /* MBNUserProductsViewModel.m in Sources */,
 				051C83271AECFA99008657AB /* MBNProductImageCell.m in Sources */,
 				05B905E21AE802CD00B85BEC /* PBImageHelper.m in Sources */,
 				05B906E91AE805AE00B85BEC /* IMGLYPhotoProcessor.m in Sources */,

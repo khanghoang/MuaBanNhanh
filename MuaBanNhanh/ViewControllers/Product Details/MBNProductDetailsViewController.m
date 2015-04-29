@@ -9,6 +9,7 @@
 #import "MBNProductDetailsViewController.h"
 #import "MBNProductDetailsViewModel.h"
 #import "MBNProductImagesViewController.h"
+#import "MBNUserProductViewController.h"
 
 @interface MBNProductDetailsViewController ()
 
@@ -136,5 +137,12 @@
 - (IBAction)onBtnCall:(UIButton *)button {
     [[MBNActionsManagers sharedInstance] callNumber:button.titleLabel.text];
 }
+
+- (IBAction)onGoToUserProducts:(id)sender {
+    MBNUserProductViewController *userProducts = [MBNUserProductViewController tme_instantiateFromStoryboardNamed:@"UserProducts"];
+    userProducts.user = self.viewModel.product.user;
+    [self.navigationController pushViewController:userProducts animated:YES];
+}
+
 
 @end

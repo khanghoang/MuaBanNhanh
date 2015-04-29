@@ -9,5 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface MBNUserProductsContentLoadingViewModel : NSObject
+<
+KHContentLoadingProtocol,
+KHTableViewSectionModel
+>
+
+- (instancetype)initWithUserID:(NSNumber *)userID;
 
 @end

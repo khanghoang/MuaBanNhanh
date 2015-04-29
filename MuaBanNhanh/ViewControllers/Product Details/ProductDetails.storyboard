@@ -300,6 +300,15 @@
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gg1-Lz-XHK">
+                                                        <rect key="frame" x="0.0" y="0.0" width="304" height="227"/>
+                                                        <state key="normal" title="Button">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="onGoToUserProducts:" destination="0xN-e0-e9z" eventType="touchUpInside" id="zcE-YL-kj3"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -311,8 +320,12 @@
                                                     <constraint firstAttribute="bottom" secondItem="Nj9-lR-6xd" secondAttribute="bottom" constant="32" id="Ttt-RA-iFQ"/>
                                                     <constraint firstAttribute="centerX" secondItem="RKA-Qc-wog" secondAttribute="centerX" id="UwE-Q6-PJT"/>
                                                     <constraint firstItem="RHz-ti-EPS" firstAttribute="leading" secondItem="PFN-8w-PAo" secondAttribute="leading" id="Vti-cu-N7e"/>
+                                                    <constraint firstAttribute="bottom" secondItem="gg1-Lz-XHK" secondAttribute="bottom" id="bWw-aJ-lhd"/>
+                                                    <constraint firstItem="gg1-Lz-XHK" firstAttribute="leading" secondItem="PFN-8w-PAo" secondAttribute="leading" id="cM5-se-JjR"/>
                                                     <constraint firstAttribute="trailing" secondItem="qzX-42-rVj" secondAttribute="trailing" constant="8" id="g7g-Eg-xJG"/>
                                                     <constraint firstAttribute="trailing" secondItem="RHz-ti-EPS" secondAttribute="trailing" id="htg-qb-g2D"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gg1-Lz-XHK" secondAttribute="trailing" id="o4U-0W-Goj"/>
+                                                    <constraint firstItem="gg1-Lz-XHK" firstAttribute="top" secondItem="PFN-8w-PAo" secondAttribute="top" id="p6F-ic-qWR"/>
                                                     <constraint firstItem="qzX-42-rVj" firstAttribute="leading" secondItem="PFN-8w-PAo" secondAttribute="leading" constant="8" id="pPY-b6-bmm"/>
                                                     <constraint firstAttribute="trailing" secondItem="Nj9-lR-6xd" secondAttribute="trailing" constant="8" id="vT3-z6-LMQ"/>
                                                 </constraints>
@@ -401,7 +414,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ouc-aD-X6T">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="MIN-5d-xJu">
                                     <size key="itemSize" width="320" height="236"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>

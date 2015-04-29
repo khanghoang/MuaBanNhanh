@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--User Product View Controller-->
         <scene sceneID="s9H-ML-nmL">
             <objects>
-                <viewController id="A6j-PA-OuY" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MBNUserProductViewController" id="A6j-PA-OuY" customClass="MBNUserProductViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JsI-95-dMB"/>
                         <viewControllerLayoutGuide type="bottom" id="T01-qC-aH2"/>
@@ -17,9 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="maa-fH-zyr">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kBD-yj-OJa">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="maa-fH-zyr">
+                                <rect key="frame" x="5" y="0.0" width="310" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="-6" maxY="0.0"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="kBD-yj-OJa">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -36,14 +38,27 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="A6j-PA-OuY" id="SpV-db-b5d"/>
+                                    <outlet property="delegate" destination="A6j-PA-OuY" id="htu-lF-mdy"/>
+                                </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="T01-qC-aH2" firstAttribute="top" secondItem="maa-fH-zyr" secondAttribute="bottom" id="TB3-M6-slr"/>
+                            <constraint firstItem="maa-fH-zyr" firstAttribute="leading" secondItem="GTc-6e-FKE" secondAttribute="leading" constant="5" id="UyQ-xA-7dK"/>
+                            <constraint firstAttribute="trailing" secondItem="maa-fH-zyr" secondAttribute="trailing" constant="5" id="XuD-Di-FwM"/>
+                            <constraint firstItem="maa-fH-zyr" firstAttribute="top" secondItem="GTc-6e-FKE" secondAttribute="top" id="Y5o-Wo-3IS"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="maa-fH-zyr" id="q2F-aH-LVN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCr-mr-p8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="317.86666666666667" y="460.07999999999998"/>
+            <point key="canvasLocation" x="317" y="460"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
