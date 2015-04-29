@@ -7,6 +7,7 @@
 //
 
 #import "MBNCreateProductViewController.h"
+#import "MBNSelectCategoryViewController.h"
 #import "MBNCreateProductViewModel.h"
 #import "MBNPaddingTextField.h"
 #import "MBNTextView.h"
@@ -108,7 +109,9 @@ typedef NS_ENUM(NSInteger, PickerViewType){
 - (void)setupCommandForButtons {
     @weakify(self);
     self.repickCategoryButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *sender) {
-        //Will push VC here
+        @strongify(self);
+        MBNSelectCategoryViewController *vc = [[UIStoryboard storyboardWithName:@"SelectCategory" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([MBNSelectCategoryViewController class])];
+        [self.navigationController pushViewController:vc animated:YES];
         return [RACSignal empty];
     }];
     self.productQualityButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *sender) {
