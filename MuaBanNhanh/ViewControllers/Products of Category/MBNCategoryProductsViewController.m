@@ -44,12 +44,12 @@ UICollectionViewDelegate
 }
 
 - (id<KHLoadingOperationProtocol>)loadingOperationForSectionViewModel:(id<KHTableViewSectionModel>)viewModel indexes:(NSIndexSet *)indexes {
-    MBNLoadProductForCategoryOperation *operation = [[MBNLoadProductForCategoryOperation alloc] initWithIndexes:indexes andCategoryID:@(0)];
+    MBNLoadProductForCategoryOperation *operation = [[MBNLoadProductForCategoryOperation alloc] initWithIndexes:indexes andCategoryID:self.category.ID];
     return operation;
 }
 
 - (id<KHContentLoadingProtocol, KHTableViewSectionModel>)getLoadingTotalPageObject {
-    MBNContentLoadingViewModel *loadingTotalItems = [[MBNContentLoadingViewModel alloc] init];
+    MBNContentLoadingViewModel *loadingTotalItems = [[MBNContentLoadingViewModel alloc] initWithCategoryID:self.category.ID];
     loadingTotalItems.delegate = (id)self;
     [loadingTotalItems loadContent];
     return loadingTotalItems;

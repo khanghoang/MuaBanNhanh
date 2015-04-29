@@ -14,4 +14,6 @@ KHContentLoadingProtocol,
 KHTableViewSectionModel
 >
 
+- (instancetype)initWithCategoryID:(NSNumber *)categoryID;
+
 @end

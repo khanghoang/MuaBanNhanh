@@ -8,14 +8,30 @@
 
 #import "MBNContentLoadingViewModel.h"
 
+@interface MBNContentLoadingViewModel()
+
+@property (strong, nonatomic) NSNumber *categoryID;
+
+@end
+
 @implementation MBNContentLoadingViewModel
 
 @synthesize delegate;
 
+- (instancetype)initWithCategoryID:(NSNumber *)categoryID {
+    self = [super init];
+    if (self) {
+        _categoryID = categoryID;
+    }
+    
+    return self;
+}
+
 - (void)loadContent:(void (^)(NSInteger totalItems, NSError *error, AFHTTPRequestOperation *operation))completeBlock {
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://api.muabannhanh.com/article/list?category_id=0&page=1&limit=10" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSString *requestURL = [NSString stringWithFormat:@"http://api.muabannhanh.com/article/list?category_id=%@&page=1&limit=10", self.categoryID];
+    [manager GET:requestURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSNumber *totalPages = @((int)responseObject[@"total_pages"]);
         
