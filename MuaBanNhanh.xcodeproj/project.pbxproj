@@ -195,6 +195,7 @@
 		B62419DA1AEFC51F0040DD89 /* MBNProvinceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B62419D91AEFC51F0040DD89 /* MBNProvinceManager.m */; };
 		B62FDE571AF0C0410099CB06 /* MBNSelectCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B62FDE561AF0C0410099CB06 /* MBNSelectCategoryViewController.m */; };
 		B62FDE591AF0C0C90099CB06 /* SelectCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62FDE581AF0C0C90099CB06 /* SelectCategory.storyboard */; };
+		B62FDE5E1AF0C25A0099CB06 /* MBNDashedBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B62FDE5D1AF0C25A0099CB06 /* MBNDashedBorderView.m */; };
 		B692CF181AEFF69700F331CC /* MBNPaddingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B692CF171AEFF69700F331CC /* MBNPaddingTextField.m */; };
 		B692CF1B1AEFFC2400F331CC /* MBNTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B692CF1A1AEFFC2400F331CC /* MBNTextView.m */; };
 		B6C482711AEF9DA800DF70A0 /* MBNCreateProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C482701AEF9DA800DF70A0 /* MBNCreateProductViewController.m */; };
@@ -586,6 +587,8 @@
 		B62FDE551AF0C0410099CB06 /* MBNSelectCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSelectCategoryViewController.h; sourceTree = "<group>"; };
 		B62FDE561AF0C0410099CB06 /* MBNSelectCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSelectCategoryViewController.m; sourceTree = "<group>"; };
 		B62FDE581AF0C0C90099CB06 /* SelectCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SelectCategory.storyboard; sourceTree = "<group>"; };
+		B62FDE5C1AF0C25A0099CB06 /* MBNDashedBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNDashedBorderView.h; sourceTree = "<group>"; };
+		B62FDE5D1AF0C25A0099CB06 /* MBNDashedBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNDashedBorderView.m; sourceTree = "<group>"; };
 		B692CF161AEFF69700F331CC /* MBNPaddingTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNPaddingTextField.h; sourceTree = "<group>"; };
 		B692CF171AEFF69700F331CC /* MBNPaddingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNPaddingTextField.m; sourceTree = "<group>"; };
 		B692CF191AEFFC2400F331CC /* MBNTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNTextView.h; sourceTree = "<group>"; };
@@ -1320,6 +1323,8 @@
 		B62FDE5B1AF0C1EC0099CB06 /* Dashed Border View */ = {
 			isa = PBXGroup;
 			children = (
+				B62FDE5C1AF0C25A0099CB06 /* MBNDashedBorderView.h */,
+				B62FDE5D1AF0C25A0099CB06 /* MBNDashedBorderView.m */,
 			);
 			path = "Dashed Border View";
 			sourceTree = "<group>";
@@ -1673,6 +1678,7 @@
 				05958DA81AD907C300F7A708 /* MBNLoginViewController.m in Sources */,
 				05B905E31AE802CD00B85BEC /* TMEPhotoButton.m in Sources */,
 				05B906B01AE805AE00B85BEC /* IMGLYBrightnessOperation.m in Sources */,
+				B62FDE5E1AF0C25A0099CB06 /* MBNDashedBorderView.m in Sources */,
 				0561C9C31AD06B5F00BEDA6D /* MBNProduct.m in Sources */,
 				05B906D41AE805AE00B85BEC /* IMGLYFilterSelectorButtonMetadata.m in Sources */,
 				05958DA51AD9076000F7A708 /* MBNLoginNavigationViewController.m in Sources */,
