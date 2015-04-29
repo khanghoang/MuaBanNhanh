@@ -14,4 +14,6 @@
 
 + (void)getProductDetailsWithID:(NSNumber *)productID withCompletion:(void (^) (MBNProduct *product, NSError *error))completeBlock;
 
++ (void)getProductWithCategoryID:(NSNumber *)catID andPage:(NSInteger)page completeBlock:(void (^) (NSArray *arrProduct, NSError *error))completeBlock;
+
 @end

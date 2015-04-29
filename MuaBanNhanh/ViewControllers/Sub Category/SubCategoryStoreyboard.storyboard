@@ -125,7 +125,7 @@
                     </view>
                     <toolbarItems/>
                     <connections>
-                        <outlet property="collectionView" destination="2sB-vF-F7v" id="a9j-6E-6PT"/>
+                        <outlet property="collectionView" destination="2sB-vF-F7v" id="VHx-6G-7zf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1tC-sm-6g9" userLabel="First Responder" sceneMemberID="firstResponder"/>

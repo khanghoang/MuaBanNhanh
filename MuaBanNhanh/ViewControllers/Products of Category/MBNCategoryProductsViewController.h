@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <KHTableViewController/KHBasicFluentCollectionViewController.h>
+#import <KHTableViewController/KHBasicOrderedCollectionViewController.h>
 
-@interface MBNCategoryProductsViewController : KHBasicFluentCollectionViewController
+@interface MBNCategoryProductsViewController : KHBasicOrderedCollectionViewController
 
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) MBNCategory *category;
 
 @end

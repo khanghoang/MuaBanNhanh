@@ -10,49 +10,34 @@
 
 @interface MBNLoadProductForCategoryOperation()
 
-@property (nonatomic, readonly) NSIndexSet *indexes;
-@property (nonatomic, readonly) NSArray *dataPage;
-@property (nonatomic, strong) NSNumber *categoryID;
+@property (assign, nonatomic) NSUInteger page;
+@property (assign, nonatomic) NSUInteger userID;
+
+@property (strong, nonatomic) NSArray *dataPage;
+@property (strong, nonatomic) NSNumber *categoryID;
 
 @end
 
 @implementation MBNLoadProductForCategoryOperation
 
-- (instancetype)initWithIndexes:(NSIndexSet *)indexes andCategoryID:(NSNumber *)categoryID {
+- (instancetype)initWithCategoryID:(NSNumber *)categoryID andPage:(NSUInteger)page {
     self = [super init];
-    
     if (self) {
-        _indexes = indexes;
         _categoryID = categoryID;
+        _page = page;
     }
     
     return self;
 }
 
-- (void)loadData:(void (^)(NSArray *data, NSError *error))finishBlock {
-    typeof(self) weakSelf = self;
-    NSMutableArray *dataPage = [NSMutableArray arrayWithCapacity:10];
+- (void)loadData:(void (^)(NSArray *, NSError *))finishBlock {
+    __weak typeof(self) weakSelf = self;
     
-    NSString *stringRequest = [NSString stringWithFormat:@"https://api.muabannhanh.com/article/list?category_id=%@&page=%lu&limit=10",self.categoryID, self.indexes.lastIndex/10];
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:stringRequest parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        NSError *error;
-        
-        NSArray *arrayCategories = [MTLJSONAdapter modelsOfClass:[MBNProduct class] fromJSONArray:responseObject[@"result"] error:&error];
-        
-        [weakSelf.indexes enumerateIndexesUsingBlock: ^(NSUInteger idx, BOOL *stop) {
-            id data = [arrayCategories objectAtIndex:idx % 10];
-            dataPage[idx % 10] = data;
-        }];
-        
-        weakSelf->_dataPage = dataPage;
+    [MBNProductManager getProductWithCategoryID:self.categoryID andPage:self.page completeBlock:^(NSArray *arrProduct, NSError *error) {
+        weakSelf.dataPage = arrProduct;
         if (finishBlock) {
-            finishBlock(dataPage, error);
+            finishBlock(arrProduct, error);
         }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     }];
 }
 

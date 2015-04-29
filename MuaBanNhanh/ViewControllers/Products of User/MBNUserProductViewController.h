@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <KHTableViewController/KHBasicOrderedCollectionViewController.h>
 #import <KHTableViewController/KHBasicFluentCollectionViewController.h>
 
-@interface MBNUserProductViewController : KHBasicFluentCollectionViewController
+@interface MBNUserProductViewController :KHBasicFluentCollectionViewController
 
 @property (strong, nonatomic) MBNUser *user;
 

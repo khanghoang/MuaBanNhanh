@@ -15,4 +15,8 @@ KHLoadingOperationProtocol
 
 - (instancetype)initWithIndexes:(NSIndexSet *)indexes andCategoryID:(NSNumber *)categoryID;
 
+- (instancetype)initWithCategoryID:(NSNumber *)categoryID andPage:(NSUInteger)page;
+
+- (void)loadData:(void (^)(NSArray *data, NSError *error))finishBlock;
+
 @end

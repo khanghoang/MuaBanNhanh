@@ -39,7 +39,7 @@
             completeBlock(totalPages, nil, nil);
         }
         
-        [self.delegate didLoadWithResultWithTotalPage:-1 error:nil operation:nil];
+        [self.delegate didLoadWithResultWithTotalPage:totalPages error:nil operation:nil];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [self.delegate didLoadWithResultWithTotalPage:-1 error:error operation:nil];

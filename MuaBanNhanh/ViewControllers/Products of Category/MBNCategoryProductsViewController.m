@@ -11,9 +11,12 @@
 #import "MBNLoadProductForCategoryOperation.h"
 #import "MBNContentLoadingViewModel.h"
 #import "MBNProductDetailsViewController.h"
+#import <KHTableViewController/KHOrderedDataProvider.h>
 
 @interface MBNCategoryProductsViewController ()
 <
+UICollectionViewDelegateFlowLayout,
+KHBasicOrderedCollectionViewControllerProtocol,
 UICollectionViewDelegate
 >
 
@@ -35,24 +38,24 @@ UICollectionViewDelegate
     // Do any additional setup after loading the view.
     
     // table is just the dump name, it should be collection view
-    self.cellFactory = [[MBNProductCellFactory alloc] init];
-    [self setEnableRefreshControl:YES];
+    [self enablePullToRefresh];
     
     id oldDelegate = self.collectionView.delegate;
     self.chainDelegate = [[LBDelegateMatrioska alloc] initWithDelegates:@[self, oldDelegate]];
     self.collectionView.delegate = (id) self.chainDelegate;
 }
 
-- (id<KHLoadingOperationProtocol>)loadingOperationForSectionViewModel:(id<KHTableViewSectionModel>)viewModel indexes:(NSIndexSet *)indexes {
-    MBNLoadProductForCategoryOperation *operation = [[MBNLoadProductForCategoryOperation alloc] initWithIndexes:indexes andCategoryID:self.category.ID];
-    return operation;
+- (id <KHCollectionViewCellFactoryProtocol> )cellFactory {
+    MBNProductCellFactory *cellFactory = [[MBNProductCellFactory alloc] init];
+    return cellFactory;
 }
 
-- (id<KHContentLoadingProtocol, KHTableViewSectionModel>)getLoadingTotalPageObject {
-    MBNContentLoadingViewModel *loadingTotalItems = [[MBNContentLoadingViewModel alloc] initWithCategoryID:self.category.ID];
-    loadingTotalItems.delegate = (id)self;
-    [loadingTotalItems loadContent];
-    return loadingTotalItems;
+- (id <KHTableViewSectionModel> )getLoadingContentViewModel {
+    return [[KHOrderedDataProvider alloc] init];
+}
+
+- (id <KHLoadingOperationProtocol> )loadingOperationForSectionViewModel:(id <KHTableViewSectionModel> )viewModel forPage:(NSUInteger)page {
+    return [[MBNLoadProductForCategoryOperation alloc] initWithCategoryID:self.category.ID andPage:page+1];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
