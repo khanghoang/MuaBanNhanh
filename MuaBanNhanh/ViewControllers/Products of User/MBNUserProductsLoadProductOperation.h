@@ -13,6 +13,8 @@
 KHLoadingOperationProtocol
 >
 
-- (instancetype)initWithIndexes:(NSIndexSet *)indexes andUserId:(NSNumber *)userID;
+- (instancetype)initWithUserID:(NSNumber *)userID andPage:(NSUInteger)page;
+
+- (void)loadData:(void (^)(NSArray *data, NSError *error))finishBlock;
 
 @end

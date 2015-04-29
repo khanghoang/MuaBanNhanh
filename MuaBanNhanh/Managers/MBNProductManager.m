@@ -82,4 +82,23 @@
     
 }
 
++ (void)getProductWithUserID:(NSNumber *)userID andPage:(NSInteger)page completeBlock:(void (^) (NSArray *arrProduct, NSError *error))completeBlock {
+    
+    NSString *stringRequest = [NSString stringWithFormat:@"https://api.muabannhanh.com/article/list?user_id=%ld&page=%lu&limit=10",(long)[userID integerValue], page];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:stringRequest parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSError *error;
+        
+        NSArray *arrProducts = [MTLJSONAdapter modelsOfClass:[MBNProduct class] fromJSONArray:responseObject[@"result"] error:&error];
+        if (completeBlock) {
+            completeBlock(arrProducts, error);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    }];
+    
+}
+
 @end

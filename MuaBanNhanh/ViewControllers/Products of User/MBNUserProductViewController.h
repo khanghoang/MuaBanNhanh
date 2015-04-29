@@ -10,8 +10,9 @@
 #import <KHTableViewController/KHBasicOrderedCollectionViewController.h>
 #import <KHTableViewController/KHBasicFluentCollectionViewController.h>
 
-@interface MBNUserProductViewController :KHBasicFluentCollectionViewController
+@interface MBNUserProductViewController :KHBasicOrderedCollectionViewController
 
 @property (strong, nonatomic) MBNUser *user;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end

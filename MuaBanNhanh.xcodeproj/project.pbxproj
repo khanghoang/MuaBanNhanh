@@ -73,7 +73,6 @@
 		05B29B6F1AF0AF360019FB8F /* NSObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29B6E1AF0AF360019FB8F /* NSObject+Additions.m */; };
 		05B29B721AF0B2CA0019FB8F /* UserProducts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B29B711AF0B2CA0019FB8F /* UserProducts.storyboard */; };
 		05B29B781AF0B3210019FB8F /* MBNUserProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29B771AF0B3210019FB8F /* MBNUserProductViewController.m */; };
-		05B29B7B1AF0B5E20019FB8F /* MBNUserProductsContentLoadingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29B7A1AF0B5E20019FB8F /* MBNUserProductsContentLoadingViewModel.m */; };
 		05B29B7E1AF0B6030019FB8F /* MBNUserProductsLoadProductOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29B7D1AF0B6030019FB8F /* MBNUserProductsLoadProductOperation.m */; };
 		05B905E21AE802CD00B85BEC /* PBImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B905DF1AE802CD00B85BEC /* PBImageHelper.m */; };
 		05B905E31AE802CD00B85BEC /* TMEPhotoButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B905E11AE802CD00B85BEC /* TMEPhotoButton.m */; };
@@ -177,7 +176,6 @@
 		05D84C001AD63C1000497FA0 /* MBNCategoryProductsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D84BFF1AD63C1000497FA0 /* MBNCategoryProductsViewController.m */; };
 		05D84C031AD63D8F00497FA0 /* MBNProductCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D84C021AD63D8F00497FA0 /* MBNProductCellFactory.m */; };
 		05D84C061AD6412F00497FA0 /* MBNLoadProductForCategoryOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D84C051AD6412F00497FA0 /* MBNLoadProductForCategoryOperation.m */; };
-		05D84C091AD6443100497FA0 /* MBNContentLoadingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D84C081AD6443100497FA0 /* MBNContentLoadingViewModel.m */; };
 		05DC9E7D1AE822B400272C10 /* MBNCustomImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DC9E7C1AE822B400272C10 /* MBNCustomImagePickerViewController.m */; };
 		05DC9E801AE825A200272C10 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DC9E7F1AE825A200272C10 /* UIImage+fixOrientation.m */; };
 		05DC9E831AE82F6500272C10 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DC9E821AE82F6500272C10 /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -325,8 +323,6 @@
 		05B29B711AF0B2CA0019FB8F /* UserProducts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProducts.storyboard; sourceTree = "<group>"; };
 		05B29B761AF0B3210019FB8F /* MBNUserProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNUserProductViewController.h; sourceTree = "<group>"; };
 		05B29B771AF0B3210019FB8F /* MBNUserProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNUserProductViewController.m; sourceTree = "<group>"; };
-		05B29B791AF0B5E20019FB8F /* MBNUserProductsContentLoadingViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNUserProductsContentLoadingViewModel.h; sourceTree = "<group>"; };
-		05B29B7A1AF0B5E20019FB8F /* MBNUserProductsContentLoadingViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNUserProductsContentLoadingViewModel.m; sourceTree = "<group>"; };
 		05B29B7C1AF0B6030019FB8F /* MBNUserProductsLoadProductOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNUserProductsLoadProductOperation.h; sourceTree = "<group>"; };
 		05B29B7D1AF0B6030019FB8F /* MBNUserProductsLoadProductOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNUserProductsLoadProductOperation.m; sourceTree = "<group>"; };
 		05B905DE1AE802CD00B85BEC /* PBImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBImageHelper.h; sourceTree = "<group>"; };
@@ -541,8 +537,6 @@
 		05D84C021AD63D8F00497FA0 /* MBNProductCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNProductCellFactory.m; sourceTree = "<group>"; };
 		05D84C041AD6412F00497FA0 /* MBNLoadProductForCategoryOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNLoadProductForCategoryOperation.h; sourceTree = "<group>"; };
 		05D84C051AD6412F00497FA0 /* MBNLoadProductForCategoryOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNLoadProductForCategoryOperation.m; sourceTree = "<group>"; };
-		05D84C071AD6443100497FA0 /* MBNContentLoadingViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNContentLoadingViewModel.h; sourceTree = "<group>"; };
-		05D84C081AD6443100497FA0 /* MBNContentLoadingViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNContentLoadingViewModel.m; sourceTree = "<group>"; };
 		05DC9E7B1AE822B400272C10 /* MBNCustomImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNCustomImagePickerViewController.h; sourceTree = "<group>"; };
 		05DC9E7C1AE822B400272C10 /* MBNCustomImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNCustomImagePickerViewController.m; sourceTree = "<group>"; };
 		05DC9E7E1AE825A200272C10 /* UIImage+fixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+fixOrientation.h"; sourceTree = "<group>"; };
@@ -924,8 +918,6 @@
 				05B29B7D1AF0B6030019FB8F /* MBNUserProductsLoadProductOperation.m */,
 				05B29B761AF0B3210019FB8F /* MBNUserProductViewController.h */,
 				05B29B771AF0B3210019FB8F /* MBNUserProductViewController.m */,
-				05B29B791AF0B5E20019FB8F /* MBNUserProductsContentLoadingViewModel.h */,
-				05B29B7A1AF0B5E20019FB8F /* MBNUserProductsContentLoadingViewModel.m */,
 				0592B6271AF0EDC600FACDF5 /* MBNUserProductHeaderCollectionReusableView.h */,
 				0592B6281AF0EDC600FACDF5 /* MBNUserProductHeaderCollectionReusableView.m */,
 			);
@@ -1191,8 +1183,6 @@
 				05D84C021AD63D8F00497FA0 /* MBNProductCellFactory.m */,
 				05D84C041AD6412F00497FA0 /* MBNLoadProductForCategoryOperation.h */,
 				05D84C051AD6412F00497FA0 /* MBNLoadProductForCategoryOperation.m */,
-				05D84C071AD6443100497FA0 /* MBNContentLoadingViewModel.h */,
-				05D84C081AD6443100497FA0 /* MBNContentLoadingViewModel.m */,
 			);
 			path = "Products of Category";
 			sourceTree = "<group>";
@@ -1520,7 +1510,6 @@
 				05B9070C1AE8079D00B85BEC /* UIViewController+Additions.m in Sources */,
 				05B906CA1AE805AE00B85BEC /* IMGLYEditorOrientationMenu.m in Sources */,
 				05B906E71AE805AE00B85BEC /* IMGLYOpenGLUtils.m in Sources */,
-				05B29B7B1AF0B5E20019FB8F /* MBNUserProductsContentLoadingViewModel.m in Sources */,
 				05B906E01AE805AE00B85BEC /* IMGLYLiveStreamFilterManager.m in Sources */,
 				05B906DD1AE805AE00B85BEC /* IMGLYHippieFilter.m in Sources */,
 				05B906C61AE805AE00B85BEC /* IMGLYEditorEnhancementViewcontroller.m in Sources */,
@@ -1599,7 +1588,6 @@
 				051C83271AECFA99008657AB /* MBNProductImageCell.m in Sources */,
 				05B905E21AE802CD00B85BEC /* PBImageHelper.m in Sources */,
 				05B906E91AE805AE00B85BEC /* IMGLYPhotoProcessor.m in Sources */,
-				05D84C091AD6443100497FA0 /* MBNContentLoadingViewModel.m in Sources */,
 				05B906E11AE805AE00B85BEC /* IMGLYLomoFilter.m in Sources */,
 				05B906CC1AE805AE00B85BEC /* IMGLYEditorSaturationViewController.m in Sources */,
 				05958DA81AD907C300F7A708 /* MBNLoginViewController.m in Sources */,

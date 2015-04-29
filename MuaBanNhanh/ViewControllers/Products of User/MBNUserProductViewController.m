@@ -9,14 +9,17 @@
 #import "MBNUserProductViewController.h"
 #import "MBNProductCellFactory.h"
 #import "MBNUserProductsLoadProductOperation.h"
-#import "MBNUserProductsContentLoadingViewModel.h"
 #import "MBNProductDetailsViewController.h"
 #import "MBNUserProductHeaderCollectionReusableView.h"
+#import <KHTableViewController/KHOrderedDataProvider.h>
 
 @interface MBNUserProductViewController ()
 <
 UICollectionViewDelegate,
-UICollectionViewDataSource
+UICollectionViewDataSource,
+UICollectionViewDelegateFlowLayout,
+KHBasicOrderedCollectionViewControllerProtocol,
+UICollectionViewDelegate
 >
 
 @property (strong, nonatomic) KHCollectionController *collectionController;
@@ -36,28 +39,28 @@ UICollectionViewDataSource
     self.title = self.user.name;
     
     // table is just the dump name, it should be collection view
-    self.cellFactory = [[MBNProductCellFactory alloc] init];
-    [self setEnableRefreshControl:YES];
+    [self enablePullToRefresh];
     
     id oldDatasource = self.collectionView.dataSource;
-    self.chainDatasource = [[LBDelegateMatrioska alloc] initWithDelegates:@[self, oldDatasource]];
+    self.chainDatasource = [[LBDelegateMatrioska alloc] initWithDelegates:@[oldDatasource, self]];
     self.collectionView.dataSource = (id) self.chainDatasource;
     
     id oldDelegate = self.collectionView.delegate;
-    self.chainDelegate = [[LBDelegateMatrioska alloc] initWithDelegates:@[self, oldDelegate]];
+    self.chainDelegate = [[LBDelegateMatrioska alloc] initWithDelegates:@[oldDelegate, self]];
     self.collectionView.delegate = (id) self.chainDelegate;
 }
 
-- (id<KHLoadingOperationProtocol>)loadingOperationForSectionViewModel:(id<KHTableViewSectionModel>)viewModel indexes:(NSIndexSet *)indexes {
-    MBNUserProductsLoadProductOperation *operation = [[MBNUserProductsLoadProductOperation alloc] initWithIndexes:indexes andUserId:self.user.ID];
-    return operation;
+- (id <KHCollectionViewCellFactoryProtocol> )cellFactory {
+    MBNProductCellFactory *cellFactory = [[MBNProductCellFactory alloc] init];
+    return cellFactory;
 }
 
-- (id<KHContentLoadingProtocol, KHTableViewSectionModel>)getLoadingTotalPageObject {
-    MBNUserProductsContentLoadingViewModel *loadingTotalItems = [[MBNUserProductsContentLoadingViewModel alloc] initWithUserID:self.user.ID];
-    loadingTotalItems.delegate = (id)self;
-    [loadingTotalItems loadContent];
-    return loadingTotalItems;
+- (id <KHTableViewSectionModel> )getLoadingContentViewModel {
+    return [[KHOrderedDataProvider alloc] init];
+}
+
+- (id <KHLoadingOperationProtocol> )loadingOperationForSectionViewModel:(id <KHTableViewSectionModel> )viewModel forPage:(NSUInteger)page {
+    return [[MBNUserProductsLoadProductOperation alloc] initWithUserID:self.user.ID andPage:page+1];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

@@ -10,49 +10,33 @@
 
 @interface MBNUserProductsLoadProductOperation()
 
-@property (nonatomic, readonly) NSIndexSet *indexes;
-@property (nonatomic, readonly) NSArray *dataPage;
-@property (nonatomic, strong) NSNumber *userID;
+@property (assign, nonatomic) NSUInteger page;
+@property (strong, nonatomic) NSNumber *userID;
+
+@property (strong, nonatomic) NSArray *dataPage;
 
 @end
 
 @implementation MBNUserProductsLoadProductOperation
 
-- (instancetype)initWithIndexes:(NSIndexSet *)indexes andUserId:(NSNumber *)userID {
+- (instancetype)initWithUserID:(NSNumber *)userID andPage:(NSUInteger)page {
     self = [super init];
-    
     if (self) {
-        _indexes = indexes;
         _userID = userID;
+        _page = page;
     }
     
     return self;
 }
 
-- (void)loadData:(void (^)(NSArray *data, NSError *error))finishBlock {
-    typeof(self) weakSelf = self;
-    NSMutableArray *dataPage = [NSMutableArray arrayWithCapacity:10];
+- (void)loadData:(void (^)(NSArray *, NSError *))finishBlock {
+    __weak typeof(self) weakSelf = self;
     
-    NSString *stringRequest = [NSString stringWithFormat:@"https://api.muabannhanh.com/article/list?user_id=%@&page=%lu&limit=10",self.userID, self.indexes.lastIndex/10];
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:stringRequest parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        NSError *error;
-        
-        NSArray *arrayCategories = [MTLJSONAdapter modelsOfClass:[MBNProduct class] fromJSONArray:responseObject[@"result"] error:&error];
-        
-        [weakSelf.indexes enumerateIndexesUsingBlock: ^(NSUInteger idx, BOOL *stop) {
-            id data = [arrayCategories objectAtIndex:idx % 10];
-            dataPage[idx % 10] = data;
-        }];
-        
-        weakSelf->_dataPage = dataPage;
+    [MBNProductManager getProductWithUserID:self.userID andPage:self.page completeBlock:^(NSArray *arrProduct, NSError *error) {
+        weakSelf.dataPage = arrProduct;
         if (finishBlock) {
-            finishBlock(dataPage, error);
+            finishBlock(arrProduct, error);
         }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     }];
 }
 

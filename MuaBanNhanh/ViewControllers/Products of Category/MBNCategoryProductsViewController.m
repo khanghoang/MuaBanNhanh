@@ -9,7 +9,6 @@
 #import "MBNCategoryProductsViewController.h"
 #import "MBNProductCellFactory.h"
 #import "MBNLoadProductForCategoryOperation.h"
-#import "MBNContentLoadingViewModel.h"
 #import "MBNProductDetailsViewController.h"
 #import <KHTableViewController/KHOrderedDataProvider.h>
 

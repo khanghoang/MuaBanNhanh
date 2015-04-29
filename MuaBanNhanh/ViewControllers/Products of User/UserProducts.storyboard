@@ -25,7 +25,7 @@
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="50" height="220"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ber-t6-bmJ">
@@ -39,13 +39,13 @@
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MBNUserProductHeaderCollectionReusableView" id="aar-zA-5Qe" customClass="MBNUserProductHeaderCollectionReusableView">
-                                    <rect key="frame" x="0.0" y="0.0" width="310" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="310" height="220"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4v-YG-6Nh" customClass="TKDesignableView">
                                             <rect key="frame" x="0.0" y="8" width="310" height="203"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1it-8r-ir9">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1it-8r-ir9">
                                                     <rect key="frame" x="0.0" y="0.0" width="310" height="136"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="136" id="XMB-8h-Qll"/>
@@ -148,7 +148,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="maa-fH-zyr" id="q2F-aH-LVN"/>
+                        <outlet property="collectionView" destination="maa-fH-zyr" id="Ug9-TF-zok"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iCr-mr-p8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
