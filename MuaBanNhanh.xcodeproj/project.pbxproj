@@ -202,7 +202,6 @@
 		B6C482711AEF9DA800DF70A0 /* MBNCreateProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C482701AEF9DA800DF70A0 /* MBNCreateProductViewController.m */; };
 		B6C482731AEF9E9600DF70A0 /* CreateProduct.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6C482721AEF9E9600DF70A0 /* CreateProduct.storyboard */; };
 		B6D9A7721AF1020000DC11D4 /* MBNSelectedTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D9A7711AF1020000DC11D4 /* MBNSelectedTagCell.m */; };
-		B6D9A7751AF1032B00DC11D4 /* MBNExpandableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D9A7741AF1032B00DC11D4 /* MBNExpandableTableView.m */; };
 		B6D9A7781AF103A800DC11D4 /* MBNExpandableTableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D9A7771AF103A800DC11D4 /* MBNExpandableTableHeader.m */; };
 		B6D9A77A1AF1042900DC11D4 /* MBNExpandableTableHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6D9A7791AF1042900DC11D4 /* MBNExpandableTableHeader.xib */; };
 		B6D9A77D1AF1046100DC11D4 /* MBNExpandableTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D9A77C1AF1046100DC11D4 /* MBNExpandableTableCell.m */; };
@@ -606,8 +605,6 @@
 		B6C482721AEF9E9600DF70A0 /* CreateProduct.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateProduct.storyboard; sourceTree = "<group>"; };
 		B6D9A7701AF1020000DC11D4 /* MBNSelectedTagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSelectedTagCell.h; sourceTree = "<group>"; };
 		B6D9A7711AF1020000DC11D4 /* MBNSelectedTagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSelectedTagCell.m; sourceTree = "<group>"; };
-		B6D9A7731AF1032B00DC11D4 /* MBNExpandableTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNExpandableTableView.h; sourceTree = "<group>"; };
-		B6D9A7741AF1032B00DC11D4 /* MBNExpandableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNExpandableTableView.m; sourceTree = "<group>"; };
 		B6D9A7761AF103A800DC11D4 /* MBNExpandableTableHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNExpandableTableHeader.h; sourceTree = "<group>"; };
 		B6D9A7771AF103A800DC11D4 /* MBNExpandableTableHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNExpandableTableHeader.m; sourceTree = "<group>"; };
 		B6D9A7791AF1042900DC11D4 /* MBNExpandableTableHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBNExpandableTableHeader.xib; sourceTree = "<group>"; };
@@ -1335,8 +1332,6 @@
 		B62FDE5A1AF0C17F0099CB06 /* Expandable Table View */ = {
 			isa = PBXGroup;
 			children = (
-				B6D9A7731AF1032B00DC11D4 /* MBNExpandableTableView.h */,
-				B6D9A7741AF1032B00DC11D4 /* MBNExpandableTableView.m */,
 				B6D9A7761AF103A800DC11D4 /* MBNExpandableTableHeader.h */,
 				B6D9A7771AF103A800DC11D4 /* MBNExpandableTableHeader.m */,
 				B6D9A7791AF1042900DC11D4 /* MBNExpandableTableHeader.xib */,
@@ -1618,7 +1613,6 @@
 				05B906D51AE805AE00B85BEC /* IMGLYFilterSelectorView.m in Sources */,
 				05B905F81AE8033900B85BEC /* TMECameraFilter.m in Sources */,
 				0516AF1B1AD5246500DACF05 /* MBNSubcategoryViewController.m in Sources */,
-				B6D9A7751AF1032B00DC11D4 /* MBNExpandableTableView.m in Sources */,
 				05B906D01AE805AE00B85BEC /* IMGLYEditorViewController.m in Sources */,
 				0592B6291AF0EDC600FACDF5 /* MBNUserProductHeaderCollectionReusableView.m in Sources */,
 				059AAAF31AEBE45700095D83 /* MBNImage.m in Sources */,
