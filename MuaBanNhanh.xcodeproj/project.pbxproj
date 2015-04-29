@@ -64,6 +64,11 @@
 		05B29B691AF0AD200019FB8F /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29B681AF0AD200019FB8F /* NSArray+Additions.m */; };
 		05B29B6C1AF0AE2F0019FB8F /* NSDictionary+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29B6B1AF0AE2F0019FB8F /* NSDictionary+Additions.m */; };
 		05B29B6F1AF0AF360019FB8F /* NSObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29B6E1AF0AF360019FB8F /* NSObject+Additions.m */; };
+		05B29B721AF0B2CA0019FB8F /* UserProducts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B29B711AF0B2CA0019FB8F /* UserProducts.storyboard */; };
+		05B29B751AF0B3090019FB8F /* MBNUserProductsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29B741AF0B3090019FB8F /* MBNUserProductsViewModel.m */; };
+		05B29B781AF0B3210019FB8F /* MBNUserProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29B771AF0B3210019FB8F /* MBNUserProductViewController.m */; };
+		05B29B7B1AF0B5E20019FB8F /* MBNUserProductsContentLoadingViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29B7A1AF0B5E20019FB8F /* MBNUserProductsContentLoadingViewModel.m */; };
+		05B29B7E1AF0B6030019FB8F /* MBNUserProductsLoadProductOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29B7D1AF0B6030019FB8F /* MBNUserProductsLoadProductOperation.m */; };
 		05B905E21AE802CD00B85BEC /* PBImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B905DF1AE802CD00B85BEC /* PBImageHelper.m */; };
 		05B905E31AE802CD00B85BEC /* TMEPhotoButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B905E11AE802CD00B85BEC /* TMEPhotoButton.m */; };
 		05B905F41AE8033900B85BEC /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B905E61AE8033900B85BEC /* Camera.storyboard */; };
@@ -298,6 +303,15 @@
 		05B29B6B1AF0AE2F0019FB8F /* NSDictionary+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Additions.m"; sourceTree = "<group>"; };
 		05B29B6D1AF0AF360019FB8F /* NSObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Additions.h"; sourceTree = "<group>"; };
 		05B29B6E1AF0AF360019FB8F /* NSObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Additions.m"; sourceTree = "<group>"; };
+		05B29B711AF0B2CA0019FB8F /* UserProducts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UserProducts.storyboard; sourceTree = "<group>"; };
+		05B29B731AF0B3090019FB8F /* MBNUserProductsViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNUserProductsViewModel.h; sourceTree = "<group>"; };
+		05B29B741AF0B3090019FB8F /* MBNUserProductsViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNUserProductsViewModel.m; sourceTree = "<group>"; };
+		05B29B761AF0B3210019FB8F /* MBNUserProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNUserProductViewController.h; sourceTree = "<group>"; };
+		05B29B771AF0B3210019FB8F /* MBNUserProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNUserProductViewController.m; sourceTree = "<group>"; };
+		05B29B791AF0B5E20019FB8F /* MBNUserProductsContentLoadingViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNUserProductsContentLoadingViewModel.h; sourceTree = "<group>"; };
+		05B29B7A1AF0B5E20019FB8F /* MBNUserProductsContentLoadingViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNUserProductsContentLoadingViewModel.m; sourceTree = "<group>"; };
+		05B29B7C1AF0B6030019FB8F /* MBNUserProductsLoadProductOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNUserProductsLoadProductOperation.h; sourceTree = "<group>"; };
+		05B29B7D1AF0B6030019FB8F /* MBNUserProductsLoadProductOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNUserProductsLoadProductOperation.m; sourceTree = "<group>"; };
 		05B905DE1AE802CD00B85BEC /* PBImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBImageHelper.h; sourceTree = "<group>"; };
 		05B905DF1AE802CD00B85BEC /* PBImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBImageHelper.m; sourceTree = "<group>"; };
 		05B905E01AE802CD00B85BEC /* TMEPhotoButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMEPhotoButton.h; sourceTree = "<group>"; };
@@ -789,6 +803,7 @@
 		05A3E3391ACAF0AC00E55215 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				05B29B701AF0B2B40019FB8F /* Products of User */,
 				B6C4826C1AEF9CE600DF70A0 /* Create Product */,
 				0562C8381AEBC1330029EA9E /* Product Details */,
 				05B905E41AE8033900B85BEC /* Take Photo */,
@@ -863,6 +878,22 @@
 				05184A5A1AEF439500C87DC6 /* AFHTTPRequestOperationManager+Helper.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		05B29B701AF0B2B40019FB8F /* Products of User */ = {
+			isa = PBXGroup;
+			children = (
+				05B29B711AF0B2CA0019FB8F /* UserProducts.storyboard */,
+				05B29B7C1AF0B6030019FB8F /* MBNUserProductsLoadProductOperation.h */,
+				05B29B7D1AF0B6030019FB8F /* MBNUserProductsLoadProductOperation.m */,
+				05B29B731AF0B3090019FB8F /* MBNUserProductsViewModel.h */,
+				05B29B741AF0B3090019FB8F /* MBNUserProductsViewModel.m */,
+				05B29B761AF0B3210019FB8F /* MBNUserProductViewController.h */,
+				05B29B771AF0B3210019FB8F /* MBNUserProductViewController.m */,
+				05B29B791AF0B5E20019FB8F /* MBNUserProductsContentLoadingViewModel.h */,
+				05B29B7A1AF0B5E20019FB8F /* MBNUserProductsContentLoadingViewModel.m */,
+			);
+			path = "Products of User";
 			sourceTree = "<group>";
 		};
 		05B905DD1AE802CD00B85BEC /* PhotoButton */ = {
@@ -1330,6 +1361,7 @@
 				05B905F41AE8033900B85BEC /* Camera.storyboard in Resources */,
 				B6C482731AEF9E9600DF70A0 /* CreateProduct.storyboard in Resources */,
 				053979071ACC48F6007C4676 /* MainStoryBoard.storyboard in Resources */,
+				05B29B721AF0B2CA0019FB8F /* UserProducts.storyboard in Resources */,
 				0562C83A1AEBC1440029EA9E /* ProductDetails.storyboard in Resources */,
 				0593B7F41AD18C8300A492F3 /* PlusPopups.storyboard in Resources */,
 				05A3E3441ACAF11200E55215 /* MBNSideMenuViewController.xib in Resources */,
@@ -1411,6 +1443,7 @@
 				05B29B691AF0AD200019FB8F /* NSArray+Additions.m in Sources */,
 				0508672D1AD6F08F00038F87 /* UIUnregisterHomePopup.m in Sources */,
 				05DC9E831AE82F6500272C10 /* NSData+Base64.m in Sources */,
+				05B29B781AF0B3210019FB8F /* MBNUserProductViewController.m in Sources */,
 				05A3E3501ACAF9E100E55215 /* Colours.m in Sources */,
 				05A3E34D1ACAF9D300E55215 /* UIView+Addition.m in Sources */,
 				0593B7F11AD1877900A492F3 /* MBNUser.m in Sources */,
@@ -1447,6 +1480,7 @@
 				05B9070C1AE8079D00B85BEC /* UIViewController+Additions.m in Sources */,
 				05B906CA1AE805AE00B85BEC /* IMGLYEditorOrientationMenu.m in Sources */,
 				05B906E71AE805AE00B85BEC /* IMGLYOpenGLUtils.m in Sources */,
+				05B29B7B1AF0B5E20019FB8F /* MBNUserProductsContentLoadingViewModel.m in Sources */,
 				05B906E01AE805AE00B85BEC /* IMGLYLiveStreamFilterManager.m in Sources */,
 				05B906DD1AE805AE00B85BEC /* IMGLYHippieFilter.m in Sources */,
 				05B906C61AE805AE00B85BEC /* IMGLYEditorEnhancementViewcontroller.m in Sources */,
@@ -1486,6 +1520,7 @@
 				05B29B6F1AF0AF360019FB8F /* NSObject+Additions.m in Sources */,
 				05B29B6C1AF0AE2F0019FB8F /* NSDictionary+Additions.m in Sources */,
 				05B9070F1AE807E200B85BEC /* UIView+Additions.m in Sources */,
+				05B29B7E1AF0B6030019FB8F /* MBNUserProductsLoadProductOperation.m in Sources */,
 				05B906EC1AE805AE00B85BEC /* IMGLYQuoziFilter.m in Sources */,
 				05E03D9A1AC9318D004426CE /* main.m in Sources */,
 				05B906DC1AE805AE00B85BEC /* IMGLYGlamFilter.m in Sources */,
@@ -1518,6 +1553,7 @@
 				05B906BC1AE805AE00B85BEC /* IMGLYDefaultCameraImageProvider.m in Sources */,
 				059AAAF01AEBE2DB00095D83 /* MBNProductDetailsViewModel.m in Sources */,
 				0561C9C01AD06A8C00BEDA6D /* MBNProductManager.m in Sources */,
+				05B29B751AF0B3090019FB8F /* MBNUserProductsViewModel.m in Sources */,
 				051C83271AECFA99008657AB /* MBNProductImageCell.m in Sources */,
 				05B905E21AE802CD00B85BEC /* PBImageHelper.m in Sources */,
 				05B906E91AE805AE00B85BEC /* IMGLYPhotoProcessor.m in Sources */,
