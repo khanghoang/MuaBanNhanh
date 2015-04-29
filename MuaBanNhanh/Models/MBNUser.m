@@ -38,6 +38,14 @@
              };
 }
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionaryValue error:(NSError *__autoreleasing *)error {
+    NSDictionary *detaulfValues = @{
+                                    @"gender": @"UNDEFINED"
+                                    };
+    dictionaryValue = [detaulfValues mtl_dictionaryByAddingEntriesFromDictionary:dictionaryValue];
+    return [super initWithDictionary:dictionaryValue error:error];
+}
+
 + (NSValueTransformer *)avatarImageUrlJSONTransformer {
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
 }

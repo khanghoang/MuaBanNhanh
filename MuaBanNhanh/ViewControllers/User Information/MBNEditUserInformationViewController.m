@@ -11,7 +11,9 @@
 
 @interface MBNEditUserInformationViewController ()
 <
-UITextViewDelegate
+UITextViewDelegate,
+UIPickerViewDelegate,
+UIPickerViewDataSource
 >
 
 @property (strong, nonatomic) MBNUser *user;
@@ -37,9 +39,10 @@ UITextViewDelegate
 @property (weak, nonatomic) IBOutlet UITextField *lblIdentity;
 @property (weak, nonatomic) IBOutlet UITextField *lblBirthday;
 @property (weak, nonatomic) IBOutlet UITextField *lblPersonalEmail;
+@property (weak, nonatomic) IBOutlet UITextField *lblGender;
+@property (weak, nonatomic) IBOutlet UIButton *btnGenderSelect;
 
 // 3rd section
-@property (weak, nonatomic) IBOutlet UITextField *lblTradeName;
 @property (weak, nonatomic) IBOutlet UITextView *txtAddress;
 @property (weak, nonatomic) IBOutlet UITextField *lblCity;
 @property (weak, nonatomic) IBOutlet UITextField *lblProvinde;
@@ -47,6 +50,8 @@ UITextViewDelegate
 @property (weak, nonatomic) IBOutlet UITextField *lblLicense;
 @property (weak, nonatomic) IBOutlet UITextField *lblBusinessEmail;
 @property (weak, nonatomic) IBOutlet UITextField *lblCreateAt;
+
+@property (strong, nonatomic) NSDictionary *genderArrayDatasource;
 
 @property (nonatomic, strong) TMECameraVC *cameraVC;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *buttons;
@@ -101,7 +106,6 @@ UITextViewDelegate
           self.lblIdentity,
           self.lblBirthday,
           self.lblPersonalEmail,
-          self.lblTradeName,
           self.lblCity,
           self.lblProvinde,
           self.lblBusinessEmail,
@@ -115,10 +119,24 @@ UITextViewDelegate
         
         self.btnEdit.hidden = [isEditing boolValue];
         self.btnSave.hidden = ![isEditing boolValue];
+        self.btnGenderSelect.enabled = [isEditing boolValue];
     }];
     
     [self observerTheImages];
     
+}
+
+- (NSDictionary *)genderArrayDatasource {
+    if (!_genderArrayDatasource) {
+        _genderArrayDatasource =
+                            @{
+                                @"UNDEFINED": @"Chọn giới tính",
+                                @"MALE": @"Nam",
+                                @"FEMALE": @"Nữ"
+                                };
+    }
+    
+    return _genderArrayDatasource;
 }
 
 - (void)observerTheImages {
@@ -201,9 +219,9 @@ UITextViewDelegate
     
     
     // 3rd section
-    self.lblTradeName.text = user.name;
     self.txtAddress.text = user.address;
     self.lblBusinessEmail.text = user.email;
+    self.lblGender.text = user.gender;
     
     NSDateFormatter *dateFormatter = [MBNUser sharedDateFormatter];
     self.lblCreateAt.text = [dateFormatter stringFromDate:user.createAt];
@@ -227,7 +245,7 @@ UITextViewDelegate
         return;
     }
     
-    RMDateSelectionViewController *dateSelectionVC = [RMDateSelectionViewController dateSelectionController];
+RMDateSelectionViewController *dateSelectionVC = [RMDateSelectionViewController dateSelectionController];
     
     dateSelectionVC.datePicker.datePickerMode = UIDatePickerModeDate;
     
@@ -295,13 +313,14 @@ UITextViewDelegate
         @"birthday": self.lblBirthday.text,
         @"identity_number": self.lblIdentity.text,
         @"license": self.lblLicense.text,
+        @"password": self.lblPassword.text,
         @"address": @{
                 @"address": self.txtAddress.text,
                 @"longitude": @"",
                 @"latide": @""
         },
         @"email": self.lblPersonalEmail.text,
-        @"gender": @"nam",
+        @"gender": [self.genderArrayDatasource dictionaryBySwappingKeysAndValues][self.lblGender.text],
         @"about": @"",
         @"password": @""
     };
@@ -314,6 +333,38 @@ UITextViewDelegate
         user.token = oldUser.token;
         [[MBNUserManager sharedProvider] setLoggedUser:user];
     }];
+}
+
+- (IBAction)onBtnSelectGender:(id)sender {
+    RMPickerViewController *pickerGender = [RMPickerViewController pickerController];
+    
+    pickerGender.picker.delegate = self;
+    pickerGender.picker.dataSource = self;
+    
+    [self presentViewController:pickerGender animated:YES completion:nil];
+    
+    [pickerGender setSelectButtonAction:^(RMPickerViewController *picker, NSArray *arr) {
+        NSArray *datasource = [[self.genderArrayDatasource allValues] reverse];
+        self.lblGender.text = datasource[[[arr firstObject] integerValue]];
+    }];
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return self.genderArrayDatasource.allKeys.count;
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    NSArray *datasource = [[self.genderArrayDatasource allValues] reverse];
+    self.lblGender.text = datasource[row];
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    NSArray *datasource = [[self.genderArrayDatasource allValues] reverse];
+    return datasource[row];
 }
 
 #pragma mark - Helpers

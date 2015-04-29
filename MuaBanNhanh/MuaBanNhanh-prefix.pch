@@ -65,6 +65,7 @@
 #import <GPUImage/GPUImage.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <AFNetworking/UIButton+AFNetworking.h>
+#import <RMPickerViewController/RMPickerViewController.h>
 #import <IDMPhotoBrowser/IDMPhotoBrowser.h>
 #import "IMGLYKit.h"
 #import "TKDesignableButton.h"
@@ -79,8 +80,10 @@
 #import "UIImage+IMGLYKitAdditions.h"
 #import "UIViewController+Additions.h"
 #import "UITextView+MeasureContent.h"
+#import "NSDictionary+Additions.h"
 #import "NSData+Base64.h"
 #import "UIView+Additions.h"
+#import "NSArray+Additions.h"
 #import "TMECameraVC.h"
 #import "TMECropImageVC.h"
 #import "TMECameraFilter.h"

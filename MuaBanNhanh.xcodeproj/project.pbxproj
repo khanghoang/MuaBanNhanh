@@ -61,6 +61,9 @@
 		05A3E3501ACAF9E100E55215 /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A3E34F1ACAF9E100E55215 /* Colours.m */; };
 		05AD0A4E1AEBFF280007FAED /* MBNProvince.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AD0A4D1AEBFF280007FAED /* MBNProvince.m */; };
 		05AD0A511AEC0F560007FAED /* UITextView+MeasureContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AD0A501AEC0F560007FAED /* UITextView+MeasureContent.m */; };
+		05B29B691AF0AD200019FB8F /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29B681AF0AD200019FB8F /* NSArray+Additions.m */; };
+		05B29B6C1AF0AE2F0019FB8F /* NSDictionary+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29B6B1AF0AE2F0019FB8F /* NSDictionary+Additions.m */; };
+		05B29B6F1AF0AF360019FB8F /* NSObject+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29B6E1AF0AF360019FB8F /* NSObject+Additions.m */; };
 		05B905E21AE802CD00B85BEC /* PBImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B905DF1AE802CD00B85BEC /* PBImageHelper.m */; };
 		05B905E31AE802CD00B85BEC /* TMEPhotoButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B905E11AE802CD00B85BEC /* TMEPhotoButton.m */; };
 		05B905F41AE8033900B85BEC /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B905E61AE8033900B85BEC /* Camera.storyboard */; };
@@ -289,6 +292,12 @@
 		05AD0A4D1AEBFF280007FAED /* MBNProvince.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNProvince.m; sourceTree = "<group>"; };
 		05AD0A4F1AEC0F560007FAED /* UITextView+MeasureContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+MeasureContent.h"; sourceTree = "<group>"; };
 		05AD0A501AEC0F560007FAED /* UITextView+MeasureContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+MeasureContent.m"; sourceTree = "<group>"; };
+		05B29B671AF0AD200019FB8F /* NSArray+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Additions.h"; sourceTree = "<group>"; };
+		05B29B681AF0AD200019FB8F /* NSArray+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Additions.m"; sourceTree = "<group>"; };
+		05B29B6A1AF0AE2F0019FB8F /* NSDictionary+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Additions.h"; sourceTree = "<group>"; };
+		05B29B6B1AF0AE2F0019FB8F /* NSDictionary+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Additions.m"; sourceTree = "<group>"; };
+		05B29B6D1AF0AF360019FB8F /* NSObject+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Additions.h"; sourceTree = "<group>"; };
+		05B29B6E1AF0AF360019FB8F /* NSObject+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Additions.m"; sourceTree = "<group>"; };
 		05B905DE1AE802CD00B85BEC /* PBImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBImageHelper.h; sourceTree = "<group>"; };
 		05B905DF1AE802CD00B85BEC /* PBImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBImageHelper.m; sourceTree = "<group>"; };
 		05B905E01AE802CD00B85BEC /* TMEPhotoButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMEPhotoButton.h; sourceTree = "<group>"; };
@@ -814,6 +823,12 @@
 		05A3E34A1ACAF9CC00E55215 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				05B29B6D1AF0AF360019FB8F /* NSObject+Additions.h */,
+				05B29B6E1AF0AF360019FB8F /* NSObject+Additions.m */,
+				05B29B6A1AF0AE2F0019FB8F /* NSDictionary+Additions.h */,
+				05B29B6B1AF0AE2F0019FB8F /* NSDictionary+Additions.m */,
+				05B29B671AF0AD200019FB8F /* NSArray+Additions.h */,
+				05B29B681AF0AD200019FB8F /* NSArray+Additions.m */,
 				05DC9E811AE82F6500272C10 /* NSData+Base64.h */,
 				05DC9E821AE82F6500272C10 /* NSData+Base64.m */,
 				05B9070D1AE807E200B85BEC /* UIView+Additions.h */,
@@ -1393,6 +1408,7 @@
 				0561C9B31ACFC31100BEDA6D /* UIViewController+SideViewFunctions.m in Sources */,
 				05D84C001AD63C1000497FA0 /* MBNCategoryProductsViewController.m in Sources */,
 				05B906B71AE805AE00B85BEC /* IMGLYCameraViewController.m in Sources */,
+				05B29B691AF0AD200019FB8F /* NSArray+Additions.m in Sources */,
 				0508672D1AD6F08F00038F87 /* UIUnregisterHomePopup.m in Sources */,
 				05DC9E831AE82F6500272C10 /* NSData+Base64.m in Sources */,
 				05A3E3501ACAF9E100E55215 /* Colours.m in Sources */,
@@ -1467,6 +1483,8 @@
 				05B906B31AE805AE00B85BEC /* IMGLYBWSoftFilter.m in Sources */,
 				05B906BD1AE805AE00B85BEC /* IMGLYDefaultEditorImageProvider.m in Sources */,
 				0571AF9C1AD2AAB300943F85 /* MBNPopupCustomButton.m in Sources */,
+				05B29B6F1AF0AF360019FB8F /* NSObject+Additions.m in Sources */,
+				05B29B6C1AF0AE2F0019FB8F /* NSDictionary+Additions.m in Sources */,
 				05B9070F1AE807E200B85BEC /* UIView+Additions.m in Sources */,
 				05B906EC1AE805AE00B85BEC /* IMGLYQuoziFilter.m in Sources */,
 				05E03D9A1AC9318D004426CE /* main.m in Sources */,
