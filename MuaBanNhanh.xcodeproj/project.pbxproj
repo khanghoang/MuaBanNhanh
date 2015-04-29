@@ -16,6 +16,9 @@
 		0516AF1B1AD5246500DACF05 /* MBNSubcategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0516AF1A1AD5246500DACF05 /* MBNSubcategoryViewController.m */; };
 		05184A5B1AEF439500C87DC6 /* AFHTTPRequestOperationManager+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 05184A5A1AEF439500C87DC6 /* AFHTTPRequestOperationManager+Helper.m */; };
 		051C83271AECFA99008657AB /* MBNProductImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 051C83261AECFA99008657AB /* MBNProductImageCell.m */; };
+		0524FF2E1AF143C400A42C78 /* MBNManageProductTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0524FF2D1AF143C400A42C78 /* MBNManageProductTypeViewController.m */; };
+		0524FF311AF1454300A42C78 /* MBNManageProductViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0524FF301AF1454300A42C78 /* MBNManageProductViewModel.m */; };
+		0524FF341AF1468500A42C78 /* MBNManageProductTypeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0524FF331AF1468500A42C78 /* MBNManageProductTypeCollectionViewCell.m */; };
 		052E84BA1AE94C9300418014 /* TKDesignableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 052E84B91AE94C9300418014 /* TKDesignableButton.m */; };
 		053978FA1ACC1FCD007C4676 /* MBNRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053978F91ACC1FCD007C4676 /* MBNRevealViewController.m */; };
 		053978FE1ACC274E007C4676 /* MBNCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 053978FD1ACC274E007C4676 /* MBNCategory.m */; };
@@ -46,7 +49,6 @@
 		0592B62F1AF0FC2400FACDF5 /* TKDesignableLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0592B62E1AF0FC2400FACDF5 /* TKDesignableLabel.m */; };
 		0592B6321AF0FD0800FACDF5 /* MBNManageProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0592B6311AF0FD0800FACDF5 /* MBNManageProductViewController.m */; };
 		0592B6351AF0FD2D00FACDF5 /* MBNManageProductCellManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0592B6341AF0FD2D00FACDF5 /* MBNManageProductCellManager.m */; };
-		0592B6381AF0FE1100FACDF5 /* MBNManageProductContentLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 0592B6371AF0FE1100FACDF5 /* MBNManageProductContentLoading.m */; };
 		0592B63B1AF0FE3100FACDF5 /* MBNManageProductLoadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0592B63A1AF0FE3100FACDF5 /* MBNManageProductLoadOperation.m */; };
 		0593B7E71AD12B3800A492F3 /* MBNCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0593B7E51AD12B3800A492F3 /* MBNCollectionHeaderView.m */; };
 		0593B7E81AD12B3800A492F3 /* MBNCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0593B7E61AD12B3800A492F3 /* MBNCollectionHeaderView.xib */; };
@@ -219,6 +221,12 @@
 		05184A5A1AEF439500C87DC6 /* AFHTTPRequestOperationManager+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPRequestOperationManager+Helper.m"; sourceTree = "<group>"; };
 		051C83251AECFA99008657AB /* MBNProductImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNProductImageCell.h; sourceTree = "<group>"; };
 		051C83261AECFA99008657AB /* MBNProductImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNProductImageCell.m; sourceTree = "<group>"; };
+		0524FF2C1AF143C400A42C78 /* MBNManageProductTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNManageProductTypeViewController.h; sourceTree = "<group>"; };
+		0524FF2D1AF143C400A42C78 /* MBNManageProductTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNManageProductTypeViewController.m; sourceTree = "<group>"; };
+		0524FF2F1AF1454300A42C78 /* MBNManageProductViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNManageProductViewModel.h; sourceTree = "<group>"; };
+		0524FF301AF1454300A42C78 /* MBNManageProductViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNManageProductViewModel.m; sourceTree = "<group>"; };
+		0524FF321AF1468500A42C78 /* MBNManageProductTypeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNManageProductTypeCollectionViewCell.h; sourceTree = "<group>"; };
+		0524FF331AF1468500A42C78 /* MBNManageProductTypeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNManageProductTypeCollectionViewCell.m; sourceTree = "<group>"; };
 		052E84B81AE94C9300418014 /* TKDesignableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDesignableButton.h; sourceTree = "<group>"; };
 		052E84B91AE94C9300418014 /* TKDesignableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDesignableButton.m; sourceTree = "<group>"; };
 		053978F81ACC1FCD007C4676 /* MBNRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNRevealViewController.h; sourceTree = "<group>"; };
@@ -273,8 +281,6 @@
 		0592B6311AF0FD0800FACDF5 /* MBNManageProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNManageProductViewController.m; sourceTree = "<group>"; };
 		0592B6331AF0FD2D00FACDF5 /* MBNManageProductCellManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNManageProductCellManager.h; sourceTree = "<group>"; };
 		0592B6341AF0FD2D00FACDF5 /* MBNManageProductCellManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNManageProductCellManager.m; sourceTree = "<group>"; };
-		0592B6361AF0FE1100FACDF5 /* MBNManageProductContentLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNManageProductContentLoading.h; sourceTree = "<group>"; };
-		0592B6371AF0FE1100FACDF5 /* MBNManageProductContentLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNManageProductContentLoading.m; sourceTree = "<group>"; };
 		0592B6391AF0FE3100FACDF5 /* MBNManageProductLoadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNManageProductLoadOperation.h; sourceTree = "<group>"; };
 		0592B63A1AF0FE3100FACDF5 /* MBNManageProductLoadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNManageProductLoadOperation.m; sourceTree = "<group>"; };
 		0593B7E41AD12B3800A492F3 /* MBNCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNCollectionHeaderView.h; sourceTree = "<group>"; };
@@ -783,10 +789,14 @@
 				0592B6311AF0FD0800FACDF5 /* MBNManageProductViewController.m */,
 				0592B6331AF0FD2D00FACDF5 /* MBNManageProductCellManager.h */,
 				0592B6341AF0FD2D00FACDF5 /* MBNManageProductCellManager.m */,
-				0592B6361AF0FE1100FACDF5 /* MBNManageProductContentLoading.h */,
-				0592B6371AF0FE1100FACDF5 /* MBNManageProductContentLoading.m */,
 				0592B6391AF0FE3100FACDF5 /* MBNManageProductLoadOperation.h */,
 				0592B63A1AF0FE3100FACDF5 /* MBNManageProductLoadOperation.m */,
+				0524FF2C1AF143C400A42C78 /* MBNManageProductTypeViewController.h */,
+				0524FF2D1AF143C400A42C78 /* MBNManageProductTypeViewController.m */,
+				0524FF2F1AF1454300A42C78 /* MBNManageProductViewModel.h */,
+				0524FF301AF1454300A42C78 /* MBNManageProductViewModel.m */,
+				0524FF321AF1468500A42C78 /* MBNManageProductTypeCollectionViewCell.h */,
+				0524FF331AF1468500A42C78 /* MBNManageProductTypeCollectionViewCell.m */,
 			);
 			path = "Manage Product";
 			sourceTree = "<group>";
@@ -1456,6 +1466,7 @@
 				05B906C41AE805AE00B85BEC /* IMGLYEditorCropMenu.m in Sources */,
 				05B906B81AE805AE00B85BEC /* IMGLYChestNutFilter.m in Sources */,
 				05B906CE1AE805AE00B85BEC /* IMGLYEditorTextMenu.m in Sources */,
+				0524FF2E1AF143C400A42C78 /* MBNManageProductTypeViewController.m in Sources */,
 				05B907031AE8073A00B85BEC /* UIImage+Additions.m in Sources */,
 				05DC9E7D1AE822B400272C10 /* MBNCustomImagePickerViewController.m in Sources */,
 				0592B62F1AF0FC2400FACDF5 /* TKDesignableLabel.m in Sources */,
@@ -1497,6 +1508,7 @@
 				053979021ACC3B7C007C4676 /* MBNCategoryManager.m in Sources */,
 				05B906AD1AE805AE00B85BEC /* IMGLYAbstractEditorBaseViewController.m in Sources */,
 				05B906D91AE805AE00B85BEC /* IMGLYFrontFilter.m in Sources */,
+				0524FF311AF1454300A42C78 /* MBNManageProductViewModel.m in Sources */,
 				053979141ACC4B76007C4676 /* MBNHomeContainerViewController.m in Sources */,
 				05958D9F1AD9052700F7A708 /* MBNNavigationViewController.m in Sources */,
 				0567F31D1ACDA4FC0093D23F /* MBNHomeTopCollectionViewCell.m in Sources */,
@@ -1529,8 +1541,8 @@
 				05B905F61AE8033900B85BEC /* TMECropImageVC.m in Sources */,
 				05B906C71AE805AE00B85BEC /* IMGLYEditorFilterViewController.m in Sources */,
 				05AD0A4E1AEBFF280007FAED /* MBNProvince.m in Sources */,
+				0524FF341AF1468500A42C78 /* MBNManageProductTypeCollectionViewCell.m in Sources */,
 				0561C9B01ACFBD9B00BEDA6D /* UIViewController+AddHambugerButton.m in Sources */,
-				0592B6381AF0FE1100FACDF5 /* MBNManageProductContentLoading.m in Sources */,
 				05B906B51AE805AE00B85BEC /* IMGLYCameraController.m in Sources */,
 				0592B6351AF0FD2D00FACDF5 /* MBNManageProductCellManager.m in Sources */,
 				05B906C11AE805AE00B85BEC /* IMGLYEditorCircleGradientView.m in Sources */,

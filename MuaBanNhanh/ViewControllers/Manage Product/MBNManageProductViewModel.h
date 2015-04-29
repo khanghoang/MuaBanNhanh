@@ -1,5 +1,5 @@
 //
-//  MBNManageProductContentLoading.h
+//  MBNManageProductViewModel.h
 //  MuaBanNhanh
 //
 //  Created by Khang Hoang Trieu on 4/29/15.
@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MBNManageProductContentLoading : NSObject
+@interface MBNManageProductViewModel : NSObject
+
+@property (readonly, nonatomic) NSDictionary *types;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "MBNEditUserInformationViewController.h"
 #import "TKDesignableView.h"
+#import "MBNManageProductViewController.h"
 
 @interface MBNEditUserInformationViewController ()
 <
@@ -284,6 +285,11 @@ RMDateSelectionViewController *dateSelectionVC = [RMDateSelectionViewController 
     };
     
     [self.navigationController pushViewController:self.cameraVC animated:YES];
+}
+
+- (IBAction)onBtnManageProduct:(id)sender {
+    MBNManageProductViewController *productsVC = [MBNManageProductViewController tme_instantiateFromStoryboardNamed:@"ManageProduct"];
+    [self.navigationController pushViewController:productsVC animated:YES];
 }
 
 - (void)showEditorVCWithImage:(UIImage *)image button:(UIButton *)button
