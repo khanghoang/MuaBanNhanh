@@ -10,8 +10,10 @@
 
 @implementation MBNExpandableTableCell
 
-- (void)awakeFromNib {
-    // Initialization code
+- (void)setSelected:(BOOL)selected
+{
+    [super setSelected:selected];
+    self.tickLabel.hidden = !selected;
 }
 
 @end
