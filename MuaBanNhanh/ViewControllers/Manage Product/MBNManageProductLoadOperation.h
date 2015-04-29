@@ -9,5 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface MBNManageProductLoadOperation : NSBlockOperation
+<
+KHLoadingOperationProtocol
+>
+
+- (instancetype)initWithType:(NSString *)type andPage:(NSUInteger)page;
+- (void)loadData:(void (^)(NSArray *data, NSError *error))finishBlock;
 
 @end

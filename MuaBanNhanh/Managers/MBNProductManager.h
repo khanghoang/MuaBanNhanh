@@ -18,4 +18,6 @@
 
 + (void)getProductWithUserID:(NSNumber *)userID andPage:(NSInteger)page completeBlock:(void (^) (NSArray *arrProduct, NSError *error))completeBlock;
 
++ (void)getProductWithType:(NSString *)typeString andPage:(NSInteger)page completeBlock:(void (^) (NSArray *arrProduct, NSError *error))completeBlock;
+
 @end

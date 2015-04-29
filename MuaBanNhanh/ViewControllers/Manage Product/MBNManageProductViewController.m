@@ -9,6 +9,7 @@
 #import "MBNManageProductViewController.h"
 #import "MBNManageProductViewModel.h"
 #import "MBNManageProductTypeViewController.h"
+#import "MBNManageProductPageViewController.h"
 
 @interface MBNManageProductViewController ()
 
@@ -32,8 +33,13 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    MBNManageProductTypeViewController *typesVC = segue.destinationViewController;
-    typesVC.viewModel = self.viewModel;
+    if ([segue.identifier isEqualToString:@"PageView"]) {
+        MBNManageProductPageViewController *typesVC = segue.destinationViewController;
+        typesVC.viewModel = self.viewModel;
+    } else {
+        MBNManageProductTypeViewController *typesVC = segue.destinationViewController;
+        typesVC.viewModel = self.viewModel;
+    }
 }
 
 @end

@@ -19,6 +19,10 @@
 		0524FF2E1AF143C400A42C78 /* MBNManageProductTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0524FF2D1AF143C400A42C78 /* MBNManageProductTypeViewController.m */; };
 		0524FF311AF1454300A42C78 /* MBNManageProductViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0524FF301AF1454300A42C78 /* MBNManageProductViewModel.m */; };
 		0524FF341AF1468500A42C78 /* MBNManageProductTypeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0524FF331AF1468500A42C78 /* MBNManageProductTypeCollectionViewCell.m */; };
+		0524FF371AF1546600A42C78 /* MBNManageProductPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0524FF361AF1546600A42C78 /* MBNManageProductPageViewController.m */; };
+		0524FF3D1AF1551000A42C78 /* MBNMangeProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0524FF3C1AF1551000A42C78 /* MBNMangeProductListViewController.m */; };
+		0524FF401AF1595500A42C78 /* MBNMangeProductCellFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0524FF3F1AF1595500A42C78 /* MBNMangeProductCellFactory.m */; };
+		0524FF431AF1599100A42C78 /* MBNManageProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0524FF421AF1599100A42C78 /* MBNManageProductCollectionViewCell.m */; };
 		052E84BA1AE94C9300418014 /* TKDesignableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 052E84B91AE94C9300418014 /* TKDesignableButton.m */; };
 		053978FA1ACC1FCD007C4676 /* MBNRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053978F91ACC1FCD007C4676 /* MBNRevealViewController.m */; };
 		053978FE1ACC274E007C4676 /* MBNCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 053978FD1ACC274E007C4676 /* MBNCategory.m */; };
@@ -227,6 +231,14 @@
 		0524FF301AF1454300A42C78 /* MBNManageProductViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNManageProductViewModel.m; sourceTree = "<group>"; };
 		0524FF321AF1468500A42C78 /* MBNManageProductTypeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNManageProductTypeCollectionViewCell.h; sourceTree = "<group>"; };
 		0524FF331AF1468500A42C78 /* MBNManageProductTypeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNManageProductTypeCollectionViewCell.m; sourceTree = "<group>"; };
+		0524FF351AF1546600A42C78 /* MBNManageProductPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNManageProductPageViewController.h; sourceTree = "<group>"; };
+		0524FF361AF1546600A42C78 /* MBNManageProductPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNManageProductPageViewController.m; sourceTree = "<group>"; };
+		0524FF3B1AF1551000A42C78 /* MBNMangeProductListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNMangeProductListViewController.h; sourceTree = "<group>"; };
+		0524FF3C1AF1551000A42C78 /* MBNMangeProductListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNMangeProductListViewController.m; sourceTree = "<group>"; };
+		0524FF3E1AF1595500A42C78 /* MBNMangeProductCellFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNMangeProductCellFactory.h; sourceTree = "<group>"; };
+		0524FF3F1AF1595500A42C78 /* MBNMangeProductCellFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNMangeProductCellFactory.m; sourceTree = "<group>"; };
+		0524FF411AF1599100A42C78 /* MBNManageProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNManageProductCollectionViewCell.h; sourceTree = "<group>"; };
+		0524FF421AF1599100A42C78 /* MBNManageProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNManageProductCollectionViewCell.m; sourceTree = "<group>"; };
 		052E84B81AE94C9300418014 /* TKDesignableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDesignableButton.h; sourceTree = "<group>"; };
 		052E84B91AE94C9300418014 /* TKDesignableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDesignableButton.m; sourceTree = "<group>"; };
 		053978F81ACC1FCD007C4676 /* MBNRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNRevealViewController.h; sourceTree = "<group>"; };
@@ -785,6 +797,8 @@
 			isa = PBXGroup;
 			children = (
 				0592B62B1AF0F78800FACDF5 /* ManageProduct.storyboard */,
+				0524FF3B1AF1551000A42C78 /* MBNMangeProductListViewController.h */,
+				0524FF3C1AF1551000A42C78 /* MBNMangeProductListViewController.m */,
 				0592B6301AF0FD0800FACDF5 /* MBNManageProductViewController.h */,
 				0592B6311AF0FD0800FACDF5 /* MBNManageProductViewController.m */,
 				0592B6331AF0FD2D00FACDF5 /* MBNManageProductCellManager.h */,
@@ -797,6 +811,12 @@
 				0524FF301AF1454300A42C78 /* MBNManageProductViewModel.m */,
 				0524FF321AF1468500A42C78 /* MBNManageProductTypeCollectionViewCell.h */,
 				0524FF331AF1468500A42C78 /* MBNManageProductTypeCollectionViewCell.m */,
+				0524FF351AF1546600A42C78 /* MBNManageProductPageViewController.h */,
+				0524FF361AF1546600A42C78 /* MBNManageProductPageViewController.m */,
+				0524FF3E1AF1595500A42C78 /* MBNMangeProductCellFactory.h */,
+				0524FF3F1AF1595500A42C78 /* MBNMangeProductCellFactory.m */,
+				0524FF411AF1599100A42C78 /* MBNManageProductCollectionViewCell.h */,
+				0524FF421AF1599100A42C78 /* MBNManageProductCollectionViewCell.m */,
 			);
 			path = "Manage Product";
 			sourceTree = "<group>";
@@ -1479,6 +1499,7 @@
 				05B905F91AE8033900B85BEC /* TMECameraFilterCell.m in Sources */,
 				0561C9B31ACFC31100BEDA6D /* UIViewController+SideViewFunctions.m in Sources */,
 				05D84C001AD63C1000497FA0 /* MBNCategoryProductsViewController.m in Sources */,
+				0524FF431AF1599100A42C78 /* MBNManageProductCollectionViewCell.m in Sources */,
 				05B906B71AE805AE00B85BEC /* IMGLYCameraViewController.m in Sources */,
 				05B29B691AF0AD200019FB8F /* NSArray+Additions.m in Sources */,
 				0508672D1AD6F08F00038F87 /* UIUnregisterHomePopup.m in Sources */,
@@ -1558,6 +1579,7 @@
 				0508671F1AD6EE7000038F87 /* MBNShowLoginSegue.m in Sources */,
 				05B906EF1AE805AE00B85BEC /* IMGLYShutterView.m in Sources */,
 				05B906B31AE805AE00B85BEC /* IMGLYBWSoftFilter.m in Sources */,
+				0524FF3D1AF1551000A42C78 /* MBNMangeProductListViewController.m in Sources */,
 				05B906BD1AE805AE00B85BEC /* IMGLYDefaultEditorImageProvider.m in Sources */,
 				0571AF9C1AD2AAB300943F85 /* MBNPopupCustomButton.m in Sources */,
 				05B29B6F1AF0AF360019FB8F /* NSObject+Additions.m in Sources */,
@@ -1571,6 +1593,7 @@
 				05B906CF1AE805AE00B85BEC /* IMGLYEditorTextViewController.m in Sources */,
 				0593B7EE1AD180F200A492F3 /* MBNActionsManagers.m in Sources */,
 				05B906F21AE805AE00B85BEC /* IMGLYTejasFilter.m in Sources */,
+				0524FF371AF1546600A42C78 /* MBNManageProductPageViewController.m in Sources */,
 				05B905FA1AE8033900B85BEC /* TMECameraFilterSelectorVC.m in Sources */,
 				05D84BFD1AD632A000497FA0 /* MBNSegueShowProductFromCategory.m in Sources */,
 				05B906CB1AE805AE00B85BEC /* IMGLYEditorResetViewController.m in Sources */,
@@ -1614,6 +1637,7 @@
 				05B906B41AE805AE00B85BEC /* IMGLYCameraBottomBarView.m in Sources */,
 				05B906E51AE805AE00B85BEC /* IMGLYNavigationBar.m in Sources */,
 				05B906DF1AE805AE00B85BEC /* IMGLYLeninFilter.m in Sources */,
+				0524FF401AF1595500A42C78 /* MBNMangeProductCellFactory.m in Sources */,
 				0593B7F81AD18E6500A492F3 /* IndexHomePopupViewController.m in Sources */,
 				B62419D71AEFC3690040DD89 /* MBNCreateProductViewModel.m in Sources */,
 				05F3E54D1ADB77BA00D432AF /* MBNRegisterViewController.m in Sources */,
