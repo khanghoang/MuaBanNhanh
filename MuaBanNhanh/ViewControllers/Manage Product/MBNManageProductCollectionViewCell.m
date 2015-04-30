@@ -7,6 +7,7 @@
 //
 
 #import "MBNManageProductCollectionViewCell.h"
+#import "TKDesignableView.h"
 #import "TKDesignableLabel.h"
 
 @interface MBNManageProductCollectionViewCell()
@@ -16,10 +17,20 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblPrice;
 @property (weak, nonatomic) IBOutlet UILabel *lblViewCount;
 @property (weak, nonatomic) IBOutlet TKDesignableLabel *lblInactive;
+@property (weak, nonatomic) IBOutlet TKDesignableView *cornerRadiusContentView;
 
 @end
 
 @implementation MBNManageProductCollectionViewCell
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    [self.cornerRadiusContentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.contentView);
+    }];
+}
 
 - (void)configWithData:(id)data {
     
