@@ -66,38 +66,43 @@
     self.collectionView.dataSource = self.dataSource;
 }
 
+- (void)dealloc {
+    self.filters = nil;
+    self.dataSource = nil;
+}
+
 - (void)setupFilters
 {
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        UIImage *staticImage = [UIImage imageNamed:@"static_filter_image"];
-//        [[IMGLYPhotoProcessor sharedPhotoProcessor] setInputImage:staticImage];
-//
-//        NSMutableArray *filters = [NSMutableArray array];
-//        for (NSNumber *filterTypeNumber in self.filtersTypes) {
-//            TMECameraFilter *filter = [[TMECameraFilter alloc] init];
-//            filter.filterType = filterTypeNumber.integerValue;
-//            filter.filterName = [self filterNameFromType:filter.filterType];
-//
-//            IMGLYProcessingJob *job = [[IMGLYProcessingJob alloc] init];
-//            IMGLYFilterOperation *operation = [[IMGLYFilterOperation alloc] init];
-//            operation.filterType = filter.filterType;
-//            [job addOperation:(IMGLYOperation *)operation];
-//            [[IMGLYPhotoProcessor sharedPhotoProcessor] performProcessingJob:job];
-//
-//            filter.image = [[IMGLYPhotoProcessor sharedPhotoProcessor] outputImage];
-//
-//            [filters addObject:filter];
-//        }
-//        
-//        @weakify(self);
-//        
-//        self.filters = filters;
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            @strongify(self);
-//            self.dataSource.items = self.filters;
-//            [self.collectionView reloadData];
-//        });
-//    });
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        UIImage *staticImage = [UIImage imageNamed:@"static_filter_image"];
+        [[IMGLYPhotoProcessor sharedPhotoProcessor] setInputImage:staticImage];
+
+        NSMutableArray *filters = [NSMutableArray array];
+        for (NSNumber *filterTypeNumber in self.filtersTypes) {
+            TMECameraFilter *filter = [[TMECameraFilter alloc] init];
+            filter.filterType = filterTypeNumber.integerValue;
+            filter.filterName = [self filterNameFromType:filter.filterType];
+
+            IMGLYProcessingJob *job = [[IMGLYProcessingJob alloc] init];
+            IMGLYFilterOperation *operation = [[IMGLYFilterOperation alloc] init];
+            operation.filterType = filter.filterType;
+            [job addOperation:(IMGLYOperation *)operation];
+            [[IMGLYPhotoProcessor sharedPhotoProcessor] performProcessingJob:job];
+
+            filter.image = [[IMGLYPhotoProcessor sharedPhotoProcessor] outputImage];
+
+            [filters addObject:filter];
+        }
+        
+        @weakify(self);
+        
+        self.filters = filters;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            @strongify(self);
+            self.dataSource.items = self.filters;
+            [self.collectionView reloadData];
+        });
+    });
 }
 
 #pragma mark - Public Interface
