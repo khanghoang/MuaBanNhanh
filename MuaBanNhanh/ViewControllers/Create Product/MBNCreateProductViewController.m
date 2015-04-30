@@ -11,6 +11,7 @@
 #import "MBNCreateProductViewModel.h"
 #import "MBNPaddingTextField.h"
 #import "MBNTextView.h"
+#import "MBNTagCell.h"
 #import <RMPickerViewController.h>
 
 typedef NS_ENUM(NSInteger, PickerViewType){
@@ -19,7 +20,7 @@ typedef NS_ENUM(NSInteger, PickerViewType){
     PickerViewTypeTransaction
 };
 
-@interface MBNCreateProductViewController () <UIPickerViewDelegate, UIPickerViewDataSource>
+@interface MBNCreateProductViewController () <UIPickerViewDelegate, UIPickerViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet MBNPaddingTextField *productTitleTextField;
 @property (weak, nonatomic) IBOutlet UILabel *productTitleValidationLabel;
@@ -30,6 +31,8 @@ typedef NS_ENUM(NSInteger, PickerViewType){
 @property (weak, nonatomic) IBOutlet MBNPaddingTextField *productPriceTextField;
 @property (weak, nonatomic) IBOutlet MBNTextView *productDescriptionTextView;
 @property (weak, nonatomic) IBOutlet UIButton *continueButton;
+@property (weak, nonatomic) IBOutlet UICollectionView *tagCollectionView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *tagCollectionViewHeightConstraint;
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *productImagePickButtons;
 @property (strong, nonatomic) IBOutletCollection(MBNTextView) NSArray *productImageDescriptionTextViews;
@@ -64,6 +67,7 @@ typedef NS_ENUM(NSInteger, PickerViewType){
     [self setupViewModel];
     [self setupCommandForButtons];
     [self setupTextFieldBorderLine];
+    [self setupCollectionViewHeightChangingSignal];
 }
 
 - (void)getProvinces {
@@ -83,6 +87,24 @@ typedef NS_ENUM(NSInteger, PickerViewType){
     RAC(self, viewModel.provinceSelectedIndex) = RACObserve(self, cityPickButton.tag);
     RAC(self, productTitleValidationLabel.hidden) = [self.productTitleTextField.rac_textSignal map:^id(NSString *text) {
         return @(text.length);
+    }];
+    @weakify(self);
+    [RACObserve(self, viewModel.selectedCategories) subscribeNext:^(NSArray *selectedCategories) {
+        @strongify(self);
+        [self.tagCollectionView reloadData];
+    }];
+}
+
+- (void)setupCollectionViewHeightChangingSignal
+{
+    RACSignal *collectionViewHeightChangingSignal = [[RACObserve(self, tagCollectionView.contentSize) map:^id(NSValue *collectionViewContentSizeValue) {
+        return @(collectionViewContentSizeValue.CGSizeValue.height);
+    }] ignore:nil];
+    RAC(self, tagCollectionViewHeightConstraint.constant) = collectionViewHeightChangingSignal;
+    @weakify(self);
+    [collectionViewHeightChangingSignal subscribeNext:^(NSNumber *contentSizeHeight) {
+        @strongify(self);
+        [self.view layoutIfNeeded];
     }];
 }
 
@@ -111,6 +133,7 @@ typedef NS_ENUM(NSInteger, PickerViewType){
     self.repickCategoryButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *sender) {
         @strongify(self);
         MBNSelectCategoryViewController *vc = [[UIStoryboard storyboardWithName:@"SelectCategory" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([MBNSelectCategoryViewController class])];
+        vc.createProductViewModel = self.viewModel;
         [self.navigationController pushViewController:vc animated:YES];
         return [RACSignal empty];
     }];
@@ -201,6 +224,28 @@ typedef NS_ENUM(NSInteger, PickerViewType){
     } else {
         return self.viewModel.productTransactionTypeTitles[row];
     }
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    MBNTagCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[MBNTagCell kind] forIndexPath:indexPath];
+    [cell configWithString:self.viewModel.selectedCategories[indexPath.item]];
+    cell.tagButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *sender) {
+        NSMutableArray *selectedCategories = [self.viewModel mutableArrayValueForKey:@"selectedCategories"];
+        [selectedCategories removeObjectAtIndex:indexPath.item];
+        return [RACSignal empty];
+    }];
+    return cell;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.viewModel.selectedCategories.count;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [MBNTagCell getCellSizeWithString:self.viewModel.selectedCategories[indexPath.item]];
 }
 
 @end
