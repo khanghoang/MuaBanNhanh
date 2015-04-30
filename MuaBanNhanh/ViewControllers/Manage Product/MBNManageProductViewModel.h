@@ -11,5 +11,12 @@
 @interface MBNManageProductViewModel : NSObject
 
 @property (readonly, nonatomic) NSDictionary *types;
+@property (readonly, nonatomic) NSDictionary *viewControllers;
+@property (readonly, nonatomic) NSArray *order;
+
+@property (strong, nonatomic) NSNumber *currentIndex;
+
+- (NSInteger)indexOfViewController:(UIViewController *)controller;
+- (NSInteger)indexOfViewTitle:(NSString *)aTitle;
 
 @end

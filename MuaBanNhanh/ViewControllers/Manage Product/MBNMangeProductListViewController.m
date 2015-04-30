@@ -26,6 +26,15 @@ KHBasicOrderedCollectionViewControllerProtocol
 
 @implementation MBNMangeProductListViewController
 
+- (instancetype)initWithStringType:(NSString *)type {
+    self = [super init];
+    if (self) {
+        _typeString = type;
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -49,7 +58,7 @@ KHBasicOrderedCollectionViewControllerProtocol
 }
 
 - (id <KHLoadingOperationProtocol> )loadingOperationForSectionViewModel:(id <KHTableViewSectionModel> )viewModel forPage:(NSUInteger)page {
-    return [[MBNManageProductLoadOperation alloc] initWithType:@"INACTIVED" andPage:page+1];
+    return [[MBNManageProductLoadOperation alloc] initWithType:self.typeString andPage:page+1];
 }
 
 - (void)presentPopupMenuForIndexPath:(NSIndexPath *)indexPath fromButton:(UIButton *)sender

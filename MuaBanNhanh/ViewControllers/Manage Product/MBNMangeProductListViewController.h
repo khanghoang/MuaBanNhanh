@@ -12,5 +12,8 @@
 @interface MBNMangeProductListViewController : KHBasicOrderedCollectionViewController
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) NSString *typeString;
+
+- (instancetype)initWithStringType:(NSString *)type;
 
 @end

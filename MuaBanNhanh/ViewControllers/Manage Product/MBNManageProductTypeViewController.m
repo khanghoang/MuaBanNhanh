@@ -31,6 +31,11 @@ UICollectionViewDataSource
         [self.collectionView reloadData];
         [self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
     }];
+    
+    [[RACObserve(self.viewModel, currentIndex) ignore:nil] subscribeNext:^(NSNumber *index) {
+        @strongify(self);
+        [self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathForItem:[index integerValue] inSection:0] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+    }];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -43,13 +48,14 @@ UICollectionViewDataSource
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     MBNManageProductTypeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([MBNManageProductTypeCollectionViewCell class]) forIndexPath:indexPath];
-    [cell configWithTitle:[[self.viewModel.types allValues] reverse][indexPath.row]];
+    [cell configWithTitle:self.viewModel.types[self.viewModel.order[indexPath.row]]];
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     MBNManageProductTypeCollectionViewCell *cell = (MBNManageProductTypeCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     cell.selected = YES;
+    self.viewModel.currentIndex = @(indexPath.item);
     [collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
 }
 
