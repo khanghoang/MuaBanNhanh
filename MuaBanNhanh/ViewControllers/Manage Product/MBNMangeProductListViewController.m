@@ -38,6 +38,7 @@ KHBasicOrderedCollectionViewControllerProtocol
     void (^tapMenuActionBlock)(NSIndexPath *selectedIndexPath, UIButton *menuButton) = ^(NSIndexPath *selectedIndexPath, UIButton *menuButton){
         @strongify(self);
         [self presentPopupMenuForIndexPath:selectedIndexPath fromButton:menuButton];
+        NSLog(@"%@", [self.collectionController.model itemAtIndexpath:selectedIndexPath]);
     };
     cellFactory.tapMenuButtonActionBlock = tapMenuActionBlock;
     return cellFactory;
