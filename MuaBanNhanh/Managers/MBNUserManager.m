@@ -35,6 +35,7 @@
 
 - (void)logout {
     [self saveLoginUser:nil];
+    self.loggedUser = nil;
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_LOGOUT
                                                         object:nil];
 }

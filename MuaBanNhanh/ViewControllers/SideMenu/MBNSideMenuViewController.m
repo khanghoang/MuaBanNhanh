@@ -42,7 +42,7 @@ UICollectionViewDelegateFlowLayout
                                                  name:NOTIFICATION_USER_LOGOUT
                                                object:nil];
     
-    [[RACObserve([MBNUserManager sharedProvider], loggedUser) ignore:nil] subscribeNext:^(MBNUser *user) {
+    [RACObserve([MBNUserManager sharedProvider], loggedUser) subscribeNext:^(MBNUser *user) {
         [self setUserInformationWithUser:user];
     }];
     
