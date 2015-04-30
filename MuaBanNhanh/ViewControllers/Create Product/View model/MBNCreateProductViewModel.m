@@ -29,7 +29,7 @@
 
 - (NSArray *)productQualityTitles {
     if (!_productQualityTitles) {
-        _productQualityTitles = @[@"Hàng mới", @"Hàng cũ"];
+        _productQualityTitles = @[@"Hàng mới 100%", @"Hàng cũ"];
     }
     return _productQualityTitles;
 }
