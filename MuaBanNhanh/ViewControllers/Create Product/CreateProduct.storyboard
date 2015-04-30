@@ -477,7 +477,6 @@
                     <connections>
                         <outlet property="cityPickButton" destination="RTr-GK-9Yz" id="ojL-dc-aBT"/>
                         <outlet property="continueButton" destination="jdL-mE-CL1" id="om4-4m-v25"/>
-                        <outlet property="productDescriptionHeightConstraint" destination="GSu-Zz-sD3" id="eZh-nt-vrv"/>
                         <outlet property="productDescriptionTextView" destination="9xd-GU-rRW" id="F3f-zH-m9x"/>
                         <outlet property="productPriceTextField" destination="NKJ-O9-3eC" id="IT2-sw-Law"/>
                         <outlet property="productQualityButton" destination="1RW-Uk-gHh" id="Nmz-XB-YPG"/>
