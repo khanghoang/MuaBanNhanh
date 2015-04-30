@@ -179,7 +179,6 @@
                                                     <constraint firstItem="gjg-Mr-9cP" firstAttribute="top" secondItem="pl2-3b-rkU" secondAttribute="top" constant="8" id="7hv-Im-TDA"/>
                                                     <constraint firstAttribute="bottom" secondItem="w4g-9D-QUM" secondAttribute="bottom" constant="6" id="9Hn-ee-kUf"/>
                                                     <constraint firstItem="w4g-9D-QUM" firstAttribute="top" secondItem="N1C-VJ-XGx" secondAttribute="bottom" constant="4" id="A1U-hJ-5mn"/>
-                                                    <constraint firstAttribute="trailing" secondItem="w4g-9D-QUM" secondAttribute="trailing" constant="117" id="CxU-RA-DVZ"/>
                                                     <constraint firstItem="AXd-7J-VdT" firstAttribute="leading" secondItem="pl2-3b-rkU" secondAttribute="leading" constant="8" id="EV1-LS-YZ5"/>
                                                     <constraint firstAttribute="trailing" secondItem="gjg-Mr-9cP" secondAttribute="trailing" constant="8" id="Ibn-8y-t3a"/>
                                                     <constraint firstAttribute="trailing" secondItem="s2t-NC-1gb" secondAttribute="trailing" constant="8" id="Lau-S8-tc1"/>
@@ -363,6 +362,7 @@
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="vUv-4K-cQp" firstAttribute="top" secondItem="Hsd-rI-yFn" secondAttribute="top" id="GAh-9U-alG"/>
+                                    <constraint firstAttribute="width" secondItem="vUv-4K-cQp" secondAttribute="width" id="Kxt-Zo-wap"/>
                                     <constraint firstAttribute="bottom" secondItem="vUv-4K-cQp" secondAttribute="bottom" id="gyG-UB-UoP"/>
                                     <constraint firstItem="vUv-4K-cQp" firstAttribute="leading" secondItem="Hsd-rI-yFn" secondAttribute="leading" id="jPA-HB-XyT"/>
                                     <constraint firstAttribute="trailing" secondItem="vUv-4K-cQp" secondAttribute="trailing" id="l8Y-BY-QyK"/>
@@ -371,10 +371,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Hsd-rI-yFn" firstAttribute="width" secondItem="1Ru-WX-Ufu" secondAttribute="width" id="XlJ-dX-jbF"/>
-                            <constraint firstAttribute="centerX" secondItem="Hsd-rI-yFn" secondAttribute="centerX" id="dry-17-MHn"/>
-                            <constraint firstItem="Hsd-rI-yFn" firstAttribute="height" secondItem="1Ru-WX-Ufu" secondAttribute="height" id="iiK-7I-dsD"/>
-                            <constraint firstAttribute="centerY" secondItem="Hsd-rI-yFn" secondAttribute="centerY" id="rJK-cy-B9X"/>
+                            <constraint firstItem="CgL-UY-UsH" firstAttribute="top" secondItem="Hsd-rI-yFn" secondAttribute="bottom" id="EVh-om-NMA"/>
+                            <constraint firstItem="Hsd-rI-yFn" firstAttribute="top" secondItem="1Ru-WX-Ufu" secondAttribute="top" id="Okp-ka-las"/>
+                            <constraint firstAttribute="trailing" secondItem="Hsd-rI-yFn" secondAttribute="trailing" id="cy5-PN-D2I"/>
+                            <constraint firstItem="Hsd-rI-yFn" firstAttribute="leading" secondItem="1Ru-WX-Ufu" secondAttribute="leading" id="eUz-iV-u7A"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

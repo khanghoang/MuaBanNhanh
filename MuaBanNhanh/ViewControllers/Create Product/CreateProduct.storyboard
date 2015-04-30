@@ -503,10 +503,10 @@
             </objects>
             <point key="canvasLocation" x="343" y="228"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="cE8-it-RCq">
             <objects>
-                <navigationController id="JQp-24-oo9" sceneMemberID="viewController">
+                <navigationController id="JQp-24-oo9" customClass="MBNNavigationViewController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bEL-6I-oxS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
