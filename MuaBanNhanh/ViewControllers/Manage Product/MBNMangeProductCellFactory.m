@@ -20,8 +20,16 @@
     }
     
     KHNormalDataProvider *dataProvider = (KHNormalDataProvider *)[model sectionAtIndex:indexPath.section];
-    UICollectionViewCell <KHCellProtocol> *cell = [collection dequeueReusableCellWithReuseIdentifier:NSStringFromClass([MBNManageProductCollectionViewCell class]) forIndexPath:indexPath];
+    MBNManageProductCollectionViewCell <KHCellProtocol> *cell = [collection dequeueReusableCellWithReuseIdentifier:NSStringFromClass([MBNManageProductCollectionViewCell class]) forIndexPath:indexPath];
     [cell configWithData:[dataProvider objectAtIndex:indexPath.item]];
+    @weakify(self);
+    cell.menuButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *sender) {
+        @strongify(self);
+        if (self.tapMenuButtonActionBlock) {
+            self.tapMenuButtonActionBlock(indexPath, sender);
+        }
+        return [RACSignal empty];
+    }];
     return cell;
 }
 
