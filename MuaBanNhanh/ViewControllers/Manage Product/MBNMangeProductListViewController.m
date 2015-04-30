@@ -10,6 +10,8 @@
 #import "MBNManageProductLoadOperation.h"
 #import "MBNMangeProductCellFactory.h"
 #import "MBNManageProductLoadOperation.h"
+#import "MBNPopupMenuViewController.h"
+#import "MBNManageProductCollectionViewCell.h"
 #import <KHTableViewController/KHOrderedDataProvider.h>
 
 @interface MBNMangeProductListViewController ()
@@ -32,6 +34,12 @@ KHBasicOrderedCollectionViewControllerProtocol
 
 - (id <KHCollectionViewCellFactoryProtocol> )cellFactory {
     MBNMangeProductCellFactory *cellFactory = [[MBNMangeProductCellFactory alloc] init];
+    @weakify(self);
+    void (^tapMenuActionBlock)(NSIndexPath *selectedIndexPath, UIButton *menuButton) = ^(NSIndexPath *selectedIndexPath, UIButton *menuButton){
+        @strongify(self);
+        [self presentPopupMenuForIndexPath:selectedIndexPath fromButton:menuButton];
+    };
+    cellFactory.tapMenuButtonActionBlock = tapMenuActionBlock;
     return cellFactory;
 }
 
@@ -41,6 +49,26 @@ KHBasicOrderedCollectionViewControllerProtocol
 
 - (id <KHLoadingOperationProtocol> )loadingOperationForSectionViewModel:(id <KHTableViewSectionModel> )viewModel forPage:(NSUInteger)page {
     return [[MBNManageProductLoadOperation alloc] initWithType:@"INACTIVED" andPage:page+1];
+}
+
+- (void)presentPopupMenuForIndexPath:(NSIndexPath *)indexPath fromButton:(UIButton *)sender
+{
+    CGRect buttonFrameInCollectionView = [self.navigationController.view convertRect:sender.frame fromView:sender.superview];
+    MBNPopupMenuViewController *popupMenuViewController = [[MBNPopupMenuViewController alloc] initWithDestinationFrame:buttonFrameInCollectionView];
+    [self presentPopupMenuViewController:popupMenuViewController];
+}
+
+- (void)presentPopupMenuViewController:(MBNPopupMenuViewController *)menuViewController {
+    if (IS_IOS8_OR_ABOVE) {
+        self.navigationController.providesPresentationContextTransitionStyle = YES;
+        self.navigationController.definesPresentationContext = YES;
+        [menuViewController setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+    } else {
+        [self.navigationController setModalPresentationStyle:UIModalPresentationCurrentContext];
+    }
+    self.navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    menuViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self.navigationController presentViewController:menuViewController animated:YES completion:nil];
 }
 
 @end
