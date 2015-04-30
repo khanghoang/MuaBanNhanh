@@ -238,6 +238,9 @@ typedef NS_ENUM(NSInteger, TableViewTagType) {
     RAC(headerView, headerSeparatorView.hidden) = [changeOpeningSectionSignal map:^id(NSNumber *openingSection) {
         return @([openingSection integerValue] == section);
     }];
+    RAC(headerView, arrowIconImageView.image) = [changeOpeningSectionSignal map:^id(NSNumber *openingSection) {
+        return [openingSection integerValue] == section ? [UIImage imageNamed:@"up-arrow-icon"] : [UIImage imageNamed:@"down-arrow-icon"];
+    }];
     return headerView;
 }
 
