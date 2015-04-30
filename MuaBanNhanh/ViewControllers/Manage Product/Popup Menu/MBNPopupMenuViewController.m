@@ -11,14 +11,31 @@
 @interface MBNPopupMenuViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *dismissView;
+@property (assign, nonatomic) CGRect destinationFrame;
 
 @end
 
 @implementation MBNPopupMenuViewController
 
+- (instancetype)initWithDestinationFrame:(CGRect)frame
+{
+    if (self = [super init]) {
+        _destinationFrame = frame;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addTapOutsideToDismissGesture];
+    [self adjustMenuViewPosition];
+}
+
+- (void)adjustMenuViewPosition
+{
+    self.menuViewLeadingConstraint.constant = CGRectGetMaxX(self.destinationFrame) - CGRectGetWidth(self.menuView.frame);
+    self.menuViewTopConstraint.constant = CGRectGetMinY(self.destinationFrame);
+    [self.view layoutIfNeeded];
 }
 
 - (void)addTapOutsideToDismissGesture

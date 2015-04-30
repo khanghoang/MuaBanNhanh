@@ -14,5 +14,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *openProductDetailButton;
 @property (weak, nonatomic) IBOutlet UIButton *editProductButton;
 @property (weak, nonatomic) IBOutlet UIButton *removeProductButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *menuViewLeadingConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *menuViewTopConstraint;
+
+- (instancetype)initWithDestinationFrame:(CGRect)frame;
 
 @end
