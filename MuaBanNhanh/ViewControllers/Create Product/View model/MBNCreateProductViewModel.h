@@ -23,6 +23,7 @@ typedef NS_ENUM(NSInteger, MBNProductTransactionType) {
 @property (copy, nonatomic) NSArray *productQualityTitles;
 @property (copy, nonatomic) NSArray *productTransactionTypeTitles;
 @property (copy, nonatomic) NSArray *pickedCategories;
+@property (copy, nonatomic) NSMutableArray *selectedCategories;
 
 @property (copy, nonatomic) NSString *getProvincesErrorMessage;
 @property (assign, nonatomic) NSInteger provinceSelectedIndex;

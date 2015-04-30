@@ -11,6 +11,14 @@
 
 @implementation MBNCreateProductViewModel
 
+- (NSMutableArray *)selectedCategories
+{
+    if (!_selectedCategories) {
+        _selectedCategories = [NSMutableArray array];
+    }
+    return _selectedCategories;
+}
+
 - (NSArray *)productTransactionTypeTitles
 {
     if (!_productTransactionTypeTitles) {
