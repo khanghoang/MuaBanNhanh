@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class MBNCreateProductViewModel;
 
 @interface MBNSelectCategoryViewController : UIViewController
+
+- (instancetype)initWithCreateProductViewModel:(MBNCreateProductViewModel *)viewModel;
 
 @end
