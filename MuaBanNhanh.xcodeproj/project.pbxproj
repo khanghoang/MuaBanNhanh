@@ -191,6 +191,8 @@
 		05E03DA81AC9318D004426CE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E03DA61AC9318D004426CE /* LaunchScreen.xib */; };
 		05E03DB41AC9318D004426CE /* MuaBanNhanhTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E03DB31AC9318D004426CE /* MuaBanNhanhTests.m */; };
 		05F3E54D1ADB77BA00D432AF /* MBNRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F3E54C1ADB77BA00D432AF /* MBNRegisterViewController.m */; };
+		B61921DE1AF28639008B899F /* MBNPopupMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B61921DD1AF28639008B899F /* MBNPopupMenuViewController.m */; };
+		B61921E01AF28658008B899F /* MBNPopupMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B61921DF1AF28658008B899F /* MBNPopupMenuViewController.xib */; };
 		B62419D71AEFC3690040DD89 /* MBNCreateProductViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B62419D61AEFC3690040DD89 /* MBNCreateProductViewModel.m */; };
 		B62419DA1AEFC51F0040DD89 /* MBNProvinceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B62419D91AEFC51F0040DD89 /* MBNProvinceManager.m */; };
 		B62FDE571AF0C0410099CB06 /* MBNSelectCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B62FDE561AF0C0410099CB06 /* MBNSelectCategoryViewController.m */; };
@@ -587,6 +589,9 @@
 		05F3E54C1ADB77BA00D432AF /* MBNRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNRegisterViewController.m; sourceTree = "<group>"; };
 		5634B996ABA6F7CE44922C55 /* Pods-MuaBanNhanh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MuaBanNhanh.release.xcconfig"; path = "Pods/Target Support Files/Pods-MuaBanNhanh/Pods-MuaBanNhanh.release.xcconfig"; sourceTree = "<group>"; };
 		92B186F2BE6B95FD0EE703B6 /* libPods-MuaBanNhanh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MuaBanNhanh.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B61921DC1AF28639008B899F /* MBNPopupMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNPopupMenuViewController.h; sourceTree = "<group>"; };
+		B61921DD1AF28639008B899F /* MBNPopupMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNPopupMenuViewController.m; sourceTree = "<group>"; };
+		B61921DF1AF28658008B899F /* MBNPopupMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBNPopupMenuViewController.xib; sourceTree = "<group>"; };
 		B62419D51AEFC3690040DD89 /* MBNCreateProductViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNCreateProductViewModel.h; sourceTree = "<group>"; };
 		B62419D61AEFC3690040DD89 /* MBNCreateProductViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNCreateProductViewModel.m; sourceTree = "<group>"; };
 		B62419D81AEFC51F0040DD89 /* MBNProvinceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNProvinceManager.h; sourceTree = "<group>"; };
@@ -834,6 +839,7 @@
 		0592B62A1AF0F77400FACDF5 /* Manage Product */ = {
 			isa = PBXGroup;
 			children = (
+				B61921DB1AF285FD008B899F /* Popup Menu */,
 				0592B62B1AF0F78800FACDF5 /* ManageProduct.storyboard */,
 				0524FF3B1AF1551000A42C78 /* MBNMangeProductListViewController.h */,
 				0524FF3C1AF1551000A42C78 /* MBNMangeProductListViewController.m */,
@@ -1321,6 +1327,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B61921DB1AF285FD008B899F /* Popup Menu */ = {
+			isa = PBXGroup;
+			children = (
+				B61921DC1AF28639008B899F /* MBNPopupMenuViewController.h */,
+				B61921DD1AF28639008B899F /* MBNPopupMenuViewController.m */,
+				B61921DF1AF28658008B899F /* MBNPopupMenuViewController.xib */,
+			);
+			path = "Popup Menu";
+			sourceTree = "<group>";
+		};
 		B62FDE541AF0C0260099CB06 /* Select Category Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -1520,6 +1536,7 @@
 				05A3E3441ACAF11200E55215 /* MBNSideMenuViewController.xib in Resources */,
 				050867191AD6D29200038F87 /* UserLogin.storyboard in Resources */,
 				05A3E3491ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.xib in Resources */,
+				B61921E01AF28658008B899F /* MBNPopupMenuViewController.xib in Resources */,
 				0516AF151AD5208D00DACF05 /* SubCategoryStoreyboard.storyboard in Resources */,
 				B6D9A77A1AF1042900DC11D4 /* MBNExpandableTableHeader.xib in Resources */,
 				05E03DA81AC9318D004426CE /* LaunchScreen.xib in Resources */,
@@ -1605,6 +1622,7 @@
 				05B29B691AF0AD200019FB8F /* NSArray+Additions.m in Sources */,
 				0508672D1AD6F08F00038F87 /* UIUnregisterHomePopup.m in Sources */,
 				05DC9E831AE82F6500272C10 /* NSData+Base64.m in Sources */,
+				B61921DE1AF28639008B899F /* MBNPopupMenuViewController.m in Sources */,
 				05B29B781AF0B3210019FB8F /* MBNUserProductViewController.m in Sources */,
 				05A3E3501ACAF9E100E55215 /* Colours.m in Sources */,
 				05A3E34D1ACAF9D300E55215 /* UIView+Addition.m in Sources */,

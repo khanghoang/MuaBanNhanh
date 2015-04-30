@@ -15,4 +15,6 @@
 KHCollectionViewCellFactoryProtocol
 >
 
+@property (strong, nonatomic) void (^tapMenuButtonActionBlock)(NSIndexPath *selectedIndexPath, UIButton *menuButton);
+
 @end

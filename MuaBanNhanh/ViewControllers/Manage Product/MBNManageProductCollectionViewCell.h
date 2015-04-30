@@ -10,6 +10,8 @@
 
 @interface MBNManageProductCollectionViewCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UIButton *menuButton;
+
 - (void)configWithData:(id)data;
 
 @end
