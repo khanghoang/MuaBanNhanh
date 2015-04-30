@@ -33,7 +33,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)onBtnHowTo:(id)sender {
-    UIViewController *vc = [[UIStoryboard storyboardWithName:@"CreateProduct" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([MBNCreateProductViewController class])];
+    UIViewController *vc = [[UIStoryboard storyboardWithName:@"CreateProduct" bundle:nil] instantiateInitialViewController];
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     [appDelegate closePopupViewCompletion:^{
         MBNShowLoginSegue *segue = [[MBNShowLoginSegue alloc] initWithIdentifier:@"MBNLoginSegue" source:appDelegate.rootNavigationController destination:vc];
