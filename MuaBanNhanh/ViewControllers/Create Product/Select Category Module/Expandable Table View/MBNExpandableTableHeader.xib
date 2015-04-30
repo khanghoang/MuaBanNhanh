@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MBNExpandableTableHeader">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HzF-Ri-BTO">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Laptop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNJ-4w-Rxc">
+                    <rect key="frame" x="20" y="12" width="255" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQc-bl-zsS">
+                    <rect key="frame" x="20" y="43" width="300" height="1"/>
+                    <color key="backgroundColor" red="0.8901960784313725" green="0.8901960784313725" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Q1e-ZT-Bnc"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="down-arrow-icon" translatesAutoresizingMaskIntoConstraints="NO" id="mQr-PJ-GlK">
+                    <rect key="frame" x="291" y="18" width="13" height="7"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="13" id="69Z-Je-4Wj"/>
+                        <constraint firstAttribute="height" constant="7" id="Peh-mK-zdE"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="HzF-Ri-BTO" secondAttribute="trailing" id="3eq-Ko-9hr"/>
+                <constraint firstItem="HzF-Ri-BTO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6Ee-nI-PLI"/>
+                <constraint firstAttribute="bottom" secondItem="HzF-Ri-BTO" secondAttribute="bottom" id="Dun-SK-S3V"/>
+                <constraint firstItem="mQr-PJ-GlK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="18" id="X2P-T6-ReB"/>
+                <constraint firstAttribute="trailing" secondItem="mQr-PJ-GlK" secondAttribute="trailing" constant="16" id="ZVp-n0-ULm"/>
+                <constraint firstAttribute="bottom" secondItem="AQc-bl-zsS" secondAttribute="bottom" id="aY3-74-G5L"/>
+                <constraint firstItem="AQc-bl-zsS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="d3a-Vh-Pht"/>
+                <constraint firstItem="mQr-PJ-GlK" firstAttribute="leading" secondItem="iNJ-4w-Rxc" secondAttribute="trailing" constant="16" id="ews-hs-qjJ"/>
+                <constraint firstItem="HzF-Ri-BTO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gWP-lC-ZHu"/>
+                <constraint firstAttribute="centerY" secondItem="iNJ-4w-Rxc" secondAttribute="centerY" id="hpm-Ej-eN3"/>
+                <constraint firstItem="iNJ-4w-Rxc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="p7U-lN-dSF"/>
+                <constraint firstAttribute="trailing" secondItem="AQc-bl-zsS" secondAttribute="trailing" id="zcD-k3-k4I"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="arrowIconImageView" destination="mQr-PJ-GlK" id="giG-52-rbJ"/>
+                <outlet property="headerNameLabel" destination="iNJ-4w-Rxc" id="zOk-67-RbL"/>
+                <outlet property="headerSelectedButton" destination="HzF-Ri-BTO" id="AMd-S4-uAA"/>
+                <outlet property="headerSeparatorView" destination="AQc-bl-zsS" id="1uO-gz-qSm"/>
+            </connections>
+            <point key="canvasLocation" x="336" y="405"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="down-arrow-icon" width="13" height="7"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

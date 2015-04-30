@@ -26,6 +26,7 @@ target 'MuaBanNhanh' do
   pod 'libextobjc'
   pod 'HPGrowingTextView'
   pod 'ReactiveCocoa'
+  pod 'UICollectionViewLeftAlignedLayout', '0.0.3'
   pod 'GPUImage', '0.1.2'
   pod 'PSTAlertController', :git => 'https://github.com/steipete/PSTAlertController.git'
   pod 'IDMPhotoBrowser'

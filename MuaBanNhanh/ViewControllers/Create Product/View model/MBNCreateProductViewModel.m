@@ -11,6 +11,29 @@
 
 @implementation MBNCreateProductViewModel
 
+- (NSMutableArray *)selectedCategories
+{
+    if (!_selectedCategories) {
+        _selectedCategories = [NSMutableArray array];
+    }
+    return _selectedCategories;
+}
+
+- (NSArray *)productTransactionTypeTitles
+{
+    if (!_productTransactionTypeTitles) {
+        _productTransactionTypeTitles = @[@"Cần bán/ Dịch vụ", @"Cần mua/ Cần tìm"];
+    }
+    return _productTransactionTypeTitles;
+}
+
+- (NSArray *)productQualityTitles {
+    if (!_productQualityTitles) {
+        _productQualityTitles = @[@"Hàng mới 100%", @"Hàng cũ"];
+    }
+    return _productQualityTitles;
+}
+
 - (void)getProvinces {
     @weakify(self);
     MBNProvinceManager *manager = [[MBNProvinceManager alloc] init];
