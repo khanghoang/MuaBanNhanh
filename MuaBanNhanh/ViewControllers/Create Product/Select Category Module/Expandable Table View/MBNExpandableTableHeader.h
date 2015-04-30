@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *headerSelectedButton;
 @property (weak, nonatomic) IBOutlet UILabel *headerNameLabel;
 @property (weak, nonatomic) IBOutlet UIView *headerSeparatorView;
+@property (weak, nonatomic) IBOutlet UIImageView *arrowIconImageView;
 
 @end
