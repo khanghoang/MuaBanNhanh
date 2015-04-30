@@ -23,6 +23,11 @@
     
     self.layer.borderColor = _borderColor.CGColor;
     self.layer.borderWidth = _borderWidth;
+    
+    self.layer.shadowOffset = _shadowOffset;
+    self.layer.shadowColor = _shadowColor.CGColor;
+    self.layer.shadowRadius = _shadowRadius;
+    self.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
 }
 
 

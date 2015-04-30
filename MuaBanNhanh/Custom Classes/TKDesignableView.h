@@ -16,4 +16,8 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable NSInteger borderWidth;
 @property (nonatomic) IBInspectable UIColor *borderColor;
 
+@property (nonatomic) IBInspectable UIColor *shadowColor;
+@property (nonatomic) IBInspectable CGSize shadowOffset;
+@property (nonatomic) IBInspectable CGFloat shadowRadius;
+
 @end
