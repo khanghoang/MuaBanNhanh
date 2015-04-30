@@ -230,13 +230,9 @@ UIPickerViewDataSource
 
 - (IBAction)onBtnLogout:(id)sender {
     [[MBNUserManager sharedProvider] logout];
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Thông báo"
-                                                        message:@"Bạn đã đăng xuất khỏi thiết bị"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Đồng ý" otherButtonTitles:nil];
-    [alertView show];
-    
     [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    [SVProgressHUD showSuccessWithStatus:@"Bạn đã đăng xuất khỏi thiết bị"];
 }
 
 #pragma marks - Section 1
