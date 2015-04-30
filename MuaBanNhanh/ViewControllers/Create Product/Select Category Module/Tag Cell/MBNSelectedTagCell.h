@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface MBNSelectedTagCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *tagNameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
 
 @end

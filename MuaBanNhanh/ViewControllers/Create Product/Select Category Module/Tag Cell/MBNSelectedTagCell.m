@@ -8,11 +8,6 @@
 
 #import "MBNSelectedTagCell.h"
 
-@interface MBNSelectedTagCell()
-@property (weak, nonatomic) IBOutlet UIButton *closeButton;
-
-@end
-
 @implementation MBNSelectedTagCell
 
 - (void)awakeFromNib {
