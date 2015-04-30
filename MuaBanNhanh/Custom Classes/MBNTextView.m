@@ -19,6 +19,20 @@ static UIEdgeInsets const kPaddingEdgeInsets = {5, 5, 5, 5};
 
 @implementation MBNTextView
 
+- (CGSize)intrinsicContentSize
+{
+    return [self sizeThatFits:CGSizeMake(self.bounds.size.width, FLT_MAX)];
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    if (!CGSizeEqualToSize(self.bounds.size, [self intrinsicContentSize])) {
+        [self invalidateIntrinsicContentSize];
+    }
+}
+
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
