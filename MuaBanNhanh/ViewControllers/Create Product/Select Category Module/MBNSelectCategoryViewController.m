@@ -29,7 +29,6 @@ typedef NS_ENUM(NSInteger, TableViewTagType) {
 
 @property (assign, nonatomic) NSInteger openingSection;
 @property (strong, nonatomic) MBNSelectCategoryViewModel *viewModel;
-@property (strong, nonatomic) MBNCreateProductViewModel *createProductViewModel;
 
 @end
 
@@ -41,14 +40,6 @@ typedef NS_ENUM(NSInteger, TableViewTagType) {
         _viewModel = [MBNSelectCategoryViewModel new];
     }
     return _viewModel;
-}
-
-- (instancetype)initWithCreateProductViewModel:(MBNCreateProductViewModel *)viewModel
-{
-    if (self = [super init]) {
-        _createProductViewModel = viewModel;
-    }
-    return self;
 }
 
 - (void)viewDidLoad
@@ -77,6 +68,7 @@ typedef NS_ENUM(NSInteger, TableViewTagType) {
     self.saveButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *sender) {
         @strongify(self);
         self.createProductViewModel.selectedCategories = [[NSMutableArray alloc] initWithArray:self.viewModel.selectedCategories copyItems:YES];
+        [self.navigationController popViewControllerAnimated:YES];
         return [RACSignal empty];
     }];
     self.cancelButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *sender) {
@@ -126,10 +118,10 @@ typedef NS_ENUM(NSInteger, TableViewTagType) {
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    @weakify(self);
     if (tableView.tag == TableViewTagTypeListSelectedCategory) {
         MBNSelectedTagCell *cell = [tableView dequeueReusableCellWithIdentifier:[MBNSelectedTagCell kind]];
         cell.tagNameLabel.text = self.viewModel.selectedCategories[indexPath.row];
-        @weakify(self);
         cell.closeButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *sender) {
             @strongify(self);
             NSMutableArray *selectedCategories = [self.viewModel mutableArrayValueForKey:@"selectedCategories"];
@@ -142,9 +134,14 @@ typedef NS_ENUM(NSInteger, TableViewTagType) {
     MBNCategory *category = self.viewModel.categories[indexPath.section];
     MBNCategory *subCategory = category.subCategories[indexPath.row];
     cell.cellNameLabel.text = subCategory.name;
-    RAC(cell, selected) = [[RACObserve(self, viewModel.selectedCategories) map:^id(NSArray *selectedCategories) {
-        return @([selectedCategories containsObject:subCategory.name]);
-    }] takeUntil:cell.rac_prepareForReuseSignal];
+    RACSignal *seletedCategoriesChagingSignal = [[RACObserve(self, viewModel.selectedCategories) ignore:nil] takeUntil:cell.rac_prepareForReuseSignal];
+    [seletedCategoriesChagingSignal subscribeNext:^(NSArray *selectedCategories) {
+        if ([selectedCategories containsObject:subCategory.name]) {
+            [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+        } else {
+            cell.selected = NO;
+        }
+    }];
     return cell;
 }
 
@@ -171,7 +168,11 @@ typedef NS_ENUM(NSInteger, TableViewTagType) {
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.viewModel.selectedCategories.count == 3 || tableView.tag == TableViewTagTypeListSelectedCategory) {
+    if (tableView.tag == TableViewTagTypeListSelectedCategory) {
+        return nil;
+    }
+    if (self.viewModel.selectedCategories.count == 3) {
+        [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Bạn chỉ được chọn tối đa 3 chuyên mục" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         return nil;
     }
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];

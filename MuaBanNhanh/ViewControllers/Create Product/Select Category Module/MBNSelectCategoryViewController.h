@@ -11,6 +11,6 @@
 
 @interface MBNSelectCategoryViewController : UIViewController
 
-- (instancetype)initWithCreateProductViewModel:(MBNCreateProductViewModel *)viewModel;
+@property (strong, nonatomic) MBNCreateProductViewModel *createProductViewModel;
 
 @end
