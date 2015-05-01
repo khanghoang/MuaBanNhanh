@@ -129,4 +129,7 @@
     
 }
 
++ (void)createProduct:(NSDictionary *)productInfo completionBlock:(void (^)(MBNProduct *product, NSError *error))completionBlock {
+}
+
 @end

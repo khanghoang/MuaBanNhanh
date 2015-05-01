@@ -289,6 +289,9 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onBtnCreateProduct:" destination="C1o-xw-Xzx" eventType="touchUpInside" id="o4b-3C-HRw"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00n-6h-hm8" customClass="TKDesignableButton">
                                                 <rect key="frame" x="10" y="934" width="60" height="60"/>

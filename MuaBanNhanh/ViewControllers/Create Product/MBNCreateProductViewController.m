@@ -43,6 +43,8 @@ typedef NS_ENUM(NSInteger, PickerViewType){
 @property (strong, nonatomic) MBNCreateProductViewModel *viewModel;
 @property (strong, nonatomic) RMPickerViewController *reusePickerViewController;
 
+@property (strong, nonatomic) NSOperationQueue *createProductOperationQueue;
+
 @end
 
 @implementation MBNCreateProductViewController
@@ -63,6 +65,14 @@ typedef NS_ENUM(NSInteger, PickerViewType){
         _viewModel = [MBNCreateProductViewModel new];
     }
     return _viewModel;
+}
+
+- (NSOperationQueue *)createProductOperationQueue {
+    if (!_createProductOperationQueue) {
+        _createProductOperationQueue = [[NSOperationQueue alloc] init];
+    }
+    
+    return _createProductOperationQueue;
 }
 
 - (void)viewDidLoad {
@@ -295,6 +305,35 @@ typedef NS_ENUM(NSInteger, PickerViewType){
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return [MBNTagCell getCellSizeWithString:self.viewModel.selectedCategories[indexPath.item]];
+}
+
+- (IBAction)onBtnCreateProduct:(id)sender {
+    __block AFHTTPRequestOperation *operation = [[MBNUploadImageManager sharedProvider] uploadProductImage:[UIImage imageNamed:@"add-thumbnail"]];
+    @weakify(operation);
+    [operation setCompletionBlock:^{
+        @strongify(operation);
+        NSLog(@"finish 1 %@", operation.responseObject);
+    }];
+    
+    __block AFHTTPRequestOperation *operation2 = [[MBNUploadImageManager sharedProvider] uploadProductImage:[UIImage imageNamed:@"add-thumbnail"]];
+    @weakify(operation2);
+    [operation2 setCompletionBlock:^{
+        @strongify(operation2);
+        NSLog(@"finish 2 %@", operation2.responseObject);
+    }];
+    
+    __block AFHTTPRequestOperation *operation3 = [[MBNUploadImageManager sharedProvider] uploadProductImage:[UIImage imageNamed:@"add-thumbnail"]];
+    
+    [operation3 addDependency:operation];
+    [operation3 addDependency:operation2];
+    
+    @weakify(operation3);
+    [operation3 setCompletionBlock:^{
+        @strongify(operation3);
+        NSLog(@"finish 3 %@", operation3.responseObject);
+    }];
+    
+    [self.createProductOperationQueue addOperations:@[operation, operation2, operation3] waitUntilFinished:YES];
 }
 
 @end

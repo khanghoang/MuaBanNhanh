@@ -80,5 +80,33 @@
     
 }
 
+- (AFHTTPRequestOperation *)uploadProductImage:(UIImage *)image {
+    
+    NSDictionary *params = @{
+                             @"content": [UIImageJPEGRepresentation(image, 0.8) base64EncodedString],
+                             @"extension": @"jpeg"
+                             };
+    
+    MBNUser *currentLoginUser = [[MBNUserManager sharedProvider] getLoginUser];
+    NSString *requestString = [NSString stringWithFormat:@"https://api.muabannhanh.com/user/upload-image?id=%ld&token=%@", (long)[currentLoginUser.ID integerValue], currentLoginUser.token];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSError *error;
+    NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"POST" URLString:requestString parameters:params error:&error];
+    
+    AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if ([responseObject[@"status"] integerValue] == 400) {
+            [[MBNActionsManagers sharedInstance] checkRequestErrorAndForceLogout:responseObject];
+            return;
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+    
+    return operation;
+}
 
 @end
