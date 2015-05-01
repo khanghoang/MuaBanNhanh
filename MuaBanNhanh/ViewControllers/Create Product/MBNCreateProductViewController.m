@@ -12,6 +12,7 @@
 #import "MBNPaddingTextField.h"
 #import "MBNTextView.h"
 #import "MBNTagCell.h"
+#import "TMEPhotoButton.h"
 #import <RMPickerViewController.h>
 
 typedef NS_ENUM(NSInteger, PickerViewType){
@@ -36,6 +37,8 @@ typedef NS_ENUM(NSInteger, PickerViewType){
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *productImagePickButtons;
 @property (strong, nonatomic) IBOutletCollection(MBNTextView) NSArray *productImageDescriptionTextViews;
+
+@property (nonatomic, strong) TMECameraVC *cameraVC;
 
 @property (strong, nonatomic) MBNCreateProductViewModel *viewModel;
 @property (strong, nonatomic) RMPickerViewController *reusePickerViewController;
@@ -68,6 +71,14 @@ typedef NS_ENUM(NSInteger, PickerViewType){
     [self setupCommandForButtons];
     [self setupTextFieldBorderLine];
     [self setupCollectionViewHeightChangingSignal];
+}
+
+- (TMECameraVC *)cameraVC {
+    if (!_cameraVC) {
+        _cameraVC = [TMECameraVC tme_instantiateFromStoryboardNamed:@"Camera"];
+    }
+    
+    return _cameraVC;
 }
 
 - (void)getProvinces {
@@ -174,12 +185,50 @@ typedef NS_ENUM(NSInteger, PickerViewType){
         return [RACSignal empty];
     }];
     
-    [self.productImagePickButtons enumerateObjectsUsingBlock:^(UIButton *button, NSUInteger idx, BOOL *stop) {
+    [self.productImagePickButtons enumerateObjectsUsingBlock:^(TMEPhotoButton *button, NSUInteger idx, BOOL *stop) {
+        
         //Will reuse some commands here
         button.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
             return [RACSignal empty];
         }];
     }];
+}
+
+- (IBAction)onBtnClickPickImage:(id)button {
+
+    __weak typeof (self) weakSelf = self;
+    self.cameraVC.completionHandler = ^(TMECameraVCResult result, UIImage *image, IMGLYFilterType filterType) {
+        [weakSelf showEditorVCWithImage:image button:button];
+    };
+
+    [self.navigationController pushViewController:self.cameraVC animated:YES];
+}
+
+- (void)showEditorVCWithImage:(UIImage *)image button:(UIButton *)button
+{
+    TMECropImageVC *cropVC = [[TMECropImageVC alloc] init];
+    cropVC.inputImage = image;
+    
+    __weak typeof(self) weakSelf = self;
+    cropVC.completionHandler = ^(IMGLYEditorViewControllerResult result, UIImage *outputImage, IMGLYProcessingJob *job) {
+        if (result == IMGLYEditorViewControllerResultCancelled) {
+            [weakSelf.cameraVC restartCamera];
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+        } else {
+            [weakSelf handleTakenImage:outputImage button:button];
+            weakSelf.cameraVC = nil;
+            [weakSelf.navigationController popToViewController:weakSelf animated:YES];
+        }
+    };
+    
+    [self.navigationController pushViewController:cropVC animated:YES];
+}
+
+#pragma mark - Helpers
+- (void)handleTakenImage:(UIImage *)image button:(UIButton *)button
+{
+    UIImageWriteToSavedPhotosAlbum(image, nil, nil, NULL);
+    [button setBackgroundImage:[image imgly_rotateImageToMatchOrientation] forState:UIControlStateNormal];
 }
 
 - (void)setupTextFieldBorderLine {

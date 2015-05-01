@@ -75,6 +75,8 @@ UIPickerViewDataSource
     
     [self registerForKeyboardNotifications];
     
+    self.cameraVC = [TMECameraVC tme_instantiateFromStoryboardNamed:@"Camera"];
+    
     [[MBNUserManager sharedProvider] getOwnInformation:^(MBNUser *user) {
         [self updateContentWithUser:user];
         self.user = user;
@@ -273,8 +275,6 @@ RMDateSelectionViewController *dateSelectionVC = [RMDateSelectionViewController 
 #pragma mark - Action
 - (IBAction)photoButtonTouched:(UIButton *)button
 {
-    self.cameraVC = [TMECameraVC tme_instantiateFromStoryboardNamed:@"Camera"];
-    
     __weak typeof (self) weakSelf = self;
     self.cameraVC.completionHandler = ^(TMECameraVCResult result, UIImage *image, IMGLYFilterType filterType) {
         [weakSelf showEditorVCWithImage:image button:button];
