@@ -67,6 +67,7 @@
 #import <AFNetworking/UIButton+AFNetworking.h>
 #import <RMPickerViewController/RMPickerViewController.h>
 #import <IDMPhotoBrowser/IDMPhotoBrowser.h>
+#import <Crashlytics/Crashlytics.h>
 #import "IMGLYKit.h"
 #import "TKDesignableButton.h"
 

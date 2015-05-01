@@ -70,6 +70,8 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     // Override point for customization after application launch.
+    
+    [Crashlytics startWithAPIKey:@"75bef5bc8a8592cd4d35e170fef2575e8547d8dc"];
     return YES;
 }
 
