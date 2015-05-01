@@ -131,7 +131,7 @@ UIPickerViewDataSource
     if (!_genderArrayDatasource) {
         _genderArrayDatasource =
                             @{
-                                @"UNDEFINED": @"Chọn giới tính",
+                                @"UNDEFINED": @"Không xác định",
                                 @"MALE": @"Nam",
                                 @"FEMALE": @"Nữ"
                                 };
@@ -310,7 +310,7 @@ RMDateSelectionViewController *dateSelectionVC = [RMDateSelectionViewController 
 
 - (IBAction)onBtnSave:(id)sender {
     NSDictionary *infor = @{
-        @"name": @"Khang Hoang",
+        @"name": self.lblName.text,
         @"phone": self.lblPhoneNumber.text,
         @"birthday": self.lblBirthday.text,
         @"identity_number": self.lblIdentity.text,
@@ -323,8 +323,7 @@ RMDateSelectionViewController *dateSelectionVC = [RMDateSelectionViewController 
         },
         @"email": self.lblPersonalEmail.text,
         @"gender": [self.genderArrayDatasource dictionaryBySwappingKeysAndValues][self.lblGender.text],
-        @"about": @"",
-        @"password": @""
+        @"about": @""
     };
     
     [SVProgressHUD showWithStatus:@"Đang cập nhật" maskType:SVProgressHUDMaskTypeGradient];
