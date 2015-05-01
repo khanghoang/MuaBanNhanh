@@ -1906,6 +1906,7 @@
 			baseConfigurationReference = BDC741CC4D6A1E04FD9BA6B5 /* Pods-MuaBanNhanh.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Khang Hoàng Triệu (DZFE2DLGY9)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1927,6 +1928,7 @@
 			baseConfigurationReference = 5634B996ABA6F7CE44922C55 /* Pods-MuaBanNhanh.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Khang Hoàng Triệu (DZFE2DLGY9)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
