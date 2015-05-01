@@ -14,6 +14,6 @@ IB_DESIGNABLE
 
 @property (nonatomic) IBInspectable NSInteger borderRadius;
 @property (nonatomic) IBInspectable NSInteger borderWidth;
-@property (nonatomic) IBInspectable UIColor *borderColor;
+@property (strong, nonatomic) IBInspectable UIColor *borderColor;
 
 @end
