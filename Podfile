@@ -30,7 +30,7 @@ target 'MuaBanNhanh' do
   pod 'GPUImage', '0.1.2'
   pod 'PSTAlertController', :git => 'https://github.com/steipete/PSTAlertController.git'
   pod 'IDMPhotoBrowser'
-  #pod 'CrashlyticsFramework'
+  pod 'ObjectiveSugar'
 
 end
 

@@ -68,6 +68,7 @@
 #import <RMPickerViewController/RMPickerViewController.h>
 #import <IDMPhotoBrowser/IDMPhotoBrowser.h>
 #import <Crashlytics/Crashlytics.h>
+#import <ObjectiveSugar/ObjectiveSugar.h>
 #import "IMGLYKit.h"
 #import "TKDesignableButton.h"
 
