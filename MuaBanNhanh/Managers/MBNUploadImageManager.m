@@ -59,6 +59,13 @@
     
     [manager POST:requestString parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
+        if ([responseObject[@"status"] integerValue] == 400) {
+            [[MBNActionsManagers sharedInstance] checkRequestErrorAndForceLogout:responseObject];
+            NSError *error = [[NSError alloc] initWithDomain:@"Token error" code:400 userInfo:nil];
+            finishBlock(@[], error);
+            return;
+        }
+        
         if (finishBlock) {
             finishBlock(responseObject, nil);
         }

@@ -112,6 +112,13 @@
         
         NSError *error;
         
+        if ([responseObject[@"status"] integerValue] == 400) {
+            [[MBNActionsManagers sharedInstance] checkRequestErrorAndForceLogout:responseObject];
+            NSError *error = [[NSError alloc] initWithDomain:@"Token error" code:400 userInfo:nil];
+            completeBlock(@[], error);
+            return;
+        }
+        
         NSArray *arrProducts = [MTLJSONAdapter modelsOfClass:[MBNProduct class] fromJSONArray:responseObject[@"result"] error:&error];
         if (completeBlock) {
             completeBlock(arrProducts, error);

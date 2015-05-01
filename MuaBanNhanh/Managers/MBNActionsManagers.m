@@ -31,4 +31,14 @@
     }
 }
 
+- (void)checkRequestErrorAndForceLogout:(NSDictionary *)responseObject {
+    if([responseObject[@"status"] integerValue] == 400 && [[responseObject[@"message"] uppercaseString] containsString:@"TOKEN"] ) {
+        [[MBNUserManager sharedProvider] logout];
+        [SVProgressHUD showErrorWithStatus:@"Bạn đã đăng nhập tài khoản trên thiết bị khác!\nĐể tiếp tục sử dụng vui lòng Đăng nhập lại."
+                                  maskType:SVProgressHUDMaskTypeGradient];
+        AppDelegate *appDelegate = APP_DELEGATE;
+        [appDelegate.rootNavigationController popToRootViewControllerAnimated:YES];
+    }
+}
+
 @end

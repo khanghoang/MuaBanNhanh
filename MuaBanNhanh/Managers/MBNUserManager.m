@@ -189,6 +189,8 @@
             if (failureBlock) {
                 failureBlock(responseObject[@"message"]);
             }
+                  
+            [[MBNActionsManagers sharedInstance] checkRequestErrorAndForceLogout:responseObject];
             
             return;
         }
@@ -241,6 +243,8 @@
                                                                          }];
                       completeBlock(nil,error);
                   }
+                  
+                  [[MBNActionsManagers sharedInstance] checkRequestErrorAndForceLogout:responseObject];
                   
                   return;
               }

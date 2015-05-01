@@ -13,4 +13,6 @@
 + (instancetype)sharedInstance;
 - (void)callNumber:(NSString *)numberString;
 
+- (void)checkRequestErrorAndForceLogout:(NSDictionary *)responseObject;
+
 @end
