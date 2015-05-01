@@ -560,6 +560,7 @@
                         <outlet property="repickCategoryButton" destination="HOE-vo-IXT" id="yB4-hh-9bf"/>
                         <outlet property="tagCollectionView" destination="cOm-PA-Uqp" id="WRZ-Za-ciq"/>
                         <outlet property="tagCollectionViewHeightConstraint" destination="GSu-Zz-sD3" id="2Eb-A2-rCT"/>
+                        <outlet property="view" destination="gUh-QQ-UvA" id="cT5-lZ-XSD"/>
                         <outletCollection property="productImagePickButtons" destination="aui-jY-lpl" id="MiH-q7-KcT"/>
                         <outletCollection property="productImagePickButtons" destination="pzy-uD-kdz" id="N0l-1A-evn"/>
                         <outletCollection property="productImagePickButtons" destination="NZk-NR-UPH" id="kqE-ks-BoB"/>

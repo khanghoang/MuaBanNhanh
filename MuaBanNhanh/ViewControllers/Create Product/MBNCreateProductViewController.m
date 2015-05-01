@@ -21,7 +21,10 @@ typedef NS_ENUM(NSInteger, PickerViewType){
     PickerViewTypeTransaction
 };
 
-@interface MBNCreateProductViewController () <UIPickerViewDelegate, UIPickerViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface MBNCreateProductViewController ()
+<UIPickerViewDelegate, UIPickerViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout,
+UIActionSheetDelegate
+>
 
 @property (weak, nonatomic) IBOutlet MBNPaddingTextField *productTitleTextField;
 @property (weak, nonatomic) IBOutlet UILabel *productTitleValidationLabel;
@@ -34,6 +37,7 @@ typedef NS_ENUM(NSInteger, PickerViewType){
 @property (weak, nonatomic) IBOutlet UIButton *continueButton;
 @property (weak, nonatomic) IBOutlet UICollectionView *tagCollectionView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tagCollectionViewHeightConstraint;
+@property (weak, nonatomic) UIButton *selectedButton;
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *productImagePickButtons;
 @property (strong, nonatomic) IBOutletCollection(MBNTextView) NSArray *productImageDescriptionTextViews;
@@ -44,6 +48,9 @@ typedef NS_ENUM(NSInteger, PickerViewType){
 @property (strong, nonatomic) RMPickerViewController *reusePickerViewController;
 
 @property (strong, nonatomic) NSOperationQueue *createProductOperationQueue;
+
+@property (strong, nonatomic) NSMutableArray *productImages;
+@property (strong, nonatomic) MBNProvince *selectedProvince;
 
 @end
 
@@ -57,6 +64,14 @@ typedef NS_ENUM(NSInteger, PickerViewType){
         _reusePickerViewController.picker.dataSource = self;
     }
     return _reusePickerViewController;
+}
+
+- (NSMutableArray *)productImages {
+    if (!_productImages) {
+        _productImages = [NSMutableArray array];
+    }
+    
+    return _productImages;
 }
 
 - (MBNCreateProductViewModel *)viewModel
@@ -86,6 +101,11 @@ typedef NS_ENUM(NSInteger, PickerViewType){
 - (TMECameraVC *)cameraVC {
     if (!_cameraVC) {
         _cameraVC = [TMECameraVC tme_instantiateFromStoryboardNamed:@"Camera"];
+        @weakify(self);
+        _cameraVC.completionHandler = ^(TMECameraVCResult result, UIImage *image, IMGLYFilterType filterType) {
+            @strongify(self);
+            [self showEditorVCWithImage:image button:self.selectedButton];
+        };
     }
     
     return _cameraVC;
@@ -204,14 +224,52 @@ typedef NS_ENUM(NSInteger, PickerViewType){
     }];
 }
 
+- (void)deleteImageOfButton:(UIButton *)button {
+    UIImage *oldImage = button.imageView.image;
+    [button setBackgroundImage:[UIImage imageNamed:@"add-thumbnail"] forState:UIControlStateNormal];
+    [self.productImages removeObject:oldImage];
+}
+
 - (IBAction)onBtnClickPickImage:(id)button {
+    
+    self.selectedButton = button;
+    
+    if (IS_IOS8_OR_ABOVE) {
+        UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        @weakify(self);
+        UIAlertAction *takePhoto = [UIAlertAction actionWithTitle:@"Chọn hình hoặc chụp hình" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            @strongify(self);
+            [self.navigationController pushViewController:self.cameraVC animated:YES];
+        }];
+            
+        UIAlertAction *deletePhoto = [UIAlertAction actionWithTitle:@"Xoá tấm hình này" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            @strongify(self);
+            [self deleteImageOfButton:button];
+        }];
+        
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Huỷ" style:UIAlertActionStyleCancel handler:nil];
+                                     
+                                    
+        [actionSheet addAction:takePhoto];
+        [actionSheet addAction:deletePhoto];
+        [actionSheet addAction:cancel];
+        
+        [self presentViewController:actionSheet animated:YES completion:nil];
+        
+    } else {
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Huỷ" destructiveButtonTitle:nil otherButtonTitles:@"Chọn hình hoặc chụp hình", @"Xoá tấm hình này", nil];
+        [actionSheet showInView:self.view];
+    }
+}
 
-    __weak typeof (self) weakSelf = self;
-    self.cameraVC.completionHandler = ^(TMECameraVCResult result, UIImage *image, IMGLYFilterType filterType) {
-        [weakSelf showEditorVCWithImage:image button:button];
-    };
-
-    [self.navigationController pushViewController:self.cameraVC animated:YES];
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    // choose image or take it
+    if (buttonIndex == 0) {
+        [self.navigationController pushViewController:self.cameraVC animated:YES];
+    } else {
+        [self deleteImageOfButton:self.selectedButton];
+    }
 }
 
 - (void)showEditorVCWithImage:(UIImage *)image button:(UIButton *)button
@@ -219,15 +277,16 @@ typedef NS_ENUM(NSInteger, PickerViewType){
     TMECropImageVC *cropVC = [[TMECropImageVC alloc] init];
     cropVC.inputImage = image;
     
-    __weak typeof(self) weakSelf = self;
+    @weakify(self);
     cropVC.completionHandler = ^(IMGLYEditorViewControllerResult result, UIImage *outputImage, IMGLYProcessingJob *job) {
+        @strongify(self);
         if (result == IMGLYEditorViewControllerResultCancelled) {
-            [weakSelf.cameraVC restartCamera];
-            [weakSelf.navigationController popViewControllerAnimated:YES];
+            [self.cameraVC restartCamera];
+            [self.navigationController popViewControllerAnimated:YES];
         } else {
-            [weakSelf handleTakenImage:outputImage button:button];
-            weakSelf.cameraVC = nil;
-            [weakSelf.navigationController popToViewController:weakSelf animated:YES];
+            [self handleTakenImage:outputImage button:button];
+            [self.navigationController popToViewController:self animated:YES];
+            [self.productImages addObject:outputImage];
         }
     };
     
@@ -277,6 +336,7 @@ typedef NS_ENUM(NSInteger, PickerViewType){
 {
     if (pickerView.tag == PickerViewTypeCity) {
         MBNProvince *province = self.viewModel.provinces[row];
+        self.selectedProvince = province;
         return province.name;
     } else if (pickerView.tag == PickerViewTypeQuality) {
         return self.viewModel.productQualityTitles[row];
@@ -308,32 +368,68 @@ typedef NS_ENUM(NSInteger, PickerViewType){
 }
 
 - (IBAction)onBtnCreateProduct:(id)sender {
-    __block AFHTTPRequestOperation *operation = [[MBNUploadImageManager sharedProvider] uploadProductImage:[UIImage imageNamed:@"add-thumbnail"]];
-    @weakify(operation);
-    [operation setCompletionBlock:^{
-        @strongify(operation);
-        NSLog(@"finish 1 %@", operation.responseObject);
+    
+    __block NSMutableArray *arrOperations = [NSMutableArray array];
+    __block NSMutableArray *uploadedURLs = [NSMutableArray array];
+    
+    
+    @weakify(self);
+    __block NSBlockOperation *operation3 = [NSBlockOperation blockOperationWithBlock:^{
+        @strongify(self);
+        NSDictionary *info = @{
+                               @"name": @"Demo",
+                               @"category": [self.viewModel.selectedCategories map:^id(MBNCategory *category) {
+                                   return category.ID;
+                               }],
+                               @"is_sale": @"true",
+                               @"conditions": @"1",
+                               @"is_show": @(true),
+                               @"description": @{
+                                       @"user": @"des"
+                                       },
+                               @"gallery": [uploadedURLs map:^id(NSString *url) {
+                                   return @{
+                                            @"image_url": url,
+                                            @"caption": @"empty"
+                                            };
+                               }]
+                               };
+        
+        AFHTTPRequestOperation *createProductRequest = [[MBNUploadImageManager sharedProvider] createProductWithDictionary:info];
+        [createProductRequest setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [SVProgressHUD showSuccessWithStatus:@"Update sản phẩm thành công"];
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+        }];
+        [createProductRequest start];
     }];
     
-    __block AFHTTPRequestOperation *operation2 = [[MBNUploadImageManager sharedProvider] uploadProductImage:[UIImage imageNamed:@"add-thumbnail"]];
-    @weakify(operation2);
-    [operation2 setCompletionBlock:^{
-        @strongify(operation2);
-        NSLog(@"finish 2 %@", operation2.responseObject);
+    [self.productImages enumerateObjectsUsingBlock:^(UIImage *image, NSUInteger idx, BOOL *stop) {
+        
+        __block AFHTTPRequestOperation *operation = [[MBNUploadImageManager sharedProvider] uploadProductImage:image];
+        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            [uploadedURLs addObject:responseObject[@"result"][@"image_url"]];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+        }];
+        
+        [arrOperations addObject:operation];
+        [operation3 addDependency:operation];
     }];
     
-    __block AFHTTPRequestOperation *operation3 = [[MBNUploadImageManager sharedProvider] uploadProductImage:[UIImage imageNamed:@"add-thumbnail"]];
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        
+        [self.createProductOperationQueue addOperations:[arrOperations copy] waitUntilFinished:YES];
+        
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            NSLog(@"here");
+        });
+        
+    });
     
-    [operation3 addDependency:operation];
-    [operation3 addDependency:operation2];
-    
-    @weakify(operation3);
-    [operation3 setCompletionBlock:^{
-        @strongify(operation3);
-        NSLog(@"finish 3 %@", operation3.responseObject);
-    }];
-    
-    [self.createProductOperationQueue addOperations:@[operation, operation2, operation3] waitUntilFinished:YES];
 }
+
 
 @end

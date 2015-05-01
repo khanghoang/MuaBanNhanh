@@ -80,6 +80,29 @@
     
 }
 
+- (AFHTTPRequestOperation *)createProductWithDictionary:(NSDictionary *)dictionary {
+    MBNUser *currentLoginUser = [[MBNUserManager sharedProvider] getLoginUser];
+    NSString *requestString = [NSString stringWithFormat:@"https://api.muabannhanh.com/user/article-add?user_id=%ld&token=%@", (long)[currentLoginUser.ID integerValue], currentLoginUser.token];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSError *error;
+    NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"POST" URLString:requestString parameters:dictionary error:&error];
+    
+    AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if ([responseObject[@"status"] integerValue] == 400) {
+            [[MBNActionsManagers sharedInstance] checkRequestErrorAndForceLogout:responseObject];
+            return;
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+    
+    return operation;
+}
+
 - (AFHTTPRequestOperation *)uploadProductImage:(UIImage *)image {
     
     NSDictionary *params = @{

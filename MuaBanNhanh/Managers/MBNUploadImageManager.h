@@ -21,5 +21,6 @@ typedef enum : NSUInteger {
 - (void)uploadImage:(UIImage *)image type:(MBN_UPLOAD_IMAGE)type withFinishBlock:(void (^) (id responseObject, NSError *error))finishBlock;
 
 - (AFHTTPRequestOperation *)uploadProductImage:(UIImage *)image;
+- (AFHTTPRequestOperation *)createProductWithDictionary:(NSDictionary *)dictionary;
 
 @end
