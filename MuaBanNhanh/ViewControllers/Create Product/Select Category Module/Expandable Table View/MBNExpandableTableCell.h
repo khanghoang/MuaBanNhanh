@@ -11,6 +11,6 @@
 @interface MBNExpandableTableCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *cellNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *tickLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imgViewTick;
 
 @end

@@ -13,7 +13,7 @@
 - (void)setSelected:(BOOL)selected
 {
     [super setSelected:selected];
-    self.tickLabel.hidden = !selected;
+    self.imgViewTick.hidden = !selected;
 }
 
 @end

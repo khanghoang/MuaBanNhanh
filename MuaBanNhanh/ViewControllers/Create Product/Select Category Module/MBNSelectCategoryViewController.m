@@ -172,7 +172,7 @@ typedef NS_ENUM(NSInteger, TableViewTagType) {
         return nil;
     }
     if (self.viewModel.selectedCategories.count == 3) {
-        [[[UIAlertView alloc] initWithTitle:@"Warning" message:@"Bạn chỉ được chọn tối đa 3 chuyên mục" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        [SVProgressHUD showErrorWithStatus:@"Bạn chỉ được chọn tối đa 3 chuyên mục"];
         return nil;
     }
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
