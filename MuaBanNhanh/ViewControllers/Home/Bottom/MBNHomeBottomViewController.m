@@ -11,6 +11,7 @@ static CGFloat const PRODUCT_COLLECTION_CELL_HEIGHT = 157;
 #import "MBNHomeBottomViewController.h"
 #import "MBNProductCollectionViewCell.h"
 #import "MBNCollectionHeaderView.h"
+#import "MBNProductDetailsViewController.h"
 
 @interface MBNHomeBottomViewController ()
 <
@@ -90,6 +91,13 @@ UICollectionViewDataSource
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
     return CGSizeMake(collectionView.bounds.size.width, 40);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    MBNProduct *product = self.arrLatestProducts[indexPath.item];
+    MBNProductDetailsViewController *productVC = [MBNProductDetailsViewController tme_instantiateFromStoryboardNamed:@"ProductDetails"];
+    productVC.productID = product.ID;
+    [self.navigationController pushViewController:productVC animated:YES];
 }
 
 @end
