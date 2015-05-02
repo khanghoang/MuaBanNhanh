@@ -66,4 +66,24 @@
     }];
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    CGFloat animationDuration = 0.5;
+    
+    CGRect frame = cell.frame;
+    CGRect desFrame = cell.frame;
+    frame.origin = CGPointMake(0, tableView.height);
+    cell.frame = frame;
+    
+    
+    [UIView animateWithDuration:animationDuration delay:indexPath.row*0.05 usingSpringWithDamping:0.6 initialSpringVelocity:0.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        
+        cell.frame = desFrame;
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+}
+
 @end

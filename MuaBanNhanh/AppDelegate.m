@@ -86,11 +86,11 @@
     UIViewController *vc = [[UIStoryboard storyboardWithName:@"PlusPopups" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([IndexHomePopupViewController class])];
     
     self.popupWindow.rootViewController = vc;
-    self.popupWindow.rootViewController.view.backgroundColor =[UIColor colorWithWhite:1.0 alpha:0.6];
+    self.popupWindow.rootViewController.view.backgroundColor =[UIColor colorWithWhite:1.0 alpha:0.9];
     
     [self.popupWindow makeKeyWindow];
     
-    [UIView animateWithDuration:0.45 animations:^{
+    [UIView animateWithDuration:0.2 animations:^{
         self.popupWindow.alpha = 1;
     }];
     
