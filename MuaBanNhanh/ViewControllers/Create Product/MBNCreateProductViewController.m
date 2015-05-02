@@ -348,7 +348,7 @@ UIActionSheetDelegate
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     MBNTagCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[MBNTagCell kind] forIndexPath:indexPath];
-    [cell configWithString:self.viewModel.selectedCategories[indexPath.item]];
+    [cell configWithString:[self.viewModel.selectedCategories[indexPath.item] name]];
     cell.tagButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *sender) {
         NSMutableArray *selectedCategories = [self.viewModel mutableArrayValueForKey:@"selectedCategories"];
         [selectedCategories removeObjectAtIndex:indexPath.item];
@@ -364,7 +364,7 @@ UIActionSheetDelegate
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [MBNTagCell getCellSizeWithString:self.viewModel.selectedCategories[indexPath.item]];
+    return [MBNTagCell getCellSizeWithString:[self.viewModel.selectedCategories[indexPath.item] name]];
 }
 
 - (IBAction)onBtnCreateProduct:(id)sender {
@@ -377,11 +377,12 @@ UIActionSheetDelegate
     __block NSBlockOperation *operation3 = [NSBlockOperation blockOperationWithBlock:^{
         @strongify(self);
         NSDictionary *info = @{
-                               @"name": @"Demo",
+                               @"name": @"Demo 123",
                                @"category": [self.viewModel.selectedCategories map:^id(MBNCategory *category) {
                                    return category.ID;
                                }],
                                @"is_sale": @"true",
+                               @"province_id": @(1),
                                @"conditions": @"1",
                                @"is_show": @(true),
                                @"description": @{
@@ -403,6 +404,9 @@ UIActionSheetDelegate
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             
         }];
+        
+        createProductRequest.responseSerializer = [AFHTTPRequestOperationManager mbn_manager].responseSerializer;
+        
         [createProductRequest start];
     }];
     
@@ -418,6 +422,8 @@ UIActionSheetDelegate
         [arrOperations addObject:operation];
         [operation3 addDependency:operation];
     }];
+    
+    [arrOperations addObject:operation3];
     
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         

@@ -121,7 +121,7 @@ typedef NS_ENUM(NSInteger, TableViewTagType) {
     @weakify(self);
     if (tableView.tag == TableViewTagTypeListSelectedCategory) {
         MBNSelectedTagCell *cell = [tableView dequeueReusableCellWithIdentifier:[MBNSelectedTagCell kind]];
-        cell.tagNameLabel.text = self.viewModel.selectedCategories[indexPath.row];
+        cell.tagNameLabel.text = [self.viewModel.selectedCategories[indexPath.row] name];
         cell.closeButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *sender) {
             @strongify(self);
             NSMutableArray *selectedCategories = [self.viewModel mutableArrayValueForKey:@"selectedCategories"];
@@ -175,12 +175,15 @@ typedef NS_ENUM(NSInteger, TableViewTagType) {
         [SVProgressHUD showErrorWithStatus:@"Bạn chỉ được chọn tối đa 3 chuyên mục"];
         return nil;
     }
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.selected = YES;
     MBNCategory *category = self.viewModel.categories[indexPath.section];
     MBNCategory *subCategory = category.subCategories[indexPath.row];
     NSMutableArray *selectedCategories = [self.viewModel mutableArrayValueForKey:@"selectedCategories"];
-    [selectedCategories addObject:subCategory.name];
+    
+    if([self.viewModel.selectedCategories containsObject:subCategory]) {
+        return nil;
+    }
+    
+    [selectedCategories addObject:subCategory];
     return indexPath;
 }
 

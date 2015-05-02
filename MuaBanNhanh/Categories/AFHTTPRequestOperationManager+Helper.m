@@ -17,6 +17,9 @@
     dispatch_once(&onceToken, ^{
         instance = [AFHTTPRequestOperationManager manager];
         instance.requestSerializer = [AFJSONRequestSerializer serializer];
+        AFJSONResponseSerializer *response = [AFJSONResponseSerializer serializer];
+        instance.responseSerializer = response;
+        response.readingOptions = NSJSONReadingAllowFragments;
         [instance.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     });
 
