@@ -31,7 +31,7 @@
                    ],
         _types = @{
                    @"All": @"Tất cả",
-                   @"is_saled": @"is_saled",
+                   @"is_saled": @"Đang hiển thị",
                    @"ACTIVED": @"Đã kích hoạt",
                    @"INACTIVED": @"Chưa kích hoạt",
                    @"REJECTED": @"Cần chỉnh sửa"
