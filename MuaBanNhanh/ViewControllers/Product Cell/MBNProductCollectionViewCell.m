@@ -61,7 +61,7 @@
     self.lblUpdateAt.text = [NSString stringWithFormat:@"Cập nhật ngày: %@", [dateFormatter stringFromDate:product.updatedAt]];
     
     // thumb
-    [self.imageViewProductImage setImageWithURL:product.defaultImage];
+    [self.imageViewProductImage fp_setImageWithURL:product.defaultImage];
     
     // categories
     NSString *concatCategories = @"";

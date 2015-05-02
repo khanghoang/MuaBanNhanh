@@ -566,6 +566,7 @@
                         <outlet property="productTitleValidationLabel" destination="57C-hI-Chq" id="OTI-Mc-wKa"/>
                         <outlet property="productTransactionTypePickButton" destination="ADD-cR-ol0" id="Duc-fI-mZ6"/>
                         <outlet property="repickCategoryButton" destination="HOE-vo-IXT" id="yB4-hh-9bf"/>
+                        <outlet property="scrollView" destination="cgT-Wg-uCN" id="Tpo-a7-JXH"/>
                         <outlet property="tagCollectionView" destination="cOm-PA-Uqp" id="WRZ-Za-ciq"/>
                         <outlet property="tagCollectionViewHeightConstraint" destination="GSu-Zz-sD3" id="2Eb-A2-rCT"/>
                         <outlet property="view" destination="gUh-QQ-UvA" id="cT5-lZ-XSD"/>
@@ -582,6 +583,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0g2-SH-Zvf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6Wz-fy-ApZ">
+                    <connections>
+                        <action selector="tapOutsideToDismissKeyboard:" destination="C1o-xw-Xzx" id="eYT-cI-hYy"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="343" y="228"/>
         </scene>

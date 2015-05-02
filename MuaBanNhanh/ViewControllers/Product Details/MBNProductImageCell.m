@@ -17,7 +17,7 @@
 @implementation MBNProductImageCell
 
 - (void)configWithData:(MBNImage *)image {
-    [self.imageView setImageWithURL:image.imageURL];
+    [self.imageView fp_setImageWithURL:image.imageURL];
 }
 
 @end
