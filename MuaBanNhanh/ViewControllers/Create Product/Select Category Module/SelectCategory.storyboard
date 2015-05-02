@@ -160,7 +160,7 @@
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qhb-qY-xe9" id="Jxc-2c-N7q">
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Laptop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3TU-sJ-n9z">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Laptop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3TU-sJ-n9z">
                                                                     <rect key="frame" x="36" y="11" width="259" height="21"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="I3s-4Y-J6v"/>
@@ -170,7 +170,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" translatesAutoresizingMaskIntoConstraints="NO" id="71A-2I-yUe">
-                                                                    <rect key="frame" x="8" y="10" width="20" height="20"/>
+                                                                    <rect key="frame" x="8" y="12" width="20" height="20"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="20" id="28T-lb-jeH"/>
                                                                         <constraint firstAttribute="width" constant="20" id="V06-Gv-abp"/>
@@ -178,13 +178,13 @@
                                                                 </imageView>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="trailingMargin" secondItem="3TU-sJ-n9z" secondAttribute="trailing" constant="-3" id="6VR-lS-Xbv"/>
+                                                                <constraint firstAttribute="trailingMargin" secondItem="3TU-sJ-n9z" secondAttribute="trailing" constant="5" id="6VR-lS-Xbv"/>
                                                                 <constraint firstItem="71A-2I-yUe" firstAttribute="leading" secondItem="Jxc-2c-N7q" secondAttribute="leadingMargin" id="99V-s7-1f4"/>
-                                                                <constraint firstAttribute="trailing" secondItem="3TU-sJ-n9z" secondAttribute="trailing" constant="5" id="Hqq-ry-SJy"/>
+                                                                <constraint firstAttribute="trailing" secondItem="3TU-sJ-n9z" secondAttribute="trailing" constant="13" id="Hqq-ry-SJy"/>
                                                                 <constraint firstAttribute="bottomMargin" secondItem="3TU-sJ-n9z" secondAttribute="bottom" constant="3" id="KbG-mZ-VXS"/>
                                                                 <constraint firstItem="3TU-sJ-n9z" firstAttribute="top" secondItem="Jxc-2c-N7q" secondAttribute="top" constant="11" id="U9X-ax-V5o"/>
                                                                 <constraint firstItem="3TU-sJ-n9z" firstAttribute="leading" secondItem="Jxc-2c-N7q" secondAttribute="leadingMargin" constant="28" id="mYF-Ib-cdi"/>
-                                                                <constraint firstAttribute="centerY" secondItem="71A-2I-yUe" secondAttribute="centerY" constant="1.5" id="o7b-bd-v2I"/>
+                                                                <constraint firstAttribute="centerY" secondItem="71A-2I-yUe" secondAttribute="centerY" id="o7b-bd-v2I"/>
                                                                 <constraint firstItem="3TU-sJ-n9z" firstAttribute="top" secondItem="Jxc-2c-N7q" secondAttribute="topMargin" constant="3" id="zBz-3A-H7l"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
@@ -205,7 +205,7 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="tZv-mv-zfm" secondAttribute="trailing" id="7aX-VS-EHZ"/>
                                             <constraint firstItem="lvk-bT-Kpi" firstAttribute="width" secondItem="0it-wp-vg4" secondAttribute="width" id="7oG-ie-Vxv"/>
-                                            <constraint firstAttribute="trailing" secondItem="XIb-8A-eUC" secondAttribute="trailing" constant="10" id="CsS-6v-CrL"/>
+                                            <constraint firstAttribute="trailing" secondItem="XIb-8A-eUC" secondAttribute="trailing" constant="18" id="CsS-6v-CrL"/>
                                             <constraint firstItem="lvk-bT-Kpi" firstAttribute="height" secondItem="0it-wp-vg4" secondAttribute="height" id="Gpv-Sj-0h6"/>
                                             <constraint firstAttribute="bottom" secondItem="tZv-mv-zfm" secondAttribute="bottom" id="KIj-oq-Kk9"/>
                                             <constraint firstItem="tZv-mv-zfm" firstAttribute="top" secondItem="0it-wp-vg4" secondAttribute="bottom" constant="10" id="P4L-Sm-WCN"/>
@@ -228,7 +228,7 @@
                                     <constraint firstAttribute="trailing" secondItem="doP-OK-XeS" secondAttribute="trailing" constant="6" id="890-Pv-ssO"/>
                                     <constraint firstItem="doP-OK-XeS" firstAttribute="top" secondItem="LyV-BH-aFa" secondAttribute="top" constant="6" id="KNP-ft-ylp"/>
                                     <constraint firstItem="doP-OK-XeS" firstAttribute="leading" secondItem="LyV-BH-aFa" secondAttribute="leading" constant="6" id="ePD-xQ-xOo"/>
-                                    <constraint firstAttribute="bottom" secondItem="doP-OK-XeS" secondAttribute="bottom" constant="6" id="tFX-yY-EDl"/>
+                                    <constraint firstAttribute="bottom" secondItem="doP-OK-XeS" secondAttribute="bottom" constant="157" id="tFX-yY-EDl"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -237,7 +237,7 @@
                             <constraint firstItem="LyV-BH-aFa" firstAttribute="top" secondItem="f4H-ao-4dh" secondAttribute="top" id="Ath-IL-fqd"/>
                             <constraint firstAttribute="bottom" secondItem="LyV-BH-aFa" secondAttribute="bottom" id="JWQ-WP-KSU"/>
                             <constraint firstItem="LyV-BH-aFa" firstAttribute="leading" secondItem="f4H-ao-4dh" secondAttribute="leading" id="Mnx-KX-JVZ"/>
-                            <constraint firstItem="doP-OK-XeS" firstAttribute="width" secondItem="f4H-ao-4dh" secondAttribute="width" constant="-20" id="e2D-Mm-iI3"/>
+                            <constraint firstItem="doP-OK-XeS" firstAttribute="width" secondItem="f4H-ao-4dh" secondAttribute="width" constant="-12" id="e2D-Mm-iI3"/>
                             <constraint firstAttribute="trailing" secondItem="LyV-BH-aFa" secondAttribute="trailing" id="jwo-9k-42j"/>
                         </constraints>
                     </view>

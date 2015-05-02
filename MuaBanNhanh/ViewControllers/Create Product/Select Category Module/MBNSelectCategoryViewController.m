@@ -183,6 +183,9 @@ typedef NS_ENUM(NSInteger, TableViewTagType) {
         return nil;
     }
     
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [cell setSelected:YES];
+    
     [selectedCategories addObject:subCategory];
     return indexPath;
 }
