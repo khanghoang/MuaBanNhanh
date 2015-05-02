@@ -17,6 +17,7 @@
 @property (strong, nonatomic) UINavigationController *rootNavigationController;
 
 @property (strong, nonatomic) UIWindow *mainWindow;
+@property (strong, nonatomic) UIButton *floatButton;
 @property (strong, nonatomic) UIWindow *popupWindow;
 
 @end
@@ -50,7 +51,26 @@
     
     [[FLEXManager sharedManager] showExplorer];
     
-    [window makeKeyWindow];
+    [window makeKeyAndVisible];
+    
+    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 46, 46)];
+    button.backgroundColor = [UIColor redColor];
+    self.floatButton = button;
+    [window addSubview:button];
+    
+    [button mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.width.equalTo(@(46));
+        make.height.equalTo(@(46));
+        make.trailing.equalTo(button.superview).with.offset(-15);
+        make.bottom.equalTo(button.superview).with.offset(-20);
+    }];
+    
+    [window bringSubviewToFront:button];
+    [window sendSubviewToBack:self.revealController.view];
+    
+    [window setNeedsUpdateConstraints];
+    [window layoutIfNeeded];
     
     if(SYSTEM_VERSION_LESS_THAN(@"7.0")) {
         [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];

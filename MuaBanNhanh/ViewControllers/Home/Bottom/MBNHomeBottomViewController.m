@@ -47,7 +47,7 @@ UICollectionViewDataSource
 
 - (void)updateLatestProductsCollection {
     [self.collectionViewLatestProduct reloadData];
-    [self.view.superview mas_updateConstraints:^(MASConstraintMaker *make) {
+    [self.view.superview mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@((PRODUCT_COLLECTION_CELL_HEIGHT + 10) * self.arrLatestProducts.count + 10 + 40));
     }];
     
