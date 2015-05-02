@@ -384,7 +384,8 @@ UIActionSheetDelegate
                                @"is_sale": @"true",
                                @"province_id": @(1),
                                @"conditions": @"1",
-                               @"is_show": @(true),
+                               @"is_shown": @(true),
+                               @"price": @(5000000),
                                @"description": @{
                                        @"user": @"des"
                                        },
