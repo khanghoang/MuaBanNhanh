@@ -10,6 +10,7 @@
 #import "MBNRevealViewController.h"
 #import "MBNHomeContainerViewController.h"
 #import "IndexHomePopupViewController.h"
+#import "MBNFloatButton.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,7 @@
 @property (strong, nonatomic) UINavigationController *rootNavigationController;
 
 @property (strong, nonatomic) UIWindow *mainWindow;
-@property (strong, nonatomic) UIButton *floatButton;
+@property (strong, nonatomic) MBNFloatButton *floatButton;
 @property (strong, nonatomic) UIWindow *popupWindow;
 
 @end
@@ -53,8 +54,7 @@
     
     [window makeKeyAndVisible];
     
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 46, 46)];
-    button.backgroundColor = [UIColor redColor];
+    MBNFloatButton *button = [[MBNFloatButton alloc] initWithFrame:CGRectMake(0, 0, 46, 46)];
     self.floatButton = button;
     [window addSubview:button];
     

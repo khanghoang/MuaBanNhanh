@@ -33,6 +33,8 @@
 		053979141ACC4B76007C4676 /* MBNHomeContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053979131ACC4B76007C4676 /* MBNHomeContainerViewController.m */; };
 		054AA6961AE21D4F00C8CBCA /* EditUserInformationStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 054AA6951AE21D4F00C8CBCA /* EditUserInformationStoryboard.storyboard */; };
 		055D84651AF515EF0071EB22 /* UIImageView+LoadingImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 055D84641AF515EE0071EB22 /* UIImageView+LoadingImage.m */; };
+		055D846B1AF538980071EB22 /* MBNFloatButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055D846A1AF538980071EB22 /* MBNFloatButton.xib */; };
+		055D846E1AF539320071EB22 /* MBNFloatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 055D846D1AF539320071EB22 /* MBNFloatButton.m */; };
 		0561C9B01ACFBD9B00BEDA6D /* UIViewController+AddHambugerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0561C9AF1ACFBD9B00BEDA6D /* UIViewController+AddHambugerButton.m */; };
 		0561C9B31ACFC31100BEDA6D /* UIViewController+SideViewFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0561C9B21ACFC31100BEDA6D /* UIViewController+SideViewFunctions.m */; };
 		0561C9B81AD05CD700BEDA6D /* MBNProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0561C9B61AD05CD700BEDA6D /* MBNProductCollectionViewCell.m */; };
@@ -273,6 +275,9 @@
 		054AA6951AE21D4F00C8CBCA /* EditUserInformationStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditUserInformationStoryboard.storyboard; sourceTree = "<group>"; };
 		055D84631AF515EE0071EB22 /* UIImageView+LoadingImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LoadingImage.h"; sourceTree = "<group>"; };
 		055D84641AF515EE0071EB22 /* UIImageView+LoadingImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LoadingImage.m"; sourceTree = "<group>"; };
+		055D846A1AF538980071EB22 /* MBNFloatButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBNFloatButton.xib; sourceTree = "<group>"; };
+		055D846C1AF539320071EB22 /* MBNFloatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNFloatButton.h; sourceTree = "<group>"; };
+		055D846D1AF539320071EB22 /* MBNFloatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNFloatButton.m; sourceTree = "<group>"; };
 		0561C9AE1ACFBD9B00BEDA6D /* UIViewController+AddHambugerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AddHambugerButton.h"; sourceTree = "<group>"; };
 		0561C9AF1ACFBD9B00BEDA6D /* UIViewController+AddHambugerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AddHambugerButton.m"; sourceTree = "<group>"; };
 		0561C9B11ACFC31100BEDA6D /* UIViewController+SideViewFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SideViewFunctions.h"; sourceTree = "<group>"; };
@@ -779,6 +784,16 @@
 			path = "User Information";
 			sourceTree = "<group>";
 		};
+		055D84691AF5388A0071EB22 /* Float Button */ = {
+			isa = PBXGroup;
+			children = (
+				055D846A1AF538980071EB22 /* MBNFloatButton.xib */,
+				055D846C1AF539320071EB22 /* MBNFloatButton.h */,
+				055D846D1AF539320071EB22 /* MBNFloatButton.m */,
+			);
+			path = "Float Button";
+			sourceTree = "<group>";
+		};
 		0561C9B41AD05CA000BEDA6D /* Product Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -792,6 +807,7 @@
 		0561C9BA1AD05F4C00BEDA6D /* Custom Classes */ = {
 			isa = PBXGroup;
 			children = (
+				055D84691AF5388A0071EB22 /* Float Button */,
 				05B906F71AE8064700B85BEC /* DataSource */,
 				05B905DD1AE802CD00B85BEC /* PhotoButton */,
 				0561C9BB1AD05F6800BEDA6D /* TKAlignTopLabel.h */,
@@ -1537,6 +1553,7 @@
 				0593B7E81AD12B3800A492F3 /* MBNCollectionHeaderView.xib in Resources */,
 				05B905F71AE8033900B85BEC /* CameraFilterSelector.storyboard in Resources */,
 				05B905F41AE8033900B85BEC /* Camera.storyboard in Resources */,
+				055D846B1AF538980071EB22 /* MBNFloatButton.xib in Resources */,
 				B6C482731AEF9E9600DF70A0 /* CreateProduct.storyboard in Resources */,
 				053979071ACC48F6007C4676 /* MainStoryBoard.storyboard in Resources */,
 				05B29B721AF0B2CA0019FB8F /* UserProducts.storyboard in Resources */,
@@ -1687,6 +1704,7 @@
 				05B906CA1AE805AE00B85BEC /* IMGLYEditorOrientationMenu.m in Sources */,
 				05B906E71AE805AE00B85BEC /* IMGLYOpenGLUtils.m in Sources */,
 				05B906E01AE805AE00B85BEC /* IMGLYLiveStreamFilterManager.m in Sources */,
+				055D846E1AF539320071EB22 /* MBNFloatButton.m in Sources */,
 				05B906DD1AE805AE00B85BEC /* IMGLYHippieFilter.m in Sources */,
 				05B906C61AE805AE00B85BEC /* IMGLYEditorEnhancementViewcontroller.m in Sources */,
 				05B906EA1AE805AE00B85BEC /* IMGLYPolaFilter.m in Sources */,
