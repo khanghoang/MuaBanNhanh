@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblUpdateAt;
 @property (weak, nonatomic) IBOutlet UILabel *lblProductName;
 @property (weak, nonatomic) IBOutlet UILabel *lblPrice;
-@property (weak, nonatomic) IBOutlet TKAlignTopLabel *lblCategories;
+@property (weak, nonatomic) IBOutlet UILabel *lblCategories;
 @property (weak, nonatomic) IBOutlet UIView *wrapperView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewProductImage;
@@ -37,6 +37,16 @@
     
     self.btnCall.layer.borderWidth = 1;
     self.btnCall.layer.borderColor = [UIColor colorFromHexString:@"#cccccc"].CGColor;
+}
+
+- (void)prepareForReuse {
+    [super prepareForReuse];
+    [@[self.lblUpdateAt, self.lblProductName, self.lblPrice, self.lblCategories] enumerateObjectsUsingBlock:^(UILabel *label, NSUInteger idx, BOOL *stop) {
+        label.text = @"";
+    }];
+    
+    self.imageViewProductImage.image = nil;
+    [self.btnCall setTitle:@"" forState:UIControlStateNormal];
 }
 
 - (void)configWithData:(id)data {
