@@ -136,7 +136,7 @@ typedef NS_ENUM(NSInteger, TableViewTagType) {
     cell.cellNameLabel.text = subCategory.name;
     RACSignal *seletedCategoriesChagingSignal = [[RACObserve(self, viewModel.selectedCategories) ignore:nil] takeUntil:cell.rac_prepareForReuseSignal];
     [seletedCategoriesChagingSignal subscribeNext:^(NSArray *selectedCategories) {
-        if ([selectedCategories containsObject:subCategory.name]) {
+        if ([selectedCategories containsObject:subCategory]) {
             [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
         } else {
             cell.selected = NO;
