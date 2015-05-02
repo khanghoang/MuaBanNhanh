@@ -5,32 +5,32 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
-        <!--Create Product View Controller-->
+        <!--Đăng sản phảm-->
         <scene sceneID="nn3-HZ-tgp">
             <objects>
-                <viewController storyboardIdentifier="MBNCreateProductViewController" id="C1o-xw-Xzx" customClass="MBNCreateProductViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MBNCreateProductViewController" title="Đăng sản phảm" id="C1o-xw-Xzx" customClass="MBNCreateProductViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oVp-17-iec"/>
                         <viewControllerLayoutGuide type="bottom" id="b9h-89-ttx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gUh-QQ-UvA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1124"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1060"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgT-Wg-uCN">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="1124"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1060"/>
                                 <subviews>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWm-wp-3XM" customClass="TKDesignableView">
-                                        <rect key="frame" x="10" y="10" width="300" height="1154"/>
+                                        <rect key="frame" x="10" y="10" width="300" height="1117"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đăng tin" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKv-tE-br1">
-                                                <rect key="frame" x="111" y="30" width="78" height="24"/>
+                                                <rect key="frame" x="111" y="10" width="78" height="24"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <color key="textColor" red="0.23137254901960785" green="0.32549019607843138" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tiêu đề tin đăng" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dNB-lS-cR6" customClass="MBNPaddingTextField">
-                                                <rect key="frame" x="10" y="69" width="280" height="35"/>
+                                                <rect key="frame" x="10" y="44" width="280" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="N1c-VP-R0i"/>
                                                 </constraints>
@@ -39,7 +39,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ceu-Is-2eh">
-                                                <rect key="frame" x="275" y="75" width="11" height="24"/>
+                                                <rect key="frame" x="275" y="50" width="11" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="UJh-zK-tnh"/>
                                                     <constraint firstAttribute="width" constant="11" id="lXO-90-Xtg"/>
@@ -49,25 +49,25 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thông tin không được để trống" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57C-hI-Chq">
-                                                <rect key="frame" x="10" y="107" width="175" height="15"/>
+                                                <rect key="frame" x="10" y="82" width="175" height="15"/>
                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
                                                 <color key="textColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chuyên mục đã chọn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqk-OB-aRI">
-                                                <rect key="frame" x="10" y="144" width="119" height="15"/>
+                                                <rect key="frame" x="10" y="107" width="119" height="15"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chọn lại chuyên mục nếu cần" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aWx-2Y-NEf">
-                                                <rect key="frame" x="10" y="269" width="166" height="15"/>
+                                                <rect key="frame" x="10" y="232" width="166" height="15"/>
                                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOE-vo-IXT" customClass="TKDesignableButton">
-                                                <rect key="frame" x="183" y="266" width="70" height="21"/>
+                                                <rect key="frame" x="183" y="229" width="70" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="akh-Sf-2ey"/>
                                                     <constraint firstAttribute="width" constant="70" id="byJ-0q-dbE"/>
@@ -90,7 +90,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1RW-Uk-gHh" customClass="TKDesignableButton">
-                                                <rect key="frame" x="10" y="344" width="280" height="35"/>
+                                                <rect key="frame" x="10" y="307" width="280" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="4Um-7c-2zh"/>
                                                 </constraints>
@@ -109,10 +109,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-down" translatesAutoresizingMaskIntoConstraints="NO" id="psJ-oR-HkE">
-                                                <rect key="frame" x="274" y="359" width="9" height="5"/>
+                                                <rect key="frame" x="274" y="322" width="9" height="5"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADD-cR-ol0" customClass="TKDesignableButton">
-                                                <rect key="frame" x="10" y="299" width="280" height="35"/>
+                                                <rect key="frame" x="10" y="262" width="280" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="IOd-pi-Foz"/>
                                                 </constraints>
@@ -131,10 +131,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-down" translatesAutoresizingMaskIntoConstraints="NO" id="4c4-a9-XOj">
-                                                <rect key="frame" x="274" y="314" width="9" height="5"/>
+                                                <rect key="frame" x="274" y="277" width="9" height="5"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTr-GK-9Yz" customClass="TKDesignableButton">
-                                                <rect key="frame" x="10" y="389" width="280" height="35"/>
+                                                <rect key="frame" x="10" y="352" width="280" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="sNd-dU-a3r"/>
                                                 </constraints>
@@ -153,10 +153,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-down" translatesAutoresizingMaskIntoConstraints="NO" id="x9m-Vd-NsG">
-                                                <rect key="frame" x="274" y="404" width="9" height="5"/>
+                                                <rect key="frame" x="274" y="367" width="9" height="5"/>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Giá bán" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NKJ-O9-3eC" customClass="MBNPaddingTextField">
-                                                <rect key="frame" x="10" y="434" width="280" height="35"/>
+                                                <rect key="frame" x="10" y="397" width="280" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Fz3-zj-o0p"/>
                                                 </constraints>
@@ -165,7 +165,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xd-GU-rRW" customClass="MBNTextView">
-                                                <rect key="frame" x="10" y="479" width="280" height="205"/>
+                                                <rect key="frame" x="10" y="442" width="280" height="205"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="205" id="4hz-WL-Kqk"/>
@@ -181,7 +181,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aui-jY-lpl" customClass="TKDesignableButton">
-                                                <rect key="frame" x="10" y="694" width="60" height="60"/>
+                                                <rect key="frame" x="10" y="657" width="60" height="60"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="Hic-Z5-EuQ"/>
@@ -206,7 +206,7 @@
                                                 </connections>
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1P3-WH-xdi" customClass="MBNTextView">
-                                                <rect key="frame" x="80" y="694" width="210" height="70"/>
+                                                <rect key="frame" x="80" y="657" width="210" height="70"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="lZr-FX-iWd"/>
@@ -222,7 +222,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75t-Nz-gWm" customClass="MBNTextView">
-                                                <rect key="frame" x="80" y="774" width="210" height="70"/>
+                                                <rect key="frame" x="80" y="737" width="210" height="70"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="jJl-1L-hAW"/>
@@ -238,7 +238,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZk-NR-UPH" customClass="TKDesignableButton">
-                                                <rect key="frame" x="10" y="854" width="60" height="60"/>
+                                                <rect key="frame" x="10" y="817" width="60" height="60"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="bKb-mV-iPC"/>
@@ -263,7 +263,7 @@
                                                 </connections>
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWp-ds-tHt" customClass="MBNTextView">
-                                                <rect key="frame" x="80" y="854" width="210" height="70"/>
+                                                <rect key="frame" x="80" y="817" width="210" height="70"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="dry-Tv-FFD"/>
@@ -279,7 +279,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdL-mE-CL1">
-                                                <rect key="frame" x="10" y="1094" width="280" height="40"/>
+                                                <rect key="frame" x="10" y="1057" width="280" height="40"/>
                                                 <color key="backgroundColor" red="0.12549019607843137" green="0.76078431372549016" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="fNU-W2-ZUD"/>
@@ -294,7 +294,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00n-6h-hm8" customClass="TKDesignableButton">
-                                                <rect key="frame" x="10" y="934" width="60" height="60"/>
+                                                <rect key="frame" x="10" y="897" width="60" height="60"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="7Lc-QV-HKC"/>
@@ -319,7 +319,7 @@
                                                 </connections>
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2v-TW-E1G" customClass="MBNTextView">
-                                                <rect key="frame" x="80" y="934" width="210" height="70"/>
+                                                <rect key="frame" x="80" y="897" width="210" height="70"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="7n8-zC-cPr"/>
@@ -335,7 +335,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7il-0V-7zT" customClass="TKDesignableButton">
-                                                <rect key="frame" x="10" y="1014" width="60" height="60"/>
+                                                <rect key="frame" x="10" y="977" width="60" height="60"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="To3-us-zdx"/>
@@ -360,7 +360,7 @@
                                                 </connections>
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bq7-A9-KAM" customClass="MBNTextView">
-                                                <rect key="frame" x="80" y="1014" width="210" height="70"/>
+                                                <rect key="frame" x="80" y="977" width="210" height="70"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="bxY-y2-zc0"/>
@@ -376,7 +376,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cOm-PA-Uqp">
-                                                <rect key="frame" x="10" y="169" width="280" height="90"/>
+                                                <rect key="frame" x="10" y="132" width="280" height="90"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="90" id="GSu-Zz-sD3"/>
@@ -424,7 +424,7 @@
                                                 </connections>
                                             </collectionView>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzy-uD-kdz" customClass="TKDesignableButton">
-                                                <rect key="frame" x="10" y="774" width="60" height="60"/>
+                                                <rect key="frame" x="10" y="737" width="60" height="60"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="hty-Cj-FO5"/>
@@ -499,18 +499,18 @@
                                             <constraint firstItem="7il-0V-7zT" firstAttribute="leading" secondItem="eWm-wp-3XM" secondAttribute="leading" constant="10" id="cWl-ql-g2M"/>
                                             <constraint firstItem="1P3-WH-xdi" firstAttribute="top" secondItem="9xd-GU-rRW" secondAttribute="bottom" constant="10" id="cb2-PZ-OL7"/>
                                             <constraint firstAttribute="trailing" secondItem="NKJ-O9-3eC" secondAttribute="trailing" constant="10" id="clK-q9-7ka"/>
-                                            <constraint firstItem="MKv-tE-br1" firstAttribute="top" secondItem="eWm-wp-3XM" secondAttribute="top" constant="30" id="ct5-bN-6j0"/>
+                                            <constraint firstItem="MKv-tE-br1" firstAttribute="top" secondItem="eWm-wp-3XM" secondAttribute="top" constant="10" id="ct5-bN-6j0"/>
                                             <constraint firstItem="pzy-uD-kdz" firstAttribute="top" secondItem="75t-Nz-gWm" secondAttribute="top" id="dkP-FE-2mv"/>
                                             <constraint firstItem="HOE-vo-IXT" firstAttribute="leading" secondItem="aWx-2Y-NEf" secondAttribute="trailing" constant="7" id="hEE-AK-hqA"/>
                                             <constraint firstItem="NKJ-O9-3eC" firstAttribute="top" secondItem="RTr-GK-9Yz" secondAttribute="bottom" constant="10" id="lEu-Fc-GPX"/>
                                             <constraint firstItem="ADD-cR-ol0" firstAttribute="top" secondItem="HOE-vo-IXT" secondAttribute="bottom" constant="12" id="nOr-dC-Gke"/>
-                                            <constraint firstItem="dNB-lS-cR6" firstAttribute="top" secondItem="MKv-tE-br1" secondAttribute="bottom" constant="15" id="ni7-9Q-di9"/>
+                                            <constraint firstItem="dNB-lS-cR6" firstAttribute="top" secondItem="MKv-tE-br1" secondAttribute="bottom" constant="10" id="ni7-9Q-di9"/>
                                             <constraint firstItem="jdL-mE-CL1" firstAttribute="leading" secondItem="eWm-wp-3XM" secondAttribute="leading" constant="10" id="o0t-2L-iU5"/>
                                             <constraint firstAttribute="trailing" secondItem="gWp-ds-tHt" secondAttribute="trailing" constant="10" id="o3E-In-y2z"/>
                                             <constraint firstItem="57C-hI-Chq" firstAttribute="leading" secondItem="dNB-lS-cR6" secondAttribute="leading" id="oiS-Ae-Lxm"/>
                                             <constraint firstItem="bq7-A9-KAM" firstAttribute="leading" secondItem="7il-0V-7zT" secondAttribute="trailing" constant="10" id="pb2-c9-Tsm"/>
                                             <constraint firstItem="b2v-TW-E1G" firstAttribute="top" secondItem="00n-6h-hm8" secondAttribute="top" id="qQr-O0-otL"/>
-                                            <constraint firstItem="iqk-OB-aRI" firstAttribute="top" secondItem="57C-hI-Chq" secondAttribute="bottom" constant="22" id="r5W-Jh-RmN"/>
+                                            <constraint firstItem="iqk-OB-aRI" firstAttribute="top" secondItem="57C-hI-Chq" secondAttribute="bottom" constant="10" id="r5W-Jh-RmN"/>
                                             <constraint firstAttribute="centerX" secondItem="MKv-tE-br1" secondAttribute="centerX" id="sXh-kR-Nqq"/>
                                             <constraint firstItem="00n-6h-hm8" firstAttribute="leading" secondItem="eWm-wp-3XM" secondAttribute="leading" constant="10" id="smw-TY-m7u"/>
                                             <constraint firstAttribute="trailing" secondItem="jdL-mE-CL1" secondAttribute="trailing" constant="10" id="unk-S8-rcs"/>
@@ -545,7 +545,15 @@
                             <constraint firstItem="cgT-Wg-uCN" firstAttribute="top" secondItem="gUh-QQ-UvA" secondAttribute="top" id="wMd-SY-eIh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="XGZ-pG-Nso"/>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="Đăng sản phẩm" id="XGZ-pG-Nso">
+                        <barButtonItem key="backBarButtonItem" title="Trở về" id="a9L-3V-8jw"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="1vF-Ai-gec">
+                            <connections>
+                                <action selector="onBtnClose:" destination="C1o-xw-Xzx" id="RNH-rq-euz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1124"/>
                     <connections>

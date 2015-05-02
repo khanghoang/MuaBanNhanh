@@ -438,5 +438,8 @@ UIActionSheetDelegate
     
 }
 
+- (IBAction)onBtnClose:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end
