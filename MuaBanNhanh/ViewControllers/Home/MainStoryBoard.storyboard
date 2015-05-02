@@ -18,23 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KVe-Bn-M0F">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVe-Bn-M0F">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JW5-ia-lac" userLabel="Top view">
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JW5-ia-lac" userLabel="Top view">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="299"/>
                                         <color key="backgroundColor" red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="299" placeholder="YES" id="SuF-hS-bni"/>
+                                            <constraint firstAttribute="height" constant="299" placeholder="YES" id="QS0-YY-XJg"/>
                                         </constraints>
                                         <connections>
                                             <segue destination="tM0-ER-k7X" kind="embed" id="BfM-LC-V3n"/>
                                         </connections>
                                     </containerView>
-                                    <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="The-du-r2R" userLabel="Bottom view">
-                                        <rect key="frame" x="0.0" y="299" width="320" height="301"/>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="The-du-r2R" userLabel="Bottom view">
+                                        <rect key="frame" x="0.0" y="299" width="320" height="269"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="301" placeholder="YES" id="k2m-7S-gj8"/>
+                                            <constraint firstAttribute="height" constant="269" placeholder="YES" id="EOS-Ea-OCg"/>
                                         </constraints>
                                         <connections>
                                             <segue destination="ca6-sI-dPn" kind="embed" id="mnQ-2e-NoE"/>
@@ -42,17 +42,25 @@
                                     </containerView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="JW5-ia-lac" firstAttribute="leading" secondItem="KVe-Bn-M0F" secondAttribute="leading" id="KYU-WG-Ddn"/>
-                                    <constraint firstItem="JW5-ia-lac" firstAttribute="top" secondItem="KVe-Bn-M0F" secondAttribute="top" id="NAk-my-PR4"/>
-                                    <constraint firstAttribute="bottom" secondItem="The-du-r2R" secondAttribute="bottom" constant="-32" id="ZgB-FO-MAI"/>
-                                    <constraint firstItem="The-du-r2R" firstAttribute="top" secondItem="JW5-ia-lac" secondAttribute="bottom" id="ZyT-ay-tIS"/>
-                                    <constraint firstAttribute="trailing" secondItem="The-du-r2R" secondAttribute="trailing" id="cv7-yL-nmZ"/>
-                                    <constraint firstItem="The-du-r2R" firstAttribute="leading" secondItem="KVe-Bn-M0F" secondAttribute="leading" id="drp-hh-Jza"/>
-                                    <constraint firstAttribute="trailing" secondItem="JW5-ia-lac" secondAttribute="trailing" id="unM-5a-27E"/>
+                                    <constraint firstItem="JW5-ia-lac" firstAttribute="top" secondItem="KVe-Bn-M0F" secondAttribute="top" id="2Ii-78-2W8"/>
+                                    <constraint firstAttribute="width" secondItem="The-du-r2R" secondAttribute="width" id="7Lo-Yz-aTM"/>
+                                    <constraint firstAttribute="bottom" secondItem="The-du-r2R" secondAttribute="bottom" id="J36-ov-b8M"/>
+                                    <constraint firstItem="The-du-r2R" firstAttribute="leading" secondItem="KVe-Bn-M0F" secondAttribute="leading" id="Jm6-Xd-wcq"/>
+                                    <constraint firstAttribute="width" secondItem="JW5-ia-lac" secondAttribute="width" id="bRP-6V-wli"/>
+                                    <constraint firstAttribute="trailing" secondItem="The-du-r2R" secondAttribute="trailing" id="dRw-1H-ByJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="JW5-ia-lac" secondAttribute="trailing" id="eRG-4v-m08"/>
+                                    <constraint firstItem="JW5-ia-lac" firstAttribute="leading" secondItem="KVe-Bn-M0F" secondAttribute="leading" id="h8n-ib-ySa"/>
+                                    <constraint firstItem="The-du-r2R" firstAttribute="top" secondItem="JW5-ia-lac" secondAttribute="bottom" id="nb1-6Q-oqf"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="KVe-Bn-M0F" secondAttribute="trailing" id="0qo-FK-EXy"/>
+                            <constraint firstItem="gF5-ig-odh" firstAttribute="top" secondItem="KVe-Bn-M0F" secondAttribute="bottom" id="XtK-ct-syS"/>
+                            <constraint firstItem="KVe-Bn-M0F" firstAttribute="leading" secondItem="Utf-5X-F6B" secondAttribute="leading" id="Xvy-uV-efy"/>
+                            <constraint firstItem="KVe-Bn-M0F" firstAttribute="top" secondItem="pFh-Qu-8aU" secondAttribute="bottom" id="e9N-iz-wCI"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="X4h-bG-f2L">
@@ -63,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sla-Cf-7KU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-267.19999999999999" y="137.26666666666665"/>
+            <point key="canvasLocation" x="-268" y="137"/>
         </scene>
         <!--Home Bottom View Controller-->
         <scene sceneID="Wax-ke-t44">
@@ -74,11 +82,11 @@
                         <viewControllerLayoutGuide type="bottom" id="pwK-ue-XfX"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="JPw-1U-ebH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="301"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="269"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ddY-Pf-e0U">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="301"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="269"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="feV-oN-zEv">
                                     <size key="itemSize" width="50" height="50"/>
@@ -105,10 +113,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="ddY-Pf-e0U" secondAttribute="centerX" id="2wC-qe-wW5"/>
-                            <constraint firstItem="pwK-ue-XfX" firstAttribute="top" secondItem="ddY-Pf-e0U" secondAttribute="bottom" id="Iob-sr-eWP"/>
-                            <constraint firstItem="ddY-Pf-e0U" firstAttribute="width" secondItem="JPw-1U-ebH" secondAttribute="width" id="jyd-k1-Akm"/>
-                            <constraint firstItem="ddY-Pf-e0U" firstAttribute="top" secondItem="wWH-pt-rzj" secondAttribute="bottom" id="oej-Gq-zoQ"/>
+                            <constraint firstItem="ddY-Pf-e0U" firstAttribute="top" secondItem="wWH-pt-rzj" secondAttribute="bottom" id="5bI-3g-mbj"/>
+                            <constraint firstItem="pwK-ue-XfX" firstAttribute="top" secondItem="ddY-Pf-e0U" secondAttribute="bottom" id="XYb-Vf-xPY"/>
+                            <constraint firstItem="ddY-Pf-e0U" firstAttribute="leading" secondItem="JPw-1U-ebH" secondAttribute="leading" id="YPQ-Yx-V3l"/>
+                            <constraint firstAttribute="trailing" secondItem="ddY-Pf-e0U" secondAttribute="trailing" id="l4Z-Bg-uHB"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -187,10 +195,10 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="v0E-le-qUt" firstAttribute="width" secondItem="hAy-QA-Fbl" secondAttribute="width" id="9OL-hl-B5e"/>
-                            <constraint firstItem="v0E-le-qUt" firstAttribute="top" secondItem="hkc-4H-C08" secondAttribute="bottom" id="Hqr-YI-LUE"/>
-                            <constraint firstItem="uMT-TM-7Ne" firstAttribute="top" secondItem="v0E-le-qUt" secondAttribute="bottom" id="bGG-ds-SAf"/>
-                            <constraint firstAttribute="centerX" secondItem="v0E-le-qUt" secondAttribute="centerX" id="pFw-On-X4H"/>
+                            <constraint firstItem="v0E-le-qUt" firstAttribute="leading" secondItem="hAy-QA-Fbl" secondAttribute="leading" id="7a9-tz-nvi"/>
+                            <constraint firstAttribute="trailing" secondItem="v0E-le-qUt" secondAttribute="trailing" id="8to-MV-zug"/>
+                            <constraint firstItem="uMT-TM-7Ne" firstAttribute="top" secondItem="v0E-le-qUt" secondAttribute="bottom" id="mj2-Dt-1uG"/>
+                            <constraint firstItem="v0E-le-qUt" firstAttribute="top" secondItem="hkc-4H-C08" secondAttribute="bottom" id="uxE-Gi-Rpt"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
