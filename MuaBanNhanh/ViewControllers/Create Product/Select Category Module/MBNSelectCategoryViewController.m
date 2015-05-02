@@ -179,11 +179,12 @@ typedef NS_ENUM(NSInteger, TableViewTagType) {
     MBNCategory *subCategory = category.subCategories[indexPath.row];
     NSMutableArray *selectedCategories = [self.viewModel mutableArrayValueForKey:@"selectedCategories"];
     
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
     if([self.viewModel.selectedCategories containsObject:subCategory]) {
         return nil;
     }
     
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     [cell setSelected:YES];
     
     [selectedCategories addObject:subCategory];
@@ -196,12 +197,15 @@ typedef NS_ENUM(NSInteger, TableViewTagType) {
         return nil;
     }
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.selected = NO;
     MBNCategory *category = self.viewModel.categories[indexPath.section];
     MBNCategory *subCategory = category.subCategories[indexPath.row];
     NSMutableArray *selectedCategories = [self.viewModel mutableArrayValueForKey:@"selectedCategories"];
-    [selectedCategories removeObject:subCategory.name];
-    return indexPath;
+    if([self.viewModel.selectedCategories containsObject:subCategory]) {
+        cell.selected = NO;
+        [selectedCategories removeObject:subCategory];
+        return indexPath;
+    }
+    return nil;
 }
 
 #pragma mark - Table View Header Datasource
