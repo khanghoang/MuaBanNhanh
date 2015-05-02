@@ -54,16 +54,15 @@
     
     [window makeKeyAndVisible];
     
-    MBNFloatButton *button = [[MBNFloatButton alloc] initWithFrame:CGRectMake(0, 0, 46, 46)];
+    MBNFloatButton *button = [[MBNFloatButton alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
     self.floatButton = button;
     [window addSubview:button];
     
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.width.equalTo(@(46));
-        make.height.equalTo(@(46));
-        make.trailing.equalTo(button.superview).with.offset(-15);
-        make.bottom.equalTo(button.superview).with.offset(-20);
+        make.width.equalTo(@(80));
+        make.height.equalTo(@(80));
+        make.trailing.equalTo(button.superview).with.offset(-10);
+        make.bottom.equalTo(button.superview).with.offset(-15);
     }];
     
     [window bringSubviewToFront:button];

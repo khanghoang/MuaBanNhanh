@@ -8,14 +8,59 @@
 
 #import "MBNFloatButton.h"
 
+@interface MBNFloatButton()
+
+@property (weak, nonatomic) IBOutlet UIButton *btnFloat;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
+
+@end
+
 @implementation MBNFloatButton
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self initSubView];
+    }
+    
+    return self;
 }
-*/
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self initSubView];
+    }
+    
+    return self;;
+}
+
+- (void)initSubView {
+    UIView *view = [[[NSBundle mainBundle]
+             loadNibNamed:NSStringFromClass([self class])
+             owner:self
+             options:nil] objectAtIndex:0];
+    [self addSubview:view];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+    }];
+    
+    [self.btnFloat mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(self.mas_height).multipliedBy(6.0/8.0);
+        make.width.equalTo(self.mas_width).multipliedBy(6.0/8.0);
+        make.centerY.equalTo(self.mas_centerY).with.offset(0);
+        make.centerX.equalTo(self.mas_centerX);
+    }];
+    
+    [self.backgroundImage mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(self.mas_height).multipliedBy(1.0/1.0);
+        make.width.equalTo(self.mas_width).multipliedBy(1.0/1.0);
+        make.centerY.equalTo(self.mas_centerY).with.offset(2);
+        make.centerX.equalTo(self.mas_centerX);
+    }];
+    
+    
+    [self updateConstraintsIfNeeded];
+    [self layoutIfNeeded];
+}
 
 @end

@@ -5,45 +5,53 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MBNFloatButton">
+            <connections>
+                <outlet property="backgroundImage" destination="7g9-QZ-B79" id="Q9z-GC-LXE"/>
+                <outlet property="btnFloat" destination="l83-1h-mwg" id="cUE-ot-UWZ"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MBNFloatButton">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l83-1h-mwg" customClass="TKDesignableButton">
-                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                    <color key="backgroundColor" red="0.90196078430000004" green="0.18039215689999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fab_bg_normal" translatesAutoresizingMaskIntoConstraints="NO" id="7g9-QZ-B79">
+                    <rect key="frame" x="-5" y="-3" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" placeholder="YES" id="Lnf-Zj-pdO"/>
+                        <constraint firstAttribute="height" constant="80" placeholder="YES" id="OEJ-M9-YcZ"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l83-1h-mwg">
+                    <rect key="frame" x="5" y="4" width="60" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" placeholder="YES" id="cEo-PN-4wb"/>
+                        <constraint firstAttribute="height" constant="60" placeholder="YES" id="fRA-dX-UhH"/>
+                    </constraints>
                     <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
-                            <integer key="value" value="25"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                            <integer key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" red="0.90196078430000004" green="0.18039215689999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                 </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="l83-1h-mwg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="NFB-Ez-AxU"/>
-                <constraint firstItem="l83-1h-mwg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gGA-z1-ZT9"/>
-                <constraint firstAttribute="trailing" secondItem="l83-1h-mwg" secondAttribute="trailing" id="lDb-qi-Ov7"/>
-                <constraint firstAttribute="bottom" secondItem="l83-1h-mwg" secondAttribute="bottom" id="tkF-ZT-qrC"/>
+                <constraint firstAttribute="centerY" secondItem="l83-1h-mwg" secondAttribute="centerY" constant="1" placeholder="YES" id="2iq-wH-uPX"/>
+                <constraint firstAttribute="centerX" secondItem="l83-1h-mwg" secondAttribute="centerX" constant="-0.5" placeholder="YES" id="EdV-g2-AaZ"/>
+                <constraint firstAttribute="centerY" secondItem="7g9-QZ-B79" secondAttribute="centerY" constant="-2" placeholder="YES" id="fC8-Ns-hh5"/>
+                <constraint firstAttribute="centerX" secondItem="7g9-QZ-B79" secondAttribute="centerX" constant="-0.5" placeholder="YES" id="l2x-IC-UD1"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="295" y="142.5"/>
+            <point key="canvasLocation" x="307" y="157"/>
         </view>
     </objects>
+    <resources>
+        <image name="fab_bg_normal" width="74" height="74"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
