@@ -10,7 +10,6 @@
 #import "MBNRevealViewController.h"
 #import "MBNHomeContainerViewController.h"
 #import "IndexHomePopupViewController.h"
-#import "MBNFloatButton.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +17,6 @@
 @property (strong, nonatomic) UINavigationController *rootNavigationController;
 
 @property (strong, nonatomic) UIWindow *mainWindow;
-@property (strong, nonatomic) MBNFloatButton *floatButton;
 @property (strong, nonatomic) UIWindow *popupWindow;
 
 @end

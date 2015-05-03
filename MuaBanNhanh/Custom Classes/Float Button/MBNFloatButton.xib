@@ -23,14 +23,14 @@
                         <constraint firstAttribute="height" constant="80" placeholder="YES" id="OEJ-M9-YcZ"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l83-1h-mwg">
-                    <rect key="frame" x="5" y="4" width="60" height="60"/>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l83-1h-mwg">
+                    <rect key="frame" x="10" y="7" width="50" height="50"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="60" placeholder="YES" id="cEo-PN-4wb"/>
-                        <constraint firstAttribute="height" constant="60" placeholder="YES" id="fRA-dX-UhH"/>
+                        <constraint firstAttribute="width" constant="50" placeholder="YES" id="cEo-PN-4wb"/>
+                        <constraint firstAttribute="height" constant="50" placeholder="YES" id="fRA-dX-UhH"/>
                     </constraints>
-                    <state key="normal">
+                    <state key="normal" image="plus">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -41,7 +41,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <gestureRecognizers/>
             <constraints>
-                <constraint firstAttribute="centerY" secondItem="l83-1h-mwg" secondAttribute="centerY" constant="1" placeholder="YES" id="2iq-wH-uPX"/>
+                <constraint firstAttribute="centerY" secondItem="l83-1h-mwg" secondAttribute="centerY" constant="3" placeholder="YES" id="2iq-wH-uPX"/>
                 <constraint firstAttribute="centerX" secondItem="l83-1h-mwg" secondAttribute="centerX" constant="-0.5" placeholder="YES" id="EdV-g2-AaZ"/>
                 <constraint firstAttribute="centerY" secondItem="7g9-QZ-B79" secondAttribute="centerY" constant="-2" placeholder="YES" id="fC8-Ns-hh5"/>
                 <constraint firstAttribute="centerX" secondItem="7g9-QZ-B79" secondAttribute="centerX" constant="-0.5" placeholder="YES" id="l2x-IC-UD1"/>
@@ -55,6 +55,7 @@
     </objects>
     <resources>
         <image name="fab_bg_normal" width="74" height="74"/>
+        <image name="plus" width="64" height="64"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

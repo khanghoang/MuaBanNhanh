@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBNFloatButton.h"
 
 @interface AppDelegate : UIResponder
 <
@@ -19,6 +20,8 @@ UIApplicationDelegate
 
 @property (strong, readonly) UIWindow *mainWindow;
 @property (strong, readonly) UIWindow *popupWindow;
+
+@property (strong, nonatomic) MBNFloatButton *floatButton;
 
 - (void)displayPopupWindow;
 - (void)closePopupViewCompletion:(void (^)())completion;

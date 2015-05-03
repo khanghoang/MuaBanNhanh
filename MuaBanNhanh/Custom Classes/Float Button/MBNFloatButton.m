@@ -43,9 +43,9 @@
     [self addSubview:view];
     
     [self.btnFloat mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(self.mas_height).multipliedBy(6.0/8.0);
-        make.width.equalTo(self.mas_width).multipliedBy(6.0/8.0);
-        make.centerY.equalTo(self.mas_centerY).with.offset(0);
+        make.height.equalTo(self.mas_height).multipliedBy(5.0/8.0);
+        make.width.equalTo(self.mas_width).multipliedBy(5.0/8.0);
+        make.centerY.equalTo(self.mas_centerY).with.offset(-3);
         make.centerX.equalTo(self.mas_centerX);
     }];
     
@@ -58,6 +58,10 @@
     
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openPopup:)];
     [self.btnFloat addGestureRecognizer:gesture];
+    
+    UIImage *plusImage = [self.btnFloat.imageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [self.btnFloat setImage:plusImage forState:UIControlStateNormal];
+    [self.btnFloat.imageView setTintColor:[UIColor whiteColor]];
     
     [self updateConstraintsIfNeeded];
     [self layoutIfNeeded];
