@@ -66,7 +66,6 @@
     }];
     
     [window bringSubviewToFront:button];
-    [window sendSubviewToBack:self.revealController.view];
     
     [window setNeedsUpdateConstraints];
     [window layoutIfNeeded];

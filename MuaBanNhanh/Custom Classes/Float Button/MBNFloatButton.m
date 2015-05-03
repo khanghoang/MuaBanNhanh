@@ -41,8 +41,6 @@
              owner:self
              options:nil] objectAtIndex:0];
     [self addSubview:view];
-    [view mas_makeConstraints:^(MASConstraintMaker *make) {
-    }];
     
     [self.btnFloat mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(self.mas_height).multipliedBy(6.0/8.0);
@@ -58,9 +56,18 @@
         make.centerX.equalTo(self.mas_centerX);
     }];
     
+    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openPopup:)];
+    [self.btnFloat addGestureRecognizer:gesture];
     
     [self updateConstraintsIfNeeded];
     [self layoutIfNeeded];
 }
+
+- (IBAction)openPopup:(id)sender {
+//    TODO: Testing create product VC
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [appDelegate displayPopupWindow];
+}
+
 
 @end

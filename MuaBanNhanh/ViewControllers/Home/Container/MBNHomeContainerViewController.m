@@ -38,10 +38,4 @@ static const CGFloat NAVIGATION_BAR_TITLE_IMAGE_WIDTH = 140;
     [self mbn_addHambugerButton];
 }
 
-- (IBAction)openPopup:(id)sender {
-//    TODO: Testing create product VC
-    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [appDelegate displayPopupWindow];
-}
-
 @end
