@@ -10,6 +10,8 @@
 #import "MBNRevealViewController.h"
 #import "MBNHomeContainerViewController.h"
 #import "IndexHomePopupViewController.h"
+#import "UIUnregisterHomePopup.h"
+#import "IndexHomePopupViewController.h"
 
 @interface AppDelegate ()
 
@@ -112,6 +114,18 @@
     
     UITapGestureRecognizer *tapToClose = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closePopupView)];
     [self.popupWindow.rootViewController.view addGestureRecognizer:tapToClose];
+    
+    [self.popupWindow addSubview:self.floatButton];
+    
+    [self.floatButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@(80));
+        make.height.equalTo(@(80));
+        make.trailing.equalTo(self.floatButton.superview).with.offset(-10);
+        make.bottom.equalTo(self.floatButton.superview).with.offset(-15);
+    }];
+    
+    [self.popupWindow updateConstraintsIfNeeded];
+    [self.popupWindow layoutIfNeeded];
 }
 
 - (void)closePopupView {
@@ -119,17 +133,40 @@
 }
 
 - (void)closePopupViewCompletion:(void (^)())completion {
-    [self.mainWindow makeKeyWindow];
-    [UIView animateWithDuration:0.45
+    
+    IndexHomePopupViewController *popup = (IndexHomePopupViewController *)self.popupWindow.rootViewController;
+    
+    [popup.popup dismissWithCompletion:^{
+    }];
+    [UIView animateWithDuration:0.5
                      animations:^{
-                         self.popupWindow.alpha = 0;
-                         
+                         popup.backgroundView.alpha = 0;
+                         popup.view.alpha = 0;
                      } completion:^(BOOL finished) {
-                         self.popupWindow.hidden = YES;
+                         self.popupWindow.alpha = 0;
+                         popup.backgroundView.alpha = 0;
+                         popup.view.alpha = 0;
+                         [self.mainWindow addSubview:self.floatButton];
+                         [self.mainWindow bringSubviewToFront:self.floatButton];
+                         [self.floatButton mas_makeConstraints:^(MASConstraintMaker *make) {
+                             make.width.equalTo(@(80));
+                             make.height.equalTo(@(80));
+                             make.trailing.equalTo(self.floatButton.superview).with.offset(-10);
+                             make.bottom.equalTo(self.floatButton.superview).with.offset(-15);
+                         }];
+                         
+                         [self.mainWindow updateConstraintsIfNeeded];
+                         [self.mainWindow layoutIfNeeded];
+                         
+//                         self.popupWindow.hidden = YES;
+    
+                         [self.mainWindow makeKeyWindow];
                          if (completion) {
+                             
                              completion();
                          }
                      }];
+    
 }
 
 - (void)pushViewControllerToFrontViewController:(UIViewController *)viewController {

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIUnregisterHomePopup.h"
 
 @interface IndexHomePopupViewController : UIViewController
+
+@property (readonly, nonatomic) UIUnregisterHomePopup *popup;
+@property (weak, nonatomic) IBOutlet UIView *backgroundView;
 
 @end

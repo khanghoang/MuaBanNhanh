@@ -10,4 +10,6 @@
 
 @interface UIUnregisterHomePopup : UITableViewController
 
+- (void)dismissWithCompletion:(void(^)(void))completion;
+
 @end

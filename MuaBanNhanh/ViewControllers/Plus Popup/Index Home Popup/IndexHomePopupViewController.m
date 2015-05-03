@@ -10,6 +10,8 @@
 
 @interface IndexHomePopupViewController ()
 
+@property (strong, nonatomic) UIUnregisterHomePopup *popup;
+
 @end
 
 @implementation IndexHomePopupViewController
@@ -19,6 +21,10 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // TODO: check vc
+    self.popup = segue.destinationViewController;
+}
 
 
 @end

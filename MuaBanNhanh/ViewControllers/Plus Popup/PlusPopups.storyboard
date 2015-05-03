@@ -18,8 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Exf-hi-YFn">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqr-RM-W1Y">
-                                <rect key="frame" x="330" y="318" width="270" height="217"/>
+                                <rect key="frame" x="314" y="293" width="270" height="217"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wlc-cx-NrG">
                                         <rect key="frame" x="0.0" y="0.0" width="270" height="217"/>
@@ -38,29 +42,26 @@
                                     <constraint firstItem="wlc-cx-NrG" firstAttribute="height" secondItem="cqr-RM-W1Y" secondAttribute="height" id="wmD-xF-Ldd"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5GC-6f-Uiu" customClass="TKCircleButton">
-                                <rect key="frame" x="546" y="544" width="46" height="46"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="rJ6-be-qdi"/>
-                                    <constraint firstAttribute="height" constant="46" id="zwE-FA-4Hk"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="7"/>
-                                <state key="normal" title="+">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KsA-Qf-egh" firstAttribute="top" secondItem="cqr-RM-W1Y" secondAttribute="bottom" constant="65" id="6zG-kF-Qbl"/>
-                            <constraint firstItem="5GC-6f-Uiu" firstAttribute="right" secondItem="dwH-nd-At6" secondAttribute="rightMargin" constant="8" id="I2m-Nd-cca"/>
+                            <constraint firstItem="Exf-hi-YFn" firstAttribute="top" secondItem="dwH-nd-At6" secondAttribute="top" id="25H-7t-QiU"/>
+                            <constraint firstItem="KsA-Qf-egh" firstAttribute="top" secondItem="cqr-RM-W1Y" secondAttribute="bottom" constant="90" id="6zG-kF-Qbl"/>
+                            <constraint firstItem="Exf-hi-YFn" firstAttribute="leading" secondItem="dwH-nd-At6" secondAttribute="leading" id="Aww-Kr-Krt"/>
+                            <constraint firstAttribute="trailing" secondItem="cqr-RM-W1Y" secondAttribute="trailing" constant="16" id="GOe-nj-BYK"/>
+                            <constraint firstItem="KsA-Qf-egh" firstAttribute="top" secondItem="Exf-hi-YFn" secondAttribute="bottom" id="SxE-uh-47c"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cqr-RM-W1Y" secondAttribute="trailing" constant="-16" id="ddn-mu-eZe"/>
-                            <constraint firstItem="KsA-Qf-egh" firstAttribute="top" secondItem="5GC-6f-Uiu" secondAttribute="bottom" constant="10" id="myT-Kx-2J8"/>
+                            <constraint firstAttribute="trailing" secondItem="Exf-hi-YFn" secondAttribute="trailing" id="ziL-xB-lHF"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ddn-mu-eZe"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="Exf-hi-YFn" id="dAo-jF-YmI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jl5-HY-1rB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

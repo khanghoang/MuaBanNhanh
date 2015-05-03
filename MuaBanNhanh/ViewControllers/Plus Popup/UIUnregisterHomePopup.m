@@ -28,10 +28,6 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 - (IBAction)onBtnHowTo:(id)sender {
     UIViewController *vc = [[UIStoryboard storyboardWithName:@"CreateProduct" bundle:nil] instantiateInitialViewController];
     AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
@@ -83,7 +79,36 @@
     } completion:^(BOOL finished) {
         
     }];
-    
 }
+
+- (void)dismissWithCompletion:(void(^)(void))completion {
+    
+    NSInteger count = [self.tableView numberOfRowsInSection:0];
+    
+    for (int i = 0; i < count; i++) {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        
+        CGFloat animationDuration = 0.2;
+        
+        CGRect frame = cell.frame;
+        CGRect desFrame = cell.frame;
+        desFrame.origin = CGPointMake(0, self.tableView.height);
+        cell.frame = frame;
+        
+        
+        [UIView animateWithDuration:animationDuration delay:indexPath.row*0.05 usingSpringWithDamping:0.6 initialSpringVelocity:0.3 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            
+            cell.frame = desFrame;
+            cell.alpha = 0;
+            
+        } completion:^(BOOL finished) {
+            if (i == count - 1 && completion) {
+                completion();
+            }
+        }];
+    }
+}
+
 
 @end
