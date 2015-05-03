@@ -10,7 +10,6 @@
 
 @interface MBNFloatButton()
 
-@property (weak, nonatomic) IBOutlet UIButton *btnFloat;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 
 @end
@@ -45,8 +44,8 @@
     [self.btnFloat mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(self.mas_height).multipliedBy(5.0/8.0);
         make.width.equalTo(self.mas_width).multipliedBy(5.0/8.0);
-        make.centerY.equalTo(self.mas_centerY).with.offset(-3);
-        make.centerX.equalTo(self.mas_centerX);
+        make.centerY.equalTo(self.mas_centerY).with.offset(-2.5);
+        make.centerX.equalTo(self.mas_centerX).with.offset(0.5);
     }];
     
     [self.backgroundImage mas_remakeConstraints:^(MASConstraintMaker *make) {
@@ -69,8 +68,13 @@
 
 - (IBAction)openPopup:(id)sender {
 //    TODO: Testing create product VC
+    self.btnFloat.selected = !self.btnFloat.selected;
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    [appDelegate displayPopupWindow];
+    if (self.btnFloat.selected) {
+        [appDelegate displayPopupWindow];
+    } else {
+        [appDelegate closePopupView];
+    }
 }
 
 

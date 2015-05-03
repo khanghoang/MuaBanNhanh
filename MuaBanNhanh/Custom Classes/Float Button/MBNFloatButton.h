@@ -10,4 +10,6 @@
 
 @interface MBNFloatButton : UIView
 
+@property (weak, nonatomic) IBOutlet UIButton *btnFloat;
+
 @end

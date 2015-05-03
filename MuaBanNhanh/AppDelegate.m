@@ -106,16 +106,21 @@
     self.popupWindow.rootViewController = vc;
     self.popupWindow.rootViewController.view.backgroundColor =[UIColor colorWithWhite:1.0 alpha:0.9];
     
+    [self.popupWindow addSubview:self.floatButton];
     [self.popupWindow makeKeyWindow];
+    
+    [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        
+        self.floatButton.btnFloat.transform = CGAffineTransformRotate(self.floatButton.btnFloat.transform, M_PI*2 + M_PI * 3 / 4);
+        
+    } completion:nil];
     
     [UIView animateWithDuration:0.2 animations:^{
         self.popupWindow.alpha = 1;
     }];
     
-    UITapGestureRecognizer *tapToClose = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closePopupView)];
+    UITapGestureRecognizer *tapToClose = [[UITapGestureRecognizer alloc] initWithTarget:self.floatButton action:@selector(openPopup:)];
     [self.popupWindow.rootViewController.view addGestureRecognizer:tapToClose];
-    
-    [self.popupWindow addSubview:self.floatButton];
     
     [self.floatButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(@(80));
@@ -138,6 +143,13 @@
     
     [popup.popup dismissWithCompletion:^{
     }];
+    
+    [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        
+        self.floatButton.btnFloat.transform = CGAffineTransformRotate(self.floatButton.btnFloat.transform, -(M_PI*2 + M_PI * 3 / 4));
+        
+    } completion:nil];
+    
     [UIView animateWithDuration:0.5
                      animations:^{
                          popup.backgroundView.alpha = 0;
@@ -157,8 +169,6 @@
                          
                          [self.mainWindow updateConstraintsIfNeeded];
                          [self.mainWindow layoutIfNeeded];
-                         
-//                         self.popupWindow.hidden = YES;
     
                          [self.mainWindow makeKeyWindow];
                          if (completion) {
