@@ -12,4 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *btnFloat;
 
+- (IBAction)openPopup:(id)sender;
+- (void)openPopup:(id)sender completion:(void(^)(void))completion DEPRECATED_MSG_ATTRIBUTE("Use togglePopup method instead.");
+- (void)togglePopup:(id)sender completion:(void(^)(void))completion;
+
 @end

@@ -67,13 +67,21 @@
 }
 
 - (IBAction)openPopup:(id)sender {
+    [self togglePopup:sender completion:nil];
+}
+
+- (void)openPopup:(id)sender completion:(void(^)(void))completion {
+    [self togglePopup:sender completion:completion];
+}
+
+- (void)togglePopup:(id)sender completion:(void(^)(void))completion {
 //    TODO: Testing create product VC
     self.btnFloat.selected = !self.btnFloat.selected;
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     if (self.btnFloat.selected) {
         [appDelegate displayPopupWindow];
     } else {
-        [appDelegate closePopupView];
+        [appDelegate closePopupViewCompletion:completion];
     }
 }
 
