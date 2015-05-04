@@ -56,7 +56,7 @@
     
     MBNFloatButton *button = [[MBNFloatButton alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
     self.floatButton = button;
-    [window addSubview:button];
+    [self.revealController.view addSubview:button];
     
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(@(80));
@@ -158,8 +158,8 @@
                          self.popupWindow.alpha = 0;
                          popup.backgroundView.alpha = 0;
                          popup.view.alpha = 0;
-                         [self.mainWindow addSubview:self.floatButton];
-                         [self.mainWindow bringSubviewToFront:self.floatButton];
+                         [self.revealController.view addSubview:self.floatButton];
+                         [self.revealController.view bringSubviewToFront:self.floatButton];
                          [self.floatButton mas_makeConstraints:^(MASConstraintMaker *make) {
                              make.width.equalTo(@(80));
                              make.height.equalTo(@(80));
@@ -167,8 +167,8 @@
                              make.bottom.equalTo(self.floatButton.superview).with.offset(-15);
                          }];
                          
-                         [self.mainWindow updateConstraintsIfNeeded];
-                         [self.mainWindow layoutIfNeeded];
+                         [self.revealController.view updateConstraintsIfNeeded];
+                         [self.revealController.view layoutIfNeeded];
     
                          [self.mainWindow makeKeyWindow];
                          if (completion) {

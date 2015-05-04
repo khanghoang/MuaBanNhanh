@@ -54,7 +54,7 @@ UIPickerViewDataSource
 
 @property (strong, nonatomic) NSDictionary *genderArrayDatasource;
 
-@property (nonatomic, strong) TMECameraVC *cameraVC;
+@property (nonatomic, strong) UINavigationController *cameraVC;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *buttons;
 
 @property (nonatomic, strong) NSMutableArray *images;
@@ -75,7 +75,7 @@ UIPickerViewDataSource
     
     [self registerForKeyboardNotifications];
     
-    self.cameraVC = [TMECameraVC tme_instantiateFromStoryboardNamed:@"Camera"];
+    self.cameraVC = [[UIStoryboard storyboardWithName:@"Camera" bundle:nil] instantiateInitialViewController];
     
     [[MBNUserManager sharedProvider] getOwnInformation:^(MBNUser *user) {
         [self updateContentWithUser:user];
@@ -276,11 +276,12 @@ RMDateSelectionViewController *dateSelectionVC = [RMDateSelectionViewController 
 - (IBAction)photoButtonTouched:(UIButton *)button
 {
     __weak typeof (self) weakSelf = self;
-    self.cameraVC.completionHandler = ^(TMECameraVCResult result, UIImage *image, IMGLYFilterType filterType) {
+    TMECameraVC *camera = (TMECameraVC *)self.cameraVC.topViewController;
+    camera.completionHandler = ^(TMECameraVCResult result, UIImage *image, IMGLYFilterType filterType) {
         [weakSelf showEditorVCWithImage:image button:button];
     };
     
-    [self.navigationController pushViewController:self.cameraVC animated:YES];
+    [self presentViewController:self.cameraVC animated:YES completion:nil];
 }
 
 - (IBAction)onBtnManageProduct:(id)sender {
@@ -292,20 +293,21 @@ RMDateSelectionViewController *dateSelectionVC = [RMDateSelectionViewController 
 {
     TMECropImageVC *cropVC = [[TMECropImageVC alloc] init];
     cropVC.inputImage = image;
+    TMECameraVC *camera = (TMECameraVC *)self.cameraVC.topViewController;
     
     __weak typeof(self) weakSelf = self;
     cropVC.completionHandler = ^(IMGLYEditorViewControllerResult result, UIImage *outputImage, IMGLYProcessingJob *job) {
         if (result == IMGLYEditorViewControllerResultCancelled) {
-            [weakSelf.cameraVC restartCamera];
-            [weakSelf.navigationController popViewControllerAnimated:YES];
+            [camera restartCamera];
+            [weakSelf dismissViewControllerAnimated:YES completion:nil];
         } else {
             [weakSelf handleTakenImage:outputImage button:button];
             weakSelf.cameraVC = nil;
-            [weakSelf.navigationController popToViewController:weakSelf animated:YES];
+            [weakSelf dismissViewControllerAnimated:YES completion:nil];
         }
     };
     
-    [self.navigationController pushViewController:cropVC animated:YES];
+    [self.cameraVC pushViewController:cropVC animated:YES];
 }
 
 - (IBAction)onBtnSave:(id)sender {

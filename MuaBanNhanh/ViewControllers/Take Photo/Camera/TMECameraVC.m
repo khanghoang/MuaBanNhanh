@@ -67,7 +67,7 @@ TMECameraFilterSelectorVCDelegate>
 - (void)setupNavigationItems
 {
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem cancelItemWithTarget:self action:@selector(cancelTouched:)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage originalImageNamed:@"icn_rotate_camera"] style:UIBarButtonItemStylePlain target:self action:@selector(switchFrontBackCameraTouched:)];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage originalImageNamed:@"icn_rotate_camera"] style:UIBarButtonItemStylePlain target:self action:@selector(switchFrontBackCameraTouched:)];
 }
 
 - (void)setupFilterSelectorVC

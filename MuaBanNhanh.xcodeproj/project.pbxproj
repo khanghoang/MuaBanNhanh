@@ -31,6 +31,7 @@
 		0539790D1ACC4987007C4676 /* MBNHomeTopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0539790C1ACC4987007C4676 /* MBNHomeTopViewController.m */; };
 		053979101ACC4998007C4676 /* MBNHomeBottomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0539790F1ACC4998007C4676 /* MBNHomeBottomViewController.m */; };
 		053979141ACC4B76007C4676 /* MBNHomeContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053979131ACC4B76007C4676 /* MBNHomeContainerViewController.m */; };
+		053CD67C1AF7C19A0018C2AB /* MBNCloseNavigationSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 053CD67B1AF7C19A0018C2AB /* MBNCloseNavigationSegue.m */; };
 		054AA6961AE21D4F00C8CBCA /* EditUserInformationStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 054AA6951AE21D4F00C8CBCA /* EditUserInformationStoryboard.storyboard */; };
 		055D84651AF515EF0071EB22 /* UIImageView+LoadingImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 055D84641AF515EE0071EB22 /* UIImageView+LoadingImage.m */; };
 		055D846B1AF538980071EB22 /* MBNFloatButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055D846A1AF538980071EB22 /* MBNFloatButton.xib */; };
@@ -272,6 +273,8 @@
 		0539790F1ACC4998007C4676 /* MBNHomeBottomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNHomeBottomViewController.m; sourceTree = "<group>"; };
 		053979121ACC4B76007C4676 /* MBNHomeContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNHomeContainerViewController.h; sourceTree = "<group>"; };
 		053979131ACC4B76007C4676 /* MBNHomeContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNHomeContainerViewController.m; sourceTree = "<group>"; };
+		053CD67A1AF7C19A0018C2AB /* MBNCloseNavigationSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNCloseNavigationSegue.h; sourceTree = "<group>"; };
+		053CD67B1AF7C19A0018C2AB /* MBNCloseNavigationSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNCloseNavigationSegue.m; sourceTree = "<group>"; };
 		054AA6951AE21D4F00C8CBCA /* EditUserInformationStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditUserInformationStoryboard.storyboard; sourceTree = "<group>"; };
 		055D84631AF515EE0071EB22 /* UIImageView+LoadingImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LoadingImage.h"; sourceTree = "<group>"; };
 		055D84641AF515EE0071EB22 /* UIImageView+LoadingImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LoadingImage.m"; sourceTree = "<group>"; };
@@ -830,6 +833,8 @@
 				B692CF1A1AEFFC2400F331CC /* MBNTextView.m */,
 				055D84631AF515EE0071EB22 /* UIImageView+LoadingImage.h */,
 				055D84641AF515EE0071EB22 /* UIImageView+LoadingImage.m */,
+				053CD67A1AF7C19A0018C2AB /* MBNCloseNavigationSegue.h */,
+				053CD67B1AF7C19A0018C2AB /* MBNCloseNavigationSegue.m */,
 			);
 			path = "Custom Classes";
 			sourceTree = "<group>";
@@ -1802,6 +1807,7 @@
 				0561C9BD1AD05F6800BEDA6D /* TKAlignTopLabel.m in Sources */,
 				05B906B41AE805AE00B85BEC /* IMGLYCameraBottomBarView.m in Sources */,
 				05B906E51AE805AE00B85BEC /* IMGLYNavigationBar.m in Sources */,
+				053CD67C1AF7C19A0018C2AB /* MBNCloseNavigationSegue.m in Sources */,
 				05B906DF1AE805AE00B85BEC /* IMGLYLeninFilter.m in Sources */,
 				0524FF401AF1595500A42C78 /* MBNMangeProductCellFactory.m in Sources */,
 				0593B7F81AD18E6500A492F3 /* IndexHomePopupViewController.m in Sources */,
@@ -1931,7 +1937,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Khang Hoàng Triệu (DZFE2DLGY9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1944,6 +1950,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "fed70aad-74b3-4a0e-ae8a-74439a2f6d62";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1953,7 +1960,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Khang Hoàng Triệu (DZFE2DLGY9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1966,6 +1973,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "fed70aad-74b3-4a0e-ae8a-74439a2f6d62";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

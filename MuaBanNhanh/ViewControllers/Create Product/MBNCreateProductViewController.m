@@ -42,7 +42,7 @@ UIActionSheetDelegate
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *productImagePickButtons;
 @property (strong, nonatomic) IBOutletCollection(MBNTextView) NSArray *productImageDescriptionTextViews;
 
-@property (nonatomic, strong) TMECameraVC *cameraVC;
+@property (nonatomic, strong) UINavigationController *cameraVC;
 
 @property (strong, nonatomic) MBNCreateProductViewModel *viewModel;
 @property (strong, nonatomic) RMPickerViewController *reusePickerViewController;
@@ -102,11 +102,12 @@ UIActionSheetDelegate
     [self registerForKeyboardNotifications];
 }
 
-- (TMECameraVC *)cameraVC {
+- (UINavigationController *)cameraVC {
     if (!_cameraVC) {
-        _cameraVC = [TMECameraVC tme_instantiateFromStoryboardNamed:@"Camera"];
+        _cameraVC = [[UIStoryboard storyboardWithName:@"Camera" bundle:nil] instantiateInitialViewController];
+        TMECameraVC *topVC = [_cameraVC.viewControllers firstObject];
         @weakify(self);
-        _cameraVC.completionHandler = ^(TMECameraVCResult result, UIImage *image, IMGLYFilterType filterType) {
+        topVC.completionHandler = ^(TMECameraVCResult result, UIImage *image, IMGLYFilterType filterType) {
             @strongify(self);
             [self showEditorVCWithImage:image button:self.selectedButton];
         };
@@ -243,7 +244,7 @@ UIActionSheetDelegate
         @weakify(self);
         UIAlertAction *takePhoto = [UIAlertAction actionWithTitle:@"Chọn hình hoặc chụp hình" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             @strongify(self);
-            [self.navigationController pushViewController:self.cameraVC animated:YES];
+            [self.navigationController presentViewController:self.cameraVC animated:YES completion:nil];
         }];
             
         UIAlertAction *deletePhoto = [UIAlertAction actionWithTitle:@"Xoá tấm hình này" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
@@ -270,7 +271,7 @@ UIActionSheetDelegate
     
     // choose image or take it
     if (buttonIndex == 0) {
-        [self.navigationController pushViewController:self.cameraVC animated:YES];
+        [self.navigationController presentViewController:self.cameraVC animated:YES completion:nil];
     } else {
         [self deleteImageOfButton:self.selectedButton];
     }
@@ -281,20 +282,22 @@ UIActionSheetDelegate
     TMECropImageVC *cropVC = [[TMECropImageVC alloc] init];
     cropVC.inputImage = image;
     
+    TMECameraVC *cameraVC = [self.cameraVC.viewControllers firstObject];
+    
     @weakify(self);
     cropVC.completionHandler = ^(IMGLYEditorViewControllerResult result, UIImage *outputImage, IMGLYProcessingJob *job) {
         @strongify(self);
         if (result == IMGLYEditorViewControllerResultCancelled) {
-            [self.cameraVC restartCamera];
-            [self.navigationController popViewControllerAnimated:YES];
+            [cameraVC restartCamera];
+            [cameraVC.navigationController popViewControllerAnimated:YES];
         } else {
             [self handleTakenImage:outputImage button:button];
-            [self.navigationController popToViewController:self animated:YES];
+            [self.cameraVC dismissViewControllerAnimated:YES completion:nil];
             [self.productImages addObject:outputImage];
         }
     };
     
-    [self.navigationController pushViewController:cropVC animated:YES];
+    [self.cameraVC pushViewController:cropVC animated:YES];
 }
 
 #pragma mark - Helpers
