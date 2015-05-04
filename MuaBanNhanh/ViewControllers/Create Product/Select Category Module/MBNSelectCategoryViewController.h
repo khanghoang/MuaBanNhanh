@@ -11,6 +11,6 @@
 
 @interface MBNSelectCategoryViewController : UIViewController
 
-@property (strong, nonatomic) MBNCreateProductViewModel *createProductViewModel;
+@property (weak, nonatomic) MBNCreateProductViewModel *createProductViewModel;
 
 @end
