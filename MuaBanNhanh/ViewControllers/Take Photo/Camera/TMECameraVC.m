@@ -291,8 +291,9 @@ TMECameraFilterSelectorVCDelegate>
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [picker dismissViewControllerAnimated:YES completion:NULL];
-    [self.cameraController startCameraCapture];
+    [picker dismissViewControllerAnimated:YES completion:^{
+        [self.cameraController startCameraCapture];
+    }];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {

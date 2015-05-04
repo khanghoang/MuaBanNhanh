@@ -14,6 +14,7 @@
 #import "IMGLYPhotoProcessor.h"
 #import "IMGLYProcessingJob.h"
 #import "UIImage+IMGLYKitAdditions.h"
+#import "UIBarButtonItem+Custom.h"
 #import "UINavigationController+IMGLYAdditions.h"
 
 #import <QuartzCore/QuartzCore.h>
@@ -94,7 +95,7 @@ static const CGFloat kBackgroundGrayValue =  34.0 / 255.0;
 #pragma mark - Setup
 - (void)setupNavigationItems
 {
-//    self.navigationItem.leftBarButtonItem = [UIBarButtonItem cancelItemWithTarget:self action:@selector(cancelTouched:)];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem cancelItemWithTarget:self action:@selector(cancelTouched:)];
 //    self.navigationItem.rightBarButtonItem = [UIBarButtonItem submitItemWithTarget:self action:@selector(submitTouched:)];
 }
 
