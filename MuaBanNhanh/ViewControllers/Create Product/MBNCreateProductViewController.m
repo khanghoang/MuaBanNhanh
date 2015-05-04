@@ -117,15 +117,10 @@ UITextViewDelegate
     return _cameraVC;
 }
 
-- (void)getProvinces {
-    [self.viewModel getProvinces];
-}
-
 - (void)setupViewModel {
     [[RACObserve(self, viewModel.getProvincesErrorMessage) ignore:nil] subscribeNext:^(NSString *errorMessage) {
         [[[UIAlertView alloc] initWithTitle:@"Error" message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }];
-    [self getProvinces];
     RAC(self, viewModel.productTitle) = self.productTitleTextField.rac_textSignal;
     RAC(self, viewModel.productDescription) = self.productDescriptionTextView.rac_textSignal;
     RAC(self, viewModel.productPrice) = self.productPriceTextField.rac_textSignal;
@@ -189,9 +184,9 @@ UITextViewDelegate
         @weakify(self);
         [self showPickerViewControllerWithTitle:@"Chọn tráng thái sản phẩm" pickerType:PickerViewTypeQuality selectButtonAction:^(RMPickerViewController *controller, NSArray *rows) {
             @strongify(self);
-            NSInteger selectedRow = [rows.lastObject integerValue];
-            [sender setTitle:self.viewModel.productQualityTitles[selectedRow] forState:UIControlStateNormal];
-            sender.tag = selectedRow;
+            NSNumber *selectedRow = rows.lastObject;
+            [sender setTitle:[self.viewModel.productQualityDictionary allKeysForObject:selectedRow].lastObject forState:UIControlStateNormal];
+            sender.tag = [selectedRow integerValue];
         } sender:sender];
         return [RACSignal empty];
     }];
@@ -213,9 +208,9 @@ UITextViewDelegate
         @weakify(self);
         [self showPickerViewControllerWithTitle:@"Chọn loại giao dịch" pickerType:PickerViewTypeTransaction selectButtonAction:^(RMPickerViewController *controller, NSArray *rows) {
             @strongify(self);
-            NSInteger selectedRow = [rows.lastObject integerValue];
-            [sender setTitle:self.viewModel.productTransactionTypeTitles[selectedRow] forState:UIControlStateNormal];
-            sender.tag = selectedRow;
+            NSNumber *selectedRow = rows.lastObject;
+            [sender setTitle:[self.viewModel.productTransactionTypeDictionary allKeysForObject:selectedRow].lastObject forState:UIControlStateNormal];
+            sender.tag = [selectedRow integerValue];
         } sender:sender];
 
         return [RACSignal empty];
@@ -347,9 +342,9 @@ UITextViewDelegate
         self.selectedProvince = province;
         return province.name;
     } else if (pickerView.tag == PickerViewTypeQuality) {
-        return self.viewModel.productQualityTitles[row];
+        return [self.viewModel.productQualityDictionary allKeysForObject:@(row)].lastObject;
     } else {
-        return self.viewModel.productTransactionTypeTitles[row];
+        return [self.viewModel.productTransactionTypeDictionary allKeysForObject:@(row)].lastObject;
     }
 }
 
