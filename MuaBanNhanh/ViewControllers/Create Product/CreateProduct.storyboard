@@ -537,6 +537,7 @@
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="eWm-wp-3XM" firstAttribute="width" secondItem="gUh-QQ-UvA" secondAttribute="width" constant="-20" id="gVI-Mt-QNg"/>
                             <constraint firstItem="cgT-Wg-uCN" firstAttribute="leading" secondItem="gUh-QQ-UvA" secondAttribute="leading" id="gvM-6t-iRD"/>
@@ -544,6 +545,9 @@
                             <constraint firstAttribute="bottom" secondItem="cgT-Wg-uCN" secondAttribute="bottom" id="wJX-vJ-AGg"/>
                             <constraint firstItem="cgT-Wg-uCN" firstAttribute="top" secondItem="gUh-QQ-UvA" secondAttribute="top" id="wMd-SY-eIh"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="6Wz-fy-ApZ" appends="YES" id="op2-BJ-dox"/>
+                        </connections>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Đăng sản phẩm" id="XGZ-pG-Nso">

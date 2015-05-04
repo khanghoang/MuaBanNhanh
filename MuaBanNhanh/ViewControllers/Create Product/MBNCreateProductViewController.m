@@ -23,7 +23,8 @@ typedef NS_ENUM(NSInteger, PickerViewType){
 
 @interface MBNCreateProductViewController ()
 <UIPickerViewDelegate, UIPickerViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout,
-UIActionSheetDelegate
+UIActionSheetDelegate,
+UITextViewDelegate
 >
 
 @property (weak, nonatomic) IBOutlet MBNPaddingTextField *productTitleTextField;
@@ -52,7 +53,7 @@ UIActionSheetDelegate
 @property (strong, nonatomic) NSMutableArray *productImages;
 @property (strong, nonatomic) MBNProvince *selectedProvince;
 
-@property (weak, nonatomic) IBOutlet UITextView *activeField;
+@property (weak, nonatomic) IBOutlet UITextField *activeField;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
@@ -508,6 +509,14 @@ UIActionSheetDelegate
 - (IBAction)tapOutsideToDismissKeyboard:(id)sender {
     self.activeField = nil;
     [self.view endEditing:YES];
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    self.activeField = (UITextField *)textView;
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    self.activeField = nil;
 }
 
 @end
