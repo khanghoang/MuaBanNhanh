@@ -10,6 +10,9 @@
 
 @interface MBNProvinceManager : NSObject
 
-- (RACSignal *)getProvinces;
+@property (copy, nonatomic) NSArray *provinces;
+
++ (instancetype)sharedManager;
++ (void)getProvinces;
 
 @end
