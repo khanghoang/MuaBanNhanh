@@ -44,14 +44,14 @@
     [self.btnFloat mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(self.mas_height).multipliedBy(5.0/8.0);
         make.width.equalTo(self.mas_width).multipliedBy(5.0/8.0);
-        make.centerY.equalTo(self.mas_centerY).with.offset(-2.5);
+        make.centerY.equalTo(self.mas_centerY).with.offset(1);
         make.centerX.equalTo(self.mas_centerX).with.offset(0.5);
     }];
     
     [self.backgroundImage mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(self.mas_height).multipliedBy(1.0/1.0);
         make.width.equalTo(self.mas_width).multipliedBy(1.0/1.0);
-        make.centerY.equalTo(self.mas_centerY).with.offset(2);
+        make.centerY.equalTo(self.mas_centerY).with.offset(1);
         make.centerX.equalTo(self.mas_centerX);
     }];
     

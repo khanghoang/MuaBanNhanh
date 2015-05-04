@@ -16,21 +16,21 @@
             <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fab_bg_normal" translatesAutoresizingMaskIntoConstraints="NO" id="7g9-QZ-B79">
-                    <rect key="frame" x="-5" y="-3" width="80" height="80"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="float_button" translatesAutoresizingMaskIntoConstraints="NO" id="7g9-QZ-B79">
+                    <rect key="frame" x="-5" y="-5" width="80" height="80"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" placeholder="YES" id="Lnf-Zj-pdO"/>
                         <constraint firstAttribute="height" constant="80" placeholder="YES" id="OEJ-M9-YcZ"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l83-1h-mwg">
-                    <rect key="frame" x="10" y="7" width="50" height="50"/>
+                    <rect key="frame" x="10" y="9" width="50" height="50"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" placeholder="YES" id="cEo-PN-4wb"/>
                         <constraint firstAttribute="height" constant="50" placeholder="YES" id="fRA-dX-UhH"/>
                     </constraints>
-                    <state key="normal" image="plus">
+                    <state key="normal" image="icon-fab-plus">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -41,9 +41,9 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <gestureRecognizers/>
             <constraints>
-                <constraint firstAttribute="centerY" secondItem="l83-1h-mwg" secondAttribute="centerY" constant="3" placeholder="YES" id="2iq-wH-uPX"/>
-                <constraint firstAttribute="centerX" secondItem="l83-1h-mwg" secondAttribute="centerX" constant="-0.5" placeholder="YES" id="EdV-g2-AaZ"/>
-                <constraint firstAttribute="centerY" secondItem="7g9-QZ-B79" secondAttribute="centerY" constant="-2" placeholder="YES" id="fC8-Ns-hh5"/>
+                <constraint firstAttribute="centerY" secondItem="l83-1h-mwg" secondAttribute="centerY" constant="1" placeholder="YES" id="2iq-wH-uPX"/>
+                <constraint firstAttribute="centerX" secondItem="l83-1h-mwg" secondAttribute="centerX" placeholder="YES" id="EdV-g2-AaZ"/>
+                <constraint firstAttribute="centerY" secondItem="7g9-QZ-B79" secondAttribute="centerY" placeholder="YES" id="fC8-Ns-hh5"/>
                 <constraint firstAttribute="centerX" secondItem="7g9-QZ-B79" secondAttribute="centerX" constant="-0.5" placeholder="YES" id="l2x-IC-UD1"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -54,8 +54,8 @@
         </view>
     </objects>
     <resources>
-        <image name="fab_bg_normal" width="74" height="74"/>
-        <image name="plus" width="64" height="64"/>
+        <image name="float_button" width="500" height="500"/>
+        <image name="icon-fab-plus" width="256" height="256"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
