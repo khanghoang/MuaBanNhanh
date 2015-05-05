@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Khang Hoang Trieu. All rights reserved.
 //
 
-static CGFloat const PRODUCT_COLLECTION_CELL_HEIGHT = 157;
+static CGFloat const PRODUCT_COLLECTION_CELL_HEIGHT = 142;
 
 #import "MBNHomeBottomViewController.h"
 #import "MBNProductCollectionViewCell.h"

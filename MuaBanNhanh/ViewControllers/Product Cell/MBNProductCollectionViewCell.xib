@@ -8,16 +8,19 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MBNProductCollectionViewCell" id="gTV-IL-0wX" customClass="MBNProductCollectionViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="157"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="142"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="300" height="157"/>
+                <rect key="frame" x="0.0" y="0.0" width="300" height="142"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLz-6G-jdy">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="157"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="142"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ngày cập nhật: 22/02/2015 - 9h30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ta1-qu-Gs2">
                                 <rect key="frame" x="8" y="8" width="284" height="13"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="13" id="U8W-rc-b9Q"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="11"/>
                                 <color key="textColor" red="0.15425741792929293" green="0.15425741792929293" blue="0.15425741792929293" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -30,12 +33,6 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14.000.000 vnd" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tia-Ct-JBX">
-                                <rect key="frame" x="105" y="58" width="187" height="18"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Cần bán/ Dịch Vu - Mới - Hồ Chí Minh" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDk-wL-rm3">
@@ -91,6 +88,12 @@
                                     <action selector="onBtnCall:" destination="gTV-IL-0wX" eventType="touchUpInside" id="qoU-zK-p6k"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="14.000.000 vnd" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tia-Ct-JBX">
+                                <rect key="frame" x="105" y="60" width="187" height="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -103,7 +106,6 @@
                             <constraint firstItem="UDk-wL-rm3" firstAttribute="leading" secondItem="kuB-gD-iTF" secondAttribute="trailing" constant="7" id="Ifl-g3-JFP"/>
                             <constraint firstItem="kuB-gD-iTF" firstAttribute="top" secondItem="ta1-qu-Gs2" secondAttribute="bottom" constant="3" id="KbO-Pp-fZr"/>
                             <constraint firstItem="UDk-wL-rm3" firstAttribute="top" secondItem="Tia-Ct-JBX" secondAttribute="bottom" constant="2" id="O3Y-so-Nx2"/>
-                            <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="EaX-wY-h51" secondAttribute="bottom" constant="20" id="Xeb-ZM-4IW"/>
                             <constraint firstItem="Tia-Ct-JBX" firstAttribute="top" secondItem="n0K-17-4G2" secondAttribute="bottom" constant="2" id="Yh1-NC-iQW"/>
                             <constraint firstItem="ta1-qu-Gs2" firstAttribute="top" secondItem="tLz-6G-jdy" secondAttribute="top" constant="8" id="ce5-Fa-zau"/>
                             <constraint firstItem="Tia-Ct-JBX" firstAttribute="leading" secondItem="kuB-gD-iTF" secondAttribute="trailing" constant="7" id="cwd-to-hbu"/>
@@ -123,7 +125,7 @@
                 <constraint firstAttribute="bottom" secondItem="tLz-6G-jdy" secondAttribute="bottom" id="WlF-bb-TZA"/>
                 <constraint firstAttribute="trailing" secondItem="tLz-6G-jdy" secondAttribute="trailing" id="dj0-1l-UIa"/>
             </constraints>
-            <size key="customSize" width="300" height="157"/>
+            <size key="customSize" width="300" height="142"/>
             <connections>
                 <outlet property="btnCall" destination="EaX-wY-h51" id="6tZ-iP-7Pf"/>
                 <outlet property="imageViewProductImage" destination="USz-aG-eUw" id="5JK-ik-Mag"/>
@@ -133,7 +135,7 @@
                 <outlet property="lblUpdateAt" destination="ta1-qu-Gs2" id="9gA-NL-vPW"/>
                 <outlet property="wrapperView" destination="tLz-6G-jdy" id="krB-aJ-Mo0"/>
             </connections>
-            <point key="canvasLocation" x="680" y="404.5"/>
+            <point key="canvasLocation" x="680" y="397"/>
         </collectionViewCell>
     </objects>
     <resources>

@@ -62,7 +62,8 @@
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle]; // this line is important!
     
     NSString *priceString = [formatter stringFromNumber:product.price];
-    priceString = !priceString ? @"Giá chưa câp nhập" : [NSString stringWithFormat:@"%@ %@", priceString, @"vnđ"];
+    priceString = !priceString ? @"Giá liên hệ" : [NSString stringWithFormat:@"%@ %@", priceString, @"vnđ"];
+    
     self.lblPrice.text = priceString;
     
     // update at

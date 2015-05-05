@@ -30,7 +30,7 @@
         return collectionView.size;
     }
     
-    return CGSizeMake(collectionView.width, 157);
+    return CGSizeMake(collectionView.width, 142);
 }
 
 @end
