@@ -108,7 +108,7 @@ typedef NS_ENUM(NSInteger, TableViewTagType) {
     }];
     RAC(self, listCategoryTableViewHeightConstraint.constant) = changeListCategoryTableHeightSignal;
     @weakify(self);
-    [changeListCategoryTableHeightSignal subscribeNext:^(id x) {
+    [RACObserve(self, listCategoryTableViewHeightConstraint.constant) subscribeNext:^(id x) {
         @strongify(self);
         [self.view layoutIfNeeded];
     }];
