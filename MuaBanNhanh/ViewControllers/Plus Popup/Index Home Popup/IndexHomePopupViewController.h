@@ -11,7 +11,7 @@
 
 @interface IndexHomePopupViewController : UIViewController
 
-@property (readonly, nonatomic) UIUnregisterHomePopup *popup;
+@property (readonly, nonatomic) UIViewController<MBNFloatButtonPopup> *popup;
 @property (weak, nonatomic) IBOutlet UIView *backgroundView;
 
 @end

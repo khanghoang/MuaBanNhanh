@@ -32,6 +32,9 @@
 		053979101ACC4998007C4676 /* MBNHomeBottomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0539790F1ACC4998007C4676 /* MBNHomeBottomViewController.m */; };
 		053979141ACC4B76007C4676 /* MBNHomeContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053979131ACC4B76007C4676 /* MBNHomeContainerViewController.m */; };
 		053CD67C1AF7C19A0018C2AB /* MBNCloseNavigationSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 053CD67B1AF7C19A0018C2AB /* MBNCloseNavigationSegue.m */; };
+		0544DE701AF92BE200082D63 /* MBNRegisterHomePopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0544DE6F1AF92BE200082D63 /* MBNRegisterHomePopupViewController.m */; };
+		0544DE721AF92D3E00082D63 /* IndexHomePopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0544DE711AF92D3E00082D63 /* IndexHomePopupViewController.m */; };
+		0544DE761AF934C500082D63 /* MBNBasePopupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0544DE751AF934C500082D63 /* MBNBasePopupTableViewController.m */; };
 		054AA6961AE21D4F00C8CBCA /* EditUserInformationStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 054AA6951AE21D4F00C8CBCA /* EditUserInformationStoryboard.storyboard */; };
 		055D84651AF515EF0071EB22 /* UIImageView+LoadingImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 055D84641AF515EE0071EB22 /* UIImageView+LoadingImage.m */; };
 		055D846B1AF538980071EB22 /* MBNFloatButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055D846A1AF538980071EB22 /* MBNFloatButton.xib */; };
@@ -64,7 +67,6 @@
 		0593B7EE1AD180F200A492F3 /* MBNActionsManagers.m in Sources */ = {isa = PBXBuildFile; fileRef = 0593B7ED1AD180F200A492F3 /* MBNActionsManagers.m */; };
 		0593B7F11AD1877900A492F3 /* MBNUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 0593B7F01AD1877900A492F3 /* MBNUser.m */; };
 		0593B7F41AD18C8300A492F3 /* PlusPopups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0593B7F31AD18C8300A492F3 /* PlusPopups.storyboard */; };
-		0593B7F81AD18E6500A492F3 /* IndexHomePopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0593B7F71AD18E6500A492F3 /* IndexHomePopupViewController.m */; };
 		05958D9F1AD9052700F7A708 /* MBNNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05958D9E1AD9052700F7A708 /* MBNNavigationViewController.m */; };
 		05958DA51AD9076000F7A708 /* MBNLoginNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05958DA41AD9076000F7A708 /* MBNLoginNavigationViewController.m */; };
 		05958DA81AD907C300F7A708 /* MBNLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05958DA71AD907C300F7A708 /* MBNLoginViewController.m */; };
@@ -289,6 +291,11 @@
 		053979131ACC4B76007C4676 /* MBNHomeContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNHomeContainerViewController.m; sourceTree = "<group>"; };
 		053CD67A1AF7C19A0018C2AB /* MBNCloseNavigationSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNCloseNavigationSegue.h; sourceTree = "<group>"; };
 		053CD67B1AF7C19A0018C2AB /* MBNCloseNavigationSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNCloseNavigationSegue.m; sourceTree = "<group>"; };
+		0544DE6E1AF92BE200082D63 /* MBNRegisterHomePopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNRegisterHomePopupViewController.h; sourceTree = "<group>"; };
+		0544DE6F1AF92BE200082D63 /* MBNRegisterHomePopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNRegisterHomePopupViewController.m; sourceTree = "<group>"; };
+		0544DE711AF92D3E00082D63 /* IndexHomePopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexHomePopupViewController.m; sourceTree = "<group>"; };
+		0544DE741AF934C500082D63 /* MBNBasePopupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNBasePopupTableViewController.h; sourceTree = "<group>"; };
+		0544DE751AF934C500082D63 /* MBNBasePopupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNBasePopupTableViewController.m; sourceTree = "<group>"; };
 		054AA6951AE21D4F00C8CBCA /* EditUserInformationStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditUserInformationStoryboard.storyboard; sourceTree = "<group>"; };
 		055D84631AF515EE0071EB22 /* UIImageView+LoadingImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LoadingImage.h"; sourceTree = "<group>"; };
 		055D84641AF515EE0071EB22 /* UIImageView+LoadingImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LoadingImage.m"; sourceTree = "<group>"; };
@@ -346,7 +353,6 @@
 		0593B7F01AD1877900A492F3 /* MBNUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNUser.m; sourceTree = "<group>"; };
 		0593B7F31AD18C8300A492F3 /* PlusPopups.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlusPopups.storyboard; sourceTree = "<group>"; };
 		0593B7F61AD18E6500A492F3 /* IndexHomePopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexHomePopupViewController.h; sourceTree = "<group>"; };
-		0593B7F71AD18E6500A492F3 /* IndexHomePopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexHomePopupViewController.m; sourceTree = "<group>"; };
 		05958D9D1AD9052700F7A708 /* MBNNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNNavigationViewController.h; sourceTree = "<group>"; };
 		05958D9E1AD9052700F7A708 /* MBNNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNNavigationViewController.m; sourceTree = "<group>"; };
 		05958DA31AD9076000F7A708 /* MBNLoginNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNLoginNavigationViewController.h; sourceTree = "<group>"; };
@@ -808,6 +814,24 @@
 			path = Container;
 			sourceTree = "<group>";
 		};
+		0544DE6D1AF92BCD00082D63 /* Register Home Popup */ = {
+			isa = PBXGroup;
+			children = (
+				0544DE6E1AF92BE200082D63 /* MBNRegisterHomePopupViewController.h */,
+				0544DE6F1AF92BE200082D63 /* MBNRegisterHomePopupViewController.m */,
+			);
+			path = "Register Home Popup";
+			sourceTree = "<group>";
+		};
+		0544DE731AF934B000082D63 /* Superclass */ = {
+			isa = PBXGroup;
+			children = (
+				0544DE741AF934C500082D63 /* MBNBasePopupTableViewController.h */,
+				0544DE751AF934C500082D63 /* MBNBasePopupTableViewController.m */,
+			);
+			path = Superclass;
+			sourceTree = "<group>";
+		};
 		054AA6941AE21D2600C8CBCA /* User Information */ = {
 			isa = PBXGroup;
 			children = (
@@ -938,6 +962,8 @@
 		0593B7F21AD18C6E00A492F3 /* Plus Popup */ = {
 			isa = PBXGroup;
 			children = (
+				0544DE731AF934B000082D63 /* Superclass */,
+				0544DE6D1AF92BCD00082D63 /* Register Home Popup */,
 				050867271AD6F00A00038F87 /* Unregister Home Popup */,
 				0593B7F51AD18D5E00A492F3 /* Index Home Popup */,
 				0593B7F31AD18C8300A492F3 /* PlusPopups.storyboard */,
@@ -948,8 +974,8 @@
 		0593B7F51AD18D5E00A492F3 /* Index Home Popup */ = {
 			isa = PBXGroup;
 			children = (
+				0544DE711AF92D3E00082D63 /* IndexHomePopupViewController.m */,
 				0593B7F61AD18E6500A492F3 /* IndexHomePopupViewController.h */,
-				0593B7F71AD18E6500A492F3 /* IndexHomePopupViewController.m */,
 			);
 			path = "Index Home Popup";
 			sourceTree = "<group>";
@@ -1725,6 +1751,7 @@
 				05AD0A511AEC0F560007FAED /* UITextView+MeasureContent.m in Sources */,
 				B6B037C21AF2227E00E78C0E /* MBNTagButton.m in Sources */,
 				0569A4481AE25FBE00EFBEF0 /* MBNEditUserInformationViewController.m in Sources */,
+				0544DE761AF934C500082D63 /* MBNBasePopupTableViewController.m in Sources */,
 				05A3E3481ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m in Sources */,
 				0569A4501AE27CE300EFBEF0 /* MBNSafeBuyViewController.m in Sources */,
 				05B906C41AE805AE00B85BEC /* IMGLYEditorCropMenu.m in Sources */,
@@ -1791,6 +1818,8 @@
 				05B9070C1AE8079D00B85BEC /* UIViewController+Additions.m in Sources */,
 				05B906CA1AE805AE00B85BEC /* IMGLYEditorOrientationMenu.m in Sources */,
 				05B906E71AE805AE00B85BEC /* IMGLYOpenGLUtils.m in Sources */,
+				0544DE721AF92D3E00082D63 /* IndexHomePopupViewController.m in Sources */,
+				0544DE701AF92BE200082D63 /* MBNRegisterHomePopupViewController.m in Sources */,
 				05B906E01AE805AE00B85BEC /* IMGLYLiveStreamFilterManager.m in Sources */,
 				055D846E1AF539320071EB22 /* MBNFloatButton.m in Sources */,
 				05B906DD1AE805AE00B85BEC /* IMGLYHippieFilter.m in Sources */,
@@ -1895,7 +1924,6 @@
 				053CD67C1AF7C19A0018C2AB /* MBNCloseNavigationSegue.m in Sources */,
 				05B906DF1AE805AE00B85BEC /* IMGLYLeninFilter.m in Sources */,
 				0524FF401AF1595500A42C78 /* MBNMangeProductCellFactory.m in Sources */,
-				0593B7F81AD18E6500A492F3 /* IndexHomePopupViewController.m in Sources */,
 				B62419D71AEFC3690040DD89 /* MBNCreateProductViewModel.m in Sources */,
 				05F3E54D1ADB77BA00D432AF /* MBNRegisterViewController.m in Sources */,
 				B61C09341AF927E1000D0FD5 /* INSSearchBar.m in Sources */,

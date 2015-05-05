@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBNBasePopupTableViewController.h"
 
-@interface UIUnregisterHomePopup : UITableViewController
+@interface UIUnregisterHomePopup : MBNBasePopupTableViewController
 
 - (void)dismissWithCompletion:(void(^)(void))completion;
 
