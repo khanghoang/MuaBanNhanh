@@ -35,6 +35,7 @@
 		0544DE701AF92BE200082D63 /* MBNRegisterHomePopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0544DE6F1AF92BE200082D63 /* MBNRegisterHomePopupViewController.m */; };
 		0544DE721AF92D3E00082D63 /* IndexHomePopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0544DE711AF92D3E00082D63 /* IndexHomePopupViewController.m */; };
 		0544DE761AF934C500082D63 /* MBNBasePopupTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0544DE751AF934C500082D63 /* MBNBasePopupTableViewController.m */; };
+		0544DE791AF9511500082D63 /* TKDesignableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0544DE781AF9511500082D63 /* TKDesignableTableView.m */; };
 		054AA6961AE21D4F00C8CBCA /* EditUserInformationStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 054AA6951AE21D4F00C8CBCA /* EditUserInformationStoryboard.storyboard */; };
 		055D84651AF515EF0071EB22 /* UIImageView+LoadingImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 055D84641AF515EE0071EB22 /* UIImageView+LoadingImage.m */; };
 		055D846B1AF538980071EB22 /* MBNFloatButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055D846A1AF538980071EB22 /* MBNFloatButton.xib */; };
@@ -296,6 +297,8 @@
 		0544DE711AF92D3E00082D63 /* IndexHomePopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexHomePopupViewController.m; sourceTree = "<group>"; };
 		0544DE741AF934C500082D63 /* MBNBasePopupTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNBasePopupTableViewController.h; sourceTree = "<group>"; };
 		0544DE751AF934C500082D63 /* MBNBasePopupTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNBasePopupTableViewController.m; sourceTree = "<group>"; };
+		0544DE771AF9511500082D63 /* TKDesignableTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDesignableTableView.h; sourceTree = "<group>"; };
+		0544DE781AF9511500082D63 /* TKDesignableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDesignableTableView.m; sourceTree = "<group>"; };
 		054AA6951AE21D4F00C8CBCA /* EditUserInformationStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditUserInformationStoryboard.storyboard; sourceTree = "<group>"; };
 		055D84631AF515EE0071EB22 /* UIImageView+LoadingImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LoadingImage.h"; sourceTree = "<group>"; };
 		055D84641AF515EE0071EB22 /* UIImageView+LoadingImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LoadingImage.m"; sourceTree = "<group>"; };
@@ -890,6 +893,8 @@
 				055D84641AF515EE0071EB22 /* UIImageView+LoadingImage.m */,
 				053CD67A1AF7C19A0018C2AB /* MBNCloseNavigationSegue.h */,
 				053CD67B1AF7C19A0018C2AB /* MBNCloseNavigationSegue.m */,
+				0544DE771AF9511500082D63 /* TKDesignableTableView.h */,
+				0544DE781AF9511500082D63 /* TKDesignableTableView.m */,
 			);
 			path = "Custom Classes";
 			sourceTree = "<group>";
@@ -1890,6 +1895,7 @@
 				B66C5B821AF12F6F003FB281 /* MBNSelectCategoryViewModel.m in Sources */,
 				05B906F61AE805AE00B85BEC /* UINavigationController+IMGLYAdditions.m in Sources */,
 				052E84BA1AE94C9300418014 /* TKDesignableButton.m in Sources */,
+				0544DE791AF9511500082D63 /* TKDesignableTableView.m in Sources */,
 				0539790D1ACC4987007C4676 /* MBNHomeTopViewController.m in Sources */,
 				05B906D21AE805AE00B85BEC /* IMGLYFilter.m in Sources */,
 				05B906D71AE805AE00B85BEC /* IMGLYFoodFilter.m in Sources */,
