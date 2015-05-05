@@ -10,8 +10,9 @@
 
 @interface MBNCategoryManager : NSObject
 
-+ (instancetype)sharedProvider;
+@property (copy, nonatomic) NSArray *categories;
 
++ (instancetype)sharedProvider;
 - (void)getCategories:(void (^) (NSArray *arrCategories))success failure:(void (^)(NSError *error))failure;
 
 @end

@@ -11,19 +11,11 @@
 
 @implementation MBNSearchProductViewModel
 
-- (NSDictionary *)productQuality
-{
-    if (!_productQuality) {
-        _productQuality = @{@"Hàng cũ" : @0,
-                            @"Hảng mới 100%" : @1};
-    }
-    return _productQuality;
-}
-
 - (instancetype)init
 {
     if (self = [super init]) {
         RAC(self, provinces) = RACObserve([MBNProvinceManager sharedManager], provinces);
+        RAC(self, categories) = RACObserve([MBNCategoryManager sharedProvider], categories);
     }
     return self;
 }

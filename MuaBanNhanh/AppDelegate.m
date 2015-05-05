@@ -93,6 +93,7 @@
     [Crashlytics startWithAPIKey:@"75bef5bc8a8592cd4d35e170fef2575e8547d8dc"];
     
     [MBNProvinceManager getProvinces];
+    [[MBNCategoryManager sharedProvider] getCategories:nil failure:nil];
     return YES;
 }
 

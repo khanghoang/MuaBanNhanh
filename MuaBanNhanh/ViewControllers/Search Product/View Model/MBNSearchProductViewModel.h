@@ -11,6 +11,6 @@
 @interface MBNSearchProductViewModel : NSObject
 
 @property (copy, nonatomic) NSArray *provinces;
-@property (copy, nonatomic) NSDictionary *productQuality;
+@property (copy, nonatomic) NSArray *categories;
 
 @end
