@@ -73,17 +73,29 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EaX-wY-h51">
-                                <rect key="frame" x="105" y="114" width="140" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EaX-wY-h51" customClass="TKDesignableButton">
+                                <rect key="frame" x="105" y="114" width="145" height="22"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="DaS-EL-rkR"/>
                                     <constraint firstAttribute="height" constant="22" id="yQD-pp-eMB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="titleEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="096938480" image="call-icon-20">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="onBtnCall:" destination="gTV-IL-0wX" eventType="touchUpInside" id="qoU-zK-p6k"/>
                                 </connections>
@@ -111,7 +123,6 @@
                             <constraint firstItem="Tia-Ct-JBX" firstAttribute="leading" secondItem="kuB-gD-iTF" secondAttribute="trailing" constant="7" id="cwd-to-hbu"/>
                             <constraint firstItem="EaX-wY-h51" firstAttribute="leading" secondItem="tLz-6G-jdy" secondAttribute="leading" constant="105" id="e3y-Q3-3yn"/>
                             <constraint firstAttribute="trailing" secondItem="Tia-Ct-JBX" secondAttribute="trailing" constant="8" id="fmm-aB-YNh"/>
-                            <constraint firstAttribute="trailing" secondItem="EaX-wY-h51" secondAttribute="trailing" constant="55" id="gbn-jh-h63"/>
                             <constraint firstItem="EaX-wY-h51" firstAttribute="top" secondItem="UDk-wL-rm3" secondAttribute="bottom" constant="5" id="n38-tw-bfR"/>
                             <constraint firstItem="n0K-17-4G2" firstAttribute="leading" secondItem="kuB-gD-iTF" secondAttribute="trailing" constant="7" id="ymq-k3-Mrf"/>
                         </constraints>
