@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -18,8 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" placeholder="Tìm kiếm sản phẩm" translatesAutoresizingMaskIntoConstraints="NO" id="DOB-3M-SAu">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="vaA-wK-PPb"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                            </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eut-QF-AQW" customClass="TKDesignableButton">
-                                <rect key="frame" x="0.0" y="0.0" width="160" height="35"/>
+                                <rect key="frame" x="0.0" y="44" width="160" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="bci-dx-PjC"/>
                                 </constraints>
@@ -38,13 +45,10 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-down" translatesAutoresizingMaskIntoConstraints="NO" id="Q9f-jZ-MNy">
-                                <rect key="frame" x="144" y="15" width="9" height="5"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-down" translatesAutoresizingMaskIntoConstraints="NO" id="Q1y-oV-ftk">
-                                <rect key="frame" x="304" y="15" width="9" height="5"/>
+                                <rect key="frame" x="144" y="59" width="9" height="5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9am-6x-Q52" customClass="TKDesignableButton">
-                                <rect key="frame" x="160" y="0.0" width="160" height="35"/>
+                                <rect key="frame" x="160" y="44" width="160" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="2wf-Vw-4pf"/>
                                 </constraints>
@@ -62,14 +66,11 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tìm kiếm sản phẩm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBz-MN-3VA">
-                                <rect key="frame" x="10" y="55" width="118" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-down" translatesAutoresizingMaskIntoConstraints="NO" id="Q1y-oV-ftk">
+                                <rect key="frame" x="304" y="59" width="9" height="5"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUD-EB-yER">
-                                <rect key="frame" x="0.0" y="35" width="320" height="533"/>
+                                <rect key="frame" x="0.0" y="84" width="320" height="483"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="pAG-y8-gfh" appends="YES" id="RrX-ms-Drz"/>
@@ -80,22 +81,23 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Q1y-oV-ftk" firstAttribute="trailing" secondItem="9am-6x-Q52" secondAttribute="trailing" constant="-7" id="5cY-vo-z91"/>
+                            <constraint firstItem="DOB-3M-SAu" firstAttribute="leading" secondItem="PJc-Qd-PVr" secondAttribute="leading" id="8g7-0X-13U"/>
                             <constraint firstItem="9am-6x-Q52" firstAttribute="top" secondItem="Q1y-oV-ftk" secondAttribute="top" constant="-15" id="Fyt-te-hr0"/>
                             <constraint firstAttribute="trailing" secondItem="EUD-EB-yER" secondAttribute="trailing" id="P43-Gv-qEp"/>
-                            <constraint firstItem="EUD-EB-yER" firstAttribute="top" secondItem="eut-QF-AQW" secondAttribute="bottom" id="SvY-ld-jlY"/>
-                            <constraint firstItem="KBz-MN-3VA" firstAttribute="top" secondItem="eut-QF-AQW" secondAttribute="bottom" constant="20" id="UIt-sf-bXf"/>
+                            <constraint firstAttribute="trailing" secondItem="DOB-3M-SAu" secondAttribute="trailing" id="Sd8-6s-ZWG"/>
                             <constraint firstAttribute="width" secondItem="eut-QF-AQW" secondAttribute="width" multiplier="1 : 0.5" id="Unl-qE-O1r"/>
                             <constraint firstItem="9am-6x-Q52" firstAttribute="leading" secondItem="eut-QF-AQW" secondAttribute="trailing" id="WcD-6e-jLI"/>
                             <constraint firstItem="eut-QF-AQW" firstAttribute="leading" secondItem="PJc-Qd-PVr" secondAttribute="leading" id="XFy-mA-AYs"/>
-                            <constraint firstItem="KBz-MN-3VA" firstAttribute="leading" secondItem="PJc-Qd-PVr" secondAttribute="leading" constant="10" id="Z1A-Dr-Bb7"/>
-                            <constraint firstItem="eut-QF-AQW" firstAttribute="top" secondItem="PJc-Qd-PVr" secondAttribute="top" id="Zid-gg-lMJ"/>
                             <constraint firstItem="EUD-EB-yER" firstAttribute="leading" secondItem="PJc-Qd-PVr" secondAttribute="leading" id="Zsn-XD-9Hc"/>
                             <constraint firstAttribute="trailing" secondItem="9am-6x-Q52" secondAttribute="trailing" id="akn-QM-nDq"/>
                             <constraint firstItem="yXR-SE-fBx" firstAttribute="top" secondItem="EUD-EB-yER" secondAttribute="bottom" id="e1R-rH-OQt"/>
+                            <constraint firstItem="9am-6x-Q52" firstAttribute="top" secondItem="DOB-3M-SAu" secondAttribute="bottom" id="eWC-Wz-6df"/>
+                            <constraint firstItem="DOB-3M-SAu" firstAttribute="top" secondItem="PJc-Qd-PVr" secondAttribute="top" id="fx8-qR-Yen"/>
+                            <constraint firstItem="eut-QF-AQW" firstAttribute="top" secondItem="DOB-3M-SAu" secondAttribute="bottom" id="kng-Tp-7Oi"/>
                             <constraint firstItem="9am-6x-Q52" firstAttribute="width" secondItem="eut-QF-AQW" secondAttribute="width" id="kqI-z4-dac"/>
-                            <constraint firstItem="9am-6x-Q52" firstAttribute="top" secondItem="PJc-Qd-PVr" secondAttribute="top" id="lBA-eA-WaU"/>
                             <constraint firstItem="Q9f-jZ-MNy" firstAttribute="trailing" secondItem="eut-QF-AQW" secondAttribute="trailing" constant="-7" id="paf-QX-r7i"/>
                             <constraint firstItem="eut-QF-AQW" firstAttribute="top" secondItem="Q9f-jZ-MNy" secondAttribute="top" constant="-15" id="q7e-bO-NHh"/>
+                            <constraint firstItem="EUD-EB-yER" firstAttribute="top" secondItem="eut-QF-AQW" secondAttribute="bottom" constant="5" id="zG7-sZ-aOd"/>
                         </constraints>
                     </view>
                     <connections>

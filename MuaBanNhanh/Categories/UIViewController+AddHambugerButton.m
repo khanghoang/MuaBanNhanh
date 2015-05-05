@@ -22,7 +22,7 @@
 }
 
 - (void)mbn_addSearchButton {
-    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"search-icon"] style:UIBarButtonItemStylePlain target:self action:@selector(mbn_pushSearchProductVC)];
+    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"NavBarIconSearch_white"] style:UIBarButtonItemStylePlain target:self action:@selector(mbn_pushSearchProductVC)];
     
     if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")) {
         searchButton.tintColor = [UIColor whiteColor];
