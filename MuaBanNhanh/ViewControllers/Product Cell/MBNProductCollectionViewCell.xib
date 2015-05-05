@@ -36,7 +36,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Cần bán/ Dịch Vu - Mới - Hồ Chí Minh" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDk-wL-rm3">
-                                <rect key="frame" x="105" y="78" width="187" height="32"/>
+                                <rect key="frame" x="105" y="77" width="187" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="1Hk-TC-Q1j"/>
                                 </constraints>
@@ -45,7 +45,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kuB-gD-iTF" customClass="TKDesignableView">
-                                <rect key="frame" x="8" y="24" width="90" height="90"/>
+                                <rect key="frame" x="8" y="27" width="90" height="90"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="USz-aG-eUw">
                                         <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
@@ -74,7 +74,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EaX-wY-h51">
-                                <rect key="frame" x="105" y="115" width="140" height="22"/>
+                                <rect key="frame" x="105" y="114" width="140" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="yQD-pp-eMB"/>
                                 </constraints>
@@ -89,7 +89,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="14.000.000 vnd" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tia-Ct-JBX">
-                                <rect key="frame" x="105" y="60" width="187" height="18"/>
+                                <rect key="frame" x="105" y="58" width="187" height="17"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -104,7 +104,7 @@
                             <constraint firstAttribute="trailing" secondItem="n0K-17-4G2" secondAttribute="trailing" constant="8" id="BzG-xd-vgy"/>
                             <constraint firstItem="n0K-17-4G2" firstAttribute="top" secondItem="ta1-qu-Gs2" secondAttribute="bottom" constant="3" id="HXe-iU-bdE"/>
                             <constraint firstItem="UDk-wL-rm3" firstAttribute="leading" secondItem="kuB-gD-iTF" secondAttribute="trailing" constant="7" id="Ifl-g3-JFP"/>
-                            <constraint firstItem="kuB-gD-iTF" firstAttribute="top" secondItem="ta1-qu-Gs2" secondAttribute="bottom" constant="3" id="KbO-Pp-fZr"/>
+                            <constraint firstItem="kuB-gD-iTF" firstAttribute="top" secondItem="ta1-qu-Gs2" secondAttribute="bottom" constant="6" id="KbO-Pp-fZr"/>
                             <constraint firstItem="UDk-wL-rm3" firstAttribute="top" secondItem="Tia-Ct-JBX" secondAttribute="bottom" constant="2" id="O3Y-so-Nx2"/>
                             <constraint firstItem="Tia-Ct-JBX" firstAttribute="top" secondItem="n0K-17-4G2" secondAttribute="bottom" constant="2" id="Yh1-NC-iQW"/>
                             <constraint firstItem="ta1-qu-Gs2" firstAttribute="top" secondItem="tLz-6G-jdy" secondAttribute="top" constant="8" id="ce5-Fa-zau"/>
