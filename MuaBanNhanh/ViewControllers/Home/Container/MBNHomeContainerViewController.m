@@ -36,6 +36,7 @@ static const CGFloat NAVIGATION_BAR_TITLE_IMAGE_WIDTH = 140;
     self.navigationItem.titleView = wrapperView;
     
     [self mbn_addHambugerButton];
+    [self mbn_addSearchButton];
 }
 
 @end
