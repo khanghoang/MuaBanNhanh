@@ -183,7 +183,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.74509803921568629" green="0.29803921568627451" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.3411764706" green="0.59999999999999998" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="179" id="8Qw-c8-xjs"/>
                                                             <constraint firstItem="LaP-T2-wqk" firstAttribute="top" secondItem="w4g-9D-QUM" secondAttribute="top" id="9MP-t6-JCI"/>
@@ -202,7 +202,7 @@
                                                                 <integer key="value" value="1"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="0.72156862745098038" green="0.24313725490196078" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="value" red="0.28575718379075393" green="0.50254498106060608" blue="0.21024792283996788" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
