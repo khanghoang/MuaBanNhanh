@@ -10,18 +10,25 @@
 
 @implementation MBNProvinceManager
 
-- (RACSignal *)getProvinces {
-    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        [manager GET:@"https://api.muabannhanh.com/province/list" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSError *error;
-            NSArray *provinces = [MTLJSONAdapter modelsOfClass:[MBNProvince class] fromJSONArray:responseObject[@"result"] error:&error];
-            [subscriber sendNext:provinces];
-            [subscriber sendCompleted];
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            [subscriber sendError:error];
-        }];
-        return nil;
++ (instancetype)sharedManager
+{
+    static MBNProvinceManager *instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[MBNProvinceManager alloc] init];
+    });
+    
+    return instance;
+}
+
++ (void)getProvinces {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:@"https://api.muabannhanh.com/province/list" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSError *error;
+        NSArray *provinces = [MTLJSONAdapter modelsOfClass:[MBNProvince class] fromJSONArray:responseObject[@"result"] error:&error];
+        [MBNProvinceManager sharedManager].provinces = provinces;
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
     }];
 }
 

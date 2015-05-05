@@ -8,10 +8,6 @@
 
 #import "MBNCategoryManager.h"
 
-@interface MBNCategoryManager()
-
-@end
-
 @implementation MBNCategoryManager
 
 + (instancetype)sharedProvider
@@ -26,6 +22,12 @@
 }
 
 - (void)getCategories:(void (^) (NSArray *arrCategories))success failure:(void (^)(NSError *error))failure {
+    if (self.categories && self.categories.count) {
+        if (success) {
+            success(self.categories);
+        }
+        return;
+    }
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:@"https://api.muabannhanh.com/category/list" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -33,14 +35,15 @@
         NSError *error;
         
         NSArray *arrayCategories = [MTLJSONAdapter modelsOfClass:[MBNCategory class] fromJSONArray:responseObject[@"result"] error:&error];
-        
-        success(arrayCategories);
+        self.categories = arrayCategories;
+        if (success) {
+            success(arrayCategories);
+        }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-        failure(error);
-        
-        
+        if (failure) {
+            failure(error);
+        }
     }];
 }
 

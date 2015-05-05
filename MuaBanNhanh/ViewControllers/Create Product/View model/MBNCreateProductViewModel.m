@@ -19,31 +19,29 @@
     return _selectedCategories;
 }
 
-- (NSArray *)productTransactionTypeTitles
+- (NSDictionary *)productTransactionTypeDictionary
 {
-    if (!_productTransactionTypeTitles) {
-        _productTransactionTypeTitles = @[@"Cần bán/ Dịch vụ", @"Cần mua/ Cần tìm"];
+    if (!_productTransactionTypeDictionary) {
+        _productTransactionTypeDictionary = @{@"Cần bán/ Dịch vụ" : @0,
+                                              @"Cần mua/ Cần tìm" : @1};
     }
-    return _productTransactionTypeTitles;
+    return _productTransactionTypeDictionary;
 }
 
-- (NSArray *)productQualityTitles {
-    if (!_productQualityTitles) {
-        _productQualityTitles = @[@"Hàng mới 100%", @"Hàng cũ"];
+- (NSDictionary *)productQualityDictionary {
+    if (!_productQualityDictionary) {
+        _productQualityDictionary = @{@"Hàng mới 100%" : @0,
+                                      @"Hàng cũ" : @1};
     }
-    return _productQualityTitles;
+    return _productQualityDictionary;
 }
 
-- (void)getProvinces {
-    @weakify(self);
-    MBNProvinceManager *manager = [[MBNProvinceManager alloc] init];
-    [[manager getProvinces] subscribeNext:^(NSArray *provinces) {
-        @strongify(self);
-        self.provinces = provinces;
-    } error:^(NSError *error) {
-        @strongify(self);
-        self.getProvincesErrorMessage = error.description;
-    }];
+- (instancetype)init
+{
+    if (self = [super init]) {
+        RAC(self, provinces) = RACObserve([MBNProvinceManager sharedManager], provinces);
+    }
+    return self;
 }
 
 @end

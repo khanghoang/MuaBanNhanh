@@ -11,5 +11,6 @@
 @interface UIViewController (AddHambugerButton)
 
 - (void)mbn_addHambugerButton;
+- (void)mbn_addSearchButton;
 
 @end

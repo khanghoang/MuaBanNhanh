@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Search Product View Controller-->
+        <scene sceneID="t2g-4S-Kqz">
+            <objects>
+                <viewController storyboardIdentifier="MBNSearchProductViewController" id="pLh-Vu-v4m" customClass="MBNSearchProductViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q8a-MP-TLo"/>
+                        <viewControllerLayoutGuide type="bottom" id="yXR-SE-fBx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PJc-Qd-PVr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eut-QF-AQW" customClass="TKDesignableButton">
+                                <rect key="frame" x="0.0" y="0.0" width="160" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="bci-dx-PjC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Chuyên Mục">
+                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-down" translatesAutoresizingMaskIntoConstraints="NO" id="Q9f-jZ-MNy">
+                                <rect key="frame" x="144" y="15" width="9" height="5"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-down" translatesAutoresizingMaskIntoConstraints="NO" id="Q1y-oV-ftk">
+                                <rect key="frame" x="304" y="15" width="9" height="5"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9am-6x-Q52" customClass="TKDesignableButton">
+                                <rect key="frame" x="160" y="0.0" width="160" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="2wf-Vw-4pf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Tỉnh thành">
+                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tìm kiếm sản phẩm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBz-MN-3VA">
+                                <rect key="frame" x="10" y="55" width="118" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUD-EB-yER">
+                                <rect key="frame" x="0.0" y="35" width="320" height="533"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="pAG-y8-gfh" appends="YES" id="RrX-ms-Drz"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Q1y-oV-ftk" firstAttribute="trailing" secondItem="9am-6x-Q52" secondAttribute="trailing" constant="-7" id="5cY-vo-z91"/>
+                            <constraint firstItem="9am-6x-Q52" firstAttribute="top" secondItem="Q1y-oV-ftk" secondAttribute="top" constant="-15" id="Fyt-te-hr0"/>
+                            <constraint firstAttribute="trailing" secondItem="EUD-EB-yER" secondAttribute="trailing" id="P43-Gv-qEp"/>
+                            <constraint firstItem="EUD-EB-yER" firstAttribute="top" secondItem="eut-QF-AQW" secondAttribute="bottom" id="SvY-ld-jlY"/>
+                            <constraint firstItem="KBz-MN-3VA" firstAttribute="top" secondItem="eut-QF-AQW" secondAttribute="bottom" constant="20" id="UIt-sf-bXf"/>
+                            <constraint firstAttribute="width" secondItem="eut-QF-AQW" secondAttribute="width" multiplier="1 : 0.5" id="Unl-qE-O1r"/>
+                            <constraint firstItem="9am-6x-Q52" firstAttribute="leading" secondItem="eut-QF-AQW" secondAttribute="trailing" id="WcD-6e-jLI"/>
+                            <constraint firstItem="eut-QF-AQW" firstAttribute="leading" secondItem="PJc-Qd-PVr" secondAttribute="leading" id="XFy-mA-AYs"/>
+                            <constraint firstItem="KBz-MN-3VA" firstAttribute="leading" secondItem="PJc-Qd-PVr" secondAttribute="leading" constant="10" id="Z1A-Dr-Bb7"/>
+                            <constraint firstItem="eut-QF-AQW" firstAttribute="top" secondItem="PJc-Qd-PVr" secondAttribute="top" id="Zid-gg-lMJ"/>
+                            <constraint firstItem="EUD-EB-yER" firstAttribute="leading" secondItem="PJc-Qd-PVr" secondAttribute="leading" id="Zsn-XD-9Hc"/>
+                            <constraint firstAttribute="trailing" secondItem="9am-6x-Q52" secondAttribute="trailing" id="akn-QM-nDq"/>
+                            <constraint firstItem="yXR-SE-fBx" firstAttribute="top" secondItem="EUD-EB-yER" secondAttribute="bottom" id="e1R-rH-OQt"/>
+                            <constraint firstItem="9am-6x-Q52" firstAttribute="width" secondItem="eut-QF-AQW" secondAttribute="width" id="kqI-z4-dac"/>
+                            <constraint firstItem="9am-6x-Q52" firstAttribute="top" secondItem="PJc-Qd-PVr" secondAttribute="top" id="lBA-eA-WaU"/>
+                            <constraint firstItem="Q9f-jZ-MNy" firstAttribute="trailing" secondItem="eut-QF-AQW" secondAttribute="trailing" constant="-7" id="paf-QX-r7i"/>
+                            <constraint firstItem="eut-QF-AQW" firstAttribute="top" secondItem="Q9f-jZ-MNy" secondAttribute="top" constant="-15" id="q7e-bO-NHh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="categoryPickerButton" destination="eut-QF-AQW" id="yuL-Dd-jS2"/>
+                        <outlet property="dismissView" destination="EUD-EB-yER" id="cK8-TT-eKk"/>
+                        <outlet property="provincePickerButton" destination="9am-6x-Q52" id="mRs-lh-VQP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6JH-7A-7YR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="pAG-y8-gfh">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="pLh-Vu-v4m" id="mhV-4c-42i"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="182" y="313"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow-down" width="9" height="5"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -51,6 +51,9 @@ UITextViewDelegate
 @property (strong, nonatomic) NSOperationQueue *createProductOperationQueue;
 
 @property (strong, nonatomic) NSMutableArray *productImages;
+
+@property (strong, nonatomic) NSDictionary *selectedProductQuality;
+@property (strong, nonatomic) NSDictionary *selectedProductTransactionType;
 @property (strong, nonatomic) MBNProvince *selectedProvince;
 
 @property (weak, nonatomic) IBOutlet UITextField *activeField;
@@ -117,15 +120,10 @@ UITextViewDelegate
     return _cameraVC;
 }
 
-- (void)getProvinces {
-    [self.viewModel getProvinces];
-}
-
 - (void)setupViewModel {
     [[RACObserve(self, viewModel.getProvincesErrorMessage) ignore:nil] subscribeNext:^(NSString *errorMessage) {
         [[[UIAlertView alloc] initWithTitle:@"Error" message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }];
-    [self getProvinces];
     RAC(self, viewModel.productTitle) = self.productTitleTextField.rac_textSignal;
     RAC(self, viewModel.productDescription) = self.productDescriptionTextView.rac_textSignal;
     RAC(self, viewModel.productPrice) = self.productPriceTextField.rac_textSignal;
@@ -190,8 +188,11 @@ UITextViewDelegate
         [self showPickerViewControllerWithTitle:@"Chọn tráng thái sản phẩm" pickerType:PickerViewTypeQuality selectButtonAction:^(RMPickerViewController *controller, NSArray *rows) {
             @strongify(self);
             NSInteger selectedRow = [rows.lastObject integerValue];
-            [sender setTitle:self.viewModel.productQualityTitles[selectedRow] forState:UIControlStateNormal];
+            NSArray *allKeys = [self.viewModel.productQualityDictionary allKeys];
+            NSString *selectedKey = allKeys[selectedRow];
+            [sender setTitle:selectedKey forState:UIControlStateNormal];
             sender.tag = selectedRow;
+            self.selectedProductQuality = @{selectedKey : @(selectedRow)};
         } sender:sender];
         return [RACSignal empty];
     }];
@@ -202,6 +203,7 @@ UITextViewDelegate
             @strongify(self);
             NSInteger selectedRow = [rows.lastObject integerValue];
             MBNProvince *selectedProvince = self.viewModel.provinces[selectedRow];
+            self.selectedProvince = selectedProvince;
             [sender setTitle:selectedProvince.name forState:UIControlStateNormal];
             sender.tag = selectedRow;
         } sender:sender];
@@ -214,8 +216,11 @@ UITextViewDelegate
         [self showPickerViewControllerWithTitle:@"Chọn loại giao dịch" pickerType:PickerViewTypeTransaction selectButtonAction:^(RMPickerViewController *controller, NSArray *rows) {
             @strongify(self);
             NSInteger selectedRow = [rows.lastObject integerValue];
-            [sender setTitle:self.viewModel.productTransactionTypeTitles[selectedRow] forState:UIControlStateNormal];
+            NSArray *allKeys = [self.viewModel.productTransactionTypeDictionary allKeys];
+            NSString *selectedKey = allKeys[selectedRow];
+            [sender setTitle:selectedKey forState:UIControlStateNormal];
             sender.tag = selectedRow;
+            self.selectedProductTransactionType = @{selectedKey : @(selectedRow)};
         } sender:sender];
 
         return [RACSignal empty];
@@ -344,12 +349,11 @@ UITextViewDelegate
 {
     if (pickerView.tag == PickerViewTypeCity) {
         MBNProvince *province = self.viewModel.provinces[row];
-        self.selectedProvince = province;
         return province.name;
     } else if (pickerView.tag == PickerViewTypeQuality) {
-        return self.viewModel.productQualityTitles[row];
+        return [self.viewModel.productQualityDictionary allKeysForObject:@(row)].lastObject;
     } else {
-        return self.viewModel.productTransactionTypeTitles[row];
+        return [self.viewModel.productTransactionTypeDictionary allKeysForObject:@(row)].lastObject;
     }
 }
 

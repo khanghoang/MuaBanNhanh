@@ -7,6 +7,7 @@
 //
 
 #import "UIViewController+SideViewFunctions.h"
+#import "MBNSearchProductViewController.h"
 #import "AppDelegate.h"
 
 @implementation UIViewController (SideViewFunctions)
@@ -17,6 +18,11 @@
     
     PKRevealController *revealController = appDelegate.revealController;
     [revealController showViewController:revealController.leftViewController];
+}
+
+- (void)mbn_pushSearchProductVC {
+    MBNSearchProductViewController *searchProductVC = [MBNSearchProductViewController tme_instantiateFromStoryboardNamed:@"SearchProduct"];
+    [self.navigationController pushViewController:searchProductVC animated:YES];
 }
 
 @end

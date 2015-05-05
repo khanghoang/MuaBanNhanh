@@ -11,5 +11,6 @@
 @interface UIViewController (SideViewFunctions)
 
 - (void)mbn_toggleSideView;
+- (void)mbn_pushSearchProductVC;
 
 @end
