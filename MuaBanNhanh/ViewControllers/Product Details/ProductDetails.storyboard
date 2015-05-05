@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Product Details View Controller-->
@@ -449,7 +450,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ouc-aD-X6T">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ouc-aD-X6T">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="MIN-5d-xJu">
@@ -466,13 +467,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="236"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TtY-rM-RK5">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TtY-rM-RK5">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="228"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="TtY-rM-RK5" secondAttribute="trailing" constant="-8" id="Lgn-YF-zG3"/>
+                                            <constraint firstItem="TtY-rM-RK5" firstAttribute="top" secondItem="3tT-Jp-Uym" secondAttribute="topMargin" constant="-8" id="TuP-uG-3dm"/>
+                                            <constraint firstItem="TtY-rM-RK5" firstAttribute="bottom" secondItem="3tT-Jp-Uym" secondAttribute="bottomMargin" id="aPL-HA-S5k"/>
+                                            <constraint firstItem="TtY-rM-RK5" firstAttribute="leading" secondItem="3tT-Jp-Uym" secondAttribute="leadingMargin" constant="-8" id="qIP-1G-Oec"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="TtY-rM-RK5" id="M6r-WP-8x5"/>
                                         </connections>
@@ -485,6 +492,12 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ouc-aD-X6T" firstAttribute="leading" secondItem="gNA-87-Aww" secondAttribute="leading" id="8Cn-VN-kq1"/>
+                            <constraint firstAttribute="trailing" secondItem="ouc-aD-X6T" secondAttribute="trailing" id="A4R-PE-gjh"/>
+                            <constraint firstItem="ouc-aD-X6T" firstAttribute="top" secondItem="Suz-Am-GqM" secondAttribute="bottom" id="RxN-0o-EhJ"/>
+                            <constraint firstItem="CyC-nZ-VXv" firstAttribute="top" secondItem="ouc-aD-X6T" secondAttribute="bottom" id="YeM-02-fes"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <connections>

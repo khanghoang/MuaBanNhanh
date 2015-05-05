@@ -12,7 +12,8 @@
 @interface MBNProductImagesViewController ()
 <
 UICollectionViewDelegate,
-UICollectionViewDataSource
+UICollectionViewDataSource,
+UICollectionViewDelegateFlowLayout
 >
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -30,7 +31,10 @@ UICollectionViewDataSource
         @strongify(self);
         [self.collectionView reloadData];
     }];
-    
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+        return CGSizeMake(self.collectionView.width, self.collectionView.height);
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
