@@ -9,6 +9,7 @@
 #import "MBNSearchProductViewController.h"
 #import "MBNSearchProductViewModel.h"
 #import "MBNProvinceManager.h"
+#import "INSSearchBar.h"
 #import <RMPickerViewController.h>
 
 typedef NS_ENUM(NSInteger, PickerViewType){
@@ -16,10 +17,12 @@ typedef NS_ENUM(NSInteger, PickerViewType){
     PickerViewTypeProvince
 };
 
-@interface MBNSearchProductViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface MBNSearchProductViewController () <UIPickerViewDataSource, UIPickerViewDelegate, INSSearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *categoryPickerButton;
 @property (weak, nonatomic) IBOutlet UIButton *provincePickerButton;
+@property (weak, nonatomic) IBOutlet UIView *dismissView;
+@property (strong, nonatomic) INSSearchBar *searchBar;
 
 @property (strong, nonatomic) MBNProvince *selectedProvince;
 @property (strong, nonatomic) MBNCategory *selectedCategory;
@@ -41,9 +44,21 @@ typedef NS_ENUM(NSInteger, PickerViewType){
     return _reusePickerViewController;
 }
 
+- (MBNSearchProductViewModel *)viewModel
+{
+    if (!_viewModel) {
+        _viewModel = [[MBNSearchProductViewModel alloc] init];
+    }
+    return _viewModel;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.searchDisplayController.displaysSearchBarInNavigationBar = YES;
     [self setupButtonSignal];
+    self.searchBar = [[INSSearchBar alloc] initWithFrame:CGRectMake(138, 45, 40, 40)];
+    self.searchBar.delegate = self;
+    [self.view addSubview:self.searchBar];
 }
 
 - (void)setupButtonSignal {
@@ -88,6 +103,30 @@ typedef NS_ENUM(NSInteger, PickerViewType){
     [self.reusePickerViewController.picker reloadAllComponents];
     [self.reusePickerViewController.picker selectRow:sender.tag inComponent:0 animated:NO];
     [self presentViewController:self.reusePickerViewController animated:YES completion:nil];
+}
+
+#pragma mark - INSSearchbarDelegate
+
+- (void)searchBarDidTapReturn:(INSSearchBar *)searchBar
+{
+    
+}
+
+- (void)searchBar:(INSSearchBar *)searchBar willStartTransitioningToState:(INSSearchBarState)destinationState
+{
+    self.dismissView.hidden = NO;
+}
+
+- (CGRect)destinationFrameForSearchBar:(INSSearchBar *)searchBar
+{
+    CGRect frame = searchBar.frame;
+    frame.size.width = 172;
+    return frame;
+}
+
+- (IBAction)dismissKeyboard:(UITapGestureRecognizer *)sender {
+    [self.searchBar hideSearchBar:nil];
+    self.dismissView.hidden = YES;
 }
 
 #pragma mark - UIPickerViewDatasource
