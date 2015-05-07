@@ -584,11 +584,11 @@
                         <outletCollection property="productImageDescriptionTextViews" destination="b2v-TW-E1G" id="FwA-tG-pwZ"/>
                         <outletCollection property="productImageDescriptionTextViews" destination="bq7-A9-KAM" id="SFG-BC-uuN"/>
                         <outletCollection property="productImageDescriptionTextViews" destination="1P3-WH-xdi" id="2HM-VV-nNP"/>
-                        <outletCollection property="arrCaptions" destination="1P3-WH-xdi" id="Ozw-Vt-mKe"/>
-                        <outletCollection property="arrCaptions" destination="75t-Nz-gWm" id="vrZ-d0-8mi"/>
-                        <outletCollection property="arrCaptions" destination="gWp-ds-tHt" id="Cbi-Ow-ZNb"/>
-                        <outletCollection property="arrCaptions" destination="b2v-TW-E1G" id="oNr-Wh-Nol"/>
-                        <outletCollection property="arrCaptions" destination="bq7-A9-KAM" id="T3x-qK-cJI"/>
+                        <outletCollection property="arrCaptions" destination="1P3-WH-xdi" id="TNT-BY-4EC"/>
+                        <outletCollection property="arrCaptions" destination="75t-Nz-gWm" id="9My-Qi-OP9"/>
+                        <outletCollection property="arrCaptions" destination="gWp-ds-tHt" id="rjR-Jp-ksZ"/>
+                        <outletCollection property="arrCaptions" destination="b2v-TW-E1G" id="RxG-e4-sMw"/>
+                        <outletCollection property="arrCaptions" destination="bq7-A9-KAM" id="1AI-GM-R0W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0g2-SH-Zvf" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -115,20 +115,36 @@ UITextViewDelegate
         return;
     }
     
-    self.productTitleTextField.text = self.editingProduct.name;
-    [self.productTransactionTypePickButton setTitle:self.editingProduct.isSale ? @"Cần bán/ Dịch vụ" : @"Cần mua/ Cần tìm" forState:UIControlStateNormal];
+    [SVProgressHUD showWithStatus:@"Đang tải thông tin sản phẩm" maskType:SVProgressHUDMaskTypeGradient];
     
-    NSArray *provinceList = [[[MBNProvinceManager sharedManager] provinces] select:^BOOL(MBNProvince *province) {
-        return [province.ID isEqual:self.editingProduct.province.ID];
+    [MBNProductManager getProductDetailsWithID:self.editingProduct.ID withCompletion:^(MBNProduct *product, NSError *error) {
+        self.editingProduct = product;
+        
+        [SVProgressHUD dismiss];
+        
+        self.productTitleTextField.text = self.editingProduct.name;
+        [self.productTransactionTypePickButton setTitle:self.editingProduct.isSale ? @"Cần bán/ Dịch vụ" : @"Cần mua/ Cần tìm" forState:UIControlStateNormal];
+        
+        NSArray *provinceList = [[[MBNProvinceManager sharedManager] provinces] select:^BOOL(MBNProvince *province) {
+            return [province.ID isEqual:self.editingProduct.province.ID];
+        }];
+        [self.cityPickButton setTitle:[[provinceList firstObject] name] forState:UIControlStateNormal];
+        
+        [self.productQualityButton setTitle:self.editingProduct.conditions forState:UIControlStateNormal];
+        
+        self.productPriceTextField.text = [self.editingProduct.price stringValue];
+        self.productDescriptionTextView.text = self.editingProduct.des;
+        
+        self.viewModel.selectedCategories = [self.editingProduct.categories mutableCopy];
+        
+        [self.editingProduct.gallery enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            
+            [self.productImagePickButtons[idx] setBackgroundImageForState:UIControlStateNormal withURL:[self.editingProduct.gallery[idx] imageURL]];
+            UITextView *textView = (UITextView *) self.arrCaptions[idx];
+            [textView setText:[self.editingProduct.gallery[idx] caption]];
+        }];
     }];
-    [self.cityPickButton setTitle:[[provinceList firstObject] name] forState:UIControlStateNormal];
     
-    [self.productQualityButton setTitle:self.editingProduct.conditions forState:UIControlStateNormal];
-    
-    self.productPriceTextField.text = [self.editingProduct.price stringValue];
-    self.productDescriptionTextView.text = self.editingProduct.des;
-    
-    self.viewModel.selectedCategories = [self.editingProduct.categories mutableCopy];
 }
 
 - (UINavigationController *)cameraVC {
@@ -214,7 +230,7 @@ UITextViewDelegate
             @strongify(self);
             NSInteger selectedRow = [rows.lastObject integerValue];
             NSArray *allKeys = [self.viewModel.productQualityDictionary allKeys];
-            NSString *selectedKey = allKeys[selectedRow];
+            NSString *selectedKey = [allKeys reverse][selectedRow];
             [sender setTitle:selectedKey forState:UIControlStateNormal];
             sender.tag = selectedRow;
             self.selectedProductQuality = @{selectedKey : @(selectedRow)};
@@ -416,16 +432,22 @@ UITextViewDelegate
         return;
     }
     
-    if (!self.selectedProductQuality) {
+    if ([self.productQualityButton.titleLabel.text isEqualToString:@""]) {
         [SVProgressHUD showErrorWithStatus:@"Bạn chưa chọn tình trạng sản phẩm"];
         return;
     }
     
-    if (!self.selectedProvince) {
+    if ([self.cityPickButton.titleLabel.text isEqualToString:@""]) {
         [SVProgressHUD showErrorWithStatus:@"Bạn chưa chọn tỉnh thành"];
         return;
     }
     
+    if ([self.productTransactionTypePickButton.titleLabel.text isEqualToString:@""]) {
+        [SVProgressHUD showErrorWithStatus:@"Bạn chưa chọn loại sản phẩm"];
+        return;
+    }
+    
+    [SVProgressHUD showWithStatus:@"Đang đăng sản phẩm" maskType:SVProgressHUDMaskTypeGradient];
     
     @weakify(self);
     __block NSBlockOperation *operation3 = [NSBlockOperation blockOperationWithBlock:^{
@@ -437,7 +459,7 @@ UITextViewDelegate
                                }],
                                @"is_sale": @([self.productTransactionTypePickButton.titleLabel.text isEqualToString:@"Cần bán/ Dịch vụ"]),
                                @"province_id": self.selectedProvince.ID,
-                               @"conditions": [[self.selectedProductQuality allValues] firstObject],
+                               @"conditions": self.selectedProductQuality[self.productQualityButton.titleLabel.text],
                                @"is_shown": @(true),
                                @"price": @([self.productPriceTextField.text integerValue]),
                                @"description": @{
@@ -451,11 +473,8 @@ UITextViewDelegate
                                }]
                                };
         
-        [SVProgressHUD showWithStatus:@"Đang đăng sản phẩm" maskType:SVProgressHUDMaskTypeGradient];
-        
         AFHTTPRequestOperation *createProductRequest = [[MBNUploadImageManager sharedProvider] createProductWithDictionary:info];
         [createProductRequest setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-            [SVProgressHUD showSuccessWithStatus:@"Đăng sản phẩm thành công"];
             [self dismissViewControllerAnimated:YES completion:nil];
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -488,6 +507,7 @@ UITextViewDelegate
         [self.createProductOperationQueue addOperations:[arrOperations copy] waitUntilFinished:YES];
         
         dispatch_async(dispatch_get_main_queue(), ^(void){
+            [SVProgressHUD showSuccessWithStatus:@"Đăng sản phẩm thành công"];
         });
         
     });
