@@ -106,6 +106,29 @@ UITextViewDelegate
     [self setupTextFieldBorderLine];
     [self setupCollectionViewHeightChangingSignal];
     [self registerForKeyboardNotifications];
+    
+    [self updateUIIfEditingProduct];
+}
+
+- (void)updateUIIfEditingProduct {
+    if (!self.editingProduct) {
+        return;
+    }
+    
+    self.productTitleTextField.text = self.editingProduct.name;
+    [self.productTransactionTypePickButton setTitle:self.editingProduct.isSale ? @"Cần bán/ Dịch vụ" : @"Cần mua/ Cần tìm" forState:UIControlStateNormal];
+    
+    NSArray *provinceList = [[[MBNProvinceManager sharedManager] provinces] select:^BOOL(MBNProvince *province) {
+        return [province.ID isEqual:self.editingProduct.province.ID];
+    }];
+    [self.cityPickButton setTitle:[[provinceList firstObject] name] forState:UIControlStateNormal];
+    
+    [self.productQualityButton setTitle:self.editingProduct.conditions forState:UIControlStateNormal];
+    
+    self.productPriceTextField.text = [self.editingProduct.price stringValue];
+    self.productDescriptionTextView.text = self.editingProduct.des;
+    
+    self.viewModel.selectedCategories = [self.editingProduct.categories mutableCopy];
 }
 
 - (UINavigationController *)cameraVC {
@@ -412,7 +435,7 @@ UITextViewDelegate
                                @"category": [self.viewModel.selectedCategories map:^id(MBNCategory *category) {
                                    return category.ID;
                                }],
-                               @"is_sale": @([self.productTransactionTypePickButton.titleLabel.text isEqualToString:@"Cần bán/ cần mua"]),
+                               @"is_sale": @([self.productTransactionTypePickButton.titleLabel.text isEqualToString:@"Cần bán/ Dịch vụ"]),
                                @"province_id": self.selectedProvince.ID,
                                @"conditions": [[self.selectedProductQuality allValues] firstObject],
                                @"is_shown": @(true),

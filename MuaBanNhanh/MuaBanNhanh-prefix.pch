@@ -103,5 +103,6 @@
 #import "MBNProductManager.h"
 #import "MBNActionsManagers.h"
 #import "MBNUserManager.h"
+#import "MBNProvinceManager.h"
 #import "MBNUploadImageManager.h"
 

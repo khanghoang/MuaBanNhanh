@@ -24,7 +24,7 @@
 + (void)getLatestProducts:(void (^) (NSArray *arrProducts))success failure:(void (^)(NSError *error))failure {
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:@"http://api.muabannhanh.com/article/latest-list" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [manager GET:@"https://api.muabannhanh.com/article/latest-list" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSError *error;
         
@@ -40,10 +40,37 @@
     }];
 }
 
++ (void)deleteProductWithID:(NSNumber *)productID withCompletion:(void(^)(NSString *resultString, NSString *errorString))completeBlock {
+    MBNUser *user = [[MBNUserManager sharedProvider] getLoginUser];
+    NSString *requestString = [NSString stringWithFormat:@"https://api.muabannhanh.com/user/article-delete?id=%lu&user_id=%lu&token=%@", (long)[productID integerValue], (long)[user.ID integerValue], user.token];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager mbn_manager];
+    [manager GET:requestString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        if([responseObject[@"status"] integerValue] == 200) {
+            completeBlock(responseObject[@"message"], nil);
+            return;
+        }
+        
+        if (completeBlock) {
+            completeBlock(nil, responseObject[@"message"]);
+            return;
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        if (completeBlock) {
+            completeBlock(nil, error.userInfo[@"message"]);
+        }
+        
+    }];
+    
+}
+
 + (void)getProductDetailsWithID:(NSNumber *)productID withCompletion:(void (^) (MBNProduct *product, NSError *error))completeBlock {
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager mbn_manager];
-    NSString *requestString = [NSString stringWithFormat:@"http://api.muabannhanh.com/article/detail?id=%ld", (long)[productID integerValue]];
+    NSString *requestString = [NSString stringWithFormat:@"https://api.muabannhanh.com/article/detail?id=%ld", (long)[productID integerValue]];
     [manager GET:requestString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSError *error;

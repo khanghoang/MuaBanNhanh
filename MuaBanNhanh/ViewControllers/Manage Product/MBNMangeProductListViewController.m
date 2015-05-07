@@ -12,15 +12,24 @@
 #import "MBNManageProductLoadOperation.h"
 #import "MBNPopupMenuViewController.h"
 #import "MBNManageProductCollectionViewCell.h"
+#import "MBNProductDetailsViewController.h"
 #import <KHTableViewController/KHOrderedDataProvider.h>
+#import "MBNShowLoginSegue.h"
+#import "MBNNavigationViewController.h"
+#import "AppDelegate.h"
+#import "MBNCreateProductViewController.h"
 
 @interface MBNMangeProductListViewController ()
 <
-KHBasicOrderedCollectionViewControllerProtocol
+KHBasicOrderedCollectionViewControllerProtocol,
+UICollectionViewDelegate
 >
 
 @property (strong, nonatomic) KHCollectionController *collectionController;
 @property (strong, nonatomic) KHBasicTableViewModel *collectionViewModel;
+@property (strong, nonatomic) NSIndexPath *popupSelectedIndexpath;
+
+@property (strong, nonatomic) LBDelegateMatrioska *chainDelegate;
 
 @end
 
@@ -39,6 +48,10 @@ KHBasicOrderedCollectionViewControllerProtocol
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self enablePullToRefresh];
+    
+    id oldDelegate = self.collectionView.delegate;
+    self.chainDelegate = [[LBDelegateMatrioska alloc] initWithDelegates:@[oldDelegate, self]];
+    self.collectionView.delegate = (id) self.chainDelegate;
 }
 
 - (id <KHCollectionViewCellFactoryProtocol> )cellFactory {
@@ -47,10 +60,18 @@ KHBasicOrderedCollectionViewControllerProtocol
     void (^tapMenuActionBlock)(NSIndexPath *selectedIndexPath, UIButton *menuButton) = ^(NSIndexPath *selectedIndexPath, UIButton *menuButton){
         @strongify(self);
         [self presentPopupMenuForIndexPath:selectedIndexPath fromButton:menuButton];
-        NSLog(@"%@", [self.collectionController.model itemAtIndexpath:selectedIndexPath]);
+        self.popupSelectedIndexpath = selectedIndexPath;
+//        NSLog(@"%@", [self.collectionController.model itemAtIndexpath:selectedIndexPath]);
     };
     cellFactory.tapMenuButtonActionBlock = tapMenuActionBlock;
     return cellFactory;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    MBNProduct *product = [self.collectionController.model itemAtIndexpath:indexPath];
+    MBNProductDetailsViewController *productVC = [MBNProductDetailsViewController tme_instantiateFromStoryboardNamed:@"ProductDetails"];
+    productVC.productID = product.ID;
+    [self.navigationController pushViewController:productVC animated:YES];
 }
 
 - (id <KHTableViewSectionModel> )getLoadingContentViewModel {
@@ -65,7 +86,55 @@ KHBasicOrderedCollectionViewControllerProtocol
 {
     CGRect buttonFrameInCollectionView = [self.navigationController.view convertRect:sender.frame fromView:sender.superview];
     MBNPopupMenuViewController *popupMenuViewController = [[MBNPopupMenuViewController alloc] initWithDestinationFrame:buttonFrameInCollectionView];
+    
     [self presentPopupMenuViewController:popupMenuViewController];
+    
+    @weakify(self);
+    @weakify(popupMenuViewController);
+    popupMenuViewController.openProductDetailButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *sender) {
+        @strongify(self);
+        @strongify(popupMenuViewController);
+        [popupMenuViewController dismissViewControllerAnimated:YES completion:nil];
+        MBNProduct *product = [self.collectionController.model itemAtIndexpath:self.popupSelectedIndexpath];
+        MBNCreateProductViewController *productVC = [MBNCreateProductViewController tme_instantiateFromStoryboardNamed:@"ProductDetails"];
+        productVC.editingProduct = product;
+        [self.navigationController pushViewController:productVC animated:YES];
+        return [RACSignal empty];
+    }];
+    
+    popupMenuViewController.editProductButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *sender) {
+        @strongify(popupMenuViewController);
+        [popupMenuViewController dismissViewControllerAnimated:YES completion:nil];
+        MBNProduct *product = [self.collectionController.model itemAtIndexpath:self.popupSelectedIndexpath];
+        MBNCreateProductViewController *vc = [MBNCreateProductViewController tme_instantiateFromStoryboardNamed:@"CreateProduct"];
+        MBNNavigationViewController *navVC = [[MBNNavigationViewController alloc] initWithRootViewController:vc];
+        vc.editingProduct = product;
+        AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+        MBNShowLoginSegue *segue = [[MBNShowLoginSegue alloc] initWithIdentifier:@"MBNLoginSegue" source:appDelegate.rootNavigationController destination:navVC];
+        [segue perform];
+        return [RACSignal empty];
+    }];
+    
+    popupMenuViewController.removeProductButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *sender) {
+        @strongify(self);
+        
+        @strongify(popupMenuViewController);
+        [popupMenuViewController dismissViewControllerAnimated:YES completion:nil];
+        
+        [SVProgressHUD showWithStatus:@"Đang xoá sản phẩm" maskType:SVProgressHUDMaskTypeGradient];
+        MBNProduct *product = [self.collectionController.model itemAtIndexpath:self.popupSelectedIndexpath];
+        [MBNProductManager deleteProductWithID:product.ID withCompletion:^(NSString *successString, NSString *errorString) {
+            [self reloadAlData];
+            if(successString) {
+                [SVProgressHUD showSuccessWithStatus:@"Xoá sản phẩm thành công"];
+                return;
+            }
+            
+            [SVProgressHUD showErrorWithStatus:errorString];
+        }];
+        return [RACSignal empty];
+    }];
+    
 }
 
 - (void)presentPopupMenuViewController:(MBNPopupMenuViewController *)menuViewController {

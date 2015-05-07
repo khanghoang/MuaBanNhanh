@@ -10,4 +10,6 @@
 
 @interface MBNCreateProductViewController : UIViewController
 
+@property (strong, nonatomic) MBNProduct *editingProduct;
+
 @end
