@@ -217,6 +217,7 @@
 		B62FDE571AF0C0410099CB06 /* MBNSelectCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B62FDE561AF0C0410099CB06 /* MBNSelectCategoryViewController.m */; };
 		B62FDE591AF0C0C90099CB06 /* SelectCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B62FDE581AF0C0C90099CB06 /* SelectCategory.storyboard */; };
 		B62FDE5E1AF0C25A0099CB06 /* MBNDashedBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B62FDE5D1AF0C25A0099CB06 /* MBNDashedBorderView.m */; };
+		B66B98F21AFB3A1E00525064 /* MBNProductDetailBottomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B66B98F11AFB3A1E00525064 /* MBNProductDetailBottomViewController.m */; };
 		B66C5B821AF12F6F003FB281 /* MBNSelectCategoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B66C5B811AF12F6F003FB281 /* MBNSelectCategoryViewModel.m */; };
 		B692CF181AEFF69700F331CC /* MBNPaddingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B692CF171AEFF69700F331CC /* MBNPaddingTextField.m */; };
 		B692CF1B1AEFFC2400F331CC /* MBNTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B692CF1A1AEFFC2400F331CC /* MBNTextView.m */; };
@@ -649,6 +650,8 @@
 		B62FDE581AF0C0C90099CB06 /* SelectCategory.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SelectCategory.storyboard; sourceTree = "<group>"; };
 		B62FDE5C1AF0C25A0099CB06 /* MBNDashedBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNDashedBorderView.h; sourceTree = "<group>"; };
 		B62FDE5D1AF0C25A0099CB06 /* MBNDashedBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNDashedBorderView.m; sourceTree = "<group>"; };
+		B66B98F01AFB3A1E00525064 /* MBNProductDetailBottomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNProductDetailBottomViewController.h; sourceTree = "<group>"; };
+		B66B98F11AFB3A1E00525064 /* MBNProductDetailBottomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNProductDetailBottomViewController.m; sourceTree = "<group>"; };
 		B66C5B801AF12F6F003FB281 /* MBNSelectCategoryViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSelectCategoryViewModel.h; sourceTree = "<group>"; };
 		B66C5B811AF12F6F003FB281 /* MBNSelectCategoryViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSelectCategoryViewModel.m; sourceTree = "<group>"; };
 		B692CF161AEFF69700F331CC /* MBNPaddingTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNPaddingTextField.h; sourceTree = "<group>"; };
@@ -911,6 +914,8 @@
 				059AAAEF1AEBE2DB00095D83 /* MBNProductDetailsViewModel.m */,
 				051C83251AECFA99008657AB /* MBNProductImageCell.h */,
 				051C83261AECFA99008657AB /* MBNProductImageCell.m */,
+				B66B98F01AFB3A1E00525064 /* MBNProductDetailBottomViewController.h */,
+				B66B98F11AFB3A1E00525064 /* MBNProductDetailBottomViewController.m */,
 			);
 			path = "Product Details";
 			sourceTree = "<group>";
@@ -1887,6 +1892,7 @@
 				05B906C21AE805AE00B85BEC /* IMGLYEditorColorButton.m in Sources */,
 				05B906A71AE805AE00B85BEC /* IMGLY669Filter.m in Sources */,
 				05B906A91AE805AE00B85BEC /* IMGLY9EK1Filter.m in Sources */,
+				B66B98F21AFB3A1E00525064 /* MBNProductDetailBottomViewController.m in Sources */,
 				0592B63B1AF0FE3100FACDF5 /* MBNManageProductLoadOperation.m in Sources */,
 				05B906E31AE805AE00B85BEC /* IMGLYMainMenuEntryMetaData.m in Sources */,
 				0562C83D1AEBCF9E0029EA9E /* MBNProductDetailsViewController.m in Sources */,
