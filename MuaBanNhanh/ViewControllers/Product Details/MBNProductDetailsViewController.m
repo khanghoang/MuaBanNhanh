@@ -10,10 +10,12 @@
 #import "MBNProductDetailsViewModel.h"
 #import "MBNProductImagesViewController.h"
 #import "MBNUserProductViewController.h"
+#import "MBNProductDetailBottomViewController.h"
 
 @interface MBNProductDetailsViewController ()
 
 @property (strong, nonatomic) MBNProductDetailsViewModel *viewModel;
+@property (strong, nonatomic) MBNProductDetailBottomViewController *bottomVC;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblProductName;
 @property (weak, nonatomic) IBOutlet UILabel *lblViewCount;
@@ -30,6 +32,7 @@
 @property (weak, nonatomic) MBNProductImagesViewController *productImagesVC;
 @property (weak, nonatomic) IBOutlet UIImageView *imgViewCover;
 @property (weak, nonatomic) IBOutlet UILabel *lblCreateAt;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomContainerHeightConstraint;
 
 @end
 
@@ -131,11 +134,27 @@
         self.productImagesVC.viewModel = self.viewModel;
     }];
     
+    RACSignal *arrayProductCountSignal = [[RACObserve(self, bottomVC.listProductCollectionView.contentSize) ignore:nil] map:^id(NSValue *sizeValue) {
+        CGFloat height = sizeValue.CGSizeValue.height;
+        return @(height < 142 ? 0 : height);
+    }];
+    
+    [arrayProductCountSignal subscribeNext:^(NSNumber *height) {
+        @strongify(self);
+        self.bottomContainerHeightConstraint.constant = [height floatValue];
+        [self.view layoutIfNeeded];
+    }];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    MBNProductImagesViewController *imagesVC = segue.destinationViewController;
-    self.productImagesVC = imagesVC;
+    if ([segue.identifier isEqualToString:@"EmberProductImageSegue"]) {
+        MBNProductImagesViewController *imagesVC = segue.destinationViewController;
+        self.productImagesVC = imagesVC;
+    } else if ([segue.identifier isEqualToString:@"EmberProductBottomSegue"]) {
+        MBNProductDetailBottomViewController *bottomVC = segue.destinationViewController;
+        self.bottomVC = bottomVC;
+        self.bottomVC.user = self.viewModel.product.user;
+    }
 }
 
 - (IBAction)onBtnCall:(UIButton *)button {
