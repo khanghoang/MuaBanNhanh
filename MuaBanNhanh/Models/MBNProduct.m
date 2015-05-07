@@ -63,6 +63,12 @@
     return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[MBNCategory class]];
 }
 
++ (NSValueTransformer *)desJSONTransformer {
+    return [MTLValueTransformer transformerWithBlock:^NSString *(NSString *originalDes) {
+        return [self strippingHTMLForString:originalDes];
+    }];
+}
+
 + (NSValueTransformer *)createdAtJSONTransformer
 {
     return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *dateString) {
@@ -122,6 +128,10 @@
     });
 
     return instance;
+}
+
++ (NSString *)strippingHTMLForString:(NSString *)originalString {
+    return [originalString stringByReplacingOccurrencesOfString:@"<br />" withString:@""];
 }
 
 @end
