@@ -7,13 +7,16 @@
 //
 
 #import "MBNLoginViewController.h"
+#import <FBSDKLoginKit.h>
+#import <FBSDKCoreKit.h>
 
-@interface MBNLoginViewController ()
+@interface MBNLoginViewController () <FBSDKLoginButtonDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) UITextField *activeField;
 @property (weak, nonatomic) IBOutlet UITextField *txtPhone;
 @property (weak, nonatomic) IBOutlet UITextField *txtPassword;
+@property (weak, nonatomic) IBOutlet FBSDKLoginButton *fbLoginButton;
 
 @end
 
@@ -23,7 +26,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self handleFBLoginButton];
     [self registerForKeyboardNotifications];
+}
+
+- (void)handleFBLoginButton {
+    self.fbLoginButton.delegate = self;
+    self.fbLoginButton.readPermissions = @[@"public_profile", @"email"];
 }
 
 - (NSString *)getErrorStringFromLoginForm {
@@ -140,5 +149,20 @@
     self.activeField = nil;
     [self.view endEditing:YES];
 }
+
+#pragma marks - FBLoginButtonDelegate
+
+- (void)loginButton:(FBSDKLoginButton *)loginButton didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result error:(NSError *)error
+{
+    if (error) {
+        //TODO: Handle error here
+    } else if (result.isCancelled) {
+        //TODO: Handle cancel here
+    } else {
+        //TODO: Return Access token here
+        [FBSDKAccessToken currentAccessToken];
+    }
+}
+
 
 @end
