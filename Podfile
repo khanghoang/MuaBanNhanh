@@ -28,6 +28,7 @@ target 'MuaBanNhanh' do
   pod 'ReactiveCocoa'
   pod 'UICollectionViewLeftAlignedLayout', '0.0.3'
   pod 'GPUImage', '0.1.2'
+  pod 'FBSDKLoginKit', '~> 4.1'
   pod 'PSTAlertController', :git => 'https://github.com/steipete/PSTAlertController.git'
   pod 'IDMPhotoBrowser'
   pod 'ObjectiveSugar'

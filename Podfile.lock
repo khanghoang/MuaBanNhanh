@@ -21,7 +21,24 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - AWPagedArray (0.3.0)
+  - Bolts (1.1.5):
+    - Bolts/AppLinks (= 1.1.5)
+    - Bolts/Tasks (= 1.1.5)
+  - Bolts/AppLinks (1.1.5):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.1.5)
   - DACircularProgress (2.3.1)
+  - FBSDKCoreKit (4.1.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc (= 4.1.0)
+    - FBSDKCoreKit/no-arc (= 4.1.0)
+  - FBSDKCoreKit/arc (4.1.0):
+    - Bolts (~> 1.1)
+  - FBSDKCoreKit/no-arc (4.1.0):
+    - Bolts (~> 1.1)
+    - FBSDKCoreKit/arc
+  - FBSDKLoginKit (4.1.0):
+    - FBSDKCoreKit
   - FLEX (2.0.2)
   - GPUImage (0.1.2)
   - HPGrowingTextView (1.1)
@@ -95,6 +112,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - FBSDKLoginKit (~> 4.1)
   - FLEX
   - GPUImage (= 0.1.2)
   - HPGrowingTextView
@@ -128,7 +146,10 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
   AWPagedArray: 66db32d015a01d921133a4eb50da1d830271c39a
+  Bolts: aac24961496d504aa56fc267cde95162a71bac39
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  FBSDKCoreKit: 469ed167195f860dbd2b4c4bbaa33d2e90598db9
+  FBSDKLoginKit: ff6224762732e3698f30942e4544321b8c7a23e6
   FLEX: 321e6150cbababb76aaadde355dfce2ee1cac2d8
   GPUImage: efa9a693c26bf1bcd7eb38eb3129ba6a5771cecd
   HPGrowingTextView: 88a716d97fb853bcb08a4a08e4727da17efc9b19
