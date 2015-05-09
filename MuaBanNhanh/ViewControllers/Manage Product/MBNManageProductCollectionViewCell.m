@@ -32,6 +32,14 @@
     }];
 }
 
+- (void)prepareForReuse {
+    self.imgViewProduct.image = nil;
+    self.lblProductName.text = @"";
+    self.lblPrice.text = @"";
+    self.lblViewCount.text = @"";
+    self.lblInactive.hidden = YES;
+}
+
 - (void)configWithData:(id)data {
     
     if(![data isKindOfClass:[MBNProduct class]]) {
