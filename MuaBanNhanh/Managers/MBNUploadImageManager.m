@@ -97,7 +97,14 @@
             return;
         }
         
+        if (completionBlock) {
+            completionBlock(responseObject, nil);
+        }
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completionBlock) {
+            completionBlock(nil, error);
+        }
         
     }];
     
