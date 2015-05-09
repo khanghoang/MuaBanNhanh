@@ -80,7 +80,8 @@
     
 }
 
-- (AFHTTPRequestOperation *)createProductWithDictionary:(NSDictionary *)dictionary {
+- (AFHTTPRequestOperation *)createProductWithDictionary:(NSDictionary *)dictionary withCompletionBlock:(void (^)(id reponseObject, NSError *error))completionBlock  {
+    // TODO: repeated code
     MBNUser *currentLoginUser = [[MBNUserManager sharedProvider] getLoginUser];
     NSString *requestString = [NSString stringWithFormat:@"https://api.muabannhanh.com/user/article-add?user_id=%ld&token=%@", (long)[currentLoginUser.ID integerValue], currentLoginUser.token];
     
@@ -103,7 +104,33 @@
     return operation;
 }
 
-- (AFHTTPRequestOperation *)uploadProductImage:(UIImage *)image {
+- (AFHTTPRequestOperation *)updateProductWithProductID:(NSNumber *)productID withDictionary:(NSDictionary *)dictionary withCompletionBlock:(void (^)(id reponseObject, NSError *error))completionBlock  {
+    // TODO: repeated code
+    MBNUser *currentLoginUser = [[MBNUserManager sharedProvider] getLoginUser];
+    NSString *requestString = [NSString stringWithFormat:@"https://api.muabannhanh.com/user/article-edit?user_id=%ld&token=%@&id=%ld", (long)[currentLoginUser.ID integerValue], currentLoginUser.token, (long)[productID integerValue]];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSError *error;
+    NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"POST" URLString:requestString parameters:dictionary error:&error];
+    
+    AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        if (completionBlock) {
+            completionBlock(responseObject, nil);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (completionBlock) {
+            completionBlock(nil, error);
+        }
+    }];
+    
+    return operation;
+}
+
+- (AFHTTPRequestOperation *)uploadProductImage:(UIImage *)image withCompletionBlock:(void (^)(AFHTTPRequestOperation *operation, id reponseObject, NSError *error))completionBlock {
     
     NSDictionary *params = @{
                              @"content": [UIImageJPEGRepresentation(image, 0.8) base64EncodedString],
@@ -120,13 +147,15 @@
     NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"POST" URLString:requestString parameters:params error:&error];
     
     AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if ([responseObject[@"status"] integerValue] == 400) {
-            [[MBNActionsManagers sharedInstance] checkRequestErrorAndForceLogout:responseObject];
-            return;
+        
+        if (completionBlock) {
+            completionBlock(operation, responseObject, nil);
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
+        if (completionBlock) {
+            completionBlock(operation, nil, error);
+        }
     }];
     
     return operation;

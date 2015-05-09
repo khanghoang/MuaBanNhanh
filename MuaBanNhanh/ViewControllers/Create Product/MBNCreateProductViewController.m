@@ -13,6 +13,8 @@
 #import "MBNTextView.h"
 #import "MBNTagCell.h"
 #import "TMEPhotoButton.h"
+#import "MBNImage.h"
+#import "AFHTTPRequestOperationManager+Helper.h"
 #import <RMPickerViewController.h>
 
 typedef NS_ENUM(NSInteger, PickerViewType){
@@ -59,6 +61,8 @@ UITextViewDelegate
 @property (weak, nonatomic) IBOutlet UITextField *activeField;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+@property (strong, nonatomic) NSMutableArray *uploadedURLs;
+
 @property (strong, nonatomic) IBOutletCollection(UITextView) NSArray *arrCaptions;
 
 @end
@@ -77,7 +81,7 @@ UITextViewDelegate
 
 - (NSMutableArray *)productImages {
     if (!_productImages) {
-        _productImages = [NSMutableArray array];
+        _productImages = [@[[NSNull null], [NSNull null], [NSNull null], [NSNull null], [NSNull null]] mutableCopy];
     }
     
     return _productImages;
@@ -115,6 +119,10 @@ UITextViewDelegate
         return;
     }
     
+//    NSArray *provinceList = [[[MBNProvinceManager sharedManager] provinces] select:^BOOL(MBNProvince *province) {
+//        return [province.ID isEqual:self.editingProduct.province.ID];
+//    }];
+    
     [SVProgressHUD showWithStatus:@"Đang tải thông tin sản phẩm" maskType:SVProgressHUDMaskTypeGradient];
     
     [MBNProductManager getProductDetailsWithID:self.editingProduct.ID withCompletion:^(MBNProduct *product, NSError *error) {
@@ -122,26 +130,32 @@ UITextViewDelegate
         
         [SVProgressHUD dismiss];
         
+        self.selectedProductTransactionType = self.editingProduct.isSale ? @{@"Cần bán/ Dịch vụ" : @0} : @{@"Cần mua/ Cần tìm" : @1};
+        self.selectedProductQuality = self.viewModel.productQualityDictionary[self.editingProduct.conditions] ? self.viewModel.productQualityDictionary[self.editingProduct.conditions] : @{@"Mới 100%" : @0};
+        
+        self.selectedProvince = self.editingProduct.province;
+        
         self.productTitleTextField.text = self.editingProduct.name;
-        [self.productTransactionTypePickButton setTitle:self.editingProduct.isSale ? @"Cần bán/ Dịch vụ" : @"Cần mua/ Cần tìm" forState:UIControlStateNormal];
         
-        NSArray *provinceList = [[[MBNProvinceManager sharedManager] provinces] select:^BOOL(MBNProvince *province) {
-            return [province.ID isEqual:self.editingProduct.province.ID];
-        }];
-        [self.cityPickButton setTitle:[[provinceList firstObject] name] forState:UIControlStateNormal];
+        [self.productTransactionTypePickButton setTitle:[[self.selectedProductTransactionType allKeys] firstObject] forState:UIControlStateNormal];
+    
         
-        [self.productQualityButton setTitle:self.editingProduct.conditions forState:UIControlStateNormal];
+        [self.cityPickButton setTitle:self.selectedProvince.name forState:UIControlStateNormal];
+        
+        [self.productQualityButton setTitle:[[self.selectedProductQuality allKeys] firstObject] forState:UIControlStateNormal];
         
         self.productPriceTextField.text = [self.editingProduct.price stringValue];
         self.productDescriptionTextView.text = self.editingProduct.des;
         
         self.viewModel.selectedCategories = [self.editingProduct.categories mutableCopy];
         
-        [self.editingProduct.gallery enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [self.editingProduct.gallery enumerateObjectsUsingBlock:^(MBNImage *image, NSUInteger idx, BOOL *stop) {
             
             [self.productImagePickButtons[idx] setBackgroundImageForState:UIControlStateNormal withURL:[self.editingProduct.gallery[idx] imageURL]];
             UITextView *textView = (UITextView *) self.arrCaptions[idx];
             [textView setText:[self.editingProduct.gallery[idx] caption]];
+            
+            [self.productImages replaceObjectAtIndex:idx withObject:image];
         }];
     }];
     
@@ -277,9 +291,9 @@ UITextViewDelegate
 }
 
 - (void)deleteImageOfButton:(UIButton *)button {
-    UIImage *oldImage = button.imageView.image;
+//    UIImage *oldImage = button.imageView.image;
     [button setBackgroundImage:[UIImage imageNamed:@"add-thumbnail"] forState:UIControlStateNormal];
-    [self.productImages removeObject:oldImage];
+    [self.productImages removeObjectAtIndex:[self.productImagePickButtons indexOfObject:button]];
 }
 
 - (IBAction)onBtnClickPickImage:(id)button {
@@ -340,8 +354,8 @@ UITextViewDelegate
         } else {
             [self handleTakenImage:outputImage button:button];
             [self.cameraVC dismissViewControllerAnimated:YES completion:nil];
-            [self.productImages addObject:outputImage];
-        }
+            [self.productImages replaceObjectAtIndex:[self.productImagePickButtons indexOfObject:button] withObject:outputImage];
+    }
     };
     
     [self.cameraVC pushViewController:cropVC animated:YES];
@@ -423,9 +437,14 @@ UITextViewDelegate
 - (IBAction)onBtnCreateProduct:(id)sender {
     
     __block NSMutableArray *arrOperations = [NSMutableArray array];
-    __block NSMutableArray *uploadedURLs = [[self.productImages copy] map:^id(id object) {
+    NSArray *productImages = [self.productImages copy];
+    __block NSMutableArray *uploadedURLs = [[[productImages select:^BOOL(id object) {
+        return ![object isEqual:[NSNull null]];
+    }] map:^id(id object) {
         return @"";
-    }];
+    }] mutableCopy];
+    
+    self.uploadedURLs = uploadedURLs;
     
     if ([self.productTitleTextField.text isEqualToString:@""]) {
         [SVProgressHUD showErrorWithStatus:@"Bạn chưa nhập tên sản phẩm"];
@@ -447,69 +466,126 @@ UITextViewDelegate
         return;
     }
     
+    self.productImages = [[self.productImages select:^BOOL(id object) {
+        return ![object isEqual:[NSNull null]];
+    }] mutableCopy];
+    
     [SVProgressHUD showWithStatus:@"Đang đăng sản phẩm" maskType:SVProgressHUDMaskTypeGradient];
     
     @weakify(self);
-    __block NSBlockOperation *operation3 = [NSBlockOperation blockOperationWithBlock:^{
-        @strongify(self);
-        NSDictionary *info = @{
-                               @"name": self.productTitleTextField.text,
-                               @"category": [self.viewModel.selectedCategories map:^id(MBNCategory *category) {
-                                   return category.ID;
-                               }],
-                               @"is_sale": @([self.productTransactionTypePickButton.titleLabel.text isEqualToString:@"Cần bán/ Dịch vụ"]),
-                               @"province_id": self.selectedProvince.ID,
-                               @"conditions": self.selectedProductQuality[self.productQualityButton.titleLabel.text],
-                               @"is_shown": @(true),
-                               @"price": @([self.productPriceTextField.text integerValue]),
-                               @"description": @{
-                                       @"user": self.productDescriptionTextView.text
-                                       },
-                               @"gallery": [uploadedURLs map:^id(NSString *url) {
-                                   return @{
-                                            @"image_url": url,
-                                            @"caption": [self.arrCaptions[[uploadedURLs indexOfObject:url]] text]
-                                            };
-                               }]
-                               };
-        
-        AFHTTPRequestOperation *createProductRequest = [[MBNUploadImageManager sharedProvider] createProductWithDictionary:info];
-        [createProductRequest setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-            [self dismissViewControllerAnimated:YES completion:nil];
-            
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            
-            [SVProgressHUD showErrorWithStatus:error.userInfo[@"message"]];
-        }];
-        
-        createProductRequest.responseSerializer = [AFHTTPRequestOperationManager mbn_manager].responseSerializer;
-        
-        [createProductRequest start];
-    }];
     
-    [self.productImages enumerateObjectsUsingBlock:^(UIImage *image, NSUInteger idx, BOOL *stop) {
+//    __block NSBlockOperation *operation3 =
+    
+    
+    [self.productImages enumerateObjectsUsingBlock:^(id image, NSUInteger idx, BOOL *stop) {
         
-        __block AFHTTPRequestOperation *operation = [[MBNUploadImageManager sharedProvider] uploadProductImage:image];
-        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-            uploadedURLs[[arrOperations indexOfObject:operation]] = responseObject[@"result"][@"image_url"];
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        @strongify(self);
+        
+        NSOperation *operation;
+        
+        if ([image isEqual:[NSNull null]]) {
+            return;
+        }
+        
+        if ([image isKindOfClass:[MBNImage class]]) {
+            operation = [NSBlockOperation blockOperationWithBlock:^{
+                MBNImage *mbnProduct = (id)image;
+                [self.uploadedURLs replaceObjectAtIndex:idx withObject:mbnProduct.imageURL];
+            }];
+        } else {
+            AFHTTPRequestOperation *uploadOperation = (AFHTTPRequestOperation *) [[MBNUploadImageManager sharedProvider] uploadProductImage:image withCompletionBlock:^(AFHTTPRequestOperation *operation, id reponseObject, NSError *error) {
+                
+                [self.uploadedURLs replaceObjectAtIndex:[arrOperations indexOfObject:operation] withObject:reponseObject[@"result"][@"image_url"]];
+            }];
             
-        }];
+            operation = uploadOperation;
+        }
+        
         
         [arrOperations addObject:operation];
-        [operation3 addDependency:operation];
+//        [operation3 addDependency:operation];
     }];
     
-    [arrOperations addObject:operation3];
+//    [arrOperations addObject:operation3];
+//    [self.createProductOperationQueue addOperation:operation3];
+    
+    [RACObserve(self, uploadedURLs) subscribeNext:^(NSArray *arr) {
+        
+        NSInteger count = [arr select:^BOOL(id object) {
+            return [object isKindOfClass:[NSString class]] && [object isEqualToString:@""];
+        }].count;
+        
+        if (count == 0) {
+            [self.createProductOperationQueue addOperationWithBlock:^{
+                [NSBlockOperation blockOperationWithBlock:^{
+                    @strongify(self);
+                    
+                    NSArray *arr = [uploadedURLs map:^id(id url) {
+                        NSDictionary *uploadUrl = @{
+                                                    @"image_url": [url isKindOfClass:[NSString class]] ? url : [url absoluteString],
+                                                    @"caption": [self.arrCaptions[[uploadedURLs indexOfObject:url]] text]
+                                                    };
+                        return uploadUrl;
+                    }];
+                    
+                    NSArray *dumpArr = [self.viewModel.selectedCategories map:^id(MBNCategory *category) {
+                        return category.ID;
+                    }];
+                    
+                    NSDictionary *info = @{
+                                           @"name": self.productTitleTextField.text,
+                                           @"category": dumpArr,
+                                           @"is_sale": @([self.productTransactionTypePickButton.titleLabel.text isEqualToString:@"Cần bán/ Dịch vụ"]),
+                                           @"province_id": self.selectedProvince.ID,
+                                           @"conditions": [[self.selectedProductQuality allValues] firstObject],
+                                           @"is_shown": @(true),
+                                           @"price": @([self.productPriceTextField.text integerValue]),
+                                           @"description": @{
+                                                   @"user": self.productDescriptionTextView.text
+                                                   },
+                                           @"gallery": arr
+                                           };
+                    
+                    AFHTTPRequestOperation *createProductRequest;
+                    if (self.editingProduct) {
+                        createProductRequest = [[MBNUploadImageManager sharedProvider] updateProductWithProductID:self.editingProduct.ID withDictionary:info withCompletionBlock:^(id reponseObject, NSError *error) {
+                            [self dismissViewControllerAnimated:YES completion:nil];
+                            if ([reponseObject[@"status"] integerValue] != 200) {
+                                [SVProgressHUD showErrorWithStatus:reponseObject[@"message"]];
+                                return;
+                            }
+                            
+                            [SVProgressHUD showSuccessWithStatus: self.editingProduct ? @"Cập nhật sản phẩm thành công" : @"Đăng sản phẩm thành công"];
+                            [self dismissViewControllerAnimated:YES completion:nil];
+                        }];
+                    } else {
+                        createProductRequest = [[MBNUploadImageManager sharedProvider] createProductWithDictionary:info withCompletionBlock:^(id reponseObject, NSError *error) {
+                            
+                            if ([reponseObject[@"status"] integerValue] != 200) {
+                                [SVProgressHUD showErrorWithStatus:reponseObject[@"message"]];
+                                return;
+                            }
+                            
+                            [SVProgressHUD showSuccessWithStatus: self.editingProduct ? @"Cập nhật sản phẩm thành công" : @"Đăng sản phẩm thành công"];
+                            [self dismissViewControllerAnimated:YES completion:nil];
+                        }];
+                    }
+                    
+                    createProductRequest.responseSerializer = [AFHTTPRequestOperationManager mbn_manager].responseSerializer;
+                    
+                    [createProductRequest start];
+                }];
+            }];
+        }
+        
+    }];
     
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        
-        [self.createProductOperationQueue addOperations:[arrOperations copy] waitUntilFinished:YES];
+        [self.createProductOperationQueue addOperations:arrOperations waitUntilFinished:YES];
         
         dispatch_async(dispatch_get_main_queue(), ^(void){
-            [SVProgressHUD showSuccessWithStatus:@"Đăng sản phẩm thành công"];
         });
-        
+    
     });
     
 }

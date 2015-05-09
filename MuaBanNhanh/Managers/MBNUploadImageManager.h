@@ -20,7 +20,8 @@ typedef enum : NSUInteger {
 
 - (void)uploadImage:(UIImage *)image type:(MBN_UPLOAD_IMAGE)type withFinishBlock:(void (^) (id responseObject, NSError *error))finishBlock;
 
-- (AFHTTPRequestOperation *)uploadProductImage:(UIImage *)image;
-- (AFHTTPRequestOperation *)createProductWithDictionary:(NSDictionary *)dictionary;
+- (AFHTTPRequestOperation *)updateProductWithProductID:(NSNumber *)productID withDictionary:(NSDictionary *)dictionary withCompletionBlock:(void (^)(id reponseObject, NSError *error))completionBlock;
+- (AFHTTPRequestOperation *)createProductWithDictionary:(NSDictionary *)dictionary withCompletionBlock:(void (^)(id reponseObject, NSError *error))completionBlock;
+- (AFHTTPRequestOperation *)uploadProductImage:(UIImage *)image withCompletionBlock:(void (^)(AFHTTPRequestOperation *operation, id reponseObject, NSError *error))completionBlock;
 
 @end

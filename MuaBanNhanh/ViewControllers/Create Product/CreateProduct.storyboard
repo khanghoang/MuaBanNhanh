@@ -574,21 +574,21 @@
                         <outlet property="tagCollectionView" destination="cOm-PA-Uqp" id="WRZ-Za-ciq"/>
                         <outlet property="tagCollectionViewHeightConstraint" destination="GSu-Zz-sD3" id="2Eb-A2-rCT"/>
                         <outlet property="view" destination="gUh-QQ-UvA" id="cT5-lZ-XSD"/>
-                        <outletCollection property="productImagePickButtons" destination="aui-jY-lpl" id="MiH-q7-KcT"/>
-                        <outletCollection property="productImagePickButtons" destination="pzy-uD-kdz" id="N0l-1A-evn"/>
-                        <outletCollection property="productImagePickButtons" destination="NZk-NR-UPH" id="kqE-ks-BoB"/>
-                        <outletCollection property="productImagePickButtons" destination="00n-6h-hm8" id="NLZ-WM-gUT"/>
-                        <outletCollection property="productImagePickButtons" destination="7il-0V-7zT" id="nMI-2K-RMd"/>
                         <outletCollection property="productImageDescriptionTextViews" destination="gWp-ds-tHt" id="Bu3-vX-ciT"/>
                         <outletCollection property="productImageDescriptionTextViews" destination="75t-Nz-gWm" id="Dw3-aB-5jh"/>
                         <outletCollection property="productImageDescriptionTextViews" destination="b2v-TW-E1G" id="FwA-tG-pwZ"/>
                         <outletCollection property="productImageDescriptionTextViews" destination="bq7-A9-KAM" id="SFG-BC-uuN"/>
                         <outletCollection property="productImageDescriptionTextViews" destination="1P3-WH-xdi" id="2HM-VV-nNP"/>
-                        <outletCollection property="arrCaptions" destination="1P3-WH-xdi" id="TNT-BY-4EC"/>
-                        <outletCollection property="arrCaptions" destination="75t-Nz-gWm" id="9My-Qi-OP9"/>
-                        <outletCollection property="arrCaptions" destination="gWp-ds-tHt" id="rjR-Jp-ksZ"/>
-                        <outletCollection property="arrCaptions" destination="b2v-TW-E1G" id="RxG-e4-sMw"/>
-                        <outletCollection property="arrCaptions" destination="bq7-A9-KAM" id="1AI-GM-R0W"/>
+                        <outletCollection property="productImagePickButtons" destination="aui-jY-lpl" id="eu8-eJ-dnc"/>
+                        <outletCollection property="productImagePickButtons" destination="pzy-uD-kdz" id="voA-Id-trd"/>
+                        <outletCollection property="productImagePickButtons" destination="NZk-NR-UPH" id="Xg4-d7-e2M"/>
+                        <outletCollection property="productImagePickButtons" destination="00n-6h-hm8" id="76Y-iX-OSn"/>
+                        <outletCollection property="productImagePickButtons" destination="7il-0V-7zT" id="cbm-VY-7Og"/>
+                        <outletCollection property="arrCaptions" destination="1P3-WH-xdi" id="cUM-mz-tWM"/>
+                        <outletCollection property="arrCaptions" destination="75t-Nz-gWm" id="95m-0G-qCf"/>
+                        <outletCollection property="arrCaptions" destination="gWp-ds-tHt" id="vTC-uY-7s2"/>
+                        <outletCollection property="arrCaptions" destination="b2v-TW-E1G" id="egs-gP-zyh"/>
+                        <outletCollection property="arrCaptions" destination="bq7-A9-KAM" id="QNB-0h-GkZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0g2-SH-Zvf" userLabel="First Responder" sceneMemberID="firstResponder"/>
