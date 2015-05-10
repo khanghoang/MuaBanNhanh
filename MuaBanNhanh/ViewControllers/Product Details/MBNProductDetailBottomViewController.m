@@ -28,6 +28,9 @@ static CGFloat const PRODUCT_COLLECTION_CELL_HEIGHT = 142;
     
     [self.listProductCollectionView registerNib:[MBNCollectionHeaderView nib] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([MBNCollectionHeaderView class])];
     
+}
+
+- (void)reload {
     [MBNProductManager getProductWithUserID:self.user.ID andPage:0 completeBlock:^(NSArray *arrProduct, NSError *error) {
         self.arrUserProducts = [arrProduct subarrayWithRange:NSMakeRange(0, MIN(4, arrProduct.count))];
         [self.listProductCollectionView reloadData];

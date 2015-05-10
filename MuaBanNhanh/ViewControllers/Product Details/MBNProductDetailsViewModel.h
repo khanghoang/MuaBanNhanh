@@ -10,7 +10,7 @@
 
 @interface MBNProductDetailsViewModel : NSObject
 
-@property (strong, readonly) MBNProduct *product;
+@property (readonly, nonatomic) MBNProduct *product;
 
 - (void)loadProductDetailsWithID:(NSNumber *)productID;
 

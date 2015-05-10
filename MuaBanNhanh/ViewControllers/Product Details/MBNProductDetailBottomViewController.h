@@ -13,4 +13,6 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *listProductCollectionView;
 @property (strong, nonatomic) MBNUser *user;
 
+- (void)reload;
+
 @end

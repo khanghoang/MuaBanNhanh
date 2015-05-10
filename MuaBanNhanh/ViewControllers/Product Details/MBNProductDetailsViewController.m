@@ -58,6 +58,11 @@
 - (void)loadProductDetailsAndObserver {
     [self.viewModel loadProductDetailsWithID:self.productID];
     
+    [[RACObserve(self.viewModel, product) ignore:nil] subscribeNext:^(id x) {
+        self.bottomVC.user = self.viewModel.product.user;
+        [self.bottomVC reload];
+    }];
+    
     RAC(self, title) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
         return product.name;
     }];
@@ -153,7 +158,6 @@
     } else if ([segue.identifier isEqualToString:@"EmberProductBottomSegue"]) {
         MBNProductDetailBottomViewController *bottomVC = segue.destinationViewController;
         self.bottomVC = bottomVC;
-        self.bottomVC.user = self.viewModel.product.user;
     }
 }
 
