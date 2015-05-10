@@ -444,13 +444,13 @@ UITextViewDelegate
         return @"";
     }] mutableCopy];
     
-    if (self.viewModel.selectedCategories.count == 0) {
-        [SVProgressHUD showErrorWithStatus:@"Bạn chưa chọn danh mục"];
+    if ([self.productTitleTextField.text isEqualToString:@""]) {
+        [SVProgressHUD showErrorWithStatus:@"Bạn chưa nhập tên sản phẩm"];
         return;
     }
     
-    if ([self.productTitleTextField.text isEqualToString:@""]) {
-        [SVProgressHUD showErrorWithStatus:@"Bạn chưa nhập tên sản phẩm"];
+    if (self.viewModel.selectedCategories.count == 0) {
+        [SVProgressHUD showErrorWithStatus:@"Bạn chưa chọn danh mục"];
         return;
     }
     
@@ -515,7 +515,7 @@ UITextViewDelegate
                     return;
                 }
                 
-                [SVProgressHUD showSuccessWithStatus: self.editingProduct ? @"Cập nhật sản phẩm thành công" : @"Đăng sản phẩm thành công"];
+                [SVProgressHUD showSuccessWithStatus: self.editingProduct ? @"Cập nhật sản phẩm thành công, tin của bạn đang chờ duyệt và cập nhật." : @"Đăng sản phẩm thành công"];
             }];
         } else {
             createProductRequest = [[MBNUploadImageManager sharedProvider] createProductWithDictionary:info withCompletionBlock:^(id reponseObject, NSError *error) {
@@ -526,7 +526,7 @@ UITextViewDelegate
                     return;
                 }
                 
-                [SVProgressHUD showSuccessWithStatus: self.editingProduct ? @"Cập nhật sản phẩm thành công" : @"Đăng sản phẩm thành công"];
+                [SVProgressHUD showSuccessWithStatus: self.editingProduct ? @"Cập nhật sản phẩm thành công, tin của bạn đang chờ duyệt và cập nhật." : @"Đăng sản phẩm thành công"];
             }];
         }
         
