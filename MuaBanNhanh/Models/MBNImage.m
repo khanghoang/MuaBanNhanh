@@ -7,6 +7,7 @@
 //
 
 #import "MBNImage.h"
+#import "NSString+MBNAdditions.h"
 
 @implementation MBNImage
 
@@ -21,6 +22,12 @@
 
 + (NSValueTransformer *)imageURLJSONTransformer {
     return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
+}
+
++ (NSValueTransformer *)captionJSONTransformer {
+    return [MTLValueTransformer transformerWithBlock:^id(NSString *caption) {
+        return [caption strippingHTMLString];
+    }];
 }
 
 @end

@@ -24,6 +24,9 @@
                                     <constraint firstAttribute="height" constant="44" id="vaA-wK-PPb"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pLh-Vu-v4m" id="2gl-BE-pgt"/>
+                                </connections>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eut-QF-AQW" customClass="TKDesignableButton">
                                 <rect key="frame" x="0.0" y="44" width="160" height="35"/>
@@ -44,7 +47,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="arrow-down" translatesAutoresizingMaskIntoConstraints="NO" id="Q9f-jZ-MNy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-down" translatesAutoresizingMaskIntoConstraints="NO" id="Q9f-jZ-MNy">
                                 <rect key="frame" x="144" y="59" width="9" height="5"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9am-6x-Q52" customClass="TKDesignableButton">
@@ -66,11 +69,45 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="arrow-down" translatesAutoresizingMaskIntoConstraints="NO" id="Q1y-oV-ftk">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-down" translatesAutoresizingMaskIntoConstraints="NO" id="Q1y-oV-ftk">
                                 <rect key="frame" x="304" y="59" width="9" height="5"/>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EUD-EB-yER">
-                                <rect key="frame" x="0.0" y="84" width="320" height="483"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n9d-ht-8Qt">
+                                <rect key="frame" x="0.0" y="79" width="320" height="489"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4yK-oc-3bJ">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="du6-Mc-HGU">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="pLh-Vu-v4m" id="8M6-VA-UEN"/>
+                                    <outlet property="delegate" destination="pLh-Vu-v4m" id="6TQ-mr-4Vd"/>
+                                </connections>
+                            </collectionView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMa-nY-q12">
+                                <rect key="frame" x="136" y="152" width="49" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="cQY-A3-mgw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.50196081399917603" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUD-EB-yER">
+                                <rect key="frame" x="0.0" y="84" width="320" height="484"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="pAG-y8-gfh" appends="YES" id="RrX-ms-Drz"/>
@@ -88,22 +125,31 @@
                             <constraint firstAttribute="width" secondItem="eut-QF-AQW" secondAttribute="width" multiplier="1 : 0.5" id="Unl-qE-O1r"/>
                             <constraint firstItem="9am-6x-Q52" firstAttribute="leading" secondItem="eut-QF-AQW" secondAttribute="trailing" id="WcD-6e-jLI"/>
                             <constraint firstItem="eut-QF-AQW" firstAttribute="leading" secondItem="PJc-Qd-PVr" secondAttribute="leading" id="XFy-mA-AYs"/>
+                            <constraint firstAttribute="trailing" secondItem="n9d-ht-8Qt" secondAttribute="trailing" id="Y1p-Q2-93m"/>
+                            <constraint firstAttribute="bottom" secondItem="n9d-ht-8Qt" secondAttribute="bottom" id="Z7e-eI-yXL"/>
                             <constraint firstItem="EUD-EB-yER" firstAttribute="leading" secondItem="PJc-Qd-PVr" secondAttribute="leading" id="Zsn-XD-9Hc"/>
                             <constraint firstAttribute="trailing" secondItem="9am-6x-Q52" secondAttribute="trailing" id="akn-QM-nDq"/>
+                            <constraint firstItem="n9d-ht-8Qt" firstAttribute="leading" secondItem="PJc-Qd-PVr" secondAttribute="leading" id="dYa-oV-Dcn"/>
                             <constraint firstItem="yXR-SE-fBx" firstAttribute="top" secondItem="EUD-EB-yER" secondAttribute="bottom" id="e1R-rH-OQt"/>
                             <constraint firstItem="9am-6x-Q52" firstAttribute="top" secondItem="DOB-3M-SAu" secondAttribute="bottom" id="eWC-Wz-6df"/>
                             <constraint firstItem="DOB-3M-SAu" firstAttribute="top" secondItem="PJc-Qd-PVr" secondAttribute="top" id="fx8-qR-Yen"/>
+                            <constraint firstAttribute="centerY" secondItem="vMa-nY-q12" secondAttribute="centerY" constant="120" id="g7Z-kC-XwC"/>
                             <constraint firstItem="eut-QF-AQW" firstAttribute="top" secondItem="DOB-3M-SAu" secondAttribute="bottom" id="kng-Tp-7Oi"/>
                             <constraint firstItem="9am-6x-Q52" firstAttribute="width" secondItem="eut-QF-AQW" secondAttribute="width" id="kqI-z4-dac"/>
+                            <constraint firstItem="n9d-ht-8Qt" firstAttribute="top" secondItem="9am-6x-Q52" secondAttribute="bottom" id="oQP-v5-qtq"/>
                             <constraint firstItem="Q9f-jZ-MNy" firstAttribute="trailing" secondItem="eut-QF-AQW" secondAttribute="trailing" constant="-7" id="paf-QX-r7i"/>
                             <constraint firstItem="eut-QF-AQW" firstAttribute="top" secondItem="Q9f-jZ-MNy" secondAttribute="top" constant="-15" id="q7e-bO-NHh"/>
+                            <constraint firstAttribute="centerX" secondItem="vMa-nY-q12" secondAttribute="centerX" id="tND-Wm-zJx"/>
                             <constraint firstItem="EUD-EB-yER" firstAttribute="top" secondItem="eut-QF-AQW" secondAttribute="bottom" constant="5" id="zG7-sZ-aOd"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="categoryPickerButton" destination="eut-QF-AQW" id="yuL-Dd-jS2"/>
                         <outlet property="dismissView" destination="EUD-EB-yER" id="cK8-TT-eKk"/>
+                        <outlet property="infoLabel" destination="vMa-nY-q12" id="iOy-2F-hg7"/>
+                        <outlet property="productCollectionView" destination="n9d-ht-8Qt" id="m66-oj-aWB"/>
                         <outlet property="provincePickerButton" destination="9am-6x-Q52" id="mRs-lh-VQP"/>
+                        <outlet property="searchBar" destination="DOB-3M-SAu" id="8LF-pj-SHw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6JH-7A-7YR" userLabel="First Responder" sceneMemberID="firstResponder"/>

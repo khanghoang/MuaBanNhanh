@@ -20,4 +20,24 @@
     return self;
 }
 
+- (void)searchProductsWithKeyWord:(NSString *)keyWord
+{
+    @weakify(self);
+    [SVProgressHUD show];
+    [MBNProductManager searchProductWithKeyWord:keyWord
+                                           page:self.page
+                                     categoryID:self.selectedCategory.ID
+                                     provinceID:self.selectedProvince.ID
+                                  completeBlock:^(NSArray *arrProduct, NSError *error)
+    {
+        [SVProgressHUD dismiss];
+        @strongify(self);
+        if (error) {
+            
+        } else {
+            self.products = arrProduct;
+        }
+    }];
+}
+
 @end

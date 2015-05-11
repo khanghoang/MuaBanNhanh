@@ -22,4 +22,6 @@
 
 + (void)deleteProductWithID:(NSNumber *)productID withCompletion:(void(^)(NSString *resultString, NSString *errorString))completeBlock;
 
++ (void)searchProductWithKeyWord:(NSString *)keyWord page:(NSUInteger)page categoryID:(NSNumber *)categoryID provinceID:(NSNumber *)provinceID completeBlock:(void (^) (NSArray *arrProduct, NSError *error))completeBlock;
+
 @end
