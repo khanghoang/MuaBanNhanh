@@ -13,10 +13,12 @@
 <
 UICollectionViewDelegate,
 UICollectionViewDataSource,
-UICollectionViewDelegateFlowLayout
+UICollectionViewDelegateFlowLayout,
+UIScrollViewDelegate
 >
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) SMPageControl *pageControl;
 
 @end
 
@@ -26,11 +28,34 @@ UICollectionViewDelegateFlowLayout
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    SMPageControl *pageControl = [[SMPageControl alloc] init];
+    pageControl.pageIndicatorImage = [UIImage imageNamed:@"page-indicator"];
+    pageControl.currentPageIndicatorImage = [UIImage imageNamed:@"page-indicator-selected"];
+    pageControl.numberOfPages = 10;
+    [pageControl sizeToFit];
+    [self.view addSubview:pageControl];
+    [pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@(pageControl.width));
+        make.height.equalTo(@15);
+        make.centerX.equalTo(self.view);
+        make.bottom.equalTo(self.view.mas_bottom).with.offset(20);
+    }];
+    
+    self.pageControl = pageControl;
+    
     @weakify(self);
     [[RACObserve(self, viewModel) ignore:nil] subscribeNext:^(id x) {
         @strongify(self);
         [self.collectionView reloadData];
+        self.pageControl.numberOfPages = self.viewModel.product.gallery.count;
+        [self.pageControl sizeToFit];
+        [self.view layoutIfNeeded];
     }];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSInteger index = ceil(scrollView.contentOffset.x / scrollView.bounds.size.width);
+    [self.pageControl setCurrentPage:index];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {

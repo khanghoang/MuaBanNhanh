@@ -32,6 +32,7 @@ target 'MuaBanNhanh' do
   pod 'PSTAlertController', :git => 'https://github.com/steipete/PSTAlertController.git'
   pod 'IDMPhotoBrowser'
   pod 'ObjectiveSugar'
+  pod 'SMPageControl'
 
 end
 

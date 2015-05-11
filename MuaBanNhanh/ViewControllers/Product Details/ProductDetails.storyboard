@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="905"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vUv-4K-cQp">
-                                        <rect key="frame" x="0.0" y="0.0" width="318" height="875"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="318" height="897"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPA-x8-ktq">
                                                 <rect key="frame" x="0.0" y="0.0" width="318" height="230"/>
@@ -35,7 +35,7 @@
                                                 </connections>
                                             </containerView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pl2-3b-rkU" customClass="TKDesignableView">
-                                                <rect key="frame" x="8" y="238" width="302" height="190"/>
+                                                <rect key="frame" x="8" y="260" width="302" height="190"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjg-Mr-9cP" userLabel="Product name">
                                                         <rect key="frame" x="8" y="8" width="286" height="20"/>
@@ -247,7 +247,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="98V-vH-dPL" customClass="TKDesignableView">
-                                                <rect key="frame" x="8" y="436" width="302" height="200"/>
+                                                <rect key="frame" x="8" y="458" width="302" height="200"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thông tin sản phẩm" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvx-7Y-1ra">
                                                         <rect key="frame" x="8" y="8" width="286" height="18"/>
@@ -288,7 +288,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PFN-8w-PAo" customClass="TKDesignableView">
-                                                <rect key="frame" x="8" y="644" width="302" height="215"/>
+                                                <rect key="frame" x="8" y="666" width="302" height="215"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RHz-ti-EPS">
                                                         <rect key="frame" x="0.0" y="0.0" width="302" height="136"/>
@@ -378,7 +378,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1n8-ER-2db">
-                                                <rect key="frame" x="0.0" y="867" width="318" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="889" width="318" height="0.0"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" id="Hsl-pd-f4P"/>
@@ -401,7 +401,7 @@
                                             <constraint firstItem="PFN-8w-PAo" firstAttribute="top" secondItem="98V-vH-dPL" secondAttribute="bottom" constant="8" id="a2c-9W-djl"/>
                                             <constraint firstItem="zPA-x8-ktq" firstAttribute="top" secondItem="vUv-4K-cQp" secondAttribute="top" id="b2t-XA-jM2"/>
                                             <constraint firstAttribute="trailing" secondItem="pl2-3b-rkU" secondAttribute="trailing" constant="8" id="mpa-UH-VGr"/>
-                                            <constraint firstItem="pl2-3b-rkU" firstAttribute="top" secondItem="zPA-x8-ktq" secondAttribute="bottom" constant="8" id="nL4-tb-xLt"/>
+                                            <constraint firstItem="pl2-3b-rkU" firstAttribute="top" secondItem="zPA-x8-ktq" secondAttribute="bottom" constant="30" id="nL4-tb-xLt"/>
                                             <constraint firstItem="1n8-ER-2db" firstAttribute="top" secondItem="PFN-8w-PAo" secondAttribute="bottom" constant="8" id="qLR-zw-Dke"/>
                                             <constraint firstAttribute="trailing" secondItem="98V-vH-dPL" secondAttribute="trailing" constant="8" id="rXP-Df-WUb"/>
                                             <constraint firstItem="pl2-3b-rkU" firstAttribute="leading" secondItem="vUv-4K-cQp" secondAttribute="leading" constant="8" id="uaC-EE-H8r"/>
@@ -412,6 +412,7 @@
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="vUv-4K-cQp" firstAttribute="top" secondItem="Hsd-rI-yFn" secondAttribute="top" id="GAh-9U-alG"/>
+                                    <constraint firstAttribute="width" secondItem="vUv-4K-cQp" secondAttribute="width" id="M1e-FC-xYA"/>
                                     <constraint firstAttribute="bottom" secondItem="vUv-4K-cQp" secondAttribute="bottom" id="gyG-UB-UoP"/>
                                     <constraint firstItem="vUv-4K-cQp" firstAttribute="leading" secondItem="Hsd-rI-yFn" secondAttribute="leading" id="jPA-HB-XyT"/>
                                     <constraint firstAttribute="trailing" secondItem="vUv-4K-cQp" secondAttribute="trailing" id="l8Y-BY-QyK"/>
@@ -425,6 +426,7 @@
                             <constraint firstItem="Hsd-rI-yFn" firstAttribute="top" secondItem="1Ru-WX-Ufu" secondAttribute="top" id="Okp-ka-las"/>
                             <constraint firstAttribute="trailing" secondItem="Hsd-rI-yFn" secondAttribute="trailing" id="cy5-PN-D2I"/>
                             <constraint firstItem="Hsd-rI-yFn" firstAttribute="leading" secondItem="1Ru-WX-Ufu" secondAttribute="leading" id="eUz-iV-u7A"/>
+                            <constraint firstItem="Hsd-rI-yFn" firstAttribute="width" secondItem="1Ru-WX-Ufu" secondAttribute="width" id="ocU-5R-6VJ"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -459,11 +461,11 @@
                         <viewControllerLayoutGuide type="top" id="Suz-Am-GqM"/>
                         <viewControllerLayoutGuide type="bottom" id="CyC-nZ-VXv"/>
                     </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gNA-87-Aww">
+                    <view key="view" opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="gNA-87-Aww">
                         <rect key="frame" x="0.0" y="0.0" width="318" height="230"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ouc-aD-X6T">
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ouc-aD-X6T">
                                 <rect key="frame" x="0.0" y="0.0" width="318" height="230"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="MIN-5d-xJu">

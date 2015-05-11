@@ -40,6 +40,7 @@
 		055D84651AF515EF0071EB22 /* UIImageView+LoadingImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 055D84641AF515EE0071EB22 /* UIImageView+LoadingImage.m */; };
 		055D846B1AF538980071EB22 /* MBNFloatButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055D846A1AF538980071EB22 /* MBNFloatButton.xib */; };
 		055D846E1AF539320071EB22 /* MBNFloatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 055D846D1AF539320071EB22 /* MBNFloatButton.m */; };
+		05618DDC1B0118A700CDD0C3 /* MBNSafeBuyCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05618DDB1B0118A700CDD0C3 /* MBNSafeBuyCollectionCell.m */; };
 		0561C9B01ACFBD9B00BEDA6D /* UIViewController+AddHambugerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0561C9AF1ACFBD9B00BEDA6D /* UIViewController+AddHambugerButton.m */; };
 		0561C9B31ACFC31100BEDA6D /* UIViewController+SideViewFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0561C9B21ACFC31100BEDA6D /* UIViewController+SideViewFunctions.m */; };
 		0561C9B81AD05CD700BEDA6D /* MBNProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0561C9B61AD05CD700BEDA6D /* MBNProductCollectionViewCell.m */; };
@@ -307,6 +308,8 @@
 		055D846A1AF538980071EB22 /* MBNFloatButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBNFloatButton.xib; sourceTree = "<group>"; };
 		055D846C1AF539320071EB22 /* MBNFloatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNFloatButton.h; sourceTree = "<group>"; };
 		055D846D1AF539320071EB22 /* MBNFloatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNFloatButton.m; sourceTree = "<group>"; };
+		05618DDA1B0118A700CDD0C3 /* MBNSafeBuyCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSafeBuyCollectionCell.h; sourceTree = "<group>"; };
+		05618DDB1B0118A700CDD0C3 /* MBNSafeBuyCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSafeBuyCollectionCell.m; sourceTree = "<group>"; };
 		0561C9AE1ACFBD9B00BEDA6D /* UIViewController+AddHambugerButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+AddHambugerButton.h"; sourceTree = "<group>"; };
 		0561C9AF1ACFBD9B00BEDA6D /* UIViewController+AddHambugerButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AddHambugerButton.m"; sourceTree = "<group>"; };
 		0561C9B11ACFC31100BEDA6D /* UIViewController+SideViewFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SideViewFunctions.h"; sourceTree = "<group>"; };
@@ -929,6 +932,8 @@
 				0569A44C1AE265C600EFBEF0 /* SafeBuyStoryboard.storyboard */,
 				0569A44E1AE27CE300EFBEF0 /* MBNSafeBuyViewController.h */,
 				0569A44F1AE27CE300EFBEF0 /* MBNSafeBuyViewController.m */,
+				05618DDA1B0118A700CDD0C3 /* MBNSafeBuyCollectionCell.h */,
+				05618DDB1B0118A700CDD0C3 /* MBNSafeBuyCollectionCell.m */,
 			);
 			path = "Safely buy";
 			sourceTree = "<group>";
@@ -1840,6 +1845,7 @@
 				05B906DD1AE805AE00B85BEC /* IMGLYHippieFilter.m in Sources */,
 				05B906C61AE805AE00B85BEC /* IMGLYEditorEnhancementViewcontroller.m in Sources */,
 				05B906EA1AE805AE00B85BEC /* IMGLYPolaFilter.m in Sources */,
+				05618DDC1B0118A700CDD0C3 /* MBNSafeBuyCollectionCell.m in Sources */,
 				05B906D11AE805AE00B85BEC /* IMGLYEnhancementOperation.m in Sources */,
 				0508671C1AD6DF7700038F87 /* TKDesignableView.m in Sources */,
 				05B907091AE8075200B85BEC /* UIImage+TMEAdditions.m in Sources */,

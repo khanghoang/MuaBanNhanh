@@ -7,59 +7,101 @@
 //
 
 #import "MBNSafeBuyViewController.h"
+#import "MBNSafeBuyCollectionCell.h"
 
 @interface MBNSafeBuyViewController ()
 <
-UIGestureRecognizerDelegate
+UICollectionViewDelegate,
+UICollectionViewDataSource,
+UICollectionViewDelegateFlowLayout,
+UIScrollViewDelegate
 >
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintPaddingLeft;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintPaddingRight;
-@property (weak, nonatomic) IBOutlet UIView *contentWrapper;
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (assign, nonatomic) CGPoint currentOffset;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) NSArray *arrData;
+@property (strong, nonatomic) SMPageControl *pageControl;
 
 @end
 
 @implementation MBNSafeBuyViewController
 
+- (NSArray *)arrData {
+    if (!_arrData) {
+        _arrData = @[
+                     @{
+                         @"image": @"Step 1",
+                         @"text": @"Nên giao dịch ở những nơi công cộng hoặc các địa điểm an toàn."
+                         },
+                     @{
+                         @"image": @"Step 2",
+                         @"text": @"Hạn chế việc trả tiền trước cho người bán mà bạn không biết."
+                         },
+                     @{
+                         @"image": @"Step 3",
+                         @"text": @"Không nên đặt niềm tin với người bán khi chưa kiểm chứng thông tin được cung cấp."
+                         },
+                     @{
+                         @"image": @"Step 4",
+                         @"text": @"Không bao giờ gửi hàng hoá trước khi hoàn tất thoả thuận thanh toán."
+                         },
+                     @{
+                         @"image": @"Step 5",
+                         @"text": @"Kiểm tra hàng hoá cẩn thận, đặc biệt khi mua hàng cũ, đã qua sử dụng."
+                         },
+                     @{
+                         @"image": @"Step 6",
+                         @"text": @"Yêu cầu biên nhận, phiếu thu hoặc giấy tay về việc mua bán nếu có thể."
+                         },
+                     ];
+    }
+    
+    return _arrData;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.currentOffset = self.scrollView.contentOffset;
+    [self.collectionView reloadData];
     
-    CGFloat padding = ([UIScreen mainScreen].bounds.size.width - 240) / 2;
+    SMPageControl *pageControl = [[SMPageControl alloc] init];
+    pageControl.numberOfPages = self.arrData.count;
+    pageControl.pageIndicatorImage = [UIImage imageNamed:@"page-indicator"];
+    pageControl.currentPageIndicatorImage = [UIImage imageNamed:@"page-indicator-selected"];
+    [pageControl sizeToFit];
+    [self.view addSubview:pageControl];
+    [pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@(pageControl.width));
+        make.height.equalTo(@15);
+        make.centerX.equalTo(self.view);
+        make.bottom.equalTo(self.view.mas_bottom).with.offset(-20);
+    }];
     
-    self.constraintPaddingLeft.constant = padding;
-    self.constraintPaddingRight.constant = padding;
-    
-    [self.contentWrapper updateConstraintsIfNeeded];
-    [self.contentWrapper layoutIfNeeded];
+    self.pageControl = pageControl;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSInteger index = ceil(scrollView.contentOffset.x / scrollView.bounds.size.width);
+    [self.pageControl setCurrentPage:index];
 }
 
-- (IBAction)onPanGesture:(UIPanGestureRecognizer *)panGesture {
-    
-    CGPoint touchLocation = [panGesture translationInView:self.scrollView];
-    NSLog(@"touch = %@, current = %@", NSStringFromCGPoint(touchLocation), NSStringFromCGPoint(self.currentOffset));
-    NSLog(@"velocity = %@", NSStringFromCGPoint([panGesture velocityInView:self.view]));
-    [self.scrollView setContentOffset:CGPointMake(self.currentOffset.x - touchLocation.x, 0) animated:NO];
-    
-    if (panGesture.state == UIGestureRecognizerStateEnded)
-    {
-        CGPoint velocity = [panGesture translationInView:self.view];
-        CGFloat finalX = velocity.x > 0 ? self.currentOffset.x - 270 : self.currentOffset.x + 270;
-        finalX = MAX(0, MIN(finalX, self.scrollView.contentSize.width - [UIScreen mainScreen].bounds.size.width));
-        CGPoint finalPoint = CGPointMake(finalX, 0);
-        
-        self.currentOffset = finalPoint;
-        [self.scrollView setContentOffset:finalPoint animated:YES];
-    }
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.arrData.count;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return self.collectionView.bounds.size;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    MBNSafeBuyCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([MBNSafeBuyCollectionCell class]) forIndexPath:indexPath];
+    [cell configWithData:self.arrData[indexPath.row]];
+    return cell;
 }
 
 - (IBAction)onBtnClose:(id)sender {
