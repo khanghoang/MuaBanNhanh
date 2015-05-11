@@ -161,11 +161,22 @@
 
 + (void)searchProductWithKeyWord:(NSString *)keyWord page:(NSUInteger)page categoryID:(NSNumber *)categoryID provinceID:(NSNumber *)provinceID completeBlock:(void (^) (NSArray *arrProduct, NSError *error))completeBlock
 {
+    
     NSString *stringRequest = @"https://api.muabannhanh.com/article/list";
-    NSDictionary *params = @{ @"page" : @(page),
-                              @"category_id" : categoryID,
-                              @"q" : keyWord,
-                              @"province_id" : provinceID };
+    NSMutableDictionary *params = [@{ @"page" : @(page)} mutableCopy];
+    
+    if (categoryID) {
+        [params addEntriesFromDictionary:@{@"category_id": categoryID}];
+    }
+    
+    if (keyWord) {
+        [params addEntriesFromDictionary:@{@"q": keyWord}];
+    }
+    
+    if (provinceID) {
+        [params addEntriesFromDictionary:@{@"province_id": provinceID}];
+    }
+    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:stringRequest parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSError *error;
