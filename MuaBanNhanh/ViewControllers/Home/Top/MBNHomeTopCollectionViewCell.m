@@ -25,7 +25,7 @@
     MBNCategory *category = data;
     
     [self.imageViewCategory setImageWithURL:category.imageUrl];
-    self.lblCategoryName.text = category.name;
+    self.lblCategoryName.text = [NSString stringWithFormat:@"(%@)\n%@", category.articleCount, category.name];
 }
 
 @end
