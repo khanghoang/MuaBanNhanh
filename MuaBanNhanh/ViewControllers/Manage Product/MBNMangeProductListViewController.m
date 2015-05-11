@@ -62,7 +62,6 @@ UIAlertViewDelegate
         @strongify(self);
         [self presentPopupMenuForIndexPath:selectedIndexPath fromButton:menuButton];
         self.popupSelectedIndexpath = selectedIndexPath;
-//        NSLog(@"%@", [self.collectionController.model itemAtIndexpath:selectedIndexPath]);
     };
     cellFactory.tapMenuButtonActionBlock = tapMenuActionBlock;
     return cellFactory;
@@ -95,23 +94,26 @@ UIAlertViewDelegate
     popupMenuViewController.openProductDetailButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *sender) {
         @strongify(self);
         @strongify(popupMenuViewController);
-        [popupMenuViewController dismissViewControllerAnimated:YES completion:nil];
-        MBNProduct *product = [self.collectionController.model itemAtIndexpath:self.popupSelectedIndexpath];
-        MBNProductDetailsViewController *productVC = [MBNProductDetailsViewController tme_instantiateFromStoryboardNamed:@"ProductDetails"];
-        [self.navigationController pushViewController:productVC animated:YES];
+        [popupMenuViewController dismissViewControllerAnimated:YES completion:^{
+            MBNProduct *product = [self.collectionController.model itemAtIndexpath:self.popupSelectedIndexpath];
+            MBNProductDetailsViewController *productVC = [MBNProductDetailsViewController tme_instantiateFromStoryboardNamed:@"ProductDetails"];
+            [self.navigationController pushViewController:productVC animated:YES];
+        }];
         return [RACSignal empty];
     }];
     
     popupMenuViewController.editProductButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *sender) {
         @strongify(popupMenuViewController);
-        [popupMenuViewController dismissViewControllerAnimated:YES completion:nil];
-        MBNProduct *product = [self.collectionController.model itemAtIndexpath:self.popupSelectedIndexpath];
-        MBNCreateProductViewController *vc = [MBNCreateProductViewController tme_instantiateFromStoryboardNamed:@"CreateProduct"];
-        MBNNavigationViewController *navVC = [[MBNNavigationViewController alloc] initWithRootViewController:vc];
-        vc.editingProduct = product;
-        AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
-        MBNShowLoginSegue *segue = [[MBNShowLoginSegue alloc] initWithIdentifier:@"MBNLoginSegue" source:appDelegate.rootNavigationController destination:navVC];
-        [segue perform];
+        [popupMenuViewController dismissViewControllerAnimated:YES completion:^{
+            MBNProduct *product = [self.collectionController.model itemAtIndexpath:self.popupSelectedIndexpath];
+            MBNCreateProductViewController *vc = [MBNCreateProductViewController tme_instantiateFromStoryboardNamed:@"CreateProduct"];
+            MBNNavigationViewController *navVC = [[MBNNavigationViewController alloc] initWithRootViewController:vc];
+            vc.editingProduct = product;
+            AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+            MBNShowLoginSegue *segue = [[MBNShowLoginSegue alloc] initWithIdentifier:@"MBNLoginSegue" source:appDelegate.rootNavigationController destination:navVC];
+            [segue perform];
+            
+        }];
         return [RACSignal empty];
     }];
     
@@ -189,6 +191,7 @@ UIAlertViewDelegate
     }
     self.navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     menuViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    menuViewController.view.backgroundColor = [UIColor colorWithWhite:1 alpha:0.7];
     [self.navigationController presentViewController:menuViewController animated:YES completion:nil];
 }
 
