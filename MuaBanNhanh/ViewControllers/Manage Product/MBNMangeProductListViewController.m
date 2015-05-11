@@ -22,7 +22,8 @@
 @interface MBNMangeProductListViewController ()
 <
 KHBasicOrderedCollectionViewControllerProtocol,
-UICollectionViewDelegate
+UICollectionViewDelegate,
+UIAlertViewDelegate
 >
 
 @property (strong, nonatomic) KHCollectionController *collectionController;
@@ -96,8 +97,7 @@ UICollectionViewDelegate
         @strongify(popupMenuViewController);
         [popupMenuViewController dismissViewControllerAnimated:YES completion:nil];
         MBNProduct *product = [self.collectionController.model itemAtIndexpath:self.popupSelectedIndexpath];
-        MBNCreateProductViewController *productVC = [MBNCreateProductViewController tme_instantiateFromStoryboardNamed:@"ProductDetails"];
-        productVC.editingProduct = product;
+        MBNProductDetailsViewController *productVC = [MBNProductDetailsViewController tme_instantiateFromStoryboardNamed:@"ProductDetails"];
         [self.navigationController pushViewController:productVC animated:YES];
         return [RACSignal empty];
     }];
@@ -121,20 +121,62 @@ UICollectionViewDelegate
         @strongify(popupMenuViewController);
         [popupMenuViewController dismissViewControllerAnimated:YES completion:nil];
         
-        [SVProgressHUD showWithStatus:@"Đang xoá sản phẩm" maskType:SVProgressHUDMaskTypeGradient];
-        MBNProduct *product = [self.collectionController.model itemAtIndexpath:self.popupSelectedIndexpath];
-        [MBNProductManager deleteProductWithID:product.ID withCompletion:^(NSString *successString, NSString *errorString) {
-            [self reloadAlData];
-            if(successString) {
-                [SVProgressHUD showSuccessWithStatus:@"Xoá sản phẩm thành công"];
-                return;
-            }
-            
-            [SVProgressHUD showErrorWithStatus:errorString];
-        }];
+        [self openConfirmPopups];
+        
         return [RACSignal empty];
     }];
     
+}
+
+- (void)openConfirmPopups {
+    NSString *title = @"Thông báo";
+    NSString *message = @"Khi bạn đồng ý xoá, sản phẩm bị xoá sẽ mất vĩnh viễn.";
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")) {
+        UIAlertController *alertController = [UIAlertController
+                                              alertControllerWithTitle:title
+                                              message:message
+                                              preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction
+                                       actionWithTitle:@"Huỷ"
+                                       style:UIAlertActionStyleCancel
+                                       handler:nil];
+        
+        UIAlertAction *okAction = [UIAlertAction
+                                   actionWithTitle:@"Xoá sản phẩm"
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction *action)
+                                   {
+                                       [self deleteSelectProduct];
+                                   }];
+        [alertController addAction:cancelAction];
+        [alertController addAction:okAction];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+        
+    } else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"Huỷ" otherButtonTitles:@"Xoá sản phẩm", nil];
+        [alertView show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        [self deleteSelectProduct];
+    }
+}
+
+- (void)deleteSelectProduct {
+    [SVProgressHUD showWithStatus:@"Đang xoá sản phẩm" maskType:SVProgressHUDMaskTypeGradient];
+    MBNProduct *product = [self.collectionController.model itemAtIndexpath:self.popupSelectedIndexpath];
+    [MBNProductManager deleteProductWithID:product.ID withCompletion:^(NSString *successString, NSString *errorString) {
+        [self reloadAlData];
+        if(successString) {
+            [SVProgressHUD showSuccessWithStatus:@"Xoá sản phẩm thành công"];
+            return;
+        }
+        
+        [SVProgressHUD showErrorWithStatus:errorString];
+    }];
 }
 
 - (void)presentPopupMenuViewController:(MBNPopupMenuViewController *)menuViewController {
