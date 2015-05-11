@@ -11,7 +11,7 @@
 @implementation NSString (MBNAdditions)
 
 - (NSString *)strippingHTMLString {
-    return [self stringByReplacingOccurrencesOfString:@"<br />" withString:@""];
+    return [[self stringByReplacingOccurrencesOfString:@"<br />" withString:@""] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
 @end
