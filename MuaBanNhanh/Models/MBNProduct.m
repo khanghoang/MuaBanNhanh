@@ -7,6 +7,7 @@
 //
 
 #import "MBNProduct.h"
+#import "NSString+MBNAdditions.h"
 
 @implementation MBNProduct
 
@@ -65,7 +66,7 @@
 
 + (NSValueTransformer *)desJSONTransformer {
     return [MTLValueTransformer transformerWithBlock:^NSString *(NSString *originalDes) {
-        return [self strippingHTMLForString:originalDes];
+        return [originalDes strippingHTMLString];
     }];
 }
 
@@ -128,10 +129,6 @@
     });
 
     return instance;
-}
-
-+ (NSString *)strippingHTMLForString:(NSString *)originalString {
-    return [originalString stringByReplacingOccurrencesOfString:@"<br />" withString:@""];
 }
 
 @end
