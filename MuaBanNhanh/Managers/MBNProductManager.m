@@ -159,4 +159,31 @@
 + (void)createProduct:(NSDictionary *)productInfo completionBlock:(void (^)(MBNProduct *product, NSError *error))completionBlock {
 }
 
++ (void)searchProductWithKeyWord:(NSString *)keyWord page:(NSUInteger)page categoryID:(NSNumber *)categoryID provinceID:(NSNumber *)provinceID completeBlock:(void (^) (NSArray *arrProduct, NSError *error))completeBlock
+{
+    NSString *stringRequest = @"https://api.muabannhanh.com/article/list";
+    NSDictionary *params = @{ @"page" : @(page),
+                              @"category_id" : categoryID,
+                              @"q" : keyWord,
+                              @"province_id" : provinceID };
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:stringRequest parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSError *error;
+        
+        if ([responseObject[@"status"] integerValue] == 400) {
+            [[MBNActionsManagers sharedInstance] checkRequestErrorAndForceLogout:responseObject];
+            NSError *error = [[NSError alloc] initWithDomain:@"Token error" code:400 userInfo:nil];
+            completeBlock(@[], error);
+            return;
+        }
+        
+        NSArray *arrProducts = [MTLJSONAdapter modelsOfClass:[MBNProduct class] fromJSONArray:responseObject[@"result"] error:&error];
+        if (completeBlock) {
+            completeBlock(arrProducts, error);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+}
+
 @end
