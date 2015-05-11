@@ -10,6 +10,10 @@
 
 @interface MBNProductManager : NSObject
 
+@property (strong, nonatomic) MBNProduct *currentSelectProduct;
+
++ (instancetype)sharedProvider;
+
 + (void)getLatestProducts:(void (^) (NSArray *arrProducts))success failure:(void (^)(NSError *error))failure;
 
 + (void)getProductDetailsWithID:(NSNumber *)productID withCompletion:(void (^) (MBNProduct *product, NSError *error))completeBlock;

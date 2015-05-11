@@ -9,6 +9,7 @@
 #import "IndexHomePopupViewController.h"
 #import "MBNRegisterHomePopupViewController.h"
 #import "UIUnregisterHomePopup.h"
+#import "MBNProductDetailsViewController.h"
 
 @interface IndexHomePopupViewController ()
 
@@ -23,9 +24,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     UIViewController<MBNFloatButtonPopup> *popup;
+    AppDelegate *appDelegate = APP_DELEGATE;
     
     if ([[MBNUserManager sharedProvider] getLoginUser]) {
-        popup = (id) [MBNRegisterHomePopupViewController tme_instantiateFromStoryboardNamed:@"PlusPopups"];
+        if([appDelegate.rootNavigationController.topViewController isKindOfClass:[MBNProductDetailsViewController class]]) {
+            popup = [(id) [UIStoryboard storyboardWithName:@"PlusPopups" bundle:nil] instantiateViewControllerWithIdentifier:@"MBNRegisterDetailsPopupViewController"];
+        } else {
+            popup = (id) [MBNRegisterHomePopupViewController tme_instantiateFromStoryboardNamed:@"PlusPopups"];
+        }
     } else {
         popup = (id) [UIUnregisterHomePopup tme_instantiateFromStoryboardNamed:@"PlusPopups"];
     }

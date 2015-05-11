@@ -12,6 +12,7 @@
 
 + (instancetype)sharedInstance;
 - (void)callNumber:(NSString *)numberString;
+- (void)sendSMSToNumber:(NSString *)numberString;
 
 - (void)checkRequestErrorAndForceLogout:(NSDictionary *)responseObject;
 

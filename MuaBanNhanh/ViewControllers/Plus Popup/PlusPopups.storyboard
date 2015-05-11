@@ -63,7 +63,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="UIUnregisterHomePopup" id="vFn-OI-oy0" customClass="UIUnregisterHomePopup" sceneMemberID="viewController">
                     <tableView key="view" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kKy-dF-iOL">
-                        <rect key="frame" x="0.0" y="0.0" width="270" height="220"/>
+                        <rect key="frame" x="0.0" y="0.0" width="270" height="164"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -71,38 +71,6 @@
                         <sections>
                             <tableViewSection id="hFh-Jj-0jH">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="55" id="x6k-f6-hOt">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x6k-f6-hOt" id="zJk-u3-ffN">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HE4-gC-zSu" customClass="MBNPopupCustomButton">
-                                                    <rect key="frame" x="110" y="9" width="98" height="35"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="1"/>
-                                                    <state key="normal" title="Đăng tin" backgroundImage="popup-label-background">
-                                                        <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="onBtnHowTo:" destination="vFn-OI-oy0" eventType="touchUpInside" id="Eiz-80-7gm"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRv-7V-uFB">
-                                                    <rect key="frame" x="212" y="2" width="50" height="50"/>
-                                                    <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                                    <state key="normal" image="icon-fab-dang-tin" backgroundImage="background-popup-button">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="onBtnHowTo:" destination="vFn-OI-oy0" eventType="touchUpInside" id="0Mz-rH-RbJ"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="55" id="D9x-Ry-wja">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D9x-Ry-wja" id="8Fs-CP-Ebs">
@@ -207,11 +175,11 @@
                         </connections>
                     </tableView>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="270" height="220"/>
+                    <size key="freeformSize" width="270" height="164"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZu-ru-NPf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="808" y="271.5"/>
+            <point key="canvasLocation" x="1149" y="311"/>
         </scene>
         <!--Register Home Popup View Controller-->
         <scene sceneID="cs9-ZO-af0">
@@ -304,13 +272,170 @@
             </objects>
             <point key="canvasLocation" x="735" y="578"/>
         </scene>
+        <!--Register Details Popup View Controller-->
+        <scene sceneID="PQ7-bz-Go4">
+            <objects>
+                <tableViewController storyboardIdentifier="MBNRegisterDetailsPopupViewController" id="eaH-Yb-yjE" customClass="MBNRegisterDetailsPopupViewController" sceneMemberID="viewController">
+                    <tableView key="view" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="S8k-jS-NMA">
+                        <rect key="frame" x="0.0" y="0.0" width="270" height="220"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="Vbg-Yx-QKr">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="55" id="cCu-Si-MIF">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cCu-Si-MIF" id="WrD-ul-MhD">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fS-Lp-3Wu" customClass="MBNPopupCustomButton">
+                                                    <rect key="frame" x="0.0" y="9" width="208" height="35"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="1"/>
+                                                    <state key="normal" title="Gọi điện cho người bán" backgroundImage="popup-label-background">
+                                                        <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onBtnCall:" destination="eaH-Yb-yjE" eventType="touchUpInside" id="5a3-tn-Hvn"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mnu-sG-aId">
+                                                    <rect key="frame" x="212" y="2" width="50" height="50"/>
+                                                    <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                    <state key="normal" image="icon-fab-goi-dien" backgroundImage="background-popup-button">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onBtnCall:" destination="eaH-Yb-yjE" eventType="touchUpInside" id="txi-jn-zFw"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="55" id="MMG-x2-ncT">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MMG-x2-ncT" id="ARq-yj-PqU">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tc7-1d-EAF" customClass="MBNPopupCustomButton">
+                                                    <rect key="frame" x="0.0" y="9" width="208" height="35"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="1"/>
+                                                    <state key="normal" title="Nhắn tin cho người bán" backgroundImage="popup-label-background">
+                                                        <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onBtnSendSMS:" destination="eaH-Yb-yjE" eventType="touchUpInside" id="KRX-VP-Hbe"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKY-oM-dVU">
+                                                    <rect key="frame" x="212" y="2" width="50" height="50"/>
+                                                    <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                    <state key="normal" image="icon-fab-nhan-tin" backgroundImage="background-popup-button">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onBtnSendSMS:" destination="eaH-Yb-yjE" eventType="touchUpInside" id="LrN-5r-jVT"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="55" id="s0h-zP-e8U">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s0h-zP-e8U" id="DdB-DZ-BhC">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmQ-GE-SpC" customClass="MBNPopupCustomButton">
+                                                    <rect key="frame" x="110" y="9" width="98" height="35"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="1"/>
+                                                    <state key="normal" title="Đăng tin" backgroundImage="popup-label-background">
+                                                        <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onBtnHowTo:" destination="eaH-Yb-yjE" eventType="touchUpInside" id="hJs-ZS-lMF"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfD-ZX-j6h">
+                                                    <rect key="frame" x="212" y="2" width="50" height="50"/>
+                                                    <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                    <state key="normal" image="icon-fab-dang-tin" backgroundImage="background-popup-button">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onBtnHowTo:" destination="eaH-Yb-yjE" eventType="touchUpInside" id="Kx9-AQ-fGx"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="55" id="Vsa-Xv-JIU">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vsa-Xv-JIU" id="CJq-nR-JOQ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kz4-3B-Faf" customClass="MBNPopupCustomButton">
+                                                    <rect key="frame" x="59" y="9" width="149" height="35"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="1"/>
+                                                    <state key="normal" title="Mua bán an toàn" backgroundImage="popup-label-background">
+                                                        <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onBtnSafeBuy:" destination="eaH-Yb-yjE" eventType="touchUpInside" id="Mae-sF-YSz"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="246-Wh-VMl">
+                                                    <rect key="frame" x="212" y="2" width="50" height="50"/>
+                                                    <state key="normal" image="icon-fab-mua-hang-an-toan" backgroundImage="background-popup-button">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onBtnSafeBuy:" destination="eaH-Yb-yjE" eventType="touchUpInside" id="TwK-nJ-pan"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="eaH-Yb-yjE" id="S4k-4Y-Hpd"/>
+                            <outlet property="delegate" destination="eaH-Yb-yjE" id="JgR-vn-IfF"/>
+                        </connections>
+                    </tableView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="270" height="220"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zeK-QL-sGv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="682" y="214"/>
+        </scene>
     </scenes>
     <resources>
         <image name="background-popup-button" width="45" height="45"/>
         <image name="icon-fab-dang-ky" width="256" height="256"/>
         <image name="icon-fab-dang-nhap" width="256" height="256"/>
         <image name="icon-fab-dang-tin" width="256" height="256"/>
+        <image name="icon-fab-goi-dien" width="256" height="256"/>
         <image name="icon-fab-mua-hang-an-toan" width="256" height="256"/>
+        <image name="icon-fab-nhan-tin" width="256" height="256"/>
         <image name="popup-label-background" width="87" height="27"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

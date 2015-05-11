@@ -58,9 +58,14 @@
 - (void)loadProductDetailsAndObserver {
     [self.viewModel loadProductDetailsWithID:self.productID];
     
+    [MBNProductManager sharedProvider].currentSelectProduct = nil;
+    
+    @weakify(self);
     [[RACObserve(self.viewModel, product) ignore:nil] subscribeNext:^(id x) {
+        @strongify(self);
         self.bottomVC.user = self.viewModel.product.user;
         [self.bottomVC reload];
+        [MBNProductManager sharedProvider].currentSelectProduct = self.viewModel.product;
     }];
     
     RAC(self, title) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
@@ -98,7 +103,6 @@
         return [product getPriceDisplayString];
     }];
     
-    @weakify(self);
     [[RACObserve(self.viewModel, product) ignore:nil] subscribeNext:^(MBNProduct *product) {
         @strongify(self);
         [self.btnCall setTitle:product.user.phone forState:UIControlStateNormal];

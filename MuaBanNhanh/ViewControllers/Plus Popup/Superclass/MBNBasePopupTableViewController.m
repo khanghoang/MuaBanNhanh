@@ -112,5 +112,13 @@
     }];
 }
 
+- (IBAction)onBtnCall:(id)sender {
+    MBNProduct *currentProduct = [[MBNProductManager sharedProvider] currentSelectProduct];
+    [[MBNActionsManagers sharedInstance] callNumber:currentProduct.user.phone];
+}
 
+- (IBAction)onBtnSendSMS:(id)sender {
+    MBNProduct *currentProduct = [[MBNProductManager sharedProvider] currentSelectProduct];
+    [[MBNActionsManagers sharedInstance] sendSMSToNumber:currentProduct.user.phone];
+}
 @end
