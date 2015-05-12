@@ -186,8 +186,6 @@ UIAlertViewDelegate
         self.navigationController.providesPresentationContextTransitionStyle = YES;
         self.navigationController.definesPresentationContext = YES;
         [menuViewController setModalPresentationStyle:UIModalPresentationOverCurrentContext];
-    } else {
-        [self.navigationController setModalPresentationStyle:UIModalPresentationCurrentContext];
     }
     self.navigationController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     menuViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
