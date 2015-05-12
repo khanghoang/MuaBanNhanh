@@ -50,6 +50,9 @@
     rearVC.view.backgroundColor = [UIColor greenColor];
     
     MBNRevealViewController *rootVC = [MBNRevealViewController revealControllerWithFrontViewController:rootNavigationController leftViewController:rearVC];
+    if (!IS_IOS8_OR_ABOVE) {
+        rootVC.modalPresentationStyle = UIModalPresentationCurrentContext;
+    }
     window.rootViewController = rootVC;
     self.revealController = rootVC;
     
