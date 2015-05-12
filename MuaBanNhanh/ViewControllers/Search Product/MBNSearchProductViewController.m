@@ -76,8 +76,8 @@ UICollectionViewDelegate>
             self.infoLabel.text = @"Không có sản phẩm";
         } else {
             self.infoLabel.hidden = YES;
-            [self.productCollectionView reloadData];
         }
+        [self.productCollectionView reloadData];
     }];
 }
 
@@ -200,18 +200,10 @@ UICollectionViewDelegate>
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
-//    if (!self.viewModel.selectedCategory) {
-//        self.infoLabel.hidden = NO;
-//        self.infoLabel.text = @"Chưa chọn chuyên mục";
-//    } else if (!self.viewModel.selectedProvince) {
-//        self.infoLabel.hidden = NO;
-//        self.infoLabel.text = @"Chưa chọn tỉnh thành";
-//    } else {
-        self.infoLabel.hidden = YES;
-        [self.viewModel searchProductsWithKeyWord:searchBar.text];
-        [self.view endEditing:YES];
-        self.dismissView.hidden = YES;
-//    }
+    self.infoLabel.hidden = YES;
+    [self.viewModel searchProductsWithKeyWord:searchBar.text];
+    [self.view endEditing:YES];
+    self.dismissView.hidden = YES;
 }
 
 - (void)dismissKeyboard:(UIGestureRecognizer *)gestureRecognizer
