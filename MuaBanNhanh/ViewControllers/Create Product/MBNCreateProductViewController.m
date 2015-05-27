@@ -324,6 +324,9 @@ UITextViewDelegate
         UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Huỷ" destructiveButtonTitle:nil otherButtonTitles:@"Chọn hình hoặc chụp hình", @"Xoá tấm hình này", nil];
         [actionSheet showInView:self.view];
     }
+    
+    TMECameraVC *camera = (TMECameraVC *) [self.cameraVC topViewController];
+    [camera restartCamera];
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
