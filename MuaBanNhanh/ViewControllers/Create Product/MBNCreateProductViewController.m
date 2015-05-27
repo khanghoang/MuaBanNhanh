@@ -129,7 +129,7 @@ UITextViewDelegate
         [SVProgressHUD dismiss];
         
         self.selectedProductTransactionType = self.editingProduct.isSale ? @{@"Cần bán/ Dịch vụ" : @0} : @{@"Cần mua/ Cần tìm" : @1};
-        self.selectedProductQuality = self.viewModel.productQualityDictionary[self.editingProduct.conditions] ? self.viewModel.productQualityDictionary[self.editingProduct.conditions] : @{@"Mới 100%" : @0};
+        self.selectedProductQuality = self.viewModel.productQualityDictionary[self.editingProduct.conditions] ? self.viewModel.productQualityDictionary[self.editingProduct.conditions] : @{@"Mới 100%" : @1};
         
         self.selectedProvince = self.editingProduct.province;
         
