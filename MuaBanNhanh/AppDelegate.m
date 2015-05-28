@@ -121,7 +121,7 @@
     [self.popupWindow addSubview:self.floatButton];
     [self.popupWindow makeKeyWindow];
     
-    [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         
         self.floatButton.btnFloat.transform = CGAffineTransformRotate(self.floatButton.btnFloat.transform, M_PI*2 + M_PI * 3 / 4);
         
@@ -156,7 +156,7 @@
     [popup.popup dismissWithCompletion:^{
     }];
     
-    [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.6 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         
         self.floatButton.btnFloat.transform = CGAffineTransformRotate(self.floatButton.btnFloat.transform, -(M_PI*2 + M_PI * 3 / 4));
         
