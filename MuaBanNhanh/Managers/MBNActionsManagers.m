@@ -42,7 +42,8 @@
 }
 
 - (void)sendSMSToNumber:(NSString *)numberString {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"sms:%@", numberString]]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"sms:%@", [numberString stringByReplacingOccurrencesOfString:@" " withString:@""]]];
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 @end

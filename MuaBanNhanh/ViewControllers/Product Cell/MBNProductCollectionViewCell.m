@@ -7,6 +7,7 @@
 //
 
 #import "MBNProductCollectionViewCell.h"
+#import <NSDate+TimeAgo/NSDate+TimeAgo.h>
 
 @interface MBNProductCollectionViewCell()
 
@@ -67,9 +68,7 @@
     self.lblPrice.text = priceString;
     
     // update at
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateFormat = @"dd/MM/YYYY - hh:mm";
-    self.lblUpdateAt.text = [NSString stringWithFormat:@"Cập nhật ngày: %@", [dateFormatter stringFromDate:product.updatedAt]];
+    self.lblUpdateAt.text = [NSString stringWithFormat:@"Cập nhật %@", [[product.createdAt timeAgo] lowercaseString]];
     
     // thumb
     [self.imageViewProductImage fp_setImageWithURL:product.defaultThumbnailImage];

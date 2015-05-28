@@ -33,6 +33,7 @@ target 'MuaBanNhanh' do
   pod 'IDMPhotoBrowser'
   pod 'ObjectiveSugar'
   pod 'SMPageControl'
+  pod 'NSDate+TimeAgo'
 
 end
 

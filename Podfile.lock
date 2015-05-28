@@ -92,6 +92,7 @@ PODS:
     - Mantle/extobjc (= 1.5.4)
   - Mantle/extobjc (1.5.4)
   - Masonry (0.6.1)
+  - NSDate+TimeAgo (1.0.3)
   - ObjectiveSugar (1.1.0)
   - PKRevealController (2.0.6)
   - pop (1.0.7)
@@ -124,6 +125,7 @@ DEPENDENCIES:
   - M13Checkbox
   - Mantle (~> 1.5)
   - Masonry (~> 0.5)
+  - NSDate+TimeAgo
   - ObjectiveSugar
   - PKRevealController
   - PSTAlertController (from `https://github.com/steipete/PSTAlertController.git`)
@@ -163,6 +165,7 @@ SPEC CHECKSUMS:
   M13Checkbox: 0c0bb08dcd144c4ea33f883b68270f3f56908ea2
   Mantle: 60acd0cd363e27d945bda0a6b8e90577112d28f3
   Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
+  NSDate+TimeAgo: 416f55d2696d3744c313091c5a9280d47f8238fe
   ObjectiveSugar: a6a25f23d657c19df0a0b972466d5b5ca9f5295c
   PKRevealController: ffb45a16f5a5032ad90a3d16e5cbb0d8e035bd58
   pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
