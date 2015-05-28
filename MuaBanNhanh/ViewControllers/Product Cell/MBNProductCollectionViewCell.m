@@ -74,11 +74,7 @@
     [self.imageViewProductImage fp_setImageWithURL:product.defaultThumbnailImage];
     
     // categories
-    NSString *concatCategories = @"";
-    for(MBNCategory *cat in product.categories) {
-        concatCategories = [concatCategories stringByAppendingString:[NSString stringWithFormat:( concatCategories.length == 0 ? @"%@" : @" - %@"), cat.name]];
-    }
-    self.lblCategories.text = concatCategories;
+    self.lblCategories.text = product.province.name;
     
     // name
     self.lblProductName.text = product.name;
