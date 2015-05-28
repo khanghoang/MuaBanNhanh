@@ -36,6 +36,7 @@
              @"viewCount": @"view_count",
              @"conditions": @"conditions",
              @"province": @"province",
+             @"address": @"address.address",
              @"des": @"description.user"
              };
 }
@@ -103,7 +104,7 @@
 #pragma marks - Helpers
 
 - (NSString *)getDisplayAddressString {
-    return [self.user.address isEqualToString:@""] ? self.user.address : @"Địa chỉ chưa cập nhật";
+    return [self.address isEqualToString:@""] ? @"Địa chỉ chưa cập nhật" : self.address;
 }
 
 - (NSString *)getPriceDisplayString {

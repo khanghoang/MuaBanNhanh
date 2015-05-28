@@ -29,6 +29,7 @@ MTLJSONSerializing
 @property (copy, nonatomic) NSNumber *isShow;
 @property (copy, nonatomic) NSString *conditions;
 @property (copy, nonatomic) NSString *des;
+@property (copy, nonatomic) NSString *address;
 @property (strong, nonatomic) NSDate *createdAt;
 @property (strong, nonatomic) NSDate *updatedAt;
 @property (strong, nonatomic) NSDate *expiredAt;

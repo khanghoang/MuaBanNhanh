@@ -63,7 +63,9 @@
     @weakify(self);
     [[RACObserve(self.viewModel, product) ignore:nil] subscribeNext:^(id x) {
         @strongify(self);
-        self.bottomVC.user = self.viewModel.product.user;
+        MBNUser *user = self.viewModel.product.user;
+//        user.address = self.viewModel.product.address;
+        self.bottomVC.user = user;
         [self.bottomVC reload];
         [MBNProductManager sharedProvider].currentSelectProduct = self.viewModel.product;
     }];
