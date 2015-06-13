@@ -165,7 +165,8 @@
     NSString *stringRequest = @"https://api.muabannhanh.com/article/list";
     NSMutableDictionary *params = [@{ @"page" : @(page)} mutableCopy];
     
-    if (categoryID) {
+    // category -1 is all categories
+    if ([categoryID integerValue] > -1) {
         [params addEntriesFromDictionary:@{@"category_id": categoryID}];
     }
     
@@ -173,7 +174,8 @@
         [params addEntriesFromDictionary:@{@"q": keyWord}];
     }
     
-    if (provinceID) {
+    // province -1 is all provinces
+    if ([provinceID integerValue] > -1) {
         [params addEntriesFromDictionary:@{@"province_id": provinceID}];
     }
     
