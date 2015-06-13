@@ -14,7 +14,7 @@
 - (instancetype)init
 {
     if (self = [super init]) {
-        RAC(self, provinces) = RACObserve([MBNProvinceManager sharedManager], provinces);
+        RAC(self, provinces) = RACObserve([MBNProvinceManager sharedManager], searchableProvinces);
         RAC(self, categories) = RACObserve([MBNCategoryManager sharedProvider], categories);
     }
     return self;

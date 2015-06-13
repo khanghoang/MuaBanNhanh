@@ -12,6 +12,7 @@
 
 @property (copy, nonatomic) NSArray *provinces;
 
+- (NSArray *)searchableProvinces;
 + (instancetype)sharedManager;
 + (void)getProvinces;
 
