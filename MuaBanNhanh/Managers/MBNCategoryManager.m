@@ -47,4 +47,16 @@
     }];
 }
 
+- (NSArray *)getSearchableCategories {
+    NSMutableArray *searchableCategories = [self.categories mutableCopy];
+    
+    MBNCategory *cat = [MBNCategory new];
+    cat.name = @"Chuyên mục";
+    cat.ID = @(-1);
+    
+    
+    [searchableCategories insertObject:cat atIndex:-1];
+    return searchableCategories;
+}
+
 @end
