@@ -55,7 +55,7 @@
     cat.ID = @(-1);
     
     
-    [searchableCategories insertObject:cat atIndex:-1];
+    [searchableCategories insertObject:cat atIndex:0];
     return searchableCategories;
 }
 

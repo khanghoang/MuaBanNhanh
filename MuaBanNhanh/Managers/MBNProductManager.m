@@ -166,7 +166,7 @@
     NSMutableDictionary *params = [@{ @"page" : @(page)} mutableCopy];
     
     // category -1 is all categories
-    if ([categoryID integerValue] > -1) {
+    if ( categoryID && [categoryID integerValue] > -1) {
         [params addEntriesFromDictionary:@{@"category_id": categoryID}];
     }
     
@@ -175,7 +175,7 @@
     }
     
     // province -1 is all provinces
-    if ([provinceID integerValue] > -1) {
+    if ( provinceID && [provinceID integerValue] > -1) {
         [params addEntriesFromDictionary:@{@"province_id": provinceID}];
     }
     
