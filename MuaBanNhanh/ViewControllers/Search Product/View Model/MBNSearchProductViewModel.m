@@ -15,7 +15,7 @@
 {
     if (self = [super init]) {
         RAC(self, provinces) = RACObserve([MBNProvinceManager sharedManager], searchableProvinces);
-        RAC(self, categories) = RACObserve([MBNCategoryManager sharedProvider], categories);
+        RAC(self, categories) = RACObserve([MBNCategoryManager sharedProvider], getSearchableCategories);
     }
     return self;
 }
