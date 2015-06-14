@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="905"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vUv-4K-cQp">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="880"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="908"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zPA-x8-ktq">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="230"/>
@@ -35,7 +35,7 @@
                                                 </connections>
                                             </containerView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pl2-3b-rkU" customClass="TKDesignableView">
-                                                <rect key="frame" x="8" y="260" width="304" height="190"/>
+                                                <rect key="frame" x="8" y="260" width="304" height="218"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjg-Mr-9cP" userLabel="Product name">
                                                         <rect key="frame" x="8" y="8" width="288" height="20"/>
@@ -206,6 +206,15 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltP-Es-1B9" customClass="TTTAttributedLabel">
+                                                        <rect key="frame" x="8" y="187" width="288" height="21"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="BNS-NR-W3J"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -214,18 +223,21 @@
                                                     <constraint firstItem="AXd-7J-VdT" firstAttribute="top" secondItem="gjg-Mr-9cP" secondAttribute="bottom" constant="-1" id="2jg-Gm-h1W"/>
                                                     <constraint firstItem="gjg-Mr-9cP" firstAttribute="leading" secondItem="pl2-3b-rkU" secondAttribute="leading" constant="8" id="4i0-fs-hsj"/>
                                                     <constraint firstItem="s2t-NC-1gb" firstAttribute="top" secondItem="jPj-Lz-dbL" secondAttribute="bottom" constant="-1" id="5eY-ab-hu2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ltP-Es-1B9" secondAttribute="trailing" constant="8" id="76e-gG-fEd"/>
                                                     <constraint firstItem="gjg-Mr-9cP" firstAttribute="top" secondItem="pl2-3b-rkU" secondAttribute="top" constant="8" id="7hv-Im-TDA"/>
-                                                    <constraint firstAttribute="bottom" secondItem="w4g-9D-QUM" secondAttribute="bottom" constant="10" id="9Hn-ee-kUf"/>
+                                                    <constraint firstItem="ltP-Es-1B9" firstAttribute="top" secondItem="w4g-9D-QUM" secondAttribute="bottom" constant="7" id="96V-hm-bkb"/>
                                                     <constraint firstItem="w4g-9D-QUM" firstAttribute="top" secondItem="N1C-VJ-XGx" secondAttribute="bottom" constant="4" id="A1U-hJ-5mn"/>
                                                     <constraint firstItem="AXd-7J-VdT" firstAttribute="leading" secondItem="pl2-3b-rkU" secondAttribute="leading" constant="8" id="EV1-LS-YZ5"/>
                                                     <constraint firstAttribute="trailing" secondItem="gjg-Mr-9cP" secondAttribute="trailing" constant="8" id="Ibn-8y-t3a"/>
                                                     <constraint firstAttribute="trailing" secondItem="s2t-NC-1gb" secondAttribute="trailing" constant="8" id="Lau-S8-tc1"/>
                                                     <constraint firstItem="w4g-9D-QUM" firstAttribute="leading" secondItem="pl2-3b-rkU" secondAttribute="leading" constant="8" id="LmH-Nm-J9O"/>
                                                     <constraint firstItem="8Yn-YL-f9a" firstAttribute="top" secondItem="s2t-NC-1gb" secondAttribute="bottom" constant="-1" id="Pv0-1D-c5i"/>
+                                                    <constraint firstItem="ltP-Es-1B9" firstAttribute="leading" secondItem="pl2-3b-rkU" secondAttribute="leading" constant="8" id="RnZ-kU-MWa"/>
                                                     <constraint firstAttribute="trailing" secondItem="jPj-Lz-dbL" secondAttribute="trailing" constant="8" id="Uu2-Vx-7QM"/>
                                                     <constraint firstItem="s2t-NC-1gb" firstAttribute="leading" secondItem="pl2-3b-rkU" secondAttribute="leading" constant="8" id="XEX-iv-Hqz"/>
                                                     <constraint firstItem="N1C-VJ-XGx" firstAttribute="top" secondItem="8Yn-YL-f9a" secondAttribute="bottom" constant="-1" id="YVr-XP-ick"/>
                                                     <constraint firstItem="QF6-c8-uup" firstAttribute="top" secondItem="AXd-7J-VdT" secondAttribute="bottom" id="ZyR-D5-ooP"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ltP-Es-1B9" secondAttribute="bottom" constant="10" id="bpF-uj-Psq"/>
                                                     <constraint firstAttribute="trailing" secondItem="8Yn-YL-f9a" secondAttribute="trailing" constant="8" id="dfg-SI-RkU"/>
                                                     <constraint firstItem="N1C-VJ-XGx" firstAttribute="leading" secondItem="pl2-3b-rkU" secondAttribute="leading" constant="8" id="hG5-7z-6UZ"/>
                                                     <constraint firstAttribute="trailing" secondItem="AXd-7J-VdT" secondAttribute="trailing" constant="8" id="nRa-1L-puu"/>
@@ -246,8 +258,18 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1n8-ER-2db">
+                                                <rect key="frame" x="0.0" y="900" width="320" height="0.0"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" id="Hsl-pd-f4P"/>
+                                                </constraints>
+                                                <connections>
+                                                    <segue destination="xDJ-7K-eHG" kind="embed" identifier="EmberProductBottomSegue" id="6qe-CP-Atm"/>
+                                                </connections>
+                                            </containerView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="98V-vH-dPL" customClass="TKDesignableView">
-                                                <rect key="frame" x="8" y="458" width="304" height="200"/>
+                                                <rect key="frame" x="8" y="486" width="304" height="200"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thông tin sản phẩm" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvx-7Y-1ra">
                                                         <rect key="frame" x="8" y="8" width="288" height="18"/>
@@ -288,7 +310,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PFN-8w-PAo" customClass="TKDesignableView">
-                                                <rect key="frame" x="8" y="666" width="304" height="198"/>
+                                                <rect key="frame" x="8" y="694" width="304" height="198"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RHz-ti-EPS">
                                                         <rect key="frame" x="0.0" y="0.0" width="304" height="136"/>
@@ -377,16 +399,6 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1n8-ER-2db">
-                                                <rect key="frame" x="0.0" y="872" width="320" height="0.0"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" id="Hsl-pd-f4P"/>
-                                                </constraints>
-                                                <connections>
-                                                    <segue destination="xDJ-7K-eHG" kind="embed" identifier="EmberProductBottomSegue" id="6qe-CP-Atm"/>
-                                                </connections>
-                                            </containerView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -441,6 +453,7 @@
                         <outlet property="lblCategories" destination="Otn-FJ-PRg" id="2dF-aS-wFe"/>
                         <outlet property="lblCity" destination="C5c-Cn-cgp" id="FaZ-fg-2bl"/>
                         <outlet property="lblCondition" destination="MTc-tq-0nN" id="jmn-Yb-6y2"/>
+                        <outlet property="lblContact" destination="ltP-Es-1B9" id="Axk-Nt-dl2"/>
                         <outlet property="lblCreateAt" destination="AXd-7J-VdT" id="usz-aA-Ebn"/>
                         <outlet property="lblPrice" destination="N1C-VJ-XGx" id="UZ1-Hk-mGB"/>
                         <outlet property="lblProductName" destination="gjg-Mr-9cP" id="sps-Gc-w7I"/>

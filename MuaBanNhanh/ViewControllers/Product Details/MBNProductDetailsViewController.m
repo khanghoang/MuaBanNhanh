@@ -11,6 +11,7 @@
 #import "MBNProductImagesViewController.h"
 #import "MBNUserProductViewController.h"
 #import "MBNProductDetailBottomViewController.h"
+#import <TTTAttributedLabel.h>
 
 @interface MBNProductDetailsViewController ()
 
@@ -29,6 +30,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgViewAvatar;
 @property (weak, nonatomic) IBOutlet UILabel *lblAddress;
 @property (weak, nonatomic) IBOutlet UILabel *lblUsername;
+@property (weak, nonatomic) IBOutlet TTTAttributedLabel *lblContact;
+
 @property (weak, nonatomic) MBNProductImagesViewController *productImagesVC;
 @property (weak, nonatomic) IBOutlet UIImageView *imgViewCover;
 @property (weak, nonatomic) IBOutlet UILabel *lblCreateAt;
@@ -61,13 +64,31 @@
     [MBNProductManager sharedProvider].currentSelectProduct = nil;
     
     @weakify(self);
-    [[RACObserve(self.viewModel, product) ignore:nil] subscribeNext:^(id x) {
+    [[RACObserve(self.viewModel, product) ignore:nil] subscribeNext:^(MBNProduct *product) {
         @strongify(self);
         MBNUser *user = self.viewModel.product.user;
 //        user.address = self.viewModel.product.address;
         self.bottomVC.user = user;
         [self.bottomVC reload];
         [MBNProductManager sharedProvider].currentSelectProduct = self.viewModel.product;
+        
+        // set contact string
+        NSString *contactString = [NSString stringWithFormat:@"Gặp %@", product.user.name];
+        
+        [self.lblContact setText:contactString afterInheritingLabelAttributesAndConfiguringWithBlock:^NSMutableAttributedString *(NSMutableAttributedString *mutableAttributedString) {
+            
+            NSRange boldRange = [contactString rangeOfString:product.user.name];
+            UIFont *boldSystemFont = [UIFont boldSystemFontOfSize:14];
+            CTFontRef font = CTFontCreateWithName((__bridge CFStringRef)boldSystemFont.fontName, boldSystemFont.pointSize, NULL);
+            
+            if (font) {
+                [mutableAttributedString addAttribute:(NSString *)kCTFontAttributeName value:(__bridge id)font range:boldRange];
+                CFRelease(font);
+            }
+            
+            return mutableAttributedString;
+            
+        }];
     }];
     
     RAC(self, title) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
