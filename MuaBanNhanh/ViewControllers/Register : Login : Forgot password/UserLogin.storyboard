@@ -37,7 +37,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5G3-Lm-eAc">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nQF-4p-CkV" customClass="TKDesignableView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQF-4p-CkV" customClass="TKDesignableView">
                                         <rect key="frame" x="150" y="40" width="300" height="310"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-logo-banner" translatesAutoresizingMaskIntoConstraints="NO" id="pAi-Pd-hyW">

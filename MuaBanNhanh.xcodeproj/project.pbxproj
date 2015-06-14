@@ -39,6 +39,7 @@
 		05487CC61B013CA20095DF4E /* MBNRegisterDetailsPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05487CC51B013CA20095DF4E /* MBNRegisterDetailsPopupViewController.m */; };
 		054AA6961AE21D4F00C8CBCA /* EditUserInformationStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 054AA6951AE21D4F00C8CBCA /* EditUserInformationStoryboard.storyboard */; };
 		055784EB1B2DF514006A186C /* MBNForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055784EA1B2DF514006A186C /* MBNForgetPasswordViewController.m */; };
+		055784EF1B2DF806006A186C /* MBNSiteInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055784EE1B2DF806006A186C /* MBNSiteInformationViewController.m */; };
 		055D84651AF515EF0071EB22 /* UIImageView+LoadingImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 055D84641AF515EE0071EB22 /* UIImageView+LoadingImage.m */; };
 		055D846B1AF538980071EB22 /* MBNFloatButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055D846A1AF538980071EB22 /* MBNFloatButton.xib */; };
 		055D846E1AF539320071EB22 /* MBNFloatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 055D846D1AF539320071EB22 /* MBNFloatButton.m */; };
@@ -310,6 +311,8 @@
 		054AA6951AE21D4F00C8CBCA /* EditUserInformationStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditUserInformationStoryboard.storyboard; sourceTree = "<group>"; };
 		055784E91B2DF514006A186C /* MBNForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNForgetPasswordViewController.h; sourceTree = "<group>"; };
 		055784EA1B2DF514006A186C /* MBNForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNForgetPasswordViewController.m; sourceTree = "<group>"; };
+		055784ED1B2DF806006A186C /* MBNSiteInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNSiteInformationViewController.h; sourceTree = "<group>"; };
+		055784EE1B2DF806006A186C /* MBNSiteInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNSiteInformationViewController.m; sourceTree = "<group>"; };
 		055D84631AF515EE0071EB22 /* UIImageView+LoadingImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LoadingImage.h"; sourceTree = "<group>"; };
 		055D84641AF515EE0071EB22 /* UIImageView+LoadingImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LoadingImage.m"; sourceTree = "<group>"; };
 		055D846A1AF538980071EB22 /* MBNFloatButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBNFloatButton.xib; sourceTree = "<group>"; };
@@ -801,6 +804,7 @@
 		053979051ACC48E3007C4676 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				055784EC1B2DF7F2006A186C /* Information */,
 				053979111ACC4B68007C4676 /* Container */,
 				053979081ACC4904007C4676 /* Top */,
 				0539790A1ACC4962007C4676 /* Bottom */,
@@ -867,6 +871,16 @@
 			);
 			path = "User Information";
 			sourceTree = "<group>";
+		};
+		055784EC1B2DF7F2006A186C /* Information */ = {
+			isa = PBXGroup;
+			children = (
+				055784ED1B2DF806006A186C /* MBNSiteInformationViewController.h */,
+				055784EE1B2DF806006A186C /* MBNSiteInformationViewController.m */,
+			);
+			name = Information;
+			path = "MuaBanNhanh/ViewControllers/Register : Login : Forgot password/Information";
+			sourceTree = SOURCE_ROOT;
 		};
 		055D84691AF5388A0071EB22 /* Float Button */ = {
 			isa = PBXGroup;
@@ -1791,6 +1805,7 @@
 				05A3E3481ACAF3BF00E55215 /* MBNSideMenuCollectionViewCell.m in Sources */,
 				0569A4501AE27CE300EFBEF0 /* MBNSafeBuyViewController.m in Sources */,
 				05B906C41AE805AE00B85BEC /* IMGLYEditorCropMenu.m in Sources */,
+				055784EF1B2DF806006A186C /* MBNSiteInformationViewController.m in Sources */,
 				05B906B81AE805AE00B85BEC /* IMGLYChestNutFilter.m in Sources */,
 				05B906CE1AE805AE00B85BEC /* IMGLYEditorTextMenu.m in Sources */,
 				0524FF2E1AF143C400A42C78 /* MBNManageProductTypeViewController.m in Sources */,
