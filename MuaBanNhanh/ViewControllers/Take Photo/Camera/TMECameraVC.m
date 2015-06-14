@@ -74,9 +74,9 @@ TMECameraFilterSelectorVCDelegate>
 {
     self.filterContainerViewBottomConstraint.constant = -200;
     
-    self.filterSelectorVC = [TMECameraFilterSelectorVC tme_instantiateFromStoryboardNamed:@"CameraFilterSelector"];
-    self.filterSelectorVC.delegate = self;
-    [self addChildVC:self.filterSelectorVC containerView:self.filterContainerView];
+//    self.filterSelectorVC = [TMECameraFilterSelectorVC tme_instantiateFromStoryboardNamed:@"CameraFilterSelector"];
+//    self.filterSelectorVC.delegate = self;
+//    [self addChildVC:self.filterSelectorVC containerView:self.filterContainerView];
 }
 
 - (void)configureCameraController {
