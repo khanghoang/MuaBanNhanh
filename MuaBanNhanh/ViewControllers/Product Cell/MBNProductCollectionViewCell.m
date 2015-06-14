@@ -74,7 +74,7 @@
     [self.imageViewProductImage fp_setImageWithURL:product.defaultThumbnailImage];
     
     // categories
-    self.lblCategories.text = product.province.name;
+    self.lblCategories.text = [NSString stringWithFormat:@"%@ - %@ - %@", product.conditions, product.isSale ? @"Cần bán" : @"Cần mua", product.province.name];
     
     // name
     self.lblProductName.text = product.name;
