@@ -349,6 +349,7 @@ UITextViewDelegate
 {
     TMECropImageVC *cropVC = [[TMECropImageVC alloc] init];
     cropVC.inputImage = image;
+    [cropVC setSelectionMode:TMECropImageVCSelectionMode4to3];
     
     TMECameraVC *cameraVC = [self.cameraVC.viewControllers firstObject];
     

@@ -647,7 +647,6 @@ static const CGFloat kBackgroundGrayValue =  34.0 / 255.0;
                                    screenCenter.y - rectHeight / 2.0,
                                    rectWidth,
                                    rectHeight);
-        [self layoutViewsForCropRect];
     }
 }
 
@@ -662,11 +661,8 @@ static const CGFloat kBackgroundGrayValue =  34.0 / 255.0;
     CGSize size = CGSizeMake(self.cropRectRightBound - self.cropRectLeftBound,
                              self.cropRectBottomBound - self.cropRectTopBound);
     CGFloat rectWidth = size.width;
-    CGFloat rectHeight = rectWidth ;
-    if (size.width > size.height) {
-        rectHeight = size.height;
-        rectWidth  = rectHeight;
-    }
+    CGFloat rectHeight = rectWidth * 3 / 4 ;
+    
     self.cropRect = CGRectMake(screenCenter.x - rectWidth / 2.0,
                                screenCenter.y - rectHeight / 2.0,
                                rectWidth,
