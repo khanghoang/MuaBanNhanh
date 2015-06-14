@@ -194,6 +194,10 @@ UICollectionViewDelegate>
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
 {
+    if([searchBar.text isEqualToString:@""]) {
+        searchBar.text = @" ";
+    }
+    
     self.dismissView.hidden = NO;
     return YES;
 }
