@@ -118,18 +118,14 @@
         [self.view updateConstraintsIfNeeded];
     }];
     
-    [[RACObserve(self.viewModel, product) ignore:nil] subscribeNext:^(MBNProduct *product) {
+    [RACObserve(self.viewModel, product) subscribeNext:^(MBNProduct *product) {
         @strongify(self);
-        if( product.user.avatarImageUrl ) {
-            [self.imgViewAvatar setImageWithURL:product.user.avatarImageUrl placeholderImage:[UIImage imageNamed:@"avatar-d"]];
-        }
+        [self.imgViewAvatar setImageWithURL:product.user.avatarImageUrl placeholderImage:[UIImage imageNamed:@"df_avatar"]];
     }];
     
-    [[RACObserve(self.viewModel, product) ignore:nil] subscribeNext:^(MBNProduct *product) {
+    [RACObserve(self.viewModel, product) subscribeNext:^(MBNProduct *product) {
         @strongify(self);
-        if( product.user.coverImageUrl ) {
-            [self.imgViewCover setImageWithURL:product.user.coverImageUrl placeholderImage:[UIImage imageNamed:@"avatar-d"]];
-        }
+        [self.imgViewCover setImageWithURL:product.user.coverImageUrl placeholderImage:[UIImage imageNamed:@"df_cover"]];
     }];
     
     RAC(self.lblUsername, text) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {

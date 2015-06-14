@@ -68,8 +68,8 @@ UICollectionViewDelegateFlowLayout
 }
 
 - (void)setUserInformationWithUser:(MBNUser *)loginUser {
-    [self.imageUserCover setImageWithURL:loginUser.coverImageUrl];
-    [self.imageUserAvatar setImageWithURL:loginUser.avatarImageUrl];
+    [self.imageUserCover setImageWithURL:loginUser.coverImageUrl placeholderImage:[UIImage imageNamed:@"df_cover"]];
+    [self.imageUserAvatar setImageWithURL:loginUser.avatarImageUrl placeholderImage:[UIImage imageNamed:@"df_avatar"]];
     self.lblUsername.text = loginUser.name;
     self.lblUserPhoneNumber.text = loginUser.phone;
     
