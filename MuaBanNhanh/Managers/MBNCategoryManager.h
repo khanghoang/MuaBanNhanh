@@ -12,6 +12,8 @@
 
 @property (copy, nonatomic) NSArray *categories;
 
+@property (strong, nonatomic) MBNCategory *currentSelectCategory;
+
 - (NSArray *)getSearchableCategories;
 + (instancetype)sharedProvider;
 - (void)getCategories:(void (^) (NSArray *arrCategories))success failure:(void (^)(NSError *error))failure;

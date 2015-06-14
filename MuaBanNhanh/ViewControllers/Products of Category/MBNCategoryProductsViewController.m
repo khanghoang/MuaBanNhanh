@@ -42,6 +42,8 @@ UICollectionViewDelegate
     id oldDelegate = self.collectionView.delegate;
     self.chainDelegate = [[LBDelegateMatrioska alloc] initWithDelegates:@[self, oldDelegate]];
     self.collectionView.delegate = (id) self.chainDelegate;
+    
+    [MBNCategoryManager sharedProvider].currentSelectCategory = self.category;
 }
 
 - (id <KHCollectionViewCellFactoryProtocol> )cellFactory {

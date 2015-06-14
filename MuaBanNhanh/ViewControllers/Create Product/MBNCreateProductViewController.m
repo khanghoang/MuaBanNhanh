@@ -110,6 +110,17 @@ UITextViewDelegate
     [self registerForKeyboardNotifications];
     
     [self updateUIIfEditingProduct];
+    
+    [self updateSelectedCategoryBaseOnCurrentCategory];
+}
+
+- (void)updateSelectedCategoryBaseOnCurrentCategory {
+    MBNCategory *cat = [MBNCategoryManager sharedProvider].currentSelectCategory;
+    if(cat) {
+        [self.viewModel.selectedCategories addObject:cat];
+    }
+    
+    [self.tagCollectionView reloadData];
 }
 
 - (void)updateUIIfEditingProduct {
