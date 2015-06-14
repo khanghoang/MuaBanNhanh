@@ -23,7 +23,7 @@ MBNFloatButtonPopup
 }
 
 - (CGFloat)getViewHeight {
-    return 110;
+    return 165;
 }
 
 @end

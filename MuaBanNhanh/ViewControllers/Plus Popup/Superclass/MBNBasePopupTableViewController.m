@@ -11,6 +11,7 @@
 #import "MBNNavigationViewController.h"
 #import "AppDelegate.h"
 #import "MBNCreateProductViewController.h"
+#import "MBNManageProductViewController.h"
 
 @interface MBNBasePopupTableViewController ()
 
@@ -82,6 +83,15 @@
     [appDelegate.floatButton togglePopup:nil completion:^{
         MBNShowLoginSegue *segue = [[MBNShowLoginSegue alloc] initWithIdentifier:@"MBNLoginSegue" source:appDelegate.rootNavigationController destination:vc];
         [segue perform];
+    }];
+}
+
+- (IBAction)manageProduct:(id)sender {
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    [appDelegate.floatButton togglePopup:nil completion:^{
+        UIViewController *manageVC = [MBNManageProductViewController tme_instantiateFromStoryboardNamed:@"ManageProduct"];
+        UINavigationController *navVC = (UINavigationController *) appDelegate.revealController.frontViewController;
+        [navVC pushViewController:manageVC animated:YES];
     }];
 }
 
