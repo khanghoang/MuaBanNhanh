@@ -228,6 +228,12 @@ UITextViewDelegate
 
 - (void)setupCommandForButtons {
     @weakify(self);
+    
+    [self.productPriceTextField.rac_textSignal subscribeNext:^(NSString *text) {
+        @strongify(self);
+        self.productPriceTextField.text = [MBNProduct getPriceDisplayString:text];
+    }];
+    
     self.repickCategoryButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *sender) {
         @strongify(self);
         MBNSelectCategoryViewController *vc = [[UIStoryboard storyboardWithName:@"SelectCategory" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([MBNSelectCategoryViewController class])];

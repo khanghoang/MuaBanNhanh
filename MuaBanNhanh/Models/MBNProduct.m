@@ -107,6 +107,16 @@
     return [self.address isEqualToString:@""] ? @"Địa chỉ chưa cập nhật" : self.address;
 }
 
++ (NSString *)getPriceDisplayString:(NSString *)textPrice {
+    NSNumberFormatter *formatter = [NSNumberFormatter new];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle]; // this line is important!
+    
+    NSNumber *price = [formatter numberFromString:[textPrice stringByReplacingOccurrencesOfString:@"." withString:@""]];
+    
+    NSString *priceString = [formatter stringFromNumber:price];
+    return priceString;
+}
+
 - (NSString *)getPriceDisplayString {
     // price
     NSNumberFormatter *formatter = [NSNumberFormatter new];
