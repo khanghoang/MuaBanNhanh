@@ -38,6 +38,7 @@
 		0544DE791AF9511500082D63 /* TKDesignableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0544DE781AF9511500082D63 /* TKDesignableTableView.m */; };
 		05487CC61B013CA20095DF4E /* MBNRegisterDetailsPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05487CC51B013CA20095DF4E /* MBNRegisterDetailsPopupViewController.m */; };
 		054AA6961AE21D4F00C8CBCA /* EditUserInformationStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 054AA6951AE21D4F00C8CBCA /* EditUserInformationStoryboard.storyboard */; };
+		055784EB1B2DF514006A186C /* MBNForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 055784EA1B2DF514006A186C /* MBNForgetPasswordViewController.m */; };
 		055D84651AF515EF0071EB22 /* UIImageView+LoadingImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 055D84641AF515EE0071EB22 /* UIImageView+LoadingImage.m */; };
 		055D846B1AF538980071EB22 /* MBNFloatButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055D846A1AF538980071EB22 /* MBNFloatButton.xib */; };
 		055D846E1AF539320071EB22 /* MBNFloatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 055D846D1AF539320071EB22 /* MBNFloatButton.m */; };
@@ -307,6 +308,8 @@
 		05487CC41B013CA20095DF4E /* MBNRegisterDetailsPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNRegisterDetailsPopupViewController.h; sourceTree = "<group>"; };
 		05487CC51B013CA20095DF4E /* MBNRegisterDetailsPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNRegisterDetailsPopupViewController.m; sourceTree = "<group>"; };
 		054AA6951AE21D4F00C8CBCA /* EditUserInformationStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditUserInformationStoryboard.storyboard; sourceTree = "<group>"; };
+		055784E91B2DF514006A186C /* MBNForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNForgetPasswordViewController.h; sourceTree = "<group>"; };
+		055784EA1B2DF514006A186C /* MBNForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNForgetPasswordViewController.m; sourceTree = "<group>"; };
 		055D84631AF515EE0071EB22 /* UIImageView+LoadingImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LoadingImage.h"; sourceTree = "<group>"; };
 		055D84641AF515EE0071EB22 /* UIImageView+LoadingImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LoadingImage.m"; sourceTree = "<group>"; };
 		055D846A1AF538980071EB22 /* MBNFloatButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBNFloatButton.xib; sourceTree = "<group>"; };
@@ -723,6 +726,8 @@
 				05958DA71AD907C300F7A708 /* MBNLoginViewController.m */,
 				05F3E54B1ADB77BA00D432AF /* MBNRegisterViewController.h */,
 				05F3E54C1ADB77BA00D432AF /* MBNRegisterViewController.m */,
+				055784E91B2DF514006A186C /* MBNForgetPasswordViewController.h */,
+				055784EA1B2DF514006A186C /* MBNForgetPasswordViewController.m */,
 			);
 			path = "Register : Login : Forgot password";
 			sourceTree = "<group>";
@@ -1957,6 +1962,7 @@
 				0561C9BD1AD05F6800BEDA6D /* TKAlignTopLabel.m in Sources */,
 				05B906B41AE805AE00B85BEC /* IMGLYCameraBottomBarView.m in Sources */,
 				05B906E51AE805AE00B85BEC /* IMGLYNavigationBar.m in Sources */,
+				055784EB1B2DF514006A186C /* MBNForgetPasswordViewController.m in Sources */,
 				053CD67C1AF7C19A0018C2AB /* MBNCloseNavigationSegue.m in Sources */,
 				05B906DF1AE805AE00B85BEC /* IMGLYLeninFilter.m in Sources */,
 				0524FF401AF1595500A42C78 /* MBNMangeProductCellFactory.m in Sources */,
