@@ -31,7 +31,7 @@ UIScrollViewDelegate
     SMPageControl *pageControl = [[SMPageControl alloc] init];
     pageControl.pageIndicatorImage = [UIImage imageNamed:@"page-indicator"];
     pageControl.currentPageIndicatorImage = [UIImage imageNamed:@"page-indicator-selected"];
-    pageControl.numberOfPages = 10;
+    pageControl.numberOfPages = 0;
     [pageControl sizeToFit];
     [self.view addSubview:pageControl];
     [pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -49,6 +49,9 @@ UIScrollViewDelegate
         [self.collectionView reloadData];
         self.pageControl.numberOfPages = self.viewModel.product.gallery.count;
         [self.pageControl sizeToFit];
+        [self.pageControl mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@(pageControl.width));
+        }];
         [self.view layoutIfNeeded];
     }];
 }
