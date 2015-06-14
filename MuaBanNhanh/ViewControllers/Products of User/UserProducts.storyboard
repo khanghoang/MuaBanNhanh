@@ -43,16 +43,25 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4v-YG-6Nh" customClass="TKDesignableView">
-                                            <rect key="frame" x="0.0" y="8" width="310" height="203"/>
+                                            <rect key="frame" x="0.0" y="8" width="310" height="207"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1it-8r-ir9">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1it-8r-ir9">
                                                     <rect key="frame" x="0.0" y="0.0" width="310" height="136"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="136" id="XMB-8h-Qll"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="365 Lê Quang Định, phường 5, Quận BìnhThạnh, Tp. Hồ Chí Minh" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIa-Mh-GnO">
+                                                    <rect key="frame" x="96" y="160" width="206" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="MPl-65-5vO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NhA-8L-a6a" customClass="TKDesignableView">
-                                                    <rect key="frame" x="115" y="30" width="80" height="80"/>
+                                                    <rect key="frame" x="11" y="106" width="80" height="80"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gkg-UY-BbL">
                                                             <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -73,36 +82,27 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Công ty In kĩ thuật số" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAe-jH-9p6">
-                                                    <rect key="frame" x="8" y="142" width="294" height="19"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Công ty In kĩ thuật số" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAe-jH-9p6">
+                                                    <rect key="frame" x="96" y="141" width="206" height="19"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="19" id="UnG-av-oDH"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="UnG-av-oDH"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                     <color key="textColor" red="0.24313725489999999" green="0.47450980390000003" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="365 Lê Quang Định, phường 5, Quận BìnhThạnh, Tp. Hồ Chí Minh" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIa-Mh-GnO" customClass="TKAlignTopLabel">
-                                                    <rect key="frame" x="8" y="163" width="294" height="35"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="MPl-65-5vO"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="kAe-jH-9p6" firstAttribute="leading" secondItem="F4v-YG-6Nh" secondAttribute="leading" constant="8" id="2PT-TB-BGz"/>
-                                                <constraint firstItem="DIa-Mh-GnO" firstAttribute="top" secondItem="kAe-jH-9p6" secondAttribute="bottom" constant="2" id="6Sy-hb-NI8"/>
-                                                <constraint firstItem="kAe-jH-9p6" firstAttribute="top" secondItem="NhA-8L-a6a" secondAttribute="bottom" constant="32" id="7Lk-ZH-ww0"/>
-                                                <constraint firstItem="NhA-8L-a6a" firstAttribute="top" secondItem="F4v-YG-6Nh" secondAttribute="top" constant="30" id="9Jj-T5-Az9"/>
-                                                <constraint firstItem="DIa-Mh-GnO" firstAttribute="leading" secondItem="F4v-YG-6Nh" secondAttribute="leading" constant="8" id="CEg-EQ-5TO"/>
+                                                <constraint firstItem="kAe-jH-9p6" firstAttribute="leading" secondItem="F4v-YG-6Nh" secondAttribute="leading" constant="96" id="2PT-TB-BGz"/>
+                                                <constraint firstItem="DIa-Mh-GnO" firstAttribute="top" secondItem="kAe-jH-9p6" secondAttribute="bottom" id="6Sy-hb-NI8"/>
+                                                <constraint firstItem="NhA-8L-a6a" firstAttribute="top" secondItem="F4v-YG-6Nh" secondAttribute="top" constant="106" id="9Jj-T5-Az9"/>
+                                                <constraint firstItem="DIa-Mh-GnO" firstAttribute="leading" secondItem="F4v-YG-6Nh" secondAttribute="leading" constant="96" id="CEg-EQ-5TO"/>
                                                 <constraint firstAttribute="trailing" secondItem="1it-8r-ir9" secondAttribute="trailing" id="EAj-sx-hhL"/>
                                                 <constraint firstItem="1it-8r-ir9" firstAttribute="top" secondItem="F4v-YG-6Nh" secondAttribute="top" id="GDH-HB-d45"/>
+                                                <constraint firstItem="NhA-8L-a6a" firstAttribute="leading" secondItem="F4v-YG-6Nh" secondAttribute="leading" constant="11" id="HfO-yY-9LW"/>
+                                                <constraint firstItem="kAe-jH-9p6" firstAttribute="top" secondItem="1it-8r-ir9" secondAttribute="bottom" constant="5" id="Ica-MD-0r9"/>
                                                 <constraint firstAttribute="bottom" secondItem="DIa-Mh-GnO" secondAttribute="bottom" constant="5" id="Vtz-xE-Fwy"/>
-                                                <constraint firstAttribute="centerX" secondItem="NhA-8L-a6a" secondAttribute="centerX" id="WdT-Je-bsy"/>
                                                 <constraint firstItem="1it-8r-ir9" firstAttribute="leading" secondItem="F4v-YG-6Nh" secondAttribute="leading" id="tIo-Ay-YDG"/>
                                                 <constraint firstAttribute="trailing" secondItem="DIa-Mh-GnO" secondAttribute="trailing" constant="8" id="ttA-2K-Zp4"/>
                                                 <constraint firstAttribute="trailing" secondItem="kAe-jH-9p6" secondAttribute="trailing" constant="8" id="vLh-oW-fJz"/>
@@ -121,7 +121,7 @@
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="F4v-YG-6Nh" secondAttribute="bottom" constant="9" id="4ZP-WJ-EP7"/>
+                                        <constraint firstAttribute="bottom" secondItem="F4v-YG-6Nh" secondAttribute="bottom" constant="5" id="4ZP-WJ-EP7"/>
                                         <constraint firstItem="F4v-YG-6Nh" firstAttribute="leading" secondItem="aar-zA-5Qe" secondAttribute="leading" id="DHp-cS-aae"/>
                                         <constraint firstAttribute="trailing" secondItem="F4v-YG-6Nh" secondAttribute="trailing" id="Ia0-P9-9Qy"/>
                                         <constraint firstItem="F4v-YG-6Nh" firstAttribute="top" secondItem="aar-zA-5Qe" secondAttribute="top" constant="8" id="foT-y5-Yqg"/>

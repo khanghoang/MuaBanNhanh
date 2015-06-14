@@ -20,8 +20,8 @@
 @implementation MBNUserProductHeaderCollectionReusableView
 
 - (void)configWithUser:(MBNUser *)user {
-    [self.imgViewAvatar setImageWithURL:user.avatarImageUrl];
-    [self.imgViewCover setImageWithURL:user.coverImageUrl];
+    [self.imgViewAvatar setImageWithURL:user.avatarImageUrl placeholderImage:[UIImage imageNamed:@"df_avatar"]];
+    [self.imgViewCover setImageWithURL:user.coverImageUrl placeholderImage:[UIImage imageNamed:@"df_cover"]];
     self.lblAddress.text = [user getDisplayAddressString];
     self.lblUsername.text = user.name;
 }
