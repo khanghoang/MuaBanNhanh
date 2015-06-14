@@ -73,7 +73,7 @@ UICollectionViewDelegateFlowLayout
     self.lblUsername.text = loginUser.name;
     self.lblUserPhoneNumber.text = loginUser.phone;
     
-    self.constraintHeightUserInfo.constant = loginUser ? 130 : 0;
+    self.constraintHeightUserInfo.constant = loginUser ? 160 : 0;
     [self.viewUserInfoWraper updateConstraintsIfNeeded];
     [self.viewUserInfoWraper layoutIfNeeded];
 }
