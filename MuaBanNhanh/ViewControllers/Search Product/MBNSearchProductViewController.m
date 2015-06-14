@@ -170,6 +170,11 @@ UICollectionViewDelegate>
 {
     MBNProductCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[MBNProductCollectionViewCell kind] forIndexPath:indexPath];
     [cell configWithData:self.viewModel.products[indexPath.item]];
+    
+    if(indexPath.item == self.viewModel.products.count - 5) {
+        [self.viewModel searchProductsWithKeyWord:self.searchBar.text page:@(self.viewModel.page + 1)];
+    }
+    
     return cell;
 }
 
