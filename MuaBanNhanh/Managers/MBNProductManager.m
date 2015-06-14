@@ -172,6 +172,7 @@
     
     if (keyWord) {
         [params addEntriesFromDictionary:@{@"q": keyWord}];
+        keyWord = @" ";
     }
     
     // province -1 is all provinces
