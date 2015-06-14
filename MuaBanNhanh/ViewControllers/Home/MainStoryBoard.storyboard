@@ -272,10 +272,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Pxb-20-q13" secondAttribute="trailing" constant="-6" id="7Uk-OL-ZfJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Pxb-20-q13" secondAttribute="trailing" constant="10" id="8Dr-5q-WIN"/>
                             <constraint firstItem="Pxb-20-q13" firstAttribute="top" secondItem="jwN-g6-TBk" secondAttribute="bottom" constant="5" id="OSL-hx-5CC"/>
-                            <constraint firstItem="Pxb-20-q13" firstAttribute="leading" secondItem="XLJ-oo-Pix" secondAttribute="leadingMargin" constant="-6" id="Y27-F4-6v7"/>
                             <constraint firstItem="gL8-c7-MqG" firstAttribute="top" secondItem="Pxb-20-q13" secondAttribute="bottom" constant="5" id="ibZ-Zr-3JP"/>
+                            <constraint firstItem="Pxb-20-q13" firstAttribute="leading" secondItem="XLJ-oo-Pix" secondAttribute="leading" constant="10" id="ps7-SZ-7np"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
