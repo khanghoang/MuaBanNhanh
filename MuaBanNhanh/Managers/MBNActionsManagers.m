@@ -7,6 +7,14 @@
 //
 
 #import "MBNActionsManagers.h"
+#import <MessageUI/MessageUI.h>
+
+@interface MBNActionsManagers()
+<
+MFMessageComposeViewControllerDelegate
+>
+
+@end
 
 @implementation MBNActionsManagers
 
@@ -42,8 +50,20 @@
 }
 
 - (void)sendSMSToNumber:(NSString *)numberString {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"sms:%@", [numberString stringByReplacingOccurrencesOfString:@" " withString:@""]]];
-    [[UIApplication sharedApplication] openURL:url];
+    AppDelegate *appDelegate = APP_DELEGATE;
+    [appDelegate.floatButton togglePopup:nil completion:nil];
+    MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
+    if([MFMessageComposeViewController canSendText])
+    {
+        controller.body = @"";
+        controller.recipients = [NSArray arrayWithObjects:numberString, nil];
+        controller.messageComposeDelegate = self;
+        [appDelegate.rootNavigationController presentViewController:controller animated:YES completion:nil];
+    }
+}
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
