@@ -179,4 +179,4 @@ SPEC CHECKSUMS:
   UICollectionViewLeftAlignedLayout: 46396e7c45573544981b9a04a2e25ecacba18774
   WYPopoverController: ebefa50c477bdbbd9dc992dfdffafa168c4484eb
 
-COCOAPODS: 0.37.0.beta.1
+COCOAPODS: 0.37.2

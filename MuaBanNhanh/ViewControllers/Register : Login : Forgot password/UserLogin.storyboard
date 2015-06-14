@@ -36,7 +36,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5G3-Lm-eAc">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQF-4p-CkV" customClass="TKDesignableView">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nQF-4p-CkV" customClass="TKDesignableView">
                                         <rect key="frame" x="150" y="40" width="300" height="310"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-logo-banner" translatesAutoresizingMaskIntoConstraints="NO" id="pAi-Pd-hyW">
@@ -424,7 +424,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xBR-lN-9gB">
                                                         <rect key="frame" x="1" y="1" width="282" height="75"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngm-oV-tXV">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngm-oV-tXV">
                                                                 <rect key="frame" x="11" y="35" width="260" height="35"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="(Thứ 2 - Thứ 6: 08:00 - 17:00 / Thứ 7: 08:00 - 12:00)">
@@ -437,7 +437,7 @@
                                                                 </attributedString>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gọi chăm sóc khách hàng của Mua Bán Nhanh " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAI-qP-kGf">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Gọi chăm sóc khách hàng của Mua Bán Nhanh " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAI-qP-kGf">
                                                                 <rect key="frame" x="11" y="1" width="260" height="37"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <color key="textColor" red="0.10196078431372549" green="0.3843137254901961" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
@@ -513,7 +513,7 @@
                                                             <constraint firstAttribute="trailing" secondItem="NgH-WH-LHu" secondAttribute="trailing" constant="48" id="ziZ-Y2-hTm"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Br6-ZF-rSp">
+                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Br6-ZF-rSp">
                                                         <rect key="frame" x="2" y="161" width="282" height="90"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="buH-gN-C9q">
@@ -540,7 +540,7 @@
                                                                     <constraint firstAttribute="height" constant="60" id="mQv-6k-LyM"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(08) 7300 6688" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9Q-th-SFF">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="(08) 7300 6688" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9Q-th-SFF">
                                                                 <rect key="frame" x="89" y="34" width="145" height="29"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                                 <color key="textColor" red="0.90196078430000004" green="0.18039215689999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
@@ -562,7 +562,7 @@
                                                             <constraint firstItem="G9Q-th-SFF" firstAttribute="leading" secondItem="Br6-ZF-rSp" secondAttribute="leading" constant="89" id="vhv-m7-OdM"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qEW-eD-kcZ">
+                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qEW-eD-kcZ">
                                                         <rect key="frame" x="0.0" y="249" width="282" height="90"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MpI-LQ-3eb">
@@ -589,7 +589,7 @@
                                                                     <constraint firstAttribute="height" constant="60" id="VKg-iS-zJX"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(08) 7300 6688" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wY1-in-baK">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="(08) 7300 6688" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wY1-in-baK">
                                                                 <rect key="frame" x="89" y="34" width="145" height="29"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                                 <color key="textColor" red="0.90196078430000004" green="0.18039215689999999" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
@@ -650,13 +650,13 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftc-pl-Grb">
                                                         <rect key="frame" x="1" y="1" width="282" height="61"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gửi email" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kER-Eh-Gdg">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Gửi email" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kER-Eh-Gdg">
                                                                 <rect key="frame" x="11" y="5" width="260" height="18"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                                 <color key="textColor" red="0.1019607843" green="0.38431372549999998" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gab-uh-y1I">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gab-uh-y1I">
                                                                 <rect key="frame" x="11" y="21" width="260" height="35"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="(Vui lòng kiểm tra email đăng ký với Mua Bán Nhanh để kích hoạt tài khoản)">
@@ -846,10 +846,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="656"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGx-9s-tZ4" customClass="TKDesignableView">
-                                        <rect key="frame" x="150" y="13" width="300" height="630"/>
+                                        <rect key="frame" x="150" y="13" width="300" height="445"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFZ-AB-5ej">
-                                                <rect key="frame" x="9" y="7" width="282" height="21"/>
+                                                <rect key="frame" x="9" y="7" width="282" height="25"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="* Tất cả các trường đều là bắt buộc">
                                                         <attributes>
@@ -862,7 +862,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qyH-w4-18K" customClass="TKDesignableView">
-                                                <rect key="frame" x="11" y="32" width="280" height="34"/>
+                                                <rect key="frame" x="11" y="36" width="280" height="34"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Họ và tên đệm" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mgW-h1-zna">
                                                         <rect key="frame" x="8" y="2" width="264" height="30"/>
@@ -891,7 +891,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EbM-sO-JLg" customClass="TKDesignableView">
-                                                <rect key="frame" x="11" y="81" width="280" height="34"/>
+                                                <rect key="frame" x="11" y="85" width="280" height="34"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tên" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EAv-Ze-utl">
                                                         <rect key="frame" x="8" y="2" width="264" height="30"/>
@@ -920,7 +920,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FEr-47-Bvh" customClass="TKDesignableView">
-                                                <rect key="frame" x="11" y="130" width="280" height="34"/>
+                                                <rect key="frame" x="11" y="134" width="280" height="34"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Số điện thoại" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AS9-Du-FRw">
                                                         <rect key="frame" x="8" y="2" width="264" height="30"/>
@@ -949,7 +949,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wJg-3e-NWh" customClass="TKDesignableView">
-                                                <rect key="frame" x="11" y="178" width="280" height="34"/>
+                                                <rect key="frame" x="11" y="182" width="280" height="34"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HUv-7w-c5s">
                                                         <rect key="frame" x="8" y="2" width="264" height="30"/>
@@ -978,7 +978,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hJ-u9-MHU" customClass="TKDesignableView">
-                                                <rect key="frame" x="11" y="226" width="280" height="34"/>
+                                                <rect key="frame" x="11" y="230" width="280" height="34"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mật khẩu" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qki-dS-MAP">
                                                         <rect key="frame" x="8" y="2" width="264" height="30"/>
@@ -1007,7 +1007,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSz-al-Ztq" customClass="TKDesignableView">
-                                                <rect key="frame" x="11" y="273" width="280" height="34"/>
+                                                <rect key="frame" x="11" y="277" width="280" height="34"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nhập lại mật khẩu" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5lq-BP-b0f">
                                                         <rect key="frame" x="8" y="2" width="264" height="30"/>
@@ -1035,129 +1035,18 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QYs-IA-Ixq" customClass="TKDesignableView">
-                                                <rect key="frame" x="11" y="320" width="280" height="135"/>
-                                                <subviews>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u29-xO-dhR">
-                                                        <rect key="frame" x="4" y="1" width="276" height="128"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <attributedString key="attributedText">
-                                                            <fragment>
-                                                                <string key="content">Điều khoản sử dụng
-</string>
-                                                                <attributes>
-                                                                    <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                            <fragment>
-                                                                <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                                <attributes>
-                                                                    <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                                </attributes>
-                                                            </fragment>
-                                                        </attributedString>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                    </textView>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstItem="u29-xO-dhR" firstAttribute="top" secondItem="QYs-IA-Ixq" secondAttribute="top" constant="1" id="RIC-dc-JOo"/>
-                                                    <constraint firstAttribute="trailing" secondItem="u29-xO-dhR" secondAttribute="trailing" id="as0-gK-TUZ"/>
-                                                    <constraint firstItem="u29-xO-dhR" firstAttribute="leading" secondItem="QYs-IA-Ixq" secondAttribute="leading" constant="4" id="ggn-Tg-ROw"/>
-                                                    <constraint firstAttribute="bottom" secondItem="u29-xO-dhR" secondAttribute="bottom" constant="6" id="ldN-0F-Tic"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                        <color key="value" red="0.75686274509999996" green="0.75686274509999996" blue="0.75686274509999996" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                        <integer key="value" value="1"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpo-qU-0VK">
-                                                <rect key="frame" x="40" y="461" width="246" height="35"/>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="Tôi đã đọc kỹ và đồng ý với ">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="điều khoản sử dụng">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.21568627450980393" green="0.47058823529411764" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content=" vủa MuaBanNhanh ">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSh-K2-g0Q">
-                                                <rect key="frame" x="13" y="504" width="278" height="63"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Term" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSh-K2-g0Q" customClass="TTTAttributedLabel">
+                                                <rect key="frame" x="13" y="319" width="278" height="63"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="278" id="RIP-vW-fMY"/>
                                                     <constraint firstAttribute="height" constant="63" id="sP2-H3-96z"/>
                                                 </constraints>
-                                                <attributedString key="attributedText">
-                                                    <fragment content="Khi nhấp chuột vào Đăng ký, bạn đồng ý với Các ">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="điều khoản">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.20784313725490197" green="0.46274509803921571" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content=" của chúng tôi và bạn đã đọc ">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="Chính sách sử dụng dữ liệu ">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.25098039215686274" green="0.49803921568627452" blue="0.76470588235294112" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="của chúng tôi, bao gồm ">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                    <fragment content="Sử dụng cookie">
-                                                        <attributes>
-                                                            <color key="NSColor" red="0.20784313725490197" green="0.46274509803921571" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <font key="NSFont" size="13" name="HelveticaNeue"/>
-                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                        </attributes>
-                                                    </fragment>
-                                                </attributedString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IdR-z9-OFP" customClass="TKDesignableView">
-                                                <rect key="frame" x="11" y="577" width="280" height="45"/>
+                                                <rect key="frame" x="11" y="392" width="280" height="45"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pc5-Su-gkz">
                                                         <rect key="frame" x="0.0" y="0.0" width="280" height="45"/>
@@ -1188,59 +1077,36 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BT3-SQ-qZ4">
-                                                <rect key="frame" x="7" y="462" width="40" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="Bat-rx-OMX"/>
-                                                    <constraint firstAttribute="height" constant="40" id="HZT-ar-zyL"/>
-                                                </constraints>
-                                                <inset key="imageEdgeInsets" minX="14" minY="4" maxX="14" maxY="24"/>
-                                                <state key="normal" image="checkbox">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="selected" image="checked_checkbox"/>
-                                                <connections>
-                                                    <action selector="onTapCheckbox:" destination="7RO-Lh-BnQ" eventType="touchUpInside" id="fUm-4j-XWA"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="lSz-al-Ztq" secondAttribute="trailing" constant="9" id="1zE-bo-QLk"/>
-                                            <constraint firstItem="QYs-IA-Ixq" firstAttribute="leading" secondItem="bGx-9s-tZ4" secondAttribute="leading" constant="11" id="3If-Xi-gvF"/>
                                             <constraint firstItem="qyH-w4-18K" firstAttribute="leading" secondItem="bGx-9s-tZ4" secondAttribute="leading" constant="11" id="6ej-bj-5bg"/>
                                             <constraint firstAttribute="trailing" secondItem="9hJ-u9-MHU" secondAttribute="trailing" constant="9" id="9xb-Ss-4JG"/>
                                             <constraint firstItem="9hJ-u9-MHU" firstAttribute="leading" secondItem="bGx-9s-tZ4" secondAttribute="leading" constant="11" id="AAf-Nx-rcB"/>
                                             <constraint firstAttribute="trailing" secondItem="IdR-z9-OFP" secondAttribute="trailing" constant="9" id="BnD-95-XWh"/>
                                             <constraint firstAttribute="trailing" secondItem="wJg-3e-NWh" secondAttribute="trailing" constant="9" id="C5c-Z8-oqx"/>
                                             <constraint firstAttribute="bottom" secondItem="IdR-z9-OFP" secondAttribute="bottom" constant="8" id="Cfy-0m-Yo9"/>
-                                            <constraint firstItem="hSh-K2-g0Q" firstAttribute="top" secondItem="rpo-qU-0VK" secondAttribute="bottom" constant="8" id="Csm-oO-OkE"/>
                                             <constraint firstItem="lSz-al-Ztq" firstAttribute="top" secondItem="9hJ-u9-MHU" secondAttribute="bottom" constant="13" id="GyU-MR-Oxl"/>
                                             <constraint firstItem="ZFZ-AB-5ej" firstAttribute="leading" secondItem="bGx-9s-tZ4" secondAttribute="leading" constant="9" id="Jlb-pZ-iVi"/>
-                                            <constraint firstAttribute="trailing" secondItem="QYs-IA-Ixq" secondAttribute="trailing" constant="9" id="KJm-Ir-S9i"/>
                                             <constraint firstItem="IdR-z9-OFP" firstAttribute="leading" secondItem="bGx-9s-tZ4" secondAttribute="leading" constant="11" id="LC1-X5-nle"/>
                                             <constraint firstItem="FEr-47-Bvh" firstAttribute="leading" secondItem="bGx-9s-tZ4" secondAttribute="leading" constant="11" id="LZr-8B-RN8"/>
                                             <constraint firstAttribute="trailing" secondItem="qyH-w4-18K" secondAttribute="trailing" constant="9" id="LzE-Lo-hBd"/>
                                             <constraint firstItem="hSh-K2-g0Q" firstAttribute="leading" secondItem="bGx-9s-tZ4" secondAttribute="leading" constant="13" id="Mwe-Of-u3w"/>
-                                            <constraint firstItem="QYs-IA-Ixq" firstAttribute="top" secondItem="lSz-al-Ztq" secondAttribute="bottom" constant="13" id="NrD-aI-DFw"/>
                                             <constraint firstItem="lSz-al-Ztq" firstAttribute="leading" secondItem="bGx-9s-tZ4" secondAttribute="leading" constant="11" id="RqA-mF-QFR"/>
                                             <constraint firstItem="EbM-sO-JLg" firstAttribute="leading" secondItem="bGx-9s-tZ4" secondAttribute="leading" constant="11" id="See-8e-dCh"/>
                                             <constraint firstItem="qyH-w4-18K" firstAttribute="top" secondItem="ZFZ-AB-5ej" secondAttribute="bottom" constant="4" id="TLH-3i-agq"/>
                                             <constraint firstAttribute="trailing" secondItem="hSh-K2-g0Q" secondAttribute="trailing" constant="9" id="WTE-Vu-lj0"/>
-                                            <constraint firstItem="BT3-SQ-qZ4" firstAttribute="top" secondItem="QYs-IA-Ixq" secondAttribute="bottom" constant="7" id="Y89-AP-guK"/>
                                             <constraint firstAttribute="trailing" secondItem="ZFZ-AB-5ej" secondAttribute="trailing" constant="9" id="Zkz-17-1dt"/>
                                             <constraint firstAttribute="trailing" secondItem="EbM-sO-JLg" secondAttribute="trailing" constant="9" id="ZwB-ge-T8n"/>
-                                            <constraint firstItem="BT3-SQ-qZ4" firstAttribute="leading" secondItem="bGx-9s-tZ4" secondAttribute="leading" constant="7" id="b9C-AD-98n"/>
                                             <constraint firstItem="FEr-47-Bvh" firstAttribute="top" secondItem="EbM-sO-JLg" secondAttribute="bottom" constant="15" id="cBR-N4-oow"/>
-                                            <constraint firstAttribute="trailing" secondItem="rpo-qU-0VK" secondAttribute="trailing" constant="14" id="ckN-1B-ka8"/>
                                             <constraint firstItem="ZFZ-AB-5ej" firstAttribute="top" secondItem="bGx-9s-tZ4" secondAttribute="top" constant="7" id="dUh-qf-1Rs"/>
+                                            <constraint firstItem="hSh-K2-g0Q" firstAttribute="top" secondItem="lSz-al-Ztq" secondAttribute="bottom" constant="8" id="drB-NR-61c"/>
                                             <constraint firstAttribute="width" constant="300" id="fk8-Aj-4hP"/>
                                             <constraint firstItem="wJg-3e-NWh" firstAttribute="leading" secondItem="bGx-9s-tZ4" secondAttribute="leading" constant="11" id="g0i-at-pBx"/>
                                             <constraint firstItem="EbM-sO-JLg" firstAttribute="top" secondItem="qyH-w4-18K" secondAttribute="bottom" constant="15" id="ghd-gY-kY5"/>
-                                            <constraint firstItem="rpo-qU-0VK" firstAttribute="top" secondItem="QYs-IA-Ixq" secondAttribute="bottom" constant="6" id="hcC-hN-kUH"/>
-                                            <constraint firstAttribute="height" constant="630" id="mG8-zm-jlb"/>
+                                            <constraint firstAttribute="height" constant="445" id="mG8-zm-jlb"/>
                                             <constraint firstItem="IdR-z9-OFP" firstAttribute="top" secondItem="hSh-K2-g0Q" secondAttribute="bottom" constant="10" id="pWg-Eg-ktS"/>
-                                            <constraint firstItem="rpo-qU-0VK" firstAttribute="leading" secondItem="bGx-9s-tZ4" secondAttribute="leading" constant="40" id="qBq-yb-rQ3"/>
                                             <constraint firstItem="9hJ-u9-MHU" firstAttribute="top" secondItem="wJg-3e-NWh" secondAttribute="bottom" constant="14" id="vfl-1E-Qcu"/>
                                             <constraint firstItem="wJg-3e-NWh" firstAttribute="top" secondItem="FEr-47-Bvh" secondAttribute="bottom" constant="14" id="x2O-ha-7tO"/>
                                             <constraint firstAttribute="trailing" secondItem="FEr-47-Bvh" secondAttribute="trailing" constant="9" id="xtw-46-DUG"/>
@@ -1288,7 +1154,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="720"/>
                     <connections>
-                        <outlet property="btnAgree" destination="BT3-SQ-qZ4" id="8pJ-rG-9KD"/>
+                        <outlet property="lblTerm" destination="hSh-K2-g0Q" id="Q09-Eg-iQr"/>
                         <outlet property="scrollView" destination="E5Y-bc-04I" id="ZY2-fx-sRb"/>
                         <outlet property="txtEmail" destination="HUv-7w-c5s" id="41k-uY-ZPg"/>
                         <outlet property="txtFirstName" destination="mgW-h1-zna" id="38E-0G-gaB"/>
@@ -1299,7 +1165,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y7d-jI-fWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer delaysTouchesEnded="NO" id="7GK-mm-Dld">
+                <tapGestureRecognizer cancelsTouchesInView="NO" delaysTouchesEnded="NO" id="7GK-mm-Dld">
                     <connections>
                         <action selector="onTapOutside:" destination="7RO-Lh-BnQ" id="e2i-oy-vmA"/>
                     </connections>
@@ -1310,8 +1176,6 @@
     </scenes>
     <resources>
         <image name="call" width="150" height="150"/>
-        <image name="checkbox" width="64" height="64"/>
-        <image name="checked_checkbox" width="64" height="64"/>
         <image name="login-logo-banner" width="175" height="40"/>
     </resources>
 </document>

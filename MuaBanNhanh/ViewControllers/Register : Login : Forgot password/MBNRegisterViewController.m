@@ -8,10 +8,12 @@
 
 #import "MBNRegisterViewController.h"
 #import "MBNUserManager.h"
+#import <TTTAttributedLabel/TTTAttributedLabel.h>
 
 @interface MBNRegisterViewController ()
 <
-UIGestureRecognizerDelegate
+UIGestureRecognizerDelegate,
+TTTAttributedLabelDelegate
 >
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -23,7 +25,7 @@ UIGestureRecognizerDelegate
 @property (weak, nonatomic) IBOutlet UITextField *txtEmail;
 @property (weak, nonatomic) IBOutlet UITextField *txtPassword;
 @property (weak, nonatomic) IBOutlet UITextField *txtRePassword;
-@property (weak, nonatomic) IBOutlet UIButton *btnAgree;
+@property (weak, nonatomic) IBOutlet TTTAttributedLabel *lblTerm;
 
 @end
 
@@ -34,6 +36,26 @@ UIGestureRecognizerDelegate
     // Do any additional setup after loading the view.
     
     [self registerForKeyboardNotifications];
+    
+    [self setUpTerms];
+    
+}
+
+- (void)setUpTerms {
+    [self.lblTerm setText:@"Tôi đã đọc kỹ và đồng ý với Điều khoản sử dụng và Chính sách bảo mật bao gồm sử dụng cookie của MuaBanNhanh.com."];
+    
+    NSRange term = [self.lblTerm.text rangeOfString:@"Điều khoản sử dụng"];
+    [self.lblTerm addLinkToURL:[NSURL URLWithString:@"https://muabannhanh.com/dieu-khoan-su-dung"] withRange:term];
+    
+    NSRange policy = [self.lblTerm.text rangeOfString:@"Chính sách bảo mật"];
+    [self.lblTerm addLinkToURL:[NSURL URLWithString:@"https://muabannhanh.com/chinh-sach-bao-mat"] withRange:policy];
+    
+    self.lblTerm.delegate = self;
+}
+
+- (void)attributedLabel:(TTTAttributedLabel *)label
+   didSelectLinkWithURL:(NSURL *)url {
+    [[UIApplication sharedApplication] openURL:url];
 }
 
 - (NSString *)getTheFormStatus {
@@ -62,10 +84,6 @@ UIGestureRecognizerDelegate
         return @"Mật khẩu nhập lại không khớp";
     }
     
-    if (!self.btnAgree.isSelected) {
-        return @"Bạn chưa đồng ý với điều khoản sử dụng";
-    }
-    
     return @"";
 }
 
@@ -85,8 +103,10 @@ UIGestureRecognizerDelegate
 }
 
 - (IBAction)onBtnRegister:(id)sender {
-    [self isTheFormValidated];
-    
+    if (![self isTheFormValidated]) {
+        return;
+    }
+        
     [SVProgressHUD showWithStatus:@"Đang tiến hành đăng ký, vui lòng chờ!" maskType:SVProgressHUDMaskTypeGradient];
     
     [[MBNUserManager sharedProvider] registerWithUsername:[self.txtFirstName.text stringByAppendingString:self.txtName.text] password:self.txtPassword.text phone:self.txtPhone.text email:self.txtEmail.text success:^(NSDictionary *result) {
@@ -172,11 +192,6 @@ UIGestureRecognizerDelegate
 
 - (IBAction)onCloseButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)onTapCheckbox:(id)sender {
-    UIButton *btnCheckbox = (UIButton *)sender;
-    btnCheckbox.selected = !btnCheckbox.selected;
 }
 
 @end
