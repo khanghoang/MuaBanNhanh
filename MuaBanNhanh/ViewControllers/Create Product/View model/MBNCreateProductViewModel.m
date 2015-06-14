@@ -30,9 +30,11 @@
 
 - (NSDictionary *)productQualityDictionary {
     if (!_productQualityDictionary) {
-        _productQualityDictionary = @{@"Hàng mới 100%" : @1,
-                                      @"Mới 100%" : @1,
-                                      @"Hàng cũ" : @0};
+        _productQualityDictionary = @{
+                                      @"Hàng cũ" : @0,
+//                                      @"Mới 100%" : @1,
+                                      @"Hàng mới 100%" : @1
+                                      };
     }
     return _productQualityDictionary;
 }

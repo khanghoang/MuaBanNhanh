@@ -129,7 +129,7 @@ UITextViewDelegate
         [SVProgressHUD dismiss];
         
         self.selectedProductTransactionType = self.editingProduct.isSale ? @{@"Cần bán/ Dịch vụ" : @0} : @{@"Cần mua/ Cần tìm" : @1};
-        self.selectedProductQuality = self.viewModel.productQualityDictionary[self.editingProduct.conditions] ? self.viewModel.productQualityDictionary[self.editingProduct.conditions] : @{@"Mới 100%" : @1};
+        self.selectedProductQuality = self.viewModel.productQualityDictionary[self.editingProduct.conditions] ? self.viewModel.productQualityDictionary[self.editingProduct.conditions] : @{@"Hàng mới 100%" : @1};
         
         self.selectedProvince = self.editingProduct.province;
         
@@ -242,7 +242,7 @@ UITextViewDelegate
             @strongify(self);
             NSInteger selectedRow = [rows.lastObject integerValue];
             NSArray *allKeys = [self.viewModel.productQualityDictionary allKeys];
-            NSString *selectedKey = [allKeys reverse][selectedRow];
+            NSString *selectedKey = allKeys[selectedRow];
             [sender setTitle:selectedKey forState:UIControlStateNormal];
             sender.tag = selectedRow;
             self.selectedProductQuality = @{selectedKey : @(selectedRow)};
@@ -407,7 +407,7 @@ UITextViewDelegate
         MBNProvince *province = self.viewModel.provinces[row];
         return province.name;
     } else if (pickerView.tag == PickerViewTypeQuality) {
-        return [self.viewModel.productQualityDictionary allKeysForObject:@(row)].lastObject;
+        return [self.viewModel.productQualityDictionary allKeys][row];
     } else {
         return [self.viewModel.productTransactionTypeDictionary allKeysForObject:@(row)].lastObject;
     }
