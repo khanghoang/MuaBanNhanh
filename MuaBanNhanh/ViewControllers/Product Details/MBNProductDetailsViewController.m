@@ -12,6 +12,7 @@
 #import "MBNUserProductViewController.h"
 #import "MBNProductDetailBottomViewController.h"
 #import <TTTAttributedLabel.h>
+#import <NSDate+TimeAgo/NSDate+TimeAgo.h>
 
 @interface MBNProductDetailsViewController ()
 
@@ -100,8 +101,7 @@
     }];
     
     RAC(self.lblCreateAt, text) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
-        NSDateFormatter *formatter = [MBNProduct sharedDateFormatter];
-        return [NSString stringWithFormat:@"Ngày đăng %@", [formatter stringFromDate:product.createdAt]];
+        return [NSString stringWithFormat:@"Ngày đăng: %@", [product.createdAt timeAgo]];
     }];
     
     RAC(self.lblViewCount, text) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
