@@ -10,6 +10,8 @@
 
 @interface MBNCollectionHeaderView : UICollectionReusableView
 
+@property (weak, nonatomic) IBOutlet UIButton *btnViewAll;
+
 - (void)configWithHeaderText:(NSString *)headerText;
 
 @end

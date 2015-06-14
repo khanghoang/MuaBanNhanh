@@ -11,7 +11,6 @@
 @interface MBNCollectionHeaderView()
 
 @property (weak, nonatomic) IBOutlet UILabel *lblHeaderName;
-@property (weak, nonatomic) IBOutlet UIButton *btnViewAll;
 
 @end
 

@@ -10,10 +10,14 @@
 #import "MBNProductDetailsViewController.h"
 #import "MBNProductCollectionViewCell.h"
 #import "MBNCollectionHeaderView.h"
+#import "MBNUserProductViewController.h"
 
 static CGFloat const PRODUCT_COLLECTION_CELL_HEIGHT = 142;
 
 @interface MBNProductDetailBottomViewController ()
+<
+UICollectionViewDelegate
+>
 
 @property (strong, nonatomic) NSArray *arrUserProducts;
 
@@ -66,12 +70,21 @@ static CGFloat const PRODUCT_COLLECTION_CELL_HEIGHT = 142;
     
     [header configWithHeaderText:@"Cùng người bán"];
     
+    @weakify(self);
+    header.btnViewAll.rac_command = [[RACCommand alloc] initWithSignalBlock:^(id _) {
+        @strongify(self);
+        MBNUserProductViewController *userProducts = [MBNUserProductViewController tme_instantiateFromStoryboardNamed:@"UserProducts"];
+        userProducts.user = self.user;
+        [self.navigationController pushViewController:userProducts animated:YES];
+        return [RACSignal empty];
+    }];
+    
     return header;
     
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-    return CGSizeMake(collectionView.bounds.size.width, 40);
+    return CGSizeMake(collectionView.bounds.size.width, 50);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
