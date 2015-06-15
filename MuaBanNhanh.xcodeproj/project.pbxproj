@@ -2108,8 +2108,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Tuan Truong (4X2MGJBNWG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MUA BAN NHANH COMPANY LIMITED (9TT8Z9X86V)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Minh Nhat Tran Le (A3KVX4CD7C)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -2121,7 +2121,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1b1f8769-0e8e-432f-abae-272e8cfc27b2";
+				PROVISIONING_PROFILE = "15c86392-d496-48d9-913c-8c075bf40a82";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -2132,7 +2132,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Tuan Truong (4X2MGJBNWG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: MUA BAN NHANH COMPANY LIMITED (9TT8Z9X86V)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2145,7 +2145,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1b1f8769-0e8e-432f-abae-272e8cfc27b2";
+				PROVISIONING_PROFILE = "ef577a9e-9302-4dad-b2d5-1d31fb397ee4";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
