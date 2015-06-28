@@ -258,11 +258,11 @@ UITextViewDelegate
         [self showPickerViewControllerWithTitle:@"Chọn trạng thái sản phẩm" pickerType:PickerViewTypeQuality selectButtonAction:^(RMPickerViewController *controller, NSArray *rows) {
             @strongify(self);
             NSInteger selectedRow = [rows.lastObject integerValue];
-            NSArray *allKeys = [self.viewModel.productQualityDictionary allKeys];
+            NSArray *allKeys = [[self.viewModel.productQualityDictionary allKeys] reverse];
             NSString *selectedKey = allKeys[selectedRow];
             [sender setTitle:selectedKey forState:UIControlStateNormal];
             sender.tag = selectedRow;
-            self.selectedProductQuality = @{selectedKey : @(selectedRow)};
+            self.selectedProductQuality = @{ selectedKey: self.viewModel.productQualityDictionary[selectedKey]};
         } sender:sender];
         return [RACSignal empty];
     }];
@@ -425,7 +425,7 @@ UITextViewDelegate
         MBNProvince *province = self.viewModel.provinces[row];
         return province.name;
     } else if (pickerView.tag == PickerViewTypeQuality) {
-        return [self.viewModel.productQualityDictionary allKeys][row];
+        return [[self.viewModel.productQualityDictionary allKeys] reverse][row];
     } else {
         return [self.viewModel.productTransactionTypeDictionary allKeysForObject:@(row)].lastObject;
     }
@@ -516,7 +516,7 @@ UITextViewDelegate
         NSDictionary *info = @{
                                @"name": self.productTitleTextField.text,
                                @"category": dumpArr,
-                               @"is_sale": @([self.productTransactionTypePickButton.titleLabel.text isEqualToString:@"Cần bán/ Dịch vụ"]),
+                               @"is_sale": [self.productTransactionTypePickButton.titleLabel.text isEqualToString:@"Cần bán/ Dịch vụ"] ? @YES : @NO,
                                @"province_id": self.selectedProvince.ID,
                                @"conditions": [[self.selectedProductQuality allValues] firstObject],
                                @"is_shown": @(true),
