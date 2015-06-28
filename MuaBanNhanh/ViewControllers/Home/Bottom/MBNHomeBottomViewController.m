@@ -83,7 +83,7 @@ UICollectionViewDataSource
     
     MBNCollectionHeaderView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([MBNCollectionHeaderView class]) forIndexPath:indexPath];
     
-    [header configWithHeaderText:@"MuaBanNhanh mới cập nhật"];
+    [header configWithHeaderText:@"MuaBanNhanh mới cập nhật" hideRightLable:YES];
     
     return header;
     

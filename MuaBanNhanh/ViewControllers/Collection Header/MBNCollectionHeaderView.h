@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnViewAll;
 
 - (void)configWithHeaderText:(NSString *)headerText;
+- (void)configWithHeaderText:(NSString *)headerText hideRightLable:(BOOL)hide;
 
 @end

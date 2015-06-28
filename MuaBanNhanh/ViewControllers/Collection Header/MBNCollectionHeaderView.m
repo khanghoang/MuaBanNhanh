@@ -11,6 +11,7 @@
 @interface MBNCollectionHeaderView()
 
 @property (weak, nonatomic) IBOutlet UILabel *lblHeaderName;
+@property (weak, nonatomic) IBOutlet UIButton *lblRight;
 
 @end
 
@@ -23,7 +24,12 @@
 }
 
 - (void)configWithHeaderText:(NSString *)headerText {
+    [self configWithHeaderText:headerText hideRightLable:NO];
+}
+
+- (void)configWithHeaderText:(NSString *)headerText hideRightLable:(BOOL)hide {
     self.lblHeaderName.text = headerText;
+    self.lblRight.hidden = hide;
 }
 
 @end
