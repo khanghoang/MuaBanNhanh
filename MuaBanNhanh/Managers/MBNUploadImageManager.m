@@ -121,6 +121,7 @@
     [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     NSError *error;
     NSMutableURLRequest *request = [manager.requestSerializer requestWithMethod:@"POST" URLString:requestString parameters:dictionary error:&error];
+    [request setTimeoutInterval:15];
     
     AFHTTPRequestOperation *operation = [manager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
