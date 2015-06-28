@@ -242,7 +242,7 @@ UITextViewDelegate
     
     [self.productPriceTextField.rac_textSignal subscribeNext:^(NSString *text) {
         @strongify(self);
-        self.productPriceTextField.text = [MBNProduct getPriceDisplayString:text];
+        self.productPriceTextField.text = [MBNProduct getPriceDisplayString:[text stringByReplacingOccurrencesOfString:@"," withString:@""]];
     }];
     
     self.repickCategoryButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIButton *sender) {
@@ -520,7 +520,7 @@ UITextViewDelegate
                                @"province_id": self.selectedProvince.ID,
                                @"conditions": [[self.selectedProductQuality allValues] firstObject],
                                @"is_shown": @(true),
-                               @"price": @([self.productPriceTextField.text integerValue]),
+                               @"price": @([[self.productPriceTextField.text stringByReplacingOccurrencesOfString:@"," withString:@""] integerValue]),
                                @"description": @{
                                        @"user": self.productDescriptionTextView.text
                                        },
