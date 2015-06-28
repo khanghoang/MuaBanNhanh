@@ -143,7 +143,7 @@
 }
 
 - (NSString *)getTransactionString {
-    if (self.isSale) {
+    if ([self.isSale boolValue]) {
         return @"Cần bán/ Dịch vụ";
     }
     
