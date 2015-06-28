@@ -115,7 +115,7 @@
     }];
     
     RAC(self.lblCondition, text) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {
-        return product.conditions;
+        return [NSString stringWithFormat:@"%@ - %@", [product getTransactionString], product.conditions];
     }];
     
     RAC(self.lblCity, text) = [[RACObserve(self.viewModel, product) ignore:nil] map:^id(MBNProduct *product) {

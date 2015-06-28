@@ -41,6 +41,7 @@ MTLJSONSerializing
 
 - (NSString *)getDisplayAddressString;
 - (NSString *)getPriceDisplayString;
+- (NSString *)getTransactionString;
 
 + (NSString *)getPriceDisplayString:(NSString *)textPrice;
 

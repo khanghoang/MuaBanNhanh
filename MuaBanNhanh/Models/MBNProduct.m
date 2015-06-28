@@ -142,4 +142,12 @@
     return instance;
 }
 
+- (NSString *)getTransactionString {
+    if (self.isSale) {
+        return @"Cần bán/ Dịch vụ";
+    }
+    
+    return @"Cần mua/ Cần tìm";
+}
+
 @end
