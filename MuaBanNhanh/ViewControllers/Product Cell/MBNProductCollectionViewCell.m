@@ -58,12 +58,7 @@
     
     MBNProduct *product = data;
     
-    // price
-    NSNumberFormatter *formatter = [NSNumberFormatter new];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle]; // this line is important!
-    
-    NSString *priceString = [formatter stringFromNumber:product.price];
-    priceString = !priceString ? @"Giá liên hệ" : [NSString stringWithFormat:@"%@ %@", priceString, @"vnđ"];
+    NSString *priceString = [product getPriceDisplayString];
     
     self.lblPrice.text = priceString;
     

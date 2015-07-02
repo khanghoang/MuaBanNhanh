@@ -109,8 +109,11 @@
 
 + (NSString *)getPriceDisplayString:(NSString *)textPrice {
     NSNumberFormatter *formatter = [NSNumberFormatter new];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle]; // this line is important!
     
+    [formatter setUsesGroupingSeparator:YES];
+    [formatter setGroupingSize:3];
+    [formatter setGroupingSeparator:@" "];
+
     NSNumber *price = [formatter numberFromString:[textPrice stringByReplacingOccurrencesOfString:@"." withString:@""]];
     
     NSString *priceString = [formatter stringFromNumber:price];
@@ -120,7 +123,9 @@
 - (NSString *)getPriceDisplayString {
     // price
     NSNumberFormatter *formatter = [NSNumberFormatter new];
-    [formatter setNumberStyle:NSNumberFormatterDecimalStyle]; // this line is important!
+    [formatter setUsesGroupingSeparator:YES];
+    [formatter setGroupingSize:3];
+    [formatter setGroupingSeparator:@" "];
     
     NSString *priceString = [formatter stringFromNumber:self.price];
     priceString = !priceString ? @"Giá liên hệ" : [NSString stringWithFormat:@"%@ %@", priceString, @"vnđ"];
