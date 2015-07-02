@@ -524,6 +524,7 @@ UITextViewDelegate
                                @"description": @{
                                        @"user": self.productDescriptionTextView.text
                                        },
+                               @"address": [[[MBNUserManager sharedProvider] getLoginUser] getDisplayAddressString],
                                @"gallery": arr
                                };
         
