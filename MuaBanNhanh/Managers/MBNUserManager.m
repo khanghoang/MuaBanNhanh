@@ -99,6 +99,17 @@
                       successBlock(user);
                   }
                   
+                  // update full information
+                  // address, etc
+                  [[MBNUserManager sharedProvider] getOwnInformation:^(MBNUser *user) {
+                      user.token = [[[MBNUserManager sharedProvider] getLoginUser] token];
+                      [[MBNUserManager sharedProvider] saveLoginUser:user];
+                      [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_USER_LOGIN object:user];
+                      [[MBNUserManager sharedProvider] setLoggedUser:user];
+                  } failure:^(NSString *errorString) {
+                      
+                  }];
+                  
                   return;
               }
               

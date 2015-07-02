@@ -73,7 +73,7 @@
     [coder encodeObject:self.createAt forKey:@"createAt"];
     [coder encodeObject:self.about forKey:@"about"];
     [coder encodeObject:self.address forKey:@"address"];
-    [coder encodeObject:self.address forKey:@"birthday"];
+    [coder encodeObject:self.birthday forKey:@"birthday"];
 }
 
 + (NSValueTransformer *)createAtJSONTransformer
@@ -102,7 +102,7 @@
         self.identity = [coder decodeObjectForKey:@"identity"];
         self.createAt = [coder decodeObjectForKey:@"createAt"];
         self.about = [coder decodeObjectForKey:@"about"];
-        self.address = [coder decodeObjectForKey:@"adress"];
+        self.address = [coder decodeObjectForKey:@"address"];
         self.birthday = [coder decodeObjectForKey:@"birthday"];
     }
     
@@ -113,6 +113,9 @@
 #pragma marks - Helper methods 
 
 - (NSString *)getDisplayAddressString {
+    if(!self.address) {
+        self.address = @"";
+    }
     return ![self.address isEqualToString:@""] ? self.address : @"Địa chỉ chưa cập nhật";
 }
 
