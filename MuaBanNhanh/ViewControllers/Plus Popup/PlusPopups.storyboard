@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--Index Home Popup View Controller-->
@@ -85,8 +85,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="onBtnHowTo:" destination="Be1-p7-C1d" eventType="touchUpInside" id="bmd-oU-mbe"/>
-                                                        <action selector="onBtnRegister:" destination="vFn-OI-oy0" eventType="touchUpInside" id="Jtv-cE-hCj"/>
+                                                        <action selector="onBtnLogin:" destination="vFn-OI-oy0" eventType="touchUpInside" id="fe3-F1-9eN"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pk-Fg-Mxb">
@@ -96,8 +95,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="onBtnHowTo:" destination="Be1-p7-C1d" eventType="touchUpInside" id="Ehs-l7-2N2"/>
-                                                        <action selector="onBtnRegister:" destination="vFn-OI-oy0" eventType="touchUpInside" id="A22-nN-GMZ"/>
+                                                        <action selector="onBtnLogin:" destination="vFn-OI-oy0" eventType="touchUpInside" id="JiA-M8-yt3"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
