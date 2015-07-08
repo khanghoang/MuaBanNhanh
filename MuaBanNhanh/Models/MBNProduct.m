@@ -128,8 +128,16 @@
     [formatter setGroupingSeparator:@" "];
     
     NSString *priceString = [formatter stringFromNumber:self.price];
-    priceString = !priceString ? @"Giá liên hệ" : [NSString stringWithFormat:@"%@ %@", priceString, @"vnđ"];
+    priceString = !priceString ? @"Giá liên hệ" : [NSString stringWithFormat:@"%@ %@", priceString, @"VND"];
     return priceString;
+}
+
+- (NSString *)getConditions {
+    if(!_conditions) {
+        return @"";
+    }
+    
+    return _conditions;
 }
 
 #pragma marks - Helper methods 
