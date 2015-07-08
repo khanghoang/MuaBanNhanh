@@ -146,7 +146,7 @@
                              };
     
     MBNUser *currentLoginUser = [[MBNUserManager sharedProvider] getLoginUser];
-    NSString *requestString = [NSString stringWithFormat:@"https://api.muabannhanh.com/user/upload-image?id=%ld&token=%@", (long)[currentLoginUser.ID integerValue], currentLoginUser.token];
+    NSString *requestString = [NSString stringWithFormat:@"https://api1.muabannhanh.com/user/upload-image?id=%ld&token=%@", (long)[currentLoginUser.ID integerValue], currentLoginUser.token];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
