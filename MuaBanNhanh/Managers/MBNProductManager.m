@@ -67,6 +67,7 @@
     
 }
 
+
 + (void)getProductDetailsWithID:(NSNumber *)productID withCompletion:(void (^) (MBNProduct *product, NSError *error))completeBlock {
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager mbn_manager];
@@ -156,7 +157,28 @@
     
 }
 
-+ (void)createProduct:(NSDictionary *)productInfo completionBlock:(void (^)(MBNProduct *product, NSError *error))completionBlock {
+
++ (void)getOwnProductDetailsWithID:(NSNumber *)productID withCompletion:(void (^) (MBNProduct *product, NSError *error))completeBlock {
+    MBNUser *currentLoginUser = [[MBNUserManager sharedProvider] getLoginUser];
+    NSString *requestString = [NSString stringWithFormat:@"https://api1.muabannhanh.com/user/article-edit?user_id=%ld&token=%@&id=%ld", (long)[currentLoginUser.ID integerValue], currentLoginUser.token, (long)[productID integerValue]];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager mbn_manager];
+    [manager GET:requestString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        NSError *error;
+        
+        MBNProduct *product = [MTLJSONAdapter modelOfClass:[MBNProduct class] fromJSONDictionary:responseObject[@"result"] error:&error];
+        
+        if (completeBlock) {
+            completeBlock(product, nil);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+        if (completeBlock) {
+            completeBlock(nil, error);
+        }
+        
+    }];
 }
 
 + (void)searchProductWithKeyWord:(NSString *)keyWord page:(NSUInteger)page categoryID:(NSNumber *)categoryID provinceID:(NSNumber *)provinceID completeBlock:(void (^) (NSArray *arrProduct, NSError *error))completeBlock
