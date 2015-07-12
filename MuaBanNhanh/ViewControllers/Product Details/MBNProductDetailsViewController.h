@@ -12,4 +12,8 @@
 
 @property (strong, nonatomic) NSNumber *productID;
 
+// own product will call different API with
+// the normal product details API
+@property (assign, nonatomic) BOOL isOwnProduct;
+
 @end

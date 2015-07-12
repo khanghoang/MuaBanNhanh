@@ -71,6 +71,7 @@ UIAlertViewDelegate
     MBNProduct *product = [self.collectionController.model itemAtIndexpath:indexPath];
     MBNProductDetailsViewController *productVC = [MBNProductDetailsViewController tme_instantiateFromStoryboardNamed:@"ProductDetails"];
     productVC.productID = product.ID;
+    productVC.isOwnProduct = YES;
     [self.navigationController pushViewController:productVC animated:YES];
 }
 
@@ -97,6 +98,7 @@ UIAlertViewDelegate
         [popupMenuViewController dismissViewControllerAnimated:YES completion:^{
             MBNProduct *product = [self.collectionController.model itemAtIndexpath:self.popupSelectedIndexpath];
             MBNProductDetailsViewController *productVC = [MBNProductDetailsViewController tme_instantiateFromStoryboardNamed:@"ProductDetails"];
+            productVC.isOwnProduct = YES;
             [self.navigationController pushViewController:productVC animated:YES];
         }];
         return [RACSignal empty];
@@ -107,6 +109,7 @@ UIAlertViewDelegate
         [popupMenuViewController dismissViewControllerAnimated:YES completion:^{
             MBNProduct *product = [self.collectionController.model itemAtIndexpath:self.popupSelectedIndexpath];
             MBNCreateProductViewController *vc = [MBNCreateProductViewController tme_instantiateFromStoryboardNamed:@"CreateProduct"];
+            vc.isOwnProduct = YES;
             MBNNavigationViewController *navVC = [[MBNNavigationViewController alloc] initWithRootViewController:vc];
             vc.editingProduct = product;
             AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];

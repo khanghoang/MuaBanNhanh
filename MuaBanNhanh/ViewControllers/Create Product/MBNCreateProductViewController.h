@@ -11,5 +11,6 @@
 @interface MBNCreateProductViewController : UIViewController
 
 @property (strong, nonatomic) MBNProduct *editingProduct;
+@property (assign, nonatomic) BOOL isOwnProduct;
 
 @end

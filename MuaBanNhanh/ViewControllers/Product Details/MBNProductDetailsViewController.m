@@ -60,7 +60,11 @@
 }
 
 - (void)loadProductDetailsAndObserver {
-    [self.viewModel loadProductDetailsWithID:self.productID];
+    if(!self.isOwnProduct) {
+        [self.viewModel loadProductDetailsWithID:self.productID];
+    } else {
+        [self.viewModel loadOwnProductDetailsWithID:self.productID];
+    }
     
     [MBNProductManager sharedProvider].currentSelectProduct = nil;
     
