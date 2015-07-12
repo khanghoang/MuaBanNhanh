@@ -584,7 +584,7 @@ UITextViewDelegate
         if ([image isKindOfClass:[MBNImage class]]) {
             operation = [NSBlockOperation blockOperationWithBlock:^{
                 MBNImage *mbnProduct = (id)image;
-                [uploadedURLs replaceObjectAtIndex:idx withObject:mbnProduct.imageURL];
+                [uploadedURLs replaceObjectAtIndex:idx withObject:mbnProduct.imageFileName];
                 dispatch_group_leave(group);
             }];
         } else {

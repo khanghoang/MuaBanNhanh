@@ -15,6 +15,7 @@ MTLJSONSerializing
 
 @property (copy, nonatomic) NSNumber *ID;
 @property (copy, nonatomic) NSString *caption;
+@property (copy, nonatomic) NSString *imageFileName;
 @property (copy, nonatomic) NSURL *imageURL;
 
 @end

@@ -16,7 +16,8 @@
     return @{
              @"ID": @"id",
              @"caption": @"caption",
-             @"imageURL": @"image_url"
+             @"imageURL": @"image_url",
+             @"imageFileName": @"image_filename"
              };
 }
 
