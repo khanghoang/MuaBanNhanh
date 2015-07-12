@@ -21,7 +21,7 @@
              @"slug": @"slug",
              @"defaultImage": @"default_image",
              @"defaultThumbnailImage": @"default_thumbnail_image",
-             @"categories": @"categories",
+             @"categories": @"category",
              @"price": @"price",
              @"isSale": @"is_sale",
              @"conditions": @"conditions",
@@ -36,7 +36,7 @@
              @"viewCount": @"view_count",
              @"conditions": @"conditions",
              @"province": @"province",
-             @"address": @"address.address",
+             @"address": @"address",
              @"des": @"description.user"
              };
 }

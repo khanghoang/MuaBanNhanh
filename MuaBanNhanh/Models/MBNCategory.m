@@ -24,9 +24,8 @@
              @"imageHoverUrl": @"image_hover_url",
              @"ordering": @"ordering",
              @"articleCount": @"article_count",
-             @"subCategories": @"sub_categories",
+             @"subCategories": @"sub_category",
              @"iconUrl": @"icon_url",
-             
              };
 }
 

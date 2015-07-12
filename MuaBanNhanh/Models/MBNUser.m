@@ -33,7 +33,7 @@
              @"identity": @"identity_number",
              @"createAt": @"created_at",
              @"about": @"about",
-             @"address": @"address.address"
+             @"address": @"address"
              
              };
 }

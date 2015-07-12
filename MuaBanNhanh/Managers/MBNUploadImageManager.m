@@ -83,7 +83,7 @@
 - (AFHTTPRequestOperation *)createProductWithDictionary:(NSDictionary *)dictionary withCompletionBlock:(void (^)(id reponseObject, NSError *error))completionBlock  {
     // TODO: repeated code
     MBNUser *currentLoginUser = [[MBNUserManager sharedProvider] getLoginUser];
-    NSString *requestString = [NSString stringWithFormat:@"https://api.muabannhanh.com/user/article-add?user_id=%ld&token=%@", (long)[currentLoginUser.ID integerValue], currentLoginUser.token];
+    NSString *requestString = [NSString stringWithFormat:@"https://api1.muabannhanh.com/user/article-add?user_id=%ld&token=%@", (long)[currentLoginUser.ID integerValue], currentLoginUser.token];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -114,7 +114,7 @@
 - (AFHTTPRequestOperation *)updateProductWithProductID:(NSNumber *)productID withDictionary:(NSDictionary *)dictionary withCompletionBlock:(void (^)(id reponseObject, NSError *error))completionBlock  {
     // TODO: repeated code
     MBNUser *currentLoginUser = [[MBNUserManager sharedProvider] getLoginUser];
-    NSString *requestString = [NSString stringWithFormat:@"https://api.muabannhanh.com/user/article-edit?user_id=%ld&token=%@&id=%ld", (long)[currentLoginUser.ID integerValue], currentLoginUser.token, (long)[productID integerValue]];
+    NSString *requestString = [NSString stringWithFormat:@"https://api1.muabannhanh.com/user/article-edit?user_id=%ld&token=%@&id=%ld", (long)[currentLoginUser.ID integerValue], currentLoginUser.token, (long)[productID integerValue]];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];

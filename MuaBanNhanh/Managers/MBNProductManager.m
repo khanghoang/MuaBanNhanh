@@ -70,12 +70,12 @@
 + (void)getProductDetailsWithID:(NSNumber *)productID withCompletion:(void (^) (MBNProduct *product, NSError *error))completeBlock {
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager mbn_manager];
-    NSString *requestString = [NSString stringWithFormat:@"https://api.muabannhanh.com/article/detail?id=%ld", (long)[productID integerValue]];
+    NSString *requestString = [NSString stringWithFormat:@"https://api1.muabannhanh.com/article/detail?id=%ld", (long)[productID integerValue]];
     [manager GET:requestString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         NSError *error;
         
-        MBNProduct *product = [MTLJSONAdapter modelOfClass:[MBNProduct class] fromJSONDictionary:[responseObject[@"result"] firstObject] error:&error];
+        MBNProduct *product = [MTLJSONAdapter modelOfClass:[MBNProduct class] fromJSONDictionary:responseObject[@"result"] error:&error];
         
         if (completeBlock) {
             completeBlock(product, nil);

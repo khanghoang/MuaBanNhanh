@@ -503,7 +503,7 @@ UITextViewDelegate
         
         NSArray *arr = [uploadedURLs map:^id(id url) {
             NSDictionary *uploadUrl = @{
-                                        @"image_url": [url isKindOfClass:[NSString class]] ? url : [url absoluteString],
+                                        @"image_filename": [url isKindOfClass:[NSString class]] ? url : [url absoluteString],
                                         @"caption": [self.arrCaptions[[uploadedURLs indexOfObject:url]] text]
                                         };
             return uploadUrl;
@@ -578,7 +578,7 @@ UITextViewDelegate
             AFHTTPRequestOperation *uploadOperation = (AFHTTPRequestOperation *) [[MBNUploadImageManager sharedProvider] uploadProductImage:image withCompletionBlock:^(AFHTTPRequestOperation *operation, id reponseObject, NSError *error) {
                 
                 
-                [uploadedURLs replaceObjectAtIndex:[arrOperations indexOfObject:operation] withObject:reponseObject[@"result"][@"image_url"]];
+                [uploadedURLs replaceObjectAtIndex:[arrOperations indexOfObject:operation] withObject:reponseObject[@"result"][@"image_filename"]];
                 dispatch_group_leave(group);
             }];
             
