@@ -134,40 +134,53 @@ UITextViewDelegate
     
     [SVProgressHUD showWithStatus:@"Đang tải thông tin sản phẩm" maskType:SVProgressHUDMaskTypeGradient];
     
-    [MBNProductManager getProductDetailsWithID:self.editingProduct.ID withCompletion:^(MBNProduct *product, NSError *error) {
-        self.editingProduct = product;
-        
-        [SVProgressHUD dismiss];
-        
-        self.selectedProductTransactionType = self.editingProduct.isSale ? @{@"Cần bán/ Dịch vụ" : @0} : @{@"Cần mua/ Cần tìm" : @1};
-        self.selectedProductQuality = self.viewModel.productQualityDictionary[self.editingProduct.conditions] ? self.viewModel.productQualityDictionary[self.editingProduct.conditions] : @{@"Hàng mới 100%" : @1};
-        
-        self.selectedProvince = self.editingProduct.province;
-        
-        self.productTitleTextField.text = self.editingProduct.name;
-        
-        [self.productTransactionTypePickButton setTitle:[[self.selectedProductTransactionType allKeys] firstObject] forState:UIControlStateNormal];
-    
-        
-        [self.cityPickButton setTitle:self.selectedProvince.name forState:UIControlStateNormal];
-        
-        [self.productQualityButton setTitle:[[self.selectedProductQuality allKeys] firstObject] forState:UIControlStateNormal];
-        
-        self.productPriceTextField.text = [self.editingProduct.price stringValue];
-        self.productDescriptionTextView.text = self.editingProduct.des;
-        
-        self.viewModel.selectedCategories = [self.editingProduct.categories mutableCopy];
-        
-        [self.editingProduct.gallery enumerateObjectsUsingBlock:^(MBNImage *image, NSUInteger idx, BOOL *stop) {
+    if(self.isOwnProduct) {
+        [MBNProductManager getOwnProductDetailsWithID:self.editingProduct.ID withCompletion:^(MBNProduct *product, NSError *error) {
             
-            [self.productImagePickButtons[idx] setBackgroundImageForState:UIControlStateNormal withURL:[self.editingProduct.gallery[idx] imageURL]];
-            UITextView *textView = (UITextView *) self.arrCaptions[idx];
-            [textView setText:[self.editingProduct.gallery[idx] caption]];
-            
-            [self.productImages replaceObjectAtIndex:idx withObject:image];
+            self.editingProduct = product;
+            [self loadProductInformationToUI];
         }];
-    }];
+    } else {
+        [MBNProductManager getProductDetailsWithID:self.editingProduct.ID withCompletion:^(MBNProduct *product, NSError *error) {
+            self.editingProduct = product;
+            [self loadProductInformationToUI];
+        }];
+    }
     
+    
+}
+
+- (void)loadProductInformationToUI {
+    
+    [SVProgressHUD dismiss];
+    
+    self.selectedProductTransactionType = self.editingProduct.isSale ? @{@"Cần bán/ Dịch vụ" : @0} : @{@"Cần mua/ Cần tìm" : @1};
+    self.selectedProductQuality = self.viewModel.productQualityDictionary[self.editingProduct.conditions] ? self.viewModel.productQualityDictionary[self.editingProduct.conditions] : @{@"Hàng mới 100%" : @1};
+    
+    self.selectedProvince = self.editingProduct.province;
+    
+    self.productTitleTextField.text = self.editingProduct.name;
+    
+    [self.productTransactionTypePickButton setTitle:[[self.selectedProductTransactionType allKeys] firstObject] forState:UIControlStateNormal];
+    
+    
+    [self.cityPickButton setTitle:self.selectedProvince.name forState:UIControlStateNormal];
+    
+    [self.productQualityButton setTitle:[[self.selectedProductQuality allKeys] firstObject] forState:UIControlStateNormal];
+    
+    self.productPriceTextField.text = [self.editingProduct.price stringValue];
+    self.productDescriptionTextView.text = self.editingProduct.des;
+    
+    self.viewModel.selectedCategories = [self.editingProduct.categories mutableCopy];
+    
+    [self.editingProduct.gallery enumerateObjectsUsingBlock:^(MBNImage *image, NSUInteger idx, BOOL *stop) {
+        
+        [self.productImagePickButtons[idx] setBackgroundImageForState:UIControlStateNormal withURL:[self.editingProduct.gallery[idx] imageURL]];
+        UITextView *textView = (UITextView *) self.arrCaptions[idx];
+        [textView setText:[self.editingProduct.gallery[idx] caption]];
+        
+        [self.productImages replaceObjectAtIndex:idx withObject:image];
+    }];
 }
 
 - (UINavigationController *)cameraVC {

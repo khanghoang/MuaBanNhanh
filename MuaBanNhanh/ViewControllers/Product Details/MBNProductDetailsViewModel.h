@@ -13,5 +13,6 @@
 @property (readonly, nonatomic) MBNProduct *product;
 
 - (void)loadProductDetailsWithID:(NSNumber *)productID;
+- (void)loadOwnProductDetailsWithID:(NSNumber *)productID;
 
 @end

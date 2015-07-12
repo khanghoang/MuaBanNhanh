@@ -18,6 +18,8 @@
 
 + (void)getProductDetailsWithID:(NSNumber *)productID withCompletion:(void (^) (MBNProduct *product, NSError *error))completeBlock;
 
++ (void)getOwnProductDetailsWithID:(NSNumber *)productID withCompletion:(void (^) (MBNProduct *product, NSError *error))completeBlock;
+
 + (void)getProductWithCategoryID:(NSNumber *)catID andPage:(NSInteger)page completeBlock:(void (^) (NSArray *arrProduct, NSError *error))completeBlock;
 
 + (void)getProductWithUserID:(NSNumber *)userID andPage:(NSInteger)page completeBlock:(void (^) (NSArray *arrProduct, NSError *error))completeBlock;

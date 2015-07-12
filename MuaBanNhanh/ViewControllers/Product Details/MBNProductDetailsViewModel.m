@@ -22,4 +22,10 @@
     }];
 }
 
+- (void)loadOwnProductDetailsWithID:(NSNumber *)productID {
+    [MBNProductManager getOwnProductDetailsWithID:productID withCompletion:^(MBNProduct *product, NSError *error) {
+        self.product = product;
+    }];
+}
+
 @end
