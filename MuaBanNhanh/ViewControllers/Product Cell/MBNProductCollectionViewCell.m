@@ -63,7 +63,7 @@
     self.lblPrice.text = priceString;
     
     // update at
-    self.lblUpdateAt.text = [NSString stringWithFormat:@"Cập nhật %@", [[product.createdAt timeAgo] lowercaseString]];
+    self.lblUpdateAt.text = [NSString stringWithFormat:@"Cập nhật %@", [[product.updatedAt timeAgo] lowercaseString]];
     
     // thumb
     [self.imageViewProductImage fp_setImageWithURL:product.defaultThumbnailImage];
